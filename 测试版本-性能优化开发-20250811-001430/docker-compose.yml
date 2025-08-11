@@ -1,0 +1,107 @@
+version: '3.8'
+
+services:
+  app:
+    build: .
+    container_name: tencent-docs-app
+    restart: unless-stopped
+    environment:
+      - FLASK_ENV=production
+      - FLASK_DEBUG=false
+      - DATABASE_URL=sqlite:///data/tencent_docs.db
+      - SECRET_KEY=${SECRET_KEY:-your-secret-key-here}
+      - MAX_WORKERS=4
+    volumes:
+      - ./data:/app/data
+      - ./uploads:/app/uploads
+      - ./downloads:/app/downloads
+      - ./logs:/app/logs
+    networks:
+      - tencent-docs-network
+    depends_on:
+      - redis
+    deploy:
+      resources:
+        limits:
+          memory: 2G
+          cpus: '1.0'
+        reservations:
+          memory: 512M
+          cpus: '0.5'
+
+  nginx:
+    image: nginx:alpine
+    container_name: tencent-docs-nginx
+    restart: unless-stopped
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf
+      - ./ssl:/etc/nginx/ssl
+      - ./static:/var/www/static
+    networks:
+      - tencent-docs-network
+    depends_on:
+      - app
+
+  redis:
+    image: redis:7-alpine
+    container_name: tencent-docs-redis
+    restart: unless-stopped
+    command: redis-server --appendonly yes --maxmemory 256mb --maxmemory-policy allkeys-lru
+    volumes:
+      - redis_data:/data
+    networks:
+      - tencent-docs-network
+    deploy:
+      resources:
+        limits:
+          memory: 256M
+          cpus: '0.5'
+
+  prometheus:
+    image: prom/prometheus:latest
+    container_name: tencent-docs-prometheus
+    restart: unless-stopped
+    command:
+      - '--config.file=/etc/prometheus/prometheus.yml'
+      - '--storage.tsdb.path=/prometheus'
+      - '--web.console.libraries=/etc/prometheus/console_libraries'
+      - '--web.console.templates=/etc/prometheus/consoles'
+      - '--storage.tsdb.retention.time=200h'
+      - '--web.enable-lifecycle'
+    ports:
+      - "9090:9090"
+    volumes:
+      - ./monitoring/prometheus.yml:/etc/prometheus/prometheus.yml
+      - ./monitoring/rules:/etc/prometheus/rules
+      - prometheus_data:/prometheus
+    networks:
+      - tencent-docs-network
+
+  grafana:
+    image: grafana/grafana:latest
+    container_name: tencent-docs-grafana
+    restart: unless-stopped
+    environment:
+      - GF_SECURITY_ADMIN_PASSWORD=${GRAFANA_PASSWORD:-admin123}
+      - GF_USERS_ALLOW_SIGN_UP=false
+    ports:
+      - "3000:3000"
+    volumes:
+      - grafana_data:/var/lib/grafana
+      - ./monitoring/grafana:/etc/grafana/provisioning
+    networks:
+      - tencent-docs-network
+    depends_on:
+      - prometheus
+
+volumes:
+  redis_data:
+  prometheus_data:
+  grafana_data:
+
+networks:
+  tencent-docs-network:
+    driver: bridge

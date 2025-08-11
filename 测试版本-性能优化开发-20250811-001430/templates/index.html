@@ -1,0 +1,847 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>腾讯文档自动化服务</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #0066ff;
+            --secondary-color: #00a4ff;
+            --success-color: #00c853;
+            --danger-color: #ff5252;
+            --dark-bg: #1a1a2e;
+            --card-bg: #ffffff;
+            --text-primary: #333333;
+            --text-secondary: #666666;
+            --border-color: #e0e0e0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container-main {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .header {
+            text-align: center;
+            color: white;
+            margin-bottom: 40px;
+            animation: fadeInDown 0.8s ease;
+        }
+
+        .header h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .header p {
+            font-size: 1.2rem;
+            opacity: 0.95;
+        }
+
+        .main-card {
+            background: var(--card-bg);
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+            padding: 40px;
+            animation: fadeInUp 0.8s ease;
+        }
+
+        .nav-tabs {
+            border-bottom: 2px solid var(--border-color);
+            margin-bottom: 30px;
+        }
+
+        .nav-tabs .nav-link {
+            color: var(--text-secondary);
+            border: none;
+            padding: 15px 30px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .nav-tabs .nav-link.active {
+            color: var(--primary-color);
+            background: transparent;
+        }
+
+        .nav-tabs .nav-link.active::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: var(--primary-color);
+            animation: slideIn 0.3s ease;
+        }
+
+        .form-section {
+            margin-bottom: 30px;
+        }
+
+        .form-label {
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .form-control, .form-select {
+            border: 2px solid var(--border-color);
+            border-radius: 10px;
+            padding: 12px 16px;
+            font-size: 16px;
+            transition: all 0.3s ease;
+        }
+
+        .form-control:focus, .form-select:focus {
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 0.2rem rgba(0, 102, 255, 0.1);
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            border: none;
+            border-radius: 10px;
+            padding: 12px 30px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(0, 102, 255, 0.3);
+        }
+
+        .alert {
+            border-radius: 10px;
+            border: none;
+            padding: 15px 20px;
+            animation: slideIn 0.5s ease;
+        }
+
+        .status-card {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            border-radius: 15px;
+            padding: 20px;
+            margin-top: 30px;
+            display: none;
+        }
+
+        .status-card.active {
+            display: block;
+            animation: fadeIn 0.5s ease;
+        }
+
+        .file-upload-area {
+            border: 3px dashed var(--border-color);
+            border-radius: 15px;
+            padding: 40px;
+            text-align: center;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .file-upload-area:hover {
+            border-color: var(--primary-color);
+            background: rgba(0, 102, 255, 0.05);
+        }
+
+        .file-upload-area.dragover {
+            border-color: var(--success-color);
+            background: rgba(0, 200, 83, 0.1);
+        }
+
+        .history-list {
+            max-height: 400px;
+            overflow-y: auto;
+        }
+
+        .history-item {
+            background: #f8f9fa;
+            border-radius: 10px;
+            padding: 15px;
+            margin-bottom: 10px;
+            transition: all 0.3s ease;
+        }
+
+        .history-item:hover {
+            background: #e9ecef;
+            transform: translateX(5px);
+        }
+
+        .analysis-result {
+            background: #f8f9fa;
+            border-radius: 10px;
+            padding: 20px;
+            margin-top: 20px;
+        }
+
+        .preview-table {
+            max-height: 300px;
+            overflow: auto;
+            margin-top: 20px;
+        }
+
+        .spinner-border {
+            width: 2rem;
+            height: 2rem;
+        }
+
+        .cookie-input {
+            font-family: monospace;
+            font-size: 14px;
+            min-height: 100px;
+        }
+
+        .feature-icon {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+
+        .feature-card {
+            text-align: center;
+            padding: 30px;
+            border-radius: 15px;
+            background: white;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+            height: 100%;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes slideIn {
+            from { width: 0; }
+            to { width: 100%; }
+        }
+
+        .toast-container {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 9999;
+        }
+
+        .progress {
+            height: 25px;
+            border-radius: 10px;
+            background: #f0f0f0;
+        }
+
+        .progress-bar {
+            border-radius: 10px;
+            transition: width 0.3s ease;
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2rem;
+            }
+            
+            .main-card {
+                padding: 20px;
+            }
+            
+            .nav-tabs .nav-link {
+                padding: 10px 15px;
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container-main">
+        <div class="header">
+            <h1><i class="bi bi-file-earmark-text"></i> 腾讯文档自动化服务</h1>
+            <p>高效管理您的腾讯文档 - 下载、上传、分析、修改一站式解决</p>
+        </div>
+
+        <div class="main-card">
+            <!-- 导航标签 -->
+            <ul class="nav nav-tabs" role="tablist">
+                <li class="nav-item">
+                    <a class="nav-link active" data-bs-toggle="tab" href="#settings">
+                        <i class="bi bi-gear"></i> 设置
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" data-bs-toggle="tab" href="#download">
+                        <i class="bi bi-cloud-download"></i> 下载文档
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" data-bs-toggle="tab" href="#upload">
+                        <i class="bi bi-cloud-upload"></i> 上传文档
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" data-bs-toggle="tab" href="#analyze">
+                        <i class="bi bi-graph-up"></i> 分析文档
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" data-bs-toggle="tab" href="#history">
+                        <i class="bi bi-clock-history"></i> 历史记录
+                    </a>
+                </li>
+            </ul>
+
+            <!-- 标签内容 -->
+            <div class="tab-content">
+                <!-- 设置标签 -->
+                <div class="tab-pane fade show active" id="settings">
+                    <div class="row">
+                        <div class="col-lg-8">
+                            <h3 class="mb-4">Cookie 设置</h3>
+                            <div class="form-section">
+                                <label class="form-label">
+                                    <i class="bi bi-person-circle"></i>
+                                    用户名
+                                </label>
+                                <input type="text" class="form-control" id="username" 
+                                       placeholder="输入您的用户名（用于保存设置）">
+                            </div>
+                            
+                            <div class="form-section">
+                                <label class="form-label">
+                                    <i class="bi bi-key"></i>
+                                    腾讯文档 Cookies
+                                </label>
+                                <textarea class="form-control cookie-input" id="cookies" 
+                                          placeholder="粘贴您的腾讯文档Cookies..."></textarea>
+                                <small class="text-muted mt-2 d-block">
+                                    <i class="bi bi-info-circle"></i>
+                                    从浏览器F12开发者工具获取cookies，格式：name1=value1; name2=value2
+                                </small>
+                            </div>
+                            
+                            <button class="btn btn-primary btn-lg" onclick="saveCookies()">
+                                <i class="bi bi-save"></i> 保存设置
+                            </button>
+                        </div>
+                        
+                        <div class="col-lg-4">
+                            <div class="feature-card">
+                                <i class="bi bi-shield-check feature-icon"></i>
+                                <h5>安全存储</h5>
+                                <p class="text-muted">您的Cookies将被加密存储，确保数据安全</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 下载标签 -->
+                <div class="tab-pane fade" id="download">
+                    <h3 class="mb-4">下载腾讯文档</h3>
+                    
+                    <div class="form-section">
+                        <label class="form-label">
+                            <i class="bi bi-link-45deg"></i>
+                            文档URL
+                        </label>
+                        <input type="text" class="form-control" id="downloadUrl" 
+                               placeholder="https://docs.qq.com/sheet/...">
+                    </div>
+                    
+                    <div class="form-section">
+                        <label class="form-label">
+                            <i class="bi bi-file-earmark"></i>
+                            导出格式
+                        </label>
+                        <select class="form-select" id="exportFormat">
+                            <option value="excel">Excel (.xlsx)</option>
+                            <option value="csv">CSV (.csv)</option>
+                        </select>
+                    </div>
+                    
+                    <button class="btn btn-primary btn-lg" onclick="downloadDocument()">
+                        <i class="bi bi-download"></i> 开始下载
+                    </button>
+                    
+                    <div class="status-card" id="downloadStatus">
+                        <div class="d-flex align-items-center">
+                            <div class="spinner-border text-primary me-3" role="status"></div>
+                            <div>
+                                <h5>正在下载...</h5>
+                                <p class="mb-0 text-muted">请稍候，正在处理您的请求</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 上传标签 -->
+                <div class="tab-pane fade" id="upload">
+                    <h3 class="mb-4">上传文档到腾讯文档</h3>
+                    
+                    <div class="file-upload-area" onclick="document.getElementById('uploadFile').click()"
+                         ondrop="handleDrop(event)" ondragover="handleDragOver(event)" 
+                         ondragleave="handleDragLeave(event)">
+                        <i class="bi bi-cloud-upload" style="font-size: 3rem; color: var(--primary-color);"></i>
+                        <h5 class="mt-3">拖拽文件到这里或点击选择</h5>
+                        <p class="text-muted">支持 Excel (.xlsx, .xls) 和 CSV 文件</p>
+                        <input type="file" id="uploadFile" style="display: none;" 
+                               accept=".xlsx,.xls,.csv" onchange="handleFileSelect(event)">
+                    </div>
+                    
+                    <div id="selectedFile" class="mt-3" style="display: none;">
+                        <div class="alert alert-info">
+                            <i class="bi bi-file-earmark-excel"></i>
+                            已选择文件: <span id="selectedFileName"></span>
+                        </div>
+                        <button class="btn btn-primary btn-lg" onclick="uploadDocument()">
+                            <i class="bi bi-upload"></i> 开始上传
+                        </button>
+                    </div>
+                </div>
+
+                <!-- 分析标签 -->
+                <div class="tab-pane fade" id="analyze">
+                    <h3 class="mb-4">分析Excel文档</h3>
+                    
+                    <div class="file-upload-area" onclick="document.getElementById('analyzeFile').click()">
+                        <i class="bi bi-file-earmark-bar-graph" style="font-size: 3rem; color: var(--primary-color);"></i>
+                        <h5 class="mt-3">选择要分析的Excel文件</h5>
+                        <input type="file" id="analyzeFile" style="display: none;" 
+                               accept=".xlsx,.xls" onchange="analyzeDocument(event)">
+                    </div>
+                    
+                    <div id="analysisResult" class="analysis-result" style="display: none;">
+                        <h4>分析结果</h4>
+                        <div id="analysisContent"></div>
+                        <div class="preview-table">
+                            <h5 class="mt-3">数据预览</h5>
+                            <div id="previewTable"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 历史记录标签 -->
+                <div class="tab-pane fade" id="history">
+                    <h3 class="mb-4">操作历史</h3>
+                    
+                    <button class="btn btn-outline-primary mb-3" onclick="loadHistory()">
+                        <i class="bi bi-arrow-clockwise"></i> 刷新历史
+                    </button>
+                    
+                    <div class="history-list" id="historyList">
+                        <p class="text-muted">暂无历史记录</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 功能特性展示 -->
+        <div class="row mt-5">
+            <div class="col-md-3 mb-4">
+                <div class="feature-card">
+                    <i class="bi bi-lightning-charge feature-icon"></i>
+                    <h5>高速处理</h5>
+                    <p class="text-muted">自动化处理，快速完成文档操作</p>
+                </div>
+            </div>
+            <div class="col-md-3 mb-4">
+                <div class="feature-card">
+                    <i class="bi bi-shield-lock feature-icon"></i>
+                    <h5>数据安全</h5>
+                    <p class="text-muted">加密存储，保护您的隐私数据</p>
+                </div>
+            </div>
+            <div class="col-md-3 mb-4">
+                <div class="feature-card">
+                    <i class="bi bi-graph-up-arrow feature-icon"></i>
+                    <h5>智能分析</h5>
+                    <p class="text-muted">深度分析Excel数据结构</p>
+                </div>
+            </div>
+            <div class="col-md-3 mb-4">
+                <div class="feature-card">
+                    <i class="bi bi-cloud-check feature-icon"></i>
+                    <h5>云端同步</h5>
+                    <p class="text-muted">与腾讯文档无缝集成</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast 通知容器 -->
+    <div class="toast-container"></div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <script>
+        // API基础URL
+        const API_BASE = '/api';
+        
+        // 获取保存的用户名
+        function getUsername() {
+            const username = document.getElementById('username').value || localStorage.getItem('username');
+            if (!username) {
+                showToast('请先设置用户名', 'warning');
+                document.querySelector('[href="#settings"]').click();
+                return null;
+            }
+            return username;
+        }
+        
+        // 保存Cookies
+        async function saveCookies() {
+            const username = document.getElementById('username').value;
+            const cookies = document.getElementById('cookies').value;
+            
+            if (!username || !cookies) {
+                showToast('请填写用户名和Cookies', 'warning');
+                return;
+            }
+            
+            try {
+                const response = await fetch(`${API_BASE}/save_cookies`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ username, cookies })
+                });
+                
+                const data = await response.json();
+                
+                if (data.success) {
+                    localStorage.setItem('username', username);
+                    showToast('设置保存成功！', 'success');
+                } else {
+                    showToast(data.error || '保存失败', 'danger');
+                }
+            } catch (error) {
+                showToast('网络错误: ' + error.message, 'danger');
+            }
+        }
+        
+        // 下载文档
+        async function downloadDocument() {
+            const username = getUsername();
+            if (!username) return;
+            
+            const docUrl = document.getElementById('downloadUrl').value;
+            const format = document.getElementById('exportFormat').value;
+            
+            if (!docUrl) {
+                showToast('请输入文档URL', 'warning');
+                return;
+            }
+            
+            const statusCard = document.getElementById('downloadStatus');
+            statusCard.classList.add('active');
+            
+            try {
+                const response = await fetch(`${API_BASE}/download`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        doc_url: docUrl,
+                        username: username,
+                        format: format
+                    })
+                });
+                
+                const data = await response.json();
+                
+                if (data.success) {
+                    showToast('下载成功！', 'success');
+                    // 创建下载链接
+                    const link = document.createElement('a');
+                    link.href = `${API_BASE}/download_file/${data.file_name}`;
+                    link.download = data.file_name;
+                    link.click();
+                } else {
+                    showToast(data.error || '下载失败', 'danger');
+                }
+            } catch (error) {
+                showToast('网络错误: ' + error.message, 'danger');
+            } finally {
+                statusCard.classList.remove('active');
+            }
+        }
+        
+        // 文件拖拽处理
+        function handleDragOver(e) {
+            e.preventDefault();
+            e.currentTarget.classList.add('dragover');
+        }
+        
+        function handleDragLeave(e) {
+            e.currentTarget.classList.remove('dragover');
+        }
+        
+        function handleDrop(e) {
+            e.preventDefault();
+            e.currentTarget.classList.remove('dragover');
+            
+            const files = e.dataTransfer.files;
+            if (files.length > 0) {
+                handleFileSelect({ target: { files: files } });
+            }
+        }
+        
+        // 文件选择处理
+        function handleFileSelect(e) {
+            const file = e.target.files[0];
+            if (file) {
+                document.getElementById('selectedFileName').textContent = file.name;
+                document.getElementById('selectedFile').style.display = 'block';
+            }
+        }
+        
+        // 上传文档
+        async function uploadDocument() {
+            const username = getUsername();
+            if (!username) return;
+            
+            const fileInput = document.getElementById('uploadFile');
+            const file = fileInput.files[0];
+            
+            if (!file) {
+                showToast('请选择文件', 'warning');
+                return;
+            }
+            
+            const formData = new FormData();
+            formData.append('file', file);
+            formData.append('username', username);
+            
+            try {
+                const response = await fetch(`${API_BASE}/upload`, {
+                    method: 'POST',
+                    body: formData
+                });
+                
+                const data = await response.json();
+                
+                if (data.success) {
+                    showToast('上传成功！', 'success');
+                    document.getElementById('selectedFile').style.display = 'none';
+                    fileInput.value = '';
+                } else {
+                    showToast(data.error || '上传失败', 'danger');
+                }
+            } catch (error) {
+                showToast('网络错误: ' + error.message, 'danger');
+            }
+        }
+        
+        // 分析文档
+        async function analyzeDocument(e) {
+            const file = e.target.files[0];
+            if (!file) return;
+            
+            const formData = new FormData();
+            formData.append('file', file);
+            
+            try {
+                const response = await fetch(`${API_BASE}/analyze`, {
+                    method: 'POST',
+                    body: formData
+                });
+                
+                const data = await response.json();
+                
+                if (data.success) {
+                    displayAnalysis(data.analysis);
+                } else {
+                    showToast(data.error || '分析失败', 'danger');
+                }
+            } catch (error) {
+                showToast('网络错误: ' + error.message, 'danger');
+            }
+        }
+        
+        // 显示分析结果
+        function displayAnalysis(analysis) {
+            const resultDiv = document.getElementById('analysisResult');
+            const contentDiv = document.getElementById('analysisContent');
+            const previewDiv = document.getElementById('previewTable');
+            
+            // 显示基本信息
+            contentDiv.innerHTML = `
+                <div class="row">
+                    <div class="col-md-6">
+                        <p><strong>文件名:</strong> ${analysis.file_name}</p>
+                        <p><strong>总行数:</strong> ${analysis.total_rows}</p>
+                        <p><strong>总列数:</strong> ${analysis.total_columns}</p>
+                    </div>
+                    <div class="col-md-6">
+                        <p><strong>列名:</strong></p>
+                        <ul class="small">
+                            ${analysis.columns.map(col => `<li>${col}</li>`).join('')}
+                        </ul>
+                    </div>
+                </div>
+            `;
+            
+            // 显示数据预览
+            if (analysis.preview && analysis.preview.length > 0) {
+                let tableHtml = '<table class="table table-sm table-striped"><thead><tr>';
+                
+                // 表头
+                for (let col of analysis.columns) {
+                    tableHtml += `<th>${col}</th>`;
+                }
+                tableHtml += '</tr></thead><tbody>';
+                
+                // 数据行
+                for (let row of analysis.preview) {
+                    tableHtml += '<tr>';
+                    for (let col of analysis.columns) {
+                        tableHtml += `<td>${row[col] || ''}</td>`;
+                    }
+                    tableHtml += '</tr>';
+                }
+                tableHtml += '</tbody></table>';
+                
+                previewDiv.innerHTML = tableHtml;
+            }
+            
+            resultDiv.style.display = 'block';
+        }
+        
+        // 加载历史记录
+        async function loadHistory() {
+            const username = getUsername();
+            if (!username) return;
+            
+            try {
+                const response = await fetch(`${API_BASE}/history?username=${username}`);
+                const data = await response.json();
+                
+                if (data.success) {
+                    displayHistory(data.history);
+                } else {
+                    showToast(data.error || '加载失败', 'danger');
+                }
+            } catch (error) {
+                showToast('网络错误: ' + error.message, 'danger');
+            }
+        }
+        
+        // 显示历史记录
+        function displayHistory(history) {
+            const historyDiv = document.getElementById('historyList');
+            
+            if (history.length === 0) {
+                historyDiv.innerHTML = '<p class="text-muted">暂无历史记录</p>';
+                return;
+            }
+            
+            let html = '';
+            for (let item of history) {
+                const icon = item.operation === 'download' ? 'bi-download' : 'bi-upload';
+                const color = item.operation === 'download' ? 'text-primary' : 'text-success';
+                
+                html += `
+                    <div class="history-item">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div>
+                                <i class="bi ${icon} ${color} me-2"></i>
+                                <strong>${item.doc_name || '未命名文档'}</strong>
+                            </div>
+                            <small class="text-muted">${new Date(item.created_at).toLocaleString()}</small>
+                        </div>
+                        ${item.doc_url ? `<small class="text-muted d-block mt-2">${item.doc_url}</small>` : ''}
+                    </div>
+                `;
+            }
+            
+            historyDiv.innerHTML = html;
+        }
+        
+        // 显示Toast通知
+        function showToast(message, type = 'info') {
+            const toastHtml = `
+                <div class="toast align-items-center text-white bg-${type} border-0" role="alert">
+                    <div class="d-flex">
+                        <div class="toast-body">
+                            ${message}
+                        </div>
+                        <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast"></button>
+                    </div>
+                </div>
+            `;
+            
+            const toastContainer = document.querySelector('.toast-container');
+            toastContainer.insertAdjacentHTML('beforeend', toastHtml);
+            
+            const toastElement = toastContainer.lastElementChild;
+            const toast = new bootstrap.Toast(toastElement);
+            toast.show();
+            
+            // 自动移除
+            setTimeout(() => {
+                toastElement.remove();
+            }, 5000);
+        }
+        
+        // 页面加载时初始化
+        document.addEventListener('DOMContentLoaded', () => {
+            // 恢复保存的用户名
+            const savedUsername = localStorage.getItem('username');
+            if (savedUsername) {
+                document.getElementById('username').value = savedUsername;
+            }
+        });
+    </script>
+</body>
+</html>

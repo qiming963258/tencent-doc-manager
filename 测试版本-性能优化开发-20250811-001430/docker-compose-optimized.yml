@@ -1,0 +1,107 @@
+version: '3.8'
+
+services:
+  app:
+    build: .
+    container_name: tencent-docs-app-optimized
+    restart: unless-stopped
+    environment:
+      - FLASK_ENV=production
+      - FLASK_DEBUG=false
+      - DATABASE_URL=sqlite:///data/tencent_docs.db
+      - SECRET_KEY=${SECRET_KEY:-your-secret-key-here}
+      - MAX_WORKERS=2  # 适配4H2G配置
+      - MAX_CONCURRENT_DOWNLOADS=3
+      - MAX_CONCURRENT_UPLOADS=2
+      - BROWSER_POOL_SIZE=3
+      - MEMORY_LIMIT_MB=1500
+      - PLAYWRIGHT_BROWSERS_PATH=/app/browsers
+    volumes:
+      - ./data:/app/data
+      - ./uploads:/app/uploads
+      - ./downloads:/app/downloads
+      - ./logs:/app/logs
+      - browser_cache:/app/browsers
+    networks:
+      - tencent-docs-network
+    depends_on:
+      - redis
+    deploy:
+      resources:
+        limits:
+          memory: 1.8G  # 为4H2G配置优化
+          cpus: '3.5'
+        reservations:
+          memory: 512M
+          cpus: '1.0'
+    shm_size: 2gb  # Chromium需要足够的共享内存
+
+  nginx:
+    image: nginx:alpine
+    container_name: tencent-docs-nginx-optimized
+    restart: unless-stopped
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./nginx-optimized.conf:/etc/nginx/nginx.conf
+      - ./ssl:/etc/nginx/ssl
+      - ./static:/var/www/static
+    networks:
+      - tencent-docs-network
+    depends_on:
+      - app
+    deploy:
+      resources:
+        limits:
+          memory: 128M
+          cpus: '0.3'
+
+  redis:
+    image: redis:7-alpine
+    container_name: tencent-docs-redis-optimized
+    restart: unless-stopped
+    command: redis-server --maxmemory 128mb --maxmemory-policy allkeys-lru --save 60 1000
+    volumes:
+      - redis_data:/data
+    networks:
+      - tencent-docs-network
+    deploy:
+      resources:
+        limits:
+          memory: 150M
+          cpus: '0.2'
+
+  # 性能监控服务（可选，资源允许时启用）
+  prometheus:
+    image: prom/prometheus:latest
+    container_name: tencent-docs-prometheus-light
+    restart: unless-stopped
+    command:
+      - '--config.file=/etc/prometheus/prometheus.yml'
+      - '--storage.tsdb.path=/prometheus'
+      - '--storage.tsdb.retention.time=24h'  # 减少存储时间
+      - '--web.enable-lifecycle'
+    ports:
+      - "9090:9090"
+    volumes:
+      - ./monitoring/prometheus-light.yml:/etc/prometheus/prometheus.yml
+      - prometheus_data:/prometheus
+    networks:
+      - tencent-docs-network
+    deploy:
+      resources:
+        limits:
+          memory: 256M
+          cpus: '0.2'
+    profiles:
+      - monitoring
+
+volumes:
+  redis_data:
+  prometheus_data:
+  browser_cache:  # 浏览器缓存持久化
+
+networks:
+  tencent-docs-network:
+    driver: bridge
