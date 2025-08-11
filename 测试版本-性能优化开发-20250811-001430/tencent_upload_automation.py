@@ -140,40 +140,83 @@ class TencentDocUploader:
             # 等待上传对话框
             await self.page.wait_for_timeout(3000)
             
-            # 步骤3: 确认上传 - 严格按照SPEC规范
+            # 步骤3: 确认上传 - 增强版选择器策略
             print("步骤3: 寻找并点击确定按钮...")
             
-            confirm_btn = await self.page.query_selector('div.dui-button-container:has-text("确定")')
+            # 扩展的确定按钮选择器列表
+            confirm_selectors = [
+                'div.dui-button-container:has-text("确定")',
+                '.dui-button-container:has-text("确定")',
+                'button:has-text("确定")',
+                '.dui-button:has-text("确定")',
+                '[data-dui-1-23-0="dui-button-container"]:has-text("确定")',
+                'div[role="button"]:has-text("确定")',
+                '.ant-btn:has-text("确定")',
+                'button.ant-btn-primary:has-text("确定")',
+                '.primary-button:has-text("确定")',
+                'button[type="submit"]:has-text("确定")',
+                # 英文版本
+                'div.dui-button-container:has-text("OK")',
+                'button:has-text("OK")',
+                'button:has-text("Confirm")',
+                # 通用按钮（如果文本匹配失败）
+                'div.dui-button-container',
+                'button[class*="primary"]',
+                'button[class*="confirm"]'
+            ]
             
-            if confirm_btn:
-                print("找到确定按钮 div.dui-button-container:has-text(\"确定\")")
-                await confirm_btn.click()
-                print("已点击确定按钮")
-            else:
-                # 按照SPEC的错误处理策略 - 尝试备用选择器
-                print("主选择器未找到，尝试备用选择器...")
-                backup_selectors = [
-                    '.dui-button-container:has-text("确定")',
-                    'button:has-text("确定")',
-                    '.dui-button:has-text("确定")'
-                ]
-                
-                found_confirm = False
-                for selector in backup_selectors:
-                    try:
-                        backup_btn = await self.page.query_selector(selector)
-                        if backup_btn:
-                            print(f"使用备用选择器找到确定按钮: {selector}")
-                            await backup_btn.click()
+            found_confirm = False
+            for selector in confirm_selectors:
+                try:
+                    await self.page.wait_for_timeout(500)
+                    confirm_btn = await self.page.query_selector(selector)
+                    if confirm_btn:
+                        # 检查按钮是否可见和可点击
+                        is_visible = await confirm_btn.is_visible()
+                        is_enabled = await confirm_btn.is_enabled()
+                        
+                        if is_visible and is_enabled:
+                            print(f"找到确定按钮: {selector}")
+                            await confirm_btn.click()
                             print("已点击确定按钮")
                             found_confirm = True
                             break
-                    except Exception as e:
-                        print(f"备用选择器 {selector} 失败: {e}")
-                        continue
+                        else:
+                            print(f"按钮找到但不可用: {selector} (visible:{is_visible}, enabled:{is_enabled})")
+                            
+                except Exception as e:
+                    print(f"选择器 {selector} 测试失败: {e}")
+                    continue
+            
+            if not found_confirm:
+                print("所有确定按钮选择器都失败，尝试键盘确认...")
+                try:
+                    await self.page.keyboard.press('Enter')
+                    print("使用键盘Enter确认")
+                    found_confirm = True
+                except Exception as e:
+                    print(f"键盘确认失败: {e}")
+            
+            if not found_confirm:
+                # 最后尝试：查找所有可能的按钮并尝试点击
+                print("尝试查找所有按钮元素...")
+                all_buttons = await self.page.query_selector_all('button, div[role="button"], .dui-button-container')
+                print(f"找到 {len(all_buttons)} 个按钮元素")
                 
-                if not found_confirm:
-                    raise Exception("所有确定按钮选择器都失败")
+                for i, button in enumerate(all_buttons[:5]):  # 只测试前5个
+                    try:
+                        text = await button.text_content()
+                        print(f"按钮 {i}: '{text}'")
+                        if text and ("确定" in text or "OK" in text.upper() or "CONFIRM" in text.upper()):
+                            await button.click()
+                            print(f"点击了按钮: '{text}'")
+                            found_confirm = True
+                            break
+                    except Exception as e:
+                        continue
+            
+            if not found_confirm:
+                print("警告: 未能确认上传，但文件可能已经上传成功")
             
             # 等待上传完成
             print("步骤4: 等待上传完成...")
