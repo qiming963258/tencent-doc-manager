@@ -40,7 +40,7 @@ class TencentDocPlaywrightExporter:
                     cookie_list.append({
                         'name': name,
                         'value': value,
-                        'domain': '.qq.com',
+                        'domain': '.docs.qq.com',  # 修复：使用正确的域名
                         'path': '/'
                     })
             await self.page.context.add_cookies(cookie_list)
@@ -153,29 +153,102 @@ class TencentDocPlaywrightExporter:
                         if filtered_lines:
                             table_data = filtered_lines
             
-            # 方法3: 尝试寻找导出按钮并使用
+            # 方法3: 使用腾讯文档的导出功能
             if not table_data:
-                print("方法3: 寻找导出功能...")
+                print("方法3: 使用腾讯文档导出功能...")
+                
+                # 添加调试信息
+                page_title = await self.page.title()
+                print(f"当前页面标题: {page_title}")
+                
+                # 检查页面中是否有特定的权限或登录提示
+                login_indicators = await self.page.query_selector_all('text="登录", text="权限", text="403", text="unauthorized"')
+                if login_indicators:
+                    print("检测到可能的权限或登录问题")
+                
+                # 输出页面中所有包含"more"的元素用于调试
+                all_elements = await self.page.query_selector_all('*')
+                more_elements = []
+                for element in all_elements[:50]:  # 限制数量
+                    try:
+                        class_name = await element.get_attribute('class')
+                        if class_name and 'more' in class_name.lower():
+                            more_elements.append(class_name)
+                    except:
+                        pass
+                
+                if more_elements:
+                    print(f"发现包含'more'的元素类名: {more_elements[:5]}")  # 只显示前5个
+                else:
+                    print("未发现包含'more'的元素")
+                
                 try:
-                    # 查找可能的导出或下载按钮
-                    export_selectors = [
-                        '[class*="export"]',
-                        '[class*="download"]', 
-                        'button:has-text("导出")',
-                        'button:has-text("下载")',
-                        '.toolbar [class*="more"]'
+                    # 步骤1: 尝试多种可能的更多按钮选择器
+                    more_selectors = [
+                        '.titlebar-icon-more',
+                        '.titlebar-icon.titlebar-icon-more', 
+                        'div.titlebar-icon-more',
+                        '[class*="titlebar-icon-more"]',
+                        '[class*="more"]',
+                        '.dui-icon-more',
+                        '[aria-label*="更多"]',
+                        '[title*="更多"]'
                     ]
                     
-                    for selector in export_selectors:
-                        export_btn = await self.page.query_selector(selector)
-                        if export_btn:
-                            print(f"找到导出按钮: {selector}")
-                            await export_btn.click()
-                            await self.page.wait_for_timeout(3000)
-                            # 这里需要处理导出对话框...
+                    more_btn = None
+                    for selector in more_selectors:
+                        more_btn = await self.page.query_selector(selector)
+                        if more_btn:
+                            print(f"找到更多按钮 (选择器: {selector})，点击...")
                             break
+                    
+                    if more_btn:
+                        await more_btn.click()
+                        await self.page.wait_for_timeout(2000)
+                        
+                        # 步骤2: 点击"导出为"菜单项
+                        export_menu = await self.page.query_selector('.dui-menu-submenu.mainmenu-submenu-exportAs, .mainmenu-submenu-exportAs')
+                        if export_menu:
+                            print("找到导出为菜单，点击...")
+                            await export_menu.click()
+                            await self.page.wait_for_timeout(1000)
+                            
+                            # 步骤3: 点击CSV导出选项
+                            csv_option = await self.page.query_selector('.mainmenu-item-export-csv')
+                            if csv_option:
+                                print("找到CSV导出选项，开始下载...")
+                                # 设置下载监听
+                                download_promise = self.page.wait_for_event('download', timeout=30000)
+                                await csv_option.click()
+                                
+                                # 等待下载完成
+                                download = await download_promise
+                                if download:
+                                    print(f"下载开始: {download.suggested_filename}")
+                                    # 保存下载的文件到指定位置
+                                    download_path = await download.path()
+                                    if download_path:
+                                        import shutil
+                                        # 确定输出文件名
+                                        doc_id = re.search(r'/(?:sheet|doc)/([A-Za-z0-9]+)', doc_url)
+                                        if doc_id:
+                                            output_filename = f"tencent_doc_{doc_id.group(1)}_downloaded.csv"
+                                        else:
+                                            output_filename = "tencent_doc_downloaded.csv"
+                                        
+                                        shutil.move(download_path, output_filename)
+                                        print(f"[SUCCESS] 文件已保存到: {output_filename}")
+                                        return output_filename
+                                else:
+                                    print("下载失败或超时")
+                        else:
+                            print("未找到导出为菜单")
+                    else:
+                        print("未找到更多按钮")
+                        
                 except Exception as e:
-                    print(f"导出按钮方法失败: {e}")
+                    print(f"导出功能失败: {e}")
+                    # 如果导出失败，继续尝试其他方法
             
             # 方法4: 直接从页面提取所有可见文本并智能解析
             if not table_data:
@@ -269,7 +342,11 @@ class TencentDocPlaywrightExporter:
             # 提取数据
             data = await self.extract_table_data(doc_url)
             
-            if data:
+            # 如果数据提取返回的是文件名，说明下载成功
+            if isinstance(data, str) and data.endswith('.csv'):
+                print("使用腾讯文档原生导出功能下载成功")
+                return data
+            elif data:
                 success = await self.save_to_csv(data, output_path)
                 return output_path if success else None
             else:

@@ -1,0 +1,88 @@
+{
+  "timestamp": "2025-08-12T17:29:25.937058",
+  "test_summary": {
+    "overall_status": "partial_failure",
+    "successful_tests": 3,
+    "total_tests": 4,
+    "key_findings": [
+      "Claude封装程序运行正常",
+      "直接集成适配器工作正常"
+    ],
+    "recommendations": [
+      "请检查失败的测试项并修复问题"
+    ]
+  },
+  "claude_wrapper_health": {
+    "status": "success",
+    "claude_wrapper_healthy": true,
+    "models_available": 4,
+    "api_success_rate": 88.0503144654088
+  },
+  "main_system_health": {
+    "status": "error",
+    "error": "HTTPConnectionPool(host='localhost', port=5000): Max retries exceeded with url: /api/health (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7fe607311250>: Failed to establish a new connection: [Errno 111] Connection refused'))"
+  },
+  "direct_integration": {
+    "status": "success",
+    "results": {
+      "health_check": {
+        "status": "healthy",
+        "service": "Claude Mini Wrapper",
+        "version": "1.0.0",
+        "uptime": 5068.8051199913025,
+        "proxy_url": "https://code2.ppchat.vip",
+        "models_available": [
+          "claude-sonnet-4-20250514",
+          "claude-3-5-haiku-20241022",
+          "claude-3-7-sonnet-20250219",
+          "claude-sonnet-4-20250514-thinking"
+        ],
+        "api_stats": {
+          "total_requests": 159,
+          "successful_requests": 140,
+          "failed_requests": 19,
+          "total_response_time": 1968.9914593696594,
+          "average_response_time": 14.064224709783282,
+          "cache_hits": 0,
+          "uptime": 5068.805128097534,
+          "uptime_formatted": "5068.81秒",
+          "success_rate": 88.0503144654088
+        }
+      },
+      "single_analysis": {
+        "analysis_type": "risk_assessment",
+        "result": "基于提供的信息，我对此项目负责人变更进行风险评估：\n\n## 风险评估结果\n\n**风险等级：L2（中风险）**\n\n**风险分析：**\n1. **知识传承风险**：张三作为原负责人掌握的项目细节、历史决策背景可能无法完全传递给李四\n2. **工作连续性风险**：负责人变更可能导致项目进度暂时停滞，影响整体时间线\n3. **团队适应风险**：团队成员需要适应新负责人的管理风格和工作方式\n4. **任务重分配风险**：重新分配工作任务可能导致资源配置不当或遗漏关键任务\n5. **沟通协调风险**：新负责人需要重新建立与各相关方的沟通渠道\n\n**建议操作：**\n1. **制定详细交接计划**：安排张三与李四进行充分的工作交接，包括项目文档、进度状态、关键联系人等\n2. **召开团队会议**：正式介绍新负责人，明确新的工作流程和沟通机制\n3. **任务梳理确认**：与团队成员逐一确认重新分配的任务，确保无遗漏\n4. **设置过渡期**：给予1-2周的过渡期，让李四熟悉项目情况\n5. **建立监控机制**：加强项目进度监控，及时发现和解决问题\n\n**置信度：0.8**\n\n此评估基于一般项目管理经验，具体风险程度还需结合项目复杂度、团队规模、李四的相关经验等因素进行调整。",
+        "confidence": 0.85,
+        "risk_level": "L2",
+        "recommendations": [
+          "**"
+        ],
+        "model_used": "claude-sonnet-4-20250514",
+        "processing_time": 10.370786666870117,
+        "timestamp": "2025-08-12T17:29:36.430173"
+      },
+      "batch_analysis": {
+        "total_processed": 2,
+        "successful_analyses": 2,
+        "sample_result": {
+          "analysis_type": "risk_assessment",
+          "result": "基于您提供的信息，我对这次修改进行风险评估：\n\n## 风险评估结果\n\n**风险等级：L2（中风险）**\n\n**风险分析：**\n1. **责任转移风险**：项目负责人变更涉及核心责任的转移，可能导致项目管理连续性中断\n2. **权限管理风险**：新负责人可能尚未获得相应的系统权限和资源访问权\n3. **信息传递风险**：项目历史信息、进度状态、关键决策可能未完整交接给新负责人\n4. **团队协作风险**：团队成员可能不了解负责人变更，影响后续工作协调\n5. **合规性风险**：某些项目的负责人变更可能需要特定的审批流程或文档记录\n\n**建议操作：**\n1. **验证变更合理性**：确认此次负责人变更是否经过适当审批\n2. **权限同步更新**：及时为新负责人'李四'分配相应的系统权限和资源访问权\n3. **工作交接确认**：确保原负责人'张三'已完成工作交接，包括项目文档、进度状态等\n4. **通知相关方**：向项目团队成员、上级领导及相关利益方发送变更通知\n5. **记录变更日志**：详细记录变更时间、原因、审批人等信息，便于后续审计\n6. **监控过渡期**：在变更后的1-2周内密切关注项目进展，确保平稳过渡\n\n**置信度：0.75**\n\n*注：由于缺少项目具体类型、变更原因、审批状态等详细信息，建议在实施前补充相关背景信息以进行更精确的风险评估。*",
+          "confidence": 0.85,
+          "risk_level": "L2",
+          "recommendations": [
+            "**",
+            "由于缺少项目具体类型、变更原因、审批状态等详细信息，建议在实施前补充相关背景信息以进行更精确的风险评估。*"
+          ],
+          "model_used": "claude-sonnet-4-20250514",
+          "processing_time": 12.35641360282898,
+          "timestamp": "2025-08-12T17:29:48.790751",
+          "modification_id": "test_1"
+        }
+      }
+    }
+  },
+  "end_to_end_integration": {
+    "status": "skipped",
+    "reason": "前置健康检查失败"
+  }
+}

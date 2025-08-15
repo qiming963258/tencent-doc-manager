@@ -1,0 +1,274 @@
+{
+  "matrix_size": [
+    4,
+    19
+  ],
+  "risk_matrix": [
+    [
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      2,
+      1,
+      2,
+      2,
+      0,
+      0,
+      2,
+      1,
+      0,
+      1,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      1,
+      0,
+      3,
+      2,
+      0,
+      2,
+      0,
+      0,
+      3,
+      2,
+      1,
+      0,
+      1,
+      0,
+      0,
+      1
+    ],
+    [
+      0,
+      0,
+      0,
+      1,
+      3,
+      0,
+      2,
+      0,
+      2,
+      0,
+      0,
+      0,
+      2,
+      1,
+      0,
+      1,
+      0,
+      0,
+      1
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ]
+  ],
+  "modification_locations": [
+    {
+      "row": 0,
+      "col": 3,
+      "column_name": "任务发起时间",
+      "risk_level": "L3",
+      "change_type": "modification"
+    },
+    {
+      "row": 0,
+      "col": 6,
+      "column_name": "具体计划内容",
+      "risk_level": "L2",
+      "change_type": "modification"
+    },
+    {
+      "row": 0,
+      "col": 7,
+      "column_name": "邓总指导登记",
+      "risk_level": "L3",
+      "change_type": "modification"
+    },
+    {
+      "row": 0,
+      "col": 8,
+      "column_name": "负责人",
+      "risk_level": "L2",
+      "change_type": "modification"
+    },
+    {
+      "row": 0,
+      "col": 9,
+      "column_name": "协助人",
+      "risk_level": "L2",
+      "change_type": "modification"
+    },
+    {
+      "row": 0,
+      "col": 12,
+      "column_name": "预计完成时间",
+      "risk_level": "L2",
+      "change_type": "modification"
+    },
+    {
+      "row": 0,
+      "col": 13,
+      "column_name": "完成进度",
+      "risk_level": "L3",
+      "change_type": "modification"
+    },
+    {
+      "row": 0,
+      "col": 15,
+      "column_name": "复盘时间",
+      "risk_level": "L3",
+      "change_type": "modification"
+    },
+    {
+      "row": 1,
+      "col": 3,
+      "column_name": "任务发起时间",
+      "risk_level": "L3",
+      "change_type": "modification"
+    },
+    {
+      "row": 1,
+      "col": 5,
+      "column_name": "关键KR对齐",
+      "risk_level": "L1",
+      "change_type": "modification"
+    },
+    {
+      "row": 1,
+      "col": 6,
+      "column_name": "具体计划内容",
+      "risk_level": "L2",
+      "change_type": "modification"
+    },
+    {
+      "row": 1,
+      "col": 8,
+      "column_name": "负责人",
+      "risk_level": "L2",
+      "change_type": "modification"
+    },
+    {
+      "row": 1,
+      "col": 11,
+      "column_name": "重要程度",
+      "risk_level": "L1",
+      "change_type": "modification"
+    },
+    {
+      "row": 1,
+      "col": 12,
+      "column_name": "预计完成时间",
+      "risk_level": "L2",
+      "change_type": "modification"
+    },
+    {
+      "row": 1,
+      "col": 13,
+      "column_name": "完成进度",
+      "risk_level": "L3",
+      "change_type": "modification"
+    },
+    {
+      "row": 1,
+      "col": 15,
+      "column_name": "复盘时间",
+      "risk_level": "L3",
+      "change_type": "modification"
+    },
+    {
+      "row": 1,
+      "col": 18,
+      "column_name": "进度分析总结",
+      "risk_level": "L3",
+      "change_type": "modification"
+    },
+    {
+      "row": 2,
+      "col": 3,
+      "column_name": "任务发起时间",
+      "risk_level": "L3",
+      "change_type": "modification"
+    },
+    {
+      "row": 2,
+      "col": 4,
+      "column_name": "目标对齐",
+      "risk_level": "L1",
+      "change_type": "modification"
+    },
+    {
+      "row": 2,
+      "col": 6,
+      "column_name": "具体计划内容",
+      "risk_level": "L2",
+      "change_type": "modification"
+    },
+    {
+      "row": 2,
+      "col": 8,
+      "column_name": "负责人",
+      "risk_level": "L2",
+      "change_type": "modification"
+    },
+    {
+      "row": 2,
+      "col": 12,
+      "column_name": "预计完成时间",
+      "risk_level": "L2",
+      "change_type": "modification"
+    },
+    {
+      "row": 2,
+      "col": 13,
+      "column_name": "完成进度",
+      "risk_level": "L3",
+      "change_type": "modification"
+    },
+    {
+      "row": 2,
+      "col": 15,
+      "column_name": "复盘时间",
+      "risk_level": "L3",
+      "change_type": "modification"
+    },
+    {
+      "row": 2,
+      "col": 18,
+      "column_name": "进度分析总结",
+      "risk_level": "L3",
+      "change_type": "modification"
+    }
+  ],
+  "risk_distribution": {
+    "L1": 3,
+    "L2": 10,
+    "L3": 12
+  }
+}

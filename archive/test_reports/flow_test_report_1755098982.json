@@ -1,0 +1,96 @@
+{
+  "test_timestamp": "2025-08-13T23:29:42.470701",
+  "total_time": 0.31568002700805664,
+  "success_rate": 1.0,
+  "test_results": {
+    "steps_1_3": {
+      "status": "success",
+      "original_shape": [
+        3,
+        10
+      ],
+      "modified_shape": [
+        3,
+        10
+      ],
+      "changes_count": 3,
+      "changes": [
+        {
+          "row": 1,
+          "column": "负责人",
+          "original": "张三",
+          "modified": "刘九"
+        },
+        {
+          "row": 2,
+          "column": "协助人",
+          "original": "赵六",
+          "modified": "陈十"
+        },
+        {
+          "row": 2,
+          "column": "具体计划内容",
+          "original": "优化数据库性能",
+          "modified": "优化数据库性能并增加缓存机制"
+        }
+      ]
+    },
+    "steps_4_5": {
+      "status": "success",
+      "column_mapping": {
+        "序号": "序号",
+        "项目类型": "项目类型",
+        "来源": "来源",
+        "任务发起时间": "任务发起时间",
+        "负责人": "负责人",
+        "协助人": "协助人",
+        "具体计划内容": "具体计划内容",
+        "重要程度": "重要程度",
+        "预计完成时间": "预计完成时间",
+        "完成进度": "完成进度"
+      },
+      "matched_columns": 10,
+      "missing_columns": 9,
+      "scored_changes": [
+        {
+          "row": 1,
+          "column": "负责人",
+          "original": "张三",
+          "modified": "刘九",
+          "risk_level": "L2",
+          "intensity": 0.8
+        },
+        {
+          "row": 2,
+          "column": "协助人",
+          "original": "赵六",
+          "modified": "陈十",
+          "risk_level": "L2",
+          "intensity": 0.8
+        },
+        {
+          "row": 2,
+          "column": "具体计划内容",
+          "original": "优化数据库性能",
+          "modified": "优化数据库性能并增加缓存机制",
+          "risk_level": "L2",
+          "intensity": 1.0
+        }
+      ]
+    },
+    "steps_6_7": {
+      "status": "success",
+      "ui_data_file": "ui_data_test_1755098982.json",
+      "matrix_size": "30×19",
+      "active_points": 3,
+      "ui_service_status": "运行正常"
+    },
+    "steps_8_10": {
+      "status": "success",
+      "excel_file_exists": true,
+      "upload_simulated": true,
+      "document_link": "https://docs.qq.com/sheet/SIMULATED_LINK_123456",
+      "download_link": "http://192.140.176.198:8089/uploads/half_filled_result_1755067386.xlsx"
+    }
+  }
+}

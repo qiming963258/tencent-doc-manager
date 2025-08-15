@@ -1,8 +1,41 @@
 {
   "permissions": {
     "allow": [
-      "Bash(git add:*)"
+      "Bash(git add:*)",
+      "Bash(git config:*)",
+      "Bash(mkdir:*)",
+      "Bash(pip install:*)",
+      "Bash(playwright install:*)",
+      "Bash(find:*)",
+      "Bash(python3:*)",
+      "Bash(cp:*)",
+      "Bash(python:*)",
+      "Bash(npx -y @smithery/cli install @negokaz/excel-mcp-server --client claude)",
+      "Bash(claude mcp add excel:*)",
+      "Bash(claude mcp add context7 -- npx -y @upstash/context7-mcp@latest)",
+      "Bash(claude mcp add fetch:*)",
+      "Bash(claude mcp add-json \"excel-optimized\" '{\"\"command\"\":\"\"npx\"\",\"\"args\"\":[\"\"-y\"\",\"\"@negokaz/excel-mcp-server\"\"],\"\"env\"\":{\"\"EXCEL_MCP_PAGING_CELLS_LIMIT\"\":\"\"2000\"\"}}')",
+      "Bash(claude mcp:*)",
+      "mcp__ide__executeCode",
+      "mcp__excel-optimized__excel_read_sheet",
+      "mcp__excel-optimized__excel_write_to_sheet",
+      "mcp__context7__resolve-library-id",
+      "mcp__context7__get-library-docs",
+      "mcp__fetch__imageFetch",
+      "WebFetch(domain:github.com)",
+      "Bash(env)",
+      "Bash(curl:*)",
+      "Bash(pkill:*)",
+      "Bash(timeout:*)",
+      "Bash(sqlite3:*)",
+      "Bash(kill:*)",
+      "Bash(rm:*)",
+      "Bash(lsof:*)",
+      "WebSearch",
+      "Bash(nginx:*)",
+      "Bash(iptables:*)"
     ],
-    "deny": []
+    "deny": [],
+    "defaultMode": "acceptEdits"
   }
 }

@@ -11,15 +11,24 @@ import time
 import argparse
 from pathlib import Path
 from playwright.async_api import async_playwright
+from csv_version_manager import CSVVersionManager
 
 
 class TencentDocAutoExporter:
     """腾讯文档自动导出工具 - 专注下载自动化"""
     
-    def __init__(self, download_dir=None):
+    def __init__(self, download_dir=None, enable_version_management=True):
+        """初始化导出工具"""
         self.browser = None
         self.page = None
         self.download_dir = download_dir or os.path.join(os.getcwd(), "downloads")
+        
+        # 初始化版本管理器
+        self.enable_version_management = enable_version_management
+        if self.enable_version_management:
+            self.version_manager = CSVVersionManager()
+        else:
+            self.version_manager = None
         
     async def start_browser(self, headless=False):
         """启动浏览器"""
@@ -504,10 +513,14 @@ async def main():
     parser.add_argument('-f', '--format', default='excel', choices=['excel', 'xlsx', 'csv'], help='导出格式')
     parser.add_argument('-d', '--download-dir', help='下载目录')
     parser.add_argument('--visible', action='store_true', help='显示浏览器窗口')
+    parser.add_argument('--disable-version-management', action='store_true', help='禁用版本管理功能')
     
     args = parser.parse_args()
     
-    exporter = TencentDocAutoExporter(download_dir=args.download_dir)
+    exporter = TencentDocAutoExporter(
+        download_dir=args.download_dir,
+        enable_version_management=not args.disable_version_management
+    )
     
     try:
         await exporter.start_browser(headless=not args.visible)
@@ -519,6 +532,36 @@ async def main():
         
         if result:
             print(f"[成功] 自动导出完成，文件保存在: {result}")
+            
+            # 版本管理处理
+            if exporter.enable_version_management and exporter.version_manager:
+                print("正在进行版本管理处理...")
+                
+                for file_path in result:
+                    # 从文件名提取表格名称
+                    file_name = Path(file_path).stem
+                    version_result = exporter.version_manager.add_new_version(file_path, file_name)
+                    
+                    if version_result["success"]:
+                        print(f"✅ {version_result['message']}")
+                        if version_result.get("archived_files"):
+                            print(f"📁 已归档旧版本: {', '.join(version_result['archived_files'])}")
+                        
+                        # 准备对比文件
+                        table_name = version_result["table_name"]
+                        comparison_result = exporter.version_manager.prepare_comparison(table_name)
+                        if comparison_result["success"]:
+                            print(f"📊 对比文件已准备: {comparison_result['message']}")
+                            print(f"📄 当前版本: {Path(comparison_result['current_file']).name}")
+                            print(f"📄 对比版本: {Path(comparison_result['previous_file']).name}")
+                        else:
+                            print(f"⚠️  {comparison_result.get('message', '无法准备对比文件')}")
+                    else:
+                        action = version_result.get("action", "unknown")
+                        if action == "duplicate_content":
+                            print(f"ℹ️  文件内容未变化，与 {version_result.get('duplicate_file', '现有文件')} 相同")
+                        else:
+                            print(f"⚠️  版本管理处理失败: {version_result.get('error', version_result.get('message', '未知错误'))}")
         else:
             print("[失败] 自动导出失败")
             

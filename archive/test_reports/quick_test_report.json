@@ -1,0 +1,28 @@
+{
+  "test_execution_time": "2025-08-12T22:42:20.052070",
+  "test_type": "quick_e2e_test",
+  "data_processing_results": {
+    "original_records": 3,
+    "modified_records": 4,
+    "columns_analyzed": 19,
+    "total_changes_detected": 25,
+    "risk_distribution": {
+      "L1": 3,
+      "L2": 10,
+      "L3": 12
+    }
+  },
+  "ai_analysis_results": {
+    "skipped_for_performance": true,
+    "l2_modifications_detected": 10
+  },
+  "visualization_results": {
+    "heatmap_data_generated": true,
+    "modification_locations_mapped": 25,
+    "matrix_dimensions": [
+      4,
+      19
+    ]
+  },
+  "overall_success": true
+}

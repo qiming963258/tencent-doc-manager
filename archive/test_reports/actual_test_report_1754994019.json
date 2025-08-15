@@ -1,0 +1,14 @@
+{
+  "total_tests": 5,
+  "passed_tests": 5,
+  "success_rate": 100.0,
+  "overall_status": "优秀",
+  "test_results": {
+    "Claude封装程序直接调用": true,
+    "主系统健康状态": true,
+    "集成适配器功能": true,
+    "系统统计功能": true,
+    "文件上传功能": true
+  },
+  "timestamp": "2025-08-12T18:20:19.372252"
+}

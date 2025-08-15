@@ -1,0 +1,99 @@
+{
+  "timestamp": "2025-08-12T17:36:01.044686",
+  "test_summary": {
+    "overall_status": "partial_failure",
+    "successful_tests": 3,
+    "total_tests": 4,
+    "key_findings": [
+      "Claude封装程序运行正常",
+      "主系统AI分析器集成成功",
+      "直接集成适配器工作正常"
+    ],
+    "recommendations": [
+      "请检查失败的测试项并修复问题"
+    ]
+  },
+  "claude_wrapper_health": {
+    "status": "success",
+    "claude_wrapper_healthy": true,
+    "models_available": 4,
+    "api_success_rate": 88.27160493827161
+  },
+  "main_system_health": {
+    "status": "success",
+    "main_system_healthy": true,
+    "ai_analyzer_available": true,
+    "system_stats": {
+      "ai_analyses_performed": 0,
+      "success_rate": 0.0,
+      "successful_analyses": 0,
+      "total_analyses": 0,
+      "uptime_hours": 0.04,
+      "visualizations_created": 0
+    }
+  },
+  "direct_integration": {
+    "status": "success",
+    "results": {
+      "health_check": {
+        "status": "healthy",
+        "service": "Claude Mini Wrapper",
+        "version": "1.0.0",
+        "uptime": 5463.907636165619,
+        "proxy_url": "https://code2.ppchat.vip",
+        "models_available": [
+          "claude-sonnet-4-20250514",
+          "claude-3-5-haiku-20241022",
+          "claude-3-7-sonnet-20250219",
+          "claude-sonnet-4-20250514-thinking"
+        ],
+        "api_stats": {
+          "total_requests": 162,
+          "successful_requests": 143,
+          "failed_requests": 19,
+          "total_response_time": 2003.8470826148987,
+          "average_response_time": 14.012916661642649,
+          "cache_hits": 0,
+          "uptime": 5463.907644510269,
+          "uptime_formatted": "5463.91秒",
+          "success_rate": 88.27160493827161
+        }
+      },
+      "single_analysis": {
+        "analysis_type": "risk_assessment",
+        "result": "基于您提供的信息，我对此项目负责人变更进行风险评估：\n\n## 风险评估结果\n\n**风险等级：L2（中风险）**\n\n**风险分析：**\n1. **业务连续性风险**：项目负责人变更可能导致项目进度中断，新负责人需要时间熟悉项目状况\n2. **知识传承风险**：张三掌握的项目关键信息、决策背景可能无法完全传递给李四\n3. **团队协作风险**：团队成员需要重新适应新的管理风格和工作流程\n4. **工作重分配风险**：任务重新分配过程中可能出现遗漏或重复，影响项目效率\n5. **权限管理风险**：需要及时调整系统权限，避免访问控制问题\n\n**建议操作：**\n1. **制定交接计划**：安排张三与李四进行详细的工作交接，包括项目文档、进度状态、关键联系人等\n2. **更新权限设置**：及时修改系统中的权限配置，确保李四具备必要的访问权限\n3. **团队沟通**：组织团队会议，正式宣布变更并介绍新的工作安排\n4. **监控过渡期**：在交接后的1-2周内密切关注项目进展，及时解决出现的问题\n5. **文档更新**：更新所有相关文档和系统记录，确保信息一致性\n\n**置信度：0.8**\n\n此评估基于一般项目管理经验，具体风险程度还需结合项目规模、复杂度、时间紧迫性等因素进行调整。",
+        "confidence": 0.85,
+        "risk_level": "L2",
+        "recommendations": [
+          "**"
+        ],
+        "model_used": "claude-sonnet-4-20250514",
+        "processing_time": 10.983786582946777,
+        "timestamp": "2025-08-12T17:36:12.145202"
+      },
+      "batch_analysis": {
+        "total_processed": 2,
+        "successful_analyses": 2,
+        "sample_result": {
+          "analysis_type": "risk_assessment",
+          "result": "基于提供的信息，我对此项目负责人变更进行风险评估：\n\n## 风险评估结果\n\n**风险等级：L2（中风险）**\n\n**风险分析：**\n1. **项目连续性风险**：负责人变更可能导致项目管理断层，新负责人需要时间熟悉项目状态、进度和关键节点\n2. **权限和责任转移风险**：涉及项目决策权、资源调配权、团队管理权等核心权限的转移，需要确保平稳过渡\n3. **信息传递风险**：项目历史信息、关键决策背景、利益相关方关系等可能在交接过程中丢失\n4. **团队稳定性风险**：负责人变更可能影响团队士气和协作效率\n5. **客户关系风险**：如涉及外部客户，需要重新建立信任关系\n\n**建议操作：**\n1. **制定详细交接计划**：包括项目文档、进度状态、风险清单、关键联系人等全面交接\n2. **设置过渡期**：建议张三在一定时间内协助李四完成交接，确保平稳过渡\n3. **通知相关方**：及时通知项目团队成员、上级领导、客户等利益相关方\n4. **权限更新**：更新系统权限、签字权限等相关授权\n5. **风险监控**：在交接后的关键时期加强项目监控，及时发现和处理问题\n\n**置信度：0.75**\n\n*注：由于缺少项目具体信息（如项目规模、阶段、复杂度等），评估基于一般项目管理场景。建议结合具体项目情况进行更精准的风险评估。*",
+          "confidence": 0.85,
+          "risk_level": "L2",
+          "recommendations": [
+            "**",
+            "建议张三在一定时间内协助李四完成交接，确保平稳过渡",
+            "由于缺少项目具体信息（如项目规模、阶段、复杂度等），评估基于一般项目管理场景。建议结合具体项目情况进行更精准的风险评估。*"
+          ],
+          "model_used": "claude-sonnet-4-20250514",
+          "processing_time": 12.808483123779297,
+          "timestamp": "2025-08-12T17:36:24.958474",
+          "modification_id": "test_1"
+        }
+      }
+    }
+  },
+  "end_to_end_integration": {
+    "status": "failed",
+    "error": "HTTP 404: {\"error\":\"\\u7528\\u6237\\u4e0d\\u5b58\\u5728\"}\n"
+  }
+}
