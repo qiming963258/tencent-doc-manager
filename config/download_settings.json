@@ -1,0 +1,20 @@
+{
+  "document_links": [
+    {
+      "name": "测试文档1",
+      "url": "https://docs.qq.com/sheet/DWEVjZndkR2xVSWJN",
+      "enabled": true
+    }
+  ],
+  "download_format": "csv",
+  "schedule": {
+    "enabled": false,
+    "frequency": "monthly",
+    "day_of_month": 1,
+    "hour": 9,
+    "minute": 0
+  },
+  "last_download": "",
+  "download_status": "待开始",
+  "last_update": "2025-08-15T14:42:21.200302"
+}

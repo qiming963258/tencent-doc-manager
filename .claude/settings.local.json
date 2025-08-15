@@ -33,9 +33,17 @@
       "Bash(lsof:*)",
       "WebSearch",
       "Bash(nginx:*)",
-      "Bash(iptables:*)"
+      "Bash(iptables:*)",
+      "Bash(git --version)",
+      "Bash(ssh:*)"
     ],
     "deny": [],
     "defaultMode": "acceptEdits"
-  }
+  },
+  "customInstructions": [
+    "用中文回复我",
+    "不要输出简化版本",
+    "因对复杂任务请：1先阅读相关spec文档，如果文档内容不清晰向我说出需求；2合理分配agents用于不同计划，给出精要全面的agents工作配合计划。",
+    "项目开发必须严格遵循专项计划文档标准：1. 所有任务按文件为颗粒度拆分；2. 实时更新任务状态标识(✅/❌/⏳/🔄/⚠️)；3. 每次工作必须更新/docs/plans/目录下的对应计划文档；4. 遵循.claude/专项计划文档制作和使用规范.md的所有要求。"
+  ]
 }

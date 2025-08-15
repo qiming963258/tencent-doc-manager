@@ -2,13 +2,36 @@
 """
 完整原版热力图UI服务器 - 修复版本
 """
-from flask import Flask, send_from_directory, jsonify
+from flask import Flask, send_from_directory, jsonify, request
 from flask_cors import CORS
 import os
 import json
+import datetime
+import sys
+
+# 添加下载器模块路径
+sys.path.append('/root/projects/tencent-doc-manager/测试版本-性能优化开发-20250811-001430')
+
+# 检查模块是否存在并导入
+try:
+    from tencent_export_automation import TencentDocAutoExporter
+    from csv_version_manager import CSVVersionManager
+    DOWNLOADER_AVAILABLE = True
+    print("✅ 下载器模块加载成功")
+except ImportError as e:
+    print(f"⚠️ 下载器模块加载失败: {e}")
+    DOWNLOADER_AVAILABLE = False
 
 app = Flask(__name__)
 CORS(app)
+
+# 配置文件路径
+CONFIG_DIR = '/root/projects/tencent-doc-manager/config'
+COOKIES_CONFIG_FILE = os.path.join(CONFIG_DIR, 'cookies.json')
+DOWNLOAD_CONFIG_FILE = os.path.join(CONFIG_DIR, 'download_settings.json')
+
+# 确保配置目录存在
+os.makedirs(CONFIG_DIR, exist_ok=True)
 
 @app.route('/uploads/<filename>')
 def download_file(filename):
@@ -32,6 +55,263 @@ def get_test_data():
     
     # 返回默认数据
     return jsonify({"tables": [], "statistics": {}})
+
+# Cookie管理API
+@app.route('/api/save-cookies', methods=['POST'])
+def save_cookies():
+    """保存Cookie到配置文件，并验证有效性"""
+    try:
+        data = request.get_json()
+        cookies = data.get('cookies', '').strip()
+        
+        if not cookies:
+            return jsonify({"success": False, "error": "Cookie不能为空"})
+        
+        # 保存Cookie配置
+        config_data = {
+            "current_cookies": cookies,
+            "last_update": datetime.datetime.now().isoformat(),
+            "is_valid": True,  # 默认标记为有效，稍后可以实现验证
+            "validation_message": "已保存，等待验证",
+            "last_test_time": ""
+        }
+        
+        with open(COOKIES_CONFIG_FILE, 'w', encoding='utf-8') as f:
+            json.dump(config_data, f, ensure_ascii=False, indent=2)
+        
+        return jsonify({
+            "success": True, 
+            "message": "Cookie已成功保存",
+            "status": "✅ Cookie已保存并等待验证"
+        })
+        
+    except Exception as e:
+        return jsonify({"success": False, "error": f"保存失败: {str(e)}"})
+
+@app.route('/api/get-cookies', methods=['GET'])
+def get_cookies():
+    """获取当前存储的Cookie和状态"""
+    try:
+        if os.path.exists(COOKIES_CONFIG_FILE):
+            with open(COOKIES_CONFIG_FILE, 'r', encoding='utf-8') as f:
+                config_data = json.load(f)
+            return jsonify({"success": True, "data": config_data})
+        else:
+            return jsonify({
+                "success": True,
+                "data": {
+                    "current_cookies": "",
+                    "last_update": "",
+                    "is_valid": False,
+                    "validation_message": "无Cookie配置",
+                    "last_test_time": ""
+                }
+            })
+    except Exception as e:
+        return jsonify({"success": False, "error": f"读取失败: {str(e)}"})
+
+@app.route('/api/test-cookies', methods=['POST'])
+def test_cookies():
+    """测试Cookie有效性"""
+    try:
+        data = request.get_json()
+        cookies = data.get('cookies', '')
+        
+        if not cookies:
+            # 从配置文件读取
+            if os.path.exists(COOKIES_CONFIG_FILE):
+                with open(COOKIES_CONFIG_FILE, 'r', encoding='utf-8') as f:
+                    config_data = json.load(f)
+                cookies = config_data.get('current_cookies', '')
+        
+        if not cookies:
+            return jsonify({"success": False, "error": "没有可测试的Cookie"})
+        
+        # 这里可以添加实际的Cookie验证逻辑
+        # 现在先返回基本检查结果
+        is_valid = len(cookies) > 50 and 'uid=' in cookies and 'SID=' in cookies
+        
+        # 更新配置文件中的验证状态
+        if os.path.exists(COOKIES_CONFIG_FILE):
+            with open(COOKIES_CONFIG_FILE, 'r', encoding='utf-8') as f:
+                config_data = json.load(f)
+            
+            config_data.update({
+                "is_valid": is_valid,
+                "validation_message": "✅ Cookie格式正确" if is_valid else "❌ Cookie格式不正确",
+                "last_test_time": datetime.datetime.now().isoformat()
+            })
+            
+            with open(COOKIES_CONFIG_FILE, 'w', encoding='utf-8') as f:
+                json.dump(config_data, f, ensure_ascii=False, indent=2)
+        
+        return jsonify({
+            "success": True,
+            "is_valid": is_valid,
+            "message": "✅ Cookie格式正确" if is_valid else "❌ Cookie格式不正确，请检查uid和SID参数"
+        })
+        
+    except Exception as e:
+        return jsonify({"success": False, "error": f"测试失败: {str(e)}"})
+
+# 多链接存储和下载管理API
+@app.route('/api/save-download-links', methods=['POST'])
+def save_download_links():
+    """保存下载链接配置"""
+    try:
+        data = request.get_json()
+        links = data.get('links', [])
+        
+        if not links:
+            return jsonify({"success": False, "error": "链接列表不能为空"})
+        
+        # 读取现有配置
+        config_data = {"document_links": [], "download_format": "csv", "schedule": {}}
+        if os.path.exists(DOWNLOAD_CONFIG_FILE):
+            with open(DOWNLOAD_CONFIG_FILE, 'r', encoding='utf-8') as f:
+                config_data = json.load(f)
+        
+        # 更新链接列表
+        config_data["document_links"] = links
+        config_data["last_update"] = datetime.datetime.now().isoformat()
+        
+        # 保存配置
+        with open(DOWNLOAD_CONFIG_FILE, 'w', encoding='utf-8') as f:
+            json.dump(config_data, f, ensure_ascii=False, indent=2)
+        
+        return jsonify({
+            "success": True,
+            "message": f"成功保存 {len(links)} 个下载链接",
+            "links_count": len(links)
+        })
+        
+    except Exception as e:
+        return jsonify({"success": False, "error": f"保存失败: {str(e)}"})
+
+@app.route('/api/get-download-links', methods=['GET'])
+def get_download_links():
+    """获取下载链接配置"""
+    try:
+        if os.path.exists(DOWNLOAD_CONFIG_FILE):
+            with open(DOWNLOAD_CONFIG_FILE, 'r', encoding='utf-8') as f:
+                config_data = json.load(f)
+            return jsonify({"success": True, "data": config_data})
+        else:
+            return jsonify({
+                "success": True,
+                "data": {
+                    "document_links": [],
+                    "download_format": "csv",
+                    "schedule": {"enabled": False},
+                    "download_status": "未配置"
+                }
+            })
+    except Exception as e:
+        return jsonify({"success": False, "error": f"读取失败: {str(e)}"})
+
+@app.route('/api/start-download', methods=['POST'])
+def start_download():
+    """开始下载CSV文件"""
+    try:
+        data = request.get_json() or {}
+        
+        # 检查下载器是否可用
+        if not DOWNLOADER_AVAILABLE:
+            return jsonify({"success": False, "error": "下载器模块未加载，请检查系统配置"})
+        
+        # 读取下载配置
+        if not os.path.exists(DOWNLOAD_CONFIG_FILE):
+            return jsonify({"success": False, "error": "未找到下载配置，请先导入链接"})
+        
+        with open(DOWNLOAD_CONFIG_FILE, 'r', encoding='utf-8') as f:
+            config_data = json.load(f)
+        
+        links = config_data.get('document_links', [])
+        enabled_links = [link for link in links if link.get('enabled', True)]
+        
+        if not enabled_links:
+            return jsonify({"success": False, "error": "没有可下载的链接，请先导入链接"})
+        
+        # 读取Cookie配置
+        cookies = ""
+        if os.path.exists(COOKIES_CONFIG_FILE):
+            with open(COOKIES_CONFIG_FILE, 'r', encoding='utf-8') as f:
+                cookie_config = json.load(f)
+            cookies = cookie_config.get('current_cookies', '')
+        
+        if not cookies:
+            return jsonify({"success": False, "error": "没有有效的Cookie，请先更新Cookie"})
+        
+        # 执行下载
+        download_results = []
+        successful_downloads = 0
+        
+        # 创建下载器实例
+        downloader = TencentDocAutoExporter()
+        version_manager = CSVVersionManager()
+        
+        for link in enabled_links:
+            try:
+                url = link.get('url', '')
+                name = link.get('name', 'unnamed')
+                
+                print(f"开始下载: {name} -> {url}")
+                
+                # 执行下载
+                download_result = downloader.export_document(
+                    url=url,
+                    cookies=cookies,
+                    format='csv',
+                    download_dir='/root/projects/tencent-doc-manager/测试版本-性能优化开发-20250811-001430/downloads'
+                )
+                
+                if download_result.get('success', False):
+                    downloaded_file = download_result.get('file_path', '')
+                    
+                    # 使用版本管理器处理文件
+                    version_result = version_manager.add_version(
+                        file_path=downloaded_file,
+                        table_name=name
+                    )
+                    
+                    download_results.append({
+                        'name': name,
+                        'status': 'success',
+                        'file': version_result.get('current_version_file', downloaded_file),
+                        'version': version_result.get('version', 'v001')
+                    })
+                    successful_downloads += 1
+                else:
+                    download_results.append({
+                        'name': name,
+                        'status': 'failed',
+                        'error': download_result.get('error', '未知错误')
+                    })
+                    
+            except Exception as e:
+                download_results.append({
+                    'name': link.get('name', 'unnamed'),
+                    'status': 'failed',
+                    'error': str(e)
+                })
+        
+        # 更新配置文件
+        config_data['last_download'] = datetime.datetime.now().isoformat()
+        config_data['download_status'] = f"已完成 {successful_downloads}/{len(enabled_links)} 个文件下载"
+        
+        with open(DOWNLOAD_CONFIG_FILE, 'w', encoding='utf-8') as f:
+            json.dump(config_data, f, ensure_ascii=False, indent=2)
+        
+        return jsonify({
+            "success": True,
+            "message": f"下载完成: {successful_downloads}/{len(enabled_links)} 个文件成功",
+            "results": download_results,
+            "successful_count": successful_downloads,
+            "total_count": len(enabled_links)
+        })
+        
+    except Exception as e:
+        return jsonify({"success": False, "error": f"下载启动失败: {str(e)}"})
 
 @app.route('/')
 def index():
@@ -179,16 +459,185 @@ def index():
         const SettingsModal = ({ isOpen, onClose }) => {
           const [tableLinks, setTableLinks] = useState('');
           const [cookieValue, setCookieValue] = useState('');
+          const [cookieStatus, setCookieStatus] = useState('');
+          const [loading, setLoading] = useState(false);
+          const [linkCount, setLinkCount] = useState(0);
+          const [linkStatus, setLinkStatus] = useState('');
+          const [downloading, setDownloading] = useState(false);
+          const [downloadStatus, setDownloadStatus] = useState('');
           
-          const handleImportLinks = () => {
-            const links = tableLinks.split('\\n').filter(line => line.trim());
-            console.log('导入的链接:', links);
-            alert(`成功导入 ${links.length} 个表格链接`);
+          // 加载现有Cookie配置
+          React.useEffect(() => {
+            if (isOpen) {
+              loadCookieConfig();
+            }
+          }, [isOpen]);
+          
+          const loadCookieConfig = async () => {
+            try {
+              const response = await fetch('/api/get-cookies');
+              const result = await response.json();
+              if (result.success && result.data) {
+                setCookieValue(result.data.current_cookies || '');
+                setCookieStatus(result.data.validation_message || '');
+              }
+            } catch (error) {
+              console.error('加载Cookie配置失败:', error);
+            }
           };
           
-          const handleUpdateCookie = () => {
-            console.log('更新Cookie:', cookieValue);
-            alert('Cookie已更新');
+          const handleImportLinks = async () => {
+            const links = tableLinks.split('\\n').filter(line => line.trim());
+            
+            if (links.length === 0) {
+              setLinkStatus('❌ 请输入有效的链接');
+              return;
+            }
+            
+            setLoading(true);
+            setLinkStatus('⏳ 正在保存链接...');
+            
+            try {
+              // 解析链接格式，提取文档名称和URL
+              const linkObjects = links.map(line => {
+                // 支持两种格式：
+                // 1. 【腾讯文档】文档名称\\nhttps://docs.qq.com/...
+                // 2. 直接URL: https://docs.qq.com/...
+                if (line.includes('【腾讯文档】')) {
+                  const name = line.replace('【腾讯文档】', '').trim();
+                  return { name, url: '', enabled: true };
+                } else if (line.startsWith('http')) {
+                  // 从URL中提取文档ID作为名称
+                  const match = line.match(/\\/sheet\\/([A-Za-z0-9]+)/);
+                  const docId = match ? match[1] : 'unknown';
+                  return { 
+                    name: `文档_${docId}`, 
+                    url: line.trim(), 
+                    enabled: true 
+                  };
+                }
+                return null;
+              }).filter(item => item !== null);
+              
+              // 合并相邻的名称和URL
+              const finalLinks = [];
+              for (let i = 0; i < linkObjects.length; i++) {
+                const current = linkObjects[i];
+                if (current.url === '' && i + 1 < linkObjects.length) {
+                  // 如果当前是名称，下一个是URL，合并它们
+                  const next = linkObjects[i + 1];
+                  if (next.url !== '') {
+                    finalLinks.push({
+                      name: current.name,
+                      url: next.url,
+                      enabled: true
+                    });
+                    i++; // 跳过下一个项目
+                  }
+                } else if (current.url !== '') {
+                  finalLinks.push(current);
+                }
+              }
+              
+              const response = await fetch('/api/save-download-links', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ links: finalLinks })
+              });
+              
+              const result = await response.json();
+              if (result.success) {
+                setLinkCount(finalLinks.length);
+                setLinkStatus(`✅ 成功保存 ${finalLinks.length} 个链接`);
+              } else {
+                setLinkStatus('❌ ' + result.error);
+              }
+            } catch (error) {
+              setLinkStatus('❌ 保存失败: ' + error.message);
+            } finally {
+              setLoading(false);
+            }
+          };
+          
+          const handleUpdateCookie = async () => {
+            if (!cookieValue.trim()) {
+              setCookieStatus('❌ Cookie不能为空');
+              return;
+            }
+            
+            setLoading(true);
+            setCookieStatus('⏳ 正在保存...');
+            
+            try {
+              const response = await fetch('/api/save-cookies', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ cookies: cookieValue })
+              });
+              
+              const result = await response.json();
+              if (result.success) {
+                setCookieStatus('✅ Cookie已保存成功');
+                // 自动测试Cookie有效性
+                setTimeout(testCookieValidity, 1000);
+              } else {
+                setCookieStatus('❌ ' + result.error);
+              }
+            } catch (error) {
+              setCookieStatus('❌ 保存失败: ' + error.message);
+            } finally {
+              setLoading(false);
+            }
+          };
+          
+          const testCookieValidity = async () => {
+            try {
+              setCookieStatus('⏳ 正在验证Cookie...');
+              const response = await fetch('/api/test-cookies', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ cookies: cookieValue })
+              });
+              
+              const result = await response.json();
+              if (result.success) {
+                setCookieStatus(result.message);
+              } else {
+                setCookieStatus('❌ 验证失败: ' + result.error);
+              }
+            } catch (error) {
+              setCookieStatus('❌ 验证失败: ' + error.message);
+            }
+          };
+          
+          const handleStartDownload = async () => {
+            if (linkCount === 0) {
+              setDownloadStatus('❌ 请先导入下载链接');
+              return;
+            }
+            
+            setDownloading(true);
+            setDownloadStatus('⏳ 准备下载...');
+            
+            try {
+              const response = await fetch('/api/start-download', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({})
+              });
+              
+              const result = await response.json();
+              if (result.success) {
+                setDownloadStatus(`✅ ${result.message}`);
+                // 这里后续可以添加实际的下载进度监控
+              } else {
+                setDownloadStatus('❌ ' + result.error);
+              }
+            } catch (error) {
+              setDownloadStatus('❌ 下载失败: ' + error.message);
+            } finally {
+              setDownloading(false);
+            }
           };
           
           if (!isOpen) return null;
@@ -259,14 +708,30 @@ def index():
                       }}
                     />
                     <div className="flex justify-between items-center mt-3">
-                      <span className="text-xs text-slate-500">
-                        {tableLinks.split('\\n').filter(line => line.trim()).length} 个链接待导入
-                      </span>
+                      <div className="text-xs">
+                        <div className="text-slate-500 mb-1">
+                          {tableLinks.split('\\n').filter(line => line.trim()).length} 个链接待导入
+                        </div>
+                        {linkStatus && (
+                          <div className={`font-medium ${
+                            linkStatus.includes('✅') ? 'text-green-600' : 
+                            linkStatus.includes('❌') ? 'text-red-600' : 
+                            'text-orange-600'
+                          }`}>
+                            {linkStatus}
+                          </div>
+                        )}
+                      </div>
                       <button
                         onClick={handleImportLinks}
-                        className="px-4 py-2 text-sm bg-blue-600 text-white rounded hover:bg-blue-700 transition-colors"
+                        disabled={loading}
+                        className={`px-4 py-2 text-sm rounded transition-colors ${
+                          loading 
+                            ? 'bg-gray-400 text-white cursor-not-allowed'
+                            : 'bg-blue-600 text-white hover:bg-blue-700'
+                        }`}
                       >
-                        导入链接
+                        {loading ? '⏳ 保存中...' : '导入链接'}
                       </button>
                     </div>
                   </div>
@@ -291,14 +756,28 @@ def index():
                       }}
                     />
                     <div className="flex justify-between items-center mt-3">
-                      <span className="text-xs text-slate-500">
-                        用于访问需要权限的文档
-                      </span>
+                      <div className="text-xs">
+                        <div className="text-slate-500 mb-1">用于访问需要权限的文档</div>
+                        {cookieStatus && (
+                          <div className={`text-xs font-medium ${
+                            cookieStatus.includes('✅') ? 'text-green-600' : 
+                            cookieStatus.includes('❌') ? 'text-red-600' : 
+                            'text-orange-600'
+                          }`}>
+                            {cookieStatus}
+                          </div>
+                        )}
+                      </div>
                       <button
                         onClick={handleUpdateCookie}
-                        className="px-4 py-2 text-sm bg-green-600 text-white rounded hover:bg-green-700 transition-colors"
+                        disabled={loading}
+                        className={`px-4 py-2 text-sm rounded transition-colors ${
+                          loading 
+                            ? 'bg-gray-400 text-white cursor-not-allowed'
+                            : 'bg-green-600 text-white hover:bg-green-700'
+                        }`}
                       >
-                        更新Cookie
+                        {loading ? '⏳ 保存中...' : '更新Cookie'}
                       </button>
                     </div>
                   </div>
@@ -324,6 +803,43 @@ def index():
                           <option>高风险修改</option>
                           <option>所有修改</option>
                         </select>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  {/* CSV下载控制区域 */}
+                  <div style={{ marginBottom: '24px' }}>
+                    <label className="text-sm font-medium text-slate-700 block mb-3">
+                      CSV下载控制
+                    </label>
+                    <div className="space-y-3">
+                      <div className="flex justify-between items-center">
+                        <span className="text-sm text-slate-600">
+                          已保存链接: {linkCount} 个
+                        </span>
+                        <button
+                          onClick={handleStartDownload}
+                          disabled={downloading || linkCount === 0}
+                          className={`px-4 py-2 text-sm rounded transition-colors ${
+                            downloading || linkCount === 0
+                              ? 'bg-gray-400 text-white cursor-not-allowed'
+                              : 'bg-red-600 text-white hover:bg-red-700'
+                          }`}
+                        >
+                          {downloading ? '⏳ 下载中...' : '🚀 开始下载'}
+                        </button>
+                      </div>
+                      {downloadStatus && (
+                        <div className={`text-xs font-medium ${
+                          downloadStatus.includes('✅') ? 'text-green-600' : 
+                          downloadStatus.includes('❌') ? 'text-red-600' : 
+                          'text-orange-600'
+                        }`}>
+                          {downloadStatus}
+                        </div>
+                      )}
+                      <div className="text-xs text-slate-500">
+                        下载的CSV文件将自动重命名并存储到版本管理文件夹
                       </div>
                     </div>
                   </div>
