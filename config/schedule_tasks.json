@@ -1,0 +1,97 @@
+{
+  "preset_tasks": [
+    {
+      "task_id": "weekly_baseline_download",
+      "name": "周二基准下载任务",
+      "description": "每周二12:00下载基准CSV文件",
+      "schedule": {
+        "type": "simple",
+        "expression": "weekly:tuesday:12:00",
+        "timezone": "Asia/Shanghai"
+      },
+      "urls": [],
+      "cookies": "",
+      "options": {
+        "format": "csv",
+        "download_dir": "./csv_versions/baseline/",
+        "task_type": "baseline_download",
+        "auto_set_baseline": true
+      },
+      "notification": {
+        "enabled": true,
+        "success_message": "周二基准表格下载完成",
+        "failure_message": "周二基准表格下载失败"
+      },
+      "enabled": false
+    },
+    {
+      "task_id": "weekly_midweek_update",
+      "name": "周四中期更新任务",
+      "description": "每周四09:00下载全部表格CSV并更新系统",
+      "schedule": {
+        "type": "simple",
+        "expression": "weekly:thursday:09:00",
+        "timezone": "Asia/Shanghai"
+      },
+      "urls": [],
+      "cookies": "",
+      "options": {
+        "format": "csv",
+        "download_dir": "./csv_versions/midweek/",
+        "task_type": "midweek_update",
+        "auto_comparison": true,
+        "generate_verification_table": true
+      },
+      "notification": {
+        "enabled": true,
+        "success_message": "周四中期更新完成",
+        "failure_message": "周四中期更新失败"
+      },
+      "enabled": false
+    },
+    {
+      "task_id": "weekly_full_update",
+      "name": "周六完整更新任务",
+      "description": "每周六19:00完整更新系统（全流程运行）",
+      "schedule": {
+        "type": "simple",
+        "expression": "weekly:saturday:19:00",
+        "timezone": "Asia/Shanghai"
+      },
+      "urls": [],
+      "cookies": "",
+      "options": {
+        "format": "csv",
+        "download_dir": "./csv_versions/weekly/",
+        "task_type": "full_update",
+        "auto_comparison": true,
+        "generate_heatmap": true,
+        "generate_excel": true,
+        "generate_verification_table": true,
+        "upload_to_tencent": true
+      },
+      "notification": {
+        "enabled": true,
+        "success_message": "周六完整更新完成",
+        "failure_message": "周六完整更新失败"
+      },
+      "enabled": false
+    }
+  ],
+  "global_settings": {
+    "max_concurrent_tasks": 2,
+    "retry_failed_tasks": true,
+    "retry_count": 3,
+    "retry_interval": 1800,
+    "log_level": "INFO",
+    "notification_channels": ["console", "log"],
+    "data_retention_days": 30
+  },
+  "default_options": {
+    "format": "csv",
+    "timeout": 30,
+    "headless": true,
+    "auto_retry": true,
+    "preserve_filename": true
+  }
+}
