@@ -1,0 +1,83 @@
+# Git属性配置 - 统一换行符处理
+# 自动检测文本文件并规范化换行符
+
+# 默认设置
+* text=auto
+
+# 文本文件 - 强制使用LF
+*.md text eol=lf
+*.txt text eol=lf
+*.json text eol=lf
+*.yaml text eol=lf
+*.yml text eol=lf
+*.xml text eol=lf
+*.html text eol=lf
+*.css text eol=lf
+*.js text eol=lf
+*.jsx text eol=lf
+*.ts text eol=lf
+*.tsx text eol=lf
+
+# 源代码文件 - 强制使用LF
+*.py text eol=lf
+*.sh text eol=lf
+*.bash text eol=lf
+*.c text eol=lf
+*.cpp text eol=lf
+*.h text eol=lf
+*.java text eol=lf
+*.go text eol=lf
+*.rs text eol=lf
+*.php text eol=lf
+*.rb text eol=lf
+
+# 配置文件 - 强制使用LF
+.gitignore text eol=lf
+.gitattributes text eol=lf
+.editorconfig text eol=lf
+*.toml text eol=lf
+*.ini text eol=lf
+*.cfg text eol=lf
+Dockerfile text eol=lf
+Makefile text eol=lf
+
+# Windows批处理文件 - 保持CRLF
+*.bat text eol=crlf
+*.cmd text eol=crlf
+*.ps1 text eol=crlf
+
+# 二进制文件 - 不进行换行符转换
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.ico binary
+*.pdf binary
+*.zip binary
+*.tar binary
+*.gz binary
+*.7z binary
+*.rar binary
+*.exe binary
+*.dll binary
+*.so binary
+*.dylib binary
+*.pyc binary
+*.pyo binary
+*.db binary
+*.sqlite binary
+*.xlsx binary
+*.xls binary
+*.docx binary
+*.doc binary
+
+# Jupyter Notebook
+*.ipynb text eol=lf
+
+# CSV文件 - 文本但保持原样
+*.csv text eol=lf
+
+# 特殊处理
+requirements.txt text eol=lf
+package.json text eol=lf
+package-lock.json text eol=lf
