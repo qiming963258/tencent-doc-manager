@@ -1,0 +1,51 @@
+# EditorConfig 配置文件
+# 统一编辑器设置，避免CRLF问题
+
+root = true
+
+# 所有文件默认配置
+[*]
+charset = utf-8
+end_of_line = lf
+insert_final_newline = true
+trim_trailing_whitespace = true
+indent_style = space
+indent_size = 4
+
+# Markdown文件
+[*.md]
+trim_trailing_whitespace = false
+indent_size = 2
+
+# YAML文件
+[*.{yml,yaml}]
+indent_size = 2
+
+# JSON文件
+[*.json]
+indent_size = 2
+
+# JavaScript/TypeScript
+[*.{js,jsx,ts,tsx}]
+indent_size = 2
+
+# Python文件
+[*.py]
+indent_size = 4
+
+# Shell脚本
+[*.{sh,bash}]
+end_of_line = lf
+indent_size = 2
+
+# Windows批处理文件
+[*.{bat,cmd,ps1}]
+end_of_line = crlf
+
+# Makefile
+[Makefile]
+indent_style = tab
+
+# 配置文件
+[*.{ini,toml,cfg}]
+indent_size = 2
