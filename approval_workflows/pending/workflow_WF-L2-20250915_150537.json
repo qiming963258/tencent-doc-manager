@@ -1,0 +1,33 @@
+{
+  "workflow_id": "WF-L2-20250915_150537",
+  "created_time": "2025-09-15 15:05:37",
+  "pending_approvals": [
+    {
+      "modification_id": "M001",
+      "cell": "B54",
+      "column": "项目类型",
+      "old_value": "目标管理",
+      "new_value": "",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 80.0,
+        "reason": "关键信息缺失"
+      },
+      "layer2_result": {
+        "risk_level": "HIGH",
+        "decision": "REVIEW",
+        "confidence": 85,
+        "key_risks": [
+          "项目目标定义不明确可能导致执行方向混乱",
+          "项目类型空白会影响资源分配和工作优先级决策",
+          "缺少关键分类信息会导致团队协作时出现理解偏差",
+          "计划制定缺乏基准可能影响交付时间评估准确性"
+        ],
+        "recommendation": "建议：1.必须补充完整项目类型信息；2.如属于分类调整需同步更新所有相关文档；3.修改后需经项目经理和关键干系人确认；4.必要时重新评估项目范围和计划。特殊说明：项目类型是项目定义的核心字段，空白状态会造成项目管理体系断层。"
+      },
+      "final_decision": "REVIEW",
+      "approval_required": true
+    }
+  ],
+  "auto_approved": []
+}

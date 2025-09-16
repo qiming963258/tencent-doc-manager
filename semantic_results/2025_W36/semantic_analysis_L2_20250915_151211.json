@@ -1,0 +1,48 @@
+{
+  "metadata": {
+    "analysis_time": "2025-09-15 15:12:11",
+    "total_modifications": 1,
+    "layer1_passed": 0,
+    "layer2_analyzed": 1,
+    "processing_time": "8.9s"
+  },
+  "results": [
+    {
+      "modification_id": "M001",
+      "cell": "I61",
+      "column": "负责人",
+      "old_value": "朱瀚桔",
+      "new_value": "",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 90.0,
+        "reason": "关键人缺失"
+      },
+      "layer2_result": {
+        "risk_level": "CRITICAL",
+        "decision": "REVIEW",
+        "confidence": 85,
+        "key_risks": [
+          "负责人信息被完全删除，可能导致职责不清",
+          "项目关键岗位出现真空状态",
+          "工作交接和跟进可能出现断层"
+        ],
+        "recommendation": "1. 要求提供新的负责人姓名\n2. 如需空置，应注明临时负责人或过渡方案\n3. 确保变更经过正式审批流程\n4. 通知相关团队成员变更情况"
+      },
+      "final_decision": "REVIEW",
+      "approval_required": true
+    }
+  ],
+  "summary": {
+    "approved": 0,
+    "conditional": 0,
+    "review_required": 1,
+    "rejected": 0,
+    "risk_distribution": {
+      "LOW": 0,
+      "MEDIUM": 0,
+      "HIGH": 1,
+      "CRITICAL": 0
+    }
+  }
+}

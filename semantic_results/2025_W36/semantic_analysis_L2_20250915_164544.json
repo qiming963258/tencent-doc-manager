@@ -1,0 +1,48 @@
+{
+  "metadata": {
+    "analysis_time": "2025-09-15 16:45:44",
+    "total_modifications": 1,
+    "layer1_passed": 0,
+    "layer2_analyzed": 1,
+    "processing_time": "9.0s"
+  },
+  "results": [
+    {
+      "modification_id": "M001",
+      "cell": "K10",
+      "column": "协助人",
+      "old_value": "魏志广",
+      "new_value": "",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 80.0,
+        "reason": "删除人员"
+      },
+      "layer2_result": {
+        "risk_level": "CRITICAL",
+        "decision": "REVIEW",
+        "confidence": 90,
+        "key_risks": [
+          "协助人字段删除可能导致责任不明确",
+          "关键任务可能无人负责",
+          "团队协作效率可能降低"
+        ],
+        "recommendation": "建议：1. 确认是否有意删除协助人 2. 如需删除，确保有替代责任人 3. 更新相关任务分配文档 4. 通知相关团队成员此变更"
+      },
+      "final_decision": "REVIEW",
+      "approval_required": true
+    }
+  ],
+  "summary": {
+    "approved": 0,
+    "conditional": 0,
+    "review_required": 1,
+    "rejected": 0,
+    "risk_distribution": {
+      "LOW": 0,
+      "MEDIUM": 0,
+      "HIGH": 1,
+      "CRITICAL": 0
+    }
+  }
+}

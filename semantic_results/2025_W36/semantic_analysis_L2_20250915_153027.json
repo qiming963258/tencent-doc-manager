@@ -1,0 +1,48 @@
+{
+  "metadata": {
+    "analysis_time": "2025-09-15 15:30:27",
+    "total_modifications": 1,
+    "layer1_passed": 0,
+    "layer2_analyzed": 1,
+    "processing_time": "12.5s"
+  },
+  "results": [
+    {
+      "modification_id": "M001",
+      "cell": "G80",
+      "column": "具体计划内容",
+      "old_value": "管理层识别过往管理维度上对员工层管理的方式方法、沟通的态度、沟通的技巧等的问题识别及改进优化措施，形成改进计划进行汇报",
+      "new_value": "利润问题优化",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 80.0,
+        "reason": "重大语义变化"
+      },
+      "layer2_result": {
+        "risk_level": "HIGH",
+        "decision": "REVIEW",
+        "confidence": 85,
+        "key_risks": [
+          "性质完全改变：从管理优化转向利润问题，偏离原项目目标",
+          "内容删减严重：丢失了具体的管理改进措施和计划细节",
+          "影响范围扩大：可能引发团队对项目方向变更的疑虑"
+        ],
+        "recommendation": "建议明确以下几点后重新评估：1) 修改原因及与项目目标的关联性 2) '利润问题优化'的具体内涵 3) 是否保留原管理改进相关内容。若无合理理由，应维持原内容或采用更详细的补充说明而非完全替换。"
+      },
+      "final_decision": "REVIEW",
+      "approval_required": true
+    }
+  ],
+  "summary": {
+    "approved": 0,
+    "conditional": 0,
+    "review_required": 1,
+    "rejected": 0,
+    "risk_distribution": {
+      "LOW": 0,
+      "MEDIUM": 0,
+      "HIGH": 1,
+      "CRITICAL": 0
+    }
+  }
+}

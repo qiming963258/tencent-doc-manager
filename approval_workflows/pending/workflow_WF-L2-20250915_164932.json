@@ -1,0 +1,32 @@
+{
+  "workflow_id": "WF-L2-20250915_164932",
+  "created_time": "2025-09-15 16:49:32",
+  "pending_approvals": [
+    {
+      "modification_id": "M001",
+      "cell": "H19",
+      "column": "具体计划内容",
+      "old_value": "矩阵号交接前的卡点计划梳理",
+      "new_value": "保险推荐策略优化\n1.保险案例整理（投保后处理案例与未投保案例指导）\n2.保险推荐技能应用",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 80.0,
+        "reason": "内容变更大"
+      },
+      "layer2_result": {
+        "risk_level": "MEDIUM",
+        "decision": "REVIEW",
+        "confidence": 75,
+        "key_risks": [
+          "计划内容性质发生重大改变，从卡点交接转为保险策略优化",
+          "新内容涉及完全不同的业务领域（保险业务），可能需要新的资源投入",
+          "原计划中的卡点交接任务可能被搁置或遗漏"
+        ],
+        "recommendation": "建议：1. 确认此变更是否经过正式审批流程；2. 评估是否需要增加保险业务专家；3. 明确原卡点交接任务的后续处理方案；4. 更新相关依赖任务和交付时间表。需项目负责人和业务方共同审核此变更。"
+      },
+      "final_decision": "REVIEW",
+      "approval_required": true
+    }
+  ],
+  "auto_approved": []
+}

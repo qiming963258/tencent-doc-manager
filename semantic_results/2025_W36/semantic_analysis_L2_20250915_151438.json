@@ -1,0 +1,49 @@
+{
+  "metadata": {
+    "analysis_time": "2025-09-15 15:14:38",
+    "total_modifications": 1,
+    "layer1_passed": 0,
+    "layer2_analyzed": 1,
+    "processing_time": "12.5s"
+  },
+  "results": [
+    {
+      "modification_id": "M001",
+      "cell": "B64",
+      "column": "项目类型",
+      "old_value": "目标管理",
+      "new_value": "",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 80.0,
+        "reason": "关键信息删除"
+      },
+      "layer2_result": {
+        "risk_level": "CRITICAL",
+        "decision": "REJECT",
+        "confidence": 90,
+        "key_risks": [
+          "项目类型完全缺失导致项目分类体系失效",
+          "关键信息缺失影响全局项目报表统计",
+          "可能导致资源分配系统错误",
+          "审计追踪信息不完整"
+        ],
+        "recommendation": "必须恢复或重新填写项目类型字段。若确需清空，需同步更新所有关联系统配置，并通知各相关部门负责人进行影响评估。建议补充说明清空原因，并建立临时监控机制。"
+      },
+      "final_decision": "REJECT",
+      "approval_required": true
+    }
+  ],
+  "summary": {
+    "approved": 0,
+    "conditional": 0,
+    "review_required": 0,
+    "rejected": 1,
+    "risk_distribution": {
+      "LOW": 0,
+      "MEDIUM": 0,
+      "HIGH": 0,
+      "CRITICAL": 1
+    }
+  }
+}

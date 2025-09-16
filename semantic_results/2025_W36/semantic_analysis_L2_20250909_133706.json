@@ -1,0 +1,38 @@
+{
+  "metadata": {
+    "analysis_time": "2025-09-09 13:37:06",
+    "total_modifications": 1,
+    "layer1_passed": 1,
+    "layer2_analyzed": 0,
+    "processing_time": "1.0s"
+  },
+  "results": [
+    {
+      "modification_id": "M001",
+      "cell": "I11",
+      "column": "邓总指导登记（日更新）",
+      "old_value": "0813-\n1、根据周度运营数据识别出来的一般及无效笔记，分析对应的内容定位进行优化；\n2、系统功能下周一上线前，前置识别需要优化的内容定位进行调整\n3、下周一重点汇报半月度内容定位优化迭代进度、内容",
+      "new_value": "---0813-\n1、根据周度运营数据识别出来的一般及无效笔记，分析对应的内容定位进行优化；\n2、系统功能下周一上线前，前置识别需要优化的内容定位进行调整\n3、下周一重点汇报半月度内容定位优化迭代进度",
+      "layer1_result": {
+        "judgment": "SAFE",
+        "confidence": 90.0,
+        "reason": "日期微调"
+      },
+      "layer2_result": null,
+      "final_decision": "APPROVE",
+      "approval_required": false
+    }
+  ],
+  "summary": {
+    "approved": 1,
+    "conditional": 0,
+    "review_required": 0,
+    "rejected": 0,
+    "risk_distribution": {
+      "LOW": 1,
+      "MEDIUM": 0,
+      "HIGH": 0,
+      "CRITICAL": 0
+    }
+  }
+}

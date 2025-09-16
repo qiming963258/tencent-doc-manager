@@ -1,0 +1,57 @@
+{
+  "analysis_results": {
+    "total_files": 10,
+    "xlsx_files": [
+      "tencent_doc_test-monitoring-table_1755067386.xlsx",
+      "tencent_doc_test-monitoring-table_1755152464.xlsx",
+      "tencent_doc_DRFppYm15RGZ2WExN_xlsx_20250827_102640.xlsx"
+    ],
+    "ejs_files": [
+      {
+        "file": "tencent_doc_DWEVjZndkR2xVSWJN_xlsx_20250827_102634.xlsx",
+        "size": 76098,
+        "has_data": []
+      },
+      {
+        "file": "tencent_doc_DRHZrS1hOS3pwRGZB_xlsx_20250827_102645.xlsx",
+        "size": 56218,
+        "has_data": []
+      },
+      {
+        "file": "tencent_doc_DRFppYm15RGZ2WExN_xlsx_20250827_103053.xlsx",
+        "size": 20309,
+        "has_data": []
+      },
+      {
+        "file": "tencent_doc_DWEVjZndkR2xVSWJN_xlsx_20250827_103448.xlsx",
+        "size": 76098,
+        "has_data": []
+      }
+    ],
+    "csv_files": [
+      "tencent_doc_DWEVjZndkR2xVSWJN_csv_20250827_102631.csv",
+      "tencent_doc_DRFppYm15RGZ2WExN_csv_20250827_102637.csv",
+      "tencent_doc_DRHZrS1hOS3pwRGZB_csv_20250827_102643.csv"
+    ],
+    "analysis_summary": {}
+  },
+  "security_assessment": {
+    "timestamp": "2025-08-27 10:56:25",
+    "anti_scraping_analysis": {
+      "current_measures": [],
+      "difficulty_level": "",
+      "bypass_feasibility": "",
+      "risks": []
+    },
+    "ejs_format_analysis": {
+      "format_description": "",
+      "parsing_difficulty": "",
+      "open_source_solutions": [],
+      "custom_parser_feasibility": ""
+    },
+    "future_risks": [],
+    "alternative_solutions": [],
+    "recommendations": []
+  },
+  "timestamp": "2025-08-27T10:56:25.823558"
+}

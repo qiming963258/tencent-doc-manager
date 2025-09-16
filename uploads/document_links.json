@@ -1,0 +1,29 @@
+{
+  "测试版本-小红书部门": {
+    "tencent_link": "https://docs.qq.com/sheet/DWEVjZndkR2xVSWJN?tab=c2p5hs",
+    "status": "active",
+    "upload_time": "2025-08-20T02:30:00Z",
+    "file_type": "excel_analysis"
+  },
+  "测试版本-小红书部门-Excel分析表": {
+    "tencent_link": "PLACEHOLDER_NEEDS_UPLOAD",
+    "status": "pending_upload",
+    "upload_time": null,
+    "file_type": "half_filled_excel",
+    "note": "需要上传功能修复后生成真实链接"
+  },
+  "风险分析表_测试版本-小红书部门": {
+    "tencent_link": "PLACEHOLDER_NEEDS_UPLOAD",
+    "status": "pending_upload", 
+    "upload_time": null,
+    "file_type": "risk_verification",
+    "note": "需要上传功能修复后生成真实链接"
+  },
+  "核验表_测试版本": {
+    "tencent_link": "PLACEHOLDER_NEEDS_UPLOAD",
+    "status": "pending_upload",
+    "upload_time": null,
+    "file_type": "verification_table",
+    "note": "需要上传功能修复后生成真实链接"
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "metadata": {
+    "analysis_time": "2025-09-15 15:38:28",
+    "total_modifications": 1,
+    "layer1_passed": 0,
+    "layer2_analyzed": 1,
+    "processing_time": "9.4s"
+  },
+  "results": [
+    {
+      "modification_id": "M001",
+      "cell": "I88",
+      "column": "负责人",
+      "old_value": "徐志杰",
+      "new_value": "",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 90.0,
+        "reason": "关键人缺失"
+      },
+      "layer2_result": {
+        "risk_level": "HIGH",
+        "decision": "REVIEW",
+        "confidence": 85,
+        "key_risks": [
+          "项目负责人角色空缺可能导致决策延迟",
+          "任务执行责任不明确可能导致进度延误",
+          "团队成员可能缺乏明确的工作汇报对象"
+        ],
+        "recommendation": "建议在空置负责人期间：1) 立即指定临时负责人 2) 明确过渡期决策机制 3) 通知所有相关干系人此变更 4) 设置最长7天的空缺期限并确保在该期限内任命新负责人"
+      },
+      "final_decision": "REVIEW",
+      "approval_required": true
+    }
+  ],
+  "summary": {
+    "approved": 0,
+    "conditional": 0,
+    "review_required": 1,
+    "rejected": 0,
+    "risk_distribution": {
+      "LOW": 0,
+      "MEDIUM": 0,
+      "HIGH": 1,
+      "CRITICAL": 0
+    }
+  }
+}

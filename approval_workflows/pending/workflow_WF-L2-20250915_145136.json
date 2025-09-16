@@ -1,0 +1,33 @@
+{
+  "workflow_id": "WF-L2-20250915_145136",
+  "created_time": "2025-09-15 14:51:36",
+  "pending_approvals": [
+    {
+      "modification_id": "M001",
+      "cell": "B40",
+      "column": "项目类型",
+      "old_value": "项目管理",
+      "new_value": "",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 90.0,
+        "reason": "关键信息清空"
+      },
+      "layer2_result": {
+        "risk_level": "CRITICAL",
+        "decision": "REJECT",
+        "confidence": 95,
+        "key_risks": [
+          "项目类型字段清空将导致项目分类体系失效",
+          "项目监控和资源分配将失去依据",
+          "报表统计和数据分析将出现重大偏差",
+          "可能导致相关流程自动化系统错误"
+        ],
+        "recommendation": "建议：1.必须保留项目类型字段值；2.如需修改应明确新值；3.修改前需评估对相关系统的影响并制定迁移方案；4.建议建立字段必填校验规则防止类似空值情况"
+      },
+      "final_decision": "REJECT",
+      "approval_required": true
+    }
+  ],
+  "auto_approved": []
+}

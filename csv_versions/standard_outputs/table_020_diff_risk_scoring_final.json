@@ -1,0 +1,82 @@
+{
+  "success": true,
+  "table_number": 20,
+  "source_file": "table_020_diff.json",
+  "processing_timestamp": "2025-08-21T14:03:17.036547",
+  "risk_scoring_results": [
+    {
+      "序号": 1,
+      "行号": 10,
+      "列名": "对上汇报",
+      "列索引": 16,
+      "原值": "计划汇报",
+      "新值": "待汇报",
+      "base_risk_score": 0.234,
+      "ai_confidence": 0.922,
+      "adjusted_risk_score": 0.273,
+      "final_risk_level": "L3",
+      "ai_decision": "汇报状态需要跟进，确保及时向上沟通",
+      "has_ai_analysis": true,
+      "processing_timestamp": "2025-08-21T14:03:17.036503"
+    },
+    {
+      "序号": 2,
+      "行号": 25,
+      "列名": "完成进度",
+      "列索引": 13,
+      "原值": "10%",
+      "新值": "20%",
+      "base_risk_score": 0.371,
+      "ai_confidence": 0.904,
+      "adjusted_risk_score": 0.431,
+      "final_risk_level": "L2",
+      "ai_decision": "进度更新正常，建议定期跟踪完成质量",
+      "has_ai_analysis": true,
+      "processing_timestamp": "2025-08-21T14:03:17.036519"
+    },
+    {
+      "序号": 3,
+      "行号": 11,
+      "列名": "对上汇报",
+      "列索引": 16,
+      "原值": "尚未汇报",
+      "新值": "已汇报已结项",
+      "base_risk_score": 0.171,
+      "ai_confidence": 0.849,
+      "adjusted_risk_score": 0.195,
+      "final_risk_level": "L3",
+      "ai_decision": "汇报状态更新及时，有利于信息同步",
+      "has_ai_analysis": true,
+      "processing_timestamp": "2025-08-21T14:03:17.036530"
+    },
+    {
+      "序号": 4,
+      "行号": 8,
+      "列名": "应用情况",
+      "列索引": 17,
+      "原值": "原始应用情况_15",
+      "新值": "修改应用情况_54",
+      "base_risk_score": 0.21,
+      "ai_confidence": 0.793,
+      "adjusted_risk_score": 0.234,
+      "final_risk_level": "L3",
+      "ai_decision": "应用情况字段变更需要确认其业务合理性和准确性",
+      "has_ai_analysis": true,
+      "processing_timestamp": "2025-08-21T14:03:17.036539"
+    }
+  ],
+  "summary": {
+    "total_analyzed": 4,
+    "l1_high_risk_count": 0,
+    "l2_medium_risk_count": 1,
+    "l3_low_risk_count": 3,
+    "avg_confidence": 0.867,
+    "avg_adjusted_score": 0.283
+  },
+  "algorithm_info": {
+    "ai_model": "claude_semantic_analysis_v1.0",
+    "risk_calculation": "weighted_column_scoring",
+    "confidence_range": "0.75-0.95",
+    "adjustment_factor": "ai_confidence_weighted"
+  }
+}

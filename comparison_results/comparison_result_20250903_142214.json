@@ -1,0 +1,17 @@
+{
+  "total_changes": 0,
+  "added_rows": 0,
+  "modified_rows": 0,
+  "deleted_rows": 0,
+  "similarity_score": 1.0,
+  "details": {
+    "issue_type": "same_file_path",
+    "file_path": "/root/projects/tencent-doc-manager/downloads/副本-测试版本-出国销售计划表-工作表1_0d24be2d.csv"
+  },
+  "error": "错误：基线文件和目标文件路径相同 (/root/projects/tencent-doc-manager/downloads/副本-测试版本-出国销售计划表-工作表1_0d24be2d.csv)，可能是下载模块的问题",
+  "metadata": {
+    "timestamp": "20250903_142214",
+    "system_version": "3.0.0",
+    "comparison_method": "adaptive"
+  }
+}

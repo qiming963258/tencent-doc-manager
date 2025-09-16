@@ -1,0 +1,48 @@
+{
+  "metadata": {
+    "analysis_time": "2025-09-15 18:31:45",
+    "total_modifications": 1,
+    "layer1_passed": 0,
+    "layer2_analyzed": 1,
+    "processing_time": "8.3s"
+  },
+  "results": [
+    {
+      "modification_id": "M001",
+      "cell": "K27",
+      "column": "协助人",
+      "old_value": "王寒晓",
+      "new_value": "",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 80.0,
+        "reason": "关键人变更"
+      },
+      "layer2_result": {
+        "risk_level": "MEDIUM",
+        "decision": "REVIEW",
+        "confidence": 75,
+        "key_risks": [
+          "协助人清空可能导致任务无人负责",
+          "影响任务执行的连续性",
+          "可能造成团队沟通断层"
+        ],
+        "recommendation": "建议：1.查明清空原因(误操作/人员调整)；2.如需变更协助人，应在修改前确认替代人选；3.如暂时无人接手，建议保留原值并添加备注说明。修改需经过项目经理确认。"
+      },
+      "final_decision": "REVIEW",
+      "approval_required": true
+    }
+  ],
+  "summary": {
+    "approved": 0,
+    "conditional": 0,
+    "review_required": 1,
+    "rejected": 0,
+    "risk_distribution": {
+      "LOW": 0,
+      "MEDIUM": 0,
+      "HIGH": 1,
+      "CRITICAL": 0
+    }
+  }
+}

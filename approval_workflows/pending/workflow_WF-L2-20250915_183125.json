@@ -1,0 +1,31 @@
+{
+  "workflow_id": "WF-L2-20250915_183125",
+  "created_time": "2025-09-15 18:31:25",
+  "pending_approvals": [
+    {
+      "modification_id": "M001",
+      "cell": "I27",
+      "column": "邓总指导登记（日更新）",
+      "old_value": "0820-",
+      "new_value": "",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 80.0,
+        "reason": "删除内容"
+      },
+      "layer2_result": {
+        "risk_level": "MEDIUM",
+        "decision": "REVIEW",
+        "confidence": 75,
+        "key_risks": [
+          "关键指导信息丢失风险",
+          "项目进度跟踪受阻"
+        ],
+        "recommendation": "建议确认删除操作是否故意：1.若是故意删除，需补充说明原因并备案；2.若是误操作，应立即恢复原始数据并建立防误机制。同时检查I27单元格修改是否影响关联报表的完整性。"
+      },
+      "final_decision": "REVIEW",
+      "approval_required": true
+    }
+  ],
+  "auto_approved": []
+}

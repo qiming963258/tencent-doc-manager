@@ -1,0 +1,48 @@
+{
+  "metadata": {
+    "analysis_time": "2025-09-08 16:42:01",
+    "total_modifications": 1,
+    "layer1_passed": 0,
+    "layer2_analyzed": 1,
+    "processing_time": "12.2s"
+  },
+  "results": [
+    {
+      "modification_id": "M001",
+      "cell": "J12",
+      "column": "负责人",
+      "old_value": "赖铁荔",
+      "new_value": "赖铁荔,各责任人",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 80.0,
+        "reason": "新增责任人"
+      },
+      "layer2_result": {
+        "risk_level": "MEDIUM",
+        "decision": "REVIEW",
+        "confidence": 75,
+        "key_risks": [
+          "责任界定模糊风险：'各责任人'表述模糊，可能导致权责不明",
+          "执行效率风险：多人共同负责可能导致效率降低",
+          "沟通协调风险：需要额外沟通机制确保协同"
+        ],
+        "recommendation": "建议明确具体责任分工：1.保留原负责人作为主责人 2.补充具体协同责任人名单 3.在备注栏说明详细分工关系。修改示例：'赖铁荔(主责),张三(设计),李四(测试)'"
+      },
+      "final_decision": "REVIEW",
+      "approval_required": true
+    }
+  ],
+  "summary": {
+    "approved": 0,
+    "conditional": 0,
+    "review_required": 1,
+    "rejected": 0,
+    "risk_distribution": {
+      "LOW": 0,
+      "MEDIUM": 0,
+      "HIGH": 1,
+      "CRITICAL": 0
+    }
+  }
+}

@@ -1,0 +1,7 @@
+# 腾讯文档上传系统 - Python依赖
+playwright>=1.40.0
+flask>=2.0.0
+flask-cors>=3.0.10
+asyncio-mqtt>=0.16.1
+requests>=2.28.0
+python-dotenv>=0.19.0

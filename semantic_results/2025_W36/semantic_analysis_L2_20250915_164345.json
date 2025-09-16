@@ -1,0 +1,48 @@
+{
+  "metadata": {
+    "analysis_time": "2025-09-15 16:43:45",
+    "total_modifications": 1,
+    "layer1_passed": 0,
+    "layer2_analyzed": 1,
+    "processing_time": "14.0s"
+  },
+  "results": [
+    {
+      "modification_id": "M001",
+      "cell": "H7",
+      "column": "具体计划内容",
+      "old_value": "清单计划的罗列整改",
+      "new_value": "人员配置：\n需从大局出发考虑部门实际情况，和资源情况，合理配置人员。\n1、人员配置评估新人是否可做快递+行李；\n2、明燕一边接出国和回国，先按此走两周；同步关注新人-周俊明的情况，二者选其一。\n理想编",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 80.0,
+        "reason": "内容变更"
+      },
+      "layer2_result": {
+        "risk_level": "MEDIUM",
+        "decision": "CONDITIONAL",
+        "confidence": 75,
+        "key_risks": [
+          "人员配置的复杂性增加可能导致执行效率下降",
+          "新人的适应期可能影响短期工作质量",
+          "理想编制与实际操作可能存在差距"
+        ],
+        "recommendation": "建议先对新人和周俊明进行详细的能力评估和培训，同时设立两周的观察期来验证人员配置的合理性。在实施过程中，应定期反馈和调整以确保项目顺利进行。"
+      },
+      "final_decision": "CONDITIONAL",
+      "approval_required": false
+    }
+  ],
+  "summary": {
+    "approved": 0,
+    "conditional": 1,
+    "review_required": 0,
+    "rejected": 0,
+    "risk_distribution": {
+      "LOW": 0,
+      "MEDIUM": 0,
+      "HIGH": 0,
+      "CRITICAL": 0
+    }
+  }
+}

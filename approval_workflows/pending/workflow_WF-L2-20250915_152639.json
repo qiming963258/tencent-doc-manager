@@ -1,0 +1,33 @@
+{
+  "workflow_id": "WF-L2-20250915_152639",
+  "created_time": "2025-09-15 15:26:39",
+  "pending_approvals": [
+    {
+      "modification_id": "M001",
+      "cell": "I76",
+      "column": "负责人",
+      "old_value": "朱瀚桔",
+      "new_value": "",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 80.0,
+        "reason": "关键信息缺失"
+      },
+      "layer2_result": {
+        "risk_level": "CRITICAL",
+        "decision": "REJECT",
+        "confidence": 95,
+        "key_risks": [
+          "关键岗位负责人信息缺失可能导致责任不明",
+          "项目管控出现真空地带",
+          "紧急情况无法找到对应负责人",
+          "影响上下游协作方的沟通效率"
+        ],
+        "recommendation": "请立即补充负责人信息或恢复原负责人设置。如为岗位调整，建议：1.先补充新负责人信息；2.设置新旧责任人交接期；3.更新相关联系表并通知干系人。空白状态不应超过24小时。"
+      },
+      "final_decision": "REJECT",
+      "approval_required": true
+    }
+  ],
+  "auto_approved": []
+}

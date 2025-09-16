@@ -1,0 +1,48 @@
+{
+  "metadata": {
+    "analysis_time": "2025-09-08 14:22:27",
+    "total_modifications": 1,
+    "layer1_passed": 0,
+    "layer2_analyzed": 1,
+    "processing_time": "21.3s"
+  },
+  "results": [
+    {
+      "modification_id": "M001",
+      "cell": "C4",
+      "column": "项目类型",
+      "old_value": "目标管理",
+      "new_value": "体系建设",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 80.0,
+        "reason": "范围扩大"
+      },
+      "layer2_result": {
+        "risk_level": "HIGH",
+        "decision": "REVIEW",
+        "confidence": 85,
+        "key_risks": [
+          "项目性质根本性改变：从具体目标导向转为系统性框架建设，可能导致项目范围、方法论和KPI体系的全面重构",
+          "执行计划重大调整：体系建设通常需要更长周期和更多资源投入",
+          "利益相关方预期错位：原始立项依据可能与新方向不符"
+        ],
+        "recommendation": "建议：1. 召开项目变更评审会，确认战略一致性；2. 重新评估资源需求和时间节点；3. 更新项目章程并获得正式批准；4. 与所有相关方沟通变更影响"
+      },
+      "final_decision": "REVIEW",
+      "approval_required": true
+    }
+  ],
+  "summary": {
+    "approved": 0,
+    "conditional": 0,
+    "review_required": 1,
+    "rejected": 0,
+    "risk_distribution": {
+      "LOW": 0,
+      "MEDIUM": 0,
+      "HIGH": 1,
+      "CRITICAL": 0
+    }
+  }
+}

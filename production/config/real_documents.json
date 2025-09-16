@@ -1,0 +1,27 @@
+{
+  "documents": [
+    {
+      "name": "副本-测试版本-出国销售计划表",
+      "url": "https://docs.qq.com/sheet/DWEFNU25TemFnZXJN",
+      "doc_id": "DWEFNU25TemFnZXJN",
+      "csv_pattern": "test",
+      "description": "出国销售数据监控"
+    },
+    {
+      "name": "副本-测试版本-回国销售计划表",
+      "url": "https://docs.qq.com/sheet/DWGZDZkxpaGVQaURr",
+      "doc_id": "DWGZDZkxpaGVQaURr",
+      "csv_pattern": "realtest",
+      "description": "回国销售数据监控"
+    },
+    {
+      "name": "测试版本-小红书部门",
+      "url": "https://docs.qq.com/sheet/DWFJzdWNwd0RGbU5R",
+      "doc_id": "DWFJzdWNwd0RGbU5R",
+      "csv_pattern": "test_data",
+      "description": "小红书部门数据监控"
+    }
+  ],
+  "paste_format": "【腾讯文档】{name}\\n{url}",
+  "max_documents": null
+}

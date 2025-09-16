@@ -1,0 +1,32 @@
+{
+  "workflow_id": "WF-L2-20250915_151505",
+  "created_time": "2025-09-15 15:15:05",
+  "pending_approvals": [
+    {
+      "modification_id": "M001",
+      "cell": "I64",
+      "column": "负责人",
+      "old_value": "徐志杰",
+      "new_value": "",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 80.0,
+        "reason": "移除负责人"
+      },
+      "layer2_result": {
+        "risk_level": "MEDIUM",
+        "decision": "REVIEW",
+        "confidence": 75,
+        "key_risks": [
+          "责任人不明确可能导致任务无人执行",
+          "团队成员可能不清楚该向谁汇报工作",
+          "项目进度可能因缺少负责人而延误"
+        ],
+        "recommendation": "建议在删除原负责人前，先确定新的负责人并确保交接完成。如果是暂时空缺，应设置临时负责人并明确过渡期。同时通知相关团队成员此变更。"
+      },
+      "final_decision": "REVIEW",
+      "approval_required": true
+    }
+  ],
+  "auto_approved": []
+}

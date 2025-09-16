@@ -1,0 +1,43 @@
+{
+  "id": "20250910_191535",
+  "start_time": "2025-09-10T19:15:35.487325",
+  "end_time": "2025-09-10T19:16:52.396121",
+  "status": "error",
+  "results": {},
+  "logs": [
+    {
+      "time": "19:15:35",
+      "level": "INFO",
+      "message": "开始下载基线文档..."
+    },
+    {
+      "time": "19:16:19",
+      "level": "INFO",
+      "message": "✅ 基线文档下载成功: tencent_测试版本-小红书部门-工作表2_20250910_1916_midweek_W37.csv"
+    },
+    {
+      "time": "19:16:19",
+      "level": "INFO",
+      "message": "开始下载目标文档..."
+    },
+    {
+      "time": "19:16:52",
+      "level": "INFO",
+      "message": "✅ 目标文档下载成功: tencent_测试版本-小红书部门-工作表2_20250910_1916_midweek_W37.csv"
+    },
+    {
+      "time": "19:16:52",
+      "level": "INFO",
+      "message": "开始对比分析..."
+    },
+    {
+      "time": "19:16:52",
+      "level": "ERROR",
+      "message": "❌ 执行出错: 'AdaptiveTableComparator' object has no attribute 'compare_files'"
+    }
+  ],
+  "settings": {
+    "upload_option": "new",
+    "verbose_logging": true
+  }
+}

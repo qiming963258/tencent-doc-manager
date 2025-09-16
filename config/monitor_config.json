@@ -1,0 +1,33 @@
+{
+  "alert_settings": {
+    "threshold": "L1",
+    "levels": ["L1级别修改", "高风险修改", "所有修改"],
+    "current_level": "L1级别修改"
+  },
+  "notification": {
+    "enabled": true,
+    "channels": ["console", "log", "email"],
+    "email_recipients": [],
+    "alert_frequency": 300
+  },
+  "display": {
+    "refresh_interval": 300,
+    "auto_refresh": false,
+    "heatmap_smoothing": true,
+    "show_tooltips": true,
+    "color_scheme": "scientific"
+  },
+  "comparison": {
+    "auto_comparison": true,
+    "comparison_interval": 3600,
+    "baseline_retention_days": 30,
+    "generate_reports": true
+  },
+  "performance": {
+    "max_concurrent_downloads": 3,
+    "download_timeout": 30,
+    "retry_attempts": 3,
+    "cache_duration": 3600
+  },
+  "last_updated": "2025-09-10T18:30:00"
+}

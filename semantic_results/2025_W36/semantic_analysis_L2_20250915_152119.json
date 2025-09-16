@@ -1,0 +1,48 @@
+{
+  "metadata": {
+    "analysis_time": "2025-09-15 15:21:19",
+    "total_modifications": 1,
+    "layer1_passed": 0,
+    "layer2_analyzed": 1,
+    "processing_time": "15.3s"
+  },
+  "results": [
+    {
+      "modification_id": "M001",
+      "cell": "K70",
+      "column": "监督人",
+      "old_value": "徐志杰",
+      "new_value": "邓俊",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 75.0,
+        "reason": "关键人变更"
+      },
+      "layer2_result": {
+        "risk_level": "MEDIUM",
+        "decision": "REVIEW",
+        "confidence": 75,
+        "key_risks": [
+          "监督人变更可能导致项目监督方式或风格变化",
+          "新监督人需时间熟悉项目细节",
+          "可能影响团队与监督人之间的既有工作关系"
+        ],
+        "recommendation": "1. 确保邓俊已全面了解项目情况\n2. 安排徐志杰与邓俊进行工作交接\n3. 通知团队成员监督人变更事宜\n4. 监督人变更后1-2周内加强项目监控"
+      },
+      "final_decision": "REVIEW",
+      "approval_required": true
+    }
+  ],
+  "summary": {
+    "approved": 0,
+    "conditional": 0,
+    "review_required": 1,
+    "rejected": 0,
+    "risk_distribution": {
+      "LOW": 0,
+      "MEDIUM": 0,
+      "HIGH": 1,
+      "CRITICAL": 0
+    }
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "workflow_id": "WF-L2-20250915_143152",
+  "created_time": "2025-09-15 14:31:52",
+  "pending_approvals": [
+    {
+      "modification_id": "M001",
+      "cell": "B20",
+      "column": "项目类型",
+      "old_value": "目标管理",
+      "new_value": "",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 80.0,
+        "reason": "关键信息缺失"
+      },
+      "layer2_result": {
+        "risk_level": "HIGH",
+        "decision": "REVIEW",
+        "confidence": 85,
+        "key_risks": [
+          "项目类型空置可能导致项目目标模糊",
+          "执行计划失去基准参考",
+          "团队协作方向可能产生分歧",
+          "交付时间估算失去依据"
+        ],
+        "recommendation": "建议立即确认项目类型值。如属临时留空，需注明预计填写时间；如确需删除，应同步更新项目章程中所有相关引用，并通知所有干系人。补充风险缓释方案：1) 召开项目类型确认会 2) 建立临时决策机制 3) 设置72小时追溯期"
+      },
+      "final_decision": "REVIEW",
+      "approval_required": true
+    }
+  ],
+  "auto_approved": []
+}

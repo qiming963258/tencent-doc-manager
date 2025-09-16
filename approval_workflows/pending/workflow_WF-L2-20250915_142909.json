@@ -1,0 +1,32 @@
+{
+  "workflow_id": "WF-L2-20250915_142909",
+  "created_time": "2025-09-15 14:29:09",
+  "pending_approvals": [
+    {
+      "modification_id": "M001",
+      "cell": "I17",
+      "column": "负责人",
+      "old_value": "蔡悦莹",
+      "new_value": "",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 80.0,
+        "reason": "关键人缺失"
+      },
+      "layer2_result": {
+        "risk_level": "CRITICAL",
+        "decision": "REVIEW",
+        "confidence": 85,
+        "key_risks": [
+          "关键角色清空导致责任真空",
+          "项目任务无人负责风险",
+          "团队协作链断裂风险"
+        ],
+        "recommendation": "必须立即补充负责人信息或恢复原负责人。若为临时变更，需同步提供：1)临时负责人任命说明 2)交接计划 3)过渡期沟通方案。建议召开变更评审会评估影响范围。"
+      },
+      "final_decision": "REVIEW",
+      "approval_required": true
+    }
+  ],
+  "auto_approved": []
+}

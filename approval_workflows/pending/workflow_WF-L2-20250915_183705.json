@@ -1,0 +1,33 @@
+{
+  "workflow_id": "WF-L2-20250915_183705",
+  "created_time": "2025-09-15 18:37:05",
+  "pending_approvals": [
+    {
+      "modification_id": "M001",
+      "cell": "J33",
+      "column": "负责人",
+      "old_value": "赖铁荔",
+      "new_value": "",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 80.0,
+        "reason": "负责人缺失"
+      },
+      "layer2_result": {
+        "risk_level": "HIGH",
+        "decision": "REVIEW",
+        "confidence": 80,
+        "key_risks": [
+          "项目负责人岗位空缺导致决策真空",
+          "关键任务可能无人跟进造成延误",
+          "团队沟通渠道可能中断",
+          "利益相关方对接人缺失"
+        ],
+        "recommendation": "建议立即执行以下措施：1) 确认删除操作是否误操作 2) 如确需删除，应在24小时内指定接任负责人 3) 安排原负责人工作交接 4) 通知所有相关方负责人变更情况 5) 更新所有关联文档中的负责人信息"
+      },
+      "final_decision": "REVIEW",
+      "approval_required": true
+    }
+  ],
+  "auto_approved": []
+}

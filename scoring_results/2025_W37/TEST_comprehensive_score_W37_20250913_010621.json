@@ -1,0 +1,298 @@
+{
+  "metadata": {
+    "week": "W37",
+    "generation_time": "2025-09-13 01:06:21",
+    "total_tables": 6,
+    "total_modifications": 8,
+    "scoring_version": "v1.0"
+  },
+  "table_scores": [
+    {
+      "table_name": "test_l2_scoring",
+      "table_url": "",
+      "total_rows": 270,
+      "modifications_count": 3,
+      "column_scores": {
+        "项目类型": {
+          "column_level": "L2",
+          "modifications": 1,
+          "scores": [
+            0.54
+          ],
+          "aggregated_score": 0.54,
+          "max_score": 0.54,
+          "min_score": 0.54,
+          "risk_trend": "stable",
+          "ai_decisions": {
+            "REVIEW": 1
+          },
+          "modified_rows": [
+            1
+          ]
+        },
+        "重要程度": {
+          "column_level": "L1",
+          "modifications": 1,
+          "scores": [
+            1.0
+          ],
+          "aggregated_score": 1.0,
+          "max_score": 1.0,
+          "min_score": 1.0,
+          "risk_trend": "stable",
+          "ai_decisions": null,
+          "modified_rows": [
+            1
+          ]
+        },
+        "其他信息": {
+          "column_level": "L3",
+          "modifications": 1,
+          "scores": [
+            0.2
+          ],
+          "aggregated_score": 0.2,
+          "max_score": 0.2,
+          "min_score": 0.2,
+          "risk_trend": "stable",
+          "ai_decisions": null,
+          "modified_rows": [
+            1
+          ]
+        }
+      },
+      "table_summary": {
+        "overall_risk_score": 0.58,
+        "risk_level": "MEDIUM",
+        "top_risks": [
+          {
+            "column": "重要程度",
+            "score": 1.0
+          },
+          {
+            "column": "项目类型",
+            "score": 0.54
+          }
+        ],
+        "recommended_action": "standard_review"
+      }
+    },
+    {
+      "table_name": "format_test",
+      "table_url": "",
+      "total_rows": 270,
+      "modifications_count": 3,
+      "column_scores": {
+        "项目类型": {
+          "column_level": "L2",
+          "modifications": 1,
+          "scores": [
+            0.54
+          ],
+          "aggregated_score": 0.54,
+          "max_score": 0.54,
+          "min_score": 0.54,
+          "risk_trend": "stable",
+          "ai_decisions": {
+            "REVIEW": 1
+          },
+          "modified_rows": [
+            1
+          ]
+        },
+        "重要程度": {
+          "column_level": "L1",
+          "modifications": 1,
+          "scores": [
+            1.0
+          ],
+          "aggregated_score": 1.0,
+          "max_score": 1.0,
+          "min_score": 1.0,
+          "risk_trend": "stable",
+          "ai_decisions": null,
+          "modified_rows": [
+            2
+          ]
+        },
+        "备注": {
+          "column_level": "L3",
+          "modifications": 1,
+          "scores": [
+            0.2
+          ],
+          "aggregated_score": 0.2,
+          "max_score": 0.2,
+          "min_score": 0.2,
+          "risk_trend": "stable",
+          "ai_decisions": null,
+          "modified_rows": [
+            3
+          ]
+        }
+      },
+      "table_summary": {
+        "overall_risk_score": 0.58,
+        "risk_level": "MEDIUM",
+        "top_risks": [
+          {
+            "column": "重要程度",
+            "score": 1.0
+          },
+          {
+            "column": "项目类型",
+            "score": 0.54
+          }
+        ],
+        "recommended_action": "standard_review"
+      }
+    },
+    {
+      "table_name": "最终兼容性测试",
+      "table_url": "",
+      "total_rows": 270,
+      "modifications_count": 2,
+      "column_scores": {
+        "项目状态": {
+          "column_level": "L3",
+          "modifications": 1,
+          "scores": [
+            0.2
+          ],
+          "aggregated_score": 0.2,
+          "max_score": 0.2,
+          "min_score": 0.2,
+          "risk_trend": "stable",
+          "ai_decisions": null,
+          "modified_rows": [
+            1
+          ]
+        },
+        "预算金额": {
+          "column_level": "L3",
+          "modifications": 1,
+          "scores": [
+            0.2
+          ],
+          "aggregated_score": 0.2,
+          "max_score": 0.2,
+          "min_score": 0.2,
+          "risk_trend": "stable",
+          "ai_decisions": null,
+          "modified_rows": [
+            2
+          ]
+        }
+      },
+      "table_summary": {
+        "overall_risk_score": 0.2,
+        "risk_level": "LOW",
+        "top_risks": [],
+        "recommended_action": "periodic_check"
+      }
+    },
+    {
+      "table_name": "副本-测试版本-出国销售计划表",
+      "table_url": "https://docs.qq.com/sheet/DWEFNU25TemFnZXJN",
+      "total_rows": 269,
+      "modifications_count": 0,
+      "column_scores": {},
+      "table_summary": {
+        "overall_risk_score": 0.0,
+        "risk_level": "UNMODIFIED",
+        "high_risk_columns": 0,
+        "total_columns_modified": 0,
+        "ai_intervention_rate": "0%",
+        "confidence_score": 1.0
+      }
+    },
+    {
+      "table_name": "副本-测试版本-回国销售计划表",
+      "table_url": "https://docs.qq.com/sheet/DWGZDZkxpaGVQaURr",
+      "total_rows": 53,
+      "modifications_count": 0,
+      "column_scores": {},
+      "table_summary": {
+        "overall_risk_score": 0.0,
+        "risk_level": "UNMODIFIED",
+        "high_risk_columns": 0,
+        "total_columns_modified": 0,
+        "ai_intervention_rate": "0%",
+        "confidence_score": 1.0
+      }
+    },
+    {
+      "table_name": "测试版本-小红书部门",
+      "table_url": "https://docs.qq.com/sheet/DWFJzdWNwd0RGbU5R",
+      "total_rows": 1473,
+      "modifications_count": 0,
+      "column_scores": {},
+      "table_summary": {
+        "overall_risk_score": 0.0,
+        "risk_level": "UNMODIFIED",
+        "high_risk_columns": 0,
+        "total_columns_modified": 0,
+        "ai_intervention_rate": "0%",
+        "confidence_score": 1.0
+      }
+    }
+  ],
+  "cross_table_analysis": {
+    "column_risk_ranking": [
+      {
+        "column": "重要程度",
+        "avg_score": 1.0,
+        "tables_affected": 2
+      },
+      {
+        "column": "项目类型",
+        "avg_score": 0.54,
+        "tables_affected": 2
+      },
+      {
+        "column": "其他信息",
+        "avg_score": 0.2,
+        "tables_affected": 1
+      },
+      {
+        "column": "备注",
+        "avg_score": 0.2,
+        "tables_affected": 1
+      },
+      {
+        "column": "项目状态",
+        "avg_score": 0.2,
+        "tables_affected": 1
+      },
+      {
+        "column": "预算金额",
+        "avg_score": 0.2,
+        "tables_affected": 1
+      }
+    ],
+    "pattern_detection": {
+      "systematic_changes": [
+        {
+          "pattern": "重要程度批量变更",
+          "affected_columns": [
+            "重要程度"
+          ],
+          "tables": [
+            "test_l2_scoring",
+            "format_test"
+          ],
+          "risk_boost": 1.3
+        }
+      ],
+      "anomalies": []
+    },
+    "overall_metrics": {
+      "system_risk_score": 0.227,
+      "risk_level": "LOW",
+      "total_high_risks": 2,
+      "total_critical_changes": 2,
+      "ai_intervention_rate": "100.0%",
+      "token_efficiency": "98.6%"
+    }
+  }
+}

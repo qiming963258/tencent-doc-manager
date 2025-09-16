@@ -1,0 +1,49 @@
+{
+  "metadata": {
+    "analysis_time": "2025-09-15 18:04:54",
+    "total_modifications": 1,
+    "layer1_passed": 0,
+    "layer2_analyzed": 1,
+    "processing_time": "12.6s"
+  },
+  "results": [
+    {
+      "modification_id": "M001",
+      "cell": "C5",
+      "column": "项目类型",
+      "old_value": "目标管理",
+      "new_value": "体系建设",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 80.0,
+        "reason": "范围扩大"
+      },
+      "layer2_result": {
+        "risk_level": "HIGH",
+        "decision": "REVIEW",
+        "confidence": 80,
+        "key_risks": [
+          "项目性质发生根本性改变，可能导致原有项目目标失效",
+          "执行计划需要全面调整，可能产生资源冲突",
+          "团队需要重新理解项目定位，协作模式可能改变",
+          "交付时间很可能需要延长"
+        ],
+        "recommendation": "建议召开项目变更评估会议，重点审查以下内容：1)新旧项目类型的关联性和转换可行性；2)调整后的项目目标与组织战略的匹配度；3)修改后的资源需求计划。需获得原项目发起人的正式批准。"
+      },
+      "final_decision": "REVIEW",
+      "approval_required": true
+    }
+  ],
+  "summary": {
+    "approved": 0,
+    "conditional": 0,
+    "review_required": 1,
+    "rejected": 0,
+    "risk_distribution": {
+      "LOW": 0,
+      "MEDIUM": 0,
+      "HIGH": 1,
+      "CRITICAL": 0
+    }
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "workflow_id": "WF-L2-20250909_103653",
+  "created_time": "2025-09-09 10:36:53",
+  "pending_approvals": [],
+  "auto_approved": [
+    {
+      "modification_id": "M001",
+      "cell": "J12",
+      "column": "负责人",
+      "old_value": "赖铁荔",
+      "new_value": "赖铁荔,各责任人",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 75.0,
+        "reason": "多人负责"
+      },
+      "layer2_result": {
+        "risk_level": "MEDIUM",
+        "decision": "CONDITIONAL",
+        "confidence": 75,
+        "key_risks": [
+          "责任主体模糊化风险：'各责任人'表述不明确，可能导致职责推诿",
+          "协作效率风险：多人共同负责可能降低决策效率",
+          "问责机制弱化风险：主责人变为集体负责制会影响问题追溯"
+        ],
+        "recommendation": "建议：1.如确需多人负责，应明确列出具体责任人姓名；2.或保留赖铁荔为主责人，补充注明'需各模块责任人配合'；3.配套更新RACI矩阵等责任分配文件。需获得原负责人书面确认后实施。"
+      },
+      "final_decision": "CONDITIONAL",
+      "approval_required": false
+    }
+  ]
+}

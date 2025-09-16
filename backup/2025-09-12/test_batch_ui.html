@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>8094批量处理功能测试</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        .container {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+        h1 {
+            color: #764ba2;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .batch-section {
+            background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+            color: white;
+            padding: 25px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+        textarea {
+            width: 100%;
+            min-height: 200px;
+            padding: 10px;
+            border: 2px solid #e0e0e0;
+            border-radius: 5px;
+            font-family: monospace;
+            font-size: 14px;
+            background: #f9f9f9;
+        }
+        button {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            margin-top: 10px;
+            transition: transform 0.2s;
+        }
+        button:hover {
+            transform: scale(1.05);
+        }
+        button:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+        #result {
+            margin-top: 20px;
+            padding: 15px;
+            background: #f5f5f5;
+            border-radius: 5px;
+            white-space: pre-wrap;
+            font-family: monospace;
+            max-height: 400px;
+            overflow-y: auto;
+        }
+        .status-badge {
+            display: inline-block;
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 12px;
+            margin-left: 10px;
+        }
+        .status-running {
+            background: #ffa500;
+            color: white;
+        }
+        .status-success {
+            background: #4caf50;
+            color: white;
+        }
+        .status-error {
+            background: #f44336;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🚀 8094批量处理功能测试界面</h1>
+        
+        <div class="batch-section">
+            <h2>📋 批量文档对比处理</h2>
+            <p>输入多组基线URL和目标URL，每行一组，用空格、逗号或竖线分隔：</p>
+            <textarea id="batchInput" placeholder="# 示例格式（以#开头的行会被忽略）：
+# 基线URL 目标URL
+https://docs.qq.com/sheet/DWEFNU25TemFnZXJN https://docs.qq.com/sheet/DWGZDZkxpaGVQaURr
+https://docs.qq.com/sheet/DWGZDZkxpaGVQaURr https://docs.qq.com/sheet/DWFJzdWNwd0RGbU5R"></textarea>
+            
+            <div style="margin-top: 15px;">
+                <label style="display: block; margin-bottom: 5px;">Cookie（可选，留空使用配置文件中的Cookie）：</label>
+                <input type="text" id="cookieInput" style="width: 100%; padding: 8px; border-radius: 5px; border: 1px solid #ddd;">
+            </div>
+            
+            <button id="startBatch" onclick="startBatchProcess()">🎯 开始批量处理</button>
+            <button id="cancelBatch" onclick="cancelBatchProcess()" style="display: none; background: linear-gradient(135deg, #f44336 0%, #e91e63 100%);">❌ 取消处理</button>
+            <span id="status" class="status-badge" style="display: none;"></span>
+        </div>
+        
+        <div id="result"></div>
+    </div>
+    
+    <script>
+        let currentRequest = null;
+        
+        function startBatchProcess() {
+            const batchInput = document.getElementById('batchInput').value;
+            const cookie = document.getElementById('cookieInput').value;
+            
+            if (!batchInput.trim()) {
+                showResult('❌ 请输入批量处理任务', 'error');
+                return;
+            }
+            
+            // 统计任务数量
+            const lines = batchInput.split('\n').filter(line => {
+                line = line.trim();
+                return line && !line.startsWith('#');
+            });
+            const taskCount = lines.length;
+            
+            showResult(`🚀 开始批量处理 ${taskCount} 个任务...`, 'info');
+            updateStatus('处理中...', 'running');
+            
+            document.getElementById('startBatch').disabled = true;
+            document.getElementById('cancelBatch').style.display = 'inline-block';
+            
+            const data = {
+                batch_input: batchInput
+            };
+            
+            if (cookie) {
+                data.cookie = cookie;
+            }
+            
+            currentRequest = fetch('http://202.140.143.88:8094/api/batch-process', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(data)
+            })
+            .then(response => response.json())
+            .then(result => {
+                if (result.success) {
+                    const summary = result.summary || {};
+                    let output = `✅ 批量处理完成！\n\n`;
+                    output += `📊 处理汇总：\n`;
+                    output += `总任务数: ${summary.total_tasks || 0}\n`;
+                    output += `成功数量: ${summary.success_count || 0}\n`;
+                    output += `失败数量: ${summary.failed_count || 0}\n`;
+                    output += `结果文件: ${result.result_file || 'N/A'}\n\n`;
+                    
+                    if (summary.results && summary.results.length > 0) {
+                        output += `📝 详细结果：\n`;
+                        summary.results.forEach((task, index) => {
+                            output += `\n任务 ${index + 1}:\n`;
+                            output += `基线: ${task.baseline_url}\n`;
+                            output += `目标: ${task.target_url}\n`;
+                            output += `状态: ${task.success ? '✅ 成功' : '❌ 失败'}\n`;
+                            if (!task.success && task.result && task.result.error) {
+                                output += `错误: ${task.result.error}\n`;
+                            }
+                            if (task.result && task.result.comparison_file) {
+                                output += `对比结果: ${task.result.comparison_file}\n`;
+                            }
+                        });
+                    }
+                    
+                    showResult(output, 'success');
+                    updateStatus('处理成功', 'success');
+                } else {
+                    showResult(`❌ 批量处理失败：${result.error || 'Unknown error'}`, 'error');
+                    updateStatus('处理失败', 'error');
+                }
+            })
+            .catch(error => {
+                if (error.name === 'AbortError') {
+                    showResult('⚠️ 批量处理已取消', 'warning');
+                    updateStatus('已取消', 'error');
+                } else {
+                    showResult(`❌ 请求错误：${error.message}`, 'error');
+                    updateStatus('请求错误', 'error');
+                }
+            })
+            .finally(() => {
+                document.getElementById('startBatch').disabled = false;
+                document.getElementById('cancelBatch').style.display = 'none';
+                currentRequest = null;
+            });
+        }
+        
+        function cancelBatchProcess() {
+            if (currentRequest) {
+                // Note: Fetch API doesn't support aborting requests directly
+                // This is just a UI update
+                showResult('⚠️ 正在尝试取消批量处理...', 'warning');
+            }
+        }
+        
+        function showResult(message, type) {
+            const resultDiv = document.getElementById('result');
+            const timestamp = new Date().toLocaleTimeString();
+            const prefix = type === 'error' ? '❌' : type === 'success' ? '✅' : 'ℹ️';
+            resultDiv.textContent = `[${timestamp}] ${message}`;
+            
+            resultDiv.style.background = 
+                type === 'error' ? '#ffebee' :
+                type === 'success' ? '#e8f5e9' :
+                type === 'warning' ? '#fff3e0' : '#f5f5f5';
+        }
+        
+        function updateStatus(text, type) {
+            const statusBadge = document.getElementById('status');
+            statusBadge.textContent = text;
+            statusBadge.className = `status-badge status-${type}`;
+            statusBadge.style.display = 'inline-block';
+        }
+        
+        // 页面加载时填充示例数据
+        window.onload = function() {
+            document.getElementById('batchInput').value = `# 批量处理测试示例
+# 格式：基线URL 目标URL
+
+# 测试任务1：副本-测试版本-出国销售计划表 vs 副本-测试版本-回国销售计划表
+https://docs.qq.com/sheet/DWEFNU25TemFnZXJN https://docs.qq.com/sheet/DWGZDZkxpaGVQaURr
+
+# 测试任务2：副本-测试版本-回国销售计划表 vs 测试版本-小红书部门
+https://docs.qq.com/sheet/DWGZDZkxpaGVQaURr https://docs.qq.com/sheet/DWFJzdWNwd0RGbU5R`;
+        };
+    </script>
+</body>
+</html>

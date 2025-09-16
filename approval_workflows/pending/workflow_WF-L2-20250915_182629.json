@@ -1,0 +1,31 @@
+{
+  "workflow_id": "WF-L2-20250915_182629",
+  "created_time": "2025-09-15 18:26:29",
+  "pending_approvals": [
+    {
+      "modification_id": "M001",
+      "cell": "C14",
+      "column": "项目类型",
+      "old_value": "目标管理",
+      "new_value": "项目管理",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 80.0,
+        "reason": "概念变更"
+      },
+      "layer2_result": {
+        "risk_level": "MEDIUM",
+        "decision": "REVIEW",
+        "confidence": 75,
+        "key_risks": [
+          "项目范围可能扩大",
+          "执行方法可能需要调整"
+        ],
+        "recommendation": "建议召集相关干系人讨论此修改的必要性和潜在影响，确保项目目标、执行计划和资源分配与新项目类型保持一致。"
+      },
+      "final_decision": "REVIEW",
+      "approval_required": true
+    }
+  ],
+  "auto_approved": []
+}

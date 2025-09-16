@@ -1,0 +1,90 @@
+{
+  "comparison_summary": {
+    "success": true,
+    "total_differences": 1,
+    "security_score": 80.0,
+    "risk_level": "L3 - 低风险",
+    "processing_time": 0.000645,
+    "comparison_time": "2025-08-20T17:08:40.575784"
+  },
+  "file_info": {
+    "file_checksums": {
+      "file1": "679dc783929bae8048d15c63c885b40fcb5e72329d311375ede941e6aff5588a",
+      "file2": "830aa7e8ebf454c3c5fcddc19d668b88eca08bf8407c52067a729eadc2502977"
+    },
+    "metadata": {
+      "file1_info": {
+        "encoding": "utf-8-sig",
+        "rows": 4,
+        "columns": 4,
+        "file_size": 104,
+        "checksum": "679dc783929bae8048d15c63c885b40fcb5e72329d311375ede941e6aff5588a"
+      },
+      "file2_info": {
+        "encoding": "utf-8-sig",
+        "rows": 5,
+        "columns": 4,
+        "file_size": 126,
+        "checksum": "830aa7e8ebf454c3c5fcddc19d668b88eca08bf8407c52067a729eadc2502977"
+      },
+      "column_mapping": {
+        "mapping": {
+          "id": "id",
+          "name": "name",
+          "department": "department",
+          "status": "status"
+        },
+        "confidence_scores": {
+          "id": 1.0,
+          "name": 1.0,
+          "department": 1.0,
+          "status": 1.0
+        },
+        "mapping_rate": 100.0
+      },
+      "risk_analysis": {
+        "security_score": 80.0,
+        "average_risk_score": 0.2,
+        "max_risk_score": 0.2,
+        "risk_distribution": {
+          "L1": 0,
+          "L2": 0,
+          "L3": 1
+        },
+        "security_violations": [],
+        "total_risks": 1
+      },
+      "audit_log_entries": 1
+    }
+  },
+  "differences": [
+    {
+      "序号": 1,
+      "行号": 2,
+      "列名": "status",
+      "列索引": 4,
+      "原值": "正常",
+      "新值": "离职",
+      "位置": "行2列4(status)",
+      "映射列名": null,
+      "比较时间": "2025-08-20T17:08:40.575694",
+      "risk_level": "L3",
+      "risk_score": 0.2,
+      "security_multiplier": 1.0,
+      "text_change_ratio": 0.5
+    }
+  ],
+  "audit_log": [
+    {
+      "timestamp": "2025-08-20T17:08:40.575191",
+      "operation": "csv_comparison_start",
+      "details": {
+        "file1": "/root/projects/tencent-doc-manager/test_data/test_baseline.csv",
+        "file2": "/root/projects/tencent-doc-manager/test_data/test_current.csv",
+        "output": "/root/projects/tencent-doc-manager/csv_security_results/integration_test_comparison.json"
+      },
+      "user": "system",
+      "session_id": "csv_comp_1755680920"
+    }
+  ]
+}

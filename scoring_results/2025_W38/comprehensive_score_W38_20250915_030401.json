@@ -1,0 +1,472 @@
+{
+  "generation_time": "2025-09-15T03:04:01.065749",
+  "scoring_version": "2.0",
+  "scoring_standard": "0000-颜色和级别打分标准",
+  "week_number": "W38",
+  "table_names": [
+    "出国销售计划表",
+    "小红书部门"
+  ],
+  "column_avg_scores": {
+    "序号": 0.0,
+    "项目类型": 0.8,
+    "来源": 0.1,
+    "任务发起时间": 0.1,
+    "目标对齐": 0.8,
+    "关键KR对齐": 0.8,
+    "具体计划内容": 0.9,
+    "邓总指导登记": 0.1,
+    "负责人": 0.9,
+    "协助人": 0.716,
+    "监督人": 0.605,
+    "重要程度": 0.8,
+    "预计完成时间": 0.588,
+    "完成进度": 0.1,
+    "完成链接": 0.1,
+    "经理分析复盘": 0.1,
+    "最新复盘时间": 0.1,
+    "对上汇报": 0.1,
+    "应用情况": 0.1
+  },
+  "table_scores": [
+    {
+      "table_name": "出国销售计划表",
+      "table_url": "https://docs.qq.com/sheet/DWEFNU25TemFnZXJN?tab=BB08J2",
+      "total_modifications": 18,
+      "column_scores": {
+        "项目类型": {
+          "avg_score": 0.8,
+          "modified_rows": [
+            3
+          ],
+          "row_scores": [
+            0.8
+          ],
+          "column_level": "L1",
+          "modification_count": 1
+        },
+        "来源": {
+          "avg_score": 0.1,
+          "modified_rows": [
+            4
+          ],
+          "row_scores": [
+            0.1
+          ],
+          "column_level": "L3",
+          "modification_count": 1
+        },
+        "任务发起时间": {
+          "avg_score": 0.1,
+          "modified_rows": [
+            5
+          ],
+          "row_scores": [
+            0.1
+          ],
+          "column_level": "L3",
+          "modification_count": 1
+        },
+        "目标对齐": {
+          "avg_score": 0.8,
+          "modified_rows": [
+            6
+          ],
+          "row_scores": [
+            0.8
+          ],
+          "column_level": "L1",
+          "modification_count": 1
+        },
+        "关键KR对齐": {
+          "avg_score": 0.8,
+          "modified_rows": [
+            6
+          ],
+          "row_scores": [
+            0.8
+          ],
+          "column_level": "L1",
+          "modification_count": 1
+        },
+        "具体计划内容": {
+          "avg_score": 0.9,
+          "modified_rows": [
+            7
+          ],
+          "row_scores": [
+            0.9
+          ],
+          "column_level": "L2",
+          "modification_count": 1
+        },
+        "邓总指导登记": {
+          "avg_score": 0.1,
+          "modified_rows": [
+            8
+          ],
+          "row_scores": [
+            0.1
+          ],
+          "column_level": "L3",
+          "modification_count": 1
+        },
+        "负责人": {
+          "avg_score": 0.9,
+          "modified_rows": [
+            9
+          ],
+          "row_scores": [
+            0.9
+          ],
+          "column_level": "L2",
+          "modification_count": 1
+        },
+        "协助人": {
+          "avg_score": 0.716,
+          "modified_rows": [
+            10
+          ],
+          "row_scores": [
+            0.716
+          ],
+          "column_level": "L2",
+          "modification_count": 1
+        },
+        "监督人": {
+          "avg_score": 0.605,
+          "modified_rows": [
+            11
+          ],
+          "row_scores": [
+            0.605
+          ],
+          "column_level": "L2",
+          "modification_count": 1
+        },
+        "重要程度": {
+          "avg_score": 0.8,
+          "modified_rows": [
+            12
+          ],
+          "row_scores": [
+            0.8
+          ],
+          "column_level": "L1",
+          "modification_count": 1
+        },
+        "预计完成时间": {
+          "avg_score": 0.6,
+          "modified_rows": [
+            13
+          ],
+          "row_scores": [
+            0.6
+          ],
+          "column_level": "L2",
+          "modification_count": 1
+        },
+        "完成进度": {
+          "avg_score": 0.1,
+          "modified_rows": [
+            14
+          ],
+          "row_scores": [
+            0.1
+          ],
+          "column_level": "L3",
+          "modification_count": 1
+        },
+        "完成链接": {
+          "avg_score": 0.1,
+          "modified_rows": [
+            15
+          ],
+          "row_scores": [
+            0.1
+          ],
+          "column_level": "L3",
+          "modification_count": 1
+        },
+        "经理分析复盘": {
+          "avg_score": 0.1,
+          "modified_rows": [
+            16
+          ],
+          "row_scores": [
+            0.1
+          ],
+          "column_level": "L3",
+          "modification_count": 1
+        },
+        "最新复盘时间": {
+          "avg_score": 0.1,
+          "modified_rows": [
+            17
+          ],
+          "row_scores": [
+            0.1
+          ],
+          "column_level": "L3",
+          "modification_count": 1
+        },
+        "对上汇报": {
+          "avg_score": 0.1,
+          "modified_rows": [
+            18
+          ],
+          "row_scores": [
+            0.1
+          ],
+          "column_level": "L3",
+          "modification_count": 1
+        },
+        "应用情况": {
+          "avg_score": 0.1,
+          "modified_rows": [
+            19
+          ],
+          "row_scores": [
+            0.1
+          ],
+          "column_level": "L3",
+          "modification_count": 1
+        }
+      },
+      "overall_risk_score": 0.434
+    },
+    {
+      "table_name": "小红书部门",
+      "table_url": "https://docs.qq.com/sheet/DWFJzdWNwd0RGbU5R?tab=000001",
+      "total_modifications": 1,
+      "column_scores": {
+        "预计完成时间": {
+          "avg_score": 0.576,
+          "modified_rows": [
+            19
+          ],
+          "row_scores": [
+            0.576
+          ],
+          "column_level": "L2",
+          "modification_count": 1
+        }
+      },
+      "overall_risk_score": 0.576
+    }
+  ],
+  "table_urls": [
+    "https://docs.qq.com/sheet/DWEFNU25TemFnZXJN?tab=BB08J2",
+    "https://docs.qq.com/sheet/DWFJzdWNwd0RGbU5R?tab=000001"
+  ],
+  "total_modifications": 19,
+  "risk_summary": {
+    "high_risk_count": 0,
+    "medium_risk_count": 2,
+    "low_risk_count": 0
+  },
+  "ui_data": [
+    {
+      "table_name": "出国销售计划表",
+      "table_url": "https://docs.qq.com/sheet/DWEFNU25TemFnZXJN?tab=BB08J2",
+      "row_data": [
+        {
+          "column": "序号",
+          "heat_value": 0.0,
+          "color": "#0000FF"
+        },
+        {
+          "column": "项目类型",
+          "heat_value": 0.8,
+          "color": "#FF0000"
+        },
+        {
+          "column": "来源",
+          "heat_value": 0.1,
+          "color": "#00FF00"
+        },
+        {
+          "column": "任务发起时间",
+          "heat_value": 0.1,
+          "color": "#00FF00"
+        },
+        {
+          "column": "目标对齐",
+          "heat_value": 0.8,
+          "color": "#FF0000"
+        },
+        {
+          "column": "关键KR对齐",
+          "heat_value": 0.8,
+          "color": "#FF0000"
+        },
+        {
+          "column": "具体计划内容",
+          "heat_value": 0.9,
+          "color": "#FF0000"
+        },
+        {
+          "column": "邓总指导登记",
+          "heat_value": 0.1,
+          "color": "#00FF00"
+        },
+        {
+          "column": "负责人",
+          "heat_value": 0.9,
+          "color": "#FF0000"
+        },
+        {
+          "column": "协助人",
+          "heat_value": 0.716,
+          "color": "#FFA500"
+        },
+        {
+          "column": "监督人",
+          "heat_value": 0.605,
+          "color": "#FFA500"
+        },
+        {
+          "column": "重要程度",
+          "heat_value": 0.8,
+          "color": "#FF0000"
+        },
+        {
+          "column": "预计完成时间",
+          "heat_value": 0.6,
+          "color": "#FFA500"
+        },
+        {
+          "column": "完成进度",
+          "heat_value": 0.1,
+          "color": "#00FF00"
+        },
+        {
+          "column": "完成链接",
+          "heat_value": 0.1,
+          "color": "#00FF00"
+        },
+        {
+          "column": "经理分析复盘",
+          "heat_value": 0.1,
+          "color": "#00FF00"
+        },
+        {
+          "column": "最新复盘时间",
+          "heat_value": 0.1,
+          "color": "#00FF00"
+        },
+        {
+          "column": "对上汇报",
+          "heat_value": 0.1,
+          "color": "#00FF00"
+        },
+        {
+          "column": "应用情况",
+          "heat_value": 0.1,
+          "color": "#00FF00"
+        }
+      ]
+    },
+    {
+      "table_name": "小红书部门",
+      "table_url": "https://docs.qq.com/sheet/DWFJzdWNwd0RGbU5R?tab=000001",
+      "row_data": [
+        {
+          "column": "序号",
+          "heat_value": 0.0,
+          "color": "#0000FF"
+        },
+        {
+          "column": "项目类型",
+          "heat_value": 0.0,
+          "color": "#0000FF"
+        },
+        {
+          "column": "来源",
+          "heat_value": 0.0,
+          "color": "#0000FF"
+        },
+        {
+          "column": "任务发起时间",
+          "heat_value": 0.0,
+          "color": "#0000FF"
+        },
+        {
+          "column": "目标对齐",
+          "heat_value": 0.0,
+          "color": "#0000FF"
+        },
+        {
+          "column": "关键KR对齐",
+          "heat_value": 0.0,
+          "color": "#0000FF"
+        },
+        {
+          "column": "具体计划内容",
+          "heat_value": 0.0,
+          "color": "#0000FF"
+        },
+        {
+          "column": "邓总指导登记",
+          "heat_value": 0.0,
+          "color": "#0000FF"
+        },
+        {
+          "column": "负责人",
+          "heat_value": 0.0,
+          "color": "#0000FF"
+        },
+        {
+          "column": "协助人",
+          "heat_value": 0.0,
+          "color": "#0000FF"
+        },
+        {
+          "column": "监督人",
+          "heat_value": 0.0,
+          "color": "#0000FF"
+        },
+        {
+          "column": "重要程度",
+          "heat_value": 0.0,
+          "color": "#0000FF"
+        },
+        {
+          "column": "预计完成时间",
+          "heat_value": 0.576,
+          "color": "#FFFF00"
+        },
+        {
+          "column": "完成进度",
+          "heat_value": 0.0,
+          "color": "#0000FF"
+        },
+        {
+          "column": "完成链接",
+          "heat_value": 0.0,
+          "color": "#0000FF"
+        },
+        {
+          "column": "经理分析复盘",
+          "heat_value": 0.0,
+          "color": "#0000FF"
+        },
+        {
+          "column": "最新复盘时间",
+          "heat_value": 0.0,
+          "color": "#0000FF"
+        },
+        {
+          "column": "对上汇报",
+          "heat_value": 0.0,
+          "color": "#0000FF"
+        },
+        {
+          "column": "应用情况",
+          "heat_value": 0.0,
+          "color": "#0000FF"
+        }
+      ]
+    }
+  ]
+}

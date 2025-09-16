@@ -1,0 +1,32 @@
+{
+  "workflow_id": "WF-L2-20250915_154215",
+  "created_time": "2025-09-15 15:42:15",
+  "pending_approvals": [],
+  "auto_approved": [
+    {
+      "modification_id": "M001",
+      "cell": "K92",
+      "column": "监督人",
+      "old_value": "徐志杰",
+      "new_value": "魏志广",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 80.0,
+        "reason": "关键人变更"
+      },
+      "layer2_result": {
+        "risk_level": "MEDIUM",
+        "decision": "CONDITIONAL",
+        "confidence": 75,
+        "key_risks": [
+          "监督人变更可能导致项目监督风格变化",
+          "新监督人需要时间熟悉项目情况",
+          "团队可能需要适应新的监督方式"
+        ],
+        "recommendation": "建议:1.确保完整交接(包括当前项目状态、关键问题、待决策事项);2.安排新老监督人直接沟通;3.向团队正式通知此变更;4.设置1-2周的过渡观察期。需确认魏志广已充分了解项目背景和监督职责后再正式生效。"
+      },
+      "final_decision": "CONDITIONAL",
+      "approval_required": false
+    }
+  ]
+}

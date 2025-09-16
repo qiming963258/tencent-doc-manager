@@ -1,0 +1,48 @@
+{
+  "metadata": {
+    "analysis_time": "2025-09-15 14:45:28",
+    "total_modifications": 1,
+    "layer1_passed": 0,
+    "layer2_analyzed": 1,
+    "processing_time": "21.8s"
+  },
+  "results": [
+    {
+      "modification_id": "M001",
+      "cell": "G34",
+      "column": "具体计划内容",
+      "old_value": "目前【晒单】以【目标管理机制】进行推进，周执行与复盘推进【目标导向】展开,按照周度周三,周五进行汇报\n\n@新媒体运营-朱瀚桔",
+      "new_value": "收款管理",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 80.0,
+        "reason": "业务变更"
+      },
+      "layer2_result": {
+        "risk_level": "HIGH",
+        "decision": "REVIEW",
+        "confidence": 80,
+        "key_risks": [
+          "计划性质完全改变：从目标管理机制变为收款管理，可能影响项目整体方向",
+          "关键执行方式被删除：原执行机制(周执行与复盘)和汇报节奏(周三/周五)被完全移除",
+          "责任人变更风险：原责任人标记被删除，新值未明确责任归属"
+        ],
+        "recommendation": "建议补充说明：1)为何将目标管理改为收款管理；2)收款管理的具体执行计划；3)明确责任人。同时评估该变更是否需同步更新项目目标和相关方期望。重大性质变更建议提请项目负责人审批。"
+      },
+      "final_decision": "REVIEW",
+      "approval_required": true
+    }
+  ],
+  "summary": {
+    "approved": 0,
+    "conditional": 0,
+    "review_required": 1,
+    "rejected": 0,
+    "risk_distribution": {
+      "LOW": 0,
+      "MEDIUM": 0,
+      "HIGH": 1,
+      "CRITICAL": 0
+    }
+  }
+}

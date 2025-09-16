@@ -1,0 +1,39 @@
+{
+  "last_update": "2025-08-20T18:01:58.032674",
+  "data_source": "/root/projects/tencent-doc-manager/ui_data/real_test_ui_data.json",
+  "heatmap_source": "/root/projects/tencent-doc-manager/ui_data/real_test_heatmap.json",
+  "ui_settings": {
+    "heatmap_dimensions": {
+      "width": 30,
+      "height": 19
+    },
+    "color_mapping": {
+      "L1": {
+        "color": "#ff4444",
+        "intensity": 1.0,
+        "name": "高风险"
+      },
+      "L2": {
+        "color": "#ff8844",
+        "intensity": 0.6,
+        "name": "中风险"
+      },
+      "L3": {
+        "color": "#44ff44",
+        "intensity": 0.2,
+        "name": "低风险"
+      }
+    },
+    "ui_refresh_interval": 5000,
+    "max_displayed_differences": 100,
+    "enable_real_time_updates": true
+  },
+  "connectivity_stats": {
+    "session_start": "2025-08-20T18:01:58.021618",
+    "ui_data_generated": 0,
+    "api_calls_successful": 0,
+    "api_calls_failed": 0,
+    "real_time_updates": 0,
+    "heatmap_generations": 0
+  }
+}

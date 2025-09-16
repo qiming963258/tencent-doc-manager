@@ -1,0 +1,31 @@
+{
+  "workflow_id": "WF-L2-20250915_183714",
+  "created_time": "2025-09-15 18:37:14",
+  "pending_approvals": [
+    {
+      "modification_id": "M001",
+      "cell": "K33",
+      "column": "协助人",
+      "old_value": "赖铁荔",
+      "new_value": "",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 80.0,
+        "reason": "删除协助人"
+      },
+      "layer2_result": {
+        "risk_level": "MEDIUM",
+        "decision": "REVIEW",
+        "confidence": 75,
+        "key_risks": [
+          "协助人清空可能导致责任归属不明确",
+          "任务执行缺乏明确负责人可能影响进度"
+        ],
+        "recommendation": "建议确认：1.该任务是否仍需协助人 2.如果是负责人变更，应填写新协助人而非清空 3.检查相关任务分配是否需要同步调整。在未明确原因前建议暂缓修改。"
+      },
+      "final_decision": "REVIEW",
+      "approval_required": true
+    }
+  ],
+  "auto_approved": []
+}

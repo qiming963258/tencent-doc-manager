@@ -1,0 +1,48 @@
+{
+  "metadata": {
+    "analysis_time": "2025-09-15 14:40:01",
+    "total_modifications": 1,
+    "layer1_passed": 0,
+    "layer2_analyzed": 1,
+    "processing_time": "10.9s"
+  },
+  "results": [
+    {
+      "modification_id": "M001",
+      "cell": "K28",
+      "column": "监督人",
+      "old_value": "徐志杰",
+      "new_value": "杨顺鑫",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 75.0,
+        "reason": "关键人变更"
+      },
+      "layer2_result": {
+        "risk_level": "MEDIUM",
+        "decision": "CONDITIONAL",
+        "confidence": 75,
+        "key_risks": [
+          "监督人变更可能导致项目监督标准或方式发生变化",
+          "新监督人需要时间熟悉项目细节",
+          "团队需要适应新监督人的工作风格"
+        ],
+        "recommendation": "建议进行以下操作后批准变更：1. 确保新监督人杨顺鑫已充分了解项目背景和监督要求；2. 安排原监督人徐志杰与新监督人进行工作交接；3. 向团队正式通知监督人变更事宜；4. 监控变更后1-2周的项目执行情况。如果涉及关键项目阶段，建议推迟到当前阶段结束后再变更监督人。"
+      },
+      "final_decision": "CONDITIONAL",
+      "approval_required": false
+    }
+  ],
+  "summary": {
+    "approved": 0,
+    "conditional": 1,
+    "review_required": 0,
+    "rejected": 0,
+    "risk_distribution": {
+      "LOW": 0,
+      "MEDIUM": 0,
+      "HIGH": 0,
+      "CRITICAL": 0
+    }
+  }
+}

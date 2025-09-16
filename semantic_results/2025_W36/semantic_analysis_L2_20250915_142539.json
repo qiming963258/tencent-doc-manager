@@ -1,0 +1,48 @@
+{
+  "metadata": {
+    "analysis_time": "2025-09-15 14:25:39",
+    "total_modifications": 1,
+    "layer1_passed": 0,
+    "layer2_analyzed": 1,
+    "processing_time": "8.5s"
+  },
+  "results": [
+    {
+      "modification_id": "M001",
+      "cell": "K13",
+      "column": "监督人",
+      "old_value": "邓总",
+      "new_value": "各责任人",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 75.0,
+        "reason": "责任转移"
+      },
+      "layer2_result": {
+        "risk_level": "MEDIUM",
+        "decision": "REVIEW",
+        "confidence": 75,
+        "key_risks": [
+          "监督责任分散，可能导致执行标准不一致",
+          "多责任人监督可能导致沟通效率下降",
+          "缺乏统一的监督标准可能影响项目质量"
+        ],
+        "recommendation": "建议明确各责任人的具体监督范围和标准，并设立一个总体监督协调人，确保监督工作的统一性和有效性。在修改前需获得邓总确认，并确保各责任人清楚了解新的监督职责。"
+      },
+      "final_decision": "REVIEW",
+      "approval_required": true
+    }
+  ],
+  "summary": {
+    "approved": 0,
+    "conditional": 0,
+    "review_required": 1,
+    "rejected": 0,
+    "risk_distribution": {
+      "LOW": 0,
+      "MEDIUM": 0,
+      "HIGH": 1,
+      "CRITICAL": 0
+    }
+  }
+}

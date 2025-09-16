@@ -1,0 +1,454 @@
+{
+  "validation_timestamp": "2025-08-21T16:14:27.919831",
+  "summary": {
+    "csv_differences_valid": true,
+    "ai_scoring_valid": true,
+    "ui_parameters_valid": true,
+    "heatmap_valid": true,
+    "excel_features_partial": true
+  },
+  "detailed_results": {
+    "csv_differences": {
+      "total_files": 30,
+      "valid_files": 30,
+      "total_differences": 499,
+      "files_detail": [
+        {
+          "table": "table_001",
+          "differences": 18,
+          "status": "✅ 有效"
+        },
+        {
+          "table": "table_002",
+          "differences": 3,
+          "status": "✅ 有效"
+        },
+        {
+          "table": "table_003",
+          "differences": 17,
+          "status": "✅ 有效"
+        },
+        {
+          "table": "table_004",
+          "differences": 26,
+          "status": "✅ 有效"
+        },
+        {
+          "table": "table_005",
+          "differences": 8,
+          "status": "✅ 有效"
+        },
+        {
+          "table": "table_006",
+          "differences": 29,
+          "status": "✅ 有效"
+        },
+        {
+          "table": "table_007",
+          "differences": 14,
+          "status": "✅ 有效"
+        },
+        {
+          "table": "table_008",
+          "differences": 27,
+          "status": "✅ 有效"
+        },
+        {
+          "table": "table_009",
+          "differences": 10,
+          "status": "✅ 有效"
+        },
+        {
+          "table": "table_010",
+          "differences": 22,
+          "status": "✅ 有效"
+        },
+        {
+          "table": "table_011",
+          "differences": 22,
+          "status": "✅ 有效"
+        },
+        {
+          "table": "table_012",
+          "differences": 8,
+          "status": "✅ 有效"
+        },
+        {
+          "table": "table_013",
+          "differences": 28,
+          "status": "✅ 有效"
+        },
+        {
+          "table": "table_014",
+          "differences": 20,
+          "status": "✅ 有效"
+        },
+        {
+          "table": "table_015",
+          "differences": 9,
+          "status": "✅ 有效"
+        },
+        {
+          "table": "table_016",
+          "differences": 25,
+          "status": "✅ 有效"
+        },
+        {
+          "table": "table_017",
+          "differences": 17,
+          "status": "✅ 有效"
+        },
+        {
+          "table": "table_018",
+          "differences": 18,
+          "status": "✅ 有效"
+        },
+        {
+          "table": "table_019",
+          "differences": 13,
+          "status": "✅ 有效"
+        },
+        {
+          "table": "table_020",
+          "differences": 4,
+          "status": "✅ 有效"
+        },
+        {
+          "table": "table_021",
+          "differences": 23,
+          "status": "✅ 有效"
+        },
+        {
+          "table": "table_022",
+          "differences": 15,
+          "status": "✅ 有效"
+        },
+        {
+          "table": "table_023",
+          "differences": 1,
+          "status": "✅ 有效"
+        },
+        {
+          "table": "table_024",
+          "differences": 27,
+          "status": "✅ 有效"
+        },
+        {
+          "table": "table_025",
+          "differences": 22,
+          "status": "✅ 有效"
+        },
+        {
+          "table": "table_026",
+          "differences": 9,
+          "status": "✅ 有效"
+        },
+        {
+          "table": "table_027",
+          "differences": 24,
+          "status": "✅ 有效"
+        },
+        {
+          "table": "table_028",
+          "differences": 9,
+          "status": "✅ 有效"
+        },
+        {
+          "table": "table_029",
+          "differences": 29,
+          "status": "✅ 有效"
+        },
+        {
+          "table": "table_030",
+          "differences": 2,
+          "status": "✅ 有效"
+        }
+      ]
+    },
+    "ai_risk_scoring": {
+      "total_files": 30,
+      "valid_files": 30,
+      "total_l1_risks": 52,
+      "total_l2_risks": 193,
+      "total_l3_risks": 254,
+      "avg_confidence": 0.848,
+      "files_detail": [
+        {
+          "table": "table_001",
+          "l1_count": 0,
+          "l2_count": 6,
+          "l3_count": 12,
+          "confidence": 0.849,
+          "status": "✅ 有效"
+        },
+        {
+          "table": "table_002",
+          "l1_count": 0,
+          "l2_count": 2,
+          "l3_count": 1,
+          "confidence": 0.794,
+          "status": "✅ 有效"
+        },
+        {
+          "table": "table_003",
+          "l1_count": 1,
+          "l2_count": 3,
+          "l3_count": 13,
+          "confidence": 0.847,
+          "status": "✅ 有效"
+        },
+        {
+          "table": "table_004",
+          "l1_count": 3,
+          "l2_count": 13,
+          "l3_count": 10,
+          "confidence": 0.849,
+          "status": "✅ 有效"
+        },
+        {
+          "table": "table_005",
+          "l1_count": 0,
+          "l2_count": 5,
+          "l3_count": 3,
+          "confidence": 0.879,
+          "status": "✅ 有效"
+        },
+        {
+          "table": "table_006",
+          "l1_count": 3,
+          "l2_count": 11,
+          "l3_count": 15,
+          "confidence": 0.841,
+          "status": "✅ 有效"
+        },
+        {
+          "table": "table_007",
+          "l1_count": 3,
+          "l2_count": 7,
+          "l3_count": 4,
+          "confidence": 0.868,
+          "status": "✅ 有效"
+        },
+        {
+          "table": "table_008",
+          "l1_count": 2,
+          "l2_count": 15,
+          "l3_count": 10,
+          "confidence": 0.876,
+          "status": "✅ 有效"
+        },
+        {
+          "table": "table_009",
+          "l1_count": 0,
+          "l2_count": 4,
+          "l3_count": 6,
+          "confidence": 0.853,
+          "status": "✅ 有效"
+        },
+        {
+          "table": "table_010",
+          "l1_count": 3,
+          "l2_count": 7,
+          "l3_count": 12,
+          "confidence": 0.863,
+          "status": "✅ 有效"
+        },
+        {
+          "table": "table_011",
+          "l1_count": 3,
+          "l2_count": 8,
+          "l3_count": 11,
+          "confidence": 0.859,
+          "status": "✅ 有效"
+        },
+        {
+          "table": "table_012",
+          "l1_count": 2,
+          "l2_count": 2,
+          "l3_count": 4,
+          "confidence": 0.846,
+          "status": "✅ 有效"
+        },
+        {
+          "table": "table_013",
+          "l1_count": 4,
+          "l2_count": 13,
+          "l3_count": 11,
+          "confidence": 0.841,
+          "status": "✅ 有效"
+        },
+        {
+          "table": "table_014",
+          "l1_count": 1,
+          "l2_count": 8,
+          "l3_count": 11,
+          "confidence": 0.834,
+          "status": "✅ 有效"
+        },
+        {
+          "table": "table_015",
+          "l1_count": 2,
+          "l2_count": 4,
+          "l3_count": 3,
+          "confidence": 0.833,
+          "status": "✅ 有效"
+        },
+        {
+          "table": "table_016",
+          "l1_count": 3,
+          "l2_count": 7,
+          "l3_count": 15,
+          "confidence": 0.846,
+          "status": "✅ 有效"
+        },
+        {
+          "table": "table_017",
+          "l1_count": 2,
+          "l2_count": 8,
+          "l3_count": 7,
+          "confidence": 0.83,
+          "status": "✅ 有效"
+        },
+        {
+          "table": "table_018",
+          "l1_count": 0,
+          "l2_count": 7,
+          "l3_count": 11,
+          "confidence": 0.85,
+          "status": "✅ 有效"
+        },
+        {
+          "table": "table_019",
+          "l1_count": 2,
+          "l2_count": 6,
+          "l3_count": 5,
+          "confidence": 0.854,
+          "status": "✅ 有效"
+        },
+        {
+          "table": "table_020",
+          "l1_count": 0,
+          "l2_count": 1,
+          "l3_count": 3,
+          "confidence": 0.867,
+          "status": "✅ 有效"
+        },
+        {
+          "table": "table_021",
+          "l1_count": 4,
+          "l2_count": 9,
+          "l3_count": 10,
+          "confidence": 0.852,
+          "status": "✅ 有效"
+        },
+        {
+          "table": "table_022",
+          "l1_count": 2,
+          "l2_count": 5,
+          "l3_count": 8,
+          "confidence": 0.832,
+          "status": "✅ 有效"
+        },
+        {
+          "table": "table_023",
+          "l1_count": 0,
+          "l2_count": 1,
+          "l3_count": 0,
+          "confidence": 0.856,
+          "status": "✅ 有效"
+        },
+        {
+          "table": "table_024",
+          "l1_count": 2,
+          "l2_count": 9,
+          "l3_count": 16,
+          "confidence": 0.844,
+          "status": "✅ 有效"
+        },
+        {
+          "table": "table_025",
+          "l1_count": 2,
+          "l2_count": 8,
+          "l3_count": 12,
+          "confidence": 0.829,
+          "status": "✅ 有效"
+        },
+        {
+          "table": "table_026",
+          "l1_count": 0,
+          "l2_count": 3,
+          "l3_count": 6,
+          "confidence": 0.891,
+          "status": "✅ 有效"
+        },
+        {
+          "table": "table_027",
+          "l1_count": 1,
+          "l2_count": 8,
+          "l3_count": 15,
+          "confidence": 0.86,
+          "status": "✅ 有效"
+        },
+        {
+          "table": "table_028",
+          "l1_count": 0,
+          "l2_count": 6,
+          "l3_count": 3,
+          "confidence": 0.862,
+          "status": "✅ 有效"
+        },
+        {
+          "table": "table_029",
+          "l1_count": 6,
+          "l2_count": 7,
+          "l3_count": 16,
+          "confidence": 0.834,
+          "status": "✅ 有效"
+        },
+        {
+          "table": "table_030",
+          "l1_count": 1,
+          "l2_count": 0,
+          "l3_count": 1,
+          "confidence": 0.813,
+          "status": "✅ 有效"
+        }
+      ]
+    },
+    "ui_parameters": {
+      "api_accessible": true,
+      "parameters_count": 3734,
+      "data_source": "step5_risk_scoring",
+      "matrix_dimensions": "30×19",
+      "sorting_algorithms": [
+        "按风险等级",
+        "按风险分数",
+        "按位置"
+      ],
+      "status": "✅ 成功"
+    },
+    "heatmap_generation": {
+      "api_accessible": true,
+      "matrix_size": "30×19",
+      "algorithm": "real_30_tables_v1.0",
+      "data_source": "real_30_tables_driven_data",
+      "changes_applied": 570,
+      "real_data_used": true,
+      "status": "✅ 成功"
+    },
+    "excel_features": {
+      "excel_export_api": true,
+      "excel_upload_api": true,
+      "document_links_api": true,
+      "verification_table_api": true,
+      "status": "部分可用"
+    }
+  },
+  "data_flow_integrity": {
+    "step_1_3_csv_differences": "✅ 30份CSV差异文件完整",
+    "step_4_5_ai_scoring": "✅ 30份AI风险评分完成",
+    "step_6_ui_parameters": "✅ 3734个UI参数生成",
+    "step_7_heatmap": "✅ 30×19热力图矩阵",
+    "step_8_10_excel": "✅ Excel导出和上传API可用"
+  }
+}

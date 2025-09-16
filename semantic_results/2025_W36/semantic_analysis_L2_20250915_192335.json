@@ -1,0 +1,48 @@
+{
+  "metadata": {
+    "analysis_time": "2025-09-15 19:23:35",
+    "total_modifications": 1,
+    "layer1_passed": 0,
+    "layer2_analyzed": 1,
+    "processing_time": "9.4s"
+  },
+  "results": [
+    {
+      "modification_id": "M001",
+      "cell": "C7",
+      "column": "项目类型",
+      "old_value": "目标管理",
+      "new_value": "目标复盘待解决,已执行待优化",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 75.0,
+        "reason": "变更项目类型"
+      },
+      "layer2_result": {
+        "risk_level": "MEDIUM",
+        "decision": "CONDITIONAL",
+        "confidence": 75,
+        "key_risks": [
+          "项目范围扩大可能导致资源分散",
+          "项目状态变更可能影响原有进度安排",
+          "双重状态的并存可能造成管理混乱"
+        ],
+        "recommendation": "建议：1)明确区分'目标复盘待解决'和'已执行待优化'为两个独立状态或阶段；2)评估新增工作项对现有资源的影响；3)更新项目计划文档以反映状态变更。需获得项目经理正式确认后方可实施修改。"
+      },
+      "final_decision": "CONDITIONAL",
+      "approval_required": false
+    }
+  ],
+  "summary": {
+    "approved": 0,
+    "conditional": 1,
+    "review_required": 0,
+    "rejected": 0,
+    "risk_distribution": {
+      "LOW": 0,
+      "MEDIUM": 0,
+      "HIGH": 0,
+      "CRITICAL": 0
+    }
+  }
+}

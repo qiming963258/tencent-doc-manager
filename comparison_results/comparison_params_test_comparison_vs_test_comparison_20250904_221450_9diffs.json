@@ -1,0 +1,248 @@
+{
+  "metadata": {
+    "baseline_file": "/root/projects/tencent-doc-manager/csv_versions/2025_W36/baseline/tencent_test_comparison_csv_20250903_1200_baseline_W36.csv",
+    "target_file": "/root/projects/tencent-doc-manager/csv_versions/2025_W36/midweek/tencent_test_comparison_csv_20250904_1000_midweek_W36.csv",
+    "comparison_time": "2025-09-04T22:14:50.490882",
+    "baseline_structure": {
+      "rows": 10,
+      "columns": 6,
+      "column_names": [
+        "ID",
+        "产品名称",
+        "价格",
+        "库存",
+        "状态",
+        "更新时间"
+      ]
+    },
+    "target_structure": {
+      "rows": 11,
+      "columns": 6,
+      "column_names": [
+        "ID",
+        "产品名称",
+        "价格",
+        "库存",
+        "状态",
+        "更新时间"
+      ]
+    }
+  },
+  "summary": {
+    "similarity_score": 0.5909090909090908,
+    "total_differences": 9,
+    "modified_cells": 9,
+    "added_rows": 2,
+    "deleted_rows": 1
+  },
+  "details": {
+    "modified_cells": [
+      {
+        "cell": "C3",
+        "column": "C",
+        "column_name": "价格",
+        "row_number": 3,
+        "baseline_value": "200.00",
+        "target_value": "210.00"
+      },
+      {
+        "cell": "D3",
+        "column": "D",
+        "column_name": "库存",
+        "row_number": 3,
+        "baseline_value": "30",
+        "target_value": "35"
+      },
+      {
+        "cell": "F3",
+        "column": "F",
+        "column_name": "更新时间",
+        "row_number": 3,
+        "baseline_value": "2025-09-01",
+        "target_value": "2025-09-04"
+      },
+      {
+        "cell": "C6",
+        "column": "C",
+        "column_name": "价格",
+        "row_number": 6,
+        "baseline_value": "250.50",
+        "target_value": "260.00"
+      },
+      {
+        "cell": "D6",
+        "column": "D",
+        "column_name": "库存",
+        "row_number": 6,
+        "baseline_value": "40",
+        "target_value": "45"
+      },
+      {
+        "cell": "F6",
+        "column": "F",
+        "column_name": "更新时间",
+        "row_number": 6,
+        "baseline_value": "2025-09-01",
+        "target_value": "2025-09-04"
+      },
+      {
+        "cell": "C11",
+        "column": "C",
+        "column_name": "价格",
+        "row_number": 11,
+        "baseline_value": "175.25",
+        "target_value": "185.00"
+      },
+      {
+        "cell": "D11",
+        "column": "D",
+        "column_name": "库存",
+        "row_number": 11,
+        "baseline_value": "28",
+        "target_value": "30"
+      },
+      {
+        "cell": "F11",
+        "column": "F",
+        "column_name": "更新时间",
+        "row_number": 11,
+        "baseline_value": "2025-09-01",
+        "target_value": "2025-09-04"
+      }
+    ],
+    "added_rows": [
+      {
+        "row_number": 11,
+        "row_id": "11"
+      },
+      {
+        "row_number": 12,
+        "row_id": "12"
+      }
+    ],
+    "deleted_rows": [
+      {
+        "row_number": 9,
+        "row_id": "8"
+      }
+    ]
+  },
+  "difference_parameters": [
+    "C3_价格_200.00|210.00",
+    "D3_库存_30|35",
+    "F3_更新时间_2025-09-01|2025-09-04",
+    "C6_价格_250.50|260.00",
+    "D6_库存_40|45",
+    "F6_更新时间_2025-09-01|2025-09-04",
+    "C11_价格_175.25|185.00",
+    "D11_库存_28|30",
+    "F11_更新时间_2025-09-01|2025-09-04"
+  ],
+  "all_differences": {
+    "modified_cells": [
+      {
+        "cell": "C3",
+        "column": "C",
+        "column_name": "价格",
+        "row_number": 3,
+        "baseline_value": "200.00",
+        "target_value": "210.00"
+      },
+      {
+        "cell": "D3",
+        "column": "D",
+        "column_name": "库存",
+        "row_number": 3,
+        "baseline_value": "30",
+        "target_value": "35"
+      },
+      {
+        "cell": "F3",
+        "column": "F",
+        "column_name": "更新时间",
+        "row_number": 3,
+        "baseline_value": "2025-09-01",
+        "target_value": "2025-09-04"
+      },
+      {
+        "cell": "C6",
+        "column": "C",
+        "column_name": "价格",
+        "row_number": 6,
+        "baseline_value": "250.50",
+        "target_value": "260.00"
+      },
+      {
+        "cell": "D6",
+        "column": "D",
+        "column_name": "库存",
+        "row_number": 6,
+        "baseline_value": "40",
+        "target_value": "45"
+      },
+      {
+        "cell": "F6",
+        "column": "F",
+        "column_name": "更新时间",
+        "row_number": 6,
+        "baseline_value": "2025-09-01",
+        "target_value": "2025-09-04"
+      },
+      {
+        "cell": "C11",
+        "column": "C",
+        "column_name": "价格",
+        "row_number": 11,
+        "baseline_value": "175.25",
+        "target_value": "185.00"
+      },
+      {
+        "cell": "D11",
+        "column": "D",
+        "column_name": "库存",
+        "row_number": 11,
+        "baseline_value": "28",
+        "target_value": "30"
+      },
+      {
+        "cell": "F11",
+        "column": "F",
+        "column_name": "更新时间",
+        "row_number": 11,
+        "baseline_value": "2025-09-01",
+        "target_value": "2025-09-04"
+      }
+    ],
+    "added_rows": [
+      {
+        "row_number": 11,
+        "row_id": "11"
+      },
+      {
+        "row_number": 12,
+        "row_id": "12"
+      }
+    ],
+    "deleted_rows": [
+      {
+        "row_number": 9,
+        "row_id": "8"
+      }
+    ],
+    "differences": [
+      "C3_价格_200.00|210.00",
+      "D3_库存_30|35",
+      "F3_更新时间_2025-09-01|2025-09-04",
+      "C6_价格_250.50|260.00",
+      "D6_库存_40|45",
+      "F6_更新时间_2025-09-01|2025-09-04",
+      "C11_价格_175.25|185.00",
+      "D11_库存_28|30",
+      "F11_更新时间_2025-09-01|2025-09-04"
+    ],
+    "total_differences": 9,
+    "total_added": 2,
+    "total_deleted": 1,
+    "total_modified_cells": 9
+  }
+}

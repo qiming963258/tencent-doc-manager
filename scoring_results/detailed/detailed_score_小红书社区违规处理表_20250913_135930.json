@@ -1,0 +1,291 @@
+{
+  "metadata": {
+    "table_id": 18,
+    "table_name": "小红书社区违规处理表",
+    "generation_time": "2025-09-13T13:59:30.972852",
+    "scoring_standard": "0000-颜色和级别打分标准",
+    "scoring_version": "2.0"
+  },
+  "comparison_info": {
+    "baseline_file": "baseline_table_019_20250818.csv",
+    "current_file": "current_视频制作组_table_019_20250819.csv",
+    "total_rows": 95,
+    "total_columns": 19,
+    "comparison_time": ""
+  },
+  "modifications_summary": {
+    "total_modifications": 13,
+    "high_risk_count": 3,
+    "medium_risk_count": 3,
+    "low_risk_count": 7
+  },
+  "column_scores": {
+    "来源": {
+      "column_level": "L3",
+      "modifications": 1,
+      "modified_rows": [
+        18
+      ],
+      "row_scores": [
+        0.338
+      ],
+      "avg_score": 0.338,
+      "max_score": 0.338,
+      "min_score": 0.338
+    },
+    "任务发起时间": {
+      "column_level": "L3",
+      "modifications": 2,
+      "modified_rows": [
+        4,
+        22
+      ],
+      "row_scores": [
+        0.11,
+        0.288
+      ],
+      "avg_score": 0.199,
+      "max_score": 0.288,
+      "min_score": 0.11
+    },
+    "目标对齐": {
+      "column_level": "L1",
+      "modifications": 1,
+      "modified_rows": [
+        19
+      ],
+      "row_scores": [
+        0.88
+      ],
+      "avg_score": 0.88,
+      "max_score": 0.88,
+      "min_score": 0.88
+    },
+    "具体计划内容": {
+      "column_level": "L3",
+      "modifications": 2,
+      "modified_rows": [
+        11,
+        15
+      ],
+      "row_scores": [
+        0.124,
+        0.316
+      ],
+      "avg_score": 0.22,
+      "max_score": 0.316,
+      "min_score": 0.124
+    },
+    "负责人": {
+      "column_level": "L2",
+      "modifications": 2,
+      "modified_rows": [
+        13,
+        16
+      ],
+      "row_scores": [
+        0.491,
+        0.487
+      ],
+      "avg_score": 0.489,
+      "max_score": 0.491,
+      "min_score": 0.487,
+      "ai_decisions": {
+        "APPROVE": 2,
+        "REVIEW": 0
+      }
+    },
+    "协助人": {
+      "column_level": "L2",
+      "modifications": 2,
+      "modified_rows": [
+        7,
+        24
+      ],
+      "row_scores": [
+        0.672,
+        0.636
+      ],
+      "avg_score": 0.654,
+      "max_score": 0.672,
+      "min_score": 0.636,
+      "ai_decisions": {
+        "APPROVE": 0,
+        "REVIEW": 2
+      }
+    },
+    "监督人": {
+      "column_level": "L2",
+      "modifications": 1,
+      "modified_rows": [
+        2
+      ],
+      "row_scores": [
+        0.576
+      ],
+      "avg_score": 0.576,
+      "max_score": 0.576,
+      "min_score": 0.576,
+      "ai_decisions": {
+        "APPROVE": 0,
+        "REVIEW": 1
+      }
+    },
+    "形成计划清单": {
+      "column_level": "L3",
+      "modifications": 1,
+      "modified_rows": [
+        25
+      ],
+      "row_scores": [
+        0.247
+      ],
+      "avg_score": 0.247,
+      "max_score": 0.247,
+      "min_score": 0.247
+    },
+    "应用情况": {
+      "column_level": "L3",
+      "modifications": 1,
+      "modified_rows": [
+        27
+      ],
+      "row_scores": [
+        0.204
+      ],
+      "avg_score": 0.204,
+      "max_score": 0.204,
+      "min_score": 0.204
+    }
+  },
+  "detailed_modifications": [
+    {
+      "row": 25,
+      "column": "形成计划清单",
+      "column_level": "L3",
+      "old_value": "原始形成计划清单_83",
+      "new_value": "修改形成计划清单_17",
+      "score": 0.247,
+      "risk_level": "低风险"
+    },
+    {
+      "row": 16,
+      "column": "负责人",
+      "column_level": "L2",
+      "old_value": "陈小明",
+      "new_value": "李月",
+      "score": 0.491,
+      "risk_level": "中风险",
+      "ai_decision": "APPROVE",
+      "ai_confidence": 0.92
+    },
+    {
+      "row": 2,
+      "column": "监督人",
+      "column_level": "L2",
+      "old_value": "李四",
+      "new_value": "曾利萍",
+      "score": 0.576,
+      "risk_level": "中风险",
+      "ai_decision": "REVIEW",
+      "ai_confidence": 0.75
+    },
+    {
+      "row": 19,
+      "column": "目标对齐",
+      "column_level": "L1",
+      "old_value": "原始目标对齐_52",
+      "new_value": "修改目标对齐_55",
+      "score": 0.88,
+      "risk_level": "极高风险"
+    },
+    {
+      "row": 7,
+      "column": "协助人",
+      "column_level": "L2",
+      "old_value": "王五",
+      "new_value": "李四,陈小明",
+      "score": 0.672,
+      "risk_level": "高风险",
+      "ai_decision": "REVIEW",
+      "ai_confidence": 0.86
+    },
+    {
+      "row": 24,
+      "column": "协助人",
+      "column_level": "L2",
+      "old_value": "曾利萍",
+      "new_value": "曾利萍,曾利萍",
+      "score": 0.636,
+      "risk_level": "高风险",
+      "ai_decision": "REVIEW",
+      "ai_confidence": 0.78
+    },
+    {
+      "row": 11,
+      "column": "具体计划内容",
+      "column_level": "L3",
+      "old_value": "原始具体计划内容_94",
+      "new_value": "修改具体计划内容_7",
+      "score": 0.124,
+      "risk_level": "低风险"
+    },
+    {
+      "row": 13,
+      "column": "负责人",
+      "column_level": "L2",
+      "old_value": "李四",
+      "new_value": "李四",
+      "score": 0.487,
+      "risk_level": "中风险",
+      "ai_decision": "APPROVE",
+      "ai_confidence": 0.94
+    },
+    {
+      "row": 27,
+      "column": "应用情况",
+      "column_level": "L3",
+      "old_value": "原始应用情况_92",
+      "new_value": "修改应用情况_49",
+      "score": 0.204,
+      "risk_level": "低风险"
+    },
+    {
+      "row": 22,
+      "column": "任务发起时间",
+      "column_level": "L3",
+      "old_value": "2025/7/11",
+      "new_value": "2025/8/5",
+      "score": 0.11,
+      "risk_level": "低风险"
+    },
+    {
+      "row": 18,
+      "column": "来源",
+      "column_level": "L3",
+      "old_value": "周会决策待办",
+      "new_value": "客户需求反馈",
+      "score": 0.338,
+      "risk_level": "低风险"
+    },
+    {
+      "row": 4,
+      "column": "任务发起时间",
+      "column_level": "L3",
+      "old_value": "2025/7/15",
+      "new_value": "2025/8/6",
+      "score": 0.288,
+      "risk_level": "低风险"
+    },
+    {
+      "row": 15,
+      "column": "具体计划内容",
+      "column_level": "L3",
+      "old_value": "原始具体计划内容_17",
+      "new_value": "修改具体计划内容_43",
+      "score": 0.316,
+      "risk_level": "低风险"
+    }
+  ],
+  "overall_risk_score": 0.413
+}

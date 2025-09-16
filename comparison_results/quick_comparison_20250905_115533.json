@@ -1,0 +1,30 @@
+{
+  "baseline_file": "/root/projects/tencent-doc-manager/csv_versions/2025_W36/midweek/tencent_副本-测试版本-出国销售计划表-工作表1_csv_20250905_1137_midweek_W36.csv",
+  "target_file": "/root/projects/tencent-doc-manager/csv_versions/2025_W36/midweek/tencent_副本-副本-测试版本-出国销售计划表-工作表1_csv_20250905_1137_midweek_W36.csv",
+  "comparison_result": {
+    "total_changes": 19,
+    "added_rows": 0,
+    "deleted_rows": 0,
+    "modified_rows": 19,
+    "similarity_score": 0.926,
+    "details": {
+      "baseline_total_rows": 116,
+      "target_total_rows": 116,
+      "baseline_columns": 20,
+      "target_columns": 26,
+      "common_columns": 20,
+      "total_cells_compared": 2320,
+      "identical_cells": 2301,
+      "modified_cells": 19,
+      "cell_similarity": 0.992,
+      "structure_similarity": 0.769,
+      "row_similarity": 1.0
+    },
+    "added_samples": [],
+    "deleted_samples": [],
+    "comparator_type": "EnhancedCSVComparator",
+    "warning": "列数不匹配：基线 20 列，目标 26 列。仅对比前 20 列。"
+  },
+  "timestamp": "20250905_115533",
+  "mode": "quick_cached"
+}

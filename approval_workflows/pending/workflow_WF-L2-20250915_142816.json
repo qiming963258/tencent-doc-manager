@@ -1,0 +1,32 @@
+{
+  "workflow_id": "WF-L2-20250915_142816",
+  "created_time": "2025-09-15 14:28:16",
+  "pending_approvals": [
+    {
+      "modification_id": "M001",
+      "cell": "I16",
+      "column": "负责人",
+      "old_value": "徐志杰",
+      "new_value": "0813-\n短视频的爆款可调用小红书板块历史爆款笔记作为原创脚本进行调用，同步优化内容库执行表单进行脚本撰写的数量要求及登记跟踪\n\n0811-",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 80.0,
+        "reason": "敏感信息"
+      },
+      "layer2_result": {
+        "risk_level": "HIGH",
+        "decision": "REVIEW",
+        "confidence": 85,
+        "key_risks": [
+          "负责人字段被修改为无效标识符",
+          "项目执行责任主体不明确",
+          "可能影响项目进度跟踪和问责"
+        ],
+        "recommendation": "要求明确负责人字段的有效值，建议保留原负责人姓名或替换为有效负责人ID。如需临时标记，应添加说明注释。同时检查该变更是否经过授权，并评估对项目执行的影响。"
+      },
+      "final_decision": "REVIEW",
+      "approval_required": true
+    }
+  ],
+  "auto_approved": []
+}

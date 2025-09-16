@@ -1,0 +1,33 @@
+{
+  "workflow_id": "WF-L2-20250915_143627",
+  "created_time": "2025-09-15 14:36:27",
+  "pending_approvals": [
+    {
+      "modification_id": "M001",
+      "cell": "B25",
+      "column": "项目类型",
+      "old_value": "目标管理",
+      "new_value": "",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 80.0,
+        "reason": "关键信息缺失"
+      },
+      "layer2_result": {
+        "risk_level": "HIGH",
+        "decision": "REVIEW",
+        "confidence": 85,
+        "key_risks": [
+          "项目性质可能发生根本性变化",
+          "项目目标和执行计划需要重新评估",
+          "团队协作模式可能需要调整",
+          "交付时间可能受到影响"
+        ],
+        "recommendation": "建议提供新的'项目类型'值以进行准确评估。在确认新项目类型前，暂缓修改。如果确实需要删除，应先评估对项目管理体系的影响，并通知所有相关方。最好补充说明删除原因并提供替代信息。"
+      },
+      "final_decision": "REVIEW",
+      "approval_required": true
+    }
+  ],
+  "auto_approved": []
+}

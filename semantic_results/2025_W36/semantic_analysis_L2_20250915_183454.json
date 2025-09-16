@@ -1,0 +1,48 @@
+{
+  "metadata": {
+    "analysis_time": "2025-09-15 18:34:54",
+    "total_modifications": 1,
+    "layer1_passed": 0,
+    "layer2_analyzed": 1,
+    "processing_time": "13.1s"
+  },
+  "results": [
+    {
+      "modification_id": "M001",
+      "cell": "H31",
+      "column": "具体计划内容",
+      "old_value": "监管固定工作和台账梳理",
+      "new_value": "",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 90.0,
+        "reason": "删除内容"
+      },
+      "layer2_result": {
+        "risk_level": "HIGH",
+        "decision": "REVIEW",
+        "confidence": 85,
+        "key_risks": [
+          "计划内容被完全删除可能导致监管工作失控",
+          "台账管理缺失可能违反合规要求",
+          "项目执行失去明确方向"
+        ],
+        "recommendation": "建议立即补充新的具体计划内容，或恢复原值。如确需删除，应同步提交替代方案说明，并获得相关干系人签字确认。此修改必须经过项目经理和合规部门的双重审批。"
+      },
+      "final_decision": "REVIEW",
+      "approval_required": true
+    }
+  ],
+  "summary": {
+    "approved": 0,
+    "conditional": 0,
+    "review_required": 1,
+    "rejected": 0,
+    "risk_distribution": {
+      "LOW": 0,
+      "MEDIUM": 0,
+      "HIGH": 1,
+      "CRITICAL": 0
+    }
+  }
+}

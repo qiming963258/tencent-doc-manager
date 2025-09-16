@@ -1,0 +1,47 @@
+{
+  "metadata": {
+    "analysis_time": "2025-09-08 14:20:40",
+    "total_modifications": 1,
+    "layer1_passed": 0,
+    "layer2_analyzed": 1,
+    "processing_time": "23.4s"
+  },
+  "results": [
+    {
+      "modification_id": "M001",
+      "cell": "J12",
+      "column": "负责人",
+      "old_value": "赖铁荔",
+      "new_value": "赖铁荔,各责任人",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 80.0,
+        "reason": "多人负责"
+      },
+      "layer2_result": {
+        "risk_level": "MEDIUM",
+        "decision": "CONDITIONAL",
+        "confidence": 80,
+        "key_risks": [
+          "职责边界模糊化风险",
+          "多头管理导致的决策效率下降"
+        ],
+        "recommendation": "建议补充配套说明文件：1. 明确'各责任人'的具体成员名单 2. 建立分层决策机制（如常规事项由主责人决定，争议事项需集体决议）3. 在变更日志中记录修改原因（如：因项目规模扩大需分布式管理）"
+      },
+      "final_decision": "CONDITIONAL",
+      "approval_required": false
+    }
+  ],
+  "summary": {
+    "approved": 0,
+    "conditional": 1,
+    "review_required": 0,
+    "rejected": 0,
+    "risk_distribution": {
+      "LOW": 0,
+      "MEDIUM": 0,
+      "HIGH": 0,
+      "CRITICAL": 0
+    }
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "metadata": {
+    "analysis_time": "2025-09-15 16:41:51",
+    "total_modifications": 1,
+    "layer1_passed": 0,
+    "layer2_analyzed": 1,
+    "processing_time": "13.5s"
+  },
+  "results": [
+    {
+      "modification_id": "M001",
+      "cell": "I4",
+      "column": "邓总指导登记（日更新）",
+      "old_value": "0323-\n爆款的提醒站内站外都建立通知，站内在海龙系统的消息通知，站外通过员工qq邮箱进行通知\n\n0314-",
+      "new_value": "",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 90.0,
+        "reason": "内容清空"
+      },
+      "layer2_result": {
+        "risk_level": "HIGH",
+        "decision": "REVIEW",
+        "confidence": 85,
+        "key_risks": [
+          "删除了邓总0323的重要指导内容，可能导致执行方向偏离",
+          "日更新机制被破坏，影响项目追踪和问责",
+          "站内站外通知机制的信息丢失，可能导致沟通不畅"
+        ],
+        "recommendation": "1. 要求修改者补充删除原因说明\n2. 如确需删除，建议先归档原内容再清空\n3. 检查是否有其他相关文件需要同步更新\n4. 确认邓总是否知晓此变更\n5. 建议保留变更记录"
+      },
+      "final_decision": "REVIEW",
+      "approval_required": true
+    }
+  ],
+  "summary": {
+    "approved": 0,
+    "conditional": 0,
+    "review_required": 1,
+    "rejected": 0,
+    "risk_distribution": {
+      "LOW": 0,
+      "MEDIUM": 0,
+      "HIGH": 1,
+      "CRITICAL": 0
+    }
+  }
+}

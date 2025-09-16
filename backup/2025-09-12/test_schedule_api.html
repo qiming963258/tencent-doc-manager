@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>调度API测试</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; }
+        .result { margin: 10px 0; padding: 10px; border: 1px solid #ccc; }
+        button { margin: 5px; padding: 10px; }
+    </style>
+</head>
+<body>
+    <h1>调度配置API测试</h1>
+    
+    <button onclick="testGetConfig()">测试获取调度配置</button>
+    <button onclick="testUpdateConfig()">测试更新调度配置</button>
+    
+    <div id="results"></div>
+
+    <script>
+        async function testGetConfig() {
+            const resultsDiv = document.getElementById('results');
+            try {
+                const response = await fetch('/api/get-schedule-config');
+                const result = await response.json();
+                
+                resultsDiv.innerHTML += `
+                    <div class="result">
+                        <h3>GET /api/get-schedule-config</h3>
+                        <p><strong>状态:</strong> ${response.status}</p>
+                        <p><strong>结果:</strong></p>
+                        <pre>${JSON.stringify(result, null, 2)}</pre>
+                    </div>
+                `;
+            } catch (error) {
+                resultsDiv.innerHTML += `
+                    <div class="result">
+                        <h3>GET /api/get-schedule-config</h3>
+                        <p><strong>错误:</strong> ${error.message}</p>
+                    </div>
+                `;
+            }
+        }
+        
+        async function testUpdateConfig() {
+            const resultsDiv = document.getElementById('results');
+            try {
+                const response = await fetch('/api/update-schedule-config', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        schedule_type: 'baseline',
+                        enabled: true
+                    })
+                });
+                const result = await response.json();
+                
+                resultsDiv.innerHTML += `
+                    <div class="result">
+                        <h3>POST /api/update-schedule-config</h3>
+                        <p><strong>状态:</strong> ${response.status}</p>
+                        <p><strong>结果:</strong></p>
+                        <pre>${JSON.stringify(result, null, 2)}</pre>
+                    </div>
+                `;
+            } catch (error) {
+                resultsDiv.innerHTML += `
+                    <div class="result">
+                        <h3>POST /api/update-schedule-config</h3>
+                        <p><strong>错误:</strong> ${error.message}</p>
+                    </div>
+                `;
+            }
+        }
+    </script>
+</body>
+</html>

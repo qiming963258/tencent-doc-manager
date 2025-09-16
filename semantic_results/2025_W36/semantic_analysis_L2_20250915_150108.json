@@ -1,0 +1,48 @@
+{
+  "metadata": {
+    "analysis_time": "2025-09-15 15:01:08",
+    "total_modifications": 1,
+    "layer1_passed": 0,
+    "layer2_analyzed": 1,
+    "processing_time": "10.3s"
+  },
+  "results": [
+    {
+      "modification_id": "M001",
+      "cell": "B50",
+      "column": "项目类型",
+      "old_value": "目标管理",
+      "new_value": "",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 80.0,
+        "reason": "关键字段空"
+      },
+      "layer2_result": {
+        "risk_level": "HIGH",
+        "decision": "REVIEW",
+        "confidence": 85,
+        "key_risks": [
+          "项目类型变更可能导致项目整体方向性改变",
+          "空值可能造成项目分类不明确，影响后续资源分配",
+          "项目类型是核心基础字段，空值会引发下游系统集成问题"
+        ],
+        "recommendation": "1. 必须补充有效项目类型值\n2. 如要清空，需同步检查所有依赖此字段的系统和报表\n3. 建议先通过变更控制流程评估影响范围\n4. 如确需留空，需添加明确的占位说明"
+      },
+      "final_decision": "REVIEW",
+      "approval_required": true
+    }
+  ],
+  "summary": {
+    "approved": 0,
+    "conditional": 0,
+    "review_required": 1,
+    "rejected": 0,
+    "risk_distribution": {
+      "LOW": 0,
+      "MEDIUM": 0,
+      "HIGH": 1,
+      "CRITICAL": 0
+    }
+  }
+}

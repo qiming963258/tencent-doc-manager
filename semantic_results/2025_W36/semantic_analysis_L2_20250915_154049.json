@@ -1,0 +1,48 @@
+{
+  "metadata": {
+    "analysis_time": "2025-09-15 15:40:49",
+    "total_modifications": 1,
+    "layer1_passed": 0,
+    "layer2_analyzed": 1,
+    "processing_time": "12.3s"
+  },
+  "results": [
+    {
+      "modification_id": "M001",
+      "cell": "B91",
+      "column": "项目类型",
+      "old_value": "目标管理",
+      "new_value": "",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 75.0,
+        "reason": "关键信息缺失"
+      },
+      "layer2_result": {
+        "risk_level": "HIGH",
+        "decision": "REVIEW",
+        "confidence": 85,
+        "key_risks": [
+          "项目类型缺失导致目标不明确",
+          "执行计划可能需要进行重大调整",
+          "团队协作可能因方向不明受到严重影响"
+        ],
+        "recommendation": "建议补充完整项目类型信息后再评估。如果是故意清空该字段，需要提供明确的理由说明，并重新评估项目整体规划。同时建议召开项目团队会议，就项目类型变更进行充分沟通。"
+      },
+      "final_decision": "REVIEW",
+      "approval_required": true
+    }
+  ],
+  "summary": {
+    "approved": 0,
+    "conditional": 0,
+    "review_required": 1,
+    "rejected": 0,
+    "risk_distribution": {
+      "LOW": 0,
+      "MEDIUM": 0,
+      "HIGH": 1,
+      "CRITICAL": 0
+    }
+  }
+}

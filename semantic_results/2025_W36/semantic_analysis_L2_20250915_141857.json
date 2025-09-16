@@ -1,0 +1,48 @@
+{
+  "metadata": {
+    "analysis_time": "2025-09-15 14:18:57",
+    "total_modifications": 1,
+    "layer1_passed": 0,
+    "layer2_analyzed": 1,
+    "processing_time": "12.3s"
+  },
+  "results": [
+    {
+      "modification_id": "M001",
+      "cell": "B7",
+      "column": "项目类型",
+      "old_value": "目标管理",
+      "new_value": "",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 80.0,
+        "reason": "关键信息缺失"
+      },
+      "layer2_result": {
+        "risk_level": "HIGH",
+        "decision": "REVIEW",
+        "confidence": 80,
+        "key_risks": [
+          "项目类型改为空值可能导致项目分类体系混乱",
+          "关键信息缺失可能影响后续资源配置决策",
+          "空白值可能导致系统处理异常"
+        ],
+        "recommendation": "建议：1.明确说明删除原因；2.如必须删除，确保其他字段能支撑项目分类；3.或改为更合适的项目类型值而非留空。需要业务负责人书面确认此变更。"
+      },
+      "final_decision": "REVIEW",
+      "approval_required": true
+    }
+  ],
+  "summary": {
+    "approved": 0,
+    "conditional": 0,
+    "review_required": 1,
+    "rejected": 0,
+    "risk_distribution": {
+      "LOW": 0,
+      "MEDIUM": 0,
+      "HIGH": 1,
+      "CRITICAL": 0
+    }
+  }
+}

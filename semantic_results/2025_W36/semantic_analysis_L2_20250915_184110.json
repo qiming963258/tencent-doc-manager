@@ -1,0 +1,49 @@
+{
+  "metadata": {
+    "analysis_time": "2025-09-15 18:41:10",
+    "total_modifications": 1,
+    "layer1_passed": 0,
+    "layer2_analyzed": 1,
+    "processing_time": "10.9s"
+  },
+  "results": [
+    {
+      "modification_id": "M001",
+      "cell": "K37",
+      "column": "协助人",
+      "old_value": "王寒晓",
+      "new_value": "",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 80.0,
+        "reason": "删除人员"
+      },
+      "layer2_result": {
+        "risk_level": "CRITICAL",
+        "decision": "REVIEW",
+        "confidence": 85,
+        "key_risks": [
+          "协助人字段被清空可能导致任务无人负责",
+          "关键角色缺失可能影响项目质量和进度",
+          "团队协作链条可能出现断裂",
+          "缺乏明确责任人可能引发沟通混乱"
+        ],
+        "recommendation": "1. 必须确认新协助人后再提交修改 2. 如需暂时清空需注明过渡方案 3. 应评估对关联任务的影响 4. 建议通过变更流程审批 5. 需通知所有相关干系人"
+      },
+      "final_decision": "REVIEW",
+      "approval_required": true
+    }
+  ],
+  "summary": {
+    "approved": 0,
+    "conditional": 0,
+    "review_required": 1,
+    "rejected": 0,
+    "risk_distribution": {
+      "LOW": 0,
+      "MEDIUM": 0,
+      "HIGH": 1,
+      "CRITICAL": 0
+    }
+  }
+}

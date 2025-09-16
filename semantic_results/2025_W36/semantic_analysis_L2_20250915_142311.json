@@ -1,0 +1,48 @@
+{
+  "metadata": {
+    "analysis_time": "2025-09-15 14:23:11",
+    "total_modifications": 1,
+    "layer1_passed": 0,
+    "layer2_analyzed": 1,
+    "processing_time": "15.5s"
+  },
+  "results": [
+    {
+      "modification_id": "M001",
+      "cell": "K10",
+      "column": "监督人",
+      "old_value": "邓总",
+      "new_value": "魏志广",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 80.0,
+        "reason": "关键人物变更"
+      },
+      "layer2_result": {
+        "risk_level": "MEDIUM",
+        "decision": "REVIEW",
+        "confidence": 75,
+        "key_risks": [
+          "监督人变更可能导致项目监督风格和方向变化",
+          "新监督人可能对项目历史不够熟悉",
+          "团队需要时间适应新监督人的工作方式"
+        ],
+        "recommendation": "建议组织正式的交接会议，确保新监督人全面了解项目背景和当前状态。同时，建议对项目团队进行沟通，明确新监督人的职责和期望。建议在变更后2周内进行跟进评估。"
+      },
+      "final_decision": "REVIEW",
+      "approval_required": true
+    }
+  ],
+  "summary": {
+    "approved": 0,
+    "conditional": 0,
+    "review_required": 1,
+    "rejected": 0,
+    "risk_distribution": {
+      "LOW": 0,
+      "MEDIUM": 0,
+      "HIGH": 1,
+      "CRITICAL": 0
+    }
+  }
+}

@@ -1,0 +1,611 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+腾讯文档自动导出工具 - 专注于自动化下载
+直接模拟用户点击导出按钮，下载官方生成的文件
+"""
+
+import asyncio
+import os
+import time
+import argparse
+from pathlib import Path
+from playwright.async_api import async_playwright
+try:
+    from csv_version_manager import CSVVersionManager
+except ImportError:
+    from production.core_modules.csv_version_manager import CSVVersionManager
+
+
+class TencentDocAutoExporter:
+    """腾讯文档自动导出工具 - 专注下载自动化"""
+    
+    def __init__(self, download_dir=None):
+        """初始化导出工具 - 强制使用规范命名"""
+        self.browser = None
+        self.page = None
+        self.download_dir = download_dir or os.path.join(os.getcwd(), "downloads")
+        
+        # 始终启用版本管理器 - 不再作为可选项
+        try:
+            from csv_version_manager import CSVVersionManager
+            self.version_manager = CSVVersionManager()
+        except ImportError:
+            from production.core_modules.csv_version_manager import CSVVersionManager
+            self.version_manager = CSVVersionManager()
+        
+    async def start_browser(self, headless=False):
+        """启动浏览器 - 直接创建新实例"""
+        # 直接使用常规方式，删除单例模式
+        self.playwright = await async_playwright().start()
+        self.using_singleton = False
+        
+        # 创建下载目录
+        os.makedirs(self.download_dir, exist_ok=True)
+        
+        # 🆕 2025增强：30+反检测参数
+        launch_args = [
+            '--disable-blink-features=AutomationControlled',
+            '--disable-dev-shm-usage',
+            '--disable-web-security',
+            '--no-sandbox',
+            '--disable-setuid-sandbox',
+            '--disable-infobars',
+            '--window-size=1920,1080',
+            '--start-maximized',
+            '--disable-extensions',
+            '--disable-default-apps',
+            '--disable-features=IsolateOrigins,site-per-process',
+            '--enable-features=NetworkService,NetworkServiceInProcess',
+            '--disable-features=VizDisplayCompositor',
+            '--disable-features=TranslateUI',
+            '--disable-features=BlinkGenPropertyTrees',
+            '--disable-ipc-flooding-protection',
+            '--disable-background-timer-throttling',
+            '--disable-renderer-backgrounding',
+            '--disable-features=OptimizationGuideModelDownloading,OptimizationHintsFetching,OptimizationTargetPrediction,OptimizationHints',
+            '--disable-backgrounding-occluded-windows',
+            '--disable-features=BackForwardCache',
+            '--disable-features=GlobalMediaControls,GlobalMediaControlsModernUI',
+            '--disable-features=InterestFeedContentSuggestions',
+            '--disable-component-extensions-with-background-pages',
+            '--disable-features=CalculateNativeWinOcclusion',
+            '--disable-features=OptimizationGuideModelDownloading',
+            '--metrics-recording-only',
+            '--no-first-run',
+            '--mute-audio',
+            '--no-default-browser-check',
+            '--no-pings'
+        ]
+        
+        # 启动浏览器，设置下载目录和反检测参数
+        self.browser = await self.playwright.chromium.launch(
+            headless=True,
+            args=[
+                '--disable-blink-features=AutomationControlled',
+                '--no-sandbox',
+                '--disable-setuid-sandbox',
+                '--disable-dev-shm-usage',  # 内存优化：使用/tmp
+                '--disable-gpu',
+                '--disable-extensions',
+                '--disable-images',  # 不加载图片
+                '--disable-background-networking',
+                '--disable-background-timer-throttling',
+                '--disable-renderer-backgrounding',
+                '--disable-features=site-per-process',  # 减少进程
+                '--renderer-process-limit=1',  # 限制渲染进程数
+                '--memory-model=low',  # 低内存模式
+                '--max_old_space_size=512'  # 限制堆大小
+            ]
+        )
+        
+        # 创建页面上下文，设置下载行为和增强配置
+        context = await self.browser.new_context(
+            accept_downloads=True,
+            user_agent='Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36',
+            viewport={'width': 1920, 'height': 1080},
+            locale='zh-CN',
+            timezone_id='Asia/Shanghai',
+            permissions=['clipboard-read', 'clipboard-write', 'notifications'],
+            extra_http_headers={
+                'Accept-Language': 'zh-CN,zh;q=0.9,en;q=0.8',
+                'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+                'Accept-Encoding': 'gzip, deflate, br',
+                'DNT': '1',
+                'Connection': 'keep-alive',
+                'Upgrade-Insecure-Requests': '1'
+            },
+            ignore_https_errors=True,
+            java_script_enabled=True,
+            bypass_csp=True,
+            device_scale_factor=1,
+            has_touch=False,
+            is_mobile=False
+        )
+        
+        self.page = await context.new_page()
+        
+        # 监听下载事件
+        self.downloaded_files = []
+        self.page.on("download", self._handle_download)
+    
+    async def _handle_download(self, download):
+        """处理下载事件 - 强制使用规范文件命名和目录结构"""
+        filename = download.suggested_filename
+        
+        # 提取文件扩展名
+        import re
+        ext_match = re.search(r'\.(csv|xlsx|xls|xlsm)$', filename, flags=re.IGNORECASE)
+        file_extension = ext_match.group(1).lower() if ext_match else 'csv'
+        
+        # 强制使用规范文件命名 - 删除所有降级逻辑
+        from file_version_manager import FileVersionManager
+        from datetime import datetime
+        file_manager = FileVersionManager()
+        
+        # 确保有URL信息
+        if not hasattr(self, 'current_url'):
+            self.current_url = ""  # 防御性编程
+        
+        # 自动判断版本类型（根据当前时间和下载类型）
+        def determine_version_type():
+            now = datetime.now()
+            weekday = now.weekday()  # 0=周一, 1=周二...
+            hour = now.hour
+            
+            # 严格规则：只有周二12点的自动下载才能是baseline
+            # 所有手动测试、临时下载都归类到midweek
+            if weekday == 1 and hour >= 12 and hour <= 13:
+                # 周二12-13点期间的下载归类为baseline
+                # 注：可能需要根据下载用途进一步判断
+                return 'baseline'  # 修复：允许创建baseline文件
+            # 周六晚上7点 → weekend（周末版）
+            elif weekday == 5 and hour >= 19 and hour <= 20:
+                return 'weekend'
+            else:
+                # 所有其他时间的手动下载都归类到midweek
+                return 'midweek'  # 默认使用midweek作为临时/测试文件
+        
+        version_type = determine_version_type()
+        print(f"🔍 自动判断版本类型: {version_type} (当前时间: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')})")
+        
+        # 先使用临时文件名下载（防止并行冲突）
+        temp_filename = file_manager.get_temp_filename(self.current_url)
+        temp_filepath = os.path.join(self.download_dir, temp_filename)
+        
+        print(f"📥 使用临时文件名下载: {temp_filename}")
+        await download.save_as(str(temp_filepath))
+        
+        # 下载完成后，生成规范文件名并移动到规范目录
+        standard_filename = file_manager.get_standard_filename(
+            self.current_url, 
+            filename, 
+            version_type=version_type,  # 使用自动判断的版本类型
+            file_extension=file_extension  # 传递实际文件扩展名
+        )
+        
+        # 获取规范保存目录
+        save_dir = file_manager.get_save_directory(version_type=version_type)
+        final_filepath = save_dir / standard_filename
+        
+        # 🔒 基线文件夹单文件规则：确保基线文件夹只有一个文件
+        if version_type == 'baseline':
+            # 清理基线文件夹中的所有现有文件
+            import glob
+            # 支持多种扩展名
+            existing_files = []
+            for ext in ['*.csv', '*.xlsx', '*.xls', '*.xlsm']:
+                existing_files.extend(glob.glob(str(save_dir / ext)))
+            if existing_files:
+                print(f"⚠️ 基线文件夹单文件规则生效：清理 {len(existing_files)} 个旧文件")
+                for old_file in existing_files:
+                    try:
+                        os.remove(old_file)
+                        print(f"   ✅ 已删除: {os.path.basename(old_file)}")
+                    except Exception as e:
+                        print(f"   ❌ 删除失败: {os.path.basename(old_file)} - {e}")
+                print(f"🔒 基线文件夹已清理，确保只保存最新基线文件")
+        
+        # 移动文件到规范位置
+        import shutil
+        shutil.move(str(temp_filepath), str(final_filepath))
+        
+        print(f"🎯 规范文件命名: {standard_filename}")
+        print(f"📁 规范保存目录: {save_dir}")
+        
+        filepath = final_filepath
+        
+        self.downloaded_files.append(str(filepath))
+        print(f"下载完成: {filepath}")
+    
+    async def login_with_cookies(self, cookies):
+        """使用cookies登录"""
+        if cookies:
+            cookie_list = []
+            for cookie_str in cookies.split(';'):
+                if '=' in cookie_str:
+                    name, value = cookie_str.strip().split('=', 1)
+                    # 为多个domain添加cookies
+                    domains = ['docs.qq.com', '.docs.qq.com', 'qq.com', '.qq.com']
+                    for domain in domains:
+                        cookie_list.append({
+                            'name': name,
+                            'value': value,
+                            'domain': domain,
+                            'path': '/',
+                            'httpOnly': False,
+                            'secure': True,
+                            'sameSite': 'None'
+                        })
+            try:
+                await self.page.context.add_cookies(cookie_list)
+                print(f"已添加 {len(cookie_list)} 个cookies（多域名）")
+            except Exception as e:
+                print(f"添加cookies时出错: {e}")
+                # 降级到简单版本
+                simple_cookies = []
+                for cookie_str in cookies.split(';'):
+                    if '=' in cookie_str:
+                        name, value = cookie_str.strip().split('=', 1)
+                        simple_cookies.append({
+                            'name': name,
+                            'value': value,
+                            'domain': '.qq.com',
+                            'path': '/'
+                        })
+                await self.page.context.add_cookies(simple_cookies)
+                print(f"已添加简化cookies: {len(simple_cookies)} 个")
+    
+    def _analyze_document_url(self, doc_url):
+        """
+        阶段4增强功能：智能URL解析和文档类型识别
+        
+        Args:
+            doc_url: 文档URL
+            
+        Returns:
+            dict: URL分析结果和推荐策略
+        """
+        import re
+        
+        analysis = {
+            "url": doc_url,
+            "url_type": "unknown",
+            "document_id": None,
+            "is_specific_document": False,
+            "recommended_methods": [],
+            "expected_challenges": [],
+            "adaptive_config": {}
+        }
+        
+        try:
+            print(f"🔍 开始智能URL分析: {doc_url}")
+            
+            # 1. 基础URL类型识别
+            if "docs.qq.com/desktop" in doc_url.lower() and len(doc_url.replace("https://docs.qq.com/desktop", "").strip("/?")) == 0:
+                analysis["url_type"] = "desktop_general"
+                analysis["is_specific_document"] = False
+                analysis["expected_challenges"].append("需要从列表中选择文档")
+                analysis["recommended_methods"] = ["_try_right_click_export", "_try_keyboard_shortcut_export", "_try_menu_export"]
+                analysis["adaptive_config"]["require_document_selection"] = True
+                
+            elif "docs.qq.com/sheet/" in doc_url.lower():
+                # 具体表格文档
+                sheet_match = re.search(r'/sheet/([A-Za-z0-9]+)', doc_url)
+                if sheet_match:
+                    analysis["document_id"] = sheet_match.group(1)
+                    analysis["url_type"] = "specific_sheet"
+                    analysis["is_specific_document"] = True
+                    analysis["recommended_methods"] = ["_try_menu_export", "_try_toolbar_export", "_try_keyboard_shortcut_export"]
+                    analysis["adaptive_config"]["direct_export_available"] = True
+                    
+            elif "docs.qq.com/doc/" in doc_url.lower():
+                # 具体文档
+                doc_match = re.search(r'/doc/([A-Za-z0-9]+)', doc_url)
+                if doc_match:
+                    analysis["document_id"] = doc_match.group(1)
+                    analysis["url_type"] = "specific_document"
+                    analysis["is_specific_document"] = True
+                    analysis["recommended_methods"] = ["_try_menu_export", "_try_toolbar_export"]
+                    analysis["adaptive_config"]["direct_export_available"] = True
+                    
+            elif "docs.qq.com/slide/" in doc_url.lower():
+                # 幻灯片文档
+                slide_match = re.search(r'/slide/([A-Za-z0-9]+)', doc_url)
+                if slide_match:
+                    analysis["document_id"] = slide_match.group(1)
+                    analysis["url_type"] = "specific_slide"
+                    analysis["is_specific_document"] = True
+                    analysis["recommended_methods"] = ["_try_menu_export", "_try_toolbar_export"]
+                    analysis["expected_challenges"].append("幻灯片导出格式可能受限")
+                    
+            elif "pad.qq.com" in doc_url.lower():
+                # 智能表格或其他pad域名
+                analysis["url_type"] = "pad_domain"
+                analysis["is_specific_document"] = True
+                analysis["recommended_methods"] = ["_try_menu_export", "_try_right_click_export"]
+                analysis["adaptive_config"]["alternative_domain"] = True
+                
+            else:
+                # 未知类型，使用全方位方法
+                analysis["url_type"] = "unknown"
+                analysis["recommended_methods"] = ["_try_menu_export", "_try_toolbar_export", "_try_keyboard_shortcut_export", "_try_right_click_export"]
+                analysis["expected_challenges"].append("未知URL格式，使用全方位尝试")
+                
+            # 2. URL参数分析
+            if "?tab=" in doc_url:
+                analysis["adaptive_config"]["has_tab_parameter"] = True
+                analysis["expected_challenges"].append("多标签页文档，需要确认当前标签")
+                
+            if "#" in doc_url:
+                analysis["adaptive_config"]["has_anchor"] = True
+                
+            # 3. 特殊情况检测
+            if "readonly" in doc_url.lower():
+                analysis["expected_challenges"].append("只读文档，导出功能可能受限")
+                analysis["adaptive_config"]["readonly_mode"] = True
+                
+            print(f"📊 URL分析完成:")
+            print(f"   类型: {analysis['url_type']}")
+            print(f"   文档ID: {analysis.get('document_id', 'N/A')}")
+            print(f"   推荐方法: {len(analysis['recommended_methods'])}个")
+            print(f"   预期挑战: {len(analysis['expected_challenges'])}个")
+            
+            return analysis
+            
+        except Exception as e:
+            print(f"⚠️ URL分析异常: {e}")
+            # 返回安全的默认分析结果
+            analysis["url_type"] = "fallback"
+            analysis["recommended_methods"] = ["_try_menu_export", "_try_toolbar_export", "_try_keyboard_shortcut_export", "_try_right_click_export"]
+            return analysis
+
+    async def export_document(self, doc_url, export_format="excel", **kwargs):
+        """
+        导出文档的主方法（兼容旧接口）
+        接受额外参数如cookies等
+        """
+        # 确保浏览器已启动
+        if not self.browser or not self.page:
+            print("🌐 启动浏览器...")
+            await self.start_browser(headless=True)
+
+        # 如果传入了cookies参数，设置cookies
+        if 'cookies' in kwargs:
+            cookie = kwargs['cookies']
+            if cookie:
+                print("🍪 设置Cookie...")
+                await self.login_with_cookies(cookie)
+
+        # 调用自动导出方法
+        return await self.auto_export_document(doc_url, export_format)
+
+    async def auto_export_document(self, doc_url, export_format="excel"):
+        """
+        简化版：直接下载文档（移除所有降级方法）
+        """
+        print(f"🚀 开始文档下载: {doc_url}")
+
+        try:
+            # 设置当前URL供_handle_download使用
+            self.current_url = doc_url
+
+            # 直接访问页面
+            print("📋 加载页面...")
+            await self.page.goto(doc_url, wait_until='domcontentloaded', timeout=30000)
+            print("✅ 页面加载完成")
+
+            # 等待页面渲染
+            await self.page.wait_for_timeout(5000)
+
+            # 等待网络空闲
+            try:
+                await self.page.wait_for_load_state('networkidle', timeout=10000)
+                print("🌐 网络请求完成")
+            except:
+                print("⚠️ 网络等待超时，继续...")
+
+            # 等待下载完成
+            print("📥 等待下载...")
+            await self._wait_for_download(timeout=30)
+
+            if self.downloaded_files:
+                print(f"🎉 成功下载文件: {self.downloaded_files}")
+                return self.downloaded_files
+            else:
+                print("⚠️ 未检测到下载文件，可能页面正在自动下载")
+                # 再等待一段时间
+                await self.page.wait_for_timeout(10000)
+                if self.downloaded_files:
+                    print(f"✅ 延迟下载成功: {self.downloaded_files}")
+                    return self.downloaded_files
+                else:
+                    raise Exception("未检测到下载的文件")
+
+        except Exception as e:
+            print(f"❌ 文档下载失败: {e}")
+            return None
+    
+
+    async def _detect_desktop_page_status(self):
+        """检测桌面页面状态"""
+        print("📋 检测桌面页面状态...")
+        
+        # 检测文档列表是否加载完成
+        document_list_selectors = [
+            '[class*="doc-list"]',
+            '[class*="file-list"]', 
+            '[class*="document-item"]',
+            '.desktop-content'
+        ]
+        
+        list_found = False
+        for selector in document_list_selectors:
+            elements = await self.page.query_selector_all(selector)
+            if elements:
+                print(f"✅ 检测到文档列表: {selector} ({len(elements)}个元素)")
+                list_found = True
+                break
+        
+        if not list_found:
+            print("⚠️ 未检测到明确的文档列表，但继续进行...")
+    
+    async def _detect_specific_document_status(self, url_analysis):
+        """检测具体文档页面状态"""
+        print(f"📄 检测具体文档状态 (类型: {url_analysis['url_type']})...")
+        
+        # 检查登录状态
+        readonly_btn = await self.page.query_selector('.readonly-button')
+        menu_btn = await self.page.query_selector('.titlebar-icon-more')
+        has_edit_access = await self.page.query_selector('[class*="edit"]')
+        
+        current_url = self.page.url
+        print(f"📊 页面状态检测结果:")
+        print(f"   当前URL: {current_url[:100]}...")
+        print(f"   只读按钮: {'存在' if readonly_btn else '不存在'}")
+        print(f"   菜单按钮: {'存在' if menu_btn else '不存在'}")
+        print(f"   编辑元素: {'存在' if has_edit_access else '不存在'}")
+        
+        # 根据URL分析结果调整状态判断
+        if url_analysis.get("adaptive_config", {}).get("readonly_mode"):
+            print("📖 只读模式文档，调整导出策略")
+        
+        if menu_btn:
+            print("✅ 检测到导出菜单，用户已登录，继续导出流程...")
+        elif readonly_btn:
+            print("ℹ️ 文档为只读模式，但可能仍可导出")
+        else:
+            print("⚠️ 未检测到明确的登录/菜单元素，将尝试继续...")
+
+    async def cleanup(self):
+        """清理资源 - 增强版，确保进程被终止"""
+        cleanup_errors = []
+
+        # 1. 尝试正常关闭页面
+        if self.page:
+            try:
+                await self.page.close()
+                self.page = None
+            except Exception as e:
+                cleanup_errors.append(f"页面关闭失败: {e}")
+
+        # 2. 如果使用单例模式，不关闭浏览器（保持复用）
+        if hasattr(self, 'using_singleton') and self.using_singleton:
+            print("♻️ 保持单例浏览器实例（供下次复用）")
+            return
+        
+        # 3. 尝试正常关闭浏览器（非单例模式）
+        if self.browser:
+            try:
+                await self.browser.close()
+                self.browser = None
+            except Exception as e:
+                cleanup_errors.append(f"浏览器关闭失败: {e}")
+        
+        # 3. 停止playwright
+        if hasattr(self, 'playwright'):
+            try:
+                await self.playwright.stop()
+                self.playwright = None
+            except Exception as e:
+                cleanup_errors.append(f"Playwright停止失败: {e}")
+        
+        # 4. 如果有错误，使用强制清理
+        if cleanup_errors:
+            print(f"⚠️ 清理过程遇到错误: {cleanup_errors}")
+            try:
+                # 导入进程管理器进行强制清理
+                import sys
+                import os
+                sys.path.append(os.path.dirname(os.path.dirname(os.path.dirname(__file__))))
+                from browser_process_manager import BrowserProcessManager
+                BrowserProcessManager.kill_all_browser_processes()
+                print("✅ 已强制终止所有浏览器进程")
+            except Exception as e:
+                print(f"❌ 强制清理失败: {e}")
+        
+        # 5. 清理临时文件
+        try:
+            import glob
+            import shutil
+            for pattern in ['/tmp/playwright*', '/tmp/chromium*']:
+                for path in glob.glob(pattern)[:5]:  # 只清理最近的5个
+                    try:
+                        if os.path.isdir(path):
+                            shutil.rmtree(path)
+                    except:
+                        pass
+        except:
+            pass
+
+
+async def main():
+    parser = argparse.ArgumentParser(description='腾讯文档自动导出工具')
+    parser.add_argument('url', help='腾讯文档URL')
+    parser.add_argument('-c', '--cookies', help='登录Cookie')
+    parser.add_argument('-f', '--format', default='excel', choices=['excel', 'xlsx', 'csv'], help='导出格式')
+    parser.add_argument('-d', '--download-dir', help='下载目录')
+    parser.add_argument('--visible', action='store_true', help='显示浏览器窗口')
+    
+    args = parser.parse_args()
+    
+    exporter = TencentDocAutoExporter(
+        download_dir=args.download_dir
+    )
+    
+    try:
+        await exporter.start_browser(headless=not args.visible)
+        
+        if args.cookies:
+            await exporter.login_with_cookies(args.cookies)
+        
+        result = await exporter.auto_export_document(args.url, args.format)
+        
+        if result:
+            print(f"[成功] 自动导出完成，文件保存在: {result}")
+            
+            # 版本管理处理
+            if exporter.enable_version_management and exporter.version_manager:
+                print("正在进行版本管理处理...")
+                
+                for file_path in result:
+                    # 从文件名提取表格名称
+                    file_name = Path(file_path).stem
+                    version_result = exporter.version_manager.add_new_version(file_path, file_name)
+                    
+                    if version_result["success"]:
+                        print(f"✅ {version_result['message']}")
+                        if version_result.get("archived_files"):
+                            print(f"📁 已归档旧版本: {', '.join(version_result['archived_files'])}")
+                        
+                        # 准备对比文件
+                        table_name = version_result["table_name"]
+                        comparison_result = exporter.version_manager.prepare_comparison(table_name)
+                        if comparison_result["success"]:
+                            print(f"📊 对比文件已准备: {comparison_result['message']}")
+                            print(f"📄 当前版本: {Path(comparison_result['current_file']).name}")
+                            print(f"📄 对比版本: {Path(comparison_result['previous_file']).name}")
+                        else:
+                            print(f"⚠️  {comparison_result.get('message', '无法准备对比文件')}")
+                    else:
+                        action = version_result.get("action", "unknown")
+                        if action == "duplicate_content":
+                            print(f"ℹ️  文件内容未变化，与 {version_result.get('duplicate_file', '现有文件')} 相同")
+                        else:
+                            print(f"⚠️  版本管理处理失败: {version_result.get('error', version_result.get('message', '未知错误'))}")
+        else:
+            print("[失败] 自动导出失败")
+            
+    except Exception as e:
+        print(f"程序出错: {e}")
+    finally:
+        await exporter.cleanup()
+
+
+if __name__ == "__main__":
+    try:
+        asyncio.run(main())
+    except KeyboardInterrupt:
+        print("\n用户中断操作")
+    except Exception as e:
+        print(f"程序出错: {e}")

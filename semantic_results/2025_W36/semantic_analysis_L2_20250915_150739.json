@@ -1,0 +1,49 @@
+{
+  "metadata": {
+    "analysis_time": "2025-09-15 15:07:39",
+    "total_modifications": 1,
+    "layer1_passed": 0,
+    "layer2_analyzed": 1,
+    "processing_time": "16.1s"
+  },
+  "results": [
+    {
+      "modification_id": "M001",
+      "cell": "B56",
+      "column": "项目类型",
+      "old_value": "目标管理",
+      "new_value": "",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 80.0,
+        "reason": "关键信息缺失"
+      },
+      "layer2_result": {
+        "risk_level": "CRITICAL",
+        "decision": "REJECT",
+        "confidence": 95,
+        "key_risks": [
+          "项目类型定义缺失导致方向性错误",
+          "项目类型空白将影响所有相关依赖要素",
+          "无法建立正确的项目评估标准",
+          "资源分配和团队协作基础丧失"
+        ],
+        "recommendation": "必须补充项目类型定义。建议：1)恢复原值'目标管理'；2)如确需修改，应同步更新项目章程、WBS等所有关联文档，并重新评估项目基线。空白值不可接受。"
+      },
+      "final_decision": "REJECT",
+      "approval_required": true
+    }
+  ],
+  "summary": {
+    "approved": 0,
+    "conditional": 0,
+    "review_required": 0,
+    "rejected": 1,
+    "risk_distribution": {
+      "LOW": 0,
+      "MEDIUM": 0,
+      "HIGH": 0,
+      "CRITICAL": 1
+    }
+  }
+}

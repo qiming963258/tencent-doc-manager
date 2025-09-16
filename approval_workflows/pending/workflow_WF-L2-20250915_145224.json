@@ -1,0 +1,31 @@
+{
+  "workflow_id": "WF-L2-20250915_145224",
+  "created_time": "2025-09-15 14:52:24",
+  "pending_approvals": [
+    {
+      "modification_id": "M001",
+      "cell": "K40",
+      "column": "监督人",
+      "old_value": "邓总",
+      "new_value": "赖铁荔",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 80.0,
+        "reason": "负责人变更"
+      },
+      "layer2_result": {
+        "risk_level": "MEDIUM",
+        "decision": "REVIEW",
+        "confidence": 75,
+        "key_risks": [
+          "监督人角色变更可能导致沟通方式改变",
+          "新监督人可能对项目历史了解不足"
+        ],
+        "recommendation": "建议组织项目交接会议，确保新监督人充分了解项目背景、当前状态和关键利益相关者。同时更新相关沟通机制和决策流程文档。"
+      },
+      "final_decision": "REVIEW",
+      "approval_required": true
+    }
+  ],
+  "auto_approved": []
+}

@@ -1,0 +1,32 @@
+{
+  "workflow_id": "WF-L2-20250915_192130",
+  "created_time": "2025-09-15 19:21:30",
+  "pending_approvals": [
+    {
+      "modification_id": "M001",
+      "cell": "H4",
+      "column": "具体计划内容",
+      "old_value": "按照所负责事项的目标，拆解到承接人员：玉佳、穗云、邓俊",
+      "new_value": "",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 90.0,
+        "reason": "删除关键信息"
+      },
+      "layer2_result": {
+        "risk_level": "HIGH",
+        "decision": "REVIEW",
+        "confidence": 85,
+        "key_risks": [
+          "计划内容被完全删除，导致任务分工不明确",
+          "执行人员责任不清，可能引发执行混乱",
+          "项目进度可能因计划缺失而延误"
+        ],
+        "recommendation": "建议补充新的计划内容，明确任务分工和责任人。如果确实要删除，应同步更新相关依赖项和沟通机制，并记录删除原因。修改前需要相关干系人评审确认。"
+      },
+      "final_decision": "REVIEW",
+      "approval_required": true
+    }
+  ],
+  "auto_approved": []
+}

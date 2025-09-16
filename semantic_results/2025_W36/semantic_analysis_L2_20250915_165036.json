@@ -1,0 +1,47 @@
+{
+  "metadata": {
+    "analysis_time": "2025-09-15 16:50:36",
+    "total_modifications": 1,
+    "layer1_passed": 0,
+    "layer2_analyzed": 1,
+    "processing_time": "9.1s"
+  },
+  "results": [
+    {
+      "modification_id": "M001",
+      "cell": "H22",
+      "column": "具体计划内容",
+      "old_value": "出国系统校准，数据统计与统计数据连接对等与同步，便于部门管理查看成交率，重新梳理判断系统的数据与数据准确性；",
+      "new_value": "自动邮件发送异常，需要技术部解决自动邮件发送的设置；",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 80.0,
+        "reason": "内容变更"
+      },
+      "layer2_result": {
+        "risk_level": "MEDIUM",
+        "decision": "REVIEW",
+        "confidence": 75,
+        "key_risks": [
+          "原计划中的系统校准和数据同步功能被完全替换，可能导致相关业务目标无法达成",
+          "新计划内容的技术实现难度和时间成本不明确，可能影响整体项目进度"
+        ],
+        "recommendation": "建议召开跨部门协调会，明确以下事项：1) 原计划功能的必要性评估；2) 新计划的技术可行性分析；3) 两项工作的资源分配和优先级排序。同时需要更新相关需求文档和测试用例。"
+      },
+      "final_decision": "REVIEW",
+      "approval_required": true
+    }
+  ],
+  "summary": {
+    "approved": 0,
+    "conditional": 0,
+    "review_required": 1,
+    "rejected": 0,
+    "risk_distribution": {
+      "LOW": 0,
+      "MEDIUM": 0,
+      "HIGH": 1,
+      "CRITICAL": 0
+    }
+  }
+}

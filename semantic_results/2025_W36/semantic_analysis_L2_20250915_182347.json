@@ -1,0 +1,48 @@
+{
+  "metadata": {
+    "analysis_time": "2025-09-15 18:23:47",
+    "total_modifications": 1,
+    "layer1_passed": 0,
+    "layer2_analyzed": 1,
+    "processing_time": "9.7s"
+  },
+  "results": [
+    {
+      "modification_id": "M001",
+      "cell": "H9",
+      "column": "具体计划内容",
+      "old_value": "清单计划的罗列整改",
+      "new_value": "徐梅英回岗前置化工作安排\n1、回岗前部门将前期需要将回国调整部分前期的资料发送；\n2、提前了解回国的业务调整部分，回岗后可快速进入工作状态；",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 80.0,
+        "reason": "关键内容变更"
+      },
+      "layer2_result": {
+        "risk_level": "MEDIUM",
+        "decision": "CONDITIONAL",
+        "confidence": 80,
+        "key_risks": [
+          "计划性质从清单式整改转变为特定人员工作安排，可能导致原有整改目标被忽略",
+          "新增的前置工作可能影响原有项目时间安排",
+          "工作重点转向个人而非整体项目计划"
+        ],
+        "recommendation": "建议：1) 保留原清单整改要素，将徐梅英工作安排作为补充内容；2) 评估新增工作对项目时间表的影响；3) 确保该调整获得相关干系人确认。需在变更记录中注明修改原因和批准人。"
+      },
+      "final_decision": "CONDITIONAL",
+      "approval_required": false
+    }
+  ],
+  "summary": {
+    "approved": 0,
+    "conditional": 1,
+    "review_required": 0,
+    "rejected": 0,
+    "risk_distribution": {
+      "LOW": 0,
+      "MEDIUM": 0,
+      "HIGH": 0,
+      "CRITICAL": 0
+    }
+  }
+}

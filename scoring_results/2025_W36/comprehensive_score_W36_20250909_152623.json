@@ -1,0 +1,180 @@
+{
+  "metadata": {
+    "week": "W36",
+    "generation_time": "2025-09-09 15:26:23",
+    "total_tables": 1,
+    "total_modifications": 6,
+    "scoring_version": "v1.0"
+  },
+  "table_scores": [
+    {
+      "table_name": "simplified_副本-测试版本-出国销售计划表-工作表1_vs_副本-副本-测试版本-出国销售计划表-工作表1_20250908_221956",
+      "table_url": "https://docs.qq.com/sheet/DWEFNU25TemFnZXJN",
+      "modifications_count": 6,
+      "column_scores": {
+        "项目类型": {
+          "column_level": "L2",
+          "modifications": 1,
+          "scores": [
+            0.54
+          ],
+          "aggregated_score": 0.54,
+          "max_score": 0.54,
+          "min_score": 0.54,
+          "risk_trend": "stable",
+          "ai_decisions": {
+            "REVIEW": 1
+          }
+        },
+        "任务发起时间": {
+          "column_level": "L1",
+          "modifications": 1,
+          "scores": [
+            1.0
+          ],
+          "aggregated_score": 1.0,
+          "max_score": 1.0,
+          "min_score": 1.0,
+          "risk_trend": "stable",
+          "ai_decisions": null
+        },
+        "关键KR对齐": {
+          "column_level": "L1",
+          "modifications": 1,
+          "scores": [
+            0.8
+          ],
+          "aggregated_score": 0.8,
+          "max_score": 0.8,
+          "min_score": 0.8,
+          "risk_trend": "stable",
+          "ai_decisions": null
+        },
+        "邓总指导登记（日更新）": {
+          "column_level": "L2",
+          "modifications": 1,
+          "scores": [
+            0.172
+          ],
+          "aggregated_score": 0.172,
+          "max_score": 0.172,
+          "min_score": 0.172,
+          "risk_trend": "stable",
+          "ai_decisions": {
+            "APPROVE": 1
+          }
+        },
+        "负责人": {
+          "column_level": "L2",
+          "modifications": 1,
+          "scores": [
+            0.432
+          ],
+          "aggregated_score": 0.432,
+          "max_score": 0.432,
+          "min_score": 0.432,
+          "risk_trend": "stable",
+          "ai_decisions": {
+            "CONDITIONAL": 1
+          }
+        },
+        "预计完成时间": {
+          "column_level": "L1",
+          "modifications": 1,
+          "scores": [
+            0.96
+          ],
+          "aggregated_score": 0.96,
+          "max_score": 0.96,
+          "min_score": 0.96,
+          "risk_trend": "stable",
+          "ai_decisions": null
+        }
+      },
+      "table_summary": {
+        "overall_risk_score": 0.651,
+        "risk_level": "HIGH",
+        "top_risks": [
+          {
+            "column": "任务发起时间",
+            "score": 1.0
+          },
+          {
+            "column": "预计完成时间",
+            "score": 0.96
+          },
+          {
+            "column": "关键KR对齐",
+            "score": 0.8
+          },
+          {
+            "column": "项目类型",
+            "score": 0.54
+          },
+          {
+            "column": "负责人",
+            "score": 0.432
+          }
+        ],
+        "recommended_action": "priority_review"
+      }
+    }
+  ],
+  "cross_table_analysis": {
+    "column_risk_ranking": [
+      {
+        "column": "任务发起时间",
+        "avg_score": 1.0,
+        "tables_affected": 1
+      },
+      {
+        "column": "预计完成时间",
+        "avg_score": 0.96,
+        "tables_affected": 1
+      },
+      {
+        "column": "关键KR对齐",
+        "avg_score": 0.8,
+        "tables_affected": 1
+      },
+      {
+        "column": "项目类型",
+        "avg_score": 0.54,
+        "tables_affected": 1
+      },
+      {
+        "column": "负责人",
+        "avg_score": 0.432,
+        "tables_affected": 1
+      },
+      {
+        "column": "邓总指导登记（日更新）",
+        "avg_score": 0.172,
+        "tables_affected": 1
+      }
+    ],
+    "pattern_detection": {
+      "systematic_changes": [],
+      "anomalies": [
+        {
+          "type": "多列高风险",
+          "columns": [
+            "任务发起时间",
+            "关键KR对齐",
+            "预计完成时间"
+          ],
+          "table": "simplified_副本-测试版本-出国销售计划表-工作表1_vs_副本-副本-测试版本-出国销售计划表-工作表1_20250908_221956",
+          "severity": "HIGH"
+        }
+      ]
+    },
+    "overall_metrics": {
+      "system_risk_score": 0.651,
+      "risk_level": "HIGH",
+      "total_high_risks": 3,
+      "total_critical_changes": 3,
+      "ai_intervention_rate": "100.0%",
+      "token_efficiency": "98.6%"
+    }
+  }
+}

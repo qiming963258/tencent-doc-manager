@@ -1,0 +1,48 @@
+{
+  "metadata": {
+    "analysis_time": "2025-09-15 18:40:59",
+    "total_modifications": 1,
+    "layer1_passed": 0,
+    "layer2_analyzed": 1,
+    "processing_time": "9.6s"
+  },
+  "results": [
+    {
+      "modification_id": "M001",
+      "cell": "J37",
+      "column": "负责人",
+      "old_value": "赖铁荔",
+      "new_value": "",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 90.0,
+        "reason": "关键人缺失"
+      },
+      "layer2_result": {
+        "risk_level": "HIGH",
+        "decision": "REVIEW",
+        "confidence": 85,
+        "key_risks": [
+          "负责人信息被清空可能导致任务无人负责",
+          "关键岗位空缺可能影响项目执行和交付",
+          "团队协作可能出现混乱"
+        ],
+        "recommendation": "1. 必须补充新的负责人信息<br>2. 新旧负责人需要做好交接<br>3. 需要评估对项目进度的影响<br>4. 建议在修改前确认新负责人已就位"
+      },
+      "final_decision": "REVIEW",
+      "approval_required": true
+    }
+  ],
+  "summary": {
+    "approved": 0,
+    "conditional": 0,
+    "review_required": 1,
+    "rejected": 0,
+    "risk_distribution": {
+      "LOW": 0,
+      "MEDIUM": 0,
+      "HIGH": 1,
+      "CRITICAL": 0
+    }
+  }
+}

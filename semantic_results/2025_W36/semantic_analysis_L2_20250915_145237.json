@@ -1,0 +1,49 @@
+{
+  "metadata": {
+    "analysis_time": "2025-09-15 14:52:37",
+    "total_modifications": 1,
+    "layer1_passed": 0,
+    "layer2_analyzed": 1,
+    "processing_time": "12.2s"
+  },
+  "results": [
+    {
+      "modification_id": "M001",
+      "cell": "B41",
+      "column": "项目类型",
+      "old_value": "项目管理",
+      "new_value": "",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 80.0,
+        "reason": "关键字段空"
+      },
+      "layer2_result": {
+        "risk_level": "HIGH",
+        "decision": "REVIEW",
+        "confidence": 85,
+        "key_risks": [
+          "项目类型定义不清可能导致目标偏离",
+          "项目类型变更可能导致资源分配不当",
+          "团队对变更后的项目类型理解不一致",
+          "可能影响项目交付标准和验收标准"
+        ],
+        "recommendation": "1. 要求补充完整新项目类型值\n2. 评估项目类型变更对项目整体框架的影响\n3. 组织相关干系人就变更内容进行确认\n4. 必要时更新项目章程和范围说明书"
+      },
+      "final_decision": "REVIEW",
+      "approval_required": true
+    }
+  ],
+  "summary": {
+    "approved": 0,
+    "conditional": 0,
+    "review_required": 1,
+    "rejected": 0,
+    "risk_distribution": {
+      "LOW": 0,
+      "MEDIUM": 0,
+      "HIGH": 1,
+      "CRITICAL": 0
+    }
+  }
+}

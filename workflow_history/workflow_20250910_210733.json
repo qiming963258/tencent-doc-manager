@@ -1,0 +1,120 @@
+{
+  "id": "20250910_210733",
+  "start_time": "2025-09-10T21:07:33.102222",
+  "end_time": "2025-09-10T21:10:00.394437",
+  "status": "completed",
+  "results": {
+    "baseline_file": "csv_versions/2025_W37/midweek/tencent_测试版本-小红书部门-工作表2_20250910_2108_midweek_W37.csv",
+    "target_file": "csv_versions/2025_W37/midweek/tencent_测试版本-小红书部门-工作表2_20250910_2108_midweek_W37.csv",
+    "score_file": "/root/projects/tencent-doc-manager/scoring_results/detailed/score_20250910_210733.json",
+    "marked_file": "/root/projects/tencent-doc-manager/excel_outputs/marked/tencent_测试版本-小红书部门_20250910_2109_midweek_W37_marked_20250910_210947_W00.xlsx",
+    "upload_url": null,
+    "execution_time": "0:02:27.292215"
+  },
+  "logs": [
+    {
+      "time": "21:08:18",
+      "level": "INFO",
+      "message": "开始下载目标文档..."
+    },
+    {
+      "time": "21:09:02",
+      "level": "INFO",
+      "message": "✅ 目标文档下载成功: tencent_测试版本-小红书部门-工作表2_20250910_2108_midweek_W37.csv"
+    },
+    {
+      "time": "21:09:02",
+      "level": "INFO",
+      "message": "开始对比分析..."
+    },
+    {
+      "time": "21:09:02",
+      "level": "INFO",
+      "message": "✅ 对比分析完成，发现 0 处变更"
+    },
+    {
+      "time": "21:09:02",
+      "level": "INFO",
+      "message": "开始列标准化..."
+    },
+    {
+      "time": "21:09:02",
+      "level": "INFO",
+      "message": "✅ 列标准化完成，映射了 2 个列"
+    },
+    {
+      "time": "21:09:02",
+      "level": "INFO",
+      "message": "开始L2语义分析和L1L3规则打分..."
+    },
+    {
+      "time": "21:09:02",
+      "level": "WARNING",
+      "message": "⚠️ 语义分析出错: 'L2SemanticAnalyzer' object has no attribute 'analyze_changes'"
+    },
+    {
+      "time": "21:09:02",
+      "level": "INFO",
+      "message": "生成详细打分JSON..."
+    },
+    {
+      "time": "21:09:02",
+      "level": "WARNING",
+      "message": "⚠️ 真实打分生成失败: openpyxl does not support .csv file format, please check you can open it with Excel first. Supported formats are: .xlsx,.xlsm,.xltx,.xltm，使用基础打分"
+    },
+    {
+      "time": "21:09:02",
+      "level": "INFO",
+      "message": "✅ 基础打分生成完成: score_20250910_210733.json"
+    },
+    {
+      "time": "21:09:02",
+      "level": "INFO",
+      "message": "下载目标文档的Excel格式..."
+    },
+    {
+      "time": "21:09:47",
+      "level": "INFO",
+      "message": "✅ Excel文档下载成功: tencent_测试版本-小红书部门_20250910_2109_midweek_W37.xlsx"
+    },
+    {
+      "time": "21:09:47",
+      "level": "INFO",
+      "message": "修复腾讯文档Excel格式问题..."
+    },
+    {
+      "time": "21:09:47",
+      "level": "INFO",
+      "message": "✅ Excel格式修复完成"
+    },
+    {
+      "time": "21:09:47",
+      "level": "INFO",
+      "message": "应用条纹涂色标记..."
+    },
+    {
+      "time": "21:09:47",
+      "level": "INFO",
+      "message": "✅ 涂色标记完成: tencent_测试版本-小红书部门_20250910_2109_midweek_W37_marked_20250910_210947_W00.xlsx"
+    },
+    {
+      "time": "21:09:47",
+      "level": "INFO",
+      "message": "上传处理后的文档到腾讯文档..."
+    },
+    {
+      "time": "21:10:00",
+      "level": "WARNING",
+      "message": "⚠️ 文档上传失败"
+    },
+    {
+      "time": "21:10:00",
+      "level": "SUCCESS",
+      "message": "🎉 所有步骤执行完成!"
+    }
+  ],
+  "settings": {
+    "upload_option": "new",
+    "verbose_logging": true
+  }
+}

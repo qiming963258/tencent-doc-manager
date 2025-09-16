@@ -1,0 +1,33 @@
+{
+  "workflow_id": "WF-L2-20250915_154116",
+  "created_time": "2025-09-15 15:41:16",
+  "pending_approvals": [
+    {
+      "modification_id": "M001",
+      "cell": "I91",
+      "column": "负责人",
+      "old_value": "蔡悦莹",
+      "new_value": "",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 90.0,
+        "reason": "负责人缺失"
+      },
+      "layer2_result": {
+        "risk_level": "CRITICAL",
+        "decision": "REVIEW",
+        "confidence": 90,
+        "key_risks": [
+          "责任人清空导致任务无人负责",
+          "可能导致关键节点失控",
+          "影响上下游任务衔接",
+          "团队沟通渠道中断"
+        ],
+        "recommendation": "强烈建议确认以下事项后执行修改：1.该任务是否已取消或不再需要负责人 2.是否有临时交接人 3.是否已通知相关干系人。如确需清空，建议先设置临时负责人过渡，并在修改日志中详细记录原因。"
+      },
+      "final_decision": "REVIEW",
+      "approval_required": true
+    }
+  ],
+  "auto_approved": []
+}

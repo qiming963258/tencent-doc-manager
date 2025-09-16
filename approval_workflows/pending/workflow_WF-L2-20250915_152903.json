@@ -1,0 +1,33 @@
+{
+  "workflow_id": "WF-L2-20250915_152903",
+  "created_time": "2025-09-15 15:29:03",
+  "pending_approvals": [
+    {
+      "modification_id": "M001",
+      "cell": "K78",
+      "column": "监督人",
+      "old_value": "徐志杰",
+      "new_value": "",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 80.0,
+        "reason": "关键人缺失"
+      },
+      "layer2_result": {
+        "risk_level": "HIGH",
+        "decision": "REVIEW",
+        "confidence": 85,
+        "key_risks": [
+          "监督人职责空缺导致监管缺失",
+          "项目执行缺乏监督可能导致偏差",
+          "团队沟通渠道可能中断",
+          "责任归属不明确"
+        ],
+        "recommendation": "建议立即补充监督人人选，或明确临时监督机制。如需留空必须获得项目发起人书面批准，并制定过渡期监督方案。新监督人确定后需完成工作交接并通知所有相关方。"
+      },
+      "final_decision": "REVIEW",
+      "approval_required": true
+    }
+  ],
+  "auto_approved": []
+}

@@ -1,0 +1,32 @@
+{
+  "workflow_id": "WF-L2-20250915_151541",
+  "created_time": "2025-09-15 15:15:41",
+  "pending_approvals": [
+    {
+      "modification_id": "M001",
+      "cell": "G65",
+      "column": "具体计划内容",
+      "old_value": "回国业务：\n1.采集【回国搬家】平台竟对账号，进行爆款笔记采集\n2.结合内容定位梳理更新，更新爆款笔记优质维度\n3.识别更新业务知识点，更新回国业务知识库",
+      "new_value": "产品运营人员管理",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 90.0,
+        "reason": "职责变更"
+      },
+      "layer2_result": {
+        "risk_level": "MEDIUM",
+        "decision": "REVIEW",
+        "confidence": 75,
+        "key_risks": [
+          "计划内容被完全替换，可能导致业务执行方向发生重大改变",
+          "原定具体任务被删除，可能影响业务知识库更新进度",
+          "新内容过于笼统，缺乏可执行性指标"
+        ],
+        "recommendation": "建议与提出修改的负责人沟通：1.确认这是否是业务方向的战略调整；2.如果是方向调整，需要补充新的详细执行方案；3.评估变更对知识库更新的影响并制定过渡方案；4.新的'产品运营人员管理'需拆解为具体可衡量的任务指标"
+      },
+      "final_decision": "REVIEW",
+      "approval_required": true
+    }
+  ],
+  "auto_approved": []
+}

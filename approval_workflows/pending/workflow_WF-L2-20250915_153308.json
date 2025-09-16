@@ -1,0 +1,32 @@
+{
+  "workflow_id": "WF-L2-20250915_153308",
+  "created_time": "2025-09-15 15:33:08",
+  "pending_approvals": [],
+  "auto_approved": [
+    {
+      "modification_id": "M001",
+      "cell": "K82",
+      "column": "监督人",
+      "old_value": "邓总",
+      "new_value": "魏志广",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 80.0,
+        "reason": "关键人变更"
+      },
+      "layer2_result": {
+        "risk_level": "MEDIUM",
+        "decision": "CONDITIONAL",
+        "confidence": 75,
+        "key_risks": [
+          "监督人变更可能导致项目监督方式改变",
+          "新监督人可能需要时间适应项目情况",
+          "原监督人邓总可能已建立的工作关系和沟通渠道需要重建"
+        ],
+        "recommendation": "建议：1. 安排项目交接会议，确保魏志广全面了解项目情况；2. 评估新监督人魏志广的项目管理经验；3. 监控变更后1-2周的项目进展情况；4. 如可能，保持邓总作为顾问角色过渡一段时间。"
+      },
+      "final_decision": "CONDITIONAL",
+      "approval_required": false
+    }
+  ]
+}

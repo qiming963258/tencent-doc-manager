@@ -1,0 +1,48 @@
+{
+  "metadata": {
+    "analysis_time": "2025-09-15 15:43:44",
+    "total_modifications": 1,
+    "layer1_passed": 0,
+    "layer2_analyzed": 1,
+    "processing_time": "11.0s"
+  },
+  "results": [
+    {
+      "modification_id": "M001",
+      "cell": "I94",
+      "column": "负责人",
+      "old_value": "徐志杰",
+      "new_value": "",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 80.0,
+        "reason": "关键人缺失"
+      },
+      "layer2_result": {
+        "risk_level": "MEDIUM",
+        "decision": "REVIEW",
+        "confidence": 75,
+        "key_risks": [
+          "负责人字段清空导致职责不明确",
+          "可能导致任务无人负责或重复分配",
+          "影响任务跟踪和问责机制"
+        ],
+        "recommendation": "建议补充新负责人姓名或说明清空原因。如为临时状态，需标注预计填补时间和临时负责人。修改前需获得原负责人徐志杰和相关干系人确认。"
+      },
+      "final_decision": "REVIEW",
+      "approval_required": true
+    }
+  ],
+  "summary": {
+    "approved": 0,
+    "conditional": 0,
+    "review_required": 1,
+    "rejected": 0,
+    "risk_distribution": {
+      "LOW": 0,
+      "MEDIUM": 0,
+      "HIGH": 1,
+      "CRITICAL": 0
+    }
+  }
+}

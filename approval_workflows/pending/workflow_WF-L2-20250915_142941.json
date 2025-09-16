@@ -1,0 +1,31 @@
+{
+  "workflow_id": "WF-L2-20250915_142941",
+  "created_time": "2025-09-15 14:29:41",
+  "pending_approvals": [
+    {
+      "modification_id": "M001",
+      "cell": "K17",
+      "column": "监督人",
+      "old_value": "邓总",
+      "new_value": "赖铁荔",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 80.0,
+        "reason": "主管变更"
+      },
+      "layer2_result": {
+        "risk_level": "MEDIUM",
+        "decision": "REVIEW",
+        "confidence": 75,
+        "key_risks": [
+          "监督人变更可能导致项目监督方式和力度变化",
+          "新监督人可能需要时间熟悉项目情况"
+        ],
+        "recommendation": "建议与新监督人赖铁荔进行沟通，确保其了解项目目标和当前状态，并评估变更监督人对项目的影响程度后再做最终决定。同时需考虑是否需要更新相关沟通和报告机制。"
+      },
+      "final_decision": "REVIEW",
+      "approval_required": true
+    }
+  ],
+  "auto_approved": []
+}

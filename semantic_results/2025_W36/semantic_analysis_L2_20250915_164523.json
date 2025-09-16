@@ -1,0 +1,48 @@
+{
+  "metadata": {
+    "analysis_time": "2025-09-15 16:45:23",
+    "total_modifications": 1,
+    "layer1_passed": 0,
+    "layer2_analyzed": 1,
+    "processing_time": "13.4s"
+  },
+  "results": [
+    {
+      "modification_id": "M001",
+      "cell": "H10",
+      "column": "具体计划内容",
+      "old_value": "目标策略流程复盘",
+      "new_value": "渠道管理\n1、澳洲：墨尔本，悉尼华人渠道开发；\n2、美国：洛杉矶华人渠道开发；\n3、新加坡：华人渠道重新开发；",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 80.0,
+        "reason": "策略变更"
+      },
+      "layer2_result": {
+        "risk_level": "HIGH",
+        "decision": "REVIEW",
+        "confidence": 80,
+        "key_risks": [
+          "目标策略流程复盘被完全替换为渠道管理，可能导致项目目标偏离",
+          "新增的多地区渠道开发内容可能超出原执行计划范围",
+          "跨地区协作复杂度增加可能影响交付时间"
+        ],
+        "recommendation": "建议组织专项评审：1)评估渠道开发与原项目目标的匹配性；2)确认新增区域开发所需资源；3)制定跨地区协作机制。待评审通过后方可实施修改，并同步更新相关项目文档。"
+      },
+      "final_decision": "REVIEW",
+      "approval_required": true
+    }
+  ],
+  "summary": {
+    "approved": 0,
+    "conditional": 0,
+    "review_required": 1,
+    "rejected": 0,
+    "risk_distribution": {
+      "LOW": 0,
+      "MEDIUM": 0,
+      "HIGH": 1,
+      "CRITICAL": 0
+    }
+  }
+}

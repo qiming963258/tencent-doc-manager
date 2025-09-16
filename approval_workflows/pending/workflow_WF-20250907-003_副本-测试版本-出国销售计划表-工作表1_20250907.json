@@ -1,0 +1,94 @@
+{
+  "workflow_id": "WF-20250907-003",
+  "table_name": "副本-测试版本-出国销售计划表-工作表1",
+  "created_time": "2025-09-07 23:13:56",
+  "status": "PENDING",
+  "pending_approvals": [
+    {
+      "approval_id": "APR-001",
+      "modification_id": "M001",
+      "cell": "C4",
+      "column": "项目类型",
+      "change_summary": {
+        "from": "目标管理",
+        "to": "体系建设",
+        "type": "性质改变"
+      },
+      "risk_assessment": {
+        "risk_level": "MEDIUM",
+        "decision": "REVIEW",
+        "confidence": 85,
+        "key_risks": [
+          "项目性质改变",
+          "可能影响资源分配"
+        ],
+        "recommendation": "建议项目负责人确认变更原因"
+      },
+      "approval_requirements": {
+        "approver_role": "项目经理",
+        "deadline": "2025-09-07 23:13:56"
+      },
+      "status": "PENDING"
+    },
+    {
+      "approval_id": "APR-002",
+      "modification_id": "M003",
+      "cell": "G8",
+      "column": "关键KR对齐",
+      "change_summary": {
+        "from": "资源转化",
+        "to": "---",
+        "type": "删除内容"
+      },
+      "risk_assessment": {
+        "risk_level": "HIGH",
+        "decision": "REVIEW",
+        "confidence": 92,
+        "key_risks": [
+          "删除关键目标",
+          "可能影响绩效考核"
+        ],
+        "recommendation": "需要确认是否已达成目标或转移到其他项目"
+      },
+      "approval_requirements": {
+        "approver_role": "部门主管",
+        "deadline": "2025-09-07 23:13:56"
+      },
+      "status": "PENDING"
+    }
+  ],
+  "auto_approved": [
+    {
+      "modification_id": "M002",
+      "cell": "E6",
+      "column": "任务发起时间",
+      "change": "2025/3/12 → 2025/3/13",
+      "reason": "日期微调",
+      "approved_time": "2025-09-07 23:13:56"
+    },
+    {
+      "modification_id": "M004",
+      "cell": "I11",
+      "column": "邓总指导登记（日更新）",
+      "change": "0813-\n1、根据周度运营数据识别出来的一般及无效笔记，分析对应的内容定位进行优化；\n2、系统功能 → ---0813-\n1、根据周度运营数据识别出来的一般及无效笔记，分析对应的内容定位进行优化；\n2、系",
+      "reason": "格式调整",
+      "approved_time": "2025-09-07 23:13:56"
+    },
+    {
+      "modification_id": "M005",
+      "cell": "J12",
+      "column": "负责人",
+      "change": "赖铁荔 → 赖铁荔,各责任人",
+      "reason": "增加协助",
+      "approved_time": "2025-09-07 23:13:56"
+    },
+    {
+      "modification_id": "M006",
+      "cell": "M14",
+      "column": "预计完成时间",
+      "change": " → 2025/9/28",
+      "reason": "补充信息",
+      "approved_time": "2025-09-07 23:13:56"
+    }
+  ]
+}

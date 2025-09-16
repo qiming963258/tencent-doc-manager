@@ -1,0 +1,382 @@
+{
+  "metadata": {
+    "table_id": 0,
+    "table_name": "小红书内容审核记录表",
+    "generation_time": "2025-09-13T13:59:30.948503",
+    "scoring_standard": "0000-颜色和级别打分标准",
+    "scoring_version": "2.0"
+  },
+  "comparison_info": {
+    "baseline_file": "tencent_csv_20250818_1200_baseline_W34.csv",
+    "current_file": "current_小红书部门工作表2_20250818_1400_v001.csv",
+    "total_rows": 92,
+    "total_columns": 19,
+    "comparison_time": ""
+  },
+  "modifications_summary": {
+    "total_modifications": 18,
+    "high_risk_count": 4,
+    "medium_risk_count": 4,
+    "low_risk_count": 7
+  },
+  "column_scores": {
+    "项目类型": {
+      "column_level": "L1",
+      "modifications": 1,
+      "modified_rows": [
+        1
+      ],
+      "row_scores": [
+        0.982
+      ],
+      "avg_score": 0.982,
+      "max_score": 0.982,
+      "min_score": 0.982
+    },
+    "来源": {
+      "column_level": "L3",
+      "modifications": 1,
+      "modified_rows": [
+        2
+      ],
+      "row_scores": [
+        0.21
+      ],
+      "avg_score": 0.21,
+      "max_score": 0.21,
+      "min_score": 0.21
+    },
+    "任务发起时间": {
+      "column_level": "L3",
+      "modifications": 1,
+      "modified_rows": [
+        3
+      ],
+      "row_scores": [
+        0.326
+      ],
+      "avg_score": 0.326,
+      "max_score": 0.326,
+      "min_score": 0.326
+    },
+    "目标对齐": {
+      "column_level": "L1",
+      "modifications": 1,
+      "modified_rows": [
+        4
+      ],
+      "row_scores": [
+        0.884
+      ],
+      "avg_score": 0.884,
+      "max_score": 0.884,
+      "min_score": 0.884
+    },
+    "具体计划内容": {
+      "column_level": "L3",
+      "modifications": 2,
+      "modified_rows": [
+        4,
+        5
+      ],
+      "row_scores": [
+        0.178,
+        0.102
+      ],
+      "avg_score": 0.14,
+      "max_score": 0.178,
+      "min_score": 0.102
+    },
+    "负责人": {
+      "column_level": "L2",
+      "modifications": 1,
+      "modified_rows": [
+        6
+      ],
+      "row_scores": [
+        0.687
+      ],
+      "avg_score": 0.687,
+      "max_score": 0.687,
+      "min_score": 0.687,
+      "ai_decisions": {
+        "APPROVE": 0,
+        "REVIEW": 1
+      }
+    },
+    "协助人": {
+      "column_level": "L2",
+      "modifications": 1,
+      "modified_rows": [
+        6
+      ],
+      "row_scores": [
+        0.475
+      ],
+      "avg_score": 0.475,
+      "max_score": 0.475,
+      "min_score": 0.475,
+      "ai_decisions": {
+        "APPROVE": 1,
+        "REVIEW": 0
+      }
+    },
+    "监督人": {
+      "column_level": "L2",
+      "modifications": 1,
+      "modified_rows": [
+        7
+      ],
+      "row_scores": [
+        0.501
+      ],
+      "avg_score": 0.501,
+      "max_score": 0.501,
+      "min_score": 0.501,
+      "ai_decisions": {
+        "APPROVE": 0,
+        "REVIEW": 1
+      }
+    },
+    "重要程度": {
+      "column_level": "L2",
+      "modifications": 1,
+      "modified_rows": [
+        8
+      ],
+      "row_scores": [
+        0.65
+      ],
+      "avg_score": 0.65,
+      "max_score": 0.65,
+      "min_score": 0.65,
+      "ai_decisions": {
+        "APPROVE": 0,
+        "REVIEW": 1
+      }
+    },
+    "预计完成时间": {
+      "column_level": "L2",
+      "modifications": 1,
+      "modified_rows": [
+        9
+      ],
+      "row_scores": [
+        0.593
+      ],
+      "avg_score": 0.593,
+      "max_score": 0.593,
+      "min_score": 0.593,
+      "ai_decisions": {
+        "APPROVE": 0,
+        "REVIEW": 1
+      }
+    },
+    "完成进度": {
+      "column_level": "L2",
+      "modifications": 1,
+      "modified_rows": [
+        10
+      ],
+      "row_scores": [
+        0.503
+      ],
+      "avg_score": 0.503,
+      "max_score": 0.503,
+      "min_score": 0.503,
+      "ai_decisions": {
+        "APPROVE": 0,
+        "REVIEW": 1
+      }
+    },
+    "复盘时间": {
+      "column_level": "L3",
+      "modifications": 1,
+      "modified_rows": [
+        12
+      ],
+      "row_scores": [
+        0.234
+      ],
+      "avg_score": 0.234,
+      "max_score": 0.234,
+      "min_score": 0.234
+    },
+    "对上汇报": {
+      "column_level": "L3",
+      "modifications": 1,
+      "modified_rows": [
+        13
+      ],
+      "row_scores": [
+        0.319
+      ],
+      "avg_score": 0.319,
+      "max_score": 0.319,
+      "min_score": 0.319
+    },
+    "应用情况": {
+      "column_level": "L3",
+      "modifications": 1,
+      "modified_rows": [
+        14
+      ],
+      "row_scores": [
+        0.207
+      ],
+      "avg_score": 0.207,
+      "max_score": 0.207,
+      "min_score": 0.207
+    }
+  },
+  "detailed_modifications": [
+    {
+      "row": 1,
+      "column": "项目类型",
+      "column_level": "L1",
+      "old_value": "目标管理",
+      "new_value": "体系建设",
+      "score": 0.982,
+      "risk_level": "极高风险"
+    },
+    {
+      "row": 2,
+      "column": "来源",
+      "column_level": "L3",
+      "old_value": "经理日常交办",
+      "new_value": "经理日常交办,周会决策待办",
+      "score": 0.21,
+      "risk_level": "低风险"
+    },
+    {
+      "row": 3,
+      "column": "任务发起时间",
+      "column_level": "L3",
+      "old_value": "2025/7/25",
+      "new_value": "2025/7/26",
+      "score": 0.326,
+      "risk_level": "低风险"
+    },
+    {
+      "row": 4,
+      "column": "目标对齐",
+      "column_level": "L1",
+      "old_value": "内容定位",
+      "new_value": "内容定位,其他重点事项",
+      "score": 0.884,
+      "risk_level": "极高风险"
+    },
+    {
+      "row": 4,
+      "column": "具体计划内容",
+      "column_level": "L3",
+      "old_value": "【图片库】\n目前【图片库】以【目标管理机制】进行推进，周执行与复盘推进【目标导向】展开,按照周度周三,周五进行汇报\n1.【硬广套图】老员工套图执行正常展开；新员工排期进行培训后进行图片制作\n2.【流程图】对其三大仓库素材拍摄优化，进行优质内容图采集与存档更新\n3.新员工排期进行图片库项目展开，重点监管员工实操质量与完成效率\n4.外部素材采集扩展，家具图片购买以及试用评估\n5.网盘目录刷新",
+      "new_value": "【图片库】\n目前【图片库】以【目标管理机制】进行推进，周执行与复盘推进【目标导向】展开,按照周度周三,周五报告\n1.【硬广套图】老员工套图正常展开；新员工排期培训后进行图片制作\n2.【流程图】对其三大仓库素材拍摄优化，进行优质内容图采集与存档更新\n3.新员工排期进行图片库项目展开，重点监管员工实操质量与完成效率\n4.外部素材采集扩展，家具图片以及试用评估\n5.网盘刷新",
+      "score": 0.178,
+      "risk_level": "低风险"
+    },
+    {
+      "row": 5,
+      "column": "具体计划内容",
+      "column_level": "L3",
+      "old_value": "【图片库】\n7.18\n上海仓库群素材拍摄素材优化与返图效果跟踪\n\n7.11\n外部【家具套图】已进行购买，员工使用规划及意见建议，周二与周四进行意见与建议采集收纳\n\n\n\n7.4\n1.图片重复使用的问题将于本周追踪员工仓库图片更新情况，针对新图的应用情况规定新老图的使用占比，员工习惯用网盘的旧图，后续要求员工qq群的新图",
+      "new_value": "【图片库】\n7.18\n广州仓库群素材拍摄素材优化与返图效果跟踪\n\n7.11\n外部【家具套图】未进行购买，员工使用规划及意见建议，周二与周四进行意见与建议采集收纳\n\n\n\n7.4\n1.图片重复使用的问题将于本周追踪员工仓库图片更新情况，针对新图的应用情况规定新老图的使用占比，员工习惯用网盘的旧图，后续要求员工qq群的新图",
+      "score": 0.102,
+      "risk_level": "低风险"
+    },
+    {
+      "row": 6,
+      "column": "负责人",
+      "column_level": "L2",
+      "old_value": "蔡悦莹",
+      "new_value": "蔡悦莹,朱瀚桔",
+      "score": 0.687,
+      "risk_level": "高风险",
+      "ai_decision": "REVIEW",
+      "ai_confidence": 0.75
+    },
+    {
+      "row": 6,
+      "column": "协助人",
+      "column_level": "L2",
+      "old_value": "曾利萍,杨佳玲,朱瀚桔",
+      "new_value": "曾利萍",
+      "score": 0.475,
+      "risk_level": "中风险",
+      "ai_decision": "APPROVE",
+      "ai_confidence": 0.81
+    },
+    {
+      "row": 7,
+      "column": "监督人",
+      "column_level": "L2",
+      "old_value": "邓总",
+      "new_value": "李月",
+      "score": 0.501,
+      "risk_level": "中风险",
+      "ai_decision": "REVIEW",
+      "ai_confidence": 0.73
+    },
+    {
+      "row": 8,
+      "column": "重要程度",
+      "column_level": "L2",
+      "old_value": "3",
+      "new_value": "5",
+      "score": 0.65,
+      "risk_level": "高风险",
+      "ai_decision": "REVIEW",
+      "ai_confidence": 0.95
+    },
+    {
+      "row": 9,
+      "column": "预计完成时间",
+      "column_level": "L2",
+      "old_value": "2025/7/5",
+      "new_value": "2025/7/31",
+      "score": 0.593,
+      "risk_level": "中风险",
+      "ai_decision": "REVIEW",
+      "ai_confidence": 0.92
+    },
+    {
+      "row": 10,
+      "column": "完成进度",
+      "column_level": "L2",
+      "old_value": "100%",
+      "new_value": "90%",
+      "score": 0.503,
+      "risk_level": "中风险",
+      "ai_decision": "REVIEW",
+      "ai_confidence": 0.89
+    },
+    {
+      "row": 12,
+      "column": "复盘时间",
+      "column_level": "L3",
+      "old_value": "2025/7/31",
+      "new_value": "2025/7/3",
+      "score": 0.234,
+      "risk_level": "低风险"
+    },
+    {
+      "row": 13,
+      "column": "对上汇报",
+      "column_level": "L3",
+      "old_value": "已汇报已结项",
+      "new_value": "尚未汇报",
+      "score": 0.319,
+      "risk_level": "低风险"
+    },
+    {
+      "row": 14,
+      "column": "应用情况",
+      "column_level": "L3",
+      "old_value": "已纳入日常管理",
+      "new_value": "已纳入目标管理维度",
+      "score": 0.207,
+      "risk_level": "低风险"
+    }
+  ],
+  "overall_risk_score": 0.457
+}

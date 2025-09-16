@@ -1,0 +1,32 @@
+{
+  "workflow_id": "WF-L2-20250908_142502",
+  "created_time": "2025-09-08 14:25:02",
+  "pending_approvals": [],
+  "auto_approved": [
+    {
+      "modification_id": "M001",
+      "cell": "J12",
+      "column": "负责人",
+      "old_value": "赖铁荔",
+      "new_value": "赖铁荔,各责任人",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 80.0,
+        "reason": "多人负责"
+      },
+      "layer2_result": {
+        "risk_level": "MEDIUM",
+        "decision": "CONDITIONAL",
+        "confidence": 75,
+        "key_risks": [
+          "责任分散风险：添加'各责任人'可能模糊个人职责边界",
+          "沟通协调风险：多责任人模式下需建立明确沟通机制",
+          "决策效率风险：关键决策可能因多人负责而延误"
+        ],
+        "recommendation": "建议：1)明确各责任人的具体职责范围；2)补充说明变更原因并提供协作机制文档；3)添加变更备注说明'各责任人'具体指代对象。审批条件：需同步提交修订后的RACI矩阵文档说明分工。"
+      },
+      "final_decision": "CONDITIONAL",
+      "approval_required": false
+    }
+  ]
+}

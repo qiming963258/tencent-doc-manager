@@ -1,0 +1,32 @@
+{
+  "workflow_id": "WF-L2-20250912_014934",
+  "created_time": "2025-09-12 01:49:34",
+  "pending_approvals": [],
+  "auto_approved": [
+    {
+      "modification_id": "M001",
+      "cell": "D5",
+      "column": "负责人",
+      "old_value": "张三",
+      "new_value": "李四",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 75.0,
+        "reason": "负责人变更"
+      },
+      "layer2_result": {
+        "risk_level": "MEDIUM",
+        "decision": "CONDITIONAL",
+        "confidence": 75,
+        "key_risks": [
+          "责任交接可能导致信息断层",
+          "新负责人需要时间熟悉项目细节",
+          "团队协作动态需要重新调整"
+        ],
+        "recommendation": "建议执行以下操作后批准变更：1. 要求张三完成工作交接文档 2. 安排李四参加项目关键会议 3. 更新相关方沟通计划 4. 设置两周过渡期进行双重确认"
+      },
+      "final_decision": "CONDITIONAL",
+      "approval_required": false
+    }
+  ]
+}

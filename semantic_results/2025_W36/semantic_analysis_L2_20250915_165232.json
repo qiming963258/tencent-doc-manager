@@ -1,0 +1,49 @@
+{
+  "metadata": {
+    "analysis_time": "2025-09-15 16:52:32",
+    "total_modifications": 1,
+    "layer1_passed": 0,
+    "layer2_analyzed": 1,
+    "processing_time": "11.0s"
+  },
+  "results": [
+    {
+      "modification_id": "M001",
+      "cell": "C27",
+      "column": "项目类型",
+      "old_value": "目标管理",
+      "new_value": "",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 80.0,
+        "reason": "关键信息缺失"
+      },
+      "layer2_result": {
+        "risk_level": "CRITICAL",
+        "decision": "REJECT",
+        "confidence": 95,
+        "key_risks": [
+          "项目类型字段清空将导致项目分类体系失效",
+          "可能造成项目资源配置错位",
+          "影响项目进度跟踪和绩效评估",
+          "导致跨部门协作基准缺失"
+        ],
+        "recommendation": "必须立即恢复有效项目类型值，如需变更应走完整变更管理流程。建议：1)紧急恢复原值或设置有效新值 2)检查所有依赖该字段的系统 3)评估是否需补充项目分类标准文档"
+      },
+      "final_decision": "REJECT",
+      "approval_required": true
+    }
+  ],
+  "summary": {
+    "approved": 0,
+    "conditional": 0,
+    "review_required": 0,
+    "rejected": 1,
+    "risk_distribution": {
+      "LOW": 0,
+      "MEDIUM": 0,
+      "HIGH": 0,
+      "CRITICAL": 1
+    }
+  }
+}

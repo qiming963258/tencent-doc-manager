@@ -1,0 +1,508 @@
+{
+  "metadata": {
+    "table_id": 23,
+    "table_name": "运营数据周报汇总表",
+    "generation_time": "2025-09-13T13:59:30.977054",
+    "scoring_standard": "0000-颜色和级别打分标准",
+    "scoring_version": "2.0"
+  },
+  "comparison_info": {
+    "baseline_file": "baseline_table_024_20250818.csv",
+    "current_file": "current_小红书运营部_table_024_20250819.csv",
+    "total_rows": 94,
+    "total_columns": 19,
+    "comparison_time": ""
+  },
+  "modifications_summary": {
+    "total_modifications": 27,
+    "high_risk_count": 6,
+    "medium_risk_count": 4,
+    "low_risk_count": 17
+  },
+  "column_scores": {
+    "项目类型": {
+      "column_level": "L1",
+      "modifications": 1,
+      "modified_rows": [
+        24
+      ],
+      "row_scores": [
+        0.89
+      ],
+      "avg_score": 0.89,
+      "max_score": 0.89,
+      "min_score": 0.89
+    },
+    "来源": {
+      "column_level": "L3",
+      "modifications": 1,
+      "modified_rows": [
+        21
+      ],
+      "row_scores": [
+        0.177
+      ],
+      "avg_score": 0.177,
+      "max_score": 0.177,
+      "min_score": 0.177
+    },
+    "任务发起时间": {
+      "column_level": "L3",
+      "modifications": 2,
+      "modified_rows": [
+        10,
+        28
+      ],
+      "row_scores": [
+        0.362,
+        0.218
+      ],
+      "avg_score": 0.29,
+      "max_score": 0.362,
+      "min_score": 0.218
+    },
+    "目标对齐": {
+      "column_level": "L1",
+      "modifications": 2,
+      "modified_rows": [
+        2,
+        13
+      ],
+      "row_scores": [
+        0.98,
+        0.937
+      ],
+      "avg_score": 0.959,
+      "max_score": 0.98,
+      "min_score": 0.937
+    },
+    "具体计划内容": {
+      "column_level": "L3",
+      "modifications": 1,
+      "modified_rows": [
+        9
+      ],
+      "row_scores": [
+        0.168
+      ],
+      "avg_score": 0.168,
+      "max_score": 0.168,
+      "min_score": 0.168
+    },
+    "邓总指导登记": {
+      "column_level": "L3",
+      "modifications": 1,
+      "modified_rows": [
+        14
+      ],
+      "row_scores": [
+        0.386
+      ],
+      "avg_score": 0.386,
+      "max_score": 0.386,
+      "min_score": 0.386
+    },
+    "协助人": {
+      "column_level": "L2",
+      "modifications": 1,
+      "modified_rows": [
+        17
+      ],
+      "row_scores": [
+        0.517
+      ],
+      "avg_score": 0.517,
+      "max_score": 0.517,
+      "min_score": 0.517,
+      "ai_decisions": {
+        "APPROVE": 0,
+        "REVIEW": 1
+      }
+    },
+    "监督人": {
+      "column_level": "L2",
+      "modifications": 3,
+      "modified_rows": [
+        5,
+        15,
+        30
+      ],
+      "row_scores": [
+        0.677,
+        0.608,
+        0.642
+      ],
+      "avg_score": 0.642,
+      "max_score": 0.677,
+      "min_score": 0.608,
+      "ai_decisions": {
+        "APPROVE": 0,
+        "REVIEW": 3
+      }
+    },
+    "重要程度": {
+      "column_level": "L2",
+      "modifications": 1,
+      "modified_rows": [
+        18
+      ],
+      "row_scores": [
+        0.422
+      ],
+      "avg_score": 0.422,
+      "max_score": 0.422,
+      "min_score": 0.422,
+      "ai_decisions": {
+        "APPROVE": 1,
+        "REVIEW": 0
+      }
+    },
+    "预计完成时间": {
+      "column_level": "L2",
+      "modifications": 2,
+      "modified_rows": [
+        2,
+        24
+      ],
+      "row_scores": [
+        0.44,
+        0.576
+      ],
+      "avg_score": 0.508,
+      "max_score": 0.576,
+      "min_score": 0.44,
+      "ai_decisions": {
+        "APPROVE": 1,
+        "REVIEW": 1
+      }
+    },
+    "形成计划清单": {
+      "column_level": "L3",
+      "modifications": 3,
+      "modified_rows": [
+        6,
+        24,
+        30
+      ],
+      "row_scores": [
+        0.332,
+        0.308,
+        0.304
+      ],
+      "avg_score": 0.315,
+      "max_score": 0.332,
+      "min_score": 0.304
+    },
+    "复盘时间": {
+      "column_level": "L3",
+      "modifications": 4,
+      "modified_rows": [
+        8,
+        14,
+        15,
+        18
+      ],
+      "row_scores": [
+        0.369,
+        0.373,
+        0.196,
+        0.291
+      ],
+      "avg_score": 0.307,
+      "max_score": 0.373,
+      "min_score": 0.196
+    },
+    "应用情况": {
+      "column_level": "L3",
+      "modifications": 2,
+      "modified_rows": [
+        3,
+        12
+      ],
+      "row_scores": [
+        0.149,
+        0.119
+      ],
+      "avg_score": 0.134,
+      "max_score": 0.149,
+      "min_score": 0.119
+    },
+    "进度分析总结": {
+      "column_level": "L3",
+      "modifications": 3,
+      "modified_rows": [
+        12,
+        15,
+        18
+      ],
+      "row_scores": [
+        0.232,
+        0.195,
+        0.335
+      ],
+      "avg_score": 0.254,
+      "max_score": 0.335,
+      "min_score": 0.195
+    }
+  },
+  "detailed_modifications": [
+    {
+      "row": 2,
+      "column": "目标对齐",
+      "column_level": "L1",
+      "old_value": "原始目标对齐_80",
+      "new_value": "修改目标对齐_59",
+      "score": 0.98,
+      "risk_level": "极高风险"
+    },
+    {
+      "row": 15,
+      "column": "进度分析总结",
+      "column_level": "L3",
+      "old_value": "原始进度分析总结_10",
+      "new_value": "修改进度分析总结_64",
+      "score": 0.232,
+      "risk_level": "低风险"
+    },
+    {
+      "row": 14,
+      "column": "复盘时间",
+      "column_level": "L3",
+      "old_value": "2025/7/13",
+      "new_value": "2025/8/30",
+      "score": 0.369,
+      "risk_level": "低风险"
+    },
+    {
+      "row": 6,
+      "column": "形成计划清单",
+      "column_level": "L3",
+      "old_value": "原始形成计划清单_74",
+      "new_value": "修改形成计划清单_40",
+      "score": 0.332,
+      "risk_level": "低风险"
+    },
+    {
+      "row": 13,
+      "column": "目标对齐",
+      "column_level": "L1",
+      "old_value": "原始目标对齐_44",
+      "new_value": "修改目标对齐_15",
+      "score": 0.937,
+      "risk_level": "极高风险"
+    },
+    {
+      "row": 17,
+      "column": "协助人",
+      "column_level": "L2",
+      "old_value": "陈小明",
+      "new_value": "张三,李月",
+      "score": 0.517,
+      "risk_level": "中风险",
+      "ai_decision": "REVIEW",
+      "ai_confidence": 0.7
+    },
+    {
+      "row": 12,
+      "column": "进度分析总结",
+      "column_level": "L3",
+      "old_value": "原始进度分析总结_16",
+      "new_value": "修改进度分析总结_55",
+      "score": 0.195,
+      "risk_level": "低风险"
+    },
+    {
+      "row": 9,
+      "column": "具体计划内容",
+      "column_level": "L3",
+      "old_value": "原始具体计划内容_96",
+      "new_value": "修改具体计划内容_57",
+      "score": 0.168,
+      "risk_level": "低风险"
+    },
+    {
+      "row": 24,
+      "column": "预计完成时间",
+      "column_level": "L2",
+      "old_value": "2025/7/11",
+      "new_value": "2025/8/29",
+      "score": 0.44,
+      "risk_level": "中风险",
+      "ai_decision": "APPROVE",
+      "ai_confidence": 0.84
+    },
+    {
+      "row": 10,
+      "column": "任务发起时间",
+      "column_level": "L3",
+      "old_value": "2025/7/12",
+      "new_value": "2025/8/12",
+      "score": 0.362,
+      "risk_level": "低风险"
+    },
+    {
+      "row": 24,
+      "column": "项目类型",
+      "column_level": "L1",
+      "old_value": "流程优化",
+      "new_value": "技术优化",
+      "score": 0.89,
+      "risk_level": "极高风险"
+    },
+    {
+      "row": 24,
+      "column": "形成计划清单",
+      "column_level": "L3",
+      "old_value": "原始形成计划清单_67",
+      "new_value": "修改形成计划清单_47",
+      "score": 0.308,
+      "risk_level": "低风险"
+    },
+    {
+      "row": 2,
+      "column": "预计完成时间",
+      "column_level": "L2",
+      "old_value": "2025/7/29",
+      "new_value": "2025/8/30",
+      "score": 0.576,
+      "risk_level": "中风险",
+      "ai_decision": "REVIEW",
+      "ai_confidence": 0.91
+    },
+    {
+      "row": 15,
+      "column": "监督人",
+      "column_level": "L2",
+      "old_value": "邓总",
+      "new_value": "陈小明,邓总",
+      "score": 0.677,
+      "risk_level": "高风险",
+      "ai_decision": "REVIEW",
+      "ai_confidence": 0.89
+    },
+    {
+      "row": 14,
+      "column": "邓总指导登记",
+      "column_level": "L3",
+      "old_value": "原始邓总指导登记_90",
+      "new_value": "修改邓总指导登记_94",
+      "score": 0.386,
+      "risk_level": "低风险"
+    },
+    {
+      "row": 3,
+      "column": "应用情况",
+      "column_level": "L3",
+      "old_value": "原始应用情况_8",
+      "new_value": "修改应用情况_44",
+      "score": 0.149,
+      "risk_level": "低风险"
+    },
+    {
+      "row": 30,
+      "column": "监督人",
+      "column_level": "L2",
+      "old_value": "王五",
+      "new_value": "朱瀚桔",
+      "score": 0.608,
+      "risk_level": "高风险",
+      "ai_decision": "REVIEW",
+      "ai_confidence": 0.76
+    },
+    {
+      "row": 30,
+      "column": "形成计划清单",
+      "column_level": "L3",
+      "old_value": "原始形成计划清单_81",
+      "new_value": "修改形成计划清单_34",
+      "score": 0.304,
+      "risk_level": "低风险"
+    },
+    {
+      "row": 18,
+      "column": "复盘时间",
+      "column_level": "L3",
+      "old_value": "2025/7/20",
+      "new_value": "2025/8/22",
+      "score": 0.373,
+      "risk_level": "低风险"
+    },
+    {
+      "row": 12,
+      "column": "应用情况",
+      "column_level": "L3",
+      "old_value": "原始应用情况_8",
+      "new_value": "修改应用情况_44",
+      "score": 0.119,
+      "risk_level": "低风险"
+    },
+    {
+      "row": 28,
+      "column": "任务发起时间",
+      "column_level": "L3",
+      "old_value": "2025/7/21",
+      "new_value": "2025/8/3",
+      "score": 0.218,
+      "risk_level": "低风险"
+    },
+    {
+      "row": 18,
+      "column": "重要程度",
+      "column_level": "L2",
+      "old_value": "5",
+      "new_value": "5",
+      "score": 0.422,
+      "risk_level": "中风险",
+      "ai_decision": "APPROVE",
+      "ai_confidence": 0.79
+    },
+    {
+      "row": 18,
+      "column": "进度分析总结",
+      "column_level": "L3",
+      "old_value": "原始进度分析总结_31",
+      "new_value": "修改进度分析总结_32",
+      "score": 0.335,
+      "risk_level": "低风险"
+    },
+    {
+      "row": 8,
+      "column": "复盘时间",
+      "column_level": "L3",
+      "old_value": "2025/7/19",
+      "new_value": "2025/8/25",
+      "score": 0.196,
+      "risk_level": "低风险"
+    },
+    {
+      "row": 5,
+      "column": "监督人",
+      "column_level": "L2",
+      "old_value": "王五",
+      "new_value": "邓总",
+      "score": 0.642,
+      "risk_level": "高风险",
+      "ai_decision": "REVIEW",
+      "ai_confidence": 0.93
+    },
+    {
+      "row": 15,
+      "column": "复盘时间",
+      "column_level": "L3",
+      "old_value": "2025/7/14",
+      "new_value": "2025/8/25",
+      "score": 0.291,
+      "risk_level": "低风险"
+    },
+    {
+      "row": 21,
+      "column": "来源",
+      "column_level": "L3",
+      "old_value": "临时紧急任务",
+      "new_value": "周会决策待办",
+      "score": 0.177,
+      "risk_level": "低风险"
+    }
+  ],
+  "overall_risk_score": 0.415
+}

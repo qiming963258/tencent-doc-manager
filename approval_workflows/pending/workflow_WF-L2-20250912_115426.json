@@ -1,0 +1,31 @@
+{
+  "workflow_id": "WF-L2-20250912_115426",
+  "created_time": "2025-09-12 11:54:26",
+  "pending_approvals": [],
+  "auto_approved": [
+    {
+      "modification_id": "M001",
+      "cell": "J12",
+      "column": "负责人",
+      "old_value": "赖铁荔",
+      "new_value": "赖铁荔,各责任人",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 80.0,
+        "reason": "多人责任"
+      },
+      "layer2_result": {
+        "risk_level": "MEDIUM",
+        "decision": "CONDITIONAL",
+        "confidence": 75,
+        "key_risks": [
+          "责任分工不明确",
+          "团队协作效率降低"
+        ],
+        "recommendation": "建议明确各责任人的具体职责范围，并制定清晰的协作流程，以避免多头管理或责任推诿的情况发生。修改前需获得所有相关责任人的确认。"
+      },
+      "final_decision": "CONDITIONAL",
+      "approval_required": false
+    }
+  ]
+}

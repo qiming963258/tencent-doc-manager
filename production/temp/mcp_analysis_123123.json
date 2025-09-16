@@ -1,0 +1,10 @@
+{
+  "modification_type": "header_text_addition",
+  "original_value": "序号",
+  "new_value": "序号_123123",
+  "modification_text": "123123",
+  "risk_level": "L3",
+  "confidence": 0.95,
+  "analysis_timestamp": "2025-08-25T11:28:03.800382",
+  "mcp_version": "excel_mcp_v1.0"
+}

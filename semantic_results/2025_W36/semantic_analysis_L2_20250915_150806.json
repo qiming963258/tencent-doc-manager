@@ -1,0 +1,49 @@
+{
+  "metadata": {
+    "analysis_time": "2025-09-15 15:08:06",
+    "total_modifications": 1,
+    "layer1_passed": 0,
+    "layer2_analyzed": 1,
+    "processing_time": "11.3s"
+  },
+  "results": [
+    {
+      "modification_id": "M001",
+      "cell": "I56",
+      "column": "负责人",
+      "old_value": "蔡悦莹",
+      "new_value": "",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 90.0,
+        "reason": "关键人缺失"
+      },
+      "layer2_result": {
+        "risk_level": "HIGH",
+        "decision": "REVIEW",
+        "confidence": 80,
+        "key_risks": [
+          "负责人信息被清空导致责任人不明确",
+          "可能导致任务无人负责或责任推诿",
+          "影响任务跟踪和项目进度把控",
+          "可能引发团队协作混乱"
+        ],
+        "recommendation": "建议填写新的负责人信息。如需删除原负责人，需同时指定替代负责人，并确保通知相关团队成员和更新相关文档。如暂不确定新负责人，应设置临时负责人并明确过渡期。"
+      },
+      "final_decision": "REVIEW",
+      "approval_required": true
+    }
+  ],
+  "summary": {
+    "approved": 0,
+    "conditional": 0,
+    "review_required": 1,
+    "rejected": 0,
+    "risk_distribution": {
+      "LOW": 0,
+      "MEDIUM": 0,
+      "HIGH": 1,
+      "CRITICAL": 0
+    }
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "metadata": {
+    "analysis_time": "2025-09-15 18:37:52",
+    "total_modifications": 1,
+    "layer1_passed": 0,
+    "layer2_analyzed": 1,
+    "processing_time": "8.0s"
+  },
+  "results": [
+    {
+      "modification_id": "M001",
+      "cell": "I34",
+      "column": "邓总指导登记（日更新）",
+      "old_value": "0714-\n新兴国家的关键词需要针对性植入对应的某个国家，使用热门词或长尾流量词",
+      "new_value": "",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 90.0,
+        "reason": "删除内容"
+      },
+      "layer2_result": {
+        "risk_level": "MEDIUM",
+        "decision": "REVIEW",
+        "confidence": 70,
+        "key_risks": [
+          "指导内容被完全删除可能导致团队成员失去关键业务方向指引",
+          "删除具体SEO操作建议可能影响新兴国家市场推广效果"
+        ],
+        "recommendation": "建议与邓总确认此修改是否属于更新延迟还是有意删除。如需删除，建议保留日期标记（0714-）并添加备注说明。如需更新指导内容，应在删除后24小时内补充新版指导建议。"
+      },
+      "final_decision": "REVIEW",
+      "approval_required": true
+    }
+  ],
+  "summary": {
+    "approved": 0,
+    "conditional": 0,
+    "review_required": 1,
+    "rejected": 0,
+    "risk_distribution": {
+      "LOW": 0,
+      "MEDIUM": 0,
+      "HIGH": 1,
+      "CRITICAL": 0
+    }
+  }
+}

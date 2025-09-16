@@ -1,0 +1,49 @@
+{
+  "metadata": {
+    "analysis_time": "2025-09-15 15:08:43",
+    "total_modifications": 1,
+    "layer1_passed": 0,
+    "layer2_analyzed": 1,
+    "processing_time": "13.4s"
+  },
+  "results": [
+    {
+      "modification_id": "M001",
+      "cell": "G57",
+      "column": "具体计划内容",
+      "old_value": "1.周度互暖机制值班执行落地情况跟进\n2.互暖机制执行效果优化迭代\n3.互暖账号补充按需进行添置\n@新媒体运营-朱瀚桔",
+      "new_value": "新产品技能与管理流程拉通",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 75.0,
+        "reason": "内容变更大"
+      },
+      "layer2_result": {
+        "risk_level": "HIGH",
+        "decision": "REVIEW",
+        "confidence": 80,
+        "key_risks": [
+          "项目目标偏离风险：从互暖机制执行变为新产品的技能与管理流程，可能完全改变项目初衷",
+          "资源重新分配风险：原定新媒体运营人员的工作内容被替换，需要确认是否具备新任务所需技能",
+          "计划衔接断裂风险：原计划中的周度跟进和优化迭代被完全替代，缺乏过渡安排",
+          "交付时间风险：新任务的工作量和复杂度不明确，可能影响原定时间节点"
+        ],
+        "recommendation": "建议召开变更评审会，明确：1）变更的必要性和优先级 2）新产品任务的具体范围和工作量评估 3）资源重新分配方案 4）对项目关键路径的影响分析。需获得原负责人朱瀚桔对新任务的确认和能力评估。"
+      },
+      "final_decision": "REVIEW",
+      "approval_required": true
+    }
+  ],
+  "summary": {
+    "approved": 0,
+    "conditional": 0,
+    "review_required": 1,
+    "rejected": 0,
+    "risk_distribution": {
+      "LOW": 0,
+      "MEDIUM": 0,
+      "HIGH": 1,
+      "CRITICAL": 0
+    }
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "metadata": {
+    "analysis_time": "2025-09-15 15:09:46",
+    "total_modifications": 1,
+    "layer1_passed": 0,
+    "layer2_analyzed": 1,
+    "processing_time": "12.3s"
+  },
+  "results": [
+    {
+      "modification_id": "M001",
+      "cell": "G58",
+      "column": "具体计划内容",
+      "old_value": "1.优化互暖机制，明确互暖的数量及质量\n2.按周抽查人员负责账号互暖情况\n@新媒体运营-朱瀚桔",
+      "new_value": "新产品技能与管理流程拉通",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 80.0,
+        "reason": "内容替换"
+      },
+      "layer2_result": {
+        "risk_level": "MEDIUM",
+        "decision": "REVIEW",
+        "confidence": 70,
+        "key_risks": [
+          "原互暖机制优化计划被完全删除，可能导致该部分工作脱节",
+          "新内容与原有计划性质差异较大，需评估是否属于同一项目范畴"
+        ],
+        "recommendation": "建议补充说明：1.为何删除原有互暖计划 2.新计划与项目目标的关联性 3.是否需要同步修改其他相关单元格（如责任人字段）。同时建议保留原互暖机制优化的必要内容。"
+      },
+      "final_decision": "REVIEW",
+      "approval_required": true
+    }
+  ],
+  "summary": {
+    "approved": 0,
+    "conditional": 0,
+    "review_required": 1,
+    "rejected": 0,
+    "risk_distribution": {
+      "LOW": 0,
+      "MEDIUM": 0,
+      "HIGH": 1,
+      "CRITICAL": 0
+    }
+  }
+}

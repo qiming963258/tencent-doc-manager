@@ -1,0 +1,48 @@
+{
+  "metadata": {
+    "analysis_time": "2025-09-15 15:10:56",
+    "total_modifications": 1,
+    "layer1_passed": 0,
+    "layer2_analyzed": 1,
+    "processing_time": "10.4s"
+  },
+  "results": [
+    {
+      "modification_id": "M001",
+      "cell": "B60",
+      "column": "项目类型",
+      "old_value": "目标管理",
+      "new_value": "",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 90.0,
+        "reason": "关键信息缺失"
+      },
+      "layer2_result": {
+        "risk_level": "HIGH",
+        "decision": "REVIEW",
+        "confidence": 80,
+        "key_risks": [
+          "项目类型清空可能导致项目分类体系混乱",
+          "后续审批流程可能因缺少关键分类信息而受阻",
+          "报表统计功能将无法正确归类该项目"
+        ],
+        "recommendation": "建议明确以下信息后重新提交：1.是否需重新分类 2.过渡期如何处理 3.相关系统字段的同步更新方案。必须补充变更说明文档后方可批准。"
+      },
+      "final_decision": "REVIEW",
+      "approval_required": true
+    }
+  ],
+  "summary": {
+    "approved": 0,
+    "conditional": 0,
+    "review_required": 1,
+    "rejected": 0,
+    "risk_distribution": {
+      "LOW": 0,
+      "MEDIUM": 0,
+      "HIGH": 1,
+      "CRITICAL": 0
+    }
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "metadata": {
+    "analysis_time": "2025-09-15 16:47:49",
+    "total_modifications": 1,
+    "layer1_passed": 0,
+    "layer2_analyzed": 1,
+    "processing_time": "10.2s"
+  },
+  "results": [
+    {
+      "modification_id": "M001",
+      "cell": "C14",
+      "column": "项目类型",
+      "old_value": "目标管理",
+      "new_value": "项目管理",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 80.0,
+        "reason": "概念变更"
+      },
+      "layer2_result": {
+        "risk_level": "MEDIUM",
+        "decision": "REVIEW",
+        "confidence": 75,
+        "key_risks": [
+          "项目范围可能扩大",
+          "执行方法可能需要调整",
+          "资源分配可能变化"
+        ],
+        "recommendation": "建议组织相关部门会议，评估从'目标管理'改为'项目管理'对项目范围、方法和资源的影响，确保所有相关方理解并认同这一变更。"
+      },
+      "final_decision": "REVIEW",
+      "approval_required": true
+    }
+  ],
+  "summary": {
+    "approved": 0,
+    "conditional": 0,
+    "review_required": 1,
+    "rejected": 0,
+    "risk_distribution": {
+      "LOW": 0,
+      "MEDIUM": 0,
+      "HIGH": 1,
+      "CRITICAL": 0
+    }
+  }
+}

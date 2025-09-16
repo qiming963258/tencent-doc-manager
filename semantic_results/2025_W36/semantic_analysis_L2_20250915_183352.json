@@ -1,0 +1,49 @@
+{
+  "metadata": {
+    "analysis_time": "2025-09-15 18:33:52",
+    "total_modifications": 1,
+    "layer1_passed": 0,
+    "layer2_analyzed": 1,
+    "processing_time": "10.1s"
+  },
+  "results": [
+    {
+      "modification_id": "M001",
+      "cell": "C30",
+      "column": "项目类型",
+      "old_value": "目标管理",
+      "new_value": "",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 90.0,
+        "reason": "关键信息缺失"
+      },
+      "layer2_result": {
+        "risk_level": "CRITICAL",
+        "decision": "REJECT",
+        "confidence": 95,
+        "key_risks": [
+          "项目类型空白导致分类体系失效",
+          "无法正确匹配项目流程和资源分配",
+          "影响项目绩效评估基准",
+          "可能触发系统数据校验错误"
+        ],
+        "recommendation": "必须明确指定项目类型值。建议：1)恢复原始值'目标管理' 2)如确需变更，需提供新类型在项目管理框架中的合规性证明，并同步更新所有关联流程文档"
+      },
+      "final_decision": "REJECT",
+      "approval_required": true
+    }
+  ],
+  "summary": {
+    "approved": 0,
+    "conditional": 0,
+    "review_required": 0,
+    "rejected": 1,
+    "risk_distribution": {
+      "LOW": 0,
+      "MEDIUM": 0,
+      "HIGH": 0,
+      "CRITICAL": 1
+    }
+  }
+}

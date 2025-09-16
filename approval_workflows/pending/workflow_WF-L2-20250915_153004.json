@@ -1,0 +1,31 @@
+{
+  "workflow_id": "WF-L2-20250915_153004",
+  "created_time": "2025-09-15 15:30:04",
+  "pending_approvals": [
+    {
+      "modification_id": "M001",
+      "cell": "K79",
+      "column": "监督人",
+      "old_value": "徐志杰",
+      "new_value": "",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 90.0,
+        "reason": "关键信息缺失"
+      },
+      "layer2_result": {
+        "risk_level": "MEDIUM",
+        "decision": "REVIEW",
+        "confidence": 75,
+        "key_risks": [
+          "监督人职责缺失可能导致质量管控真空",
+          "项目关键控制点可能失去有效监督"
+        ],
+        "recommendation": "1.必须说明监督人删除的原因\n2.如更换监督人需在24小时内补充新监督人信息\n3.需评估过渡期间的质量保障措施"
+      },
+      "final_decision": "REVIEW",
+      "approval_required": true
+    }
+  ],
+  "auto_approved": []
+}

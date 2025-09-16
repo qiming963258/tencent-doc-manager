@@ -1,0 +1,893 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI列名标准化测试平台</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Microsoft YaHei', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1600px;
+            margin: 0 auto;
+        }
+        
+        .header {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            margin-bottom: 20px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+        }
+        
+        .header h1 {
+            color: #333;
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+        
+        .header .subtitle {
+            color: #666;
+            font-size: 1.1rem;
+        }
+        
+        .main-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+        
+        .card {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+        }
+        
+        .card h2 {
+            color: #333;
+            margin-bottom: 20px;
+            font-size: 1.4rem;
+            border-bottom: 2px solid #f0f0f0;
+            padding-bottom: 10px;
+        }
+        
+        .test-scenarios {
+            display: grid;
+            gap: 15px;
+        }
+        
+        .scenario-button {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 15px 20px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 14px;
+            transition: transform 0.2s;
+            text-align: left;
+        }
+        
+        .scenario-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+        }
+        
+        .scenario-button .title {
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        
+        .scenario-button .description {
+            font-size: 12px;
+            opacity: 0.9;
+        }
+        
+        .input-section {
+            margin-bottom: 20px;
+        }
+        
+        .input-section label {
+            display: block;
+            margin-bottom: 8px;
+            color: #555;
+            font-weight: 500;
+        }
+        
+        .input-section textarea {
+            width: 100%;
+            height: 200px;
+            padding: 12px;
+            border: 2px solid #e1e1e1;
+            border-radius: 8px;
+            font-family: monospace;
+            font-size: 13px;
+            resize: vertical;
+        }
+        
+        .button-group {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        
+        .btn {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 500;
+            transition: transform 0.2s;
+        }
+        
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+        }
+        
+        .btn-success {
+            background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
+        }
+        
+        .btn-warning {
+            background: linear-gradient(135deg, #ffc107 0%, #ff9800 100%);
+        }
+        
+        .btn-danger {
+            background: linear-gradient(135deg, #dc3545 0%, #c82333 100%);
+        }
+        
+        .result-section {
+            background: #f8f9fa;
+            border-radius: 8px;
+            padding: 15px;
+            margin-top: 20px;
+            max-height: 500px;
+            overflow-y: auto;
+        }
+        
+        .result-section h3 {
+            color: #333;
+            margin-bottom: 15px;
+        }
+        
+        .mapping-table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        
+        .mapping-table th,
+        .mapping-table td {
+            padding: 10px;
+            text-align: left;
+            border-bottom: 1px solid #e1e1e1;
+        }
+        
+        .mapping-table th {
+            background: #f0f0f0;
+            font-weight: 600;
+        }
+        
+        .confidence-high {
+            color: #28a745;
+            font-weight: bold;
+        }
+        
+        .confidence-medium {
+            color: #ffc107;
+            font-weight: bold;
+        }
+        
+        .confidence-low {
+            color: #dc3545;
+            font-weight: bold;
+        }
+        
+        .missing-column {
+            background: #ffebee;
+            color: #c62828;
+        }
+        
+        .discarded-column {
+            background: #fff3e0;
+            color: #ef6c00;
+        }
+        
+        .statistics {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+        
+        .stat-card {
+            background: white;
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+        }
+        
+        .stat-card .value {
+            font-size: 24px;
+            font-weight: bold;
+            color: #667eea;
+        }
+        
+        .stat-card .label {
+            color: #666;
+            font-size: 12px;
+            margin-top: 5px;
+        }
+        
+        .full-width {
+            grid-column: span 2;
+        }
+        
+        .json-viewer {
+            background: #2d3748;
+            color: #e2e8f0;
+            padding: 15px;
+            border-radius: 8px;
+            font-family: 'Consolas', 'Monaco', monospace;
+            font-size: 12px;
+            max-height: 400px;
+            overflow: auto;
+            white-space: pre-wrap;
+        }
+        
+        .loading {
+            display: none;
+            text-align: center;
+            padding: 20px;
+        }
+        
+        .loading.active {
+            display: block;
+        }
+        
+        .spinner {
+            border: 3px solid #f3f3f3;
+            border-top: 3px solid #667eea;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+            margin: 0 auto;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        .tabs {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #e1e1e1;
+        }
+        
+        .tab {
+            padding: 10px 20px;
+            cursor: pointer;
+            border: none;
+            background: none;
+            color: #666;
+            font-size: 14px;
+            transition: all 0.3s;
+        }
+        
+        .tab.active {
+            color: #667eea;
+            border-bottom: 2px solid #667eea;
+            margin-bottom: -2px;
+        }
+        
+        .tab-content {
+            display: none;
+        }
+        
+        .tab-content.active {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- 页头 -->
+        <div class="header">
+            <h1>🤖 AI列名标准化测试平台</h1>
+            <div class="subtitle">测试CSV对比结果的列名映射到19个标准列名 - 支持多列/少列/等列场景</div>
+        </div>
+        
+        <!-- 主网格 -->
+        <div class="main-grid">
+            <!-- 左侧：测试场景 -->
+            <div class="card">
+                <h2>📋 测试场景</h2>
+                <div class="test-scenarios">
+                    <button class="scenario-button" onclick="loadScenario('less')">
+                        <div class="title">场景1：列数不足（少于19列）</div>
+                        <div class="description">测试6列数据，识别缺失的13个标准列</div>
+                    </button>
+                    <button class="scenario-button" onclick="loadScenario('more')">
+                        <div class="title">场景2：列数过多（多于19列）</div>
+                        <div class="description">测试25列数据，过滤6个无法映射的列</div>
+                    </button>
+                    <button class="scenario-button" onclick="loadScenario('equal')">
+                        <div class="title">场景3：列数相等（正好19列）</div>
+                        <div class="description">测试19列数据，一对一映射</div>
+                    </button>
+                    <button class="scenario-button" onclick="loadScenario('variation')">
+                        <div class="title">场景4：变异列名测试</div>
+                        <div class="description">测试常见变异形式的识别能力</div>
+                    </button>
+                    <button class="scenario-button" onclick="loadRealFile()">
+                        <div class="title">场景5：真实CSV对比文件</div>
+                        <div class="description">加载项目中的实际对比结果文件</div>
+                    </button>
+                </div>
+                
+                <div class="input-section" style="margin-top: 20px;">
+                    <label>输入列名（JSON数组格式）：</label>
+                    <textarea id="inputColumns" placeholder='["ID", "产品名称", "价格", "库存", "状态", "更新时间"]'></textarea>
+                </div>
+                
+                <div class="button-group">
+                    <button class="btn btn-success" onclick="standardizeColumns()">执行标准化</button>
+                    <button class="btn btn-warning" onclick="generatePrompt()">生成提示词</button>
+                    <button class="btn btn-danger" onclick="clearAll()">清空</button>
+                </div>
+            </div>
+            
+            <!-- 右侧：19个标准列名参考 -->
+            <div class="card">
+                <h2>📊 19个标准列名（系统定义）</h2>
+                <div class="mapping-table-container">
+                    <table class="mapping-table">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>标准列名</th>
+                                <th>风险等级</th>
+                                <th>常见变异</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>1</td><td>序号</td><td>L3</td><td>ID, 编号, NO</td></tr>
+                            <tr><td>2</td><td>项目类型</td><td>L2</td><td>项目类别, 类型</td></tr>
+                            <tr><td>3</td><td>来源</td><td>L1</td><td>数据来源, 信息来源</td></tr>
+                            <tr><td>4</td><td>任务发起时间</td><td>L1</td><td>发起时间, 开始时间</td></tr>
+                            <tr><td>5</td><td>目标对齐</td><td>L1</td><td>目标, 业务目标</td></tr>
+                            <tr><td>6</td><td>关键KR对齐</td><td>L1</td><td>KR, 关键结果</td></tr>
+                            <tr><td>7</td><td>具体计划内容</td><td>L2</td><td>计划内容, 内容</td></tr>
+                            <tr><td>8</td><td>邓总指导登记</td><td>L2</td><td>邓总指导, 领导指导</td></tr>
+                            <tr><td>9</td><td>负责人</td><td>L2</td><td>责任人, 执行人</td></tr>
+                            <tr><td>10</td><td>协助人</td><td>L2</td><td>协助人员, 协同人</td></tr>
+                            <tr><td>11</td><td>监督人</td><td>L2</td><td>监督人员, 监管人</td></tr>
+                            <tr><td>12</td><td>重要程度</td><td>L1</td><td>重要性, 优先级</td></tr>
+                            <tr><td>13</td><td>预计完成时间</td><td>L1</td><td>完成时间, deadline</td></tr>
+                            <tr><td>14</td><td>完成进度</td><td>L1</td><td>进度, 完成度</td></tr>
+                            <tr><td>15</td><td>形成计划清单</td><td>L2</td><td>计划清单, 清单</td></tr>
+                            <tr><td>16</td><td>复盘时间</td><td>L3</td><td>复盘日期, 回顾时间</td></tr>
+                            <tr><td>17</td><td>对上汇报</td><td>L3</td><td>汇报, 上报</td></tr>
+                            <tr><td>18</td><td>应用情况</td><td>L3</td><td>应用, 使用情况</td></tr>
+                            <tr><td>19</td><td>进度分析总结</td><td>L3</td><td>进度分析, 总结</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 统计信息 -->
+        <div class="card" id="statisticsCard" style="display: none;">
+            <h2>📈 映射统计</h2>
+            <div class="statistics">
+                <div class="stat-card">
+                    <div class="value" id="totalColumns">0</div>
+                    <div class="label">输入列数</div>
+                </div>
+                <div class="stat-card">
+                    <div class="value" id="mappedColumns">0</div>
+                    <div class="label">成功映射</div>
+                </div>
+                <div class="stat-card">
+                    <div class="value" id="missingColumns">0</div>
+                    <div class="label">缺失列数</div>
+                </div>
+                <div class="stat-card">
+                    <div class="value" id="discardedColumns">0</div>
+                    <div class="label">丢弃列数</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 结果展示 -->
+        <div class="card full-width" id="resultCard" style="display: none;">
+            <h2>🎯 标准化结果</h2>
+            
+            <!-- 标签页 -->
+            <div class="tabs">
+                <button class="tab active" onclick="switchTab('mapping')">映射关系</button>
+                <button class="tab" onclick="switchTab('missing')">缺失列</button>
+                <button class="tab" onclick="switchTab('discarded')">丢弃列</button>
+                <button class="tab" onclick="switchTab('output')">19列输出</button>
+                <button class="tab" onclick="switchTab('prompt')">生成的提示词</button>
+                <button class="tab" onclick="switchTab('json')">JSON结果</button>
+            </div>
+            
+            <!-- 映射关系 -->
+            <div class="tab-content active" id="mappingTab">
+                <div class="result-section">
+                    <h3>列名映射关系</h3>
+                    <table class="mapping-table" id="mappingTable">
+                        <thead>
+                            <tr>
+                                <th>实际列名</th>
+                                <th>→</th>
+                                <th>标准列名</th>
+                                <th>置信度</th>
+                                <th>匹配类型</th>
+                            </tr>
+                        </thead>
+                        <tbody id="mappingTableBody">
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            
+            <!-- 缺失列 -->
+            <div class="tab-content" id="missingTab">
+                <div class="result-section">
+                    <h3>缺失的标准列（将在输出中标记为null）</h3>
+                    <div id="missingList"></div>
+                </div>
+            </div>
+            
+            <!-- 丢弃列 -->
+            <div class="tab-content" id="discardedTab">
+                <div class="result-section">
+                    <h3>被丢弃的实际列（无法映射到标准列）</h3>
+                    <div id="discardedList"></div>
+                </div>
+            </div>
+            
+            <!-- 19列输出 -->
+            <div class="tab-content" id="outputTab">
+                <div class="result-section">
+                    <h3>标准化19列输出预览</h3>
+                    <table class="mapping-table" id="outputTable">
+                        <thead>
+                            <tr id="outputTableHeader"></tr>
+                        </thead>
+                        <tbody id="outputTableBody">
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            
+            <!-- 提示词 -->
+            <div class="tab-content" id="promptTab">
+                <div class="result-section">
+                    <h3>生成的AI提示词</h3>
+                    <div class="json-viewer" id="promptContent"></div>
+                </div>
+            </div>
+            
+            <!-- JSON结果 -->
+            <div class="tab-content" id="jsonTab">
+                <div class="result-section">
+                    <h3>完整JSON响应</h3>
+                    <div class="json-viewer" id="jsonContent"></div>
+                </div>
+            </div>
+            
+            <!-- 加载动画 -->
+            <div class="loading" id="loading">
+                <div class="spinner"></div>
+                <p style="margin-top: 20px; color: #666;">正在处理...</p>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        // 19个标准列名
+        const STANDARD_COLUMNS = [
+            "序号", "项目类型", "来源", "任务发起时间", "目标对齐",
+            "关键KR对齐", "具体计划内容", "邓总指导登记", "负责人",
+            "协助人", "监督人", "重要程度", "预计完成时间", "完成进度", 
+            "形成计划清单", "复盘时间", "对上汇报", "应用情况", "进度分析总结"
+        ];
+        
+        // 变异模式库
+        const VARIATION_PATTERNS = {
+            "序号": ["序列号", "编号", "ID", "索引", "NO", "No.", "行号"],
+            "项目类型": ["项目类别", "项目分类", "类型", "类别", "项目种类"],
+            "来源": ["数据来源", "信息来源", "来源渠道", "源头"],
+            "任务发起时间": ["发起时间", "任务时间", "开始时间", "创建时间", "发起日期"],
+            "目标对齐": ["目标", "对齐目标", "业务目标", "战略对齐"],
+            "关键KR对齐": ["KR", "关键结果", "KR对齐", "关键指标"],
+            "具体计划内容": ["计划内容", "计划", "内容", "具体内容", "任务内容", "工作内容"],
+            "邓总指导登记": ["邓总指导", "领导指导", "指导登记", "上级指导"],
+            "负责人": ["责任人", "主负责人", "负责人员", "执行人"],
+            "协助人": ["协助人员", "协同人", "配合人", "助理"],
+            "监督人": ["监督人员", "监管人", "督导人", "检查人"],
+            "重要程度": ["重要性", "优先级", "重要等级", "紧急程度"],
+            "预计完成时间": ["完成时间", "截止时间", "预计时间", "结束时间", "deadline"],
+            "完成进度": ["进度", "完成度", "进展", "完成百分比", "进度百分比"],
+            "形成计划清单": ["计划清单", "清单", "任务清单", "工作清单"],
+            "复盘时间": ["复盘日期", "回顾时间", "总结时间", "评审时间"],
+            "对上汇报": ["汇报", "向上汇报", "上报", "报告"],
+            "应用情况": ["应用", "使用情况", "实施情况", "执行情况"],
+            "进度分析总结": ["进度分析", "总结", "分析总结", "进展总结", "情况总结"]
+        };
+        
+        // 加载测试场景
+        function loadScenario(type) {
+            let columns = [];
+            
+            switch(type) {
+                case 'less':
+                    // 少于19列（6列）
+                    columns = ["ID", "产品名称", "价格", "库存", "状态", "更新时间"];
+                    break;
+                    
+                case 'more':
+                    // 多于19列（25列）
+                    columns = [
+                        "序列号", "项目类别", "数据来源", "发起时间", "目标",
+                        "KR", "计划内容", "领导指导", "责任人", "协同人",
+                        "监管人", "优先级", "完成时间", "进度", "清单",
+                        "复盘日期", "汇报", "使用情况", "总结",
+                        "额外字段1", "测试列1", "临时数据", "无关列1", "备用字段", "扩展信息"
+                    ];
+                    break;
+                    
+                case 'equal':
+                    // 正好19列
+                    columns = [
+                        "编号", "项目分类", "信息来源", "任务时间", "业务目标",
+                        "关键结果", "具体内容", "邓总指导", "执行人", "配合人",
+                        "督导人", "重要性", "截止时间", "完成度", "任务清单",
+                        "回顾时间", "上报", "实施情况", "进展总结"
+                    ];
+                    break;
+                    
+                case 'variation':
+                    // 变异测试
+                    columns = [
+                        "NO", "类型", "源头", "开始时间", "战略对齐",
+                        "关键指标", "工作内容", "上级指导"
+                    ];
+                    break;
+            }
+            
+            document.getElementById('inputColumns').value = JSON.stringify(columns, null, 2);
+        }
+        
+        // 加载真实文件
+        async function loadRealFile() {
+            // 模拟加载项目中的真实CSV对比结果
+            const realColumns = [
+                "ID", "产品名称", "价格", "库存", "状态", "更新时间"
+            ];
+            
+            document.getElementById('inputColumns').value = JSON.stringify(realColumns, null, 2);
+            alert('已加载真实CSV对比文件的列名');
+        }
+        
+        // 执行标准化
+        function standardizeColumns() {
+            const inputText = document.getElementById('inputColumns').value;
+            
+            if (!inputText) {
+                alert('请输入列名数组');
+                return;
+            }
+            
+            try {
+                const actualColumns = JSON.parse(inputText);
+                
+                if (!Array.isArray(actualColumns)) {
+                    alert('输入必须是JSON数组格式');
+                    return;
+                }
+                
+                // 执行映射
+                const result = performStandardization(actualColumns);
+                
+                // 显示结果
+                displayResult(result);
+                
+            } catch (e) {
+                alert('JSON格式错误: ' + e.message);
+            }
+        }
+        
+        // 执行标准化映射（模拟AI响应）
+        function performStandardization(actualColumns) {
+            const result = {
+                success: true,
+                standard_columns_status: {},
+                mapping: {},
+                confidence_scores: {},
+                missing_standard_columns: [],
+                discarded_columns: [],
+                statistics: {
+                    total_standard: 19,
+                    mapped_count: 0,
+                    missing_count: 0,
+                    discarded_count: 0
+                }
+            };
+            
+            // 初始化所有标准列为null
+            STANDARD_COLUMNS.forEach(col => {
+                result.standard_columns_status[col] = null;
+            });
+            
+            // 处理每个实际列
+            const mappedStandards = new Set();
+            
+            actualColumns.forEach(actualCol => {
+                let bestMatch = null;
+                let bestScore = 0;
+                let matchType = 'none';
+                
+                // 1. 检查精确匹配
+                if (STANDARD_COLUMNS.includes(actualCol)) {
+                    bestMatch = actualCol;
+                    bestScore = 1.0;
+                    matchType = 'exact';
+                } else {
+                    // 2. 检查变异匹配
+                    for (const [standard, variations] of Object.entries(VARIATION_PATTERNS)) {
+                        if (variations.includes(actualCol)) {
+                            if (!mappedStandards.has(standard)) {
+                                bestMatch = standard;
+                                bestScore = 0.9;
+                                matchType = 'variation';
+                                break;
+                            }
+                        }
+                    }
+                    
+                    // 3. 语义匹配（简单模拟）
+                    if (!bestMatch) {
+                        for (const standard of STANDARD_COLUMNS) {
+                            if (!mappedStandards.has(standard)) {
+                                // 简单的包含关系检查
+                                if (actualCol.includes(standard.substring(0, 2)) || 
+                                    standard.includes(actualCol.substring(0, 2))) {
+                                    bestMatch = standard;
+                                    bestScore = 0.6;
+                                    matchType = 'semantic';
+                                    break;
+                                }
+                            }
+                        }
+                    }
+                }
+                
+                if (bestMatch && !mappedStandards.has(bestMatch)) {
+                    result.mapping[actualCol] = bestMatch;
+                    result.confidence_scores[actualCol] = bestScore;
+                    result.standard_columns_status[bestMatch] = actualCol;
+                    mappedStandards.add(bestMatch);
+                    result.statistics.mapped_count++;
+                } else {
+                    result.discarded_columns.push(actualCol);
+                    result.statistics.discarded_count++;
+                }
+            });
+            
+            // 识别缺失的标准列
+            STANDARD_COLUMNS.forEach(col => {
+                if (result.standard_columns_status[col] === null) {
+                    result.missing_standard_columns.push(col);
+                    result.statistics.missing_count++;
+                }
+            });
+            
+            return result;
+        }
+        
+        // 显示结果
+        function displayResult(result) {
+            // 显示卡片
+            document.getElementById('statisticsCard').style.display = 'block';
+            document.getElementById('resultCard').style.display = 'block';
+            
+            // 更新统计
+            const inputColumns = JSON.parse(document.getElementById('inputColumns').value);
+            document.getElementById('totalColumns').textContent = inputColumns.length;
+            document.getElementById('mappedColumns').textContent = result.statistics.mapped_count;
+            document.getElementById('missingColumns').textContent = result.statistics.missing_count;
+            document.getElementById('discardedColumns').textContent = result.statistics.discarded_count;
+            
+            // 显示映射表
+            const tbody = document.getElementById('mappingTableBody');
+            tbody.innerHTML = '';
+            
+            Object.entries(result.mapping).forEach(([actual, standard]) => {
+                const confidence = result.confidence_scores[actual];
+                const row = tbody.insertRow();
+                
+                row.innerHTML = `
+                    <td>${actual}</td>
+                    <td>→</td>
+                    <td><strong>${standard}</strong></td>
+                    <td class="${getConfidenceClass(confidence)}">${(confidence * 100).toFixed(0)}%</td>
+                    <td>${getMatchType(confidence)}</td>
+                `;
+            });
+            
+            // 显示缺失列
+            const missingList = document.getElementById('missingList');
+            if (result.missing_standard_columns.length > 0) {
+                missingList.innerHTML = result.missing_standard_columns
+                    .map(col => `<div class="missing-column" style="padding: 10px; margin: 5px; border-radius: 5px;">${col}</div>`)
+                    .join('');
+            } else {
+                missingList.innerHTML = '<p style="color: #28a745;">✓ 没有缺失的标准列</p>';
+            }
+            
+            // 显示丢弃列
+            const discardedList = document.getElementById('discardedList');
+            if (result.discarded_columns.length > 0) {
+                discardedList.innerHTML = result.discarded_columns
+                    .map(col => `<div class="discarded-column" style="padding: 10px; margin: 5px; border-radius: 5px;">${col}</div>`)
+                    .join('');
+            } else {
+                discardedList.innerHTML = '<p style="color: #28a745;">✓ 没有被丢弃的列</p>';
+            }
+            
+            // 显示19列输出
+            const outputHeader = document.getElementById('outputTableHeader');
+            outputHeader.innerHTML = '<th>#</th>' + STANDARD_COLUMNS.map(col => `<th>${col}</th>`).join('');
+            
+            const outputBody = document.getElementById('outputTableBody');
+            outputBody.innerHTML = '';
+            const sampleRow = outputBody.insertRow();
+            sampleRow.innerHTML = '<td>1</td>' + STANDARD_COLUMNS.map(col => {
+                const actualCol = result.standard_columns_status[col];
+                return actualCol ? `<td>数据</td>` : `<td style="background: #ffebee; color: #c62828;">null</td>`;
+            }).join('');
+            
+            // 显示JSON结果
+            document.getElementById('jsonContent').textContent = JSON.stringify(result, null, 2);
+        }
+        
+        // 获取置信度样式类
+        function getConfidenceClass(confidence) {
+            if (confidence >= 0.8) return 'confidence-high';
+            if (confidence >= 0.6) return 'confidence-medium';
+            return 'confidence-low';
+        }
+        
+        // 获取匹配类型
+        function getMatchType(confidence) {
+            if (confidence === 1.0) return '精确匹配';
+            if (confidence >= 0.8) return '变异匹配';
+            if (confidence >= 0.6) return '语义匹配';
+            return '强制匹配';
+        }
+        
+        // 生成提示词
+        function generatePrompt() {
+            const inputText = document.getElementById('inputColumns').value;
+            
+            if (!inputText) {
+                alert('请输入列名数组');
+                return;
+            }
+            
+            try {
+                const actualColumns = JSON.parse(inputText);
+                const prompt = buildPrompt(actualColumns);
+                
+                document.getElementById('resultCard').style.display = 'block';
+                switchTab('prompt');
+                document.getElementById('promptContent').textContent = prompt;
+                
+            } catch (e) {
+                alert('JSON格式错误: ' + e.message);
+            }
+        }
+        
+        // 构建提示词
+        function buildPrompt(actualColumns) {
+            const status = actualColumns.length < 19 ? '列数不足，需要识别缺失列' :
+                          actualColumns.length > 19 ? '列数过多，需要过滤无关列' : '列数匹配';
+            
+            return `你是一个专业的列名标准化专家。你的任务是分析CSV表格列名，并生成完整的19列标准化映射结果。
+
+## 核心任务
+1. 将实际列名映射到19个标准列名
+2. 识别缺失的标准列（标记为空白）
+3. 过滤掉无法映射的多余列（丢弃）
+4. 最终输出必须包含全部19个标准列的状态
+
+## 19个标准列名（固定顺序，必须全部输出）
+${JSON.stringify(STANDARD_COLUMNS, null, 2)}
+
+## 实际列名（共${actualColumns.length}个）
+${JSON.stringify(actualColumns, null, 2)}
+
+## 列数情况分析
+- 标准列数：19个
+- 实际列数：${actualColumns.length}个
+- 状态：${status}
+
+## 输出要求
+{
+    "success": true,
+    "standard_columns_status": {
+        // 全部19个标准列的映射状态
+    },
+    "mapping": {
+        // 成功映射的实际列
+    },
+    "confidence_scores": {
+        // 每个映射的置信度
+    },
+    "missing_standard_columns": [],
+    "discarded_columns": [],
+    "statistics": {
+        "total_standard": 19,
+        "mapped_count": 映射成功数,
+        "missing_count": 缺失标准列数,
+        "discarded_count": 丢弃的多余列数
+    }
+}`;
+        }
+        
+        // 切换标签页
+        function switchTab(tabName) {
+            // 移除所有active类
+            document.querySelectorAll('.tab').forEach(tab => {
+                tab.classList.remove('active');
+            });
+            document.querySelectorAll('.tab-content').forEach(content => {
+                content.classList.remove('active');
+            });
+            
+            // 添加active类到选中的标签
+            event.target.classList.add('active');
+            document.getElementById(tabName + 'Tab').classList.add('active');
+        }
+        
+        // 清空所有
+        function clearAll() {
+            document.getElementById('inputColumns').value = '';
+            document.getElementById('statisticsCard').style.display = 'none';
+            document.getElementById('resultCard').style.display = 'none';
+        }
+        
+        // 页面加载完成后的初始化
+        window.onload = function() {
+            // 加载默认场景
+            loadScenario('less');
+        };
+    </script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+{
+  "workflow_id": "WF-L2-20250912_015115",
+  "created_time": "2025-09-12 01:51:15",
+  "pending_approvals": [],
+  "auto_approved": [
+    {
+      "modification_id": "M001",
+      "cell": "I5",
+      "column": "邓总指导登记（日更新）",
+      "old_value": "0730-",
+      "new_value": "0730-123123",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 80.0,
+        "reason": "格式变更"
+      },
+      "layer2_result": {
+        "risk_level": "LOW",
+        "decision": "APPROVE",
+        "confidence": 90,
+        "key_risks": [
+          "信息补充可能影响后续追踪",
+          "格式不一致可能导致理解偏差"
+        ],
+        "recommendation": "1.建议统一日期-编号的格式标准\n2.确保该编号在系统中有对应记录可查\n3.在变更日志中添加备注说明补充原因"
+      },
+      "final_decision": "APPROVE",
+      "approval_required": false
+    }
+  ]
+}

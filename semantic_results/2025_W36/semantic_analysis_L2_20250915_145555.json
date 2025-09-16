@@ -1,0 +1,49 @@
+{
+  "metadata": {
+    "analysis_time": "2025-09-15 14:55:55",
+    "total_modifications": 1,
+    "layer1_passed": 0,
+    "layer2_analyzed": 1,
+    "processing_time": "11.3s"
+  },
+  "results": [
+    {
+      "modification_id": "M001",
+      "cell": "B45",
+      "column": "项目类型",
+      "old_value": "目标管理",
+      "new_value": "",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 90.0,
+        "reason": "关键字段空"
+      },
+      "layer2_result": {
+        "risk_level": "CRITICAL",
+        "decision": "REJECT",
+        "confidence": 90,
+        "key_risks": [
+          "项目类型完全缺失将导致项目定位不明",
+          "无法确定项目目标和执行方向",
+          "影响后续所有相关决策和资源分配",
+          "可能导致项目整体失控"
+        ],
+        "recommendation": "必须补充项目类型字段的值。建议：1)若需删除请说明原因并提供替代方案 2)若改为空值需获得高层审批 3)确保所有相关文档同步更新"
+      },
+      "final_decision": "REJECT",
+      "approval_required": true
+    }
+  ],
+  "summary": {
+    "approved": 0,
+    "conditional": 0,
+    "review_required": 0,
+    "rejected": 1,
+    "risk_distribution": {
+      "LOW": 0,
+      "MEDIUM": 0,
+      "HIGH": 0,
+      "CRITICAL": 1
+    }
+  }
+}

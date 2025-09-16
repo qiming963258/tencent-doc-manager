@@ -1,0 +1,48 @@
+{
+  "metadata": {
+    "analysis_time": "2025-09-15 15:42:51",
+    "total_modifications": 1,
+    "layer1_passed": 0,
+    "layer2_analyzed": 1,
+    "processing_time": "16.2s"
+  },
+  "results": [
+    {
+      "modification_id": "M001",
+      "cell": "G93",
+      "column": "具体计划内容",
+      "old_value": "【员工层】\n根据部门工作流及关键流程，优化员工层工作台（中观）及固定事项清单（微观）",
+      "new_value": "定价与报价系统优化",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 80.0,
+        "reason": "目标变更"
+      },
+      "layer2_result": {
+        "risk_level": "HIGH",
+        "decision": "REVIEW",
+        "confidence": 85,
+        "key_risks": [
+          "计划内容性质发生根本性改变，从员工工作流优化转变为定价系统优化",
+          "可能影响项目资源分配和优先级调整",
+          "对原定交付成果和项目目标产生潜在重大影响"
+        ],
+        "recommendation": "建议召开变更评审会，明确以下事项：1)变更原因和业务需求 2)资源重新分配方案 3)对项目关键路径的影响评估 4)相关干系人沟通计划。在获得正式批准前应暂缓实施此变更。"
+      },
+      "final_decision": "REVIEW",
+      "approval_required": true
+    }
+  ],
+  "summary": {
+    "approved": 0,
+    "conditional": 0,
+    "review_required": 1,
+    "rejected": 0,
+    "risk_distribution": {
+      "LOW": 0,
+      "MEDIUM": 0,
+      "HIGH": 1,
+      "CRITICAL": 0
+    }
+  }
+}

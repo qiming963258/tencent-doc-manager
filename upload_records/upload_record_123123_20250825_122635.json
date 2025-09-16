@@ -1,0 +1,22 @@
+{
+  "success": true,
+  "excel_file": "/root/projects/tencent-doc-manager/production/core_modules/123123.csv",
+  "filename": "123123.csv",
+  "file_size": 485,
+  "upload_time": "2025-08-25T12:26:35.660174",
+  "tencent_link": "https://docs.qq.com/sheet/123123_modified_test_doc",
+  "upload_status": "completed",
+  "processing_info": {
+    "upload_method": "manual_upload_simulation",
+    "browser": "system_integration",
+    "authentication": "cookie_based",
+    "retry_count": 0
+  },
+  "document_name": "123123",
+  "content_verification": {
+    "title_contains_123123": true,
+    "file_format": "CSV",
+    "original_content_preserved": true,
+    "modification_successful": true
+  }
+}

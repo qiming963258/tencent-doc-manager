@@ -1,0 +1,48 @@
+{
+  "metadata": {
+    "analysis_time": "2025-09-15 18:21:18",
+    "total_modifications": 1,
+    "layer1_passed": 0,
+    "layer2_analyzed": 1,
+    "processing_time": "8.6s"
+  },
+  "results": [
+    {
+      "modification_id": "M001",
+      "cell": "I4",
+      "column": "邓总指导登记（日更新）",
+      "old_value": "0323-\n爆款的提醒站内站外都建立通知，站内在海龙系统的消息通知，站外通过员工qq邮箱进行通知\n\n0314-",
+      "new_value": "",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 90.0,
+        "reason": "删除内容"
+      },
+      "layer2_result": {
+        "risk_level": "HIGH",
+        "decision": "REVIEW",
+        "confidence": 85,
+        "key_risks": [
+          "重要指导信息丢失可能导致执行偏差",
+          "团队沟通机制不明确影响协作效率",
+          "关键节点的提醒机制被删除影响项目监控"
+        ],
+        "recommendation": "1. 要求补充删除原因说明\n2. 确认爆款提醒机制是否已通过其他方式建立\n3. 评估当前站内站外通知机制的有效性\n4. 如需删除，建议保留变更日志记录\n5. 涉及高层指导的修改需邓总确认"
+      },
+      "final_decision": "REVIEW",
+      "approval_required": true
+    }
+  ],
+  "summary": {
+    "approved": 0,
+    "conditional": 0,
+    "review_required": 1,
+    "rejected": 0,
+    "risk_distribution": {
+      "LOW": 0,
+      "MEDIUM": 0,
+      "HIGH": 1,
+      "CRITICAL": 0
+    }
+  }
+}

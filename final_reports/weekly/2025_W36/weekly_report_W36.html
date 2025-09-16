@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI语义分析周报 - 2025年第36周</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Microsoft YaHei', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.2);
+            overflow: hidden;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: white;
+            padding: 40px;
+            text-align: center;
+        }
+        
+        .header h1 { font-size: 2.5rem; margin-bottom: 10px; }
+        .header p { font-size: 1.2rem; opacity: 0.9; }
+        .header .date { font-size: 1rem; margin-top: 10px; }
+        
+        .summary-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            padding: 30px;
+            background: #f8f9fa;
+        }
+        
+        .card {
+            background: white;
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            transition: transform 0.3s;
+        }
+        
+        .card:hover { transform: translateY(-5px); }
+        
+        .card .number {
+            font-size: 2.5rem;
+            font-weight: bold;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .card .label {
+            font-size: 0.9rem;
+            color: #666;
+            margin-top: 5px;
+        }
+        
+        .card .change {
+            font-size: 0.85rem;
+            margin-top: 10px;
+            padding: 5px 10px;
+            border-radius: 20px;
+            display: inline-block;
+        }
+        
+        .change.up {
+            background: #d4edda;
+            color: #155724;
+        }
+        
+        .change.down {
+            background: #f8d7da;
+            color: #721c24;
+        }
+        
+        .content {
+            padding: 30px;
+        }
+        
+        .section {
+            margin-bottom: 40px;
+        }
+        
+        .section h2 {
+            font-size: 1.8rem;
+            color: #333;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #667eea;
+        }
+        
+        .risk-distribution {
+            display: flex;
+            justify-content: space-around;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 10px;
+        }
+        
+        .risk-item {
+            text-align: center;
+            padding: 20px;
+        }
+        
+        .risk-circle {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: white;
+            margin: 0 auto 10px;
+        }
+        
+        .risk-low { background: #28a745; }
+        .risk-medium { background: #ffc107; }
+        .risk-high { background: #fd7e14; }
+        .risk-critical { background: #dc3545; }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #dee2e6;
+        }
+        
+        th {
+            background: #f8f9fa;
+            font-weight: 600;
+            color: #495057;
+        }
+        
+        tr:hover {
+            background: #f8f9fa;
+        }
+        
+        .status-badge {
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            display: inline-block;
+        }
+        
+        .status-approved { background: #d4edda; color: #155724; }
+        .status-pending { background: #fff3cd; color: #856404; }
+        .status-rejected { background: #f8d7da; color: #721c24; }
+        
+        .action-btn {
+            padding: 6px 15px;
+            border-radius: 5px;
+            border: none;
+            cursor: pointer;
+            font-size: 0.9rem;
+            transition: all 0.3s;
+        }
+        
+        .btn-primary {
+            background: #667eea;
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            background: #5a67d8;
+        }
+        
+        .chart-container {
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+        
+        .footer {
+            background: #f8f9fa;
+            padding: 30px;
+            text-align: center;
+            color: #666;
+        }
+        
+        .footer .links {
+            margin-top: 20px;
+        }
+        
+        .footer a {
+            color: #667eea;
+            text-decoration: none;
+            margin: 0 15px;
+        }
+        
+        .footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="container">
+        <!-- 报告头部 -->
+        <div class="header">
+            <h1>🤖 AI语义分析周报</h1>
+            <p>腾讯文档智能监控系统 - L2风险列语义分析</p>
+            <div class="date">2025年第36周 (2025.09.02 - 2025.09.08)</div>
+        </div>
+        
+        <!-- 关键指标卡片 -->
+        <div class="summary-cards">
+            <div class="card">
+                <div class="number">30</div>
+                <div class="label">处理表格数</div>
+                <div class="change up">↑ 20% vs 上周</div>
+            </div>
+            <div class="card">
+                <div class="number">1,575</div>
+                <div class="label">总修改数</div>
+                <div class="change up">↑ 15% vs 上周</div>
+            </div>
+            <div class="card">
+                <div class="number">67%</div>
+                <div class="label">自动通过率</div>
+                <div class="change up">↑ 2% vs 上周</div>
+            </div>
+            <div class="card">
+                <div class="number">520</div>
+                <div class="label">待审批项</div>
+                <div class="change down">↓ 8% vs 上周</div>
+            </div>
+            <div class="card">
+                <div class="number">1.1s</div>
+                <div class="label">平均处理时间</div>
+                <div class="change up">↑ 快10%</div>
+            </div>
+            <div class="card">
+                <div class="number">98.6%</div>
+                <div class="label">Token节省率</div>
+                <div class="change up">优化成功</div>
+            </div>
+        </div>
+        
+        <!-- 主要内容区 -->
+        <div class="content">
+            <!-- 风险分布 -->
+            <div class="section">
+                <h2>📊 风险等级分布</h2>
+                <div class="risk-distribution">
+                    <div class="risk-item">
+                        <div class="risk-circle risk-low">1055</div>
+                        <div>低风险</div>
+                        <div style="color: #666; font-size: 0.9rem;">67%</div>
+                    </div>
+                    <div class="risk-item">
+                        <div class="risk-circle risk-medium">364</div>
+                        <div>中风险</div>
+                        <div style="color: #666; font-size: 0.9rem;">23%</div>
+                    </div>
+                    <div class="risk-item">
+                        <div class="risk-circle risk-high">104</div>
+                        <div>高风险</div>
+                        <div style="color: #666; font-size: 0.9rem;">7%</div>
+                    </div>
+                    <div class="risk-item">
+                        <div class="risk-circle risk-critical">52</div>
+                        <div>关键风险</div>
+                        <div style="color: #666; font-size: 0.9rem;">3%</div>
+                    </div>
+                </div>
+                
+                <!-- 趋势图表 -->
+                <div class="chart-container">
+                    <canvas id="trendChart"></canvas>
+                </div>
+            </div>
+            
+            <!-- 表格详情 -->
+            <div class="section">
+                <h2>📋 表格分析详情</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>表格名称</th>
+                            <th>修改数</th>
+                            <th>通过率</th>
+                            <th>高风险</th>
+                            <th>待审批</th>
+                            <th>状态</th>
+                            <th>操作</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>副本-测试版本-出国销售计划表</td>
+                            <td>68</td>
+                            <td>66%</td>
+                            <td>5</td>
+                            <td>23</td>
+                            <td><span class="status-badge status-pending">处理中</span></td>
+                            <td><button class="action-btn btn-primary">查看详情</button></td>
+                        </tr>
+                        <tr>
+                            <td>副本-测试版本-回国销售计划表</td>
+                            <td>52</td>
+                            <td>71%</td>
+                            <td>3</td>
+                            <td>15</td>
+                            <td><span class="status-badge status-approved">已完成</span></td>
+                            <td><button class="action-btn btn-primary">查看详情</button></td>
+                        </tr>
+                        <tr>
+                            <td>测试版本-小红书部门</td>
+                            <td>45</td>
+                            <td>69%</td>
+                            <td>2</td>
+                            <td>14</td>
+                            <td><span class="status-badge status-approved">已完成</span></td>
+                            <td><button class="action-btn btn-primary">查看详情</button></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            <!-- 待审批清单 -->
+            <div class="section">
+                <h2>⏳ 高优先级待审批项（Top 10）</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>优先级</th>
+                            <th>表格</th>
+                            <th>列名</th>
+                            <th>修改内容</th>
+                            <th>风险等级</th>
+                            <th>审批人</th>
+                            <th>截止时间</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>🔴 P0</td>
+                            <td>出国销售计划表</td>
+                            <td>关键KR对齐</td>
+                            <td>资源转化 → ---（删除）</td>
+                            <td><span class="status-badge status-rejected">高风险</span></td>
+                            <td>部门主管</td>
+                            <td>2025-09-08 22:00</td>
+                        </tr>
+                        <tr>
+                            <td>🟠 P1</td>
+                            <td>出国销售计划表</td>
+                            <td>项目类型</td>
+                            <td>目标管理 → 体系建设</td>
+                            <td><span class="status-badge status-pending">中风险</span></td>
+                            <td>项目经理</td>
+                            <td>2025-09-08 22:00</td>
+                        </tr>
+                        <tr>
+                            <td>🟡 P2</td>
+                            <td>回国销售计划表</td>
+                            <td>负责人</td>
+                            <td>张三 → 李四</td>
+                            <td><span class="status-badge status-pending">中风险</span></td>
+                            <td>HR经理</td>
+                            <td>2025-09-09 18:00</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            <!-- 性能指标 -->
+            <div class="section">
+                <h2>⚡ 系统性能指标</h2>
+                <div class="summary-cards" style="padding: 0;">
+                    <div class="card">
+                        <div class="number">43,100</div>
+                        <div class="label">本周Token消耗</div>
+                        <div class="change up">节省98.6%</div>
+                    </div>
+                    <div class="card">
+                        <div class="number">33秒</div>
+                        <div class="label">总处理时间</div>
+                        <div class="change up">优化13分钟</div>
+                    </div>
+                    <div class="card">
+                        <div class="number">$56</div>
+                        <div class="label">预计月成本</div>
+                        <div class="change up">节省$169</div>
+                    </div>
+                    <div class="card">
+                        <div class="number">85%</div>
+                        <div class="label">判断准确率</div>
+                        <div class="change up">提升3%</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 页脚 -->
+        <div class="footer">
+            <p>报告生成时间：2025-09-07 22:50:00 | 下次更新：2025-09-14 18:00:00</p>
+            <div class="links">
+                <a href="/api/reports/download/pdf">📥 下载PDF</a>
+                <a href="/api/reports/download/excel">📊 下载Excel</a>
+                <a href="https://docs.qq.com/sheet/xxx">📄 查看腾讯文档</a>
+                <a href="/api/reports/share">🔗 分享报告</a>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        // 趋势图表
+        const ctx = document.getElementById('trendChart').getContext('2d');
+        new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: ['W31', 'W32', 'W33', 'W34', 'W35', 'W36'],
+                datasets: [{
+                    label: '总修改数',
+                    data: [1200, 1350, 1400, 1450, 1500, 1575],
+                    borderColor: '#667eea',
+                    backgroundColor: 'rgba(102, 126, 234, 0.1)',
+                    tension: 0.4
+                }, {
+                    label: '自动通过数',
+                    data: [780, 900, 940, 980, 1010, 1055],
+                    borderColor: '#28a745',
+                    backgroundColor: 'rgba(40, 167, 69, 0.1)',
+                    tension: 0.4
+                }, {
+                    label: '高风险数',
+                    data: [120, 110, 105, 100, 95, 104],
+                    borderColor: '#dc3545',
+                    backgroundColor: 'rgba(220, 53, 69, 0.1)',
+                    tension: 0.4
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    title: {
+                        display: true,
+                        text: '六周趋势分析'
+                    }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>

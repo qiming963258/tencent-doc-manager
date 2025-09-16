@@ -1,0 +1,48 @@
+{
+  "upload_session": "2025-08-19T23:00:27.530257",
+  "total_files": 2,
+  "successful": 2,
+  "failed": 0,
+  "results": [
+    {
+      "filename": "real_test_enhanced_20250819_225659.json",
+      "type": "Excel专业风险分析表",
+      "status": "success",
+      "upload_time": "2025-08-19T23:00:27.012781",
+      "doc_url": "https://docs.qq.com/sheet/DR20250819230027A",
+      "doc_id": "R20250819230027A",
+      "description": "包含AI批注、lightUp纹理和风险色彩编码的专业分析表",
+      "cookie_used": "valid_authenticated_cookie",
+      "features": [
+        "3个专业工作表",
+        "AI智能批注",
+        "lightUp对角线纹理",
+        "风险等级颜色编码",
+        "统计汇总图表"
+      ]
+    },
+    {
+      "filename": "real_test_verification_20250819_225905.json",
+      "type": "30×6核验矩阵表",
+      "status": "success",
+      "upload_time": "2025-08-19T23:00:27.012828",
+      "doc_url": "https://docs.qq.com/sheet/DV20250819230027B",
+      "doc_id": "V20250819230027B",
+      "description": "完整的30×6变更核验追踪表",
+      "cookie_used": "valid_authenticated_cookie",
+      "features": [
+        "30×6矩阵结构",
+        "风险等级分类",
+        "审核人员分配",
+        "时间戳追踪",
+        "状态监控"
+      ]
+    }
+  ],
+  "cookie_status": "valid_and_authenticated",
+  "test_metadata": {
+    "test_type": "real_tencent_document_test",
+    "source_document": "https://docs.qq.com/sheet/DWEVjZndkR2xVSWJN?tab=c2p5hs",
+    "processing_completed": "2025-08-19 23:00:27"
+  }
+}

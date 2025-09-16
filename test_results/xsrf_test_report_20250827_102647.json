@@ -1,0 +1,78 @@
+{
+  "test_timestamp": "2025-08-27T10:26:47.914192",
+  "test_type": "XSRF Enhanced Downloader Test",
+  "results": [
+    {
+      "success": true,
+      "document_name": "测试版本-小红书部门",
+      "doc_id": "DWEVjZndkR2xVSWJN",
+      "format_type": "csv",
+      "file_path": "/root/projects/tencent-doc-manager/downloads/tencent_doc_DWEVjZndkR2xVSWJN_csv_20250827_102631.csv",
+      "file_size": 76098,
+      "download_time": 0.944918155670166,
+      "error_message": "下载成功",
+      "auth_method": "XSRF+Cookie",
+      "endpoint_used": "dop-api"
+    },
+    {
+      "success": true,
+      "document_name": "测试版本-小红书部门",
+      "doc_id": "DWEVjZndkR2xVSWJN",
+      "format_type": "xlsx",
+      "file_path": "/root/projects/tencent-doc-manager/downloads/tencent_doc_DWEVjZndkR2xVSWJN_xlsx_20250827_102634.xlsx",
+      "file_size": 76098,
+      "download_time": 0.7730419635772705,
+      "error_message": "下载成功",
+      "auth_method": "XSRF+Cookie",
+      "endpoint_used": "dop-api"
+    },
+    {
+      "success": true,
+      "document_name": "测试版本-回国销售计划表",
+      "doc_id": "DRFppYm15RGZ2WExN",
+      "format_type": "csv",
+      "file_path": "/root/projects/tencent-doc-manager/downloads/tencent_doc_DRFppYm15RGZ2WExN_csv_20250827_102637.csv",
+      "file_size": 20309,
+      "download_time": 0.7982409000396729,
+      "error_message": "下载成功",
+      "auth_method": "XSRF+Cookie",
+      "endpoint_used": "dop-api"
+    },
+    {
+      "success": true,
+      "document_name": "测试版本-回国销售计划表",
+      "doc_id": "DRFppYm15RGZ2WExN",
+      "format_type": "xlsx",
+      "file_path": "/root/projects/tencent-doc-manager/downloads/tencent_doc_DRFppYm15RGZ2WExN_xlsx_20250827_102640.xlsx",
+      "file_size": 20309,
+      "download_time": 0.6926019191741943,
+      "error_message": "下载成功",
+      "auth_method": "XSRF+Cookie",
+      "endpoint_used": "dop-api"
+    },
+    {
+      "success": true,
+      "document_name": "测试版本-出国销售计划表",
+      "doc_id": "DRHZrS1hOS3pwRGZB",
+      "format_type": "csv",
+      "file_path": "/root/projects/tencent-doc-manager/downloads/tencent_doc_DRHZrS1hOS3pwRGZB_csv_20250827_102643.csv",
+      "file_size": 56218,
+      "download_time": 0.8489458560943604,
+      "error_message": "下载成功",
+      "auth_method": "XSRF+Cookie",
+      "endpoint_used": "dop-api"
+    },
+    {
+      "success": true,
+      "document_name": "测试版本-出国销售计划表",
+      "doc_id": "DRHZrS1hOS3pwRGZB",
+      "format_type": "xlsx",
+      "file_path": "/root/projects/tencent-doc-manager/downloads/tencent_doc_DRHZrS1hOS3pwRGZB_xlsx_20250827_102645.xlsx",
+      "file_size": 56218,
+      "download_time": 0.7721474170684814,
+      "error_message": "下载成功",
+      "auth_method": "XSRF+Cookie",
+      "endpoint_used": "dop-api"
+    }
+  ]
+}

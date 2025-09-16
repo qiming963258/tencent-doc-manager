@@ -1,0 +1,32 @@
+{
+  "workflow_id": "WF-L2-20250915_153328",
+  "created_time": "2025-09-15 15:33:28",
+  "pending_approvals": [
+    {
+      "modification_id": "M001",
+      "cell": "G83",
+      "column": "具体计划内容",
+      "old_value": "【意见与提案】\n模式复制可与人事部门沟通提供经费及小礼物进行激励员工的自主积极性",
+      "new_value": "定价与报价系统优化",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 80.0,
+        "reason": "内容变更"
+      },
+      "layer2_result": {
+        "risk_level": "HIGH",
+        "decision": "REVIEW",
+        "confidence": 85,
+        "key_risks": [
+          "项目目标偏离风险：从激励措施转变为定价系统优化，可能导致原定团队建设目标受损",
+          "执行计划断裂风险：该变更涉及工作内容性质改变，需重新评估资源分配和依赖关系",
+          "跨部门协调风险：原值与人事部门相关，新值涉及财务/业务部门，需重新建立协作机制"
+        ],
+        "recommendation": "建议：1. 要求修改方提供变更背景说明 2. 评估是否需拆分原计划为两个独立任务 3. 召开跨部门协调会确认实施可行性 4. 如采纳变更需同步更新WBS和资源计划"
+      },
+      "final_decision": "REVIEW",
+      "approval_required": true
+    }
+  ],
+  "auto_approved": []
+}

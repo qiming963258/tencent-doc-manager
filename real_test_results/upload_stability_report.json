@@ -1,0 +1,23 @@
+{
+  "test_timestamp": "2025-08-28T19:05:19.766028",
+  "total_tests": 2,
+  "successful_tests": 2,
+  "success_rate": 100.0,
+  "test_results": [
+    {
+      "test_number": 1,
+      "file": "测试版本-回国销售计划表_I6修改.xlsx",
+      "success": true,
+      "duration": 47.440167,
+      "timestamp": "2025-08-28T19:04:26.245396"
+    },
+    {
+      "test_number": 2,
+      "file": "测试版本-小红书部门.xlsx",
+      "success": true,
+      "duration": 47.380786,
+      "timestamp": "2025-08-28T19:05:19.590909"
+    }
+  ],
+  "conclusion": "稳定可复现"
+}

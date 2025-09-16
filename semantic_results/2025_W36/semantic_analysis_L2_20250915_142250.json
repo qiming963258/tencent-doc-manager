@@ -1,0 +1,49 @@
+{
+  "metadata": {
+    "analysis_time": "2025-09-15 14:22:50",
+    "total_modifications": 1,
+    "layer1_passed": 0,
+    "layer2_analyzed": 1,
+    "processing_time": "15.3s"
+  },
+  "results": [
+    {
+      "modification_id": "M001",
+      "cell": "I10",
+      "column": "负责人",
+      "old_value": "徐志杰",
+      "new_value": "123123",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 90.0,
+        "reason": "关键人变更"
+      },
+      "layer2_result": {
+        "risk_level": "CRITICAL",
+        "decision": "REJECT",
+        "confidence": 95,
+        "key_risks": [
+          "负责人信息被恶意修改或误操作",
+          "项目责任体系完全破坏",
+          "关键角色信息丢失导致管理混乱",
+          "潜在的数据安全风险"
+        ],
+        "recommendation": "1. 立即恢复原负责人姓名\n2. 调查修改来源并核查账号权限\n3. 检查系统日志确认修改行为性质\n4. 必要时启动数据审计流程\n5. 加强关键字段的修改审批流程"
+      },
+      "final_decision": "REJECT",
+      "approval_required": true
+    }
+  ],
+  "summary": {
+    "approved": 0,
+    "conditional": 0,
+    "review_required": 0,
+    "rejected": 1,
+    "risk_distribution": {
+      "LOW": 0,
+      "MEDIUM": 0,
+      "HIGH": 0,
+      "CRITICAL": 1
+    }
+  }
+}

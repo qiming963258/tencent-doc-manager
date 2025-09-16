@@ -1,0 +1,48 @@
+{
+  "metadata": {
+    "analysis_time": "2025-09-15 15:00:23",
+    "total_modifications": 1,
+    "layer1_passed": 0,
+    "layer2_analyzed": 1,
+    "processing_time": "17.8s"
+  },
+  "results": [
+    {
+      "modification_id": "M001",
+      "cell": "G49",
+      "column": "具体计划内容",
+      "old_value": "新兴国关键词布局\n1.七月上旬以【热门词】为排名追踪，待部门人员稳定后，七月下旬按计划进行【中度词】布局安排",
+      "new_value": "新产品定价与区域覆盖",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 80.0,
+        "reason": "核心内容变更"
+      },
+      "layer2_result": {
+        "risk_level": "HIGH",
+        "decision": "REVIEW",
+        "confidence": 85,
+        "key_risks": [
+          "计划内容性质完全改变（从关键词布局转为产品定价）",
+          "原定工作计划和资源分配将完全失效",
+          "缺乏过渡计划可能导致执行混乱"
+        ],
+        "recommendation": "建议：1) 评估该变更是否必需；2) 为原计划和新计划制定过渡方案；3) 重新调整资源分配并通知相关部门；4) 修改内容应附带变更原因说明。该变更需经过项目经理和相关部门负责人批准。"
+      },
+      "final_decision": "REVIEW",
+      "approval_required": true
+    }
+  ],
+  "summary": {
+    "approved": 0,
+    "conditional": 0,
+    "review_required": 1,
+    "rejected": 0,
+    "risk_distribution": {
+      "LOW": 0,
+      "MEDIUM": 0,
+      "HIGH": 1,
+      "CRITICAL": 0
+    }
+  }
+}

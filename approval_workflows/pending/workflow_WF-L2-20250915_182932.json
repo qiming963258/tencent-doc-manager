@@ -1,0 +1,32 @@
+{
+  "workflow_id": "WF-L2-20250915_182932",
+  "created_time": "2025-09-15 18:29:32",
+  "pending_approvals": [
+    {
+      "modification_id": "M001",
+      "cell": "I22",
+      "column": "邓总指导登记（日更新）",
+      "old_value": "\n1、悦莹根据当前内容定位的工作流及管理，识别需要系统协助的功能提交经理打通系统看板及部分智能化的功能上线；",
+      "new_value": "",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 90.0,
+        "reason": "删除内容"
+      },
+      "layer2_result": {
+        "risk_level": "HIGH",
+        "decision": "REVIEW",
+        "confidence": 85,
+        "key_risks": [
+          "关键指导信息的丢失可能影响项目方向",
+          "系统功能开发可能失去明确依据",
+          "团队工作流可能缺乏高层指导"
+        ],
+        "recommendation": "建议核实删除原因：1.如果是误操作应恢复原值；2.如果是有意删除，需补充说明原因并在团队内同步；3.如需更新内容，建议先填写新指导再删除旧内容。对系统开发团队进行特别说明，确认当前开发方向是否仍符合管理层预期。"
+      },
+      "final_decision": "REVIEW",
+      "approval_required": true
+    }
+  ],
+  "auto_approved": []
+}

@@ -1,0 +1,33 @@
+{
+  "workflow_id": "WF-L2-20250915_150704",
+  "created_time": "2025-09-15 15:07:04",
+  "pending_approvals": [
+    {
+      "modification_id": "M001",
+      "cell": "I55",
+      "column": "负责人",
+      "old_value": "蔡悦莹",
+      "new_value": "",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 80.0,
+        "reason": "删除负责人"
+      },
+      "layer2_result": {
+        "risk_level": "CRITICAL",
+        "decision": "REVIEW",
+        "confidence": 90,
+        "key_risks": [
+          "负责人信息被清空导致职责不清",
+          "关键任务可能出现无人负责的情况",
+          "影响项目进度追踪和问责机制",
+          "可能导致团队协作混乱"
+        ],
+        "recommendation": "1.立即确认该岗位负责人是否确实空缺 2.如需变更负责人，应先确认新任人选后再删除原值 3.若暂无合适人选，建议保留原负责人并标注'待定'状态 4.需要同步通知相关团队成员这一变更"
+      },
+      "final_decision": "REVIEW",
+      "approval_required": true
+    }
+  ],
+  "auto_approved": []
+}

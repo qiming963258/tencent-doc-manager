@@ -1,0 +1,811 @@
+{
+  "success": true,
+  "total_differences": 195,
+  "differences": [
+    {
+      "type": "value_change",
+      "row": 1,
+      "col": 1,
+      "old_value": "小红书项目01",
+      "new_value": "小红书内容运营优化",
+      "column_name": "项目名称"
+    },
+    {
+      "type": "value_change",
+      "row": 1,
+      "col": 2,
+      "old_value": "负责人B",
+      "new_value": "张三",
+      "column_name": "负责人"
+    },
+    {
+      "type": "value_change",
+      "row": 1,
+      "col": 4,
+      "old_value": "2025-09-01",
+      "new_value": "2025-08-31",
+      "column_name": "结束日期"
+    },
+    {
+      "type": "value_change",
+      "row": 1,
+      "col": 5,
+      "old_value": "64",
+      "new_value": "85",
+      "column_name": "进度(%)"
+    },
+    {
+      "type": "value_change",
+      "row": 1,
+      "col": 6,
+      "old_value": "已完成",
+      "new_value": "进行中",
+      "column_name": "状态"
+    },
+    {
+      "type": "value_change",
+      "row": 1,
+      "col": 7,
+      "old_value": "中",
+      "new_value": "高",
+      "column_name": "优先级"
+    },
+    {
+      "type": "value_change",
+      "row": 1,
+      "col": 8,
+      "old_value": "33.6",
+      "new_value": "15.5",
+      "column_name": "预算(万)"
+    },
+    {
+      "type": "value_change",
+      "row": 1,
+      "col": 9,
+      "old_value": "29.0",
+      "new_value": "12.8",
+      "column_name": "实际花费(万)"
+    },
+    {
+      "type": "value_change",
+      "row": 1,
+      "col": 11,
+      "old_value": "初始备注1",
+      "new_value": "Q3重点项目",
+      "column_name": "备注"
+    },
+    {
+      "type": "value_change",
+      "row": 1,
+      "col": 13,
+      "old_value": "L1",
+      "new_value": "L2",
+      "column_name": "风险等级"
+    },
+    {
+      "type": "value_change",
+      "row": 2,
+      "col": 1,
+      "old_value": "小红书项目02",
+      "new_value": "用户增长策略执行",
+      "column_name": "项目名称"
+    },
+    {
+      "type": "value_change",
+      "row": 2,
+      "col": 2,
+      "old_value": "负责人C",
+      "new_value": "李四",
+      "column_name": "负责人"
+    },
+    {
+      "type": "value_change",
+      "row": 2,
+      "col": 3,
+      "old_value": "2025-08-02",
+      "new_value": "2025-07-15",
+      "column_name": "开始日期"
+    },
+    {
+      "type": "value_change",
+      "row": 2,
+      "col": 4,
+      "old_value": "2025-09-02",
+      "new_value": "2025-08-15",
+      "column_name": "结束日期"
+    },
+    {
+      "type": "value_change",
+      "row": 2,
+      "col": 5,
+      "old_value": "18",
+      "new_value": "92",
+      "column_name": "进度(%)"
+    },
+    {
+      "type": "value_change",
+      "row": 2,
+      "col": 6,
+      "old_value": "待启动",
+      "new_value": "进行中",
+      "column_name": "状态"
+    },
+    {
+      "type": "value_change",
+      "row": 2,
+      "col": 7,
+      "old_value": "中",
+      "new_value": "高",
+      "column_name": "优先级"
+    },
+    {
+      "type": "value_change",
+      "row": 2,
+      "col": 8,
+      "old_value": "37.6",
+      "new_value": "22.0",
+      "column_name": "预算(万)"
+    },
+    {
+      "type": "value_change",
+      "row": 2,
+      "col": 9,
+      "old_value": "23.3",
+      "new_value": "19.5",
+      "column_name": "实际花费(万)"
+    },
+    {
+      "type": "value_change",
+      "row": 2,
+      "col": 10,
+      "old_value": "运营部",
+      "new_value": "市场部",
+      "column_name": "部门"
+    },
+    {
+      "type": "value_change",
+      "row": 2,
+      "col": 11,
+      "old_value": "初始备注2",
+      "new_value": "KOL合作",
+      "column_name": "备注"
+    },
+    {
+      "type": "value_change",
+      "row": 2,
+      "col": 12,
+      "old_value": "待审批",
+      "new_value": "已批准",
+      "column_name": "审批状态"
+    },
+    {
+      "type": "value_change",
+      "row": 2,
+      "col": 13,
+      "old_value": "L2",
+      "new_value": "L1",
+      "column_name": "风险等级"
+    },
+    {
+      "type": "value_change",
+      "row": 2,
+      "col": 14,
+      "old_value": "良好",
+      "new_value": "优秀",
+      "column_name": "完成质量"
+    },
+    {
+      "type": "value_change",
+      "row": 3,
+      "col": 1,
+      "old_value": "小红书项目03",
+      "new_value": "数据分析体系建设",
+      "column_name": "项目名称"
+    },
+    {
+      "type": "value_change",
+      "row": 3,
+      "col": 2,
+      "old_value": "负责人D",
+      "new_value": "王五",
+      "column_name": "负责人"
+    },
+    {
+      "type": "value_change",
+      "row": 3,
+      "col": 3,
+      "old_value": "2025-08-03",
+      "new_value": "2025-08-05",
+      "column_name": "开始日期"
+    },
+    {
+      "type": "value_change",
+      "row": 3,
+      "col": 4,
+      "old_value": "2025-09-03",
+      "new_value": "2025-09-05",
+      "column_name": "结束日期"
+    },
+    {
+      "type": "value_change",
+      "row": 3,
+      "col": 5,
+      "old_value": "20",
+      "new_value": "68",
+      "column_name": "进度(%)"
+    },
+    {
+      "type": "value_change",
+      "row": 3,
+      "col": 6,
+      "old_value": "待启动",
+      "new_value": "进行中",
+      "column_name": "状态"
+    },
+    {
+      "type": "value_change",
+      "row": 3,
+      "col": 7,
+      "old_value": "高",
+      "new_value": "中",
+      "column_name": "优先级"
+    },
+    {
+      "type": "value_change",
+      "row": 3,
+      "col": 8,
+      "old_value": "75.0",
+      "new_value": "8.0",
+      "column_name": "预算(万)"
+    },
+    {
+      "type": "value_change",
+      "row": 3,
+      "col": 9,
+      "old_value": "60.4",
+      "new_value": "6.2",
+      "column_name": "实际花费(万)"
+    },
+    {
+      "type": "value_change",
+      "row": 3,
+      "col": 10,
+      "old_value": "运营部",
+      "new_value": "技术部",
+      "column_name": "部门"
+    },
+    {
+      "type": "value_change",
+      "row": 3,
+      "col": 11,
+      "old_value": "初始备注3",
+      "new_value": "BI看板",
+      "column_name": "备注"
+    },
+    {
+      "type": "value_change",
+      "row": 3,
+      "col": 12,
+      "old_value": "待审批",
+      "new_value": "已批准",
+      "column_name": "审批状态"
+    },
+    {
+      "type": "value_change",
+      "row": 3,
+      "col": 14,
+      "old_value": "优秀",
+      "new_value": "良好",
+      "column_name": "完成质量"
+    },
+    {
+      "type": "value_change",
+      "row": 4,
+      "col": 1,
+      "old_value": "小红书项目04",
+      "new_value": "小红书账号矩阵管理",
+      "column_name": "项目名称"
+    },
+    {
+      "type": "value_change",
+      "row": 4,
+      "col": 2,
+      "old_value": "负责人E",
+      "new_value": "赵六",
+      "column_name": "负责人"
+    },
+    {
+      "type": "value_change",
+      "row": 4,
+      "col": 3,
+      "old_value": "2025-08-04",
+      "new_value": "2025-07-20",
+      "column_name": "开始日期"
+    },
+    {
+      "type": "value_change",
+      "row": 4,
+      "col": 4,
+      "old_value": "2025-09-04",
+      "new_value": "2025-08-20",
+      "column_name": "结束日期"
+    },
+    {
+      "type": "value_change",
+      "row": 4,
+      "col": 5,
+      "old_value": "73",
+      "new_value": "75",
+      "column_name": "进度(%)"
+    },
+    {
+      "type": "value_change",
+      "row": 4,
+      "col": 6,
+      "old_value": "已完成",
+      "new_value": "进行中",
+      "column_name": "状态"
+    },
+    {
+      "type": "value_change",
+      "row": 4,
+      "col": 7,
+      "old_value": "低",
+      "new_value": "高",
+      "column_name": "优先级"
+    },
+    {
+      "type": "value_change",
+      "row": 4,
+      "col": 8,
+      "old_value": "47.6",
+      "new_value": "12.5",
+      "column_name": "预算(万)"
+    },
+    {
+      "type": "value_change",
+      "row": 4,
+      "col": 9,
+      "old_value": "38.9",
+      "new_value": "10.8",
+      "column_name": "实际花费(万)"
+    },
+    {
+      "type": "value_change",
+      "row": 4,
+      "col": 11,
+      "old_value": "初始备注4",
+      "new_value": "多账号运营",
+      "column_name": "备注"
+    },
+    {
+      "type": "value_change",
+      "row": 4,
+      "col": 12,
+      "old_value": "已批准",
+      "new_value": "待审批",
+      "column_name": "审批状态"
+    },
+    {
+      "type": "value_change",
+      "row": 4,
+      "col": 13,
+      "old_value": "L3",
+      "new_value": "L2",
+      "column_name": "风险等级"
+    },
+    {
+      "type": "value_change",
+      "row": 4,
+      "col": 14,
+      "old_value": "一般",
+      "new_value": "良好",
+      "column_name": "完成质量"
+    },
+    {
+      "type": "value_change",
+      "row": 5,
+      "col": 1,
+      "old_value": "小红书项目05",
+      "new_value": "品牌合作项目管理",
+      "column_name": "项目名称"
+    },
+    {
+      "type": "value_change",
+      "row": 5,
+      "col": 2,
+      "old_value": "负责人A",
+      "new_value": "钱七",
+      "column_name": "负责人"
+    },
+    {
+      "type": "value_change",
+      "row": 5,
+      "col": 3,
+      "old_value": "2025-08-05",
+      "new_value": "2025-08-10",
+      "column_name": "开始日期"
+    },
+    {
+      "type": "value_change",
+      "row": 5,
+      "col": 4,
+      "old_value": "2025-09-05",
+      "new_value": "2025-09-10",
+      "column_name": "结束日期"
+    },
+    {
+      "type": "value_change",
+      "row": 5,
+      "col": 5,
+      "old_value": "37",
+      "new_value": "45",
+      "column_name": "进度(%)"
+    },
+    {
+      "type": "value_change",
+      "row": 5,
+      "col": 6,
+      "old_value": "待启动",
+      "new_value": "进行中",
+      "column_name": "状态"
+    },
+    {
+      "type": "value_change",
+      "row": 5,
+      "col": 7,
+      "old_value": "低",
+      "new_value": "中",
+      "column_name": "优先级"
+    },
+    {
+      "type": "value_change",
+      "row": 5,
+      "col": 8,
+      "old_value": "93.4",
+      "new_value": "18.0",
+      "column_name": "预算(万)"
+    },
+    {
+      "type": "value_change",
+      "row": 5,
+      "col": 9,
+      "old_value": "37.4",
+      "new_value": "8.5",
+      "column_name": "实际花费(万)"
+    },
+    {
+      "type": "value_change",
+      "row": 5,
+      "col": 10,
+      "old_value": "技术部",
+      "new_value": "商务部",
+      "column_name": "部门"
+    },
+    {
+      "type": "value_change",
+      "row": 5,
+      "col": 11,
+      "old_value": "初始备注5",
+      "new_value": "品牌联动",
+      "column_name": "备注"
+    },
+    {
+      "type": "value_change",
+      "row": 6,
+      "col": 1,
+      "old_value": "小红书项目06",
+      "new_value": "小红书直播带货测试",
+      "column_name": "项目名称"
+    },
+    {
+      "type": "value_change",
+      "row": 6,
+      "col": 2,
+      "old_value": "负责人B",
+      "new_value": "孙八",
+      "column_name": "负责人"
+    },
+    {
+      "type": "value_change",
+      "row": 6,
+      "col": 3,
+      "old_value": "2025-08-06",
+      "new_value": "2025-08-01",
+      "column_name": "开始日期"
+    },
+    {
+      "type": "value_change",
+      "row": 6,
+      "col": 4,
+      "old_value": "2025-09-06",
+      "new_value": "2025-08-25",
+      "column_name": "结束日期"
+    },
+    {
+      "type": "value_change",
+      "row": 6,
+      "col": 5,
+      "old_value": "52",
+      "new_value": "88",
+      "column_name": "进度(%)"
+    },
+    {
+      "type": "value_change",
+      "row": 6,
+      "col": 6,
+      "old_value": "已完成",
+      "new_value": "进行中",
+      "column_name": "状态"
+    },
+    {
+      "type": "value_change",
+      "row": 6,
+      "col": 7,
+      "old_value": "低",
+      "new_value": "高",
+      "column_name": "优先级"
+    },
+    {
+      "type": "value_change",
+      "row": 6,
+      "col": 8,
+      "old_value": "45.1",
+      "new_value": "25.0",
+      "column_name": "预算(万)"
+    },
+    {
+      "type": "value_change",
+      "row": 6,
+      "col": 9,
+      "old_value": "23.0",
+      "new_value": "22.0",
+      "column_name": "实际花费(万)"
+    },
+    {
+      "type": "value_change",
+      "row": 6,
+      "col": 10,
+      "old_value": "技术部",
+      "new_value": "电商部",
+      "column_name": "部门"
+    },
+    {
+      "type": "value_change",
+      "row": 6,
+      "col": 11,
+      "old_value": "初始备注6",
+      "new_value": "GMV目标",
+      "column_name": "备注"
+    },
+    {
+      "type": "value_change",
+      "row": 6,
+      "col": 12,
+      "old_value": "待审批",
+      "new_value": "已批准",
+      "column_name": "审批状态"
+    },
+    {
+      "type": "value_change",
+      "row": 7,
+      "col": 1,
+      "old_value": "小红书项目07",
+      "new_value": "用户画像精准分析",
+      "column_name": "项目名称"
+    },
+    {
+      "type": "value_change",
+      "row": 7,
+      "col": 2,
+      "old_value": "负责人C",
+      "new_value": "周九",
+      "column_name": "负责人"
+    },
+    {
+      "type": "value_change",
+      "row": 7,
+      "col": 3,
+      "old_value": "2025-08-07",
+      "new_value": "2025-07-25",
+      "column_name": "开始日期"
+    },
+    {
+      "type": "value_change",
+      "row": 7,
+      "col": 4,
+      "old_value": "2025-09-07",
+      "new_value": "2025-08-30",
+      "column_name": "结束日期"
+    },
+    {
+      "type": "value_change",
+      "row": 7,
+      "col": 5,
+      "old_value": "30",
+      "new_value": "60",
+      "column_name": "进度(%)"
+    },
+    {
+      "type": "value_change",
+      "row": 7,
+      "col": 6,
+      "old_value": "已完成",
+      "new_value": "进行中",
+      "column_name": "状态"
+    },
+    {
+      "type": "value_change",
+      "row": 7,
+      "col": 7,
+      "old_value": "高",
+      "new_value": "中",
+      "column_name": "优先级"
+    },
+    {
+      "type": "value_change",
+      "row": 7,
+      "col": 8,
+      "old_value": "17.0",
+      "new_value": "10.0",
+      "column_name": "预算(万)"
+    },
+    {
+      "type": "value_change",
+      "row": 7,
+      "col": 9,
+      "old_value": "64.3",
+      "new_value": "7.5",
+      "column_name": "实际花费(万)"
+    },
+    {
+      "type": "value_change",
+      "row": 7,
+      "col": 10,
+      "old_value": "内容部",
+      "new_value": "数据部",
+      "column_name": "部门"
+    },
+    {
+      "type": "value_change",
+      "row": 7,
+      "col": 11,
+      "old_value": "初始备注7",
+      "new_value": "用户洞察",
+      "column_name": "备注"
+    },
+    {
+      "type": "value_change",
+      "row": 7,
+      "col": 13,
+      "old_value": "L1",
+      "new_value": "L2",
+      "column_name": "风险等级"
+    },
+    {
+      "type": "value_change",
+      "row": 8,
+      "col": 1,
+      "old_value": "小红书项目08",
+      "new_value": "小红书SEO优化",
+      "column_name": "项目名称"
+    },
+    {
+      "type": "value_change",
+      "row": 8,
+      "col": 2,
+      "old_value": "负责人D",
+      "new_value": "吴十",
+      "column_name": "负责人"
+    },
+    {
+      "type": "value_change",
+      "row": 8,
+      "col": 3,
+      "old_value": "2025-08-08",
+      "new_value": "2025-08-15",
+      "column_name": "开始日期"
+    },
+    {
+      "type": "value_change",
+      "row": 8,
+      "col": 4,
+      "old_value": "2025-09-08",
+      "new_value": "2025-09-15",
+      "column_name": "结束日期"
+    },
+    {
+      "type": "value_change",
+      "row": 8,
+      "col": 5,
+      "old_value": "24",
+      "new_value": "30",
+      "column_name": "进度(%)"
+    },
+    {
+      "type": "value_change",
+      "row": 8,
+      "col": 6,
+      "old_value": "已完成",
+      "new_value": "待启动",
+      "column_name": "状态"
+    },
+    {
+      "type": "value_change",
+      "row": 8,
+      "col": 8,
+      "old_value": "53.8",
+      "new_value": "6.0",
+      "column_name": "预算(万)"
+    },
+    {
+      "type": "value_change",
+      "row": 8,
+      "col": 9,
+      "old_value": "59.3",
+      "new_value": "2.0",
+      "column_name": "实际花费(万)"
+    },
+    {
+      "type": "value_change",
+      "row": 8,
+      "col": 10,
+      "old_value": "内容部",
+      "new_value": "技术部",
+      "column_name": "部门"
+    },
+    {
+      "type": "value_change",
+      "row": 8,
+      "col": 11,
+      "old_value": "初始备注8",
+      "new_value": "搜索排名",
+      "column_name": "备注"
+    },
+    {
+      "type": "value_change",
+      "row": 8,
+      "col": 13,
+      "old_value": "L1",
+      "new_value": "L3",
+      "column_name": "风险等级"
+    },
+    {
+      "type": "value_change",
+      "row": 8,
+      "col": 14,
+      "old_value": "一般",
+      "new_value": "待评估",
+      "column_name": "完成质量"
+    },
+    {
+      "type": "value_change",
+      "row": 9,
+      "col": 1,
+      "old_value": "小红书项目09",
+      "new_value": "KOL资源整合",
+      "column_name": "项目名称"
+    },
+    {
+      "type": "value_change",
+      "row": 9,
+      "col": 2,
+      "old_value": "负责人E",
+      "new_value": "郑一",
+      "column_name": "负责人"
+    },
+    {
+      "type": "value_change",
+      "row": 9,
+      "col": 3,
+      "old_value": "2025-08-09",
+      "new_value": "2025-07-30",
+      "column_name": "开始日期"
+    }
+  ],
+  "timestamp": "2025-08-19T20:39:21.951345",
+  "current_file": "csv_versions/current/realistic_test_20250819_203752.csv",
+  "baseline_file": "csv_versions/baseline/table_001_baseline.csv",
+  "current_rows": 16,
+  "baseline_rows": 31
+}

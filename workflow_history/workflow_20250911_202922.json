@@ -1,0 +1,44 @@
+{
+  "id": "20250911_202922",
+  "start_time": "2025-09-11T20:29:22.369090",
+  "end_time": "2025-09-11T20:29:22.375257",
+  "status": "error",
+  "results": {},
+  "logs": [
+    {
+      "time": "20:29:22",
+      "level": "INFO",
+      "message": "开始获取基线文档..."
+    },
+    {
+      "time": "20:29:22",
+      "level": "INFO",
+      "message": "✅ 使用本地基线文件: tencent_tencent_副本-测试版本-出国销售计划表-工作表1_20250911_2013_baseline_W37.csv"
+    },
+    {
+      "time": "20:29:22",
+      "level": "INFO",
+      "message": "开始获取目标文档..."
+    },
+    {
+      "time": "20:29:22",
+      "level": "INFO",
+      "message": "✅ 使用本地目标文件: tencent_副本-副本-测试版本-出国销售计划表_20250911_2016_midweek_W37.xlsx"
+    },
+    {
+      "time": "20:29:22",
+      "level": "INFO",
+      "message": "开始对比分析..."
+    },
+    {
+      "time": "20:29:22",
+      "level": "ERROR",
+      "message": "❌ 执行出错: 'utf-8' codec can't decode byte 0xa2 in position 11: invalid start byte"
+    }
+  ],
+  "settings": {
+    "upload_option": "new",
+    "upload_target_url": "",
+    "verbose_logging": false
+  }
+}

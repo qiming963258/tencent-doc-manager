@@ -1,0 +1,19 @@
+{
+  "total_tasks": 1,
+  "success_count": 0,
+  "failed_count": 1,
+  "results": [
+    {
+      "task_index": 1,
+      "baseline_url": "https://docs.qq.com/sheet/test1",
+      "target_url": "https://docs.qq.com/sheet/test2",
+      "success": false,
+      "result": {
+        "success": false,
+        "task_index": 1,
+        "error": "TencentDocAutoExporter.__init__() got an unexpected keyword argument 'cookie'"
+      }
+    }
+  ],
+  "timestamp": "2025-09-08 22:44:00"
+}

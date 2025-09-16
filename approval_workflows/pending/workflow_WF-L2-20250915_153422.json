@@ -1,0 +1,31 @@
+{
+  "workflow_id": "WF-L2-20250915_153422",
+  "created_time": "2025-09-15 15:34:22",
+  "pending_approvals": [
+    {
+      "modification_id": "M001",
+      "cell": "G84",
+      "column": "具体计划内容",
+      "old_value": "学习与成长的课程体系，需要根据员工反复的问题，进行阶段性的复习与对应的考试，需要形成机制周期更新迭代培训课程与试题",
+      "new_value": "定价与报价系统优化",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 80.0,
+        "reason": "内容变更"
+      },
+      "layer2_result": {
+        "risk_level": "HIGH",
+        "decision": "REVIEW",
+        "confidence": 80,
+        "key_risks": [
+          "原计划内容（员工培训体系）被完全替换为不相关的定价系统优化，可能导致人力资源部门培训计划脱节",
+          "项目性质发生本质变化，可能影响项目整体目标达成"
+        ],
+        "recommendation": "建议进行以下操作：1. 确认修改意图（是否应保留原培训计划内容）2. 如确需修改，应评估对整体项目的影响并调整相关计划 3. 考虑将新内容添加而非替换原内容"
+      },
+      "final_decision": "REVIEW",
+      "approval_required": true
+    }
+  ],
+  "auto_approved": []
+}

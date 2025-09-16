@@ -1,0 +1,48 @@
+{
+  "metadata": {
+    "analysis_time": "2025-09-08 14:21:41",
+    "total_modifications": 1,
+    "layer1_passed": 0,
+    "layer2_analyzed": 1,
+    "processing_time": "10.1s"
+  },
+  "results": [
+    {
+      "modification_id": "M001",
+      "cell": "J12",
+      "column": "负责人",
+      "old_value": "赖铁荔",
+      "new_value": "赖铁荔,各责任人",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 75.0,
+        "reason": "新增责任人"
+      },
+      "layer2_result": {
+        "risk_level": "MEDIUM",
+        "decision": "CONDITIONAL",
+        "confidence": 75,
+        "key_risks": [
+          "职责模糊化风险：从明确责任人变为多人负责制，可能导致责任推诿",
+          "协作效率风险：多责任人机制可能增加沟通协调成本",
+          "决策效率风险：关键决策可能需要多方确认，延长响应时间"
+        ],
+        "recommendation": "建议：1) 明确各责任人的具体职责范围 2) 建立多人负责制下的决策机制 3) 在项目文档中补充说明变更原因和具体分工方案。批准条件：相关配套机制文档同步更新后生效。"
+      },
+      "final_decision": "CONDITIONAL",
+      "approval_required": false
+    }
+  ],
+  "summary": {
+    "approved": 0,
+    "conditional": 1,
+    "review_required": 0,
+    "rejected": 0,
+    "risk_distribution": {
+      "LOW": 0,
+      "MEDIUM": 0,
+      "HIGH": 0,
+      "CRITICAL": 0
+    }
+  }
+}

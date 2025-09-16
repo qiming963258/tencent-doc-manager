@@ -1,0 +1,33 @@
+{
+  "workflow_id": "WF-L2-20250915_145628",
+  "created_time": "2025-09-15 14:56:28",
+  "pending_approvals": [
+    {
+      "modification_id": "M001",
+      "cell": "I45",
+      "column": "负责人",
+      "old_value": "蔡悦莹",
+      "new_value": "",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 80.0,
+        "reason": "删除负责人"
+      },
+      "layer2_result": {
+        "risk_level": "HIGH",
+        "decision": "REVIEW",
+        "confidence": 85,
+        "key_risks": [
+          "关键岗位负责人清空导致的职责真空",
+          "可能导致任务无人跟进或执行延迟",
+          "影响相关工作的责任归属",
+          "可能破坏现有工作流程"
+        ],
+        "recommendation": "建议在删除原负责人前必须明确：1)新负责人的任命；或2)临时负责人机制。紧急情况下可设置3天过渡期，但必须邮件通知全组并抄送上级。"
+      },
+      "final_decision": "REVIEW",
+      "approval_required": true
+    }
+  ],
+  "auto_approved": []
+}

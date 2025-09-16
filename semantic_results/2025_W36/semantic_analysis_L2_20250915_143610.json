@@ -1,0 +1,48 @@
+{
+  "metadata": {
+    "analysis_time": "2025-09-15 14:36:10",
+    "total_modifications": 1,
+    "layer1_passed": 0,
+    "layer2_analyzed": 1,
+    "processing_time": "21.4s"
+  },
+  "results": [
+    {
+      "modification_id": "M001",
+      "cell": "K24",
+      "column": "监督人",
+      "old_value": "邓总",
+      "new_value": "赖铁荔",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 80.0,
+        "reason": "关键人变更"
+      },
+      "layer2_result": {
+        "risk_level": "HIGH",
+        "decision": "REVIEW",
+        "confidence": 80,
+        "key_risks": [
+          "监督人角色变更导致项目监管连续性中断",
+          "新监督人可能需要时间熟悉项目",
+          "可能影响团队对监督权威的认可"
+        ],
+        "recommendation": "建议：1. 与邓总确认交接事项；2. 安排赖铁荔全面了解项目；3. 向团队正式通知监督人变更；4. 监控变更后1-2周的项目执行情况"
+      },
+      "final_decision": "REVIEW",
+      "approval_required": true
+    }
+  ],
+  "summary": {
+    "approved": 0,
+    "conditional": 0,
+    "review_required": 1,
+    "rejected": 0,
+    "risk_distribution": {
+      "LOW": 0,
+      "MEDIUM": 0,
+      "HIGH": 1,
+      "CRITICAL": 0
+    }
+  }
+}

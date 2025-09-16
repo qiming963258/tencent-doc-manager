@@ -1,0 +1,62 @@
+{
+  "metadata": {
+    "analysis_time": "2025-09-15 18:39:56",
+    "total_modifications": 1,
+    "layer1_passed": 0,
+    "layer2_analyzed": 1,
+    "processing_time": "10.6s"
+  },
+  "results": [
+    {
+      "modification_id": "M001",
+      "cell": "J36",
+      "column": "负责人",
+      "old_value": "赖铁荔",
+      "new_value": "",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 80.0,
+        "reason": "关键人缺失"
+      },
+      "layer2_result": {
+        "risk_level": "CRITICAL",
+        "decision": "REJECT",
+        "confidence": 95,
+        "key_risks": [
+          "关键岗位负责人信息缺失",
+          "项目责任主体不明确",
+          "可能导致工作停滞或交接混乱"
+        ],
+        "recommendation": "1. 必须立即补充负责人信息\n2. 如需撤销原负责人，需同步指定新负责人\n3. 建议与项目管理办公室确认变更原因\n4. 变更后需及时通知相关干系人",
+        "analysis": {
+          "change_type": "内容删减",
+          "impact_scores": {
+            "project_objective": 9,
+            "execution_plan": 8,
+            "team_coordination": 7,
+            "delivery_time": 8
+          },
+          "special_check": {
+            "responsibility_chain": "关键中断",
+            "approval_flow": "缺失必要审批记录",
+            "knowledge_transfer": "未确认知识转移"
+          }
+        }
+      },
+      "final_decision": "REJECT",
+      "approval_required": true
+    }
+  ],
+  "summary": {
+    "approved": 0,
+    "conditional": 0,
+    "review_required": 0,
+    "rejected": 1,
+    "risk_distribution": {
+      "LOW": 0,
+      "MEDIUM": 0,
+      "HIGH": 0,
+      "CRITICAL": 1
+    }
+  }
+}

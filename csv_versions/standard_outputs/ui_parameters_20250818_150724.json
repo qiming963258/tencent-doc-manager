@@ -1,0 +1,104 @@
+{
+  "table_display": {
+    "total_rows": 92,
+    "total_columns": 17,
+    "page_size": 50,
+    "sort_configs": [
+      {
+        "field": "row_index",
+        "direction": "asc",
+        "priority": 1
+      },
+      {
+        "field": "risk_level",
+        "direction": "desc",
+        "priority": 2
+      },
+      {
+        "field": "column_name",
+        "direction": "asc",
+        "priority": 3
+      }
+    ]
+  },
+  "change_statistics": {
+    "total_changes": 453,
+    "change_type_distribution": {
+      "modification": 453
+    },
+    "risk_level_distribution": {
+      "L3": 292,
+      "L2": 158,
+      "L1": 3
+    },
+    "column_change_distribution": {
+      "项目类型": 1,
+      "任务发起时间": 92,
+      "具体计划内容": 63,
+      "预计完成时间": 92,
+      "完成进度": 92,
+      "复盘时间": 91,
+      "来源": 1,
+      "目标对齐": 1,
+      "负责人": 1,
+      "协助人": 1,
+      "监督人": 1,
+      "重要程度": 1,
+      "对上汇报": 1,
+      "应用情况": 1,
+      "序号": 1,
+      "邓总指导登记": 12,
+      "关键KR对齐": 1
+    }
+  },
+  "heatmap_config": {
+    "dimensions": {
+      "rows": 30,
+      "columns": 19
+    },
+    "data_range": {
+      "min_value": 0.0,
+      "max_value": 1.0
+    },
+    "color_scheme": "viridis",
+    "smoothing": "gaussian"
+  },
+  "filter_options": {
+    "available_columns": [
+      "序号",
+      "项目类型",
+      "来源",
+      "任务发起时间",
+      "目标对齐",
+      "关键KR对齐",
+      "具体计划内容",
+      "邓总指导登记",
+      "负责人",
+      "协助人",
+      "监督人",
+      "重要程度",
+      "预计完成时间",
+      "完成进度",
+      "复盘时间",
+      "对上汇报",
+      "应用情况"
+    ],
+    "available_risk_levels": [
+      "L3",
+      "L2",
+      "L1"
+    ],
+    "available_change_types": [
+      "modification"
+    ]
+  },
+  "quality_indicators": {
+    "overall_score": 0.979,
+    "risk_distribution": {
+      "L1_critical": 3,
+      "L2_moderate": 158,
+      "L3_minor": 292
+    },
+    "processing_success_rate": 1.0
+  }
+}

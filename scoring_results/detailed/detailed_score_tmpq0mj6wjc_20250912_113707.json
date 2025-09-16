@@ -1,0 +1,271 @@
+{
+  "metadata": {
+    "table_name": "tmpq0mj6wjc",
+    "source_file": "/tmp/tmpq0mj6wjc.json",
+    "scoring_time": "2025-09-12 11:37:07",
+    "total_modifications": 7,
+    "scoring_version": "v1.0"
+  },
+  "scores": [
+    {
+      "modification_id": "M001",
+      "cell": "C4",
+      "column_name": "项目类型",
+      "column_level": "L2",
+      "old_value": "目标管理",
+      "new_value": "体系建设",
+      "scoring_details": {
+        "base_score": 0.5,
+        "change_factor": 1.0,
+        "importance_weight": 1.0,
+        "ai_adjustment": 1.2,
+        "confidence_weight": 0.9,
+        "final_score": 0.6
+      },
+      "ai_analysis": {
+        "ai_used": true,
+        "ai_decision": "REVIEW",
+        "ai_confidence": 80,
+        "layer1_result": {
+          "judgment": "RISKY",
+          "confidence": 80.0,
+          "reason": "范围扩大"
+        },
+        "layer2_result": {
+          "risk_level": "HIGH",
+          "decision": "REVIEW",
+          "confidence": 80,
+          "key_risks": [
+            "项目性质的根本改变可能导致原定目标无法实现",
+            "执行计划需要大幅调整",
+            "团队可能需要重新配置或培训",
+            "交付时间可能延后"
+          ],
+          "recommendation": "建议召开项目变更评审会议，全面评估以下方面：1)新项目类型(体系建设)与组织战略的匹配度 2)所需资源与现有资源的差距分析 3)修改项目章程并获得关键干系人批准 4)重新制定项目基准计划"
+        }
+      },
+      "risk_assessment": {
+        "risk_level": "HIGH",
+        "risk_color": "orange",
+        "risk_icon": "🟠",
+        "action_required": "manual_review",
+        "priority": 2
+      }
+    },
+    {
+      "modification_id": "M002",
+      "cell": "I5",
+      "column_name": "邓总指导登记（日更新）",
+      "column_level": "L2",
+      "old_value": "0730-",
+      "new_value": "0730-123123",
+      "scoring_details": {
+        "base_score": 0.5,
+        "change_factor": 1.1,
+        "importance_weight": 1.15,
+        "ai_adjustment": 0.6,
+        "confidence_weight": 0.9,
+        "final_score": 0.6
+      },
+      "ai_analysis": {
+        "ai_used": true,
+        "ai_decision": "APPROVE",
+        "ai_confidence": 85,
+        "layer1_result": {
+          "judgment": "RISKY",
+          "confidence": 80.0,
+          "reason": "敏感信息修改"
+        },
+        "layer2_result": {
+          "risk_level": "LOW",
+          "decision": "APPROVE",
+          "confidence": 85,
+          "key_risks": [
+            "信息完整性风险：补充的'123123'可能缺乏上下文说明",
+            "格式规范风险：新增内容可能不符合既定格式要求"
+          ],
+          "recommendation": "1. 要求修改者补充变更说明备注\n2. 确认'123123'是否为标准编码格式\n3. 更新文档版本号并通知相关查阅人员"
+        }
+      },
+      "risk_assessment": {
+        "risk_level": "HIGH",
+        "risk_color": "orange",
+        "risk_icon": "🟠",
+        "action_required": "manual_review",
+        "priority": 2
+      }
+    },
+    {
+      "modification_id": "M003",
+      "cell": "E6",
+      "column_name": "任务发起时间",
+      "column_level": "L1",
+      "old_value": "2025/3/12",
+      "new_value": "2025/3/13",
+      "scoring_details": {
+        "base_score": 0.8,
+        "change_factor": 1.0,
+        "importance_weight": 1.3,
+        "ai_adjustment": 1.0,
+        "confidence_weight": 1.0,
+        "final_score": 1.0
+      },
+      "ai_analysis": {
+        "ai_used": false,
+        "reason": "L1_column_rule_based"
+      },
+      "risk_assessment": {
+        "risk_level": "EXTREME_HIGH",
+        "risk_color": "red",
+        "risk_icon": "🔴",
+        "action_required": "immediate_review",
+        "priority": 1
+      }
+    },
+    {
+      "modification_id": "M004",
+      "cell": "G8",
+      "column_name": "关键KR对齐",
+      "column_level": "L1",
+      "old_value": "资源转化",
+      "new_value": "---",
+      "scoring_details": {
+        "base_score": 0.8,
+        "change_factor": 1.0,
+        "importance_weight": 1.0,
+        "ai_adjustment": 1.0,
+        "confidence_weight": 1.0,
+        "final_score": 0.8
+      },
+      "ai_analysis": {
+        "ai_used": false,
+        "reason": "L1_column_rule_based"
+      },
+      "risk_assessment": {
+        "risk_level": "EXTREME_HIGH",
+        "risk_color": "red",
+        "risk_icon": "🔴",
+        "action_required": "immediate_review",
+        "priority": 1
+      }
+    },
+    {
+      "modification_id": "M005",
+      "cell": "I11",
+      "column_name": "邓总指导登记（日更新）",
+      "column_level": "L2",
+      "old_value": "0813-\n1、根据周度运营数据识别出来的一般及无效笔记，分析对应的内容定位进行优化；\n2、系统功能下周一上线前，前置识别需要优化的内容定位进行调整\n3、下周一重点汇报半月度内容定位优化迭代进度、内容定位调用结果及内容结构的调整@新媒体运营－蔡悦莹\n\n0806-\n1、新产品价格向维度的内容定位需要合并同类项\n2、权重需要重新梳理与优化\n3、合规流程与常规产品过于雷同，需要在竞对双清如何调整与我们是怎么做的两个维度找到折中的平衡点进行优化\n以上事项今天结项后QQ给邓总留言确认\n\n0723-\n内容定位的更新迭代（内部复盘爆款及竞对追踪爆款）要关注打通扣子智能体的更新迭代机制\n\n0702-\n内容定位的时效维度不作为重点，现阶段可暂时忽略\n\n0623-\n1、内容定位的优化需要在现有的宏观维度框架，细化中观与微观的组合打法\n2、部分组合元素可融合在图片（第二、第三张）进行传递\n3、根据内容定位的三大kr（kr1-内部历史爆款的有效拆解与复制裂变；kr2-跨部门应知应会针对性知识点的补充及融合；kr3-外部竞对爆款笔记的有效拆解与复制裂变）形成机制进行优化与迭代，并形成计划清单进行汇报@新媒体运营－蔡悦莹\n\n0603\n1.根据五月账号内容数据，采集更新账号有效【爆款数据】进行内容复制\n2.【有效爆款】同步更新账号发布更新\n3.2号3号内容同步1号有效复盘执行操作\n3.企业号之间发布排期做好发布【时间，定位，定位】差异安排\n4.新兴国家内容同步做好发布执行规划\n\n0521\n1.顾问号内容定位可按当下模板走，对于案例与引流的内容定位执行优化同步【圈子国外ip】内容定位拆解，同步更新\n2.【圈子与国外ip】在案例的内容定位上，宏观维度是【案例笔记类型与拆解公式】，再进行维度拆解与方向展开\n3.引流内容先可再根据账号情况进行丰富调整\n\n0519-\n企业号(1.2.3号)作为公司在小红书平台的官网,由于客户普遍存在选择困难症,所以官号需要增加更多的干货内容,注重案例的有效描述与内容呈现.需要转成项目进行管理;\n\n0506-\n5-9月海运旺季内容方向新增以下两类：\n1.陪读家长人群成交：国外7月开学在5月初较多【陪读家长成交】\n2.年初定制家具后当下为家具交货期，5月资源成交会有所上升",
+      "new_value": "---0813-\n1、根据周度运营数据识别出来的一般及无效笔记，分析对应的内容定位进行优化；\n2、系统功能下周一上线前，前置识别需要优化的内容定位进行调整\n3、下周一重点汇报半月度内容定位优化迭代进度、内容定位调用结果及内容结构的调整@新媒体运营－蔡悦莹\n\n0806-\n1、新产品价格向维度的内容定位需要合并同类项\n2、权重需要重新梳理与优化\n3、合规流程与常规产品过于雷同，需要在竞对双清如何调整与我们是怎么做的两个维度找到折中的平衡点进行优化\n以上事项今天结项后QQ给邓总留言确认\n\n0723-\n内容定位的更新迭代（内部复盘爆款及竞对追踪爆款）要关注打通扣子智能体的更新迭代机制\n\n0702-\n内容定位的时效维度不作为重点，现阶段可暂时忽略\n\n0623-\n1、内容定位的优化需要在现有的宏观维度框架，细化中观与微观的组合打法\n2、部分组合元素可融合在图片（第二、第三张）进行传递\n3、根据内容定位的三大kr（kr1-内部历史爆款的有效拆解与复制裂变；kr2-跨部门应知应会针对性知识点的补充及融合；kr3-外部竞对爆款笔记的有效拆解与复制裂变）形成机制进行优化与迭代，并形成计划清单进行汇报@新媒体运营－蔡悦莹\n\n0603\n1.根据五月账号内容数据，采集更新账号有效【爆款数据】进行内容复制\n2.【有效爆款】同步更新账号发布更新\n3.2号3号内容同步1号有效复盘执行操作\n3.企业号之间发布排期做好发布【时间，定位，定位】差异安排\n4.新兴国家内容同步做好发布执行规划\n\n0521\n1.顾问号内容定位可按当下模板走，对于案例与引流的内容定位执行优化同步【圈子国外ip】内容定位拆解，同步更新\n2.【圈子与国外ip】在案例的内容定位上，宏观维度是【案例笔记类型与拆解公式】，再进行维度拆解与方向展开\n3.引流内容先可再根据账号情况进行丰富调整\n\n0519-\n企业号(1.2.3号)作为公司在小红书平台的官网,由于客户普遍存在选择困难症,所以官号需要增加更多的干货内容,注重案例的有效描述与内容呈现.需要转成项目进行管理;\n\n0506-\n5-9月海运旺季内容方向新增以下两类：\n1.陪读家长人群成交：国外7月开学在5月初较多【陪读家长成交】\n2.年初定制家具后当下为家具交货期，5月资源成交会有所上升",
+      "scoring_details": {
+        "base_score": 0.5,
+        "change_factor": 0.5,
+        "importance_weight": 1.15,
+        "ai_adjustment": 0.6,
+        "confidence_weight": 1.0,
+        "final_score": 0.6
+      },
+      "ai_analysis": {
+        "ai_used": true,
+        "ai_decision": "APPROVE",
+        "ai_confidence": 90.0,
+        "layer1_result": {
+          "judgment": "SAFE",
+          "confidence": 90.0,
+          "reason": "日期格式"
+        },
+        "layer2_result": null
+      },
+      "risk_assessment": {
+        "risk_level": "HIGH",
+        "risk_color": "orange",
+        "risk_icon": "🟠",
+        "action_required": "manual_review",
+        "priority": 2
+      }
+    },
+    {
+      "modification_id": "M006",
+      "cell": "J12",
+      "column_name": "负责人",
+      "column_level": "L2",
+      "old_value": "赖铁荔",
+      "new_value": "赖铁荔,各责任人",
+      "scoring_details": {
+        "base_score": 0.5,
+        "change_factor": 1.0,
+        "importance_weight": 1.2,
+        "ai_adjustment": 0.8,
+        "confidence_weight": 0.9,
+        "final_score": 0.6
+      },
+      "ai_analysis": {
+        "ai_used": true,
+        "ai_decision": "CONDITIONAL",
+        "ai_confidence": 75,
+        "layer1_result": {
+          "judgment": "RISKY",
+          "confidence": 80.0,
+          "reason": "职责扩大"
+        },
+        "layer2_result": {
+          "risk_level": "MEDIUM",
+          "decision": "CONDITIONAL",
+          "confidence": 75,
+          "key_risks": [
+            "职责界定模糊风险：'各责任人'表述不明确可能导致执行主体混淆",
+            "协作效率风险：多责任人机制可能降低决策效率",
+            "追责困难风险：出现问题时难以明确具体责任归属"
+          ],
+          "recommendation": "建议：1.明确列出所有责任人的具体姓名 2.补充责任分工说明文档 3.设置第一责任人机制（可保留赖铁荔作为主负责人）4.与相关干系人确认该变更"
+        }
+      },
+      "risk_assessment": {
+        "risk_level": "HIGH",
+        "risk_color": "orange",
+        "risk_icon": "🟠",
+        "action_required": "manual_review",
+        "priority": 2
+      }
+    },
+    {
+      "modification_id": "M007",
+      "cell": "M14",
+      "column_name": "预计完成时间",
+      "column_level": "L1",
+      "old_value": "",
+      "new_value": "2025/9/28",
+      "scoring_details": {
+        "base_score": 0.8,
+        "change_factor": 1.0,
+        "importance_weight": 1.2,
+        "ai_adjustment": 1.0,
+        "confidence_weight": 1.0,
+        "final_score": 0.96
+      },
+      "ai_analysis": {
+        "ai_used": false,
+        "reason": "L1_column_rule_based"
+      },
+      "risk_assessment": {
+        "risk_level": "EXTREME_HIGH",
+        "risk_color": "red",
+        "risk_icon": "🔴",
+        "action_required": "immediate_review",
+        "priority": 1
+      }
+    }
+  ],
+  "summary": {
+    "total_score": 5.16,
+    "average_score": 0.737,
+    "risk_distribution": {
+      "HIGH": 4,
+      "EXTREME_HIGH": 3
+    },
+    "ai_usage": {
+      "total_ai_calls": 4,
+      "layer1_passes": 1,
+      "layer2_analyses": 3
+    }
+  }
+}

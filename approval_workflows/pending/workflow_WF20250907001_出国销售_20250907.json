@@ -1,0 +1,123 @@
+{
+  "workflow_id": "WF-20250907-001",
+  "table_name": "副本-测试版本-出国销售计划表-工作表1",
+  "source_analysis": "semantic_results/2025_W36/semantic_analysis_出国销售计划表_20250907_224500.json",
+  "created_time": "2025-09-07 22:45:00",
+  "status": "PENDING",
+  "pending_approvals": [
+    {
+      "approval_id": "APR-001",
+      "modification_id": "M001",
+      "cell": "B4",
+      "column": "项目类型",
+      "change_summary": {
+        "from": "目标管理",
+        "to": "体系建设",
+        "type": "性质改变"
+      },
+      "risk_assessment": {
+        "level": "MEDIUM",
+        "confidence": 85,
+        "key_risks": [
+          "项目性质改变",
+          "可能影响资源分配"
+        ]
+      },
+      "approval_requirements": {
+        "approver_role": "项目经理",
+        "approver_name": null,
+        "deadline": "2025-09-08 22:45:00",
+        "escalation_to": "部门总监",
+        "escalation_deadline": "2025-09-09 22:45:00"
+      },
+      "status": "PENDING",
+      "comments": [],
+      "ai_recommendation": "建议项目负责人确认变更原因，并评估对后续执行计划的影响"
+    },
+    {
+      "approval_id": "APR-002",
+      "modification_id": "M003",
+      "cell": "F4",
+      "column": "关键KR对齐",
+      "change_summary": {
+        "from": "资源转化",
+        "to": "---",
+        "type": "内容删除"
+      },
+      "risk_assessment": {
+        "level": "HIGH",
+        "confidence": 92,
+        "key_risks": [
+          "删除关键目标",
+          "可能影响绩效考核"
+        ]
+      },
+      "approval_requirements": {
+        "approver_role": "部门主管",
+        "approver_name": null,
+        "deadline": "2025-09-08 22:45:00",
+        "escalation_to": "副总裁",
+        "escalation_deadline": "2025-09-09 22:45:00"
+      },
+      "status": "PENDING",
+      "comments": [],
+      "ai_recommendation": "需要确认是否已达成目标或转移到其他项目"
+    }
+  ],
+  "auto_approved": [
+    {
+      "modification_id": "M002",
+      "cell": "D4",
+      "column": "任务发起时间",
+      "change": "2025/3/12 → 2025/3/13",
+      "reason": "日期微调，风险极低",
+      "approved_time": "2025-09-07 22:45:01"
+    },
+    {
+      "modification_id": "M004",
+      "cell": "H4",
+      "column": "邓总指导登记（日更新）",
+      "change": "格式调整（添加---前缀）",
+      "reason": "仅为格式调整，内容未改变",
+      "approved_time": "2025-09-07 22:45:01"
+    },
+    {
+      "modification_id": "M005",
+      "cell": "I4",
+      "column": "负责人",
+      "change": "赖铁荔 → 赖铁荔,各责任人",
+      "reason": "增加协助人员，主负责人未变",
+      "approved_time": "2025-09-07 22:45:01"
+    },
+    {
+      "modification_id": "M006",
+      "cell": "M4",
+      "column": "预计完成时间",
+      "change": "空 → 2025/9/28",
+      "reason": "补充缺失信息",
+      "approved_time": "2025-09-07 22:45:01"
+    }
+  ],
+  "workflow_history": [
+    {
+      "timestamp": "2025-09-07 22:45:00",
+      "action": "WORKFLOW_CREATED",
+      "actor": "AI_SYSTEM",
+      "details": "工作流创建，包含2个待审批项，4个自动通过项"
+    }
+  ],
+  "notification_sent": [
+    {
+      "to": "project_manager@company.com",
+      "type": "EMAIL",
+      "subject": "审批请求：项目类型变更",
+      "sent_time": "2025-09-07 22:46:00"
+    },
+    {
+      "to": "department_head@company.com",
+      "type": "EMAIL",
+      "subject": "高风险审批：关键KR删除",
+      "sent_time": "2025-09-07 22:46:00"
+    }
+  ]
+}

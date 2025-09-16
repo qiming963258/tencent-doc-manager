@@ -1,0 +1,32 @@
+{
+  "workflow_id": "WF-L2-20250915_151903",
+  "created_time": "2025-09-15 15:19:03",
+  "pending_approvals": [
+    {
+      "modification_id": "M001",
+      "cell": "I68",
+      "column": "负责人",
+      "old_value": "朱瀚桔",
+      "new_value": "",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 85.0,
+        "reason": "删除负责人"
+      },
+      "layer2_result": {
+        "risk_level": "HIGH",
+        "decision": "REVIEW",
+        "confidence": 85,
+        "key_risks": [
+          "负责人信息被清空，可能导致任务无人负责",
+          "关键责任人不明确会影响项目进度追踪",
+          "团队协作可能因职责不清受到影响"
+        ],
+        "recommendation": "建议立即补充新的负责人信息，或恢复原负责人。如需变更负责人，应确保:1)新负责人已确认接手 2)完成工作交接 3)相关方已被告知 4)更新相关工作计划。在未确定新负责人前应暂缓批准此修改。"
+      },
+      "final_decision": "REVIEW",
+      "approval_required": true
+    }
+  ],
+  "auto_approved": []
+}

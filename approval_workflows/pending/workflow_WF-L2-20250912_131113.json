@@ -1,0 +1,31 @@
+{
+  "workflow_id": "WF-L2-20250912_131113",
+  "created_time": "2025-09-12 13:11:13",
+  "pending_approvals": [
+    {
+      "modification_id": "M001",
+      "cell": "J12",
+      "column": "负责人",
+      "old_value": "赖铁荔",
+      "new_value": "赖铁荔,各责任人",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 80.0,
+        "reason": "多人负责"
+      },
+      "layer2_result": {
+        "risk_level": "MEDIUM",
+        "decision": "REVIEW",
+        "confidence": 75,
+        "key_risks": [
+          "责任界定模糊化",
+          "多头管理风险"
+        ],
+        "recommendation": "建议明确界定'各责任人'的具体成员名单及其分管职责，避免出现责任真空或重叠。如需保留弹性，需补充说明条款：1)明确主责人(赖铁荔)的最终决策权；2)建立责任矩阵说明具体场景下的分工规则。修改后需重新评估。"
+      },
+      "final_decision": "REVIEW",
+      "approval_required": true
+    }
+  ],
+  "auto_approved": []
+}

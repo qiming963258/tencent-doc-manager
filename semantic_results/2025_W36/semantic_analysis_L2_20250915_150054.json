@@ -1,0 +1,62 @@
+{
+  "metadata": {
+    "analysis_time": "2025-09-15 15:00:54",
+    "total_modifications": 1,
+    "layer1_passed": 0,
+    "layer2_analyzed": 1,
+    "processing_time": "17.5s"
+  },
+  "results": [
+    {
+      "modification_id": "M001",
+      "cell": "J49",
+      "column": "协助人",
+      "old_value": "徐志杰,朱瀚桔,杨佳玲,曾利萍,魏经理",
+      "new_value": "赖铁荔",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 80.0,
+        "reason": "人员变更"
+      },
+      "layer2_result": {
+        "risk_level": "HIGH",
+        "decision": "REVIEW",
+        "confidence": 85,
+        "key_risks": [
+          "原协助团队被完全替换，可能丢失关键人员积累的项目知识和经验",
+          "单个协助人可能无法承担原团队的工作量，导致任务延误",
+          "移除魏经理可能影响跨部门协调能力"
+        ],
+        "recommendation": "建议进行以下操作：1) 确认赖铁荔是否具备原团队所有必要技能；2) 评估单个协助人能否满足项目需求；3) 制定知识转移计划确保关键信息不丢失；4) 如必须修改，建议保留至少一名原团队成员协助过渡",
+        "analysis": {
+          "change_type": "内容删减+性质改变",
+          "impact_scores": {
+            "project_objectives": 7,
+            "execution_plan": 8,
+            "team_collaboration": 9,
+            "delivery_timeline": 7
+          },
+          "special_checks": {
+            "assistant_coverage": "原5人团队缩减为1人",
+            "role_specialization": "未确认新协助人是否能覆盖所有原团队专业领域",
+            "hierarchy_change": "移除了经理级人员"
+          }
+        }
+      },
+      "final_decision": "REVIEW",
+      "approval_required": true
+    }
+  ],
+  "summary": {
+    "approved": 0,
+    "conditional": 0,
+    "review_required": 1,
+    "rejected": 0,
+    "risk_distribution": {
+      "LOW": 0,
+      "MEDIUM": 0,
+      "HIGH": 1,
+      "CRITICAL": 0
+    }
+  }
+}

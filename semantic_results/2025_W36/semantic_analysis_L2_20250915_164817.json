@@ -1,0 +1,49 @@
+{
+  "metadata": {
+    "analysis_time": "2025-09-15 16:48:17",
+    "total_modifications": 1,
+    "layer1_passed": 0,
+    "layer2_analyzed": 1,
+    "processing_time": "14.2s"
+  },
+  "results": [
+    {
+      "modification_id": "M001",
+      "cell": "H15",
+      "column": "具体计划内容",
+      "old_value": "未知资源的判定标准录入标准",
+      "new_value": "1、回国的成交管理与KR设定调整，从挖需求，解疑惑，抛方案，促成交四个维度，具体梳理出来；（这里需要注重帮扶）\n2、回国的技能体系框架搭建与建立，补充相关内容，迭代原有策略；\n3、月度计划需要与成交K",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 90.0,
+        "reason": "内容替换"
+      },
+      "layer2_result": {
+        "risk_level": "HIGH",
+        "decision": "REVIEW",
+        "confidence": 80,
+        "key_risks": [
+          "计划内容从模糊标准转变为具体任务，可能导致资源分配压力增加",
+          "新增三个维度的详细工作要求，可能超出原有项目范围",
+          "对帮扶要求的强调可能改变团队工作重点",
+          "技能体系框架搭建属于重大新增工作内容"
+        ],
+        "recommendation": "建议组织专项评审会，重点评估：1)新增内容与项目目标的匹配度 2)资源保障方案 3)时间线调整方案。特别是技能体系框架搭建部分需要单独评估实施可行性。"
+      },
+      "final_decision": "REVIEW",
+      "approval_required": true
+    }
+  ],
+  "summary": {
+    "approved": 0,
+    "conditional": 0,
+    "review_required": 1,
+    "rejected": 0,
+    "risk_distribution": {
+      "LOW": 0,
+      "MEDIUM": 0,
+      "HIGH": 1,
+      "CRITICAL": 0
+    }
+  }
+}

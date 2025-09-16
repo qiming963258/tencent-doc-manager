@@ -1,0 +1,48 @@
+{
+  "metadata": {
+    "analysis_time": "2025-09-12 01:48:55",
+    "total_modifications": 1,
+    "layer1_passed": 0,
+    "layer2_analyzed": 1,
+    "processing_time": "8.3s"
+  },
+  "results": [
+    {
+      "modification_id": "M001",
+      "cell": "E15",
+      "column": "邓总指导登记（日更新）",
+      "old_value": "已审批",
+      "new_value": "待修改",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 75.0,
+        "reason": "状态回退"
+      },
+      "layer2_result": {
+        "risk_level": "MEDIUM",
+        "decision": "REVIEW",
+        "confidence": 75,
+        "key_risks": [
+          "状态回退可能导致审批流程重复",
+          "可能影响高层领导对项目进度的判断",
+          "日更新机制可能被打乱"
+        ],
+        "recommendation": "1. 核查状态变更的正当理由 2. 确认是否需要重新走审批流程 3. 更新邓总指导登记表的版本控制 4. 通知相关干系人状态变更情况"
+      },
+      "final_decision": "REVIEW",
+      "approval_required": true
+    }
+  ],
+  "summary": {
+    "approved": 0,
+    "conditional": 0,
+    "review_required": 1,
+    "rejected": 0,
+    "risk_distribution": {
+      "LOW": 0,
+      "MEDIUM": 0,
+      "HIGH": 1,
+      "CRITICAL": 0
+    }
+  }
+}

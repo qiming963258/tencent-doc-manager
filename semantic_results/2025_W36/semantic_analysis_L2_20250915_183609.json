@@ -1,0 +1,49 @@
+{
+  "metadata": {
+    "analysis_time": "2025-09-15 18:36:09",
+    "total_modifications": 1,
+    "layer1_passed": 0,
+    "layer2_analyzed": 1,
+    "processing_time": "13.3s"
+  },
+  "results": [
+    {
+      "modification_id": "M001",
+      "cell": "J32",
+      "column": "负责人",
+      "old_value": "赖铁荔",
+      "new_value": "",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 80.0,
+        "reason": "关键人缺失"
+      },
+      "layer2_result": {
+        "risk_level": "CRITICAL",
+        "decision": "REVIEW",
+        "confidence": 90,
+        "key_risks": [
+          "关键角色清空导致责任真空",
+          "项目工作可能停滞",
+          "团队协作中断风险",
+          "项目监管缺失"
+        ],
+        "recommendation": "1. 必须立即确认新的负责人人选\n2. 需进行工作交接备案\n3. 应评估过渡期间的应急方案\n4. 建议在3个工作日内完成负责人补位"
+      },
+      "final_decision": "REVIEW",
+      "approval_required": true
+    }
+  ],
+  "summary": {
+    "approved": 0,
+    "conditional": 0,
+    "review_required": 1,
+    "rejected": 0,
+    "risk_distribution": {
+      "LOW": 0,
+      "MEDIUM": 0,
+      "HIGH": 1,
+      "CRITICAL": 0
+    }
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "workflow_id": "WF-L2-20250908_142142",
+  "created_time": "2025-09-08 14:21:42",
+  "pending_approvals": [],
+  "auto_approved": [
+    {
+      "modification_id": "M001",
+      "cell": "I11",
+      "column": "邓总指导登记（日更新）",
+      "old_value": "0813-\n1、根据周度运营数据识别出来的一般及无效笔记，分析对应的内容定位进行优化；\n2、系统功能下周一上线前，前置识别需要优化的内容定位进行调整\n3、下周一重点汇报半月度内容定位优化迭代进度、内容",
+      "new_value": "---0813-\n1、根据周度运营数据识别出来的一般及无效笔记，分析对应的内容定位进行优化；\n2、系统功能下周一上线前，前置识别需要优化的内容定位进行调整\n3、下周一重点汇报半月度内容定位优化迭代进度",
+      "layer1_result": {
+        "judgment": "SAFE",
+        "confidence": 90.0,
+        "reason": "格式微调"
+      },
+      "layer2_result": null,
+      "final_decision": "APPROVE",
+      "approval_required": false
+    }
+  ]
+}

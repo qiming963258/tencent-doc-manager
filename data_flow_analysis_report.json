@@ -1,0 +1,407 @@
+{
+  "timestamp": "2025-08-20T19:45:00",
+  "analysis_type": "complete_data_flow_tracking",
+  "stages": {
+    "csv_comparison": {
+      "total_comparison_files": 5,
+      "files_analyzed": {
+        "test_comparison_comparison.json": {
+          "differences_count": 1,
+          "source_columns": 4,
+          "source_rows": 4,
+          "column_mapping": {
+            "mapping": {
+              "id": "id",
+              "name": "name",
+              "department": "department",
+              "status": "status"
+            },
+            "confidence_scores": {
+              "id": 1.0,
+              "name": 1.0,
+              "department": 1.0,
+              "status": 1.0
+            },
+            "mapping_rate": 100.0
+          },
+          "position_distribution": {
+            "row_range": [
+              2,
+              2
+            ],
+            "column_range": [
+              4,
+              4
+            ],
+            "risk_score_range": [
+              0.2,
+              0.2
+            ]
+          }
+        },
+        "integration_test_comparison.json": {
+          "differences_count": 1,
+          "source_columns": 4,
+          "source_rows": 4,
+          "column_mapping": {
+            "mapping": {
+              "id": "id",
+              "name": "name",
+              "department": "department",
+              "status": "status"
+            },
+            "confidence_scores": {
+              "id": 1.0,
+              "name": 1.0,
+              "department": 1.0,
+              "status": 1.0
+            },
+            "mapping_rate": 100.0
+          },
+          "position_distribution": {
+            "row_range": [
+              2,
+              2
+            ],
+            "column_range": [
+              4,
+              4
+            ],
+            "risk_score_range": [
+              0.2,
+              0.2
+            ]
+          }
+        },
+        "heatmap_test_comparison.json": {
+          "differences_count": 1,
+          "source_columns": 4,
+          "source_rows": 4,
+          "column_mapping": {
+            "mapping": {
+              "id": "id",
+              "name": "name",
+              "department": "department",
+              "status": "status"
+            },
+            "confidence_scores": {
+              "id": 1.0,
+              "name": 1.0,
+              "department": 1.0,
+              "status": 1.0
+            },
+            "mapping_rate": 100.0
+          },
+          "position_distribution": {
+            "row_range": [
+              2,
+              2
+            ],
+            "column_range": [
+              4,
+              4
+            ],
+            "risk_score_range": [
+              0.2,
+              0.2
+            ]
+          }
+        },
+        "ui_refresh_test_comparison.json": {
+          "differences_count": 2,
+          "source_columns": 4,
+          "source_rows": 5,
+          "column_mapping": {
+            "mapping": {
+              "id": "id",
+              "负责人": "负责人",
+              "部门": "部门",
+              "状态": "状态"
+            },
+            "confidence_scores": {
+              "id": 1.0,
+              "负责人": 1.0,
+              "部门": 1.0,
+              "状态": 1.0
+            },
+            "mapping_rate": 100.0
+          },
+          "position_distribution": {
+            "row_range": [
+              2,
+              3
+            ],
+            "column_range": [
+              2,
+              4
+            ],
+            "risk_score_range": [
+              0.2,
+              0.72
+            ]
+          }
+        },
+        "real_test_comparison.json": {
+          "differences_count": 5,
+          "source_columns": 5,
+          "source_rows": 5,
+          "column_mapping": {
+            "mapping": {
+              "id": "id",
+              "负责人": "负责人",
+              "部门": "部门",
+              "状态": "状态",
+              "工资": "工资"
+            },
+            "confidence_scores": {
+              "id": 1.0,
+              "负责人": 1.0,
+              "部门": 1.0,
+              "状态": 1.0,
+              "工资": 1.0
+            },
+            "mapping_rate": 100.0
+          },
+          "position_distribution": {
+            "row_range": [
+              2,
+              4
+            ],
+            "column_range": [
+              2,
+              5
+            ],
+            "risk_score_range": [
+              0.2,
+              0.72
+            ]
+          }
+        }
+      },
+      "data_structures": {},
+      "mapping_patterns": {}
+    },
+    "mapping_transformation": {
+      "current_mapping_logic": {
+        "row_mapping": "row = min(diff.get('行号', 1) - 1, 29)",
+        "col_mapping": "col = min(diff.get('列索引', 1) - 1, 18)",
+        "intensity_mapping": "heatmap_matrix[row][col] = max(current_value, risk_score)",
+        "target_matrix_size": "30x19"
+      },
+      "problems_identified": [],
+      "proposed_solutions": []
+    },
+    "heatmap_generation": {
+      "heatmap_files_found": {
+        "real_time_heatmap.json": {
+          "matrix_dimensions": [
+            30,
+            19
+          ],
+          "value_range": [
+            0.05,
+            0.8
+          ],
+          "algorithm": "real_change_based_v2",
+          "data_source": "real_user_test_automatic",
+          "generation_time": "2025-08-20T18:21:55.713015",
+          "changes_applied": 5,
+          "hotspots": {
+            "total_hotspots": 9,
+            "max_intensity": 0.8,
+            "hotspot_positions": [
+              {
+                "position": [
+                  1,
+                  2
+                ],
+                "intensity": 0.5333333333333334
+              },
+              {
+                "position": [
+                  2,
+                  1
+                ],
+                "intensity": 0.5333333333333334
+              },
+              {
+                "position": [
+                  2,
+                  2
+                ],
+                "intensity": 0.8
+              },
+              {
+                "position": [
+                  2,
+                  3
+                ],
+                "intensity": 0.5333333333333334
+              },
+              {
+                "position": [
+                  2,
+                  5
+                ],
+                "intensity": 0.6
+              },
+              {
+                "position": [
+                  3,
+                  2
+                ],
+                "intensity": 0.5333333333333334
+              },
+              {
+                "position": [
+                  3,
+                  4
+                ],
+                "intensity": 0.6
+              },
+              {
+                "position": [
+                  3,
+                  5
+                ],
+                "intensity": 0.6
+              },
+              {
+                "position": [
+                  4,
+                  5
+                ],
+                "intensity": 0.6
+              }
+            ]
+          }
+        },
+        "ui_params_real_test_20250819_224427.json": {
+          "matrix_dimensions": [
+            30,
+            19
+          ],
+          "value_range": [
+            0.396,
+            0.991
+          ],
+          "algorithm": "unknown",
+          "data_source": "real_test_analysis",
+          "generation_time": "2025-08-19T22:44:27.060300",
+          "changes_applied": 0,
+          "hotspots": {
+            "total_hotspots": 421,
+            "max_intensity": 0.991,
+            "hotspot_positions": [
+              {
+                "position": [
+                  0,
+                  0
+                ],
+                "intensity": 0.823
+              },
+              {
+                "position": [
+                  0,
+                  1
+                ],
+                "intensity": 0.87
+              },
+              {
+                "position": [
+                  0,
+                  2
+                ],
+                "intensity": 0.824
+              },
+              {
+                "position": [
+                  0,
+                  3
+                ],
+                "intensity": 0.914
+              },
+              {
+                "position": [
+                  0,
+                  4
+                ],
+                "intensity": 0.749
+              },
+              {
+                "position": [
+                  0,
+                  5
+                ],
+                "intensity": 0.816
+              },
+              {
+                "position": [
+                  0,
+                  7
+                ],
+                "intensity": 0.582
+              },
+              {
+                "position": [
+                  0,
+                  9
+                ],
+                "intensity": 0.683
+              },
+              {
+                "position": [
+                  0,
+                  10
+                ],
+                "intensity": 0.636
+              },
+              {
+                "position": [
+                  0,
+                  11
+                ],
+                "intensity": 0.658
+              }
+            ]
+          }
+        }
+      },
+      "matrix_analysis": {},
+      "generation_algorithms": []
+    },
+    "consistency_verification": {
+      "issues_found": [
+        "变更数量不一致: test_comparison_comparison.json(1) vs real_time_heatmap.json(5)",
+        "变更数量不一致: test_comparison_comparison.json(1) vs ui_params_real_test_20250819_224427.json(0)",
+        "变更数量不一致: integration_test_comparison.json(1) vs real_time_heatmap.json(5)",
+        "变更数量不一致: integration_test_comparison.json(1) vs ui_params_real_test_20250819_224427.json(0)",
+        "变更数量不一致: heatmap_test_comparison.json(1) vs real_time_heatmap.json(5)",
+        "变更数量不一致: heatmap_test_comparison.json(1) vs ui_params_real_test_20250819_224427.json(0)",
+        "变更数量不一致: ui_refresh_test_comparison.json(2) vs real_time_heatmap.json(5)",
+        "变更数量不一致: ui_refresh_test_comparison.json(2) vs ui_params_real_test_20250819_224427.json(0)",
+        "变更数量不一致: real_test_comparison.json(5) vs ui_params_real_test_20250819_224427.json(0)"
+      ],
+      "data_flow_integrity": "broken",
+      "recommendations": []
+    }
+  },
+  "diagnosis": {
+    "critical_issues": [
+      "数据流程存在严重断裂"
+    ],
+    "data_flow_status": "critical",
+    "root_cause_analysis": [
+      "实际CSV列数与标准19列不匹配",
+      "行数动态变化但矩阵固定为30行",
+      "映射算法过于简化，未考虑数据语义",
+      "缺少中间转换层处理数据差异"
+    ],
+    "action_items": [
+      "重新设计自适应映射算法",
+      "建立语义列映射系统",
+      "实现动态矩阵维度调整",
+      "添加数据一致性验证机制"
+    ]
+  }
+}

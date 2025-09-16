@@ -1,0 +1,32 @@
+{
+  "workflow_id": "WF-L2-20250915_142405",
+  "created_time": "2025-09-15 14:24:05",
+  "pending_approvals": [
+    {
+      "modification_id": "M001",
+      "cell": "K11",
+      "column": "监督人",
+      "old_value": "邓总",
+      "new_value": "魏志广",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 75.0,
+        "reason": "负责人变更"
+      },
+      "layer2_result": {
+        "risk_level": "MEDIUM",
+        "decision": "REVIEW",
+        "confidence": 75,
+        "key_risks": [
+          "监督人变更可能导致项目监督风格和标准变化",
+          "新监督人可能需要时间熟悉项目情况",
+          "团队需要适应新的领导风格"
+        ],
+        "recommendation": "建议：1. 确保新旧监督人进行充分交接 2. 组织团队与新监督人见面会 3. 更新项目中所有相关文档和监督流程 4. 监控初期过渡情况"
+      },
+      "final_decision": "REVIEW",
+      "approval_required": true
+    }
+  ],
+  "auto_approved": []
+}

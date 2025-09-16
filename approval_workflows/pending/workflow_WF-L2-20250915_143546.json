@@ -1,0 +1,48 @@
+{
+  "workflow_id": "WF-L2-20250915_143546",
+  "created_time": "2025-09-15 14:35:46",
+  "pending_approvals": [
+    {
+      "modification_id": "M001",
+      "cell": "I24",
+      "column": "负责人",
+      "old_value": "蔡悦莹",
+      "new_value": "",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 80.0,
+        "reason": "关键人缺失"
+      },
+      "layer2_result": {
+        "change_analysis": {
+          "change_type": "content_deletion",
+          "original_value": "蔡悦莹",
+          "new_value": "空值"
+        },
+        "impact_assessment": {
+          "project_objectives": 5,
+          "execution_plan": 6,
+          "team_coordination": 7,
+          "delivery_timeline": 4
+        },
+        "special_checks": {
+          "responsibility_gap": true,
+          "knowledge_transfer": false,
+          "approval_chain": "需确认"
+        },
+        "risk_level": "MEDIUM",
+        "decision": "REVIEW",
+        "confidence": 75,
+        "key_risks": [
+          "负责人职责真空",
+          "任务执行连续性中断",
+          "团队沟通效率下降"
+        ],
+        "recommendation": "建议执行以下步骤后重新提交修改：1. 指定临时负责人 2. 完成工作交接文档 3. 邮件报备变更原因至项目管理办公室"
+      },
+      "final_decision": "REVIEW",
+      "approval_required": true
+    }
+  ],
+  "auto_approved": []
+}

@@ -1,0 +1,19 @@
+{
+  "test_id": "heatmap_system_test_20250820_175927",
+  "timestamp": "2025-08-20T17:59:27.832500",
+  "heatmap_data": [
+    {
+      "row": 2,
+      "col": 4,
+      "intensity": 0.2,
+      "risk_level": "L3",
+      "change_type": "modified",
+      "tooltip": "原值: 正常 -> 新值: 离职"
+    }
+  ],
+  "metadata": {
+    "total_changes": 1,
+    "source_document": "https://docs.qq.com/sheet/mock_heatmap_test_doc",
+    "comparison_type": "baseline_vs_current"
+  }
+}

@@ -1,0 +1,63 @@
+{
+  "metadata": {
+    "analysis_time": "2025-09-12 01:48:47",
+    "total_modifications": 1,
+    "layer1_passed": 0,
+    "layer2_analyzed": 1,
+    "processing_time": "19.6s"
+  },
+  "results": [
+    {
+      "modification_id": "M001",
+      "cell": "B10",
+      "column": "具体计划内容",
+      "old_value": "开发新功能",
+      "new_value": "市场推广活动",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 80.0,
+        "reason": "重大调整"
+      },
+      "layer2_result": {
+        "risk_level": "HIGH",
+        "decision": "REVIEW",
+        "confidence": 85,
+        "key_risks": [
+          "从开发活动转向市场活动会导致项目重心偏离",
+          "需要重新分配资源和调整团队结构",
+          "可能影响产品功能交付时间表",
+          "需要重新评估市场与开发的协同关系"
+        ],
+        "recommendation": "建议召开跨部门协调会，评估该变更对项目整体规划的影响。需确保：1)市场团队具备执行能力 2)开发计划相应调整 3)更新项目Roadmap 4)获得相关干系人认可",
+        "analysis": {
+          "change_nature": "性质改变",
+          "impact_assessment": {
+            "project_objectives": 7,
+            "execution_plan": 8,
+            "team_collaboration": 6,
+            "delivery_timeline": 7
+          },
+          "special_checks": {
+            "content_consistency": "与项目初始目标存在潜在冲突",
+            "resource_implications": "需重新分配预算和人力资源",
+            "dependency_impact": "可能影响下游开发任务"
+          }
+        }
+      },
+      "final_decision": "REVIEW",
+      "approval_required": true
+    }
+  ],
+  "summary": {
+    "approved": 0,
+    "conditional": 0,
+    "review_required": 1,
+    "rejected": 0,
+    "risk_distribution": {
+      "LOW": 0,
+      "MEDIUM": 0,
+      "HIGH": 1,
+      "CRITICAL": 0
+    }
+  }
+}

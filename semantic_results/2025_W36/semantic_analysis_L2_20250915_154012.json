@@ -1,0 +1,47 @@
+{
+  "metadata": {
+    "analysis_time": "2025-09-15 15:40:12",
+    "total_modifications": 1,
+    "layer1_passed": 0,
+    "layer2_analyzed": 1,
+    "processing_time": "11.4s"
+  },
+  "results": [
+    {
+      "modification_id": "M001",
+      "cell": "G90",
+      "column": "具体计划内容",
+      "old_value": "【经理层】\n优化日度工作日历（微观）与工作台（中观）进行打通",
+      "new_value": "定价与报价系统优化",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 80.0,
+        "reason": "核心变更"
+      },
+      "layer2_result": {
+        "risk_level": "MEDIUM",
+        "decision": "REVIEW",
+        "confidence": 75,
+        "key_risks": [
+          "性质改变：从运营优化类变更为系统开发类，可能导致技术资源重新分配",
+          "优先级冲突：新计划可能与现有IT开发计划产生资源竞争"
+        ],
+        "recommendation": "建议组织专项评审会：1.确认该变更是否经过产品经理和技术负责人双重审批 2.评估对现有季度开发计划的影响 3.明确所需增加的开发资源（特别是报价引擎相关技术专家）"
+      },
+      "final_decision": "REVIEW",
+      "approval_required": true
+    }
+  ],
+  "summary": {
+    "approved": 0,
+    "conditional": 0,
+    "review_required": 1,
+    "rejected": 0,
+    "risk_distribution": {
+      "LOW": 0,
+      "MEDIUM": 0,
+      "HIGH": 1,
+      "CRITICAL": 0
+    }
+  }
+}

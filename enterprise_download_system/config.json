@@ -1,0 +1,49 @@
+{
+  "system": {
+    "name": "腾讯文档极简批量下载器",
+    "version": "1.0",
+    "author": "Claude Code AI"
+  },
+  "browser": {
+    "headless": false,
+    "timeout": 30000,
+    "viewport": {
+      "width": 1920,
+      "height": 1080
+    }
+  },
+  "download": {
+    "directory": "downloads",
+    "max_scroll_attempts": 50,
+    "scroll_wait_time": 2000,
+    "download_wait_time": 1500,
+    "stable_scroll_count": 3
+  },
+  "selectors": {
+    "filter_button": [
+      "button.desktop-filter-button-inner-pc",
+      "button[class*=\"filter-button\"]",
+      ".desktop-filter-button-pc",
+      "text=筛选"
+    ],
+    "file_items": [
+      ".desktop-file-list-item",
+      ".file-item", 
+      ".document-item",
+      "[data-testid*=\"file\"]",
+      ".desktop-list-view-item"
+    ],
+    "download_menu": [
+      "text=下载",
+      ".desktop-menu-item-content:has-text(\"下载\")",
+      "[data-testid*=\"download\"]",
+      ".menu-item:has-text(\"下载\")"
+    ],
+    "login_indicators": [
+      ".desktop-user-info",
+      ".user-avatar",
+      "[data-testid=\"user-info\"]",
+      ".header-user"
+    ]
+  }
+}

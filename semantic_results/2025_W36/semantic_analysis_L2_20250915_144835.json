@@ -1,0 +1,48 @@
+{
+  "metadata": {
+    "analysis_time": "2025-09-15 14:48:35",
+    "total_modifications": 1,
+    "layer1_passed": 0,
+    "layer2_analyzed": 1,
+    "processing_time": "13.4s"
+  },
+  "results": [
+    {
+      "modification_id": "M001",
+      "cell": "G37",
+      "column": "具体计划内容",
+      "old_value": "建立晒单项目的目标管理体系在线表单",
+      "new_value": "收款管理",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 80.0,
+        "reason": "目标变更"
+      },
+      "layer2_result": {
+        "risk_level": "MEDIUM",
+        "decision": "REVIEW",
+        "confidence": 75,
+        "key_risks": [
+          "性质改变风险：从目标管理体系建设转向收款管理，可能偏离项目原定方向",
+          "执行计划变更风险：需重新评估相关资源配置和工作优先级",
+          "协作风险：财务部门可能未做好接入准备"
+        ],
+        "recommendation": "建议召开变更评审会：1.确认收款管理是否属于本项目范围 2.评估财务系统对接可行性 3.更新相关方影响分析。需补充实施细节和验收标准后方可批准。"
+      },
+      "final_decision": "REVIEW",
+      "approval_required": true
+    }
+  ],
+  "summary": {
+    "approved": 0,
+    "conditional": 0,
+    "review_required": 1,
+    "rejected": 0,
+    "risk_distribution": {
+      "LOW": 0,
+      "MEDIUM": 0,
+      "HIGH": 1,
+      "CRITICAL": 0
+    }
+  }
+}

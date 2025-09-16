@@ -1,0 +1,47 @@
+{
+  "metadata": {
+    "analysis_time": "2025-09-15 15:12:28",
+    "total_modifications": 1,
+    "layer1_passed": 0,
+    "layer2_analyzed": 1,
+    "processing_time": "12.8s"
+  },
+  "results": [
+    {
+      "modification_id": "M001",
+      "cell": "K61",
+      "column": "监督人",
+      "old_value": "徐志杰",
+      "new_value": "邓俊",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 75.0,
+        "reason": "人事变更"
+      },
+      "layer2_result": {
+        "risk_level": "MEDIUM",
+        "decision": "CONDITIONAL",
+        "confidence": 75,
+        "key_risks": [
+          "监督人变更可能导致责任交接不清",
+          "新监督人可能需要时间熟悉项目情况"
+        ],
+        "recommendation": "建议安排原监督人(徐志杰)与新监督人(邓俊)进行正式交接，确保项目关键信息传递完整。同时更新相关文档中的监督人信息，并通知所有项目相关人员。"
+      },
+      "final_decision": "CONDITIONAL",
+      "approval_required": false
+    }
+  ],
+  "summary": {
+    "approved": 0,
+    "conditional": 1,
+    "review_required": 0,
+    "rejected": 0,
+    "risk_distribution": {
+      "LOW": 0,
+      "MEDIUM": 0,
+      "HIGH": 0,
+      "CRITICAL": 0
+    }
+  }
+}

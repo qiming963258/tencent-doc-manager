@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>8098 Debug Test</title>
+</head>
+<body>
+    <h1>8098系统调试测试</h1>
+    
+    <div style="margin: 20px; padding: 20px; border: 1px solid #ccc;">
+        <h2>测试文件路径</h2>
+        <input type="text" id="testPath" style="width: 80%; padding: 10px;" 
+               value="/root/projects/tencent-doc-manager/comparison_results/simplified_副本-测试版本-出国销售计划表-工作表1_vs_副本-副本-测试版本-出国销售计划表-工作表1_20250906_222914.json">
+        <br><br>
+        <button onclick="testAPI()" style="padding: 10px 20px;">测试API</button>
+        <button onclick="checkConsole()" style="padding: 10px 20px;">检查控制台</button>
+    </div>
+    
+    <div style="margin: 20px; padding: 20px; border: 1px solid #ccc;">
+        <h2>测试结果</h2>
+        <pre id="result" style="background: #f0f0f0; padding: 10px; min-height: 200px;">等待测试...</pre>
+    </div>
+    
+    <script>
+        // 记录所有错误
+        window.onerror = function(msg, url, lineNo, columnNo, error) {
+            const message = `JavaScript错误: ${msg}\n位置: ${url}:${lineNo}:${columnNo}\n错误对象: ${error}`;
+            document.getElementById('result').textContent = message;
+            console.error(message);
+            return false;
+        };
+        
+        async function testAPI() {
+            const result = document.getElementById('result');
+            const filePath = document.getElementById('testPath').value;
+            
+            result.textContent = '测试开始...\n';
+            
+            try {
+                // 测试1: 读取文件
+                result.textContent += '\n1. 测试读取文件API...\n';
+                const readResponse = await fetch('http://202.140.143.88:8098/api/read_file', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ file_path: filePath })
+                });
+                
+                if (!readResponse.ok) {
+                    throw new Error(`HTTP错误: ${readResponse.status}`);
+                }
+                
+                const readData = await readResponse.json();
+                result.textContent += `   结果: ${readData.success ? '成功' : '失败'}\n`;
+                
+                if (readData.success) {
+                    const columns = Object.values(readData.content.modified_columns || {});
+                    result.textContent += `   找到 ${columns.length} 个修改列\n`;
+                    
+                    // 测试2: 执行标准化
+                    result.textContent += '\n2. 测试标准化API...\n';
+                    const analyzeResponse = await fetch('http://202.140.143.88:8098/api/analyze', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({
+                            columns: columns,
+                            csv_path: filePath,
+                            use_numbering: true,
+                            filter_modified: true
+                        })
+                    });
+                    
+                    const analyzeData = await analyzeResponse.json();
+                    result.textContent += `   结果: ${analyzeData.success ? '成功' : '失败'}\n`;
+                    
+                    if (analyzeData.data) {
+                        result.textContent += `   返回数据: ${JSON.stringify(analyzeData.data, null, 2).substring(0, 500)}...\n`;
+                    }
+                } else {
+                    result.textContent += `   错误: ${readData.error}\n`;
+                }
+                
+            } catch (error) {
+                result.textContent += `\n错误: ${error.message}\n`;
+                console.error(error);
+            }
+        }
+        
+        function checkConsole() {
+            const result = document.getElementById('result');
+            result.textContent = '检查浏览器控制台...\n\n';
+            
+            // 测试基本JavaScript功能
+            result.textContent += '1. JavaScript基础测试:\n';
+            result.textContent += `   typeof fetch = ${typeof fetch}\n`;
+            result.textContent += `   typeof Promise = ${typeof Promise}\n`;
+            result.textContent += `   typeof async = ${typeof (async function(){})}\n`;
+            
+            // 测试processFile函数是否存在
+            result.textContent += '\n2. 检查processFile函数:\n';
+            result.textContent += `   typeof processFile = ${typeof processFile}\n`;
+            
+            // 输出一些调试信息到控制台
+            console.log('=== 8098调试信息 ===');
+            console.log('当前URL:', window.location.href);
+            console.log('fetch可用:', typeof fetch !== 'undefined');
+            console.log('async/await可用:', typeof (async function(){}) === 'function');
+        }
+        
+        // 页面加载时自动检查
+        window.onload = function() {
+            console.log('页面加载完成');
+            checkConsole();
+        };
+    </script>
+</body>
+</html>

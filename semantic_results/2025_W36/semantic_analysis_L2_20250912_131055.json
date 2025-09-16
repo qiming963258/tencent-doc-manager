@@ -1,0 +1,47 @@
+{
+  "metadata": {
+    "analysis_time": "2025-09-12 13:10:55",
+    "total_modifications": 1,
+    "layer1_passed": 0,
+    "layer2_analyzed": 1,
+    "processing_time": "23.2s"
+  },
+  "results": [
+    {
+      "modification_id": "M001",
+      "cell": "I5",
+      "column": "邓总指导登记（日更新）",
+      "old_value": "0730-",
+      "new_value": "0730-123123",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 80.0,
+        "reason": "编号变更"
+      },
+      "layer2_result": {
+        "risk_level": "LOW",
+        "decision": "APPROVE",
+        "confidence": 90,
+        "key_risks": [
+          "信息录入错误风险",
+          "后续查询可能混淆"
+        ],
+        "recommendation": "1. 建议确认123123是否为有效编号\n2. 建立编号录入规范(如带日期前缀的6位数字)\n3. 在文档注释栏注明编号含义"
+      },
+      "final_decision": "APPROVE",
+      "approval_required": false
+    }
+  ],
+  "summary": {
+    "approved": 1,
+    "conditional": 0,
+    "review_required": 0,
+    "rejected": 0,
+    "risk_distribution": {
+      "LOW": 1,
+      "MEDIUM": 0,
+      "HIGH": 0,
+      "CRITICAL": 0
+    }
+  }
+}

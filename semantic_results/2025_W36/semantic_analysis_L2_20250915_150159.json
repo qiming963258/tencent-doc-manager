@@ -1,0 +1,48 @@
+{
+  "metadata": {
+    "analysis_time": "2025-09-15 15:01:59",
+    "total_modifications": 1,
+    "layer1_passed": 0,
+    "layer2_analyzed": 1,
+    "processing_time": "9.9s"
+  },
+  "results": [
+    {
+      "modification_id": "M001",
+      "cell": "J50",
+      "column": "协助人",
+      "old_value": "徐志杰,朱瀚桔,杨佳玲,曾利萍,魏经理",
+      "new_value": "赖铁荔",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 80.0,
+        "reason": "人员变更"
+      },
+      "layer2_result": {
+        "risk_level": "HIGH",
+        "decision": "REVIEW",
+        "confidence": 80,
+        "key_risks": [
+          "协助团队规模显著缩减，可能导致任务超负荷",
+          "关键联系人(魏经理)被移除可能影响决策效率",
+          "资深成员被替换可能导致知识断层"
+        ],
+        "recommendation": "建议：1) 确认变更的业务必要性 2) 评估赖铁荔是否具备所有被移除人员的综合能力 3) 确保有充分的知识转移 4) 更新相关沟通矩阵和工作分配计划"
+      },
+      "final_decision": "REVIEW",
+      "approval_required": true
+    }
+  ],
+  "summary": {
+    "approved": 0,
+    "conditional": 0,
+    "review_required": 1,
+    "rejected": 0,
+    "risk_distribution": {
+      "LOW": 0,
+      "MEDIUM": 0,
+      "HIGH": 1,
+      "CRITICAL": 0
+    }
+  }
+}

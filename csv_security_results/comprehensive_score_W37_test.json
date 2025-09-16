@@ -1,0 +1,233 @@
+{
+  "metadata": {
+    "week": "W37",
+    "generation_time": "2025-09-11 14:00:00",
+    "total_tables": 3,
+    "total_modifications": 20,
+    "scoring_version": "v1.0"
+  },
+  "table_scores": [
+    {
+      "table_name": "副本-测试版本-出国销售计划表",
+      "table_url": "https://docs.qq.com/sheet/DWEFNU25TemFnZXJN",
+      "modifications_count": 8,
+      "column_scores": {
+        "项目类型": {
+          "column_level": "L2",
+          "modifications": 2,
+          "scores": [0.54, 0.62],
+          "aggregated_score": 0.58,
+          "max_score": 0.62,
+          "min_score": 0.54,
+          "risk_trend": "increasing",
+          "ai_decisions": {
+            "REVIEW": 1,
+            "CONDITIONAL": 1
+          }
+        },
+        "任务发起时间": {
+          "column_level": "L1",
+          "modifications": 2,
+          "scores": [1.0, 0.95],
+          "aggregated_score": 0.975,
+          "max_score": 1.0,
+          "min_score": 0.95,
+          "risk_trend": "stable",
+          "ai_decisions": null
+        },
+        "关键KR对齐": {
+          "column_level": "L1",
+          "modifications": 1,
+          "scores": [0.8],
+          "aggregated_score": 0.8,
+          "max_score": 0.8,
+          "min_score": 0.8,
+          "risk_trend": "stable",
+          "ai_decisions": null
+        },
+        "负责人": {
+          "column_level": "L2",
+          "modifications": 2,
+          "scores": [0.72, 0.68],
+          "aggregated_score": 0.70,
+          "max_score": 0.72,
+          "min_score": 0.68,
+          "risk_trend": "decreasing",
+          "ai_decisions": {
+            "APPROVE": 1,
+            "REVIEW": 1
+          }
+        },
+        "预计完成时间": {
+          "column_level": "L1",
+          "modifications": 1,
+          "scores": [0.96],
+          "aggregated_score": 0.96,
+          "max_score": 0.96,
+          "min_score": 0.96,
+          "risk_trend": "stable",
+          "ai_decisions": null
+        }
+      },
+      "table_summary": {
+        "overall_risk_score": 0.802,
+        "risk_level": "HIGH",
+        "top_risks": [
+          {"column": "任务发起时间", "score": 0.975},
+          {"column": "预计完成时间", "score": 0.96},
+          {"column": "关键KR对齐", "score": 0.8}
+        ],
+        "recommended_action": "priority_review"
+      }
+    },
+    {
+      "table_name": "副本-测试版本-回国销售计划表",
+      "table_url": "https://docs.qq.com/sheet/DWGZDZkxpaGVQaURr",
+      "modifications_count": 7,
+      "column_scores": {
+        "重要程度": {
+          "column_level": "L1",
+          "modifications": 3,
+          "scores": [0.85, 0.90, 0.88],
+          "aggregated_score": 0.877,
+          "max_score": 0.90,
+          "min_score": 0.85,
+          "risk_trend": "stable",
+          "ai_decisions": null
+        },
+        "完成进度": {
+          "column_level": "L2",
+          "modifications": 2,
+          "scores": [0.42, 0.48],
+          "aggregated_score": 0.45,
+          "max_score": 0.48,
+          "min_score": 0.42,
+          "risk_trend": "increasing",
+          "ai_decisions": {
+            "APPROVE": 1,
+            "CONDITIONAL": 1
+          }
+        },
+        "对上汇报": {
+          "column_level": "L2",
+          "modifications": 1,
+          "scores": [0.65],
+          "aggregated_score": 0.65,
+          "max_score": 0.65,
+          "min_score": 0.65,
+          "risk_trend": "stable",
+          "ai_decisions": {
+            "REVIEW": 1
+          }
+        },
+        "序号": {
+          "column_level": "L3",
+          "modifications": 1,
+          "scores": [0.12],
+          "aggregated_score": 0.12,
+          "max_score": 0.12,
+          "min_score": 0.12,
+          "risk_trend": "stable",
+          "ai_decisions": null
+        }
+      },
+      "table_summary": {
+        "overall_risk_score": 0.519,
+        "risk_level": "MEDIUM",
+        "top_risks": [
+          {"column": "重要程度", "score": 0.877},
+          {"column": "对上汇报", "score": 0.65},
+          {"column": "完成进度", "score": 0.45}
+        ],
+        "recommended_action": "manual_review"
+      }
+    },
+    {
+      "table_name": "测试版本-小红书部门",
+      "table_url": "https://docs.qq.com/sheet/DWFJzdWNwd0RGbU5R",
+      "modifications_count": 5,
+      "column_scores": {
+        "邓总指导登记": {
+          "column_level": "L2",
+          "modifications": 2,
+          "scores": [0.52, 0.58],
+          "aggregated_score": 0.55,
+          "max_score": 0.58,
+          "min_score": 0.52,
+          "risk_trend": "increasing",
+          "ai_decisions": {
+            "CONDITIONAL": 2
+          }
+        },
+        "协助人": {
+          "column_level": "L3",
+          "modifications": 1,
+          "scores": [0.18],
+          "aggregated_score": 0.18,
+          "max_score": 0.18,
+          "min_score": 0.18,
+          "risk_trend": "stable",
+          "ai_decisions": null
+        },
+        "应用情况": {
+          "column_level": "L3",
+          "modifications": 1,
+          "scores": [0.22],
+          "aggregated_score": 0.22,
+          "max_score": 0.22,
+          "min_score": 0.22,
+          "risk_trend": "stable",
+          "ai_decisions": null
+        },
+        "形成计划清单": {
+          "column_level": "L2",
+          "modifications": 1,
+          "scores": [0.48],
+          "aggregated_score": 0.48,
+          "max_score": 0.48,
+          "min_score": 0.48,
+          "risk_trend": "stable",
+          "ai_decisions": {
+            "APPROVE": 1
+          }
+        }
+      },
+      "table_summary": {
+        "overall_risk_score": 0.358,
+        "risk_level": "LOW-MEDIUM",
+        "top_risks": [
+          {"column": "邓总指导登记", "score": 0.55},
+          {"column": "形成计划清单", "score": 0.48},
+          {"column": "应用情况", "score": 0.22}
+        ],
+        "recommended_action": "routine_check"
+      }
+    }
+  ],
+  "cross_table_analysis": {
+    "column_risk_ranking": [
+      {"column": "任务发起时间", "avg_score": 0.975, "tables_affected": 1},
+      {"column": "预计完成时间", "avg_score": 0.96, "tables_affected": 1},
+      {"column": "重要程度", "avg_score": 0.877, "tables_affected": 1},
+      {"column": "关键KR对齐", "avg_score": 0.8, "tables_affected": 1},
+      {"column": "负责人", "avg_score": 0.70, "tables_affected": 1},
+      {"column": "对上汇报", "avg_score": 0.65, "tables_affected": 1},
+      {"column": "项目类型", "avg_score": 0.58, "tables_affected": 1},
+      {"column": "邓总指导登记", "avg_score": 0.55, "tables_affected": 1},
+      {"column": "形成计划清单", "avg_score": 0.48, "tables_affected": 1},
+      {"column": "完成进度", "avg_score": 0.45, "tables_affected": 1}
+    ],
+    "pattern_detection": {
+      "systematic_changes": [],
+      "anomalies": []
+    },
+    "overall_metrics": {
+      "system_risk_score": 0.560,
+      "risk_level": "MEDIUM",
+      "total_high_risks": 6,
+      "total_critical_changes": 4,
+      "ai_intervention_rate": "42%",
+      "token_efficiency": "97.5%"
+    }
+  }
+}

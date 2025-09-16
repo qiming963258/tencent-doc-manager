@@ -1,0 +1,47 @@
+{
+  "metadata": {
+    "analysis_time": "2025-09-15 18:39:45",
+    "total_modifications": 1,
+    "layer1_passed": 0,
+    "layer2_analyzed": 1,
+    "processing_time": "10.4s"
+  },
+  "results": [
+    {
+      "modification_id": "M001",
+      "cell": "I36",
+      "column": "邓总指导登记（日更新）",
+      "old_value": "0605-",
+      "new_value": "",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 80.0,
+        "reason": "关键信息清空"
+      },
+      "layer2_result": {
+        "risk_level": "LOW",
+        "decision": "APPROVE",
+        "confidence": 85,
+        "key_risks": [
+          "删除了邓总指导日期的记录",
+          "可能导致该日期指导内容追溯困难"
+        ],
+        "recommendation": "建议补充说明清空该值的原因，如果是误操作应及时恢复原值；若确实需要清空，建议在备注栏注明原因。对于重要指导日期的删除应保留变更日志。"
+      },
+      "final_decision": "APPROVE",
+      "approval_required": false
+    }
+  ],
+  "summary": {
+    "approved": 1,
+    "conditional": 0,
+    "review_required": 0,
+    "rejected": 0,
+    "risk_distribution": {
+      "LOW": 1,
+      "MEDIUM": 0,
+      "HIGH": 0,
+      "CRITICAL": 0
+    }
+  }
+}

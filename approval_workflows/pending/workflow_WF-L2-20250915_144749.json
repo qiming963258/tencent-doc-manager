@@ -1,0 +1,33 @@
+{
+  "workflow_id": "WF-L2-20250915_144749",
+  "created_time": "2025-09-15 14:47:49",
+  "pending_approvals": [
+    {
+      "modification_id": "M001",
+      "cell": "I36",
+      "column": "负责人",
+      "old_value": "朱瀚桔",
+      "new_value": "0605-",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 80.0,
+        "reason": "负责人变更"
+      },
+      "layer2_result": {
+        "risk_level": "CRITICAL",
+        "decision": "REJECT",
+        "confidence": 95,
+        "key_risks": [
+          "负责人信息被替换为无意义的字符串，可能导致责任不清",
+          "项目执行过程中无法确定负责人，影响工作分配与问题解决",
+          "团队协作效率大幅下降，沟通成本增加",
+          "项目监督和管理难度增大"
+        ],
+        "recommendation": "立即核实修改意图，恢复有效负责人信息。如确需修改，必须提供新的明确负责人姓名而非编号，并同步通知相关团队成员。建议建立审批机制防止类似高危修改。"
+      },
+      "final_decision": "REJECT",
+      "approval_required": true
+    }
+  ],
+  "auto_approved": []
+}

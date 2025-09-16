@@ -1,0 +1,31 @@
+{
+  "workflow_id": "WF-L2-20250915_154037",
+  "created_time": "2025-09-15 15:40:37",
+  "pending_approvals": [
+    {
+      "modification_id": "M001",
+      "cell": "K90",
+      "column": "监督人",
+      "old_value": "邓总",
+      "new_value": "",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 80.0,
+        "reason": "关键人缺失"
+      },
+      "layer2_result": {
+        "risk_level": "MEDIUM",
+        "decision": "REVIEW",
+        "confidence": 75,
+        "key_risks": [
+          "监督人职责缺失导致决策延迟",
+          "项目关键节点缺乏审批权限"
+        ],
+        "recommendation": "必须补充新监督人信息或明确临时替代机制。需核查：1)当前是否有其他默认监督人 2)该监督节点是否涉及关键审批 3)预计空缺时长。建议在24小时内确定临时监督人。"
+      },
+      "final_decision": "REVIEW",
+      "approval_required": true
+    }
+  ],
+  "auto_approved": []
+}

@@ -1,0 +1,48 @@
+{
+  "metadata": {
+    "analysis_time": "2025-09-15 15:39:37",
+    "total_modifications": 1,
+    "layer1_passed": 0,
+    "layer2_analyzed": 1,
+    "processing_time": "10.1s"
+  },
+  "results": [
+    {
+      "modification_id": "M001",
+      "cell": "K89",
+      "column": "监督人",
+      "old_value": "邓总",
+      "new_value": "",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 80.0,
+        "reason": "关键角色缺失"
+      },
+      "layer2_result": {
+        "risk_level": "HIGH",
+        "decision": "REVIEW",
+        "confidence": 85,
+        "key_risks": [
+          "监督人由邓总改为空值可能导致监管缺失",
+          "项目关键决策可能延迟或停滞",
+          "团队协作可能因缺乏监督而效率降低"
+        ],
+        "recommendation": "建议明确新的监督人后再提交修改。若确实需要临时删除监督人，应设置临时负责人并明确期限，同时通知相关团队。"
+      },
+      "final_decision": "REVIEW",
+      "approval_required": true
+    }
+  ],
+  "summary": {
+    "approved": 0,
+    "conditional": 0,
+    "review_required": 1,
+    "rejected": 0,
+    "risk_distribution": {
+      "LOW": 0,
+      "MEDIUM": 0,
+      "HIGH": 1,
+      "CRITICAL": 0
+    }
+  }
+}

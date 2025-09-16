@@ -1,0 +1,48 @@
+{
+  "metadata": {
+    "analysis_time": "2025-09-15 15:26:02",
+    "total_modifications": 1,
+    "layer1_passed": 0,
+    "layer2_analyzed": 1,
+    "processing_time": "14.6s"
+  },
+  "results": [
+    {
+      "modification_id": "M001",
+      "cell": "K75",
+      "column": "监督人",
+      "old_value": "徐志杰",
+      "new_value": "魏志广,杨顺鑫",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 80.0,
+        "reason": "人员变更"
+      },
+      "layer2_result": {
+        "risk_level": "MEDIUM",
+        "decision": "REVIEW",
+        "confidence": 75,
+        "key_risks": [
+          "监督责任分散风险：从单人监督变为双人监督可能导致职责边界模糊",
+          "沟通复杂度增加：需要确保两位监督人之间的有效协调",
+          "决策效率潜在降低：关键决策可能需要两位监督人达成一致"
+        ],
+        "recommendation": "建议：1.明确划分两位监督人的具体职责范围；2.建立监督人之间的定期沟通机制；3.更新相关治理文件以反映新的监督结构；4.通知所有相关方这一变更。需要在执行变更前获得项目发起人的批准。"
+      },
+      "final_decision": "REVIEW",
+      "approval_required": true
+    }
+  ],
+  "summary": {
+    "approved": 0,
+    "conditional": 0,
+    "review_required": 1,
+    "rejected": 0,
+    "risk_distribution": {
+      "LOW": 0,
+      "MEDIUM": 0,
+      "HIGH": 1,
+      "CRITICAL": 0
+    }
+  }
+}

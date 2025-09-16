@@ -1,0 +1,32 @@
+{
+  "workflow_id": "WF-L2-20250915_182715",
+  "created_time": "2025-09-15 18:27:15",
+  "pending_approvals": [
+    {
+      "modification_id": "M001",
+      "cell": "I16",
+      "column": "邓总指导登记（日更新）",
+      "old_value": "0813-\n短视频的爆款可调用小红书板块历史爆款笔记作为原创脚本进行调用，同步优化内容库执行表单进行脚本撰写的数量要求及登记跟踪\n\n0811-",
+      "new_value": "",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 90.0,
+        "reason": "删除指导内容"
+      },
+      "layer2_result": {
+        "risk_level": "MEDIUM",
+        "decision": "REVIEW",
+        "confidence": 75,
+        "key_risks": [
+          "关键指导意见丢失可能导致执行偏差",
+          "团队失去明确的内容创作方向指引",
+          "爆款内容复用策略可能被忽视"
+        ],
+        "recommendation": "建议确认删除原因：1)如果是已完成指导，应标注完成状态而非清空内容；2)如需删除，应补充替代性说明以确保团队执行有据可依；3)特别要保留关于'调用小红书历史爆款'的关键策略指引"
+      },
+      "final_decision": "REVIEW",
+      "approval_required": true
+    }
+  ],
+  "auto_approved": []
+}

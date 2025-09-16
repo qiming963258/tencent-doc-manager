@@ -1,0 +1,47 @@
+{
+  "metadata": {
+    "analysis_time": "2025-09-15 18:33:22",
+    "total_modifications": 1,
+    "layer1_passed": 0,
+    "layer2_analyzed": 1,
+    "processing_time": "11.7s"
+  },
+  "results": [
+    {
+      "modification_id": "M001",
+      "cell": "I29",
+      "column": "邓总指导登记（日更新）",
+      "old_value": "0529-",
+      "new_value": "",
+      "layer1_result": {
+        "judgment": "UNSURE",
+        "confidence": 60.0,
+        "reason": "内容删除"
+      },
+      "layer2_result": {
+        "risk_level": "LOW",
+        "decision": "APPROVE",
+        "confidence": 90,
+        "key_risks": [
+          "信息丢失风险",
+          "后续追溯困难"
+        ],
+        "recommendation": "建议在清空单元格时添加说明注释，解释清空原因，或使用特定标记（如'N/A'）来明确表示该字段当前无内容而非遗漏。若为临时清空，建议记录清空操作日志。"
+      },
+      "final_decision": "APPROVE",
+      "approval_required": false
+    }
+  ],
+  "summary": {
+    "approved": 1,
+    "conditional": 0,
+    "review_required": 0,
+    "rejected": 0,
+    "risk_distribution": {
+      "LOW": 1,
+      "MEDIUM": 0,
+      "HIGH": 0,
+      "CRITICAL": 0
+    }
+  }
+}

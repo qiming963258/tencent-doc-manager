@@ -1,0 +1,48 @@
+{
+  "metadata": {
+    "analysis_time": "2025-09-15 16:47:39",
+    "total_modifications": 1,
+    "layer1_passed": 0,
+    "layer2_analyzed": 1,
+    "processing_time": "12.3s"
+  },
+  "results": [
+    {
+      "modification_id": "M001",
+      "cell": "K13",
+      "column": "协助人",
+      "old_value": "各责任人",
+      "new_value": "赖铁荔",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 80.0,
+        "reason": "关键人变更"
+      },
+      "layer2_result": {
+        "risk_level": "MEDIUM",
+        "decision": "REVIEW",
+        "confidence": 75,
+        "key_risks": [
+          "职责范围缩小风险：从多个责任人变为单一责任人，可能形成工作瓶颈",
+          "知识集中风险：关键协助信息可能过度依赖个人",
+          "工作负载失衡风险：特定人员可能面临过度工作量分配"
+        ],
+        "recommendation": "建议补充说明修改背景并评估以下事项：1) 是否有配套的职责分工调整方案 2) 被指定人员是否具备相应能力与带宽 3) 是否已与原各责任人沟通此变更。另建议保留原责任人的次级协助权限作为备份。"
+      },
+      "final_decision": "REVIEW",
+      "approval_required": true
+    }
+  ],
+  "summary": {
+    "approved": 0,
+    "conditional": 0,
+    "review_required": 1,
+    "rejected": 0,
+    "risk_distribution": {
+      "LOW": 0,
+      "MEDIUM": 0,
+      "HIGH": 1,
+      "CRITICAL": 0
+    }
+  }
+}

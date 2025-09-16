@@ -1,0 +1,33 @@
+{
+  "workflow_id": "WF-L2-20250915_141935",
+  "created_time": "2025-09-15 14:19:35",
+  "pending_approvals": [
+    {
+      "modification_id": "M001",
+      "cell": "J7",
+      "column": "协助人",
+      "old_value": "曾利萍,杨佳玲,朱瀚桔",
+      "new_value": "赖铁荔",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 80.0,
+        "reason": "人员变动"
+      },
+      "layer2_result": {
+        "risk_level": "HIGH",
+        "decision": "REVIEW",
+        "confidence": 80,
+        "key_risks": [
+          "项目执行连续性风险：原协助团队被完全替换，可能导致任务交接不完整",
+          "新协助人能力适配性风险：未明确赖铁荔能否覆盖原三人职责范围",
+          "团队协作断层风险：原有协作关系需重新建立",
+          "知识转移风险：原团队积累的项目经验可能流失"
+        ],
+        "recommendation": "建议按以下步骤处理：\n1. 要求提交人员补充赖铁荔的资质说明及交接计划\n2. 安排原协助团队（至少1人）与新协助人进行知识转移\n3. 在项目计划中增加2-3天的过渡期\n4. 修改后需项目经理+原协助人代表双签确认\n5. 建议保留至少1名原协助人作为后备支持"
+      },
+      "final_decision": "REVIEW",
+      "approval_required": true
+    }
+  ],
+  "auto_approved": []
+}

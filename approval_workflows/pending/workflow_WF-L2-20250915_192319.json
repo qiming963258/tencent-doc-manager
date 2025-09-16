@@ -1,0 +1,32 @@
+{
+  "workflow_id": "WF-L2-20250915_192319",
+  "created_time": "2025-09-15 19:23:19",
+  "pending_approvals": [
+    {
+      "modification_id": "M001",
+      "cell": "J6",
+      "column": "负责人",
+      "old_value": "赖铁荔",
+      "new_value": "",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 80.0,
+        "reason": "关键人缺失"
+      },
+      "layer2_result": {
+        "risk_level": "HIGH",
+        "decision": "REVIEW",
+        "confidence": 85,
+        "key_risks": [
+          "职责真空风险：负责人信息被清空可能导致任务无人负责",
+          "项目延误风险：关键岗位缺失可能影响整体进度",
+          "沟通混乱风险：团队成员不清楚应向谁汇报工作"
+        ],
+        "recommendation": "建议：1.立即补充新的负责人信息；2.如过渡期需设置临时负责人；3.通知相关干系人变更情况；4.评估对当前任务的影响并制定应急计划"
+      },
+      "final_decision": "REVIEW",
+      "approval_required": true
+    }
+  ],
+  "auto_approved": []
+}

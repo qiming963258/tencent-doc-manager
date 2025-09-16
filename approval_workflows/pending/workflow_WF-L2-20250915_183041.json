@@ -1,0 +1,33 @@
+{
+  "workflow_id": "WF-L2-20250915_183041",
+  "created_time": "2025-09-15 18:30:41",
+  "pending_approvals": [
+    {
+      "modification_id": "M001",
+      "cell": "H26",
+      "column": "具体计划内容",
+      "old_value": "转接至销售端用语不规范，需要优化统一化；（已建群）",
+      "new_value": "因为个人的管理问题，给公司与各股东一个交代与说明解决措施，再此之前先和邓总同步",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 90.0,
+        "reason": "语义变化"
+      },
+      "layer2_result": {
+        "risk_level": "HIGH",
+        "decision": "REVIEW",
+        "confidence": 80,
+        "key_risks": [
+          "性质发生根本变化：从业务操作问题转向个人管理追责",
+          "可能引发团队内部信任危机",
+          "涉及高层管理介入，决策链延长",
+          "原业务改进计划被搁置"
+        ],
+        "recommendation": "建议：1.明确该变更是否经过必要审批流程；2.评估将管理问责与业务改进分开处理的可行性；3.如需同步处理，应制定完整沟通方案；4.保留原业务改进需求跟踪"
+      },
+      "final_decision": "REVIEW",
+      "approval_required": true
+    }
+  ],
+  "auto_approved": []
+}

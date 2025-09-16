@@ -1,0 +1,48 @@
+{
+  "metadata": {
+    "analysis_time": "2025-09-15 14:47:37",
+    "total_modifications": 1,
+    "layer1_passed": 0,
+    "layer2_analyzed": 1,
+    "processing_time": "9.6s"
+  },
+  "results": [
+    {
+      "modification_id": "M001",
+      "cell": "G36",
+      "column": "具体计划内容",
+      "old_value": "1.沟通方式建立，客户签收回访无问题加入进行建群，邀约成功后对接笔记发内容\n2.晒单数量结合周期签收数量进行目标调整\n@新媒体运营-朱瀚桔",
+      "new_value": "收款管理",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 80.0,
+        "reason": "关键操作变更"
+      },
+      "layer2_result": {
+        "risk_level": "HIGH",
+        "decision": "REVIEW",
+        "confidence": 85,
+        "key_risks": [
+          "原计划内容被完全替换，可能导致执行方向混乱",
+          "删除了具体执行步骤和责任归属，影响团队协作和追踪",
+          "新内容'收款管理'与原计划内容性质差异大，可能导致目标偏离"
+        ],
+        "recommendation": "建议明确此修改的原因，并评估是否需要在保留原计划内容基础上补充收款管理内容。如果需要完全替换，则需要重新制定相关执行计划，并通知所有相关方。"
+      },
+      "final_decision": "REVIEW",
+      "approval_required": true
+    }
+  ],
+  "summary": {
+    "approved": 0,
+    "conditional": 0,
+    "review_required": 1,
+    "rejected": 0,
+    "risk_distribution": {
+      "LOW": 0,
+      "MEDIUM": 0,
+      "HIGH": 1,
+      "CRITICAL": 0
+    }
+  }
+}

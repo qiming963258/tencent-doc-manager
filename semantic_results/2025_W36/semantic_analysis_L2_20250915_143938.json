@@ -1,0 +1,48 @@
+{
+  "metadata": {
+    "analysis_time": "2025-09-15 14:39:38",
+    "total_modifications": 1,
+    "layer1_passed": 0,
+    "layer2_analyzed": 1,
+    "processing_time": "13.6s"
+  },
+  "results": [
+    {
+      "modification_id": "M001",
+      "cell": "G28",
+      "column": "具体计划内容",
+      "old_value": "1.梳理更新已有账号内容定位及问问诊库梳理更新各账号内容定位\n2.圈子号和国外ip内容方向需根据【同行竟对】【往期爆款】对内容做重点更新，梳理当下可稳定产出资源内容方向",
+      "new_value": "晒单板块",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 75.0,
+        "reason": "核心变更"
+      },
+      "layer2_result": {
+        "risk_level": "HIGH",
+        "decision": "REVIEW",
+        "confidence": 85,
+        "key_risks": [
+          "原计划中详细的内容策略被完全替换为单一模块",
+          "可能导致账号定位和内容方向不清晰",
+          "失去对竞争对手和爆款内容的关注"
+        ],
+        "recommendation": "建议保留原内容策略的同时添加晒单板块，或详细说明晒单板块与原计划的衔接关系。修改前需与内容团队确认变更原因及后续规划。"
+      },
+      "final_decision": "REVIEW",
+      "approval_required": true
+    }
+  ],
+  "summary": {
+    "approved": 0,
+    "conditional": 0,
+    "review_required": 1,
+    "rejected": 0,
+    "risk_distribution": {
+      "LOW": 0,
+      "MEDIUM": 0,
+      "HIGH": 1,
+      "CRITICAL": 0
+    }
+  }
+}

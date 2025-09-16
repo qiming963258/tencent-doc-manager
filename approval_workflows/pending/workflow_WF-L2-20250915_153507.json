@@ -1,0 +1,32 @@
+{
+  "workflow_id": "WF-L2-20250915_153507",
+  "created_time": "2025-09-15 15:35:07",
+  "pending_approvals": [
+    {
+      "modification_id": "M001",
+      "cell": "B85",
+      "column": "项目类型",
+      "old_value": "目标管理",
+      "new_value": "",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 90.0,
+        "reason": "关键信息删除"
+      },
+      "layer2_result": {
+        "risk_level": "HIGH",
+        "decision": "REVIEW",
+        "confidence": 85,
+        "key_risks": [
+          "项目类型从具体定义变为空值可能导致项目分类混乱",
+          "关键项目属性缺失影响项目跟踪和资源分配",
+          "可能导致项目目标和管理方式不明确"
+        ],
+        "recommendation": "建议：1) 必须提供新的项目类型值，不能留空；2) 如需要删除原值，需先评估所有依赖该类型的系统和流程；3) 确保所有相关团队知晓并同意此变更。需要项目发起人或PMO批准此修改。"
+      },
+      "final_decision": "REVIEW",
+      "approval_required": true
+    }
+  ],
+  "auto_approved": []
+}

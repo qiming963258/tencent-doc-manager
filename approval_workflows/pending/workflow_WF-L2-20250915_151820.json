@@ -1,0 +1,32 @@
+{
+  "workflow_id": "WF-L2-20250915_151820",
+  "created_time": "2025-09-15 15:18:20",
+  "pending_approvals": [
+    {
+      "modification_id": "M001",
+      "cell": "K67",
+      "column": "监督人",
+      "old_value": "邓总",
+      "new_value": "林雯",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 80.0,
+        "reason": "责任人变更"
+      },
+      "layer2_result": {
+        "risk_level": "MEDIUM",
+        "decision": "REVIEW",
+        "confidence": 75,
+        "key_risks": [
+          "监督人变更可能导致监督标准和风格变化",
+          "新监督人林雯可能不熟悉项目历史背景",
+          "团队需要时间适应新的监督方式"
+        ],
+        "recommendation": "建议组织正式交接会议，确保林雯全面了解项目背景和监督要求，同时需要向团队正式通报这一变更。建议在变更后设立2周过渡期，密切观察监督效果。"
+      },
+      "final_decision": "REVIEW",
+      "approval_required": true
+    }
+  ],
+  "auto_approved": []
+}

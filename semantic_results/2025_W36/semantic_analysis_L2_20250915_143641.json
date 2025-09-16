@@ -1,0 +1,48 @@
+{
+  "metadata": {
+    "analysis_time": "2025-09-15 14:36:41",
+    "total_modifications": 1,
+    "layer1_passed": 0,
+    "layer2_analyzed": 1,
+    "processing_time": "13.6s"
+  },
+  "results": [
+    {
+      "modification_id": "M001",
+      "cell": "G25",
+      "column": "具体计划内容",
+      "old_value": "1.基于1.0用户画像与人群标签，结合周期内容发布评论及私信情况，同步账号选题做好方向优化\n*.笔记类型：对齐【用户人群痛点】周为单位跟进\n*标题类型：对账号目标人群标签做好账号内容创新测试与安排",
+      "new_value": "评估方面",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 80.0,
+        "reason": "关键内容删除"
+      },
+      "layer2_result": {
+        "risk_level": "HIGH",
+        "decision": "REVIEW",
+        "confidence": 80,
+        "key_risks": [
+          "项目执行计划不明确",
+          "团队协作方向不清",
+          "项目目标达成风险增加"
+        ],
+        "recommendation": "建议补充修改后的具体内容，确保项目执行计划清晰明确，团队协作方向一致。若需要从具体计划改为评估方面，需补充详细评估标准和流程，确保项目目标不受影响。"
+      },
+      "final_decision": "REVIEW",
+      "approval_required": true
+    }
+  ],
+  "summary": {
+    "approved": 0,
+    "conditional": 0,
+    "review_required": 1,
+    "rejected": 0,
+    "risk_distribution": {
+      "LOW": 0,
+      "MEDIUM": 0,
+      "HIGH": 1,
+      "CRITICAL": 0
+    }
+  }
+}

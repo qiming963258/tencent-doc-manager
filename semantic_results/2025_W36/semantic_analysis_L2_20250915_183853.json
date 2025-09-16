@@ -1,0 +1,47 @@
+{
+  "metadata": {
+    "analysis_time": "2025-09-15 18:38:53",
+    "total_modifications": 1,
+    "layer1_passed": 0,
+    "layer2_analyzed": 1,
+    "processing_time": "5.9s"
+  },
+  "results": [
+    {
+      "modification_id": "M001",
+      "cell": "I35",
+      "column": "邓总指导登记（日更新）",
+      "old_value": "0527-",
+      "new_value": "",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 90.0,
+        "reason": "关键信息删除"
+      },
+      "layer2_result": {
+        "risk_level": "LOW",
+        "decision": "APPROVE",
+        "confidence": 85,
+        "key_risks": [
+          "信息丢失风险：可能丢失邓总当日的指导记录",
+          "追踪中断：影响指导记录的连续性和完整性"
+        ],
+        "recommendation": "1. 建议在清空单元格时添加备注说明原因\n2. 确认是否需要补充其他形式的记录\n3. 确保变更已通知相关团队成员\n4. 如为临时修改，建议标明预计恢复时间"
+      },
+      "final_decision": "APPROVE",
+      "approval_required": false
+    }
+  ],
+  "summary": {
+    "approved": 1,
+    "conditional": 0,
+    "review_required": 0,
+    "rejected": 0,
+    "risk_distribution": {
+      "LOW": 1,
+      "MEDIUM": 0,
+      "HIGH": 0,
+      "CRITICAL": 0
+    }
+  }
+}

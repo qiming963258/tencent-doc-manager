@@ -1,0 +1,49 @@
+{
+  "metadata": {
+    "analysis_time": "2025-09-15 15:00:05",
+    "total_modifications": 1,
+    "layer1_passed": 0,
+    "layer2_analyzed": 1,
+    "processing_time": "13.0s"
+  },
+  "results": [
+    {
+      "modification_id": "M001",
+      "cell": "B49",
+      "column": "项目类型",
+      "old_value": "目标管理",
+      "new_value": "",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 90.0,
+        "reason": "关键字段空"
+      },
+      "layer2_result": {
+        "risk_level": "CRITICAL",
+        "decision": "REVIEW",
+        "confidence": 85,
+        "key_risks": [
+          "项目类型从明确值变为空值，导致项目定位完全缺失",
+          "可能影响项目审批流程和资源配置决策",
+          "团队成员无法明确项目性质和工作方向",
+          "可能导致交付时间无法准确预估"
+        ],
+        "recommendation": "建议：1) 必须补充明确的项目类型值 2) 如确需清空，需同步更新所有相关文档和系统设置 3) 需重新评估项目整体规划和资源分配 4) 通知所有相关干系人此变更"
+      },
+      "final_decision": "REVIEW",
+      "approval_required": true
+    }
+  ],
+  "summary": {
+    "approved": 0,
+    "conditional": 0,
+    "review_required": 1,
+    "rejected": 0,
+    "risk_distribution": {
+      "LOW": 0,
+      "MEDIUM": 0,
+      "HIGH": 1,
+      "CRITICAL": 0
+    }
+  }
+}

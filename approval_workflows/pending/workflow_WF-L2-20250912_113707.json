@@ -1,0 +1,32 @@
+{
+  "workflow_id": "WF-L2-20250912_113707",
+  "created_time": "2025-09-12 11:37:07",
+  "pending_approvals": [],
+  "auto_approved": [
+    {
+      "modification_id": "M001",
+      "cell": "J12",
+      "column": "负责人",
+      "old_value": "赖铁荔",
+      "new_value": "赖铁荔,各责任人",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 80.0,
+        "reason": "职责扩大"
+      },
+      "layer2_result": {
+        "risk_level": "MEDIUM",
+        "decision": "CONDITIONAL",
+        "confidence": 75,
+        "key_risks": [
+          "职责界定模糊风险：'各责任人'表述不明确可能导致执行主体混淆",
+          "协作效率风险：多责任人机制可能降低决策效率",
+          "追责困难风险：出现问题时难以明确具体责任归属"
+        ],
+        "recommendation": "建议：1.明确列出所有责任人的具体姓名 2.补充责任分工说明文档 3.设置第一责任人机制（可保留赖铁荔作为主负责人）4.与相关干系人确认该变更"
+      },
+      "final_decision": "CONDITIONAL",
+      "approval_required": false
+    }
+  ]
+}

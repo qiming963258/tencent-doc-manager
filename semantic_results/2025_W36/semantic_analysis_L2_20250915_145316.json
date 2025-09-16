@@ -1,0 +1,47 @@
+{
+  "metadata": {
+    "analysis_time": "2025-09-15 14:53:16",
+    "total_modifications": 1,
+    "layer1_passed": 0,
+    "layer2_analyzed": 1,
+    "processing_time": "11.9s"
+  },
+  "results": [
+    {
+      "modification_id": "M001",
+      "cell": "K41",
+      "column": "监督人",
+      "old_value": "徐志杰",
+      "new_value": "赖铁荔",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 75.0,
+        "reason": "关键人变更"
+      },
+      "layer2_result": {
+        "risk_level": "MEDIUM",
+        "decision": "REVIEW",
+        "confidence": 75,
+        "key_risks": [
+          "监督人变更可能影响监管责任链的连续性",
+          "新监督人需要时间熟悉项目的监管要求"
+        ],
+        "recommendation": "建议：1. 安排项目交接会议确保监管要求传达完整 2. 评估新监督人是否具备必要的项目监管资质 3. 更新相关文档并通知所有干系人 4. 设置1-2周的过渡观察期"
+      },
+      "final_decision": "REVIEW",
+      "approval_required": true
+    }
+  ],
+  "summary": {
+    "approved": 0,
+    "conditional": 0,
+    "review_required": 1,
+    "rejected": 0,
+    "risk_distribution": {
+      "LOW": 0,
+      "MEDIUM": 0,
+      "HIGH": 1,
+      "CRITICAL": 0
+    }
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "workflow_id": "WF-L2-20250915_164635",
+  "created_time": "2025-09-15 16:46:35",
+  "pending_approvals": [
+    {
+      "modification_id": "M001",
+      "cell": "I11",
+      "column": "邓总指导登记（日更新）",
+      "old_value": "0813-\n1、根据周度运营数据识别出来的一般及无效笔记，分析对应的内容定位进行优化；\n2、系统功能下周一上线前，前置识别需要优化的内容定位进行调整\n3、下周一重点汇报半月度内容定位优化迭代进度、内容",
+      "new_value": "",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 90.0,
+        "reason": "删除内容"
+      },
+      "layer2_result": {
+        "risk_level": "HIGH",
+        "decision": "REVIEW",
+        "confidence": 85,
+        "key_risks": [
+          "删除重要的项目指导内容，可能导致执行方向不明确",
+          "缺失关键的时间节点和负责人信息",
+          "可能影响下周系统上线前的优化工作"
+        ],
+        "recommendation": "建议与邓总确认是否确实需要清空该单元格内容。如需清空，应补充新的指导内容或说明清空原因。如为误操作，应恢复原有内容并标注修改原因。同时建议建立修改审批流程，避免重要指导信息被意外删除。"
+      },
+      "final_decision": "REVIEW",
+      "approval_required": true
+    }
+  ],
+  "auto_approved": []
+}

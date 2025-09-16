@@ -1,0 +1,32 @@
+{
+  "workflow_id": "WF-L2-20250915_143807",
+  "created_time": "2025-09-15 14:38:07",
+  "pending_approvals": [
+    {
+      "modification_id": "M001",
+      "cell": "K26",
+      "column": "监督人",
+      "old_value": "邓总",
+      "new_value": "赖铁荔",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 80.0,
+        "reason": "负责人变更"
+      },
+      "layer2_result": {
+        "risk_level": "MEDIUM",
+        "decision": "REVIEW",
+        "confidence": 75,
+        "key_risks": [
+          "监督人角色变更可能导致项目监督风格和决策方式的变化",
+          "新监督人可能需要时间熟悉项目背景和当前进展",
+          "团队需要适应新的领导和沟通方式"
+        ],
+        "recommendation": "建议：1)安排项目交接会议确保知识传递；2)评估新监督人的可用性和熟悉项目的时间需求；3)通知所有相关方监督人变更事宜；4)考虑设置过渡期进行双重监督"
+      },
+      "final_decision": "REVIEW",
+      "approval_required": true
+    }
+  ],
+  "auto_approved": []
+}

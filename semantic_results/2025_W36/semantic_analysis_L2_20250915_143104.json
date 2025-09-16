@@ -1,0 +1,48 @@
+{
+  "metadata": {
+    "analysis_time": "2025-09-15 14:31:04",
+    "total_modifications": 1,
+    "layer1_passed": 0,
+    "layer2_analyzed": 1,
+    "processing_time": "14.7s"
+  },
+  "results": [
+    {
+      "modification_id": "M001",
+      "cell": "G19",
+      "column": "具体计划内容",
+      "old_value": "外部知识库采集更新，同频与应用需优化员工【宣导与应用】同频机制——从收集到通知到使用的机制完善，搭配新建热点转小红书笔记智能体",
+      "new_value": "评估方面",
+      "layer1_result": {
+        "judgment": "UNSURE",
+        "confidence": 60.0,
+        "reason": "语义模糊化"
+      },
+      "layer2_result": {
+        "risk_level": "HIGH",
+        "decision": "REVIEW",
+        "confidence": 80,
+        "key_risks": [
+          "项目目标模糊化：从具体的实施计划变为模糊的'评估方面'，可能导致项目方向不明确",
+          "执行计划中断：原计划中的具体行动项（知识库更新、机制完善、智能体开发）被完全移除",
+          "交付风险：关键交付物（小红书笔记智能体）可能因此被取消或延迟"
+        ],
+        "recommendation": "1.要求修改者说明'评估方面'的具体含义及替代方案\n2.若确需变更，建议采用增量修改方式（保留原计划+新增评估维度）\n3.需同步更新项目WBS和交付物清单，并重新评估时间线"
+      },
+      "final_decision": "REVIEW",
+      "approval_required": true
+    }
+  ],
+  "summary": {
+    "approved": 0,
+    "conditional": 0,
+    "review_required": 1,
+    "rejected": 0,
+    "risk_distribution": {
+      "LOW": 0,
+      "MEDIUM": 0,
+      "HIGH": 1,
+      "CRITICAL": 0
+    }
+  }
+}

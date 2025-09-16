@@ -1,0 +1,48 @@
+{
+  "metadata": {
+    "analysis_time": "2025-09-15 18:41:37",
+    "total_modifications": 1,
+    "layer1_passed": 0,
+    "layer2_analyzed": 1,
+    "processing_time": "11.6s"
+  },
+  "results": [
+    {
+      "modification_id": "M001",
+      "cell": "H38",
+      "column": "具体计划内容",
+      "old_value": "企微机器人的应用与设定开发；",
+      "new_value": "",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 90.0,
+        "reason": "删除内容"
+      },
+      "layer2_result": {
+        "risk_level": "HIGH",
+        "decision": "REVIEW",
+        "confidence": 85,
+        "key_risks": [
+          "删除具体计划内容可能导致项目目标不清晰",
+          "团队协作可能因计划不明确而受影响",
+          "交付时间可能因计划变更而延迟"
+        ],
+        "recommendation": "建议在删除原计划内容前明确替代方案或补充新的具体计划内容，确保项目目标、执行计划和团队协作不受影响，并评估对交付时间的潜在影响。"
+      },
+      "final_decision": "REVIEW",
+      "approval_required": true
+    }
+  ],
+  "summary": {
+    "approved": 0,
+    "conditional": 0,
+    "review_required": 1,
+    "rejected": 0,
+    "risk_distribution": {
+      "LOW": 0,
+      "MEDIUM": 0,
+      "HIGH": 1,
+      "CRITICAL": 0
+    }
+  }
+}

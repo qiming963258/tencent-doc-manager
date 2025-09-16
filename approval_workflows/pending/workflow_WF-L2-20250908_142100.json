@@ -1,0 +1,32 @@
+{
+  "workflow_id": "WF-L2-20250908_142100",
+  "created_time": "2025-09-08 14:21:00",
+  "pending_approvals": [],
+  "auto_approved": [
+    {
+      "modification_id": "M001",
+      "cell": "J12",
+      "column": "负责人",
+      "old_value": "赖铁荔",
+      "new_value": "赖铁荔,各责任人",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 75.0,
+        "reason": "多人负责"
+      },
+      "layer2_result": {
+        "risk_level": "MEDIUM",
+        "decision": "CONDITIONAL",
+        "confidence": 75,
+        "key_risks": [
+          "责任分工不明确的风险",
+          "执行效率可能降低",
+          "可能导致任务推进缓慢"
+        ],
+        "recommendation": "建议明确'各责任人'的具体名单和职责范围，避免出现责任模糊或多头领导的情况；如果这是一个临时的变更，应注明变更期限；同时需要与相关责任人进行充分沟通，确保对执行计划的理解一致。"
+      },
+      "final_decision": "CONDITIONAL",
+      "approval_required": false
+    }
+  ]
+}

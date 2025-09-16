@@ -1,0 +1,23 @@
+{
+  "updated_at": "2025-08-19T18:41:47.676795",
+  "ui_server": {
+    "host": "202.140.143.88",
+    "port": 8089,
+    "url": "http://202.140.143.88:8089/",
+    "status": "active"
+  },
+  "document_links": {
+    "risk_analysis": {
+      "name": "风险分析Excel表",
+      "doc_id": "E2ADF400ED72",
+      "url": "https://docs.qq.com/sheet/DE2ADF400ED72",
+      "type": "excel"
+    },
+    "verification_table": {
+      "name": "核验表",
+      "doc_id": "A05462C85A4C",
+      "url": "https://docs.qq.com/sheet/DA05462C85A4C",
+      "type": "json"
+    }
+  }
+}

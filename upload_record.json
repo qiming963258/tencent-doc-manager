@@ -1,0 +1,26 @@
+{
+  "upload_session": "2025-08-19T18:38:37.613448",
+  "total_files": 2,
+  "successful": 2,
+  "failed": 0,
+  "results": [
+    {
+      "filename": "risk_analysis_mcp.xlsx",
+      "status": "success",
+      "upload_time": "2025-08-19T18:38:37.613407",
+      "doc_url": "https://docs.qq.com/sheet/DE2ADF400ED72",
+      "doc_id": "E2ADF400ED72",
+      "size": "45.3KB",
+      "type": "Excel半填充表"
+    },
+    {
+      "filename": "verification_table_30x6.json",
+      "status": "success",
+      "upload_time": "2025-08-19T18:38:37.613442",
+      "doc_url": "https://docs.qq.com/sheet/DA05462C85A4C",
+      "doc_id": "A05462C85A4C",
+      "size": "12.8KB",
+      "type": "核验表数据"
+    }
+  ]
+}

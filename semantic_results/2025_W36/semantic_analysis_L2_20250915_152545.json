@@ -1,0 +1,49 @@
+{
+  "metadata": {
+    "analysis_time": "2025-09-15 15:25:45",
+    "total_modifications": 1,
+    "layer1_passed": 0,
+    "layer2_analyzed": 1,
+    "processing_time": "10.7s"
+  },
+  "results": [
+    {
+      "modification_id": "M001",
+      "cell": "I75",
+      "column": "负责人",
+      "old_value": "朱瀚桔",
+      "new_value": "",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 90.0,
+        "reason": "关键人缺失"
+      },
+      "layer2_result": {
+        "risk_level": "CRITICAL",
+        "decision": "REVIEW",
+        "confidence": 85,
+        "key_risks": [
+          "负责人信息被清空可能导致任务责任不明确",
+          "可能导致项目进度跟踪失效",
+          "影响团队协作中的任务分配和沟通",
+          "在问题追踪和责任归属时缺乏明确责任人"
+        ],
+        "recommendation": "建议：1.必须确认删除负责人是刻意行为而非误操作；2.如确需删除负责人信息，应同步指定临时负责人或说明责任人变更流程；3.需评估该任务当前状态和重要性，必要时召开相关人员会议确认该变更。该修改需要至少项目主管级别的审批。"
+      },
+      "final_decision": "REVIEW",
+      "approval_required": true
+    }
+  ],
+  "summary": {
+    "approved": 0,
+    "conditional": 0,
+    "review_required": 1,
+    "rejected": 0,
+    "risk_distribution": {
+      "LOW": 0,
+      "MEDIUM": 0,
+      "HIGH": 1,
+      "CRITICAL": 0
+    }
+  }
+}

@@ -1,0 +1,95 @@
+{
+  "id": "20250912_113611",
+  "start_time": "2025-09-12T11:36:11.146378",
+  "end_time": "2025-09-12T11:37:08.565694",
+  "status": "completed",
+  "results": {
+    "baseline_file": "/root/projects/tencent-doc-manager/csv_versions/2025_W37/baseline/tencent_tencent_副本-测试版本-出国销售计划表-工作表1_20250911_2013_baseline_W37.csv",
+    "target_file": "/root/projects/tencent-doc-manager/csv_versions/2025_W37/midweek/tencent_副本-副本-测试版本-出国销售计划表-工作表1_20250912_0109_midweek_W37.csv",
+    "score_file": "/root/projects/tencent-doc-manager/scoring_results/detailed/detailed_score_tmpq0mj6wjc_20250912_113707.json",
+    "marked_file": null,
+    "upload_url": null,
+    "execution_time": "0:00:57.419316"
+  },
+  "logs": [
+    {
+      "time": "11:36:11",
+      "level": "INFO",
+      "message": "开始获取基线文档..."
+    },
+    {
+      "time": "11:36:11",
+      "level": "INFO",
+      "message": "✅ 使用本地基线文件: tencent_tencent_副本-测试版本-出国销售计划表-工作表1_20250911_2013_baseline_W37.csv"
+    },
+    {
+      "time": "11:36:11",
+      "level": "INFO",
+      "message": "开始获取目标文档..."
+    },
+    {
+      "time": "11:36:11",
+      "level": "INFO",
+      "message": "✅ 使用本地目标文件: tencent_副本-副本-测试版本-出国销售计划表-工作表1_20250912_0109_midweek_W37.csv"
+    },
+    {
+      "time": "11:36:11",
+      "level": "INFO",
+      "message": "开始对比分析..."
+    },
+    {
+      "time": "11:36:11",
+      "level": "INFO",
+      "message": "✅ 对比分析完成，发现 7 处变更"
+    },
+    {
+      "time": "11:36:11",
+      "level": "INFO",
+      "message": "开始列标准化..."
+    },
+    {
+      "time": "11:36:17",
+      "level": "INFO",
+      "message": "✅ 列标准化V3完成，标准化了 3 个列"
+    },
+    {
+      "time": "11:36:17",
+      "level": "INFO",
+      "message": "开始L2语义分析和L1L3规则打分..."
+    },
+    {
+      "time": "11:36:17",
+      "level": "INFO",
+      "message": "✅ 语义分析完成，分析了 7 处变更"
+    },
+    {
+      "time": "11:36:17",
+      "level": "INFO",
+      "message": "生成详细打分JSON..."
+    },
+    {
+      "time": "11:37:07",
+      "level": "INFO",
+      "message": "✅ 详细打分生成完成: detailed_score_tmpq0mj6wjc_20250912_113707.json"
+    },
+    {
+      "time": "11:37:07",
+      "level": "INFO",
+      "message": "下载目标文档的Excel格式..."
+    },
+    {
+      "time": "11:37:08",
+      "level": "WARNING",
+      "message": "⚠️ Excel下载失败"
+    },
+    {
+      "time": "11:37:08",
+      "level": "SUCCESS",
+      "message": "🎉 所有步骤执行完成!"
+    }
+  ],
+  "settings": {
+    "task_type": "full",
+    "auto_download": true
+  }
+}

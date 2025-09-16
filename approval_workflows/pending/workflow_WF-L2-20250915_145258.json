@@ -1,0 +1,32 @@
+{
+  "workflow_id": "WF-L2-20250915_145258",
+  "created_time": "2025-09-15 14:52:58",
+  "pending_approvals": [
+    {
+      "modification_id": "M001",
+      "cell": "I41",
+      "column": "负责人",
+      "old_value": "蔡悦莹",
+      "new_value": "",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 90.0,
+        "reason": "删除负责人"
+      },
+      "layer2_result": {
+        "risk_level": "HIGH",
+        "decision": "REVIEW",
+        "confidence": 85,
+        "key_risks": [
+          "责任主体不明确导致任务无人负责",
+          "关键岗位缺失可能影响项目进度",
+          "可能违反SOP中的责任矩阵要求"
+        ],
+        "recommendation": "1. 必须补充责任人信息或说明删除原因\n2. 如为临时变更需设置明确的代理负责人\n3. 需同步更新相关依赖任务的责任人信息\n4. 建议在24小时内完成责任人重新指定"
+      },
+      "final_decision": "REVIEW",
+      "approval_required": true
+    }
+  ],
+  "auto_approved": []
+}

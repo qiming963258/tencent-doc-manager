@@ -1,0 +1,180 @@
+{
+  "metadata": {  // （元数据部分：记录文件生成的基本信息）
+    "week": "W37",  // （周数标识：使用ISO 8601标准的第37周）
+    "generation_time": "2025-09-09 13:38:57",  // （生成时间：综合报告创建的具体时间戳）
+    "total_tables": 1,  // （处理表格数：本次分析涉及的腾讯文档表格总数）
+    "total_modifications": 6,  // （总修改数：所有表格中检测到的修改项总计）
+    "scoring_version": "v1.0"  // （打分版本：使用的评分算法版本号）
+  },
+  "table_scores": [  // （表格评分数组：包含每个表格的详细评分数据）
+    {
+      "table_name": "simplified_副本-测试版本-出国销售计划表-工作表1_vs_副本-副本-测试版本-出国销售计划表-工作表1_20250906_222914_standardized",  // （表格名称：包含对比双方信息和时间戳的完整标识）
+      "table_url": "https://docs.qq.com/sheet/DWEFNU25TemFnZXJN",  // （腾讯文档URL：可直接访问查看原始文档）
+      "modifications_count": 6,  // （修改计数：该表格中发生的修改总数）
+      "column_scores": {  // （列级评分：按列名组织的详细风险评分）
+        "项目类型": {  // （列名：被修改的列的标准化名称）
+          "column_level": "L2",  // （列级别：L2表示中风险需要AI分析）
+          "modifications": 1,  // （修改次数：该列被修改的次数）
+          "scores": [  // （分数列表：每次修改的风险分数）
+            0.54  // （风险分数：0-1范围，越高风险越大）
+          ],
+          "aggregated_score": 0.54,  // （汇总分数：多次修改的加权平均分）
+          "max_score": 0.54,  // （最高分：该列修改的最高风险分）
+          "min_score": 0.54,  // （最低分：该列修改的最低风险分）
+          "risk_trend": "stable",  // （风险趋势：stable稳定/increasing上升/decreasing下降）
+          "ai_decisions": {  // （AI决策统计：记录AI做出的审批建议）
+            "REVIEW": 1  // （需要复审：AI建议人工复审的次数）
+          }
+        },
+        "任务发起时间": {  // （任务发起时间列：记录任务开始时间的列）
+          "column_level": "L1",  // （L1级别：高风险列，使用规则引擎评分）
+          "modifications": 1,  // （修改1次）
+          "scores": [
+            1.0  // （最高风险分1.0：日期修改被认为极高风险）
+          ],
+          "aggregated_score": 1.0,  // （汇总分数：单次修改直接采用原分数）
+          "max_score": 1.0,  // （最高分数）
+          "min_score": 1.0,  // （最低分数）
+          "risk_trend": "stable",  // （风险稳定：只有一次修改无法判断趋势）
+          "ai_decisions": null  // （无AI决策：L1列不使用AI分析）
+        },
+        "关键KR对齐": {  // （关键KR对齐列：OKR体系中的关键结果对齐）
+          "column_level": "L1",  // （L1高风险列）
+          "modifications": 1,
+          "scores": [
+            0.8  // （高风险分0.8：KR对齐修改影响重大）
+          ],
+          "aggregated_score": 0.8,
+          "max_score": 0.8,
+          "min_score": 0.8,
+          "risk_trend": "stable",
+          "ai_decisions": null  // （L1列不需要AI介入）
+        },
+        "邓总指导登记（日更新）": {  // （领导指导记录列：记录高层指示）
+          "column_level": "L2",  // （L2中风险：需要AI语义分析）
+          "modifications": 1,
+          "scores": [
+            0.172  // （低风险分0.172：添加前缀"---"被判定为低风险）
+          ],
+          "aggregated_score": 0.172,
+          "max_score": 0.172,
+          "min_score": 0.172,
+          "risk_trend": "stable",
+          "ai_decisions": {
+            "APPROVE": 1  // （批准：AI判断修改合理可以通过）
+          }
+        },
+        "负责人": {  // （负责人列：项目责任人信息）
+          "column_level": "L2",  // （L2需要AI分析）
+          "modifications": 1,
+          "scores": [
+            0.432  // （中等风险0.432：添加多个责任人需要确认）
+          ],
+          "aggregated_score": 0.432,
+          "max_score": 0.432,
+          "min_score": 0.432,
+          "risk_trend": "stable",
+          "ai_decisions": {
+            "CONDITIONAL": 1  // （有条件批准：需要满足特定条件）
+          }
+        },
+        "预计完成时间": {  // （预计完成时间列：项目截止日期）
+          "column_level": "L1",  // （L1高风险列）
+          "modifications": 1,
+          "scores": [
+            0.96  // （极高风险0.96：新增日期需要重点关注）
+          ],
+          "aggregated_score": 0.96,
+          "max_score": 0.96,
+          "min_score": 0.96,
+          "risk_trend": "stable",
+          "ai_decisions": null
+        }
+      },
+      "table_summary": {  // （表格汇总：整个表格的风险概况）
+        "overall_risk_score": 0.651,  // （总体风险分：所有列的加权平均，0.651属于高风险）
+        "risk_level": "HIGH",  // （风险等级：HIGH高风险需要优先处理）
+        "top_risks": [  // （高风险列表：按风险分数排序的前5个列）
+          {
+            "column": "任务发起时间",  // （最高风险列）
+            "score": 1.0  // （满分风险）
+          },
+          {
+            "column": "预计完成时间",  // （第二高风险）
+            "score": 0.96
+          },
+          {
+            "column": "关键KR对齐",  // （第三高风险）
+            "score": 0.8
+          },
+          {
+            "column": "项目类型",  // （中等风险）
+            "score": 0.54
+          },
+          {
+            "column": "负责人",  // （较低风险）
+            "score": 0.432
+          }
+        ],
+        "recommended_action": "priority_review"  // （建议操作：priority_review优先审核）
+      }
+    }
+  ],
+  "cross_table_analysis": {  // （跨表分析：分析多个表格间的模式和趋势）
+    "column_risk_ranking": [  // （列风险排名：所有表格中同一列的平均风险）
+      {
+        "column": "任务发起时间",  // （列名）
+        "avg_score": 1.0,  // （平均风险分：跨表格的平均值）
+        "tables_affected": 1  // （影响表格数：有该列修改的表格数量）
+      },
+      {
+        "column": "预计完成时间",
+        "avg_score": 0.96,
+        "tables_affected": 1
+      },
+      {
+        "column": "关键KR对齐",
+        "avg_score": 0.8,
+        "tables_affected": 1
+      },
+      {
+        "column": "项目类型",
+        "avg_score": 0.54,
+        "tables_affected": 1
+      },
+      {
+        "column": "负责人",
+        "avg_score": 0.432,
+        "tables_affected": 1
+      },
+      {
+        "column": "邓总指导登记（日更新）",
+        "avg_score": 0.172,  // （最低风险列）
+        "tables_affected": 1
+      }
+    ],
+    "pattern_detection": {  // （模式检测：识别系统性变化和异常）
+      "systematic_changes": [],  // （系统性变化：空数组表示未发现批量变更模式）
+      "anomalies": [  // （异常检测：发现的异常模式列表）
+        {
+          "type": "多列高风险",  // （异常类型：多个列同时出现高风险）
+          "columns": [  // （涉及的高风险列）
+            "任务发起时间",
+            "关键KR对齐",
+            "预计完成时间"
+          ],
+          "table": "simplified_副本-测试版本-出国销售计划表-工作表1_vs_副本-副本-测试版本-出国销售计划表-工作表1_20250906_222914_standardized",  // （异常所在表格）
+          "severity": "HIGH"  // （严重程度：HIGH表示需要立即关注）
+        }
+      ]
+    },
+    "overall_metrics": {  // （总体指标：系统级的统计数据）
+      "system_risk_score": 0.651,  // （系统风险分：所有表格的综合风险评分）
+      "risk_level": "HIGH",  // （系统风险等级：HIGH需要管理层关注）
+      "total_high_risks": 3,  // （高风险修改数：风险分≥0.6的修改总数）
+      "total_critical_changes": 3,  // （关键变更数：风险分≥0.8的修改总数）
+      "ai_intervention_rate": "100.0%",  // （AI介入率：L2列中使用AI分析的比例，100%表示全部L2列都经过AI处理）
+      "token_efficiency": "98.6%"  // （Token效率：两层AI架构相比单层节省的token百分比）
+    }
+  }
+}

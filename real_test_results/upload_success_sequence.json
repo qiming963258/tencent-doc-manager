@@ -1,0 +1,13 @@
+{
+  "timestamp": "2025-08-28T18:46:44.073618",
+  "file_uploaded": "/root/projects/tencent-doc-manager/real_test_results/direct_download_174042/测试版本-回国销售计划表_I6修改.xlsx",
+  "file_size": 11706,
+  "success": true,
+  "click_sequence": [
+    "1. 访问主页: https://docs.qq.com/desktop",
+    "2. 点击导入按钮: button[class*=\"import\"]",
+    "3. 选择文件: filechooser事件",
+    "4. 点击确认: div[class*=\"dui-button\"]:has-text(\"确定\")",
+    "5. 等待完成: networkidle检测"
+  ]
+}

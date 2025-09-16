@@ -1,0 +1,48 @@
+{
+  "metadata": {
+    "analysis_time": "2025-09-15 15:20:04",
+    "total_modifications": 1,
+    "layer1_passed": 0,
+    "layer2_analyzed": 1,
+    "processing_time": "16.2s"
+  },
+  "results": [
+    {
+      "modification_id": "M001",
+      "cell": "I69",
+      "column": "负责人",
+      "old_value": "朱瀚桔",
+      "new_value": "",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 80.0,
+        "reason": "关键信息缺失"
+      },
+      "layer2_result": {
+        "risk_level": "CRITICAL",
+        "decision": "REVIEW",
+        "confidence": 85,
+        "key_risks": [
+          "负责人信息被清空导致责任不明确",
+          "可能导致任务无人负责而延误",
+          "影响团队协作和工作分配"
+        ],
+        "recommendation": "1. 必须立即补充新的负责人信息\n2. 如果暂时不确定负责人，应标记为待定并设置审查期限\n3. 通知相关团队成员此变更\n4. 评估对当前任务进度的影响并制定补救计划"
+      },
+      "final_decision": "REVIEW",
+      "approval_required": true
+    }
+  ],
+  "summary": {
+    "approved": 0,
+    "conditional": 0,
+    "review_required": 1,
+    "rejected": 0,
+    "risk_distribution": {
+      "LOW": 0,
+      "MEDIUM": 0,
+      "HIGH": 1,
+      "CRITICAL": 0
+    }
+  }
+}

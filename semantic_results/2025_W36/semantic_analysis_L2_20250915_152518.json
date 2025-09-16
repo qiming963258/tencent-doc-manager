@@ -1,0 +1,49 @@
+{
+  "metadata": {
+    "analysis_time": "2025-09-15 15:25:18",
+    "total_modifications": 1,
+    "layer1_passed": 0,
+    "layer2_analyzed": 1,
+    "processing_time": "17.8s"
+  },
+  "results": [
+    {
+      "modification_id": "M001",
+      "cell": "B75",
+      "column": "项目类型",
+      "old_value": "目标管理",
+      "new_value": "",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 90.0,
+        "reason": "关键字段空"
+      },
+      "layer2_result": {
+        "risk_level": "CRITICAL",
+        "decision": "REJECT",
+        "confidence": 95,
+        "key_risks": [
+          "项目类型空白导致立项依据缺失",
+          "无法确定项目分类和管理框架",
+          "影响项目资源的分配决策",
+          "导致项目审计和评估标准不清"
+        ],
+        "recommendation": "必须补充完整的项目类型信息，如删除需提供正式变更申请说明。建议：1)恢复原值或填写有效项目类型 2)如需清空必须同步提交变更申请文档 3)召开变更评审会议"
+      },
+      "final_decision": "REJECT",
+      "approval_required": true
+    }
+  ],
+  "summary": {
+    "approved": 0,
+    "conditional": 0,
+    "review_required": 0,
+    "rejected": 1,
+    "risk_distribution": {
+      "LOW": 0,
+      "MEDIUM": 0,
+      "HIGH": 0,
+      "CRITICAL": 1
+    }
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "workflow_id": "WF-L2-20250915_150857",
+  "created_time": "2025-09-15 15:08:57",
+  "pending_approvals": [
+    {
+      "modification_id": "M001",
+      "cell": "I57",
+      "column": "负责人",
+      "old_value": "朱瀚桔",
+      "new_value": "0604-",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 80.0,
+        "reason": "关键人变更"
+      },
+      "layer2_result": {
+        "risk_level": "CRITICAL",
+        "decision": "REJECT",
+        "confidence": 95,
+        "key_risks": [
+          "删除实际负责人信息可能导致责任归属不清",
+          "替换为不明确的代码值（0604-）违反责任人记录规范",
+          "严重影响团队协作和项目管理透明度",
+          "可能违反公司审计和合规要求"
+        ],
+        "recommendation": "1. 必须保留实际负责人姓名\n2. 如需添加编号，建议采用'姓名（工号）'格式\n3. 如朱瀚桔离职需变更负责人，应正式任命新负责人并更新为完整姓名\n4. 核查修改此记录的人员和原因"
+      },
+      "final_decision": "REJECT",
+      "approval_required": true
+    }
+  ],
+  "auto_approved": []
+}

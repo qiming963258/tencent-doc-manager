@@ -1,0 +1,48 @@
+{
+  "metadata": {
+    "analysis_time": "2025-09-15 16:52:44",
+    "total_modifications": 1,
+    "layer1_passed": 0,
+    "layer2_analyzed": 1,
+    "processing_time": "11.6s"
+  },
+  "results": [
+    {
+      "modification_id": "M001",
+      "cell": "H27",
+      "column": "具体计划内容",
+      "old_value": "周末资源交接不够流程化，需要具体指导规范；",
+      "new_value": "",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 90.0,
+        "reason": "删除规范"
+      },
+      "layer2_result": {
+        "risk_level": "MEDIUM",
+        "decision": "REVIEW",
+        "confidence": 75,
+        "key_risks": [
+          "内容删减可能导致关键流程规范缺失",
+          "团队对周末资源交接流程的认知和执行可能不一致",
+          "可能影响项目执行的标准化程度"
+        ],
+        "recommendation": "建议补充新的具体指导规范内容，而不是完全删除原有内容。若确实需要删除，应确保已有其他文档或流程覆盖该部分内容，并通知所有相关人员。在修改前应获得相关干系人的确认。"
+      },
+      "final_decision": "REVIEW",
+      "approval_required": true
+    }
+  ],
+  "summary": {
+    "approved": 0,
+    "conditional": 0,
+    "review_required": 1,
+    "rejected": 0,
+    "risk_distribution": {
+      "LOW": 0,
+      "MEDIUM": 0,
+      "HIGH": 1,
+      "CRITICAL": 0
+    }
+  }
+}

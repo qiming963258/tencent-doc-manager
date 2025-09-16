@@ -1,0 +1,32 @@
+{
+  "workflow_id": "WF-L2-20250915_151516",
+  "created_time": "2025-09-15 15:15:16",
+  "pending_approvals": [
+    {
+      "modification_id": "M001",
+      "cell": "K64",
+      "column": "监督人",
+      "old_value": "邓总",
+      "new_value": "",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 80.0,
+        "reason": "关键人变更"
+      },
+      "layer2_result": {
+        "risk_level": "MEDIUM",
+        "decision": "REVIEW",
+        "confidence": 70,
+        "key_risks": [
+          "监督人职责空缺可能导致项目监管失效",
+          "责任主体不明确可能引发决策延误",
+          "团队成员可能对工作优先级产生困惑"
+        ],
+        "recommendation": "建议立即确认新的监督人人选，并在变更实施前完成工作交接。若需暂时留空，应明确过渡期间的临时监管机制和替代责任人。同时通知相关干系人此变更情况。"
+      },
+      "final_decision": "REVIEW",
+      "approval_required": true
+    }
+  ],
+  "auto_approved": []
+}

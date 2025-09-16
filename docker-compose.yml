@@ -1,0 +1,80 @@
+version: '3.8'
+
+services:
+  tencent-doc-automation:
+    build: .
+    container_name: tencent-doc-auto
+    restart: always
+    
+    # 资源限制
+    deploy:
+      resources:
+        limits:
+          cpus: '1.0'
+          memory: 2G
+        reservations:
+          cpus: '0.5'
+          memory: 1G
+    
+    # 数据卷
+    volumes:
+      - ./auto_downloads:/app/auto_downloads
+      - ./processed:/app/processed
+      - ./logs:/app/logs
+      - ./config:/app/config
+      - ./automation_config.json:/app/automation_config.json
+    
+    # 环境变量
+    environment:
+      - TZ=Asia/Shanghai
+      - LOG_LEVEL=INFO
+      - MAX_WORKERS=5
+    
+    # 日志配置
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"
+    
+    # 网络（如需要外部访问）
+    networks:
+      - tencent-doc-net
+    
+    # 健康检查
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8080/health"]
+      interval: 5m
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+
+  # 可选：Redis缓存服务
+  redis:
+    image: redis:alpine
+    container_name: tencent-doc-redis
+    restart: always
+    networks:
+      - tencent-doc-net
+    volumes:
+      - redis-data:/data
+
+  # 可选：监控面板
+  monitoring:
+    image: grafana/grafana:latest
+    container_name: tencent-doc-monitor
+    restart: always
+    ports:
+      - "3000:3000"
+    networks:
+      - tencent-doc-net
+    volumes:
+      - grafana-data:/var/lib/grafana
+
+networks:
+  tencent-doc-net:
+    driver: bridge
+
+volumes:
+  redis-data:
+  grafana-data:

@@ -1,0 +1,33 @@
+{
+  "workflow_id": "WF-L2-20250915_152518",
+  "created_time": "2025-09-15 15:25:18",
+  "pending_approvals": [
+    {
+      "modification_id": "M001",
+      "cell": "B75",
+      "column": "项目类型",
+      "old_value": "目标管理",
+      "new_value": "",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 90.0,
+        "reason": "关键字段空"
+      },
+      "layer2_result": {
+        "risk_level": "CRITICAL",
+        "decision": "REJECT",
+        "confidence": 95,
+        "key_risks": [
+          "项目类型空白导致立项依据缺失",
+          "无法确定项目分类和管理框架",
+          "影响项目资源的分配决策",
+          "导致项目审计和评估标准不清"
+        ],
+        "recommendation": "必须补充完整的项目类型信息，如删除需提供正式变更申请说明。建议：1)恢复原值或填写有效项目类型 2)如需清空必须同步提交变更申请文档 3)召开变更评审会议"
+      },
+      "final_decision": "REJECT",
+      "approval_required": true
+    }
+  ],
+  "auto_approved": []
+}

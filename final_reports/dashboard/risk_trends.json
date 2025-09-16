@@ -1,0 +1,120 @@
+{
+  "metadata": {
+    "generated_time": "2025-09-07 22:50:00",
+    "data_range": "2025_W31-W36",
+    "update_frequency": "weekly"
+  },
+  "weekly_trends": [
+    {
+      "week": "W31",
+      "total_modifications": 1200,
+      "risk_distribution": {
+        "LOW": 780,
+        "MEDIUM": 260,
+        "HIGH": 120,
+        "CRITICAL": 40
+      },
+      "auto_approval_rate": 0.65
+    },
+    {
+      "week": "W32",
+      "total_modifications": 1350,
+      "risk_distribution": {
+        "LOW": 900,
+        "MEDIUM": 290,
+        "HIGH": 110,
+        "CRITICAL": 50
+      },
+      "auto_approval_rate": 0.67
+    },
+    {
+      "week": "W33",
+      "total_modifications": 1400,
+      "risk_distribution": {
+        "LOW": 940,
+        "MEDIUM": 310,
+        "HIGH": 105,
+        "CRITICAL": 45
+      },
+      "auto_approval_rate": 0.67
+    },
+    {
+      "week": "W34",
+      "total_modifications": 1450,
+      "risk_distribution": {
+        "LOW": 980,
+        "MEDIUM": 320,
+        "HIGH": 100,
+        "CRITICAL": 50
+      },
+      "auto_approval_rate": 0.68
+    },
+    {
+      "week": "W35",
+      "total_modifications": 1500,
+      "risk_distribution": {
+        "LOW": 1010,
+        "MEDIUM": 340,
+        "HIGH": 95,
+        "CRITICAL": 55
+      },
+      "auto_approval_rate": 0.67
+    },
+    {
+      "week": "W36",
+      "total_modifications": 1575,
+      "risk_distribution": {
+        "LOW": 1055,
+        "MEDIUM": 364,
+        "HIGH": 104,
+        "CRITICAL": 52
+      },
+      "auto_approval_rate": 0.67
+    }
+  ],
+  "risk_categories": {
+    "项目类型": {
+      "total_changes": 156,
+      "high_risk_rate": 0.35,
+      "common_patterns": [
+        "目标管理→体系建设",
+        "执行项目→调研项目",
+        "常规任务→紧急任务"
+      ]
+    },
+    "关键KR对齐": {
+      "total_changes": 203,
+      "high_risk_rate": 0.42,
+      "common_patterns": [
+        "删除KR内容",
+        "更改目标等级",
+        "推迟完成时间"
+      ]
+    },
+    "负责人": {
+      "total_changes": 345,
+      "high_risk_rate": 0.15,
+      "common_patterns": [
+        "增加协助人",
+        "部门内调整",
+        "跨部门调动"
+      ]
+    },
+    "邓总指导登记": {
+      "total_changes": 89,
+      "high_risk_rate": 0.68,
+      "common_patterns": [
+        "删除指示内容",
+        "修改关键指示",
+        "格式调整"
+      ]
+    }
+  },
+  "performance_metrics": {
+    "average_processing_time": "1.1s",
+    "token_savings": "98.6%",
+    "accuracy_rate": "85%",
+    "false_positive_rate": "8%",
+    "false_negative_rate": "7%"
+  }
+}

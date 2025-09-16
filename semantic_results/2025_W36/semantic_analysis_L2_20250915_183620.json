@@ -1,0 +1,48 @@
+{
+  "metadata": {
+    "analysis_time": "2025-09-15 18:36:20",
+    "total_modifications": 1,
+    "layer1_passed": 0,
+    "layer2_analyzed": 1,
+    "processing_time": "10.6s"
+  },
+  "results": [
+    {
+      "modification_id": "M001",
+      "cell": "K32",
+      "column": "协助人",
+      "old_value": "赖铁荔",
+      "new_value": "",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 75.0,
+        "reason": "删除协助人"
+      },
+      "layer2_result": {
+        "risk_level": "HIGH",
+        "decision": "REVIEW",
+        "confidence": 85,
+        "key_risks": [
+          "协助人信息被清空，可能导致任务无人负责",
+          "影响团队协作和责任分配",
+          "可能延误相关任务的执行进度"
+        ],
+        "recommendation": "建议确认是否为误操作。如果是故意清空，请补充说明原因并指定新的协助人，确保责任明确。同时通知相关团队成员，避免因协助人缺失导致任务延误。"
+      },
+      "final_decision": "REVIEW",
+      "approval_required": true
+    }
+  ],
+  "summary": {
+    "approved": 0,
+    "conditional": 0,
+    "review_required": 1,
+    "rejected": 0,
+    "risk_distribution": {
+      "LOW": 0,
+      "MEDIUM": 0,
+      "HIGH": 1,
+      "CRITICAL": 0
+    }
+  }
+}

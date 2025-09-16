@@ -1,0 +1,32 @@
+{
+  "workflow_id": "WF-L2-20250915_150427",
+  "created_time": "2025-09-15 15:04:27",
+  "pending_approvals": [
+    {
+      "modification_id": "M001",
+      "cell": "K52",
+      "column": "监督人",
+      "old_value": "邓总",
+      "new_value": "王寒晓",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 80.0,
+        "reason": "关键人变更"
+      },
+      "layer2_result": {
+        "risk_level": "MEDIUM",
+        "decision": "REVIEW",
+        "confidence": 75,
+        "key_risks": [
+          "监督人变更可能导致项目监督风格和标准变化",
+          "新监督人可能需要时间熟悉项目情况",
+          "团队需要适应新的监督方式和沟通节奏"
+        ],
+        "recommendation": "建议组织一次正式的监督人交接会议，确保：1)项目目标和当前状态被充分传达；2)明确新监督人的期望和要求；3)建立团队与新监督人的沟通机制。同时应更新所有相关文档中的监督人信息。"
+      },
+      "final_decision": "REVIEW",
+      "approval_required": true
+    }
+  ],
+  "auto_approved": []
+}

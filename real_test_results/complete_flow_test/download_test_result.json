@@ -1,0 +1,23 @@
+{
+  "timestamp": "2025-08-28T16:25:39.244148",
+  "test_phase": "download",
+  "document_url": "https://docs.qq.com/sheet/DWEVjZndkR2xVSWJN",
+  "target_format": "excel",
+  "success": true,
+  "downloaded_files": [
+    "/root/projects/tencent-doc-manager/real_test_results/complete_flow_test/测试版本-小红书部门.xlsx"
+  ],
+  "primary_file": "/root/projects/tencent-doc-manager/real_test_results/complete_flow_test/测试版本-小红书部门.xlsx",
+  "error": null,
+  "details": {
+    "success": true,
+    "file_path": "/root/projects/tencent-doc-manager/real_test_results/complete_flow_test/测试版本-小红书部门.xlsx",
+    "files": [
+      "/root/projects/tencent-doc-manager/real_test_results/complete_flow_test/测试版本-小红书部门.xlsx"
+    ],
+    "error": null,
+    "backup_methods_used": true,
+    "export_format": "excel",
+    "file_count": 1
+  }
+}

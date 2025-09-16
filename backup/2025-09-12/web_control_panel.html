@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>腾讯文档下载控制面板</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+        
+        .container {
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            max-width: 800px;
+            width: 100%;
+            padding: 40px;
+        }
+        
+        h1 {
+            text-align: center;
+            color: #2d3748;
+            margin-bottom: 10px;
+            font-size: 28px;
+        }
+        
+        .subtitle {
+            text-align: center;
+            color: #718096;
+            margin-bottom: 30px;
+            font-size: 14px;
+        }
+        
+        .status-card {
+            background: #f7fafc;
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 30px;
+        }
+        
+        .status-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        
+        .status-row:last-child {
+            margin-bottom: 0;
+        }
+        
+        .status-label {
+            color: #4a5568;
+            font-weight: 500;
+        }
+        
+        .status-value {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .status-indicator {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: #cbd5e0;
+        }
+        
+        .status-indicator.connected {
+            background: #48bb78;
+            animation: pulse 2s infinite;
+        }
+        
+        .status-indicator.disconnected {
+            background: #fc8181;
+        }
+        
+        @keyframes pulse {
+            0% { opacity: 1; }
+            50% { opacity: 0.5; }
+            100% { opacity: 1; }
+        }
+        
+        .control-section {
+            margin-bottom: 30px;
+        }
+        
+        .section-title {
+            color: #2d3748;
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #e2e8f0;
+        }
+        
+        .input-group {
+            margin-bottom: 20px;
+        }
+        
+        .input-label {
+            display: block;
+            color: #4a5568;
+            font-weight: 500;
+            margin-bottom: 8px;
+        }
+        
+        .input-field {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #e2e8f0;
+            border-radius: 8px;
+            font-size: 14px;
+            transition: all 0.3s;
+        }
+        
+        .input-field:focus {
+            outline: none;
+            border-color: #667eea;
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+        }
+        
+        .input-field.textarea {
+            min-height: 100px;
+            resize: vertical;
+            font-family: monospace;
+            font-size: 12px;
+        }
+        
+        .button {
+            padding: 12px 24px;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            margin-right: 10px;
+            margin-bottom: 10px;
+        }
+        
+        .button.primary {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+        
+        .button.primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(102, 126, 234, 0.3);
+        }
+        
+        .button.secondary {
+            background: #e2e8f0;
+            color: #4a5568;
+        }
+        
+        .button.secondary:hover {
+            background: #cbd5e0;
+        }
+        
+        .button.danger {
+            background: #fc8181;
+            color: white;
+        }
+        
+        .button.danger:hover {
+            background: #f56565;
+        }
+        
+        .button:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+        
+        .doc-list {
+            background: #f7fafc;
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 20px;
+        }
+        
+        .doc-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px;
+            background: white;
+            border-radius: 6px;
+            margin-bottom: 10px;
+            transition: all 0.3s;
+        }
+        
+        .doc-item:hover {
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        
+        .doc-item:last-child {
+            margin-bottom: 0;
+        }
+        
+        .doc-info {
+            flex: 1;
+        }
+        
+        .doc-id {
+            font-family: monospace;
+            color: #4a5568;
+            font-size: 14px;
+        }
+        
+        .doc-status {
+            font-size: 12px;
+            color: #718096;
+            margin-top: 4px;
+        }
+        
+        .log-container {
+            background: #2d3748;
+            color: #a0aec0;
+            border-radius: 8px;
+            padding: 15px;
+            max-height: 300px;
+            overflow-y: auto;
+            font-family: 'Courier New', monospace;
+            font-size: 12px;
+            line-height: 1.5;
+        }
+        
+        .log-entry {
+            margin-bottom: 8px;
+            padding: 5px;
+            border-left: 3px solid transparent;
+        }
+        
+        .log-entry.info {
+            border-left-color: #4299e1;
+        }
+        
+        .log-entry.success {
+            border-left-color: #48bb78;
+            color: #68d391;
+        }
+        
+        .log-entry.error {
+            border-left-color: #fc8181;
+            color: #fc8181;
+        }
+        
+        .log-entry.warning {
+            border-left-color: #f6ad55;
+            color: #f6ad55;
+        }
+        
+        .help-text {
+            background: #fef5e7;
+            border-left: 4px solid #f6ad55;
+            padding: 12px;
+            margin-top: 20px;
+            border-radius: 4px;
+            font-size: 14px;
+            color: #744210;
+        }
+        
+        .spinner {
+            display: inline-block;
+            width: 16px;
+            height: 16px;
+            border: 2px solid #e2e8f0;
+            border-top-color: #667eea;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+        
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🚀 腾讯文档下载控制面板</h1>
+        <p class="subtitle">通过本地浏览器桥接安全下载文档</p>
+        
+        <!-- 连接状态 -->
+        <div class="status-card">
+            <div class="status-row">
+                <span class="status-label">桥接服务状态</span>
+                <div class="status-value">
+                    <span class="status-indicator" id="bridgeStatus"></span>
+                    <span id="bridgeStatusText">未连接</span>
+                </div>
+            </div>
+            <div class="status-row">
+                <span class="status-label">浏览器状态</span>
+                <div class="status-value">
+                    <span class="status-indicator" id="browserStatus"></span>
+                    <span id="browserStatusText">未启动</span>
+                </div>
+            </div>
+            <div class="status-row">
+                <span class="status-label">登录状态</span>
+                <div class="status-value">
+                    <span id="loginStatusText">未知</span>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 步骤1：连接本地服务 -->
+        <div class="control-section">
+            <h2 class="section-title">步骤1：连接本地桥接服务</h2>
+            <button class="button primary" onclick="connectBridge()">
+                <span id="connectBtnText">连接本地服务</span>
+            </button>
+            <button class="button secondary" onclick="checkStatus()">检查状态</button>
+        </div>
+        
+        <!-- 步骤2：Cookie设置（可选） -->
+        <div class="control-section">
+            <h2 class="section-title">步骤2：设置Cookie（可选）</h2>
+            <div class="input-group">
+                <label class="input-label">Cookie字符串（如果已登录可跳过）</label>
+                <textarea class="input-field textarea" id="cookieInput" 
+                    placeholder="粘贴您的Cookie字符串，格式：key1=value1; key2=value2"></textarea>
+            </div>
+            <button class="button secondary" onclick="initBrowserWithCookie()">使用Cookie启动浏览器</button>
+            <button class="button secondary" onclick="initBrowserNoCookie()">直接启动浏览器</button>
+        </div>
+        
+        <!-- 步骤3：下载文档 -->
+        <div class="control-section">
+            <h2 class="section-title">步骤3：下载文档</h2>
+            
+            <div class="input-group">
+                <label class="input-label">文档ID或链接</label>
+                <input type="text" class="input-field" id="docInput" 
+                    placeholder="输入文档ID（如：DWEVjZndkR2xVSWJN）或完整链接">
+            </div>
+            
+            <div class="input-group">
+                <label class="input-label">下载格式</label>
+                <select class="input-field" id="formatSelect">
+                    <option value="xlsx">Excel (.xlsx)</option>
+                    <option value="csv">CSV (.csv)</option>
+                </select>
+            </div>
+            
+            <button class="button primary" onclick="downloadDocument()">
+                <span id="downloadBtnText">开始下载</span>
+            </button>
+            
+            <!-- 预设文档列表 -->
+            <div class="doc-list" style="margin-top: 20px;">
+                <div style="margin-bottom: 10px; color: #4a5568; font-weight: 500;">快速下载测试文档</div>
+                <div class="doc-item">
+                    <div class="doc-info">
+                        <div class="doc-id">DWEVjZndkR2xVSWJN</div>
+                        <div class="doc-status">测试版本-小红书部门</div>
+                    </div>
+                    <button class="button secondary" onclick="quickDownload('DWEVjZndkR2xVSWJN')">下载</button>
+                </div>
+                <div class="doc-item">
+                    <div class="doc-info">
+                        <div class="doc-id">DRFppYm15RGZ2WExN</div>
+                        <div class="doc-status">测试版本-回国销售计划表</div>
+                    </div>
+                    <button class="button secondary" onclick="quickDownload('DRFppYm15RGZ2WExN')">下载</button>
+                </div>
+                <div class="doc-item">
+                    <div class="doc-info">
+                        <div class="doc-id">DRHZrS1hOS3pwRGZB</div>
+                        <div class="doc-status">测试版本-出国销售计划表</div>
+                    </div>
+                    <button class="button secondary" onclick="quickDownload('DRHZrS1hOS3pwRGZB')">下载</button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 操作日志 -->
+        <div class="control-section">
+            <h2 class="section-title">操作日志</h2>
+            <div class="log-container" id="logContainer"></div>
+        </div>
+        
+        <!-- 帮助信息 -->
+        <div class="help-text">
+            <strong>使用说明：</strong><br>
+            1. 首先运行本地桥接服务：<code>python3 local_browser_bridge.py</code><br>
+            2. 点击"连接本地服务"建立WebSocket连接<br>
+            3. 如果未登录，可以粘贴Cookie或直接启动浏览器手动登录<br>
+            4. 输入文档ID或使用快速下载测试<br>
+            5. 下载的文件将保存到 ~/Downloads/TencentDocs 目录
+        </div>
+    </div>
+    
+    <script>
+        let ws = null;
+        let isConnected = false;
+        let isBrowserRunning = false;
+        
+        // 日志记录
+        function addLog(message, type = 'info') {
+            const logContainer = document.getElementById('logContainer');
+            const entry = document.createElement('div');
+            entry.className = `log-entry ${type}`;
+            const timestamp = new Date().toLocaleTimeString();
+            entry.textContent = `[${timestamp}] ${message}`;
+            logContainer.appendChild(entry);
+            logContainer.scrollTop = logContainer.scrollHeight;
+        }
+        
+        // 更新状态显示
+        function updateStatus(element, text, connected = false) {
+            const statusElement = document.getElementById(element + 'Status');
+            const textElement = document.getElementById(element + 'StatusText');
+            
+            if (statusElement) {
+                statusElement.className = `status-indicator ${connected ? 'connected' : 'disconnected'}`;
+            }
+            if (textElement) {
+                textElement.textContent = text;
+            }
+        }
+        
+        // 连接本地桥接服务
+        function connectBridge() {
+            if (ws && ws.readyState === WebSocket.OPEN) {
+                addLog('已经连接到本地服务', 'warning');
+                return;
+            }
+            
+            addLog('正在连接本地桥接服务...', 'info');
+            document.getElementById('connectBtnText').innerHTML = '<span class="spinner"></span> 连接中...';
+            
+            try {
+                ws = new WebSocket('ws://localhost:8765');
+                
+                ws.onopen = () => {
+                    isConnected = true;
+                    updateStatus('bridge', '已连接', true);
+                    document.getElementById('connectBtnText').textContent = '已连接';
+                    addLog('成功连接到本地桥接服务', 'success');
+                    
+                    // 检查状态
+                    checkStatus();
+                };
+                
+                ws.onclose = () => {
+                    isConnected = false;
+                    updateStatus('bridge', '未连接', false);
+                    updateStatus('browser', '未知', false);
+                    document.getElementById('connectBtnText').textContent = '重新连接';
+                    addLog('与本地服务断开连接', 'error');
+                };
+                
+                ws.onerror = (error) => {
+                    addLog('连接错误：请确保本地桥接服务正在运行', 'error');
+                    document.getElementById('connectBtnText').textContent = '连接失败';
+                };
+                
+                ws.onmessage = (event) => {
+                    try {
+                        const response = JSON.parse(event.data);
+                        handleResponse(response);
+                    } catch (e) {
+                        addLog('解析响应失败: ' + e.message, 'error');
+                    }
+                };
+                
+            } catch (error) {
+                addLog('创建WebSocket连接失败: ' + error.message, 'error');
+                document.getElementById('connectBtnText').textContent = '连接失败';
+            }
+        }
+        
+        // 处理响应
+        function handleResponse(response) {
+            if (response.status === 'success') {
+                if (response.data) {
+                    // 处理不同类型的成功响应
+                    if (response.data.bridge_version) {
+                        // 状态检查响应
+                        addLog(`桥接服务版本: ${response.data.bridge_version}`, 'info');
+                        isBrowserRunning = response.data.browser_connected;
+                        updateStatus('browser', isBrowserRunning ? '运行中' : '未启动', isBrowserRunning);
+                    }
+                    
+                    if (response.data.logged_in !== undefined) {
+                        // 登录状态响应
+                        const loginText = response.data.logged_in ? '已登录' : '未登录';
+                        document.getElementById('loginStatusText').textContent = loginText;
+                        addLog(`登录状态: ${loginText}`, response.data.logged_in ? 'success' : 'warning');
+                    }
+                    
+                    if (response.data.filepath) {
+                        // 下载完成响应
+                        addLog(`文件已下载: ${response.data.filename} (${response.data.size} bytes)`, 'success');
+                        addLog(`保存位置: ${response.data.filepath}`, 'info');
+                        document.getElementById('downloadBtnText').textContent = '开始下载';
+                    }
+                } else {
+                    addLog(response.message || '操作成功', 'success');
+                }
+            } else {
+                addLog(`错误: ${response.message}`, 'error');
+                document.getElementById('downloadBtnText').textContent = '开始下载';
+            }
+        }
+        
+        // 发送命令
+        function sendCommand(command) {
+            if (!ws || ws.readyState !== WebSocket.OPEN) {
+                addLog('请先连接本地服务', 'error');
+                return false;
+            }
+            
+            ws.send(JSON.stringify(command));
+            return true;
+        }
+        
+        // 检查状态
+        function checkStatus() {
+            if (sendCommand({action: 'check_status'})) {
+                addLog('检查服务状态...', 'info');
+            }
+        }
+        
+        // 使用Cookie初始化浏览器
+        function initBrowserWithCookie() {
+            const cookieInput = document.getElementById('cookieInput').value.trim();
+            
+            if (!cookieInput) {
+                addLog('请输入Cookie字符串', 'error');
+                return;
+            }
+            
+            if (sendCommand({
+                action: 'init_browser',
+                cookies: cookieInput
+            })) {
+                addLog('正在启动浏览器并设置Cookie...', 'info');
+                updateStatus('browser', '启动中...', false);
+                
+                // 3秒后检查登录状态
+                setTimeout(() => {
+                    sendCommand({action: 'login_check'});
+                }, 3000);
+            }
+        }
+        
+        // 直接启动浏览器
+        function initBrowserNoCookie() {
+            if (sendCommand({action: 'init_browser'})) {
+                addLog('正在启动浏览器...', 'info');
+                updateStatus('browser', '启动中...', false);
+                
+                // 3秒后检查登录状态
+                setTimeout(() => {
+                    sendCommand({action: 'login_check'});
+                }, 3000);
+            }
+        }
+        
+        // 下载文档
+        function downloadDocument() {
+            const docInput = document.getElementById('docInput').value.trim();
+            const format = document.getElementById('formatSelect').value;
+            
+            if (!docInput) {
+                addLog('请输入文档ID或链接', 'error');
+                return;
+            }
+            
+            // 从链接中提取文档ID
+            let docId = docInput;
+            if (docInput.includes('docs.qq.com')) {
+                const match = docInput.match(/sheet\/([A-Za-z0-9]+)/);
+                if (match) {
+                    docId = match[1];
+                }
+            }
+            
+            document.getElementById('downloadBtnText').innerHTML = '<span class="spinner"></span> 下载中...';
+            
+            if (sendCommand({
+                action: 'download_document',
+                doc_id: docId,
+                format: format
+            })) {
+                addLog(`开始下载文档: ${docId} (${format})`, 'info');
+            }
+        }
+        
+        // 快速下载
+        function quickDownload(docId) {
+            document.getElementById('docInput').value = docId;
+            downloadDocument();
+        }
+        
+        // 页面加载时自动尝试连接
+        window.onload = () => {
+            addLog('页面加载完成，请连接本地服务', 'info');
+        };
+        
+        // 页面关闭时清理
+        window.onbeforeunload = () => {
+            if (ws) {
+                ws.close();
+            }
+        };
+    </script>
+</body>
+</html>

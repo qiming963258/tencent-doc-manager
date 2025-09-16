@@ -1,0 +1,27 @@
+{
+  "task_id": "daily_sales_report",
+  "name": "每日销售报表采集",
+  "schedule": {
+    "type": "simple",
+    "expression": "daily:09:00",
+    "timezone": "Asia/Shanghai"
+  },
+  "urls": [
+    "https://docs.qq.com/sheet/DYkNJRlp0cWRWZUlH?tab=sales_daily",
+    "https://docs.qq.com/sheet/DYkNJRlp0cWRWZUlH?tab=customer_data"
+  ],
+  "cookies": "your_cookies_here",
+  "options": {
+    "concurrent_limit": 2,
+    "timeout": 60,
+    "retry_times": 2,
+    "compare_with_previous": true,
+    "keep_history_days": 7
+  },
+  "notification": {
+    "enabled": true,
+    "notify_on_change": true,
+    "notify_on_error": true,
+    "webhook_url": "http://localhost/api/webhook"
+  }
+}

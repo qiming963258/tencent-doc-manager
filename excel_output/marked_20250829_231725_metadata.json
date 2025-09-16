@@ -1,0 +1,71 @@
+{
+  "excel_file": "marked_20250829_231725.xlsx",
+  "created_at": "2025-08-29T23:17:25.772835",
+  "comparison_summary": {
+    "total_differences": 10,
+    "security_score": 80.0,
+    "risk_level": "L3 - 低风险"
+  },
+  "marking_info": [
+    {
+      "cell": "E1",
+      "bg_color": "#D6FFD6",
+      "comment": "原值: 系统架构设计\\n新值: 系统架构优化\\n风险: L3",
+      "risk_level": "L3"
+    },
+    {
+      "cell": "F1",
+      "bg_color": "#D6FFD6",
+      "comment": "原值: 80%\\n新值: 95%\\n风险: L3",
+      "risk_level": "L3"
+    },
+    {
+      "cell": "G1",
+      "bg_color": "#D6FFD6",
+      "comment": "原值: L2\\n新值: L1\\n风险: L3",
+      "risk_level": "L3"
+    },
+    {
+      "cell": "F2",
+      "bg_color": "#D6FFD6",
+      "comment": "原值: 90%\\n新值: 100%\\n风险: L3",
+      "risk_level": "L3"
+    },
+    {
+      "cell": "E3",
+      "bg_color": "#D6FFD6",
+      "comment": "原值: 需求分析\\n新值: 需求评审\\n风险: L3",
+      "risk_level": "L3"
+    },
+    {
+      "cell": "F3",
+      "bg_color": "#D6FFD6",
+      "comment": "原值: 75%\\n新值: 80%\\n风险: L3",
+      "risk_level": "L3"
+    },
+    {
+      "cell": "G3",
+      "bg_color": "#D6FFD6",
+      "comment": "原值: L2\\n新值: L1\\n风险: L3",
+      "risk_level": "L3"
+    },
+    {
+      "cell": "E4",
+      "bg_color": "#D6FFD6",
+      "comment": "原值: 用户调研\\n新值: 用户访谈\\n风险: L3",
+      "risk_level": "L3"
+    },
+    {
+      "cell": "F4",
+      "bg_color": "#D6FFD6",
+      "comment": "原值: 85%\\n新值: 90%\\n风险: L3",
+      "risk_level": "L3"
+    },
+    {
+      "cell": "G4",
+      "bg_color": "#D6FFD6",
+      "comment": "原值: L3\\n新值: L2\\n风险: L3",
+      "risk_level": "L3"
+    }
+  ]
+}

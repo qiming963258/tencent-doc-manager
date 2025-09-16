@@ -1,0 +1,28 @@
+{
+  "timestamp": "2025-08-20T20:14:23.342481",
+  "validation_type": "data_integrity_check",
+  "results": {
+    "csv_comparison": {
+      "file_found": true,
+      "differences_count": 5,
+      "source_file": "/root/projects/tencent-doc-manager/csv_security_results/real_test_comparison.json"
+    },
+    "real_time_heatmap.json": {
+      "file_found": true,
+      "using_intelligent_mapping": true,
+      "data_source": "intelligent_mapping_real_data_v1",
+      "changes_applied": 5
+    },
+    "current_heatmap_data.json": {
+      "file_found": true,
+      "using_intelligent_mapping": false,
+      "data_source": "unknown",
+      "changes_applied": 0
+    }
+  },
+  "summary": {
+    "overall_integrity": 1.0,
+    "intelligent_mapping_adoption": 0.3333333333333333,
+    "recommendation": "good"
+  }
+}

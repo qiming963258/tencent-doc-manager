@@ -1,0 +1,32 @@
+{
+  "workflow_id": "WF-L2-20250915_145348",
+  "created_time": "2025-09-15 14:53:48",
+  "pending_approvals": [
+    {
+      "modification_id": "M001",
+      "cell": "I42",
+      "column": "负责人",
+      "old_value": "蔡悦莹",
+      "new_value": "\n0515-\n后续汇报前,需要项目/事项负责人综合考虑可能出现的情况,做好全面性的考虑与前置筹备,经理需要审核\"怎么做\"\\\"做得怎样样\"的预判及审核",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 75.0,
+        "reason": "内容截断"
+      },
+      "layer2_result": {
+        "risk_level": "MEDIUM",
+        "decision": "REVIEW",
+        "confidence": 75,
+        "key_risks": [
+          "责任人不明确导致决策链断裂",
+          "新增的文本要求可能增加流程复杂度",
+          "负责人变更可能影响项目连续性"
+        ],
+        "recommendation": "建议在删除原负责人前必须明确新责任人，并将新增的流程要求整理为独立文档进行规范化说明。修改前需获得原负责人蔡悦莹确认交接已完成，并确保新责任人完全理解新增的文本要求。"
+      },
+      "final_decision": "REVIEW",
+      "approval_required": true
+    }
+  ],
+  "auto_approved": []
+}

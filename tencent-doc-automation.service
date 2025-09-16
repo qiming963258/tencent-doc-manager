@@ -1,0 +1,25 @@
+[Unit]
+Description=Tencent Document Automation Service
+After=network.target
+
+[Service]
+Type=simple
+User=root
+WorkingDirectory=/root/projects/tencent-doc-manager
+Environment="PATH=/usr/local/bin:/usr/bin:/bin"
+ExecStart=/usr/bin/python3 /root/projects/tencent-doc-manager/server_side_automation.py
+
+# 自动重启
+Restart=always
+RestartSec=30
+
+# 日志
+StandardOutput=append:/var/log/tencent-doc-automation.log
+StandardError=append:/var/log/tencent-doc-automation-error.log
+
+# 资源限制
+MemoryLimit=2G
+CPUQuota=50%
+
+[Install]
+WantedBy=multi-user.target

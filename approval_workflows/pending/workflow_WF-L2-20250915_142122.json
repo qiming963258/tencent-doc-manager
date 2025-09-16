@@ -1,0 +1,31 @@
+{
+  "workflow_id": "WF-L2-20250915_142122",
+  "created_time": "2025-09-15 14:21:22",
+  "pending_approvals": [
+    {
+      "modification_id": "M001",
+      "cell": "G9",
+      "column": "具体计划内容",
+      "old_value": "【知识库】\n目前【知识库】以【目标管理机制】进行推进，周执行与复盘推进【目标导向】展开,按照周度周三,周五进行汇报\n1.日度监督员工分工收集的时事热点、行业新闻等知识进库更新；\n2.月度爆款内容知识点",
+      "new_value": "资源转化",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 80.0,
+        "reason": "机制变更"
+      },
+      "layer2_result": {
+        "risk_level": "HIGH",
+        "decision": "REVIEW",
+        "confidence": 80,
+        "key_risks": [
+          "计划内容被完全替换，可能影响现有工作流程",
+          "关键知识库管理功能被移除，可能导致信息管理混乱"
+        ],
+        "recommendation": "建议与相关团队确认这一修改的意图和必要性。如果确实需要修改，应该补充新的'资源转化'计划内容，而不是完全替换原有的知识库管理计划，以保持工作的连续性。或者可以考虑在保留原知识库内容的基础上增加资源转化的相关内容。"
+      },
+      "final_decision": "REVIEW",
+      "approval_required": true
+    }
+  ],
+  "auto_approved": []
+}

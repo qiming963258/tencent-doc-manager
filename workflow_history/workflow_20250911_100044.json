@@ -1,0 +1,121 @@
+{
+  "id": "20250911_100044",
+  "start_time": "2025-09-11T10:00:44.884265",
+  "end_time": "2025-09-11T10:04:14.034547",
+  "status": "completed",
+  "results": {
+    "baseline_file": "csv_versions/2025_W37/midweek/tencent_副本-副本-测试版本-出国销售计划表-工作表1_20250911_1001_midweek_W37.csv",
+    "target_file": "csv_versions/2025_W37/midweek/tencent_副本-副本-测试版本-出国销售计划表-工作表1_20250911_1002_midweek_W37.csv",
+    "score_file": "/root/projects/tencent-doc-manager/scoring_results/detailed/detailed_scores_tencent_副本-副本-测试版本-出国销售计划表-工作表1_20250911_1002_midweek_W37_20250911_100216.json",
+    "marked_file": "/root/projects/tencent-doc-manager/excel_outputs/marked/tencent_副本-副本-测试版本-出国销售计划表_20250911_1002_midweek_W37_marked_20250911_100302_W37.xlsx",
+    "upload_url": "https://docs.qq.com/sheet/DWHpOdVVKU0VmSXJv",
+    "execution_time": "0:03:29.150282"
+  },
+  "logs": [
+    {
+      "time": "10:01:32",
+      "level": "INFO",
+      "message": "开始下载目标文档..."
+    },
+    {
+      "time": "10:02:16",
+      "level": "INFO",
+      "message": "✅ 目标文档下载成功: tencent_副本-副本-测试版本-出国销售计划表-工作表1_20250911_1002_midweek_W37.csv"
+    },
+    {
+      "time": "10:02:16",
+      "level": "INFO",
+      "message": "开始对比分析..."
+    },
+    {
+      "time": "10:02:16",
+      "level": "INFO",
+      "message": "✅ 对比分析完成，发现 0 处变更"
+    },
+    {
+      "time": "10:02:16",
+      "level": "INFO",
+      "message": "开始列标准化..."
+    },
+    {
+      "time": "10:02:16",
+      "level": "INFO",
+      "message": "✅ 列标准化完成，映射了 2 个列"
+    },
+    {
+      "time": "10:02:16",
+      "level": "INFO",
+      "message": "开始L2语义分析和L1L3规则打分..."
+    },
+    {
+      "time": "10:02:16",
+      "level": "INFO",
+      "message": "✅ 语义分析完成，分析了 0 处变更"
+    },
+    {
+      "time": "10:02:16",
+      "level": "INFO",
+      "message": "生成详细打分JSON..."
+    },
+    {
+      "time": "10:02:16",
+      "level": "INFO",
+      "message": "✅ 详细打分生成完成: detailed_scores_tencent_副本-副本-测试版本-出国销售计划表-工作表1_20250911_1002_midweek_W37_20250911_100216.json"
+    },
+    {
+      "time": "10:02:16",
+      "level": "INFO",
+      "message": "下载目标文档的Excel格式..."
+    },
+    {
+      "time": "10:03:02",
+      "level": "INFO",
+      "message": "✅ Excel文档下载成功: tencent_副本-副本-测试版本-出国销售计划表_20250911_1002_midweek_W37.xlsx"
+    },
+    {
+      "time": "10:03:02",
+      "level": "INFO",
+      "message": "修复腾讯文档Excel格式问题..."
+    },
+    {
+      "time": "10:03:02",
+      "level": "INFO",
+      "message": "✅ Excel格式修复完成"
+    },
+    {
+      "time": "10:03:02",
+      "level": "INFO",
+      "message": "应用条纹涂色标记..."
+    },
+    {
+      "time": "10:03:02",
+      "level": "INFO",
+      "message": "✅ 涂色标记完成: tencent_副本-副本-测试版本-出国销售计划表_20250911_1002_midweek_W37_marked_20250911_100302_W37.xlsx"
+    },
+    {
+      "time": "10:03:02",
+      "level": "INFO",
+      "message": "上传处理后的文档到腾讯文档..."
+    },
+    {
+      "time": "10:04:14",
+      "level": "INFO",
+      "message": "✅ 文档上传成功!"
+    },
+    {
+      "time": "10:04:14",
+      "level": "INFO",
+      "message": "📎 文档链接: https://docs.qq.com/sheet/DWHpOdVVKU0VmSXJv"
+    },
+    {
+      "time": "10:04:14",
+      "level": "SUCCESS",
+      "message": "🎉 所有步骤执行完成!"
+    }
+  ],
+  "settings": {
+    "upload_option": "new",
+    "upload_target_url": "",
+    "verbose_logging": false
+  }
+}

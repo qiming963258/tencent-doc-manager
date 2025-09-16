@@ -1,0 +1,49 @@
+{
+  "metadata": {
+    "analysis_time": "2025-09-15 15:17:03",
+    "total_modifications": 1,
+    "layer1_passed": 0,
+    "layer2_analyzed": 1,
+    "processing_time": "13.3s"
+  },
+  "results": [
+    {
+      "modification_id": "M001",
+      "cell": "I66",
+      "column": "负责人",
+      "old_value": "蔡悦莹",
+      "new_value": "",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 80.0,
+        "reason": "关键人缺失"
+      },
+      "layer2_result": {
+        "risk_level": "CRITICAL",
+        "decision": "REVIEW",
+        "confidence": 90,
+        "key_risks": [
+          "项目责任主体缺失风险",
+          "任务执行监管真空风险",
+          "团队协作沟通断链风险",
+          "进度追踪失效风险"
+        ],
+        "recommendation": "建议立即采取以下行动：\n1. 确认新负责人人选及交接计划\n2. 评估新负责人的项目熟悉度与能力匹配度\n3. 建立过渡期双重确认机制\n4. 更新所有关联系统的权限配置\n5. 召开交接会议并书面记录\n6. 设置3天观察期进行特别监督"
+      },
+      "final_decision": "REVIEW",
+      "approval_required": true
+    }
+  ],
+  "summary": {
+    "approved": 0,
+    "conditional": 0,
+    "review_required": 1,
+    "rejected": 0,
+    "risk_distribution": {
+      "LOW": 0,
+      "MEDIUM": 0,
+      "HIGH": 1,
+      "CRITICAL": 0
+    }
+  }
+}

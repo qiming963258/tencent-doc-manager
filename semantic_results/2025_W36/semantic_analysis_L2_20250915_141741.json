@@ -1,0 +1,48 @@
+{
+  "metadata": {
+    "analysis_time": "2025-09-15 14:17:41",
+    "total_modifications": 1,
+    "layer1_passed": 0,
+    "layer2_analyzed": 1,
+    "processing_time": "13.4s"
+  },
+  "results": [
+    {
+      "modification_id": "M001",
+      "cell": "G5",
+      "column": "具体计划内容",
+      "old_value": "【爆款库】\n爆款库与选题表达打通序号执行落地情况跟进",
+      "new_value": "资源转化",
+      "layer1_result": {
+        "judgment": "UNSURE",
+        "confidence": 60.0,
+        "reason": "语义变化"
+      },
+      "layer2_result": {
+        "risk_level": "HIGH",
+        "decision": "REVIEW",
+        "confidence": 85,
+        "key_risks": [
+          "计划内容性质从具体执行方案变为模糊概念",
+          "原值包含重要工作衔接信息可能丢失",
+          "资源转化概念过于宽泛可能导致执行偏差"
+        ],
+        "recommendation": "建议补充说明：1)资源转化的具体定义 2)是否保留原爆款库与选题表达的衔接逻辑 3)配套的验收标准。需项目负责人确认该修改是否反映真实需求变更，并评估是否需要同步更新关联文档。"
+      },
+      "final_decision": "REVIEW",
+      "approval_required": true
+    }
+  ],
+  "summary": {
+    "approved": 0,
+    "conditional": 0,
+    "review_required": 1,
+    "rejected": 0,
+    "risk_distribution": {
+      "LOW": 0,
+      "MEDIUM": 0,
+      "HIGH": 1,
+      "CRITICAL": 0
+    }
+  }
+}

@@ -1,0 +1,49 @@
+{
+  "metadata": {
+    "analysis_time": "2025-09-15 14:25:54",
+    "total_modifications": 1,
+    "layer1_passed": 0,
+    "layer2_analyzed": 1,
+    "processing_time": "14.5s"
+  },
+  "results": [
+    {
+      "modification_id": "M001",
+      "cell": "B14",
+      "column": "项目类型",
+      "old_value": "目标管理",
+      "new_value": "",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 80.0,
+        "reason": "关键字段空"
+      },
+      "layer2_result": {
+        "risk_level": "HIGH",
+        "decision": "REVIEW",
+        "confidence": 85,
+        "key_risks": [
+          "项目性质可能发生根本性变化",
+          "可能导致现有执行计划不适用",
+          "团队协作模式可能需要重构",
+          "项目交付时间可能被大幅推迟"
+        ],
+        "recommendation": "建议：1) 要求提交明确的修改说明文档 2) 组织项目干系人评审会议 3) 评估是否需要重新制定项目章程 4) 确认变更是否涉及合同条款修改 5) 制定过渡计划后再实施变更"
+      },
+      "final_decision": "REVIEW",
+      "approval_required": true
+    }
+  ],
+  "summary": {
+    "approved": 0,
+    "conditional": 0,
+    "review_required": 1,
+    "rejected": 0,
+    "risk_distribution": {
+      "LOW": 0,
+      "MEDIUM": 0,
+      "HIGH": 1,
+      "CRITICAL": 0
+    }
+  }
+}

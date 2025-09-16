@@ -1,0 +1,48 @@
+{
+  "metadata": {
+    "analysis_time": "2025-09-15 14:52:04",
+    "total_modifications": 1,
+    "layer1_passed": 0,
+    "layer2_analyzed": 1,
+    "processing_time": "15.1s"
+  },
+  "results": [
+    {
+      "modification_id": "M001",
+      "cell": "I40",
+      "column": "负责人",
+      "old_value": "蔡悦莹",
+      "new_value": "0811-\n1、企业号板块的图与封面的吸睛创新需要进行结构化的改变与迭代，从内部历史点击率高的图片及外部竞对的采集拆解分析进行创新",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 90.0,
+        "reason": "信息缺失"
+      },
+      "layer2_result": {
+        "risk_level": "HIGH",
+        "decision": "REVIEW",
+        "confidence": 80,
+        "key_risks": [
+          "负责人字段被替换为看似无关的代码'0811-'，可能造成责任归属不明确",
+          "新值包含的内容似乎与'负责人'字段性质不符，存在数据完整性问题",
+          "修改后的内容与备注中的创新要求完全不相关，可能存在错误修改"
+        ],
+        "recommendation": "建议：1)确认本次修改的真实意图 2)如确实需要修改负责人，建议保留原负责人姓名格式 3)备注中的创新要求建议单独在相关需求字段中记录 4)检查是否存在批量修改错误的情况"
+      },
+      "final_decision": "REVIEW",
+      "approval_required": true
+    }
+  ],
+  "summary": {
+    "approved": 0,
+    "conditional": 0,
+    "review_required": 1,
+    "rejected": 0,
+    "risk_distribution": {
+      "LOW": 0,
+      "MEDIUM": 0,
+      "HIGH": 1,
+      "CRITICAL": 0
+    }
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "metadata": {
+    "analysis_time": "2025-09-15 18:32:45",
+    "total_modifications": 1,
+    "layer1_passed": 0,
+    "layer2_analyzed": 1,
+    "processing_time": "8.9s"
+  },
+  "results": [
+    {
+      "modification_id": "M001",
+      "cell": "K28",
+      "column": "协助人",
+      "old_value": "杨顺鑫",
+      "new_value": "",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 80.0,
+        "reason": "删除人员"
+      },
+      "layer2_result": {
+        "risk_level": "MEDIUM",
+        "decision": "REVIEW",
+        "confidence": 75,
+        "key_risks": [
+          "协助人清空可能导致责任归属不明确",
+          "可能影响任务执行的连续性"
+        ],
+        "recommendation": "建议确认是否确实需要清空协助人字段。如果需要清空，请确保：1) 该任务不再需要协助人；2) 有明确的替代安排；3) 通知相关团队成员。否则请指定新的协助人后再提交修改。"
+      },
+      "final_decision": "REVIEW",
+      "approval_required": true
+    }
+  ],
+  "summary": {
+    "approved": 0,
+    "conditional": 0,
+    "review_required": 1,
+    "rejected": 0,
+    "risk_distribution": {
+      "LOW": 0,
+      "MEDIUM": 0,
+      "HIGH": 1,
+      "CRITICAL": 0
+    }
+  }
+}

@@ -1,0 +1,49 @@
+{
+  "metadata": {
+    "analysis_time": "2025-09-15 15:21:00",
+    "total_modifications": 1,
+    "layer1_passed": 0,
+    "layer2_analyzed": 1,
+    "processing_time": "13.0s"
+  },
+  "results": [
+    {
+      "modification_id": "M001",
+      "cell": "I70",
+      "column": "负责人",
+      "old_value": "朱瀚桔",
+      "new_value": "",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 80.0,
+        "reason": "删除负责人"
+      },
+      "layer2_result": {
+        "risk_level": "CRITICAL",
+        "decision": "REVIEW",
+        "confidence": 85,
+        "key_risks": [
+          "项目责任主体缺失",
+          "关键任务无人负责导致进度延误",
+          "质量管控断点",
+          "团队协作断层"
+        ],
+        "recommendation": "必须补充负责人字段值，建议采取以下步骤：1.立即联系原负责人朱瀚桔确认交接事宜 2.若为人员变动，需同步更新人员联络表 3.新负责人到岗前应指定临时负责人 4.修改后需邮件通知所有相关方"
+      },
+      "final_decision": "REVIEW",
+      "approval_required": true
+    }
+  ],
+  "summary": {
+    "approved": 0,
+    "conditional": 0,
+    "review_required": 1,
+    "rejected": 0,
+    "risk_distribution": {
+      "LOW": 0,
+      "MEDIUM": 0,
+      "HIGH": 1,
+      "CRITICAL": 0
+    }
+  }
+}

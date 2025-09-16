@@ -12,8 +12,8 @@ import shutil
 from pathlib import Path
 from typing import List, Dict, Any, Optional
 
-from week_time_manager import week_time_manager
-from adaptive_table_comparator import AdaptiveTableComparator
+from .week_time_manager import week_time_manager
+from .adaptive_table_comparator import AdaptiveTableComparator
 
 
 class BaselineManager:

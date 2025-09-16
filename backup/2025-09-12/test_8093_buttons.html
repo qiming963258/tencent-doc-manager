@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Test 8093 Buttons</title>
+</head>
+<body>
+    <h1>测试8093按钮功能</h1>
+    <p>打开浏览器控制台查看结果</p>
+    
+    <script>
+        // 测试从8093获取页面并检查JavaScript函数
+        fetch('http://localhost:8093/')
+            .then(response => response.text())
+            .then(html => {
+                // 创建一个临时的iframe来加载HTML
+                const iframe = document.createElement('iframe');
+                iframe.style.display = 'none';
+                document.body.appendChild(iframe);
+                
+                // 写入HTML内容
+                iframe.contentDocument.open();
+                iframe.contentDocument.write(html);
+                iframe.contentDocument.close();
+                
+                // 等待iframe加载完成
+                setTimeout(() => {
+                    const iframeWindow = iframe.contentWindow;
+                    
+                    // 检查函数是否存在
+                    console.log('检查函数定义:');
+                    console.log('loadSavedCookie:', typeof iframeWindow.loadSavedCookie);
+                    console.log('startWorkflow:', typeof iframeWindow.startWorkflow);
+                    
+                    if (typeof iframeWindow.loadSavedCookie === 'function') {
+                        console.log('✅ loadSavedCookie函数已定义');
+                    } else {
+                        console.log('❌ loadSavedCookie函数未定义');
+                    }
+                    
+                    if (typeof iframeWindow.startWorkflow === 'function') {
+                        console.log('✅ startWorkflow函数已定义');
+                    } else {
+                        console.log('❌ startWorkflow函数未定义');
+                    }
+                    
+                    // 检查是否有JavaScript错误
+                    if (iframeWindow.document.querySelector('script')) {
+                        console.log('✅ Script标签存在');
+                    }
+                    
+                    // 清理
+                    document.body.removeChild(iframe);
+                }, 1000);
+            })
+            .catch(error => {
+                console.error('获取页面失败:', error);
+            });
+    </script>
+</body>
+</html>

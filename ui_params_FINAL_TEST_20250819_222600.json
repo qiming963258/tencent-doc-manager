@@ -1,0 +1,42 @@
+{
+  "heatmap_data": {
+    "matrix": [
+      [0.99, 0.97, 0.95, 0.93, 0.91, 0.89, 0.87, 0.85, 0.83, 0.81, 0.79, 0.77, 0.75, 0.73, 0.71, 0.69, 0.67, 0.65, 0.63],
+      [0.61, 0.59, 0.57, 0.55, 0.53, 0.51, 0.49, 0.47, 0.45, 0.43, 0.41, 0.39, 0.37, 0.35, 0.33, 0.31, 0.29, 0.27, 0.25],
+      [0.23, 0.21, 0.19, 0.17, 0.15, 0.13, 0.11, 0.09, 0.07, 0.05, 0.03, 0.01, 0.02, 0.04, 0.06, 0.08, 0.10, 0.12, 0.14]
+    ],
+    "table_names": [
+      "🚨FINAL测试-极高风险表格",
+      "⚠️FINAL测试-中等风险表格", 
+      "✅FINAL测试-低风险表格"
+    ],
+    "column_names": [
+      "序号", "项目类型", "来源", "任务发起时间", "目标对齐", 
+      "关键KR对齐", "具体计划内容", "邓总指导登记", "负责人", 
+      "协助人", "监督人", "重要程度", "预计完成时间", "完成进度",
+      "形成计划清单", "复盘时间", "对上汇报", "应用情况", "进度分析总结"
+    ]
+  },
+  "statistics": {
+    "total_modifications": 999,
+    "critical_modifications": 88,
+    "L1_modifications": 300,
+    "L2_modifications": 400,
+    "L3_modifications": 299,
+    "update_time": "2025-08-19T22:26:00",
+    "most_modified_column": "🚨关键KR对齐",
+    "most_modified_table": "🚨FINAL测试-极高风险表格"
+  },
+  "tables": [
+    {"id": 0, "name": "🚨FINAL测试-极高风险表格", "risk_level": "L1", "modifications": 450},
+    {"id": 1, "name": "⚠️FINAL测试-中等风险表格", "risk_level": "L2", "modifications": 300},
+    {"id": 2, "name": "✅FINAL测试-低风险表格", "risk_level": "L3", "modifications": 249}
+  ],
+  "source_file": "ui_params_FINAL_TEST_20250819_222600.json",
+  "generation_info": {
+    "type": "FINAL_VERIFICATION_TEST",
+    "timestamp": "2025-08-19T22:26:00",
+    "purpose": "最终验证UI实时数据更新功能-高对比度数据",
+    "data_characteristics": "极高对比度矩阵，明显的风险梯度，特殊表格名称"
+  }
+}

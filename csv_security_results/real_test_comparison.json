@@ -1,0 +1,152 @@
+{
+  "comparison_summary": {
+    "success": true,
+    "total_differences": 5,
+    "security_score": 52.48,
+    "risk_level": "L3 - 低风险",
+    "processing_time": 0.003391,
+    "comparison_time": "2025-08-20T18:21:49.873779"
+  },
+  "file_info": {
+    "file_checksums": {
+      "file1": "4071b21ead76d67bade5b919aae1325b672a90d70ba3e4880281d17d8d5c3276",
+      "file2": "e9637516fcdd01a57e187b38544fffa7dde0f21df9cb870c8b88adc7150f2c26"
+    },
+    "metadata": {
+      "file1_info": {
+        "encoding": "utf-8-sig",
+        "rows": 5,
+        "columns": 5,
+        "file_size": 155,
+        "checksum": "4071b21ead76d67bade5b919aae1325b672a90d70ba3e4880281d17d8d5c3276"
+      },
+      "file2_info": {
+        "encoding": "utf-8-sig",
+        "rows": 6,
+        "columns": 5,
+        "file_size": 184,
+        "checksum": "e9637516fcdd01a57e187b38544fffa7dde0f21df9cb870c8b88adc7150f2c26"
+      },
+      "column_mapping": {
+        "mapping": {
+          "id": "id",
+          "负责人": "负责人",
+          "部门": "部门",
+          "状态": "状态",
+          "工资": "工资"
+        },
+        "confidence_scores": {
+          "id": 1.0,
+          "负责人": 1.0,
+          "部门": 1.0,
+          "状态": 1.0,
+          "工资": 1.0
+        },
+        "mapping_rate": 100.0
+      },
+      "risk_analysis": {
+        "security_score": 52.48,
+        "average_risk_score": 0.312,
+        "max_risk_score": 0.72,
+        "risk_distribution": {
+          "L1": 0,
+          "L2": 1,
+          "L3": 4
+        },
+        "security_violations": [],
+        "total_risks": 5
+      },
+      "audit_log_entries": 1
+    }
+  },
+  "differences": [
+    {
+      "序号": 1,
+      "行号": 2,
+      "列名": "负责人",
+      "列索引": 2,
+      "原值": "李四",
+      "新值": "李小明",
+      "位置": "行2列2(负责人)",
+      "映射列名": null,
+      "比较时间": "2025-08-20T18:21:49.871896",
+      "risk_level": "L2",
+      "risk_score": 0.72,
+      "security_multiplier": 1.2,
+      "text_change_ratio": 0.54
+    },
+    {
+      "序号": 2,
+      "行号": 2,
+      "列名": "工资",
+      "列索引": 5,
+      "原值": "7500",
+      "新值": "8500",
+      "位置": "行2列5(工资)",
+      "映射列名": null,
+      "比较时间": "2025-08-20T18:21:49.871911",
+      "risk_level": "L3",
+      "risk_score": 0.2,
+      "security_multiplier": 1.0,
+      "text_change_ratio": 0.25
+    },
+    {
+      "序号": 3,
+      "行号": 3,
+      "列名": "状态",
+      "列索引": 4,
+      "原值": "正常",
+      "新值": "离职",
+      "位置": "行3列4(状态)",
+      "映射列名": null,
+      "比较时间": "2025-08-20T18:21:49.871917",
+      "risk_level": "L3",
+      "risk_score": 0.2,
+      "security_multiplier": 1.0,
+      "text_change_ratio": 0.5
+    },
+    {
+      "序号": 4,
+      "行号": 3,
+      "列名": "工资",
+      "列索引": 5,
+      "原值": "7000",
+      "新值": "0",
+      "位置": "行3列5(工资)",
+      "映射列名": null,
+      "比较时间": "2025-08-20T18:21:49.871922",
+      "risk_level": "L3",
+      "risk_score": 0.24,
+      "security_multiplier": 1.2,
+      "text_change_ratio": 0.62
+    },
+    {
+      "序号": 5,
+      "行号": 4,
+      "列名": "工资",
+      "列索引": 5,
+      "原值": "6500",
+      "新值": "6800",
+      "位置": "行4列5(工资)",
+      "映射列名": null,
+      "比较时间": "2025-08-20T18:21:49.871928",
+      "risk_level": "L3",
+      "risk_score": 0.2,
+      "security_multiplier": 1.0,
+      "text_change_ratio": 0.25
+    }
+  ],
+  "audit_log": [
+    {
+      "timestamp": "2025-08-20T18:21:49.870430",
+      "operation": "csv_comparison_start",
+      "details": {
+        "file1": "/tmp/baseline_test.csv",
+        "file2": "/tmp/current_test.csv",
+        "output": "/root/projects/tencent-doc-manager/csv_security_results/real_test_comparison.json"
+      },
+      "user": "system",
+      "session_id": "csv_comp_1755685309"
+    }
+  ]
+}

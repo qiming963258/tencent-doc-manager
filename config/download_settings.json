@@ -1,8 +1,8 @@
 {
   "document_links": [
     {
-      "name": "测试文档1",
-      "url": "https://docs.qq.com/sheet/DWEVjZndkR2xVSWJN",
+      "name": "小红书部门工作表2",
+      "url": "https://docs.qq.com/sheet/DWEVjZndkR2xVSWJN?tab=c2p5hs",
       "enabled": true
     }
   ],
@@ -14,7 +14,16 @@
     "hour": 9,
     "minute": 0
   },
-  "last_download": "",
-  "download_status": "待开始",
-  "last_update": "2025-08-15T14:42:21.200302"
+  "last_download": "2025-08-24T14:15:27.234726",
+  "download_status": "已完成 0/1 个文件下载",
+  "last_update": "2025-08-24T10:04:27.556902",
+  "manual_document_links": {
+    "测试表格_114713": {
+      "table_name": "测试表格_114713",
+      "tencent_link": "https://docs.qq.com/sheet/test123",
+      "bind_time": "2025-08-19T11:47:13.042957",
+      "status": "manually_bound",
+      "action": "bind"
+    }
+  }
 }

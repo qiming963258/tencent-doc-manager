@@ -1,0 +1,49 @@
+{
+  "metadata": {
+    "analysis_time": "2025-09-15 15:40:22",
+    "total_modifications": 1,
+    "layer1_passed": 0,
+    "layer2_analyzed": 1,
+    "processing_time": "9.6s"
+  },
+  "results": [
+    {
+      "modification_id": "M001",
+      "cell": "I90",
+      "column": "负责人",
+      "old_value": "徐志杰",
+      "new_value": "",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 80.0,
+        "reason": "删除负责人"
+      },
+      "layer2_result": {
+        "risk_level": "CRITICAL",
+        "decision": "REJECT",
+        "confidence": 85,
+        "key_risks": [
+          "负责人信息空缺导致责任主体不明确",
+          "关键岗位人员缺失影响项目推进",
+          "可能触发工作流中断风险",
+          "存在合规性风险（如岗位职责要求）"
+        ],
+        "recommendation": "必须立即补全负责人信息。建议：1)联系原负责人确认交接事宜；2)确定新负责人后执行变更；3)确保工作交接文档完整；4)更新相关通知列表。在未明确新责任人前应冻结相关流程。"
+      },
+      "final_decision": "REJECT",
+      "approval_required": true
+    }
+  ],
+  "summary": {
+    "approved": 0,
+    "conditional": 0,
+    "review_required": 0,
+    "rejected": 1,
+    "risk_distribution": {
+      "LOW": 0,
+      "MEDIUM": 0,
+      "HIGH": 0,
+      "CRITICAL": 1
+    }
+  }
+}

@@ -1,0 +1,1165 @@
+{
+  "metadata": {
+    "version": "1.0",
+    "generated_at": "2025-09-12T10:55:33.856490",
+    "week_number": "W03",
+    "analysis_type": "comprehensive_scoring",
+    "data_source": "realistic_random"
+  },
+  "table_scores": [
+    {
+      "table_name": "移动端开发",
+      "table_id": 10,
+      "overall_risk_score": 0.614,
+      "modification_count": 1,
+      "risk_distribution": {
+        "L1": 0,
+        "L2": 1,
+        "L3": 0
+      },
+      "critical_changes": 0,
+      "modifications": {
+        "row_27_复盘时间": {
+          "risk_level": "L2",
+          "risk_score": 0.614,
+          "column": "复盘时间"
+        }
+      }
+    },
+    {
+      "table_name": "销售部门Q4计划",
+      "table_id": 1,
+      "overall_risk_score": 0.571,
+      "modification_count": 4,
+      "risk_distribution": {
+        "L1": 0,
+        "L2": 4,
+        "L3": 0
+      },
+      "critical_changes": 0,
+      "modifications": {
+        "row_19_负责人": {
+          "risk_level": "L2",
+          "risk_score": 0.545,
+          "column": "负责人"
+        },
+        "row_31_具体计划内容": {
+          "risk_level": "L2",
+          "risk_score": 0.688,
+          "column": "具体计划内容"
+        },
+        "row_18_来源": {
+          "risk_level": "L2",
+          "risk_score": 0.512,
+          "column": "来源"
+        },
+        "row_4_目标对齐": {
+          "risk_level": "L2",
+          "risk_score": 0.539,
+          "column": "目标对齐"
+        }
+      }
+    },
+    {
+      "table_name": "技术架构升级",
+      "table_id": 8,
+      "overall_risk_score": 0.552,
+      "modification_count": 4,
+      "risk_distribution": {
+        "L1": 1,
+        "L2": 2,
+        "L3": 1
+      },
+      "critical_changes": 1,
+      "modifications": {
+        "row_5_完成进度": {
+          "risk_level": "L3",
+          "risk_score": 0.169,
+          "column": "完成进度"
+        },
+        "row_17_进度分析总结": {
+          "risk_level": "L2",
+          "risk_score": 0.524,
+          "column": "进度分析总结"
+        },
+        "row_48_重要程度": {
+          "risk_level": "L2",
+          "risk_score": 0.59,
+          "column": "重要程度"
+        },
+        "row_36_进度分析总结": {
+          "risk_level": "L1",
+          "risk_score": 0.925,
+          "column": "进度分析总结"
+        }
+      }
+    },
+    {
+      "table_name": "国际业务拓展",
+      "table_id": 13,
+      "overall_risk_score": 0.55,
+      "modification_count": 3,
+      "risk_distribution": {
+        "L1": 1,
+        "L2": 1,
+        "L3": 1
+      },
+      "critical_changes": 1,
+      "modifications": {
+        "row_15_序号": {
+          "risk_level": "L3",
+          "risk_score": 0.345,
+          "column": "序号"
+        },
+        "row_13_序号": {
+          "risk_level": "L1",
+          "risk_score": 0.9,
+          "column": "序号"
+        },
+        "row_10_完成进度": {
+          "risk_level": "L2",
+          "risk_score": 0.404,
+          "column": "完成进度"
+        }
+      }
+    },
+    {
+      "table_name": "供应链管理",
+      "table_id": 5,
+      "overall_risk_score": 0.493,
+      "modification_count": 5,
+      "risk_distribution": {
+        "L1": 0,
+        "L2": 4,
+        "L3": 1
+      },
+      "critical_changes": 0,
+      "modifications": {
+        "row_9_项目类型": {
+          "risk_level": "L3",
+          "risk_score": 0.379,
+          "column": "项目类型"
+        },
+        "row_11_项目类型": {
+          "risk_level": "L2",
+          "risk_score": 0.4,
+          "column": "项目类型"
+        },
+        "row_36_复盘时间": {
+          "risk_level": "L2",
+          "risk_score": 0.444,
+          "column": "复盘时间"
+        },
+        "row_18_监督人": {
+          "risk_level": "L2",
+          "risk_score": 0.545,
+          "column": "监督人"
+        },
+        "row_44_目标对齐": {
+          "risk_level": "L2",
+          "risk_score": 0.697,
+          "column": "目标对齐"
+        }
+      }
+    },
+    {
+      "table_name": "人力资源规划",
+      "table_id": 7,
+      "overall_risk_score": 0.482,
+      "modification_count": 3,
+      "risk_distribution": {
+        "L1": 0,
+        "L2": 2,
+        "L3": 1
+      },
+      "critical_changes": 0,
+      "modifications": {
+        "row_2_进度分析总结": {
+          "risk_level": "L2",
+          "risk_score": 0.642,
+          "column": "进度分析总结"
+        },
+        "row_8_关键KR对齐": {
+          "risk_level": "L3",
+          "risk_score": 0.314,
+          "column": "关键KR对齐"
+        },
+        "row_44_项目类型": {
+          "risk_level": "L2",
+          "risk_score": 0.489,
+          "column": "项目类型"
+        }
+      }
+    },
+    {
+      "table_name": "市场推广方案",
+      "table_id": 2,
+      "overall_risk_score": 0.461,
+      "modification_count": 7,
+      "risk_distribution": {
+        "L1": 1,
+        "L2": 2,
+        "L3": 4
+      },
+      "critical_changes": 1,
+      "modifications": {
+        "row_31_任务发起时间": {
+          "risk_level": "L1",
+          "risk_score": 0.935,
+          "column": "任务发起时间"
+        },
+        "row_15_协助人": {
+          "risk_level": "L3",
+          "risk_score": 0.372,
+          "column": "协助人"
+        },
+        "row_28_进度分析总结": {
+          "risk_level": "L2",
+          "risk_score": 0.668,
+          "column": "进度分析总结"
+        },
+        "row_7_形成计划清单": {
+          "risk_level": "L3",
+          "risk_score": 0.203,
+          "column": "形成计划清单"
+        },
+        "row_29_预计完成时间": {
+          "risk_level": "L3",
+          "risk_score": 0.227,
+          "column": "预计完成时间"
+        },
+        "row_9_重要程度": {
+          "risk_level": "L2",
+          "risk_score": 0.605,
+          "column": "重要程度"
+        },
+        "row_19_重要程度": {
+          "risk_level": "L3",
+          "risk_score": 0.22,
+          "column": "重要程度"
+        }
+      }
+    },
+    {
+      "table_name": "年度总结报告",
+      "table_id": 18,
+      "overall_risk_score": 0.459,
+      "modification_count": 10,
+      "risk_distribution": {
+        "L1": 2,
+        "L2": 4,
+        "L3": 4
+      },
+      "critical_changes": 2,
+      "modifications": {
+        "row_35_项目类型": {
+          "risk_level": "L3",
+          "risk_score": 0.138,
+          "column": "项目类型"
+        },
+        "row_36_复盘时间": {
+          "risk_level": "L2",
+          "risk_score": 0.593,
+          "column": "复盘时间"
+        },
+        "row_22_序号": {
+          "risk_level": "L3",
+          "risk_score": 0.187,
+          "column": "序号"
+        },
+        "row_4_进度分析总结": {
+          "risk_level": "L3",
+          "risk_score": 0.107,
+          "column": "进度分析总结"
+        },
+        "row_23_目标对齐": {
+          "risk_level": "L2",
+          "risk_score": 0.417,
+          "column": "目标对齐"
+        },
+        "row_38_任务发起时间": {
+          "risk_level": "L2",
+          "risk_score": 0.545,
+          "column": "任务发起时间"
+        },
+        "row_23_形成计划清单": {
+          "risk_level": "L1",
+          "risk_score": 0.743,
+          "column": "形成计划清单"
+        },
+        "row_42_监督人": {
+          "risk_level": "L3",
+          "risk_score": 0.207,
+          "column": "监督人"
+        },
+        "row_6_目标对齐": {
+          "risk_level": "L1",
+          "risk_score": 0.965,
+          "column": "目标对齐"
+        },
+        "row_24_监督人": {
+          "risk_level": "L2",
+          "risk_score": 0.686,
+          "column": "监督人"
+        }
+      }
+    },
+    {
+      "table_name": "战略合作伙伴",
+      "table_id": 17,
+      "overall_risk_score": 0.433,
+      "modification_count": 7,
+      "risk_distribution": {
+        "L1": 1,
+        "L2": 3,
+        "L3": 3
+      },
+      "critical_changes": 1,
+      "modifications": {
+        "row_34_协助人": {
+          "risk_level": "L2",
+          "risk_score": 0.497,
+          "column": "协助人"
+        },
+        "row_29_序号": {
+          "risk_level": "L2",
+          "risk_score": 0.428,
+          "column": "序号"
+        },
+        "row_37_邓总指导登记": {
+          "risk_level": "L3",
+          "risk_score": 0.191,
+          "column": "邓总指导登记"
+        },
+        "row_14_完成进度": {
+          "risk_level": "L3",
+          "risk_score": 0.249,
+          "column": "完成进度"
+        },
+        "row_24_具体计划内容": {
+          "risk_level": "L3",
+          "risk_score": 0.381,
+          "column": "具体计划内容"
+        },
+        "row_23_协助人": {
+          "risk_level": "L2",
+          "risk_score": 0.419,
+          "column": "协助人"
+        },
+        "row_37_进度分析总结": {
+          "risk_level": "L1",
+          "risk_score": 0.866,
+          "column": "进度分析总结"
+        }
+      }
+    },
+    {
+      "table_name": "安全合规审查",
+      "table_id": 12,
+      "overall_risk_score": 0.429,
+      "modification_count": 7,
+      "risk_distribution": {
+        "L1": 2,
+        "L2": 2,
+        "L3": 3
+      },
+      "critical_changes": 2,
+      "modifications": {
+        "row_17_复盘时间": {
+          "risk_level": "L2",
+          "risk_score": 0.408,
+          "column": "复盘时间"
+        },
+        "row_4_序号": {
+          "risk_level": "L3",
+          "risk_score": 0.131,
+          "column": "序号"
+        },
+        "row_5_对上汇报": {
+          "risk_level": "L3",
+          "risk_score": 0.234,
+          "column": "对上汇报"
+        },
+        "row_1_完成进度": {
+          "risk_level": "L1",
+          "risk_score": 0.729,
+          "column": "完成进度"
+        },
+        "row_41_序号": {
+          "risk_level": "L1",
+          "risk_score": 0.834,
+          "column": "序号"
+        },
+        "row_21_重要程度": {
+          "risk_level": "L2",
+          "risk_score": 0.44,
+          "column": "重要程度"
+        },
+        "row_21_监督人": {
+          "risk_level": "L3",
+          "risk_score": 0.224,
+          "column": "监督人"
+        }
+      }
+    },
+    {
+      "table_name": "数据分析平台",
+      "table_id": 9,
+      "overall_risk_score": 0.427,
+      "modification_count": 10,
+      "risk_distribution": {
+        "L1": 1,
+        "L2": 4,
+        "L3": 5
+      },
+      "critical_changes": 1,
+      "modifications": {
+        "row_38_目标对齐": {
+          "risk_level": "L2",
+          "risk_score": 0.613,
+          "column": "目标对齐"
+        },
+        "row_35_任务发起时间": {
+          "risk_level": "L3",
+          "risk_score": 0.275,
+          "column": "任务发起时间"
+        },
+        "row_34_任务发起时间": {
+          "risk_level": "L2",
+          "risk_score": 0.451,
+          "column": "任务发起时间"
+        },
+        "row_42_序号": {
+          "risk_level": "L2",
+          "risk_score": 0.622,
+          "column": "序号"
+        },
+        "row_9_关键KR对齐": {
+          "risk_level": "L3",
+          "risk_score": 0.151,
+          "column": "关键KR对齐"
+        },
+        "row_35_进度分析总结": {
+          "risk_level": "L1",
+          "risk_score": 0.808,
+          "column": "进度分析总结"
+        },
+        "row_33_复盘时间": {
+          "risk_level": "L3",
+          "risk_score": 0.315,
+          "column": "复盘时间"
+        },
+        "row_36_具体计划内容": {
+          "risk_level": "L2",
+          "risk_score": 0.484,
+          "column": "具体计划内容"
+        },
+        "row_44_完成进度": {
+          "risk_level": "L3",
+          "risk_score": 0.361,
+          "column": "完成进度"
+        },
+        "row_43_预计完成时间": {
+          "risk_level": "L3",
+          "risk_score": 0.186,
+          "column": "预计完成时间"
+        }
+      }
+    },
+    {
+      "table_name": "品牌建设项目",
+      "table_id": 14,
+      "overall_risk_score": 0.384,
+      "modification_count": 7,
+      "risk_distribution": {
+        "L1": 0,
+        "L2": 3,
+        "L3": 4
+      },
+      "critical_changes": 0,
+      "modifications": {
+        "row_40_应用情况": {
+          "risk_level": "L3",
+          "risk_score": 0.272,
+          "column": "应用情况"
+        },
+        "row_24_完成进度": {
+          "risk_level": "L3",
+          "risk_score": 0.123,
+          "column": "完成进度"
+        },
+        "row_12_完成进度": {
+          "risk_level": "L2",
+          "risk_score": 0.426,
+          "column": "完成进度"
+        },
+        "row_37_形成计划清单": {
+          "risk_level": "L3",
+          "risk_score": 0.378,
+          "column": "形成计划清单"
+        },
+        "row_35_负责人": {
+          "risk_level": "L2",
+          "risk_score": 0.609,
+          "column": "负责人"
+        },
+        "row_28_任务发起时间": {
+          "risk_level": "L2",
+          "risk_score": 0.542,
+          "column": "任务发起时间"
+        },
+        "row_22_监督人": {
+          "risk_level": "L3",
+          "risk_score": 0.335,
+          "column": "监督人"
+        }
+      }
+    },
+    {
+      "table_name": "创新实验室",
+      "table_id": 15,
+      "overall_risk_score": 0.384,
+      "modification_count": 14,
+      "risk_distribution": {
+        "L1": 1,
+        "L2": 5,
+        "L3": 8
+      },
+      "critical_changes": 1,
+      "modifications": {
+        "row_39_对上汇报": {
+          "risk_level": "L2",
+          "risk_score": 0.452,
+          "column": "对上汇报"
+        },
+        "row_42_来源": {
+          "risk_level": "L3",
+          "risk_score": 0.322,
+          "column": "来源"
+        },
+        "row_46_完成进度": {
+          "risk_level": "L3",
+          "risk_score": 0.12,
+          "column": "完成进度"
+        },
+        "row_49_协助人": {
+          "risk_level": "L1",
+          "risk_score": 0.815,
+          "column": "协助人"
+        },
+        "row_47_任务发起时间": {
+          "risk_level": "L2",
+          "risk_score": 0.537,
+          "column": "任务发起时间"
+        },
+        "row_1_序号": {
+          "risk_level": "L3",
+          "risk_score": 0.261,
+          "column": "序号"
+        },
+        "row_20_进度分析总结": {
+          "risk_level": "L3",
+          "risk_score": 0.226,
+          "column": "进度分析总结"
+        },
+        "row_14_监督人": {
+          "risk_level": "L2",
+          "risk_score": 0.43,
+          "column": "监督人"
+        },
+        "row_18_负责人": {
+          "risk_level": "L3",
+          "risk_score": 0.324,
+          "column": "负责人"
+        },
+        "row_16_监督人": {
+          "risk_level": "L2",
+          "risk_score": 0.531,
+          "column": "监督人"
+        },
+        "row_48_监督人": {
+          "risk_level": "L3",
+          "risk_score": 0.242,
+          "column": "监督人"
+        },
+        "row_30_负责人": {
+          "risk_level": "L2",
+          "risk_score": 0.685,
+          "column": "负责人"
+        },
+        "row_14_任务发起时间": {
+          "risk_level": "L3",
+          "risk_score": 0.18,
+          "column": "任务发起时间"
+        },
+        "row_44_对上汇报": {
+          "risk_level": "L3",
+          "risk_score": 0.252,
+          "column": "对上汇报"
+        }
+      }
+    },
+    {
+      "table_name": "数字化转型",
+      "table_id": 16,
+      "overall_risk_score": 0.362,
+      "modification_count": 11,
+      "risk_distribution": {
+        "L1": 2,
+        "L2": 2,
+        "L3": 7
+      },
+      "critical_changes": 2,
+      "modifications": {
+        "row_10_复盘时间": {
+          "risk_level": "L3",
+          "risk_score": 0.176,
+          "column": "复盘时间"
+        },
+        "row_14_任务发起时间": {
+          "risk_level": "L2",
+          "risk_score": 0.454,
+          "column": "任务发起时间"
+        },
+        "row_12_进度分析总结": {
+          "risk_level": "L2",
+          "risk_score": 0.659,
+          "column": "进度分析总结"
+        },
+        "row_4_序号": {
+          "risk_level": "L1",
+          "risk_score": 0.7,
+          "column": "序号"
+        },
+        "row_23_来源": {
+          "risk_level": "L3",
+          "risk_score": 0.202,
+          "column": "来源"
+        },
+        "row_9_预计完成时间": {
+          "risk_level": "L3",
+          "risk_score": 0.353,
+          "column": "预计完成时间"
+        },
+        "row_18_负责人": {
+          "risk_level": "L1",
+          "risk_score": 0.811,
+          "column": "负责人"
+        },
+        "row_28_形成计划清单": {
+          "risk_level": "L3",
+          "risk_score": 0.111,
+          "column": "形成计划清单"
+        },
+        "row_24_协助人": {
+          "risk_level": "L3",
+          "risk_score": 0.233,
+          "column": "协助人"
+        },
+        "row_36_应用情况": {
+          "risk_level": "L3",
+          "risk_score": 0.133,
+          "column": "应用情况"
+        },
+        "row_44_关键KR对齐": {
+          "risk_level": "L3",
+          "risk_score": 0.153,
+          "column": "关键KR对齐"
+        }
+      }
+    },
+    {
+      "table_name": "财务预算执行",
+      "table_id": 6,
+      "overall_risk_score": 0.279,
+      "modification_count": 7,
+      "risk_distribution": {
+        "L1": 0,
+        "L2": 1,
+        "L3": 6
+      },
+      "critical_changes": 0,
+      "modifications": {
+        "row_6_预计完成时间": {
+          "risk_level": "L3",
+          "risk_score": 0.377,
+          "column": "预计完成时间"
+        },
+        "row_43_关键KR对齐": {
+          "risk_level": "L3",
+          "risk_score": 0.117,
+          "column": "关键KR对齐"
+        },
+        "row_11_完成进度": {
+          "risk_level": "L3",
+          "risk_score": 0.275,
+          "column": "完成进度"
+        },
+        "row_37_负责人": {
+          "risk_level": "L3",
+          "risk_score": 0.161,
+          "column": "负责人"
+        },
+        "row_44_形成计划清单": {
+          "risk_level": "L2",
+          "risk_score": 0.673,
+          "column": "形成计划清单"
+        },
+        "row_16_任务发起时间": {
+          "risk_level": "L3",
+          "risk_score": 0.201,
+          "column": "任务发起时间"
+        },
+        "row_23_邓总指导登记": {
+          "risk_level": "L3",
+          "risk_score": 0.15,
+          "column": "邓总指导登记"
+        }
+      }
+    },
+    {
+      "table_name": "产品研发进度",
+      "table_id": 3,
+      "overall_risk_score": 0.212,
+      "modification_count": 1,
+      "risk_distribution": {
+        "L1": 0,
+        "L2": 0,
+        "L3": 1
+      },
+      "critical_changes": 0,
+      "modifications": {
+        "row_3_来源": {
+          "risk_level": "L3",
+          "risk_score": 0.212,
+          "column": "来源"
+        }
+      }
+    },
+    {
+      "table_name": "客户服务优化",
+      "table_id": 4,
+      "overall_risk_score": 0.144,
+      "modification_count": 2,
+      "risk_distribution": {
+        "L1": 0,
+        "L2": 0,
+        "L3": 2
+      },
+      "critical_changes": 0,
+      "modifications": {
+        "row_30_形成计划清单": {
+          "risk_level": "L3",
+          "risk_score": 0.157,
+          "column": "形成计划清单"
+        },
+        "row_8_项目类型": {
+          "risk_level": "L3",
+          "risk_score": 0.131,
+          "column": "项目类型"
+        }
+      }
+    },
+    {
+      "table_name": "云服务迁移",
+      "table_id": 11,
+      "overall_risk_score": 0,
+      "modification_count": 0,
+      "risk_distribution": {
+        "L1": 0,
+        "L2": 0,
+        "L3": 0
+      },
+      "critical_changes": 0,
+      "modifications": {}
+    }
+  ],
+  "cross_table_analysis": {
+    "total_tables": 18,
+    "total_modifications": 103,
+    "tables_with_changes": 17,
+    "high_risk_tables": 0,
+    "medium_risk_tables": 11,
+    "low_risk_tables": 6,
+    "risk_heatmap": [
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0.614,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0.512,
+        0,
+        0.539,
+        0,
+        0.688,
+        0,
+        0.545,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0.59,
+        0,
+        0.169,
+        0,
+        0,
+        0,
+        0,
+        0.524
+      ],
+      [
+        0.345,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0.404,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0.379,
+        0,
+        0,
+        0.697,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0.545,
+        0,
+        0,
+        0,
+        0,
+        0.444,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0.489,
+        0,
+        0,
+        0,
+        0.314,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0.642
+      ],
+      [
+        0,
+        0,
+        0,
+        0.935,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0.372,
+        0,
+        0.605,
+        0.227,
+        0,
+        0.203,
+        0,
+        0,
+        0,
+        0.668
+      ],
+      [
+        0.187,
+        0.138,
+        0,
+        0.545,
+        0.417,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0.207,
+        0,
+        0,
+        0,
+        0.743,
+        0.593,
+        0,
+        0,
+        0.107
+      ],
+      [
+        0.428,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0.381,
+        0.191,
+        0,
+        0.497,
+        0,
+        0,
+        0,
+        0.249,
+        0,
+        0,
+        0,
+        0,
+        0.866
+      ],
+      [
+        0.131,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0.224,
+        0.44,
+        0,
+        0.729,
+        0,
+        0.408,
+        0.234,
+        0,
+        0
+      ],
+      [
+        0.622,
+        0,
+        0,
+        0.275,
+        0.613,
+        0.151,
+        0.484,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0.186,
+        0.361,
+        0,
+        0.315,
+        0,
+        0,
+        0.808
+      ],
+      [
+        0,
+        0,
+        0,
+        0.542,
+        0,
+        0,
+        0,
+        0,
+        0.609,
+        0,
+        0.335,
+        0,
+        0,
+        0.123,
+        0.378,
+        0,
+        0,
+        0.272,
+        0
+      ],
+      [
+        0.261,
+        0,
+        0.322,
+        0.537,
+        0,
+        0,
+        0,
+        0,
+        0.324,
+        0.815,
+        0.43,
+        0,
+        0,
+        0.12,
+        0,
+        0,
+        0.452,
+        0,
+        0.226
+      ],
+      [
+        0.7,
+        0,
+        0.202,
+        0.454,
+        0,
+        0.153,
+        0,
+        0,
+        0.811,
+        0.233,
+        0,
+        0,
+        0.353,
+        0,
+        0.111,
+        0.176,
+        0,
+        0.133,
+        0.659
+      ],
+      [
+        0,
+        0,
+        0,
+        0.201,
+        0,
+        0.117,
+        0,
+        0.15,
+        0.161,
+        0,
+        0,
+        0,
+        0.377,
+        0.275,
+        0.673,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0.212,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0.131,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0.157,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    ]
+  }
+}

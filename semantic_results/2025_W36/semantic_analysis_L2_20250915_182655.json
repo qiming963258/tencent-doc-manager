@@ -1,0 +1,48 @@
+{
+  "metadata": {
+    "analysis_time": "2025-09-15 18:26:55",
+    "total_modifications": 1,
+    "layer1_passed": 0,
+    "layer2_analyzed": 1,
+    "processing_time": "15.5s"
+  },
+  "results": [
+    {
+      "modification_id": "M001",
+      "cell": "H15",
+      "column": "具体计划内容",
+      "old_value": "未知资源的判定标准录入标准",
+      "new_value": "1、回国的成交管理与KR设定调整，从挖需求，解疑惑，抛方案，促成交四个维度，具体梳理出来；（这里需要注重帮扶）\n2、回国的技能体系框架搭建与建立，补充相关内容，迭代原有策略；\n3、月度计划需要与成交K",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 80.0,
+        "reason": "内容变更大"
+      },
+      "layer2_result": {
+        "risk_level": "MEDIUM",
+        "decision": "CONDITIONAL",
+        "confidence": 75,
+        "key_risks": [
+          "内容性质从标准定义变更为具体执行计划，可能导致原定标准体系缺失",
+          "新增的三项任务可能增加团队工作负荷",
+          "KR对齐要求可能影响原有交付节奏"
+        ],
+        "recommendation": "建议：1. 保留原判定标准内容并新增执行计划作为补充；2. 评估资源分配是否匹配新增任务；3. 明确KR调整的审批流程。需项目管理团队会签后实施，并监控第一周期执行情况。"
+      },
+      "final_decision": "CONDITIONAL",
+      "approval_required": false
+    }
+  ],
+  "summary": {
+    "approved": 0,
+    "conditional": 1,
+    "review_required": 0,
+    "rejected": 0,
+    "risk_distribution": {
+      "LOW": 0,
+      "MEDIUM": 0,
+      "HIGH": 0,
+      "CRITICAL": 0
+    }
+  }
+}

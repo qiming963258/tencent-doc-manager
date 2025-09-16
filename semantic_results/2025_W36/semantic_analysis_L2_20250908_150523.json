@@ -1,0 +1,48 @@
+{
+  "metadata": {
+    "analysis_time": "2025-09-08 15:05:23",
+    "total_modifications": 1,
+    "layer1_passed": 0,
+    "layer2_analyzed": 1,
+    "processing_time": "5.2s"
+  },
+  "results": [
+    {
+      "modification_id": "M001",
+      "cell": "B2",
+      "column": "负责人",
+      "old_value": "张三",
+      "new_value": "李四,王五",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 75.0,
+        "reason": "负责人变更"
+      },
+      "layer2_result": {
+        "risk_level": "MEDIUM",
+        "decision": "CONDITIONAL",
+        "confidence": 75,
+        "key_risks": [
+          "职责分工不明确的风险",
+          "多头管理的风险",
+          "沟通成本增加的风险"
+        ],
+        "recommendation": "建议明确两位负责人的具体分工和决策机制，并确保团队成员知晓这一变更。最好在变更记录中补充说明增加负责人的原因和职责划分。"
+      },
+      "final_decision": "CONDITIONAL",
+      "approval_required": false
+    }
+  ],
+  "summary": {
+    "approved": 0,
+    "conditional": 1,
+    "review_required": 0,
+    "rejected": 0,
+    "risk_distribution": {
+      "LOW": 0,
+      "MEDIUM": 0,
+      "HIGH": 0,
+      "CRITICAL": 0
+    }
+  }
+}

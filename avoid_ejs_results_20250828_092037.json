@@ -1,0 +1,52 @@
+[
+  {
+    "method": "标准下载(对照组)",
+    "success": false,
+    "format": "unknown"
+  },
+  {
+    "method": "强制二进制流",
+    "success": false,
+    "format": "ejs"
+  },
+  {
+    "method": "附件下载模式",
+    "success": false,
+    "format": "unknown"
+  },
+  {
+    "method": "CSV纯文本模式",
+    "success": false,
+    "format": "ejs"
+  },
+  {
+    "method": "跳过EJS包装",
+    "success": false,
+    "format": "ejs"
+  },
+  {
+    "method": "移动端简化格式",
+    "success": false,
+    "format": "ejs"
+  },
+  {
+    "method": "直接获取数据API",
+    "success": false,
+    "format": "json"
+  },
+  {
+    "method": "分片下载模式",
+    "success": false,
+    "format": "ejs"
+  },
+  {
+    "method": "获取下载链接",
+    "success": false,
+    "error": "HTTP_404"
+  },
+  {
+    "method": "腾讯云COS直链",
+    "success": false,
+    "error": "HTTP_404"
+  }
+]

@@ -1,0 +1,55 @@
+{
+  "success": true,
+  "total_checks": 7,
+  "passed_checks": 7,
+  "warnings": [
+    "⚠️ 缺少标准列: {'复盘时间', '进度分析总结', '形成计划清单'}",
+    "⚠️ 额外的列: {'完成链接', '最新复盘时间', '经理分析复盘'}"
+  ],
+  "errors": [],
+  "validation_results": [
+    {
+      "field": "table_names",
+      "valid": true,
+      "message": "✅ 包含 1 个表名"
+    },
+    {
+      "field": "column_names",
+      "valid": true,
+      "message": "✅ 包含 19 个列名"
+    },
+    {
+      "field": "heatmap_data.matrix",
+      "valid": true,
+      "message": "✅ 矩阵大小 1×19"
+    },
+    {
+      "field": "hover_data",
+      "valid": true,
+      "message": "✅ 包含 1 个悬浮数据项"
+    },
+    {
+      "field": "statistics",
+      "valid": true,
+      "message": "✅ 统计信息完整"
+    },
+    {
+      "field": "table_details",
+      "valid": true,
+      "message": "✅ 包含 1 个表格详情"
+    },
+    {
+      "field": "data_consistency",
+      "valid": true,
+      "message": "✅ 数据一致性验证通过"
+    }
+  ],
+  "metadata": {
+    "version": "2.0",
+    "timestamp": "2025-09-16T16:17:38.344167",
+    "week": "W38",
+    "generator": "comprehensive_scoring_v2",
+    "total_params": 5200,
+    "processing_time": 45.2
+  }
+}

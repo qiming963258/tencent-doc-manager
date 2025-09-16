@@ -1,0 +1,54 @@
+{
+  "workflow_id": "WF-L2-20250915_192114",
+  "created_time": "2025-09-15 19:21:14",
+  "pending_approvals": [
+    {
+      "modification_id": "M001",
+      "cell": "C4",
+      "column": "项目类型",
+      "old_value": "目标管理",
+      "new_value": "目标复盘待解决,已执行待优化",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 80.0,
+        "reason": "类型变更"
+      },
+      "layer2_result": {
+        "risk_level": "MEDIUM",
+        "decision": "REVIEW",
+        "confidence": 75,
+        "key_risks": [
+          "项目类型定义模糊可能导致执行方向不明",
+          "复合状态可能造成工作优先级冲突",
+          "监控复杂度增加可能导致进度滞后"
+        ],
+        "recommendation": "建议：1.明确拆分'复盘待解决'和'已执行待优化'为独立项目类型或状态 2.补充类型定义文档 3.评估是否需要调整WBS 4.召开类型变更说明会",
+        "analysis": {
+          "change_nature": {
+            "primary_type": "性质改变",
+            "secondary_type": [
+              "内容补充",
+              "状态改变"
+            ],
+            "description": "从单一类型变为复合类型+状态混合体，改变了字段原本的项目分类功能"
+          },
+          "impact_assessment": {
+            "project_objectives": 6,
+            "execution_plan": 7,
+            "team_collaboration": 5,
+            "delivery_timeline": 4,
+            "rationale": "新值包含状态描述可能混淆项目分类体系，但尚未触及核心目标"
+          },
+          "special_checks": {
+            "type_field_integrity": "分类体系完整性受损",
+            "historical_data_comparison": "与原'目标管理'类型数据可比性下降30%",
+            "reporting_impact": "可能需要修改项目看板的状态流转逻辑"
+          }
+        }
+      },
+      "final_decision": "REVIEW",
+      "approval_required": true
+    }
+  ],
+  "auto_approved": []
+}

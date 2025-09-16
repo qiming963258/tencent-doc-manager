@@ -1,0 +1,48 @@
+{
+  "metadata": {
+    "analysis_time": "2025-09-15 15:35:34",
+    "total_modifications": 1,
+    "layer1_passed": 0,
+    "layer2_analyzed": 1,
+    "processing_time": "17.3s"
+  },
+  "results": [
+    {
+      "modification_id": "M001",
+      "cell": "I85",
+      "column": "负责人",
+      "old_value": "徐志杰",
+      "new_value": "",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 80.0,
+        "reason": "关键人缺失"
+      },
+      "layer2_result": {
+        "risk_level": "HIGH",
+        "decision": "REJECT",
+        "confidence": 85,
+        "key_risks": [
+          "负责人信息被删除可能导致任务无人负责",
+          "项目责任链断裂造成管理混乱",
+          "关键决策点缺失影响项目推进"
+        ],
+        "recommendation": "1. 必须补充新的负责人信息\n2. 如需清空该字段，应先建立过渡机制\n3. 建议与徐志杰确认交接事宜后再操作\n4. 修改后需通知所有相关干系人"
+      },
+      "final_decision": "REJECT",
+      "approval_required": true
+    }
+  ],
+  "summary": {
+    "approved": 0,
+    "conditional": 0,
+    "review_required": 0,
+    "rejected": 1,
+    "risk_distribution": {
+      "LOW": 0,
+      "MEDIUM": 0,
+      "HIGH": 0,
+      "CRITICAL": 1
+    }
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "metadata": {
+    "analysis_time": "2025-09-15 14:57:33",
+    "total_modifications": 1,
+    "layer1_passed": 0,
+    "layer2_analyzed": 1,
+    "processing_time": "13.9s"
+  },
+  "results": [
+    {
+      "modification_id": "M001",
+      "cell": "I46",
+      "column": "负责人",
+      "old_value": "蔡悦莹",
+      "new_value": "0427\n博主现阶段重点以新员工执行落地，悦莹根据本月博主推进产生问题更新完善sop指导，五月落地博主工作流正常进行（已将指导转项目）",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 90.0,
+        "reason": "信息泄露"
+      },
+      "layer2_result": {
+        "risk_level": "MEDIUM",
+        "decision": "CONDITIONAL",
+        "confidence": 75,
+        "key_risks": [
+          "负责人变更可能导致责任边界模糊",
+          "新员工执行落地可能影响工作质量和效率"
+        ],
+        "recommendation": "建议在变更负责人时明确双方职责边界，并提供必要的培训和过渡支持。同时应对新员工进行充分的指导和监督，确保SOP的更新完善不会影响项目进度。建议添加备注说明此次变更的背景和过渡安排。"
+      },
+      "final_decision": "CONDITIONAL",
+      "approval_required": false
+    }
+  ],
+  "summary": {
+    "approved": 0,
+    "conditional": 1,
+    "review_required": 0,
+    "rejected": 0,
+    "risk_distribution": {
+      "LOW": 0,
+      "MEDIUM": 0,
+      "HIGH": 0,
+      "CRITICAL": 0
+    }
+  }
+}

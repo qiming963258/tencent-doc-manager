@@ -1,0 +1,32 @@
+{
+  "workflow_id": "WF-L2-20250908_142240",
+  "created_time": "2025-09-08 14:22:40",
+  "pending_approvals": [],
+  "auto_approved": [
+    {
+      "modification_id": "M001",
+      "cell": "J12",
+      "column": "负责人",
+      "old_value": "赖铁荔",
+      "new_value": "赖铁荔,各责任人",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 80.0,
+        "reason": "多人负责"
+      },
+      "layer2_result": {
+        "risk_level": "MEDIUM",
+        "decision": "CONDITIONAL",
+        "confidence": 75,
+        "key_risks": [
+          "职责分散可能导致执行效率降低",
+          "多责任人制度可能导致决策延迟",
+          "责任边界模糊可能引发推诿"
+        ],
+        "recommendation": "建议：1.明确各责任人的具体职责范围；2.建立多责任人协作机制；3.补充说明修改原因并在团队内部公示；4.考虑设置第一责任人制度。批准条件：需提供详细的职责分工说明。"
+      },
+      "final_decision": "CONDITIONAL",
+      "approval_required": false
+    }
+  ]
+}

@@ -1,0 +1,48 @@
+{
+  "metadata": {
+    "analysis_time": "2025-09-12 11:54:04",
+    "total_modifications": 1,
+    "layer1_passed": 0,
+    "layer2_analyzed": 1,
+    "processing_time": "17.2s"
+  },
+  "results": [
+    {
+      "modification_id": "M001",
+      "cell": "C4",
+      "column": "项目类型",
+      "old_value": "目标管理",
+      "new_value": "体系建设",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 80.0,
+        "reason": "范围扩大"
+      },
+      "layer2_result": {
+        "risk_level": "MEDIUM",
+        "decision": "REVIEW",
+        "confidence": 75,
+        "key_risks": [
+          "项目类型的变更可能导致项目目标和原有的执行计划不匹配",
+          "体系建设可能需要更专业的团队协作模式",
+          "交付时间可能因项目性质的改变而延长"
+        ],
+        "recommendation": "建议组织相关团队成员对该变更进行详细评审，明确新的项目目标、调整执行计划、优化团队协作方式，并评估对交付时间的影响。在变更通过前，确保所有相关方都清楚并认可这些调整。"
+      },
+      "final_decision": "REVIEW",
+      "approval_required": true
+    }
+  ],
+  "summary": {
+    "approved": 0,
+    "conditional": 0,
+    "review_required": 1,
+    "rejected": 0,
+    "risk_distribution": {
+      "LOW": 0,
+      "MEDIUM": 0,
+      "HIGH": 1,
+      "CRITICAL": 0
+    }
+  }
+}

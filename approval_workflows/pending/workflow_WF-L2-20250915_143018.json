@@ -1,0 +1,33 @@
+{
+  "workflow_id": "WF-L2-20250915_143018",
+  "created_time": "2025-09-15 14:30:18",
+  "pending_approvals": [
+    {
+      "modification_id": "M001",
+      "cell": "I18",
+      "column": "负责人",
+      "old_value": "徐志杰",
+      "new_value": "",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 80.0,
+        "reason": "关键信息缺失"
+      },
+      "layer2_result": {
+        "risk_level": "MEDIUM",
+        "decision": "REVIEW",
+        "confidence": 75,
+        "key_risks": [
+          "负责人清空可能导致任务无人负责",
+          "责任链断裂可能影响项目执行",
+          "关键角色缺失将影响团队协作",
+          "进度跟踪和汇报机制可能受阻"
+        ],
+        "recommendation": "1. 确认是否为误操作 2. 如需清空负责人，需同步指定临时负责人或明确过渡方案 3. 评估对当前任务进展的影响 4. 更新相关沟通渠道中的负责人信息"
+      },
+      "final_decision": "REVIEW",
+      "approval_required": true
+    }
+  ],
+  "auto_approved": []
+}

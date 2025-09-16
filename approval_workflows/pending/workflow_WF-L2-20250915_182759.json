@@ -1,0 +1,32 @@
+{
+  "workflow_id": "WF-L2-20250915_182759",
+  "created_time": "2025-09-15 18:27:59",
+  "pending_approvals": [
+    {
+      "modification_id": "M001",
+      "cell": "K18",
+      "column": "协助人",
+      "old_value": "王寒晓",
+      "new_value": "",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 80.0,
+        "reason": "删除人员"
+      },
+      "layer2_result": {
+        "risk_level": "MEDIUM",
+        "decision": "REVIEW",
+        "confidence": 75,
+        "key_risks": [
+          "协助人字段清空可能导致责任归属不明确",
+          "项目支持资源分配可能出现真空期",
+          "关键节点任务可能因缺乏支持而延误"
+        ],
+        "recommendation": "建议在清除协助人字段前完成以下任一操作：1)指定新的协助人 2)确认该任务不再需要协助支持 3)获取项目经理的明确批准。同时建议在修改日志中记录变更原因。"
+      },
+      "final_decision": "REVIEW",
+      "approval_required": true
+    }
+  ],
+  "auto_approved": []
+}

@@ -1,0 +1,49 @@
+{
+  "metadata": {
+    "analysis_time": "2025-09-08 14:47:02",
+    "total_modifications": 1,
+    "layer1_passed": 0,
+    "layer2_analyzed": 1,
+    "processing_time": "16.2s"
+  },
+  "results": [
+    {
+      "modification_id": "M001",
+      "cell": "C4",
+      "column": "项目类型",
+      "old_value": "目标管理",
+      "new_value": "体系建设",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 80.0,
+        "reason": "范围扩大"
+      },
+      "layer2_result": {
+        "risk_level": "HIGH",
+        "decision": "REVIEW",
+        "confidence": 85,
+        "key_risks": [
+          "项目性质发生根本性变化，可能导致原有规划失效",
+          "团队专业能力与新项目类型匹配度需要重新评估",
+          "项目KPI体系可能需要重构",
+          "相关方预期管理需要重新调整"
+        ],
+        "recommendation": "建议：1) 召开专项评审会确认变更必要性 2) 重新评估资源匹配度 3) 更新项目章程及相关文档 4) 制定详细的过渡计划"
+      },
+      "final_decision": "REVIEW",
+      "approval_required": true
+    }
+  ],
+  "summary": {
+    "approved": 0,
+    "conditional": 0,
+    "review_required": 1,
+    "rejected": 0,
+    "risk_distribution": {
+      "LOW": 0,
+      "MEDIUM": 0,
+      "HIGH": 1,
+      "CRITICAL": 0
+    }
+  }
+}

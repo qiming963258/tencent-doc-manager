@@ -1,0 +1,33 @@
+{
+  "workflow_id": "WF-L2-20250915_142022",
+  "created_time": "2025-09-15 14:20:22",
+  "pending_approvals": [
+    {
+      "modification_id": "M001",
+      "cell": "G8",
+      "column": "具体计划内容",
+      "old_value": "【图片库】\n7.18\n上海仓库群素材拍摄素材优化与返图效果跟踪\n\n7.11\n外部【家具套图】已进行购买，员工使用规划及意见建议，周二与周四进行意见与建议采集收纳\n\n\n\n7.4\n1.图片重复使用的问题将",
+      "new_value": "123123",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 90.0,
+        "reason": "内容替换"
+      },
+      "layer2_result": {
+        "risk_level": "HIGH",
+        "decision": "REJECT",
+        "confidence": 90,
+        "key_risks": [
+          "原有详细工作计划被完全覆盖，导致工作计划跟踪失效",
+          "关键实施细节丢失，可能造成后续执行混乱",
+          "团队协作失去依据，无法确认工作进度",
+          "项目交付质量无法保证"
+        ],
+        "recommendation": "建议恢复原有工作计划内容，或要求修改者提供完整的替代计划说明。若必须修改，应确保完整保留项目关键节点信息，并通知所有相关成员。同时建议建立修改审核机制，防止重要工作信息被意外覆盖。"
+      },
+      "final_decision": "REJECT",
+      "approval_required": true
+    }
+  ],
+  "auto_approved": []
+}

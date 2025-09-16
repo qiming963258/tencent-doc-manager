@@ -1,0 +1,48 @@
+{
+  "metadata": {
+    "analysis_time": "2025-09-15 18:38:47",
+    "total_modifications": 1,
+    "layer1_passed": 0,
+    "layer2_analyzed": 1,
+    "processing_time": "6.4s"
+  },
+  "results": [
+    {
+      "modification_id": "M001",
+      "cell": "H35",
+      "column": "具体计划内容",
+      "old_value": "企微客服的转化目标调整",
+      "new_value": "",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 90.0,
+        "reason": "关键数据缺失"
+      },
+      "layer2_result": {
+        "risk_level": "HIGH",
+        "decision": "REVIEW",
+        "confidence": 85,
+        "key_risks": [
+          "关键计划内容被完全删除，可能影响项目目标达成",
+          "无法评估对执行计划和资源分配的影响",
+          "团队协作可能因计划内容缺失而混乱"
+        ],
+        "recommendation": "建议补充完整计划内容或说明删除理由。如果是临时修改，需明确恢复时间和临时方案。该单元格作为'具体计划内容'的关键字段，不应留空。"
+      },
+      "final_decision": "REVIEW",
+      "approval_required": true
+    }
+  ],
+  "summary": {
+    "approved": 0,
+    "conditional": 0,
+    "review_required": 1,
+    "rejected": 0,
+    "risk_distribution": {
+      "LOW": 0,
+      "MEDIUM": 0,
+      "HIGH": 1,
+      "CRITICAL": 0
+    }
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "metadata": {
+    "analysis_time": "2025-09-15 18:34:41",
+    "total_modifications": 1,
+    "layer1_passed": 0,
+    "layer2_analyzed": 1,
+    "processing_time": "14.0s"
+  },
+  "results": [
+    {
+      "modification_id": "M001",
+      "cell": "C31",
+      "column": "项目类型",
+      "old_value": "目标管理",
+      "new_value": "",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 90.0,
+        "reason": "关键信息缺失"
+      },
+      "layer2_result": {
+        "risk_level": "CRITICAL",
+        "decision": "REJECT",
+        "confidence": 90,
+        "key_risks": [
+          "项目类型变更可能导致项目目标完全改变",
+          "空值状态会导致项目分类体系混乱",
+          "影响所有相关方对项目性质的理解"
+        ],
+        "recommendation": "必须明确指定新的项目类型值，并评估该变更对项目整体框架的影响。建议：1)恢复原值 2)提供完整的新值 3)如确需空白，需补充说明文档并重新评估项目章程"
+      },
+      "final_decision": "REJECT",
+      "approval_required": true
+    }
+  ],
+  "summary": {
+    "approved": 0,
+    "conditional": 0,
+    "review_required": 0,
+    "rejected": 1,
+    "risk_distribution": {
+      "LOW": 0,
+      "MEDIUM": 0,
+      "HIGH": 0,
+      "CRITICAL": 1
+    }
+  }
+}

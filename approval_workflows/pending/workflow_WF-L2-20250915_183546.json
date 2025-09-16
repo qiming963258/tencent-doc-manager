@@ -1,0 +1,33 @@
+{
+  "workflow_id": "WF-L2-20250915_183546",
+  "created_time": "2025-09-15 18:35:46",
+  "pending_approvals": [
+    {
+      "modification_id": "M001",
+      "cell": "C32",
+      "column": "项目类型",
+      "old_value": "目标管理",
+      "new_value": "",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 90.0,
+        "reason": "关键信息缺失"
+      },
+      "layer2_result": {
+        "risk_level": "CRITICAL",
+        "decision": "REJECT",
+        "confidence": 95,
+        "key_risks": [
+          "项目类型空置会导致项目分类体系失效",
+          "无法进行正确的资源分配和进度跟踪",
+          "可能违反项目管理规范要求",
+          "影响项目报告和数据分析的准确性"
+        ],
+        "recommendation": "必须填写有效的项目类型值。建议：1)恢复原'目标管理'值；2)如需变更，应先定义新类型的标准和影响，并提供完整的替代值后再提交修改。同时需要检查所有关联文档是否同步更新。"
+      },
+      "final_decision": "REJECT",
+      "approval_required": true
+    }
+  ],
+  "auto_approved": []
+}

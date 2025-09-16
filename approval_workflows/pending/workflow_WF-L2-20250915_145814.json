@@ -1,0 +1,32 @@
+{
+  "workflow_id": "WF-L2-20250915_145814",
+  "created_time": "2025-09-15 14:58:14",
+  "pending_approvals": [
+    {
+      "modification_id": "M001",
+      "cell": "G47",
+      "column": "具体计划内容",
+      "old_value": "1.目前【关键词收录】可以各国阶段性【收录目标】进行目标执行，周执行与复盘推进【目标导向】展开\n2.关键词项目的推进可用【目标管理机制】进行推进",
+      "new_value": "集运系统",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 80.0,
+        "reason": "关键词替换"
+      },
+      "layer2_result": {
+        "risk_level": "HIGH",
+        "decision": "REVIEW",
+        "confidence": 85,
+        "key_risks": [
+          "计划内容完全变更导致项目方向偏离",
+          "原有关键词收录管理机制被删除可能影响项目目标达成",
+          "新值'集运系统'与原有计划内容无明确关联性"
+        ],
+        "recommendation": "建议要求修改方提供详细说明：1)为何删除原有关键词收录计划 2)集运系统的具体实施计划及其与项目目标的关联性 3)该变更对现有项目时间表和资源分配的影响评估。在获得充分解释前应暂缓批准该变更。"
+      },
+      "final_decision": "REVIEW",
+      "approval_required": true
+    }
+  ],
+  "auto_approved": []
+}

@@ -1,0 +1,31 @@
+{
+  "workflow_id": "WF-L2-20250915_153750",
+  "created_time": "2025-09-15 15:37:50",
+  "pending_approvals": [],
+  "auto_approved": [
+    {
+      "modification_id": "M001",
+      "cell": "J87",
+      "column": "协助人",
+      "old_value": "邓文+技术部门",
+      "new_value": "王寒晓",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 80.0,
+        "reason": "关键人变更"
+      },
+      "layer2_result": {
+        "risk_level": "MEDIUM",
+        "decision": "CONDITIONAL",
+        "confidence": 75,
+        "key_risks": [
+          "协助人员能力不匹配风险",
+          "技术部门支持缺失风险"
+        ],
+        "recommendation": "建议进行以下操作：1)核实王寒晓是否具备原技术部门支持的对应能力；2)如需保留技术部门支持，应在修改后明确标注技术对接人；3)通知相关干系人此人员变更，并确认任务交接情况。批准条件：确认新协助人能力匹配且技术需求有保障。"
+      },
+      "final_decision": "CONDITIONAL",
+      "approval_required": false
+    }
+  ]
+}

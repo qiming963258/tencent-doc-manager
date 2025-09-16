@@ -1,0 +1,49 @@
+{
+  "metadata": {
+    "analysis_time": "2025-09-15 15:06:54",
+    "total_modifications": 1,
+    "layer1_passed": 0,
+    "layer2_analyzed": 1,
+    "processing_time": "21.3s"
+  },
+  "results": [
+    {
+      "modification_id": "M001",
+      "cell": "G55",
+      "column": "具体计划内容",
+      "old_value": "1、晒单笔记的封面尝试4四宫格的形式丰富画面吸睛性\n2、业务笔记封面的信息传递有效性可做AB测测试有效的模型\n3、笔记封面的创新需要根据竞对爆款笔记封面获取创新灵感再进行二创，保证每一次的笔记封面与上",
+      "new_value": "新产品技能与管理流程拉通",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 80.0,
+        "reason": "内容替换"
+      },
+      "layer2_result": {
+        "risk_level": "HIGH",
+        "decision": "REVIEW",
+        "confidence": 85,
+        "key_risks": [
+          "原计划具体明确的工作内容被完全替换",
+          "新内容‘新产品技能与管理流程拉通’与原计划聚焦的笔记封面优化方向存在重大偏离",
+          "修改后内容缺乏可执行的细节和标准",
+          "可能影响已有工作安排的连续性"
+        ],
+        "recommendation": "建议与修改发起人确认：1) 修改的必要性和背景 2) 新内容的具体执行方案 3) 对当前项目进度的影响评估。如果确实需要变更，应当补充详细实施计划，并评估对其他相关任务的影响。"
+      },
+      "final_decision": "REVIEW",
+      "approval_required": true
+    }
+  ],
+  "summary": {
+    "approved": 0,
+    "conditional": 0,
+    "review_required": 1,
+    "rejected": 0,
+    "risk_distribution": {
+      "LOW": 0,
+      "MEDIUM": 0,
+      "HIGH": 1,
+      "CRITICAL": 0
+    }
+  }
+}

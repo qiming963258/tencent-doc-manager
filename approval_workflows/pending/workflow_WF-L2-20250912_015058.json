@@ -1,0 +1,33 @@
+{
+  "workflow_id": "WF-L2-20250912_015058",
+  "created_time": "2025-09-12 01:50:58",
+  "pending_approvals": [
+    {
+      "modification_id": "M001",
+      "cell": "C4",
+      "column": "项目类型",
+      "old_value": "目标管理",
+      "new_value": "体系建设",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 80.0,
+        "reason": "类型变更"
+      },
+      "layer2_result": {
+        "risk_level": "HIGH",
+        "decision": "REVIEW",
+        "confidence": 85,
+        "key_risks": [
+          "项目性质发生根本性改变",
+          "可能导致执行计划全面调整",
+          "需要重新评估团队技能匹配度",
+          "交付时间可能大幅延后"
+        ],
+        "recommendation": "建议召开项目变更评审会，重点评估以下事项：1)新项目类型与整体战略的契合度；2)资源重分配的可行性；3)修订项目章程的必要性。同时要求项目团队在48小时内提交影响分析报告。"
+      },
+      "final_decision": "REVIEW",
+      "approval_required": true
+    }
+  ],
+  "auto_approved": []
+}

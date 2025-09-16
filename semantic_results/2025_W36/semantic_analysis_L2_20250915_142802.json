@@ -1,0 +1,48 @@
+{
+  "metadata": {
+    "analysis_time": "2025-09-15 14:28:02",
+    "total_modifications": 1,
+    "layer1_passed": 0,
+    "layer2_analyzed": 1,
+    "processing_time": "13.9s"
+  },
+  "results": [
+    {
+      "modification_id": "M001",
+      "cell": "G16",
+      "column": "具体计划内容",
+      "old_value": "【网盘框架优化】\n1、梳理网盘文件架构框架",
+      "new_value": "评估方面",
+      "layer1_result": {
+        "judgment": "UNSURE",
+        "confidence": 60.0,
+        "reason": "术语变更"
+      },
+      "layer2_result": {
+        "risk_level": "HIGH",
+        "decision": "REVIEW",
+        "confidence": 80,
+        "key_risks": [
+          "项目执行方向不明确",
+          "团队协作缺乏具体指导",
+          "可能影响交付时间"
+        ],
+        "recommendation": "建议恢复原值或补充新的具体计划内容，确保项目执行方向明确。如确需修改为'评估方面'，应同时补充具体的评估标准和指标。"
+      },
+      "final_decision": "REVIEW",
+      "approval_required": true
+    }
+  ],
+  "summary": {
+    "approved": 0,
+    "conditional": 0,
+    "review_required": 1,
+    "rejected": 0,
+    "risk_distribution": {
+      "LOW": 0,
+      "MEDIUM": 0,
+      "HIGH": 1,
+      "CRITICAL": 0
+    }
+  }
+}

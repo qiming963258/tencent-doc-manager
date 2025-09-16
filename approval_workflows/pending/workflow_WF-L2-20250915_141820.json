@@ -1,0 +1,33 @@
+{
+  "workflow_id": "WF-L2-20250915_141820",
+  "created_time": "2025-09-15 14:18:20",
+  "pending_approvals": [
+    {
+      "modification_id": "M001",
+      "cell": "B6",
+      "column": "项目类型",
+      "old_value": "目标管理",
+      "new_value": "",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 90.0,
+        "reason": "关键信息删除"
+      },
+      "layer2_result": {
+        "risk_level": "CRITICAL",
+        "decision": "REJECT",
+        "confidence": 95,
+        "key_risks": [
+          "项目类型为空可能导致资源配置错误",
+          "无法制定明确的执行计划和交付标准",
+          "团队协作缺乏统一指导方向",
+          "项目目标模糊可能导致后续变更成本增加"
+        ],
+        "recommendation": "必须填写有效的项目类型值。建议：1)恢复原值'目标管理' 2)如需变更请先提交正式变更申请，说明变更理由和影响评估 3)组织项目干系人评审变更需求 4)更新所有相关文档和计划"
+      },
+      "final_decision": "REJECT",
+      "approval_required": true
+    }
+  ],
+  "auto_approved": []
+}

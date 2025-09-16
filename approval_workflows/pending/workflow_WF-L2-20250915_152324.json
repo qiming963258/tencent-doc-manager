@@ -1,0 +1,33 @@
+{
+  "workflow_id": "WF-L2-20250915_152324",
+  "created_time": "2025-09-15 15:23:24",
+  "pending_approvals": [
+    {
+      "modification_id": "M001",
+      "cell": "B73",
+      "column": "项目类型",
+      "old_value": "目标管理",
+      "new_value": "",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 80.0,
+        "reason": "关键信息缺失"
+      },
+      "layer2_result": {
+        "risk_level": "CRITICAL",
+        "decision": "REJECT",
+        "confidence": 95,
+        "key_risks": [
+          "项目类型关键字段清空导致项目性质完全丧失定义",
+          "所有相关流程和资源分配将失去基准依据",
+          "团队工作方向性缺失可能引发混乱",
+          "项目审计和合规性将无法验证"
+        ],
+        "recommendation": "必须立即恢复原始值或明确新项目类型。如确需变更，需同步完成以下工作：1) 项目章程修订 2) 所有相关方正式确认 3) 更新WBS和资源分配矩阵 4) 发布正式变更通告"
+      },
+      "final_decision": "REJECT",
+      "approval_required": true
+    }
+  ],
+  "auto_approved": []
+}

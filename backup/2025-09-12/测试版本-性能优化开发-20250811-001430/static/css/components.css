@@ -1,0 +1,474 @@
+/* 腾讯文档导出工具专用组件样式 */
+
+/* 应用头部 */
+.app-header {
+    background: linear-gradient(135deg, var(--primary-600), var(--primary-800));
+    color: white;
+    padding: var(--space-8) 0;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.app-header::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: repeating-linear-gradient(
+        45deg,
+        transparent,
+        transparent 10px,
+        rgba(255, 255, 255, 0.03) 10px,
+        rgba(255, 255, 255, 0.03) 20px
+    );
+    animation: header-shine 20s linear infinite;
+}
+
+@keyframes header-shine {
+    0% { transform: translateX(-50%) translateY(-50%) rotate(0deg); }
+    100% { transform: translateX(-50%) translateY(-50%) rotate(360deg); }
+}
+
+.app-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: var(--space-2);
+    position: relative;
+    z-index: 1;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.app-subtitle {
+    font-size: 1.125rem;
+    opacity: 0.9;
+    position: relative;
+    z-index: 1;
+}
+
+/* 主要导出界面 */
+.export-interface {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.export-form {
+    background: var(--surface);
+    border-radius: var(--radius-xl);
+    padding: var(--space-8);
+    box-shadow: var(--shadow-xl);
+    border: 1px solid var(--border);
+}
+
+.url-input-group {
+    position: relative;
+}
+
+.url-input-icon {
+    position: absolute;
+    left: var(--space-4);
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--text-muted);
+    font-size: 18px;
+    z-index: 1;
+}
+
+.url-input {
+    padding-left: var(--space-12);
+    font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+    font-size: 14px;
+}
+
+.url-input:focus + .url-input-icon {
+    color: var(--primary-500);
+}
+
+/* 导出选项 */
+.export-options {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: var(--space-4);
+    margin: var(--space-6) 0;
+}
+
+.export-option {
+    position: relative;
+    cursor: pointer;
+    transition: all var(--duration-normal) ease;
+}
+
+.export-option input[type="radio"] {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.export-option-card {
+    padding: var(--space-4);
+    border: 2px solid var(--border);
+    border-radius: var(--radius-lg);
+    background: var(--surface);
+    transition: all var(--duration-fast) ease;
+    text-align: center;
+}
+
+.export-option:hover .export-option-card {
+    border-color: var(--primary-300);
+    background: var(--primary-50);
+    transform: translateY(-2px);
+}
+
+[data-theme="dark"] .export-option:hover .export-option-card {
+    background: rgba(59, 130, 246, 0.05);
+}
+
+.export-option input[type="radio"]:checked + .export-option-card {
+    border-color: var(--primary-500);
+    background: var(--primary-50);
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+[data-theme="dark"] .export-option input[type="radio"]:checked + .export-option-card {
+    background: rgba(59, 130, 246, 0.1);
+}
+
+.export-option-icon {
+    font-size: 2rem;
+    color: var(--primary-500);
+    margin-bottom: var(--space-2);
+}
+
+.export-option-title {
+    font-weight: 600;
+    margin-bottom: var(--space-1);
+}
+
+.export-option-description {
+    font-size: 13px;
+    color: var(--text-muted);
+}
+
+/* Cookie设置区域 */
+.cookie-section {
+    background: var(--surface-hover);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: var(--space-6);
+    margin-bottom: var(--space-6);
+}
+
+.cookie-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+    user-select: none;
+}
+
+.cookie-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height var(--duration-normal) ease;
+}
+
+.cookie-content.expanded {
+    max-height: 300px;
+}
+
+.cookie-input {
+    margin-top: var(--space-4);
+    font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+    font-size: 13px;
+    background: var(--background);
+    border: 1px solid var(--border);
+    resize: vertical;
+    min-height: 120px;
+}
+
+.cookie-help {
+    margin-top: var(--space-2);
+    padding: var(--space-3);
+    background: rgba(2, 132, 199, 0.05);
+    border-radius: var(--radius);
+    font-size: 13px;
+    color: var(--info);
+}
+
+.cookie-help-icon {
+    color: var(--info);
+    margin-right: var(--space-2);
+}
+
+/* 导出状态显示 */
+.export-status {
+    margin-top: var(--space-6);
+    padding: var(--space-6);
+    background: var(--surface-hover);
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--border);
+    display: none;
+    position: relative;
+    overflow: hidden;
+}
+
+.export-status.active {
+    display: block;
+    animation: fade-in-up var(--duration-normal) ease;
+}
+
+.export-status-header {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+    margin-bottom: var(--space-4);
+}
+
+.export-status-icon {
+    font-size: 1.5rem;
+    color: var(--primary-500);
+}
+
+.export-status-text {
+    flex: 1;
+}
+
+.export-status-title {
+    font-weight: 600;
+    margin-bottom: var(--space-1);
+}
+
+.export-status-description {
+    font-size: 14px;
+    color: var(--text-secondary);
+}
+
+.export-progress {
+    margin-bottom: var(--space-4);
+}
+
+.export-progress-text {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--space-2);
+    font-size: 14px;
+    font-weight: 500;
+}
+
+/* 结果展示 */
+.export-result {
+    margin-top: var(--space-6);
+    display: none;
+}
+
+.export-result.success {
+    display: block;
+    animation: fade-in-up var(--duration-normal) ease 0.2s;
+}
+
+.export-result-card {
+    background: rgba(5, 150, 105, 0.05);
+    border: 1px solid var(--success);
+    border-radius: var(--radius-lg);
+    padding: var(--space-6);
+}
+
+.export-result-header {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+    margin-bottom: var(--space-4);
+}
+
+.export-result-icon {
+    font-size: 2rem;
+    color: var(--success);
+}
+
+.export-result-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--success);
+}
+
+.export-result-details {
+    margin-bottom: var(--space-4);
+}
+
+.export-result-detail {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--space-2) 0;
+    border-bottom: 1px solid var(--border);
+}
+
+.export-result-detail:last-child {
+    border-bottom: none;
+}
+
+.export-result-actions {
+    display: flex;
+    gap: var(--space-3);
+    flex-wrap: wrap;
+}
+
+/* 错误状态 */
+.export-error {
+    background: rgba(220, 38, 38, 0.05);
+    border: 1px solid var(--error);
+    border-radius: var(--radius-lg);
+    padding: var(--space-6);
+    margin-top: var(--space-6);
+    display: none;
+}
+
+.export-error.active {
+    display: block;
+    animation: fade-in-up var(--duration-normal) ease;
+}
+
+.export-error-header {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+    margin-bottom: var(--space-4);
+}
+
+.export-error-icon {
+    font-size: 1.5rem;
+    color: var(--error);
+}
+
+.export-error-title {
+    font-weight: 600;
+    color: var(--error);
+}
+
+.export-error-message {
+    color: var(--text-secondary);
+    margin-bottom: var(--space-4);
+}
+
+.export-error-details {
+    background: var(--surface);
+    border-radius: var(--radius);
+    padding: var(--space-4);
+    font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+    font-size: 13px;
+    color: var(--text-muted);
+    overflow-x: auto;
+}
+
+/* 历史记录 */
+.history-section {
+    margin-top: var(--space-12);
+}
+
+.history-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: var(--space-6);
+}
+
+.history-list {
+    display: grid;
+    gap: var(--space-4);
+}
+
+.history-item {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: var(--space-4);
+    transition: all var(--duration-fast) ease;
+}
+
+.history-item:hover {
+    box-shadow: var(--shadow);
+    transform: translateY(-1px);
+}
+
+.history-item-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: var(--space-2);
+}
+
+.history-item-title {
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.history-item-time {
+    font-size: 13px;
+    color: var(--text-muted);
+}
+
+.history-item-url {
+    font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+    font-size: 13px;
+    color: var(--text-secondary);
+    word-break: break-all;
+    margin-bottom: var(--space-2);
+}
+
+.history-item-actions {
+    display: flex;
+    gap: var(--space-2);
+}
+
+/* 响应式调整 */
+@media (max-width: 768px) {
+    .app-title {
+        font-size: 2rem;
+    }
+    
+    .app-subtitle {
+        font-size: 1rem;
+    }
+    
+    .export-form {
+        padding: var(--space-6);
+    }
+    
+    .export-options {
+        grid-template-columns: 1fr;
+    }
+    
+    .export-result-actions {
+        justify-content: center;
+    }
+    
+    .history-header {
+        flex-direction: column;
+        gap: var(--space-4);
+        align-items: flex-start;
+    }
+}
+
+/* 动画定义 */
+@keyframes fade-in-up {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* 深色模式特殊调整 */
+[data-theme="dark"] .app-header {
+    background: linear-gradient(135deg, var(--gray-800), var(--gray-900));
+}
+
+[data-theme="dark"] .cookie-help {
+    background: rgba(2, 132, 199, 0.1);
+}

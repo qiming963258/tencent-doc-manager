@@ -1,0 +1,49 @@
+{
+  "metadata": {
+    "analysis_time": "2025-09-15 15:37:38",
+    "total_modifications": 1,
+    "layer1_passed": 0,
+    "layer2_analyzed": 1,
+    "processing_time": "18.9s"
+  },
+  "results": [
+    {
+      "modification_id": "M001",
+      "cell": "I87",
+      "column": "负责人",
+      "old_value": "徐志杰,蔡悦莹",
+      "new_value": "",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 90.0,
+        "reason": "删除负责人"
+      },
+      "layer2_result": {
+        "risk_level": "CRITICAL",
+        "decision": "REJECT",
+        "confidence": 90,
+        "key_risks": [
+          "责任真空风险：项目关键节点无人负责",
+          "任务跟踪断裂风险：历史责任人信息丢失",
+          "紧急响应失效风险：问题出现时无明确对接人",
+          "团队信任危机风险：随意清空责任人可能引发团队不满"
+        ],
+        "recommendation": "1.必须补充新责任人后再提交变更\n2.如需暂时清空需同步提交过渡方案\n3.建议保留原责任人并标记状态变更而非直接删除\n4.需要项目管理办公室(PMO)特别审批"
+      },
+      "final_decision": "REJECT",
+      "approval_required": true
+    }
+  ],
+  "summary": {
+    "approved": 0,
+    "conditional": 0,
+    "review_required": 0,
+    "rejected": 1,
+    "risk_distribution": {
+      "LOW": 0,
+      "MEDIUM": 0,
+      "HIGH": 0,
+      "CRITICAL": 1
+    }
+  }
+}

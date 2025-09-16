@@ -1,0 +1,47 @@
+{
+  "metadata": {
+    "analysis_time": "2025-09-15 14:18:10",
+    "total_modifications": 1,
+    "layer1_passed": 0,
+    "layer2_analyzed": 1,
+    "processing_time": "15.0s"
+  },
+  "results": [
+    {
+      "modification_id": "M001",
+      "cell": "K5",
+      "column": "监督人",
+      "old_value": "徐志杰",
+      "new_value": "魏志广",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 80.0,
+        "reason": "关键人变更"
+      },
+      "layer2_result": {
+        "risk_level": "MEDIUM",
+        "decision": "CONDITIONAL",
+        "confidence": 75,
+        "key_risks": [
+          "监督人变更可能导致项目监督风格和方法变化",
+          "新监督人需要时间熟悉项目情况"
+        ],
+        "recommendation": "建议进行以下操作：1. 安排徐志杰和魏志广的工作交接会议；2. 确保魏志广充分了解项目背景和当前状态；3. 更新相关团队成员的通讯录和权限设置；4. 监控项目初期进度以确保平稳过渡"
+      },
+      "final_decision": "CONDITIONAL",
+      "approval_required": false
+    }
+  ],
+  "summary": {
+    "approved": 0,
+    "conditional": 1,
+    "review_required": 0,
+    "rejected": 0,
+    "risk_distribution": {
+      "LOW": 0,
+      "MEDIUM": 0,
+      "HIGH": 0,
+      "CRITICAL": 0
+    }
+  }
+}

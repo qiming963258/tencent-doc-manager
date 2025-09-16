@@ -1,0 +1,240 @@
+{
+  "_文档说明": "这是综合打分系统的核心数据文件，UI只能从此文件获取数据（强制原则）",
+  "_规范版本": "基于0000-颜色和级别打分标准 v1.0",
+  "_生成时间说明": "ISO 8601格式时间戳，记录数据生成时刻",
+  "generation_time": "2025-09-13T15:13:57.060296",
+  "scoring_version": "3.0",
+  "scoring_standard": "0000-颜色和级别打分标准",
+  "_关键内容1": "【所有表名列表】UI热力图左侧Y轴显示的表格名称",
+  "table_names": [
+    "小红书内容审核记录表",
+    "企业风险评估矩阵表",
+    "财务月度报表汇总表"
+  ],
+  "_关键内容2": "【列平均打分】UI热力图顶部X轴显示的列平均风险值",
+  "column_avg_scores": {
+    "序号": 0.85,
+    "项目类型": 0.92,
+    "来源": 0.25,
+    "任务发起时间": 0.28,
+    "目标对齐": 0.88,
+    "关键KR对齐": 0.91,
+    "具体计划内容": 0.22,
+    "邓总指导登记": 0.27,
+    "负责人": 0.55,
+    "协助人": 0.58,
+    "监督人": 0.59,
+    "重要程度": 0.56,
+    "预计完成时间": 0.54,
+    "完成进度": 0.53,
+    "形成计划清单": 0.28,
+    "复盘时间": 0.24,
+    "对上汇报": 0.25,
+    "应用情况": 0.22,
+    "进度分析总结": 0.23
+  },
+  "_关键内容3_4": "【表格详细数据】包含修改行数、打分和URL",
+  "table_scores": [
+    {
+      "_说明": "第一个表格的完整数据",
+      "table_id": 0,
+      "table_name": "小红书内容审核记录表",
+      "_关键内容4": "【表格URL】点击表格名称跳转的腾讯文档地址",
+      "table_url": "https://docs.qq.com/sheet/DWEFNU25TemFnZXJN",
+      "total_rows": 92,
+      "total_modifications": 15,
+      "overall_risk_score": 0.65,
+      "_关键内容3": "【列修改详情】UI热力图单元格颜色和悬停信息的数据源",
+      "column_scores": {
+        "项目类型": {
+          "_说明": "L1列示例，最高风险",
+          "column_level": "L1",
+          "avg_score": 0.98,
+          "modified_rows": [
+            5,
+            12,
+            28
+          ],
+          "row_scores": [
+            0.95,
+            0.99,
+            1.0
+          ],
+          "modifications": 3
+        },
+        "负责人": {
+          "_说明": "L2列示例，需要AI评估",
+          "column_level": "L2",
+          "avg_score": 0.55,
+          "modified_rows": [
+            8,
+            15,
+            22,
+            35,
+            67
+          ],
+          "row_scores": [
+            0.45,
+            0.52,
+            0.58,
+            0.61,
+            0.59
+          ],
+          "modifications": 5,
+          "ai_decisions": [
+            "APPROVE",
+            "APPROVE",
+            "REVIEW",
+            "REVIEW",
+            "REVIEW"
+          ],
+          "ai_confidence": [
+            0.85,
+            0.82,
+            0.75,
+            0.73,
+            0.76
+          ]
+        },
+        "来源": {
+          "_说明": "L3列示例，低风险",
+          "column_level": "L3",
+          "avg_score": 0.21,
+          "modified_rows": [
+            2,
+            45
+          ],
+          "row_scores": [
+            0.18,
+            0.24
+          ],
+          "modifications": 2
+        }
+      }
+    },
+    {
+      "_说明": "第二个表格的数据",
+      "table_id": 1,
+      "table_name": "企业风险评估矩阵表",
+      "table_url": "https://docs.qq.com/sheet/DWGZDZkxpaGVQaURr",
+      "total_rows": 75,
+      "total_modifications": 8,
+      "overall_risk_score": 0.48,
+      "column_scores": {
+        "目标对齐": {
+          "column_level": "L1",
+          "avg_score": 0.88,
+          "modified_rows": [
+            10,
+            25
+          ],
+          "row_scores": [
+            0.85,
+            0.91
+          ],
+          "modifications": 2
+        },
+        "预计完成时间": {
+          "column_level": "L2",
+          "avg_score": 0.54,
+          "modified_rows": [
+            30,
+            42,
+            58
+          ],
+          "row_scores": [
+            0.52,
+            0.55,
+            0.55
+          ],
+          "modifications": 3
+        },
+        "进度分析总结": {
+          "column_level": "L3",
+          "avg_score": 0.23,
+          "modified_rows": [
+            5,
+            18,
+            66
+          ],
+          "row_scores": [
+            0.22,
+            0.24,
+            0.23
+          ],
+          "modifications": 3
+        }
+      }
+    },
+    {
+      "_说明": "第三个表格的数据",
+      "table_id": 2,
+      "table_name": "财务月度报表汇总表",
+      "table_url": "https://docs.qq.com/sheet/DWFJzdWNwd0RGbU5R",
+      "total_rows": 120,
+      "total_modifications": 12,
+      "overall_risk_score": 0.72,
+      "column_scores": {
+        "关键KR对齐": {
+          "column_level": "L1",
+          "avg_score": 0.91,
+          "modified_rows": [
+            3,
+            15,
+            45,
+            78
+          ],
+          "row_scores": [
+            0.89,
+            0.92,
+            0.91,
+            0.92
+          ],
+          "modifications": 4
+        },
+        "监督人": {
+          "column_level": "L2",
+          "avg_score": 0.59,
+          "modified_rows": [
+            20,
+            35,
+            50,
+            65,
+            80,
+            95
+          ],
+          "row_scores": [
+            0.58,
+            0.6,
+            0.59,
+            0.61,
+            0.57,
+            0.59
+          ],
+          "modifications": 6
+        },
+        "复盘时间": {
+          "column_level": "L3",
+          "avg_score": 0.24,
+          "modified_rows": [
+            12,
+            88
+          ],
+          "row_scores": [
+            0.23,
+            0.25
+          ],
+          "modifications": 2
+        }
+      }
+    }
+  ],
+  "_关键内容5": "【全部修改数】UI右上角显示的总修改统计",
+  "total_modifications": 35,
+  "_风险统计": "【风险分布】UI风险分布统计图表的数据源",
+  "risk_summary": {
+    "high_risk_count": 12,
+    "medium_risk_count": 15,
+    "low_risk_count": 8
+  }
+}

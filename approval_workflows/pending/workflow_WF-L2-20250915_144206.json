@@ -1,0 +1,32 @@
+{
+  "workflow_id": "WF-L2-20250915_144206",
+  "created_time": "2025-09-15 14:42:06",
+  "pending_approvals": [
+    {
+      "modification_id": "M001",
+      "cell": "B31",
+      "column": "项目类型",
+      "old_value": "目标管理",
+      "new_value": "",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 80.0,
+        "reason": "关键信息缺失"
+      },
+      "layer2_result": {
+        "risk_level": "CRITICAL",
+        "decision": "REJECT",
+        "confidence": 95,
+        "key_risks": [
+          "项目类型字段清空导致项目分类体系崩溃",
+          "无法进行项目资源分配和进度跟踪",
+          "影响所有关联系统的数据一致性"
+        ],
+        "recommendation": "必须填写有效的项目类型值。建议：1)保留原值 2)选择其他有效分类 3)如需删除应同步更新整个项目分类体系。修改前需经过架构委员会审批。"
+      },
+      "final_decision": "REJECT",
+      "approval_required": true
+    }
+  ],
+  "auto_approved": []
+}

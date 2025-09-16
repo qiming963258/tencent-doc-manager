@@ -1,0 +1,31 @@
+{
+  "workflow_id": "WF-L2-20250909_110433",
+  "created_time": "2025-09-09 11:04:33",
+  "pending_approvals": [],
+  "auto_approved": [
+    {
+      "modification_id": "M001",
+      "cell": "J12",
+      "column": "负责人",
+      "old_value": "赖铁荔",
+      "new_value": "赖铁荔,各责任人",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 75.0,
+        "reason": "多人负责"
+      },
+      "layer2_result": {
+        "risk_level": "MEDIUM",
+        "decision": "CONDITIONAL",
+        "confidence": 75,
+        "key_risks": [
+          "职责界定模糊可能导致执行效率下降",
+          "多责任人制度可能导致决策延迟"
+        ],
+        "recommendation": "建议补充详细的责任分工说明，明确'各责任人'的具体职责范围。可考虑：1) 在备注栏增加责任矩阵说明 2) 或拆分单元格为多行明确每个责任人的具体职责 3) 如采用共责制需在项目章程中明确定义协作机制"
+      },
+      "final_decision": "CONDITIONAL",
+      "approval_required": false
+    }
+  ]
+}

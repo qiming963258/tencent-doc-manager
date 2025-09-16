@@ -1,0 +1,32 @@
+{
+  "workflow_id": "WF-L2-20250915_152019",
+  "created_time": "2025-09-15 15:20:19",
+  "pending_approvals": [],
+  "auto_approved": [
+    {
+      "modification_id": "M001",
+      "cell": "K69",
+      "column": "监督人",
+      "old_value": "徐志杰",
+      "new_value": "林玉佳",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 75.0,
+        "reason": "负责人变更"
+      },
+      "layer2_result": {
+        "risk_level": "MEDIUM",
+        "decision": "CONDITIONAL",
+        "confidence": 75,
+        "key_risks": [
+          "监督人变更可能导致项目监督风格和经验差异",
+          "新监督人可能需要时间熟悉项目细节",
+          "团队需要适应新的监督方式"
+        ],
+        "recommendation": "建议在变更前组织交接会议，确保新监督人林玉佳充分了解项目背景、当前状态和关键风险点，同时通知相关团队成员此变更。监控过渡期的项目执行情况，特别是在变更后的1-2周内。"
+      },
+      "final_decision": "CONDITIONAL",
+      "approval_required": false
+    }
+  ]
+}

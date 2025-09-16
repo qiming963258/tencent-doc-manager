@@ -1,0 +1,187 @@
+{
+  "metadata": {
+    "table_id": 11,
+    "table_name": "内部审计问题整改表",
+    "generation_time": "2025-09-13T13:59:30.963881",
+    "scoring_standard": "0000-颜色和级别打分标准",
+    "scoring_version": "2.0"
+  },
+  "comparison_info": {
+    "baseline_file": "baseline_table_012_20250818.csv",
+    "current_file": "current_社群管理部_table_012_20250819.csv",
+    "total_rows": 44,
+    "total_columns": 19,
+    "comparison_time": ""
+  },
+  "modifications_summary": {
+    "total_modifications": 8,
+    "high_risk_count": 1,
+    "medium_risk_count": 1,
+    "low_risk_count": 6
+  },
+  "column_scores": {
+    "来源": {
+      "column_level": "L3",
+      "modifications": 1,
+      "modified_rows": [
+        20
+      ],
+      "row_scores": [
+        0.352
+      ],
+      "avg_score": 0.352,
+      "max_score": 0.352,
+      "min_score": 0.352
+    },
+    "目标对齐": {
+      "column_level": "L1",
+      "modifications": 1,
+      "modified_rows": [
+        25
+      ],
+      "row_scores": [
+        0.854
+      ],
+      "avg_score": 0.854,
+      "max_score": 0.854,
+      "min_score": 0.854
+    },
+    "邓总指导登记": {
+      "column_level": "L3",
+      "modifications": 2,
+      "modified_rows": [
+        10,
+        22
+      ],
+      "row_scores": [
+        0.337,
+        0.198
+      ],
+      "avg_score": 0.268,
+      "max_score": 0.337,
+      "min_score": 0.198
+    },
+    "重要程度": {
+      "column_level": "L2",
+      "modifications": 1,
+      "modified_rows": [
+        27
+      ],
+      "row_scores": [
+        0.431
+      ],
+      "avg_score": 0.431,
+      "max_score": 0.431,
+      "min_score": 0.431,
+      "ai_decisions": {
+        "APPROVE": 1,
+        "REVIEW": 0
+      }
+    },
+    "形成计划清单": {
+      "column_level": "L3",
+      "modifications": 1,
+      "modified_rows": [
+        29
+      ],
+      "row_scores": [
+        0.356
+      ],
+      "avg_score": 0.356,
+      "max_score": 0.356,
+      "min_score": 0.356
+    },
+    "对上汇报": {
+      "column_level": "L3",
+      "modifications": 2,
+      "modified_rows": [
+        17,
+        18
+      ],
+      "row_scores": [
+        0.17,
+        0.252
+      ],
+      "avg_score": 0.211,
+      "max_score": 0.252,
+      "min_score": 0.17
+    }
+  },
+  "detailed_modifications": [
+    {
+      "row": 10,
+      "column": "邓总指导登记",
+      "column_level": "L3",
+      "old_value": "原始邓总指导登记_68",
+      "new_value": "修改邓总指导登记_23",
+      "score": 0.337,
+      "risk_level": "低风险"
+    },
+    {
+      "row": 25,
+      "column": "目标对齐",
+      "column_level": "L1",
+      "old_value": "原始目标对齐_28",
+      "new_value": "修改目标对齐_95",
+      "score": 0.854,
+      "risk_level": "极高风险"
+    },
+    {
+      "row": 20,
+      "column": "来源",
+      "column_level": "L3",
+      "old_value": "经理日常交办",
+      "new_value": "战略项目调整,月度规划",
+      "score": 0.352,
+      "risk_level": "低风险"
+    },
+    {
+      "row": 22,
+      "column": "邓总指导登记",
+      "column_level": "L3",
+      "old_value": "原始邓总指导登记_62",
+      "new_value": "修改邓总指导登记_9",
+      "score": 0.198,
+      "risk_level": "低风险"
+    },
+    {
+      "row": 18,
+      "column": "对上汇报",
+      "column_level": "L3",
+      "old_value": "计划汇报",
+      "new_value": "计划汇报",
+      "score": 0.17,
+      "risk_level": "低风险"
+    },
+    {
+      "row": 29,
+      "column": "形成计划清单",
+      "column_level": "L3",
+      "old_value": "原始形成计划清单_75",
+      "new_value": "修改形成计划清单_5",
+      "score": 0.356,
+      "risk_level": "低风险"
+    },
+    {
+      "row": 27,
+      "column": "重要程度",
+      "column_level": "L2",
+      "old_value": "5",
+      "new_value": "3",
+      "score": 0.431,
+      "risk_level": "中风险",
+      "ai_decision": "APPROVE",
+      "ai_confidence": 0.81
+    },
+    {
+      "row": 17,
+      "column": "对上汇报",
+      "column_level": "L3",
+      "old_value": "尚未汇报",
+      "new_value": "待汇报",
+      "score": 0.252,
+      "risk_level": "低风险"
+    }
+  ],
+  "overall_risk_score": 0.369
+}

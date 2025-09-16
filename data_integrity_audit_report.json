@@ -1,0 +1,72 @@
+{
+  "timestamp": "2025-08-20T20:30:00",
+  "audit_type": "deep_data_integrity_check",
+  "critical_issues": [
+    {
+      "type": "DATA_QUANTITY_INCONSISTENCY",
+      "description": "数据数量声明不一致: CSV(5) vs 热力图(5)",
+      "severity": "CRITICAL",
+      "impact": "数据完整性受损"
+    },
+    {
+      "type": "COLUMN_MAPPING_DATA_LOSS",
+      "description": "2个列无法映射，导致3个差异丢失",
+      "severity": "HIGH",
+      "impact": "数据丢失率: 60.0%",
+      "lost_columns": [
+        "部门",
+        "工资"
+      ]
+    }
+  ],
+  "data_loss_points": [
+    {
+      "stage": "intelligent_mapping",
+      "type": "column_unmappable",
+      "description": "部分列名无法映射到标准19列",
+      "affected_data": [
+        "部门",
+        "工资"
+      ],
+      "loss_rate": 0.4
+    },
+    {
+      "stage": "heatmap_generation",
+      "type": "insufficient_intensity",
+      "description": "部分映射成功的差异未产生显著热点",
+      "affected_data": "低强度热点",
+      "loss_rate": -9.5
+    }
+  ],
+  "inconsistencies": [],
+  "recommendations": [
+    {
+      "priority": "HIGH",
+      "category": "算法改进",
+      "action": "扩展智能映射算法的语义词典",
+      "description": "为'工资'、'部门'等常见列名添加映射规则",
+      "expected_impact": "提高列映射覆盖率到90%+"
+    },
+    {
+      "priority": "HIGH",
+      "category": "数据完整性",
+      "action": "实现数据守恒验证机制",
+      "description": "确保每个阶段处理的数据量与输入一致",
+      "expected_impact": "消除数据无声丢失问题"
+    },
+    {
+      "priority": "MEDIUM",
+      "category": "热力图算法",
+      "action": "调整热力强度计算公式",
+      "description": "确保所有有效差异都产生可见热点",
+      "expected_impact": "提高热点生成效率"
+    },
+    {
+      "priority": "MEDIUM",
+      "category": "监控告警",
+      "action": "添加实时数据流程监控",
+      "description": "在每个处理阶段验证数据完整性",
+      "expected_impact": "及时发现数据异常"
+    }
+  ]
+}

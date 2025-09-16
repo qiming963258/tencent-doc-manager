@@ -1,0 +1,236 @@
+{                                                                     // （JSON文件开始，这是根对象的开始）
+  "metadata": {                                                       // （元数据部分：记录这次打分的基础信息）
+    "table_name": "simplified_副本-测试版本-出国销售计划表-工作表1_vs_副本-副本-测试版本-出国销售计划表-工作表1_20250906_222914_standardized",  // （被处理的表格名称：来自简化对比文件的名称）
+    "source_file": "/root/projects/tencent-doc-manager/comparison_results/simplified_副本-测试版本-出国销售计划表-工作表1_vs_副本-副本-测试版本-出国销售计划表-工作表1_20250906_222914_standardized.json",  // （输入文件路径：指向简化对比结果文件）
+    "scoring_time": "2025-09-09 13:38:57",                           // （打分时间：系统执行打分的具体时间戳）
+    "total_modifications": 6,                                        // （总修改数：检测到的变更总数量）
+    "scoring_version": "v1.0"                                        // （打分版本：算法版本号，用于追踪不同版本的打分逻辑）
+  },                                                                  // （元数据部分结束）
+  "scores": [                                                         // （分数数组开始：包含每个修改项的详细打分）
+    {                                                                 // （第一个修改项开始）
+      "modification_id": "M001",                                     // （修改编号：系统自动生成的唯一标识符）
+      "cell": "C4",                                                  // （单元格位置：Excel中的具体位置）
+      "column_name": "项目类型",                                      // （列名：发生变更的列标题）
+      "column_level": "L2",                                          // （列风险等级：L2表示中风险，需要AI语义分析）
+      "old_value": "目标管理",                                       // （原值：变更前的内容）
+      "new_value": "体系建设",                                       // （新值：变更后的内容）
+      "scoring_details": {                                           // （打分细节：详细的分数计算过程）
+        "base_score": 0.5,                                           // （基础分：L2列的标准基础分数）
+        "change_factor": 1.0,                                        // （变更系数：内容完全变更为1.0）
+        "importance_weight": 1.0,                                    // （重要性权重：项目类型列的标准权重）
+        "ai_adjustment": 1.2,                                        // （AI调整系数：REVIEW决策对应1.2，提高风险20%）
+        "confidence_weight": 0.9,                                    // （置信度权重：85%置信度对应0.9权重）
+        "final_score": 0.54                                          // （最终得分：0.5×1.0×1.0×1.2×0.9=0.54）
+      },                                                              // （打分细节结束）
+      "ai_analysis": {                                               // （AI分析结果：L2列的语义分析详情）
+        "ai_used": true,                                             // （是否使用AI：L2列强制使用，为true）
+        "ai_decision": "REVIEW",                                     // （AI决策：需要人工审核）
+        "ai_confidence": 85,                                         // （AI置信度：AI对决策的把握程度85%）
+        "layer1_result": {                                           // （第一层分析结果：快速筛选层）
+          "judgment": "RISKY",                                       // （第一层判断：识别为有风险）
+          "confidence": 75.0,                                        // （第一层置信度：75%把握）
+          "reason": "概念变更"                                        // （判断原因：项目类型发生概念性改变）
+        },                                                            // （第一层分析结果结束）
+        "layer2_result": {                                           // （第二层分析结果：深度分析层）
+          "risk_level": "HIGH",                                      // （风险等级：高风险）
+          "decision": "REVIEW",                                      // （第二层决策：需要审核）
+          "confidence": 85,                                          // （第二层置信度：85%把握）
+          "key_risks": [                                             // （关键风险点列表）
+            "项目性质发生根本性改变",                                  // （风险1：项目本质变化）
+            "可能导致现有项目目标与资源分配不匹配",                      // （风险2：资源错配风险）
+            "需要重新评估项目范围和交付标准"                            // （风险3：范围变更风险）
+          ],                                                          // （关键风险点列表结束）
+          "recommendation": "建议召开项目评审会议，确认以下事项：1)新项目类型与组织战略的契合度；2)是否需要调整项目章程和关键绩效指标；3)资源配置是否仍然适用。在未完成全面评估前暂停相关变更。"  // （AI建议：具体的处理建议）
+        }                                                             // （第二层分析结果结束）
+      },                                                              // （AI分析结果结束）
+      "risk_assessment": {                                           // （风险评估：综合风险判定）
+        "risk_level": "MEDIUM",                                      // （风险级别：中等风险）
+        "risk_color": "yellow",                                      // （风险颜色：黄色警示）
+        "risk_icon": "🟡",                                          // （风险图标：黄色圆点）
+        "action_required": "periodic_check",                         // （需要的行动：定期检查）
+        "priority": 3                                                // （优先级：中等优先级3）
+      }                                                               // （风险评估结束）
+    },                                                                // （第一个修改项结束）
+    {                                                                 // （第二个修改项开始）
+      "modification_id": "M002",                                     // （修改编号：第二个修改项）
+      "cell": "E6",                                                  // （单元格位置：E列第6行）
+      "column_name": "任务发起时间",                                  // （列名：时间类关键字段）
+      "column_level": "L1",                                          // （列风险等级：L1高风险，纯规则打分）
+      "old_value": "2025/3/12",                                      // （原值：原定日期）
+      "new_value": "2025/3/13",                                      // （新值：推迟一天）
+      "scoring_details": {                                           // （打分细节）
+        "base_score": 0.8,                                           // （基础分：L1列高风险基础分0.8）
+        "change_factor": 1.0,                                        // （变更系数：日期变更为1.0）
+        "importance_weight": 1.3,                                    // （重要性权重：时间字段权重1.3）
+        "ai_adjustment": 1.0,                                        // （AI调整系数：L1不使用AI，保持1.0）
+        "confidence_weight": 1.0,                                    // （置信度权重：规则打分为1.0）
+        "final_score": 1.0                                           // （最终得分：0.8×1.0×1.3×1.0×1.0=1.04，上限截断为1.0）
+      },                                                              // （打分细节结束）
+      "ai_analysis": {                                               // （AI分析：L1列不使用AI）
+        "ai_used": false,                                            // （是否使用AI：否）
+        "reason": "L1_column_rule_based"                             // （原因：L1列使用纯规则打分）
+      },                                                              // （AI分析结束）
+      "risk_assessment": {                                           // （风险评估）
+        "risk_level": "EXTREME_HIGH",                                // （风险级别：极高风险）
+        "risk_color": "red",                                         // （风险颜色：红色警报）
+        "risk_icon": "🔴",                                          // （风险图标：红色圆点）
+        "action_required": "immediate_review",                       // （需要的行动：立即审核）
+        "priority": 1                                                // （优先级：最高优先级1）
+      }                                                               // （风险评估结束）
+    },                                                                // （第二个修改项结束）
+    {                                                                 // （第三个修改项开始）
+      "modification_id": "M003",                                     // （修改编号：第三个修改项）
+      "cell": "G8",                                                  // （单元格位置：G列第8行）
+      "column_name": "关键KR对齐",                                   // （列名：关键目标对齐字段）
+      "column_level": "L1",                                          // （列风险等级：L1高风险）
+      "old_value": "资源转化",                                       // （原值：有具体内容）
+      "new_value": "---",                                           // （新值：清空为占位符）
+      "scoring_details": {                                           // （打分细节）
+        "base_score": 0.8,                                           // （基础分：L1列0.8）
+        "change_factor": 1.0,                                        // （变更系数：内容删除）
+        "importance_weight": 1.0,                                    // （重要性权重：标准权重）
+        "ai_adjustment": 1.0,                                        // （AI调整系数：不使用AI）
+        "confidence_weight": 1.0,                                    // （置信度权重：规则打分）
+        "final_score": 0.8                                           // （最终得分：0.8×1.0×1.0×1.0×1.0=0.8）
+      },                                                              // （打分细节结束）
+      "ai_analysis": {                                               // （AI分析）
+        "ai_used": false,                                            // （是否使用AI：否）
+        "reason": "L1_column_rule_based"                             // （原因：L1列规则打分）
+      },                                                              // （AI分析结束）
+      "risk_assessment": {                                           // （风险评估）
+        "risk_level": "EXTREME_HIGH",                                // （风险级别：极高风险）
+        "risk_color": "red",                                         // （风险颜色：红色）
+        "risk_icon": "🔴",                                          // （风险图标：红色圆点）
+        "action_required": "immediate_review",                       // （需要的行动：立即审核）
+        "priority": 1                                                // （优先级：最高优先级）
+      }                                                               // （风险评估结束）
+    },                                                                // （第三个修改项结束）
+    {                                                                 // （第四个修改项开始）
+      "modification_id": "M004",                                     // （修改编号：第四个修改项）
+      "cell": "I11",                                                 // （单元格位置：I列第11行）
+      "column_name": "邓总指导登记（日更新）",                         // （列名：领导指导记录）
+      "column_level": "L2",                                          // （列风险等级：L2中风险，需AI分析）
+      "old_value": "0813-\n1、根据周度运营数据识别出来的一般及无效笔记...",  // （原值：长文本内容，包含多条指导意见）
+      "new_value": "---0813-\n1、根据周度运营数据识别出来的一般及无效笔记...", // （新值：前面添加了"---"前缀）
+      "scoring_details": {                                           // （打分细节）
+        "base_score": 0.5,                                           // （基础分：L2列0.5）
+        "change_factor": 0.5,                                        // （变更系数：格式调整为0.5）
+        "importance_weight": 1.15,                                   // （重要性权重：领导指导字段1.15）
+        "ai_adjustment": 0.6,                                        // （AI调整系数：APPROVE决策0.6，降低风险40%）
+        "confidence_weight": 1.0,                                    // （置信度权重：90%置信度对应1.0）
+        "final_score": 0.1725                                        // （最终得分：0.5×0.5×1.15×0.6×1.0=0.1725）
+      },                                                              // （打分细节结束）
+      "ai_analysis": {                                               // （AI分析结果）
+        "ai_used": true,                                             // （是否使用AI：是）
+        "ai_decision": "APPROVE",                                    // （AI决策：批准变更）
+        "ai_confidence": 90,                                         // （AI置信度：90%）
+        "layer1_result": {                                           // （第一层分析）
+          "judgment": "RISKY",                                       // （第一层判断：有风险）
+          "confidence": 80.0,                                        // （第一层置信度：80%）
+          "reason": "删除内容"                                        // （判断原因：检测到内容删除）
+        },                                                            // （第一层分析结束）
+        "layer2_result": {                                           // （第二层深度分析）
+          "risk_level": "LOW",                                       // （风险等级：低风险）
+          "decision": "APPROVE",                                     // （第二层决策：批准）
+          "confidence": 90,                                          // （第二层置信度：90%）
+          "key_risks": [                                             // （识别的风险点）
+            "信息不完整可能导致执行偏差",                               // （风险1：信息完整性）
+            "删除部分内容可能影响任务理解"                              // （风险2：理解偏差）
+          ],                                                          // （风险点结束）
+          "recommendation": "1. 建议补充0806-第三条的完整内容\n2. 确认0813-前的'---'是否为格式错误\n3. 对重要指导意见的修改应通过邮件或其他正式方式同步相关执行人"  // （AI建议）
+        }                                                             // （第二层分析结束）
+      },                                                              // （AI分析结束）
+      "risk_assessment": {                                           // （风险评估）
+        "risk_level": "EXTREME_LOW",                                 // （风险级别：极低风险）
+        "risk_color": "blue",                                        // （风险颜色：蓝色）
+        "risk_icon": "🔵",                                          // （风险图标：蓝色圆点）
+        "action_required": "none",                                   // （需要的行动：无需操作）
+        "priority": 5                                                // （优先级：最低优先级5）
+      }                                                               // （风险评估结束）
+    },                                                                // （第四个修改项结束）
+    {                                                                 // （第五个修改项开始）
+      "modification_id": "M005",                                     // （修改编号：第五个修改项）
+      "cell": "J12",                                                 // （单元格位置：J列第12行）
+      "column_name": "负责人",                                       // （列名：项目负责人字段）
+      "column_level": "L2",                                          // （列风险等级：L2中风险）
+      "old_value": "赖铁荔",                                         // （原值：单一负责人）
+      "new_value": "赖铁荔,各责任人",                                 // （新值：改为多人负责）
+      "scoring_details": {                                           // （打分细节）
+        "base_score": 0.5,                                           // （基础分：L2列0.5）
+        "change_factor": 1.0,                                        // （变更系数：内容变更1.0）
+        "importance_weight": 1.2,                                    // （重要性权重：负责人字段1.2）
+        "ai_adjustment": 0.8,                                        // （AI调整系数：CONDITIONAL决策0.8）
+        "confidence_weight": 0.9,                                    // （置信度权重：75%置信度对应0.9）
+        "final_score": 0.432                                         // （最终得分：0.5×1.0×1.2×0.8×0.9=0.432）
+      },                                                              // （打分细节结束）
+      "ai_analysis": {                                               // （AI分析）
+        "ai_used": true,                                             // （是否使用AI：是）
+        "ai_decision": "CONDITIONAL",                                // （AI决策：有条件批准）
+        "ai_confidence": 75,                                         // （AI置信度：75%）
+        "layer1_result": {                                           // （第一层分析）
+          "judgment": "RISKY",                                       // （第一层判断：有风险）
+          "confidence": 75.0,                                        // （第一层置信度：75%）
+          "reason": "责任变更"                                        // （判断原因：责任主体变更）
+        },                                                            // （第一层分析结束）
+        "layer2_result": {                                           // （第二层分析）
+          "risk_level": "MEDIUM",                                    // （风险等级：中等风险）
+          "decision": "CONDITIONAL",                                 // （第二层决策：有条件批准）
+          "confidence": 75,                                          // （第二层置信度：75%）
+          "key_risks": [                                             // （关键风险）
+            "责任主体模糊化风险",                                      // （风险1：责任不清）
+            "多责任人协作效率风险"                                     // （风险2：协作问题）
+          ],                                                          // （风险结束）
+          "recommendation": "建议：1. 若采用多人负责制，需明确定义各责任人具体分工（如通过备注列说明职责范围）；2. 补充修订说明记录本次变更原因；3. 通知所有相关干系人此变更情况。需配套措施到位后方可批准。"  // （AI建议）
+        }                                                             // （第二层分析结束）
+      },                                                              // （AI分析结束）
+      "risk_assessment": {                                           // （风险评估）
+        "risk_level": "MEDIUM",                                      // （风险级别：中等风险）
+        "risk_color": "yellow",                                      // （风险颜色：黄色）
+        "risk_icon": "🟡",                                          // （风险图标：黄色圆点）
+        "action_required": "periodic_check",                         // （需要的行动：定期检查）
+        "priority": 3                                                // （优先级：中等优先级）
+      }                                                               // （风险评估结束）
+    },                                                                // （第五个修改项结束）
+    {                                                                 // （第六个修改项开始）
+      "modification_id": "M006",                                     // （修改编号：第六个修改项）
+      "cell": "M14",                                                 // （单元格位置：M列第14行）
+      "column_name": "预计完成时间",                                  // （列名：项目截止时间）
+      "column_level": "L1",                                          // （列风险等级：L1高风险）
+      "old_value": "",                                               // （原值：空，未设置）
+      "new_value": "2025/9/28",                                      // （新值：新增截止日期）
+      "scoring_details": {                                           // （打分细节）
+        "base_score": 0.8,                                           // （基础分：L1列0.8）
+        "change_factor": 1.0,                                        // （变更系数：新增内容）
+        "importance_weight": 1.2,                                    // （重要性权重：时间字段1.2）
+        "ai_adjustment": 1.0,                                        // （AI调整系数：不使用AI）
+        "confidence_weight": 1.0,                                    // （置信度权重：规则打分）
+        "final_score": 0.96                                          // （最终得分：0.8×1.0×1.2×1.0×1.0=0.96）
+      },                                                              // （打分细节结束）
+      "ai_analysis": {                                               // （AI分析）
+        "ai_used": false,                                            // （是否使用AI：否）
+        "reason": "L1_column_rule_based"                             // （原因：L1列规则打分）
+      },                                                              // （AI分析结束）
+      "risk_assessment": {                                           // （风险评估）
+        "risk_level": "EXTREME_HIGH",                                // （风险级别：极高风险）
+        "risk_color": "red",                                         // （风险颜色：红色）
+        "risk_icon": "🔴",                                          // （风险图标：红色圆点）
+        "action_required": "immediate_review",                       // （需要的行动：立即审核）
+        "priority": 1                                                // （优先级：最高优先级）
+      }                                                               // （风险评估结束）
+    }                                                                 // （第六个修改项结束）
+  ],                                                                  // （分数数组结束）
+  "summary": {                                                        // （汇总统计：整体分析结果）
+    "total_score": 3.904,                                            // （总分：所有修改项得分之和）
+    "average_score": 0.651,                                          // （平均分：总分除以修改数量）
+    "risk_distribution": {                                           // （风险分布：按风险等级统计）
+      "MEDIUM": 2,                                                   // （中等风险：2个修改项）
+      "EXTREME_HIGH": 3,                                             // （极高风险：3个修改项）
+      "EXTREME_LOW": 1                                               // （极低风险：1个修改项）
+    },                                                                // （风险分布结束）
+    "ai_usage": {                                                    // （AI使用统计）
+      "total_ai_calls": 3,                                           // （AI调用总次数：L2列共3个）
+      "layer1_passes": 0,                                            // （第一层通过数：0个直接通过）
+      "layer2_analyses": 3                                           // （第二层分析数：3个都进入深度分析）
+    }                                                                 // （AI使用统计结束）
+  }                                                                   // （汇总统计结束）
+}                                                                     // （JSON文件结束，根对象结束）

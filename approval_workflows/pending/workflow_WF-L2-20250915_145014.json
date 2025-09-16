@@ -1,0 +1,33 @@
+{
+  "workflow_id": "WF-L2-20250915_145014",
+  "created_time": "2025-09-15 14:50:14",
+  "pending_approvals": [
+    {
+      "modification_id": "M001",
+      "cell": "B39",
+      "column": "项目类型",
+      "old_value": "项目管理",
+      "new_value": "",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 80.0,
+        "reason": "关键字段空"
+      },
+      "layer2_result": {
+        "risk_level": "CRITICAL",
+        "decision": "REJECT",
+        "confidence": 95,
+        "key_risks": [
+          "项目类型信息丢失导致分类混乱",
+          "关键项目属性缺失影响资源分配",
+          "无法进行正确的项目归集和统计",
+          "可能导致后续审批流程受阻"
+        ],
+        "recommendation": "必须补全B39单元格的项目类型信息。如确实需要清空，应同步更新所有相关文档和系统字段，并通知所有利益相关方。建议在删除前先记录原值并说明变更原因。"
+      },
+      "final_decision": "REJECT",
+      "approval_required": true
+    }
+  ],
+  "auto_approved": []
+}

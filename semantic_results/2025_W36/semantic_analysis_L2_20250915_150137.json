@@ -1,0 +1,49 @@
+{
+  "metadata": {
+    "analysis_time": "2025-09-15 15:01:37",
+    "total_modifications": 1,
+    "layer1_passed": 0,
+    "layer2_analyzed": 1,
+    "processing_time": "28.3s"
+  },
+  "results": [
+    {
+      "modification_id": "M001",
+      "cell": "G50",
+      "column": "具体计划内容",
+      "old_value": "小红书搜索词条建立\n后续以企业号为主构建【海龙国际搬家】【海龙海运集运】等相关联词条\n具体执行操作以笔记关键词优化和【付款执行】同步展开",
+      "new_value": "新产品定价与区域覆盖",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 80.0,
+        "reason": "内容替换"
+      },
+      "layer2_result": {
+        "risk_level": "CRITICAL",
+        "decision": "REVIEW",
+        "confidence": 85,
+        "key_risks": [
+          "内容性质完全改变导致项目方向偏离",
+          "原定社交媒体营销计划被完全替换",
+          "执行资源和团队能力匹配度需要重新评估",
+          "交付时间可能受重大影响"
+        ],
+        "recommendation": "建议召开紧急项目评审会，确认：1)这是否是战略方向调整；2)新产品定价计划是否已有完整方案；3)原定社交媒体营销团队能否胜任定价分析工作。确保所有相关方明确知晓该重大变更。"
+      },
+      "final_decision": "REVIEW",
+      "approval_required": true
+    }
+  ],
+  "summary": {
+    "approved": 0,
+    "conditional": 0,
+    "review_required": 1,
+    "rejected": 0,
+    "risk_distribution": {
+      "LOW": 0,
+      "MEDIUM": 0,
+      "HIGH": 1,
+      "CRITICAL": 0
+    }
+  }
+}

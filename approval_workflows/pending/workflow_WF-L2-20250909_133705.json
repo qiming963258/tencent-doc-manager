@@ -1,0 +1,33 @@
+{
+  "workflow_id": "WF-L2-20250909_133705",
+  "created_time": "2025-09-09 13:37:05",
+  "pending_approvals": [
+    {
+      "modification_id": "M001",
+      "cell": "C4",
+      "column": "项目类型",
+      "old_value": "目标管理",
+      "new_value": "体系建设",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 80.0,
+        "reason": "概念变化"
+      },
+      "layer2_result": {
+        "risk_level": "HIGH",
+        "decision": "REVIEW",
+        "confidence": 85,
+        "key_risks": [
+          "项目性质发生根本性改变",
+          "可能导致执行计划全面调整",
+          "原定交付时间可能不适用",
+          "团队协作模式需要重构"
+        ],
+        "recommendation": "建议召开项目变更评审会议，重新评估以下内容：1)新项目类型的范围和要求；2)调整后的执行计划和资源分配；3)更新交付时间表；4)团队角色和职责重新定义。确保所有相关方都了解并同意这一重大变更。"
+      },
+      "final_decision": "REVIEW",
+      "approval_required": true
+    }
+  ],
+  "auto_approved": []
+}

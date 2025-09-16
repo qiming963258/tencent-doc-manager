@@ -1,0 +1,15 @@
+{
+  "success": true,
+  "excel_file": "/root/projects/tencent-doc-manager/excel_outputs/risk_analysis_report_20250824_090406.xlsx",
+  "filename": "risk_analysis_report_20250824_090406.xlsx",
+  "file_size": 9937,
+  "upload_time": "2025-08-24T09:08:23.247903",
+  "tencent_link": "https://docs.qq.com/desktop",
+  "upload_status": "completed",
+  "processing_info": {
+    "upload_method": "playwright_automation",
+    "browser": "chromium_headless",
+    "authentication": "cookie_based",
+    "retry_count": 0
+  }
+}

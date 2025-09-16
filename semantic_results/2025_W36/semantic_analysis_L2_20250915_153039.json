@@ -1,0 +1,49 @@
+{
+  "metadata": {
+    "analysis_time": "2025-09-15 15:30:39",
+    "total_modifications": 1,
+    "layer1_passed": 0,
+    "layer2_analyzed": 1,
+    "processing_time": "11.5s"
+  },
+  "results": [
+    {
+      "modification_id": "M001",
+      "cell": "I80",
+      "column": "负责人",
+      "old_value": "徐志杰",
+      "new_value": "",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 80.0,
+        "reason": "删除负责人"
+      },
+      "layer2_result": {
+        "risk_level": "CRITICAL",
+        "decision": "REJECT",
+        "confidence": 95,
+        "key_risks": [
+          "关键任务失去负责人可能导致工作停滞",
+          "团队协作链条出现断裂点",
+          "项目进度监控失去明确责任人",
+          "质量保证环节出现真空"
+        ],
+        "recommendation": "必须立即采取以下行动：1)明确该任务的当前负责人；2)如果确实需要清空该字段，需先指定替代负责人；3)确保所有相关方知悉负责人变更情况；4)评估该变更对上下游任务的影响。建议召开紧急会议讨论此变更的必要性和替代方案。"
+      },
+      "final_decision": "REJECT",
+      "approval_required": true
+    }
+  ],
+  "summary": {
+    "approved": 0,
+    "conditional": 0,
+    "review_required": 0,
+    "rejected": 1,
+    "risk_distribution": {
+      "LOW": 0,
+      "MEDIUM": 0,
+      "HIGH": 0,
+      "CRITICAL": 1
+    }
+  }
+}

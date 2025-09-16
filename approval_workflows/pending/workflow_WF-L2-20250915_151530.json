@@ -1,0 +1,33 @@
+{
+  "workflow_id": "WF-L2-20250915_151530",
+  "created_time": "2025-09-15 15:15:30",
+  "pending_approvals": [
+    {
+      "modification_id": "M001",
+      "cell": "B65",
+      "column": "项目类型",
+      "old_value": "目标管理",
+      "new_value": "",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 90.0,
+        "reason": "关键字段空"
+      },
+      "layer2_result": {
+        "risk_level": "CRITICAL",
+        "decision": "REJECT",
+        "confidence": 95,
+        "key_risks": [
+          "项目类型清空将导致项目属性完全缺失",
+          "影响项目分类、资源分配和进度跟踪",
+          "可能导致团队对项目目标产生混淆",
+          "影响项目报告和统计分析"
+        ],
+        "recommendation": "必须立即恢复/补充项目类型值。若需修改项目类型，应提交变更申请并说明变更原因，经项目经理和利益相关方审批后方可执行。建议保持'目标管理'原值或替换为其他有效项目类型分类。"
+      },
+      "final_decision": "REJECT",
+      "approval_required": true
+    }
+  ],
+  "auto_approved": []
+}

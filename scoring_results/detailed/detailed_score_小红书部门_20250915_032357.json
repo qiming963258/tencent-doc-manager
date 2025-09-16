@@ -1,0 +1,19 @@
+{
+  "table_name": "小红书部门",
+  "table_url": "https://docs.qq.com/sheet/DWFJzdWNwd0RGbU5R?tab=000001",
+  "total_modifications": 1,
+  "column_scores": {
+    "预计完成时间": {
+      "avg_score": 0.68,
+      "modified_rows": [
+        19
+      ],
+      "row_scores": [
+        0.68
+      ],
+      "column_level": "L2",
+      "modification_count": 1
+    }
+  },
+  "overall_risk_score": 0.68
+}

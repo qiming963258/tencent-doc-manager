@@ -1,0 +1,48 @@
+{
+  "metadata": {
+    "analysis_time": "2025-09-15 15:25:34",
+    "total_modifications": 1,
+    "layer1_passed": 0,
+    "layer2_analyzed": 1,
+    "processing_time": "15.9s"
+  },
+  "results": [
+    {
+      "modification_id": "M001",
+      "cell": "G75",
+      "column": "具体计划内容",
+      "old_value": "1.周期维度-以周度根据员工咨询转添加率达成情况优化迭代咨询回复话术\n2.按需维度-根据员工日复盘涉及咨询转添加的卡点反馈进行话术问题识别并给予优化改进建议形成应用计划清单",
+      "new_value": "利润目标管理建立",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 80.0,
+        "reason": "目标变更"
+      },
+      "layer2_result": {
+        "risk_level": "HIGH",
+        "decision": "REVIEW",
+        "confidence": 85,
+        "key_risks": [
+          "计划内容从具体执行方案变为宽泛目标陈述，可能导致执行层面失去明确指导",
+          "关键KPI指标（咨询转添加率）的监控机制被移除",
+          "从操作性计划转向战略性表述，可能影响一线执行人员的日常工作依据"
+        ],
+        "recommendation": "建议补充说明：1) 利润目标如何与原有咨询转化指标衔接；2) 具体实施路径；3) 对原有执行团队的影响评估。若无法提供补充说明，建议恢复原有具体行动计划。"
+      },
+      "final_decision": "REVIEW",
+      "approval_required": true
+    }
+  ],
+  "summary": {
+    "approved": 0,
+    "conditional": 0,
+    "review_required": 1,
+    "rejected": 0,
+    "risk_distribution": {
+      "LOW": 0,
+      "MEDIUM": 0,
+      "HIGH": 1,
+      "CRITICAL": 0
+    }
+  }
+}

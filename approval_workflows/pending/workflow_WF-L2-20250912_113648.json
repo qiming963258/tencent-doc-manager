@@ -1,0 +1,31 @@
+{
+  "workflow_id": "WF-L2-20250912_113648",
+  "created_time": "2025-09-12 11:36:48",
+  "pending_approvals": [],
+  "auto_approved": [
+    {
+      "modification_id": "M001",
+      "cell": "I5",
+      "column": "邓总指导登记（日更新）",
+      "old_value": "0730-",
+      "new_value": "0730-123123",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 80.0,
+        "reason": "敏感信息修改"
+      },
+      "layer2_result": {
+        "risk_level": "LOW",
+        "decision": "APPROVE",
+        "confidence": 85,
+        "key_risks": [
+          "信息完整性风险：补充的'123123'可能缺乏上下文说明",
+          "格式规范风险：新增内容可能不符合既定格式要求"
+        ],
+        "recommendation": "1. 要求修改者补充变更说明备注\n2. 确认'123123'是否为标准编码格式\n3. 更新文档版本号并通知相关查阅人员"
+      },
+      "final_decision": "APPROVE",
+      "approval_required": false
+    }
+  ]
+}

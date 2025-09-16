@@ -1,0 +1,48 @@
+{
+  "metadata": {
+    "analysis_time": "2025-09-15 18:28:45",
+    "total_modifications": 1,
+    "layer1_passed": 0,
+    "layer2_analyzed": 1,
+    "processing_time": "10.0s"
+  },
+  "results": [
+    {
+      "modification_id": "M001",
+      "cell": "H21",
+      "column": "具体计划内容",
+      "old_value": "销售岗应知应会建立：\n①按照操作部美国的模板，设置国家区域的清单\n②销售管理层与组长介入一起分工完成，\n③时间：27号为截止时间，课件视频生成纳入5月计划\n④群内同频规范：顺序为链接、图片、更新的文字",
+      "new_value": "2、对于回国行李的流程需要重新梳理，每个代理的不同对接流程，可简化优化的部分（嘉雯可以梳理流程与晓斯先做流程对接规范）避免岗位职责区分界定不清晰；\n3、对于服务方式的流程需要对每个区域的代理进行梳理，",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 80.0,
+        "reason": "内容替换"
+      },
+      "layer2_result": {
+        "risk_level": "HIGH",
+        "decision": "REVIEW",
+        "confidence": 85,
+        "key_risks": [
+          "原销售岗应知应会建立计划被完全替换，可能影响销售团队的培训与规范执行",
+          "新增流程梳理任务未明确责任分工和时间节点，可能导致执行混乱或延误",
+          "代理对接流程优化涉及多方协作，存在职责界定不清的风险"
+        ],
+        "recommendation": "建议补充以下内容后重新提交审核：1.明确新增任务的负责人、协作机制和截止时间；2.评估原销售培训计划的替代方案或迁移时间；3.制定代理流程优化的具体实施步骤和验收标准。同时建议与销售团队负责人确认变更影响。"
+      },
+      "final_decision": "REVIEW",
+      "approval_required": true
+    }
+  ],
+  "summary": {
+    "approved": 0,
+    "conditional": 0,
+    "review_required": 1,
+    "rejected": 0,
+    "risk_distribution": {
+      "LOW": 0,
+      "MEDIUM": 0,
+      "HIGH": 1,
+      "CRITICAL": 0
+    }
+  }
+}

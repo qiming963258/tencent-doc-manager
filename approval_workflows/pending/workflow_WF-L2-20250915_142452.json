@@ -1,0 +1,32 @@
+{
+  "workflow_id": "WF-L2-20250915_142452",
+  "created_time": "2025-09-15 14:24:52",
+  "pending_approvals": [
+    {
+      "modification_id": "M001",
+      "cell": "K12",
+      "column": "监督人",
+      "old_value": "邓总",
+      "new_value": "赖铁荔",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 80.0,
+        "reason": "关键人变更"
+      },
+      "layer2_result": {
+        "risk_level": "MEDIUM",
+        "decision": "REVIEW",
+        "confidence": 75,
+        "key_risks": [
+          "监督人角色变更导致责任边界模糊",
+          "新监督人需要时间熟悉项目状况",
+          "团队需重新建立与新监督人的工作默契"
+        ],
+        "recommendation": "建议：1) 要求新监督人完成项目交接说明会 2) 更新相关权限文件 3) 监控前两周的决策质量 4) 向团队正式通报此变更"
+      },
+      "final_decision": "REVIEW",
+      "approval_required": true
+    }
+  ],
+  "auto_approved": []
+}

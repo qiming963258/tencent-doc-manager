@@ -1,0 +1,52 @@
+{
+  "id": "20250915_155425",
+  "start_time": "2025-09-15T15:54:25.573190",
+  "end_time": "2025-09-15T15:56:00.454154",
+  "status": "error",
+  "results": {},
+  "logs": [
+    {
+      "time": "15:54:25",
+      "level": "INFO",
+      "message": "开始获取基线文档..."
+    },
+    {
+      "time": "15:54:25",
+      "level": "INFO",
+      "message": "🔄 强制下载模式：跳过本地文件检查"
+    },
+    {
+      "time": "15:54:25",
+      "level": "INFO",
+      "message": "开始下载基线文档并规范化存储..."
+    },
+    {
+      "time": "15:55:10",
+      "level": "INFO",
+      "message": "✅ 基线文档下载并规范化存储成功: tencent_tencent_111测试版本-出国销售计划表-工作表1_20250915_1554_baseline_W37.csv"
+    },
+    {
+      "time": "15:55:10",
+      "level": "INFO",
+      "message": "开始获取目标文档..."
+    },
+    {
+      "time": "15:55:10",
+      "level": "INFO",
+      "message": "🔄 强制下载模式：跳过本地文件检查"
+    },
+    {
+      "time": "15:56:00",
+      "level": "ERROR",
+      "message": "❌ 执行出错: 目标文档下载失败"
+    }
+  ],
+  "settings": {
+    "task_type": "full",
+    "auto_download": true,
+    "force_download": true,
+    "enable_ai_analysis": true,
+    "enable_excel_marking": true,
+    "enable_upload": true
+  }
+}

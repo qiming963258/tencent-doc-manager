@@ -1,0 +1,48 @@
+{
+  "metadata": {
+    "analysis_time": "2025-09-15 14:16:56",
+    "total_modifications": 1,
+    "layer1_passed": 0,
+    "layer2_analyzed": 1,
+    "processing_time": "8.6s"
+  },
+  "results": [
+    {
+      "modification_id": "M001",
+      "cell": "I4",
+      "column": "负责人",
+      "old_value": "朱瀚桔",
+      "new_value": "0323-\n爆款的提醒站内站外都建立通知，站内在海龙系统的消息通知，站外通过员工qq邮箱进行通知\n\n0314-",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 90.0,
+        "reason": "异常修改"
+      },
+      "layer2_result": {
+        "risk_level": "HIGH",
+        "decision": "REVIEW",
+        "confidence": 85,
+        "key_risks": [
+          "负责人信息被替换为疑似代码或项目编号，可能导致职责不明确",
+          "新增的通知机制描述与负责人字段修改无关，存在数据混乱风险",
+          "0323-和0314-等标识缺乏明确含义，可能影响任务追踪"
+        ],
+        "recommendation": "1. 要求明确说明负责人字段修改的真实原因和0323-的具体含义 2. 将通知机制相关内容移至文档的适当位置 3. 确认新的负责人标识系统是否已获正式批准 4. 建议保留原负责人姓名并添加新编号作为补充信息"
+      },
+      "final_decision": "REVIEW",
+      "approval_required": true
+    }
+  ],
+  "summary": {
+    "approved": 0,
+    "conditional": 0,
+    "review_required": 1,
+    "rejected": 0,
+    "risk_distribution": {
+      "LOW": 0,
+      "MEDIUM": 0,
+      "HIGH": 1,
+      "CRITICAL": 0
+    }
+  }
+}

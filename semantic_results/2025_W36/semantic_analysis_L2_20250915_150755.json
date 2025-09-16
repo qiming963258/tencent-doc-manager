@@ -1,0 +1,48 @@
+{
+  "metadata": {
+    "analysis_time": "2025-09-15 15:07:55",
+    "total_modifications": 1,
+    "layer1_passed": 0,
+    "layer2_analyzed": 1,
+    "processing_time": "15.4s"
+  },
+  "results": [
+    {
+      "modification_id": "M001",
+      "cell": "G56",
+      "column": "具体计划内容",
+      "old_value": "7月下旬\n1.专员周成品对应形成封面优化计划，周度追踪创新封面落地效果\n2.根据周度封面执行可通过问卷进行优化\n8月\n各账号刷新创新封面模板，形成稳定创新机制",
+      "new_value": "新产品技能与管理流程拉通",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 80.0,
+        "reason": "内容变更"
+      },
+      "layer2_result": {
+        "risk_level": "HIGH",
+        "decision": "REVIEW",
+        "confidence": 85,
+        "key_risks": [
+          "计划性质完全改变导致项目目标偏离",
+          "原有封面优化工作流被中断",
+          "新流程与现有资源/团队能力可能不匹配"
+        ],
+        "recommendation": "需补充说明：1)为何放弃原有封面优化计划 2)新流程与Q3目标的关联性 3)所需资源调整方案。建议保留原封面优化计划的同时新增技能管理流程，或在8月后实施新流程。"
+      },
+      "final_decision": "REVIEW",
+      "approval_required": true
+    }
+  ],
+  "summary": {
+    "approved": 0,
+    "conditional": 0,
+    "review_required": 1,
+    "rejected": 0,
+    "risk_distribution": {
+      "LOW": 0,
+      "MEDIUM": 0,
+      "HIGH": 1,
+      "CRITICAL": 0
+    }
+  }
+}

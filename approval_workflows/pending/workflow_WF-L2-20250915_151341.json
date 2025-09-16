@@ -1,0 +1,34 @@
+{
+  "workflow_id": "WF-L2-20250915_151341",
+  "created_time": "2025-09-15 15:13:41",
+  "pending_approvals": [
+    {
+      "modification_id": "M001",
+      "cell": "B63",
+      "column": "项目类型",
+      "old_value": "目标管理",
+      "new_value": "",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 90.0,
+        "reason": "关键信息删除"
+      },
+      "layer2_result": {
+        "risk_level": "CRITICAL",
+        "decision": "REJECT",
+        "confidence": 95,
+        "key_risks": [
+          "项目性质发生根本性改变",
+          "可能导致项目目标完全失焦",
+          "所有相关计划需要重新制定",
+          "团队需重新理解项目方向",
+          "交付时间将严重延误"
+        ],
+        "recommendation": "1. 必须补充完整项目类型值\n2. 如确实需要清空该字段，需先行修订项目章程\n3. 需要发起正式的变更控制流程\n4. 建议先填写'待确认'而非留空\n5. 需评估是否应该终止当前项目并重新立项"
+      },
+      "final_decision": "REJECT",
+      "approval_required": true
+    }
+  ],
+  "auto_approved": []
+}

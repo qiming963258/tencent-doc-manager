@@ -1,0 +1,33 @@
+{
+  "workflow_id": "WF-L2-20250915_183906",
+  "created_time": "2025-09-15 18:39:06",
+  "pending_approvals": [
+    {
+      "modification_id": "M001",
+      "cell": "J35",
+      "column": "负责人",
+      "old_value": "赖铁荔",
+      "new_value": "",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 80.0,
+        "reason": "删除负责人"
+      },
+      "layer2_result": {
+        "risk_level": "CRITICAL",
+        "decision": "REVIEW",
+        "confidence": 95,
+        "key_risks": [
+          "负责人信息被清空会导致职责不明确",
+          "可能造成任务无人跟进或责任推诿",
+          "影响项目进度追踪和问题追溯",
+          "破坏团队工作的连续性"
+        ],
+        "recommendation": "1. 必须补充新的负责人信息\n2. 需要同步通知相关团队成员\n3. 建议评估原负责人交接状态\n4. 确保工作职责和知识转移到位"
+      },
+      "final_decision": "REVIEW",
+      "approval_required": true
+    }
+  ],
+  "auto_approved": []
+}

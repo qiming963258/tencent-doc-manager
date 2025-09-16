@@ -9,8 +9,10 @@
         "expression": "weekly:tuesday:12:00",
         "timezone": "Asia/Shanghai"
       },
-      "urls": [],
-      "cookies": "",
+      "urls": [
+        "https://docs.qq.com/sheet/DWEVjZndkR2xVSWJN?tab=c2p5hs"
+      ],
+      "cookies": "from_config",
       "options": {
         "format": "csv",
         "download_dir": "./csv_versions/baseline/",
@@ -33,8 +35,10 @@
         "expression": "weekly:thursday:09:00",
         "timezone": "Asia/Shanghai"
       },
-      "urls": [],
-      "cookies": "",
+      "urls": [
+        "https://docs.qq.com/sheet/DWEVjZndkR2xVSWJN?tab=c2p5hs"
+      ],
+      "cookies": "from_config",
       "options": {
         "format": "csv",
         "download_dir": "./csv_versions/midweek/",
@@ -58,8 +62,10 @@
         "expression": "weekly:saturday:19:00",
         "timezone": "Asia/Shanghai"
       },
-      "urls": [],
-      "cookies": "",
+      "urls": [
+        "https://docs.qq.com/sheet/DWEVjZndkR2xVSWJN?tab=c2p5hs"
+      ],
+      "cookies": "from_config",
       "options": {
         "format": "csv",
         "download_dir": "./csv_versions/weekly/",
@@ -84,7 +90,10 @@
     "retry_count": 3,
     "retry_interval": 1800,
     "log_level": "INFO",
-    "notification_channels": ["console", "log"],
+    "notification_channels": [
+      "console",
+      "log"
+    ],
     "data_retention_days": 30
   },
   "default_options": {

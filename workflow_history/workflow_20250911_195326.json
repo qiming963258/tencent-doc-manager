@@ -1,0 +1,53 @@
+{
+  "id": "20250911_195326",
+  "start_time": "2025-09-11T19:53:26.983852",
+  "end_time": "2025-09-11T19:54:11.594544",
+  "status": "error",
+  "results": {},
+  "logs": [
+    {
+      "time": "19:53:26",
+      "level": "INFO",
+      "message": "开始获取基线文档..."
+    },
+    {
+      "time": "19:53:26",
+      "level": "WARNING",
+      "message": "⚠️ 本地文件查找失败: ❌ 本周基准版不存在: /root/projects/tencent-doc-manager/csv_versions/2025_W37/baseline\n预期文件格式: *_baseline_W37.xls\n请检查周二12:00定时下载任务是否正常执行"
+    },
+    {
+      "time": "19:53:26",
+      "level": "INFO",
+      "message": "开始下载基线文档并规范化存储..."
+    },
+    {
+      "time": "19:54:11",
+      "level": "INFO",
+      "message": "✅ 基线文档下载并规范化存储成功: tencent_tencent_副本-测试版本-出国销售计划表-工作表1_20250911_1953_baseline_W37.csv"
+    },
+    {
+      "time": "19:54:11",
+      "level": "INFO",
+      "message": "开始获取目标文档..."
+    },
+    {
+      "time": "19:54:11",
+      "level": "INFO",
+      "message": "✅ 使用本地目标文件: tencent_副本-副本-测试版本-出国销售计划表_20250911_1323_midweek_W37.xlsx"
+    },
+    {
+      "time": "19:54:11",
+      "level": "INFO",
+      "message": "开始对比分析..."
+    },
+    {
+      "time": "19:54:11",
+      "level": "ERROR",
+      "message": "❌ 执行出错: 'utf-8' codec can't decode byte 0xfc in position 10: invalid start byte"
+    }
+  ],
+  "settings": {
+    "task_type": "test",
+    "auto_download": true
+  }
+}

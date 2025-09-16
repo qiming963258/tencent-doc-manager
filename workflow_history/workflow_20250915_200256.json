@@ -1,0 +1,75 @@
+{
+  "id": "20250915_200256",
+  "start_time": "2025-09-15T20:02:56.370474",
+  "end_time": "2025-09-15T20:04:10.678888",
+  "status": "error",
+  "results": {},
+  "logs": [
+    {
+      "timestamp": "20:02:56",
+      "level": "INFO",
+      "message": "开始获取基线文档..."
+    },
+    {
+      "timestamp": "20:02:56",
+      "level": "INFO",
+      "message": "📂 刷新模式：使用现有基线文件"
+    },
+    {
+      "timestamp": "20:02:56",
+      "level": "INFO",
+      "message": "✅ 找到基线文件: tencent_tencent_副本-测试版本-出国销售计划表-工作表1_20250911_2013_baseline_W37.csv"
+    },
+    {
+      "timestamp": "20:02:56",
+      "level": "INFO",
+      "message": "📊 基线描述: 使用上周W37基准版"
+    },
+    {
+      "timestamp": "20:02:56",
+      "level": "INFO",
+      "message": "开始获取目标文档..."
+    },
+    {
+      "timestamp": "20:02:56",
+      "level": "INFO",
+      "message": "🔄 强制下载模式：跳过本地文件检查"
+    },
+    {
+      "timestamp": "20:02:56",
+      "level": "INFO",
+      "message": "开始下载目标文档并规范化存储..."
+    },
+    {
+      "timestamp": "20:02:56",
+      "level": "INFO",
+      "message": "🌐 开始下载目标文档..."
+    },
+    {
+      "timestamp": "20:04:10",
+      "level": "ERROR",
+      "message": "❌ 目标文档存储失败: a coroutine was expected, got {'success': False, 'file_path': None, 'files': [], 'error': '所有4重备用导出方法都失败了', 'backup_methods_used': True, 'methods_attempted': ['menu_export', 'toolbar_export', 'keyboard_shortcut', 'right_click_export']}"
+    },
+    {
+      "timestamp": "20:04:10",
+      "level": "ERROR",
+      "message": "❌ 目标文档下载或存储失败"
+    },
+    {
+      "timestamp": "20:04:10",
+      "level": "ERROR",
+      "message": "目标URL: https://docs.qq.com/sheet/DWEFNU25TemFnZXJN?tab=BB08J2"
+    },
+    {
+      "timestamp": "20:04:10",
+      "level": "WARNING",
+      "message": "💡 提示: 请检查Cookie是否有效或网络连接"
+    },
+    {
+      "timestamp": "20:04:10",
+      "level": "ERROR",
+      "message": "❌ 执行出错: 目标文档下载或存储失败"
+    }
+  ],
+  "settings": {}
+}

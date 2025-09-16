@@ -1,0 +1,61 @@
+{
+  "metadata": {
+    "analysis_time": "2025-09-12 11:54:13",
+    "total_modifications": 1,
+    "layer1_passed": 0,
+    "layer2_analyzed": 1,
+    "processing_time": "9.7s"
+  },
+  "results": [
+    {
+      "modification_id": "M001",
+      "cell": "I5",
+      "column": "邓总指导登记（日更新）",
+      "old_value": "0730-",
+      "new_value": "0730-123123",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 80.0,
+        "reason": "关键信息改"
+      },
+      "layer2_result": {
+        "risk_level": "LOW",
+        "decision": "APPROVE",
+        "confidence": 85,
+        "key_risks": [
+          "信息完整性风险：原值为不完整记录，可能存在信息缺失",
+          "数据验证风险：新增内容格式需要验证（123123是否为有效指导编码）"
+        ],
+        "recommendation": "1. 确认123123是否为标准化的指导编码格式\n2. 建议建立该字段的输入规范（如采用日期+序号的标准格式）\n3. 对历史不完整记录进行补充核查",
+        "analysis_details": {
+          "change_nature": "内容补充",
+          "impact_assessment": {
+            "project_objective": 2,
+            "execution_plan": 1,
+            "team_collaboration": 3,
+            "delivery_time": 1
+          },
+          "special_check": {
+            "daily_update_validation": "确认是否为当日最新指导记录",
+            "authority_check": "需确保修改经过邓总或其授权人员确认",
+            "traceability": "建议添加修改人/修改时间标记"
+          }
+        }
+      },
+      "final_decision": "APPROVE",
+      "approval_required": false
+    }
+  ],
+  "summary": {
+    "approved": 1,
+    "conditional": 0,
+    "review_required": 0,
+    "rejected": 0,
+    "risk_distribution": {
+      "LOW": 1,
+      "MEDIUM": 0,
+      "HIGH": 0,
+      "CRITICAL": 0
+    }
+  }
+}

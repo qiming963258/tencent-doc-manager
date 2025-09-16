@@ -1,0 +1,32 @@
+{
+  "total_changes": 9,
+  "added_rows": 5,
+  "modified_rows": 0,
+  "deleted_rows": 4,
+  "similarity_score": 0.4,
+  "details": {
+    "baseline_total_rows": 10,
+    "target_total_rows": 11,
+    "common_rows": 6,
+    "baseline_columns": 6,
+    "target_columns": 6
+  },
+  "added_samples": [
+    "2,产品B,210.00,35,在售,2025-09-04",
+    "11,产品K,400.00,10,新品,2025-09-04",
+    "12,产品L,350.00,12,新品,2025-09-04",
+    "10,产品J,185.00,30,在售,2025-09-04",
+    "5,产品E,260.00,45,在售,2025-09-04"
+  ],
+  "deleted_samples": [
+    "8,产品H,190.50,18,缺货,2025-09-01",
+    "5,产品E,250.50,40,在售,2025-09-01",
+    "10,产品J,175.25,28,在售,2025-09-01",
+    "2,产品B,200.00,30,在售,2025-09-01"
+  ],
+  "metadata": {
+    "timestamp": "20250904_112651",
+    "system_version": "3.0.0",
+    "comparison_method": "adaptive"
+  }
+}

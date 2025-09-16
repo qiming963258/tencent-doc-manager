@@ -1,0 +1,25 @@
+{
+  "document_links": [
+    {
+      "name": "2025年仓库月度计划",
+      "url": "https://docs.qq.com/sheet/DVldES1NqblhRS21x",
+      "enabled": true
+    },
+    {
+      "name": "2025年回国月度计划",
+      "url": "https://docs.qq.com/sheet/DVnNwV3VEbmRFVEZP",
+      "enabled": true
+    }
+  ],
+  "download_format": "csv",
+  "schedule": {
+    "enabled": false,
+    "interval": "weekly",
+    "last_download": null
+  },
+  "download_status": "已完成 1/1 个文件下载",
+  "last_updated": "2025-09-13T15:30:52.798695",
+  "last_update": "2025-09-13T15:30:52.796815",
+  "last_download": "2025-09-12T11:36:11.155310",
+  "deleted_links": []
+}

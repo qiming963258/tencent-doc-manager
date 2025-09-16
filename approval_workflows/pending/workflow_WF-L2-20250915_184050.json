@@ -1,0 +1,31 @@
+{
+  "workflow_id": "WF-L2-20250915_184050",
+  "created_time": "2025-09-15 18:40:50",
+  "pending_approvals": [
+    {
+      "modification_id": "M001",
+      "cell": "I37",
+      "column": "邓总指导登记（日更新）",
+      "old_value": "0728-",
+      "new_value": "",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 80.0,
+        "reason": "清空内容"
+      },
+      "layer2_result": {
+        "risk_level": "LOW",
+        "decision": "REVIEW",
+        "confidence": 85,
+        "key_risks": [
+          "历史指导记录丢失",
+          "项目管理信息不完整"
+        ],
+        "recommendation": "建议核实该修改是否为有意删除并记录原因。如需保留历史数据，建议采用数据标记(如'N/A')而非完全删除。对'邓总指导登记'这种关键管理记录，建议建立修改审批流程。"
+      },
+      "final_decision": "REVIEW",
+      "approval_required": true
+    }
+  ],
+  "auto_approved": []
+}

@@ -1,0 +1,47 @@
+{
+  "metadata": {
+    "analysis_time": "2025-09-15 16:46:52",
+    "total_modifications": 1,
+    "layer1_passed": 0,
+    "layer2_analyzed": 1,
+    "processing_time": "12.2s"
+  },
+  "results": [
+    {
+      "modification_id": "M001",
+      "cell": "C12",
+      "column": "项目类型",
+      "old_value": "目标管理",
+      "new_value": "项目管理",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 75.0,
+        "reason": "类型变更"
+      },
+      "layer2_result": {
+        "risk_level": "MEDIUM",
+        "decision": "REVIEW",
+        "confidence": 70,
+        "key_risks": [
+          "项目类型的更改可能导致项目目标和执行计划的不匹配",
+          "团队协作可能受到项目类型变更的影响，需要重新调整分工和沟通方式"
+        ],
+        "recommendation": "建议在变更项目类型前，重新评估项目目标和执行计划，并确保团队成员对新项目类型有清晰的理解和共识。同时，更新相关文档和沟通计划以反映这一变更。"
+      },
+      "final_decision": "REVIEW",
+      "approval_required": true
+    }
+  ],
+  "summary": {
+    "approved": 0,
+    "conditional": 0,
+    "review_required": 1,
+    "rejected": 0,
+    "risk_distribution": {
+      "LOW": 0,
+      "MEDIUM": 0,
+      "HIGH": 1,
+      "CRITICAL": 0
+    }
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "workflow_id": "WF-L2-20250909_133828",
+  "created_time": "2025-09-09 13:38:28",
+  "pending_approvals": [
+    {
+      "modification_id": "M001",
+      "cell": "C4",
+      "column": "项目类型",
+      "old_value": "目标管理",
+      "new_value": "体系建设",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 75.0,
+        "reason": "概念变更"
+      },
+      "layer2_result": {
+        "risk_level": "HIGH",
+        "decision": "REVIEW",
+        "confidence": 85,
+        "key_risks": [
+          "项目性质发生根本性改变",
+          "可能导致现有项目目标与资源分配不匹配",
+          "需要重新评估项目范围和交付标准"
+        ],
+        "recommendation": "建议召开项目评审会议，确认以下事项：1)新项目类型与组织战略的契合度；2)是否需要调整项目章程和关键绩效指标；3)资源配置是否仍然适用。在未完成全面评估前暂停相关变更。"
+      },
+      "final_decision": "REVIEW",
+      "approval_required": true
+    }
+  ],
+  "auto_approved": []
+}

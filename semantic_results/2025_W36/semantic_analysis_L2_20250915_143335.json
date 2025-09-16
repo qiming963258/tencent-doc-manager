@@ -1,0 +1,49 @@
+{
+  "metadata": {
+    "analysis_time": "2025-09-15 14:33:35",
+    "total_modifications": 1,
+    "layer1_passed": 0,
+    "layer2_analyzed": 1,
+    "processing_time": "8.0s"
+  },
+  "results": [
+    {
+      "modification_id": "M001",
+      "cell": "B22",
+      "column": "项目类型",
+      "old_value": "目标管理",
+      "new_value": "",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 80.0,
+        "reason": "关键信息缺失"
+      },
+      "layer2_result": {
+        "risk_level": "CRITICAL",
+        "decision": "REVIEW",
+        "confidence": 85,
+        "key_risks": [
+          "项目类型定义缺失可能导致目标不明确",
+          "执行计划可能因项目类型缺失而无法制定",
+          "团队协作可能因方向不明确而混乱",
+          "交付时间可能因项目性质不确定而延误"
+        ],
+        "recommendation": "强烈建议补充完整项目类型定义。必须明确该项目属于目标管理、敏捷开发、瀑布模型等具体类型后才能批准修改。修改前需要与项目经理确认项目类型的定义标准，并评估其对整体项目框架的影响。"
+      },
+      "final_decision": "REVIEW",
+      "approval_required": true
+    }
+  ],
+  "summary": {
+    "approved": 0,
+    "conditional": 0,
+    "review_required": 1,
+    "rejected": 0,
+    "risk_distribution": {
+      "LOW": 0,
+      "MEDIUM": 0,
+      "HIGH": 1,
+      "CRITICAL": 0
+    }
+  }
+}

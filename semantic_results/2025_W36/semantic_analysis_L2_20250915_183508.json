@@ -1,0 +1,48 @@
+{
+  "metadata": {
+    "analysis_time": "2025-09-15 18:35:08",
+    "total_modifications": 1,
+    "layer1_passed": 0,
+    "layer2_analyzed": 1,
+    "processing_time": "13.6s"
+  },
+  "results": [
+    {
+      "modification_id": "M001",
+      "cell": "I31",
+      "column": "邓总指导登记（日更新）",
+      "old_value": "\n\n0506-\n美国新产品培训预约销售部门预计在本周四召开,需要将培训内容录制视频进行钉钉课程学习\n\n",
+      "new_value": "",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 90.0,
+        "reason": "删除内容"
+      },
+      "layer2_result": {
+        "risk_level": "HIGH",
+        "decision": "REVIEW",
+        "confidence": 85,
+        "key_risks": [
+          "完全删除原值可能导致重要的培训计划信息丢失",
+          "邓总指导登记表的完整性受损",
+          "可能影响销售部门的培训安排"
+        ],
+        "recommendation": "建议明确删除原因，并确保该修改不会影响销售部门的培训计划。如果是误操作，应恢复原值；若确实需要删除，则应通过其他渠道确保相关信息传达给相关人员。"
+      },
+      "final_decision": "REVIEW",
+      "approval_required": true
+    }
+  ],
+  "summary": {
+    "approved": 0,
+    "conditional": 0,
+    "review_required": 1,
+    "rejected": 0,
+    "risk_distribution": {
+      "LOW": 0,
+      "MEDIUM": 0,
+      "HIGH": 1,
+      "CRITICAL": 0
+    }
+  }
+}

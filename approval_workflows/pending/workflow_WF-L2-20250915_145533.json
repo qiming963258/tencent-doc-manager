@@ -1,0 +1,32 @@
+{
+  "workflow_id": "WF-L2-20250915_145533",
+  "created_time": "2025-09-15 14:55:33",
+  "pending_approvals": [
+    {
+      "modification_id": "M001",
+      "cell": "J44",
+      "column": "协助人",
+      "old_value": "徐志杰,朱瀚桔,杨佳玲,曾利萍,魏经理",
+      "new_value": "赖铁荔",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 80.0,
+        "reason": "人员变更"
+      },
+      "layer2_result": {
+        "risk_level": "HIGH",
+        "decision": "REVIEW",
+        "confidence": 85,
+        "key_risks": [
+          "协助人员大幅减少可能导致任务分配超载",
+          "删除原有人选可能影响专业领域覆盖",
+          "单一协助人成为单点故障风险"
+        ],
+        "recommendation": "建议：1.核实该修改是否为业务需求2.评估新协助人能否覆盖所有必要技能3.考虑保留部分原协助人或设置备选方案4.如需修改，应同步更新相关任务分配文档"
+      },
+      "final_decision": "REVIEW",
+      "approval_required": true
+    }
+  ],
+  "auto_approved": []
+}

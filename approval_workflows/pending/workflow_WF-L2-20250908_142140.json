@@ -1,0 +1,32 @@
+{
+  "workflow_id": "WF-L2-20250908_142140",
+  "created_time": "2025-09-08 14:21:40",
+  "pending_approvals": [
+    {
+      "modification_id": "M001",
+      "cell": "C4",
+      "column": "项目类型",
+      "old_value": "目标管理",
+      "new_value": "体系建设",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 80.0,
+        "reason": "范围扩大"
+      },
+      "layer2_result": {
+        "risk_level": "MEDIUM",
+        "decision": "REVIEW",
+        "confidence": 75,
+        "key_risks": [
+          "项目类型从'目标管理'变为'体系建设'可能导致项目目标发生实质性变化",
+          "可能需要调整执行计划和资源分配",
+          "团队需要重新理解项目性质和工作重点"
+        ],
+        "recommendation": "建议组织项目相关方评审会议，明确项目类型变更后的具体范围、目标和资源需求。确认变更后需更新项目章程和相关文档，并通知所有利益相关方。"
+      },
+      "final_decision": "REVIEW",
+      "approval_required": true
+    }
+  ],
+  "auto_approved": []
+}

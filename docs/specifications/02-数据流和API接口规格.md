@@ -11,7 +11,7 @@
 │  UI参数输入     文档采集     自适应对比     AI语义分析     Excel标记     文档上传 │
 │      ↓            ↓           ↓            ↓            ↓           ↓    │
 │  ┌─────────┐  ┌─────────┐  ┌─────────┐  ┌─────────┐  ┌─────────┐  ┌────────┐ │
-│  │5200+参数│  │30个表格 │  │智能匹配  │  │Claude API│  │MCP标记  │  │腾讯文档│ │
+│  │动态参数 │  │N个表格  │  │智能匹配  │  │Claude API│  │MCP标记  │  │腾讯文档│ │
 │  │配置体系 │  │并发下载 │  │风险评估  │  │语义判断  │  │可视化   │  │自动上传│ │
 │  └─────────┘  └─────────┘  └─────────┘  └─────────┘  └─────────┘  └────────┘ │
 │      │            │           │            │            │           │    │
@@ -30,9 +30,9 @@
 ```javascript
 // 基于refer/ui参数.txt的5200+参数体系
 const UIParameterFlow = {
-  // 表格基础信息输入 (30个表格 × 8个字段 = 240个参数)
+  // 表格基础信息输入 (动态N个表格 × 8个字段 = N*8个参数)
   tableBasicInfo: {
-    tableCount: 30,
+    tableCount: documents.length,  // 动态文档数量
     tables: [
       {
         tableId: "table_001",
@@ -42,13 +42,13 @@ const UIParameterFlow = {
         owner: "张三",
         department: "产品部"
       }
-      // ... 29个更多表格
+      // ... 根据配置动态加载更多表格
     ]
   },
   
-  // 热力图核心数据配置 (30×19矩阵 = 570个数据点)
+  // 热力图核心数据配置 (N×19矩阵 = N*19个数据点)
   heatmapConfig: {
-    matrixSize: [30, 19],
+    matrixSize: [documents.length, 19],  // 动态矩阵大小
     standardColumns: [
       "序号", "项目类型", "来源", "任务发起时间", "目标对齐",
       // ... 完整19列配置
@@ -60,7 +60,7 @@ const UIParameterFlow = {
     }
   },
   
-  // 修改模式配置 (30个表格 × 19列的详细分布模式)
+  // 修改模式配置 (N个表格 × 19列的详细分布模式)
   modificationPatterns: {
     // 每个表格每列的修改分布详情
     "table_001": {
@@ -153,7 +153,7 @@ class AdaptiveTableComparator:
         self.risk_assessor = RiskAssessmentEngine()
     
     def adaptive_compare_tables(self, current_data_batch, reference_data_batch):
-        """自适应对比30个表格的批量处理"""
+        """自适应对比N个表格的批量处理（动态数量）"""
         comparison_results = []
         
         for i, (current_table, reference_table) in enumerate(
@@ -510,7 +510,7 @@ class EnhancedTencentDocUploader:
 @app.route('/api/v1/heatmap/data', methods=['GET'])
 def get_heatmap_data():
     """
-    获取30×19热力图数据矩阵
+    获取N×19动态热力图数据矩阵
     
     Query Parameters:
     - user_id: 用户ID (必需)
@@ -521,7 +521,7 @@ def get_heatmap_data():
     {
         "success": true,
         "data": {
-            "matrix_data": [[0.85, 0.65, ...], ...],  // 30×19矩阵
+            "matrix_data": [[0.85, 0.65, ...], ...],  // N×19动态矩阵
             "table_names": ["项目管理主计划表", ...],
             "column_names": ["序号", "项目类型", ...],
             "risk_levels": {"来源": "L1", ...},
@@ -710,7 +710,7 @@ def create_excel_visualization():
         "report_info": {
             "filepath": "./downloads/风险分析报告_20250115_103500.xlsx",
             "file_size": "2.5MB",
-            "sheet_count": 31,  // 30个表格 + 1个总览
+            "sheet_count": documents.length + 1,  // N个表格 + 1个总览
             "total_markings": 67,
             "high_risk_markings": 12
         },
@@ -820,6 +820,111 @@ def manage_risk_level_config():
 def manage_ai_settings():
     """管理AI分析设置"""
 ```
+
+#### 2.3.2 链接管理API（支持软删除）
+```python
+@app.route('/api/save-download-links', methods=['POST'])
+def save_download_links():
+    """保存下载链接配置（支持软删除）
+    
+    功能特性：
+    - 保留历史链接记录
+    - 软删除机制：删除的链接移至deleted_links数组
+    - 自动记录删除时间戳
+    
+    请求体：
+    {
+        "links": [
+            {"url": "string", "name": "string", "enabled": boolean}
+        ]
+    }
+    
+    响应：
+    {
+        "success": boolean,
+        "message": "string",
+        "links_count": integer
+    }
+    
+    存储格式：
+    {
+        "document_links": [...],     # 活跃链接
+        "deleted_links": [...],       # 软删除的链接（带deleted_at时间戳）
+        "last_updated": "ISO8601"
+    }
+    """
+    
+@app.route('/api/get-download-links', methods=['GET'])
+def get_download_links():
+    """获取下载链接配置（仅返回活跃链接）"""
+```
+
+#### 2.3.3 基线文件管理API
+```python
+@app.route('/api/baseline-files', methods=['GET', 'POST', 'DELETE'])
+def handle_baseline_files():
+    """处理基线文件的CRUD操作
+    
+    GET - 获取基线文件列表
+    响应：
+    {
+        "success": boolean,
+        "files": [
+            {
+                "name": "string",
+                "path": "string",
+                "size": integer,
+                "modified": "ISO8601"
+            }
+        ],
+        "week": integer,        # 当前ISO周数
+        "path": "string"        # 基线文件夹路径
+    }
+    
+    POST - 下载并保存基线文件
+    请求体：
+    {
+        "url": "string",        # 腾讯文档URL（支持多行输入）
+        "urls": ["string"],     # 批量URL数组（可选）
+        "cookie": "string",     # 认证Cookie
+        "week": integer         # 指定周数（可选）
+    }
+    响应：
+    {
+        "success": boolean,
+        "file": {
+            "name": "string",
+            "path": "string"
+        },
+        "error": "string"       # 失败时的错误信息
+    }
+
+    DELETE - 软删除基线文件
+    请求体：
+    {
+        "filename": "string"
+    }
+    响应：
+    {
+        "success": boolean,
+        "message": "string"
+    }
+    
+    存储路径：
+    /root/projects/tencent-doc-manager/csv_versions/
+    └── 2025_W{周数}/
+        └── baseline/
+            ├── tencent_{文档名}_{时间戳}_baseline_W{周数}.csv
+            ├── tencent_{文档名}_{时间戳}_baseline_W{周数}.xlsx
+            └── .deleted/       # 软删除文件夹（隐藏目录）
+                └── deleted_{YYYYMMDD_HHMMSS}_{原文件名}
+
+    软删除机制：
+    - 新文件下载时自动检查同名文件
+    - 旧文件移动到.deleted文件夹并添加删除时间戳
+    - 软删除文件不被查找函数发现
+    - 支持历史版本追溯
+    """
 
 ## 3. 数据格式规范
 

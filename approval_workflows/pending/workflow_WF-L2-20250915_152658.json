@@ -1,0 +1,32 @@
+{
+  "workflow_id": "WF-L2-20250915_152658",
+  "created_time": "2025-09-15 15:26:58",
+  "pending_approvals": [
+    {
+      "modification_id": "M001",
+      "cell": "K76",
+      "column": "监督人",
+      "old_value": "徐志杰",
+      "new_value": "邓俊",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 75.0,
+        "reason": "关键人变更"
+      },
+      "layer2_result": {
+        "risk_level": "MEDIUM",
+        "decision": "REVIEW",
+        "confidence": 75,
+        "key_risks": [
+          "监督人变更可能导致工作交接不充分",
+          "新监督人可能需要时间熟悉项目情况",
+          "团队成员需要调整与新监督人的工作方式"
+        ],
+        "recommendation": "建议在变更前进行正式的工作交接，并确保新旧监督人之间充分沟通项目现状、关键问题和预期目标。同时向团队成员通报变更情况，必要时组织团队与新监督人的沟通会议。"
+      },
+      "final_decision": "REVIEW",
+      "approval_required": true
+    }
+  ],
+  "auto_approved": []
+}

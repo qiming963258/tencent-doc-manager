@@ -1,0 +1,48 @@
+{
+  "metadata": {
+    "analysis_time": "2025-09-15 15:16:13",
+    "total_modifications": 1,
+    "layer1_passed": 0,
+    "layer2_analyzed": 1,
+    "processing_time": "18.3s"
+  },
+  "results": [
+    {
+      "modification_id": "M001",
+      "cell": "J65",
+      "column": "协助人",
+      "old_value": "赖哥,王佳怡,徐志杰",
+      "new_value": "王寒晓",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 80.0,
+        "reason": "关键人员变更"
+      },
+      "layer2_result": {
+        "risk_level": "MEDIUM",
+        "decision": "REVIEW",
+        "confidence": 75,
+        "key_risks": [
+          "原协助团队被完全替换，可能导致知识传递断层",
+          "新协助人可能不熟悉项目历史背景",
+          "单人替代团队可能增加工作负荷风险"
+        ],
+        "recommendation": "建议补充说明：1.变更原因(如原团队解散/项目阶段转变) 2.新协助人onboarding计划 3.设置至少2周并行过渡期。需项目经理+原协助人确认变更可行性后方可执行。"
+      },
+      "final_decision": "REVIEW",
+      "approval_required": true
+    }
+  ],
+  "summary": {
+    "approved": 0,
+    "conditional": 0,
+    "review_required": 1,
+    "rejected": 0,
+    "risk_distribution": {
+      "LOW": 0,
+      "MEDIUM": 0,
+      "HIGH": 1,
+      "CRITICAL": 0
+    }
+  }
+}

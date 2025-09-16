@@ -1,0 +1,48 @@
+{
+  "metadata": {
+    "analysis_time": "2025-09-15 15:31:54",
+    "total_modifications": 1,
+    "layer1_passed": 0,
+    "layer2_analyzed": 1,
+    "processing_time": "12.9s"
+  },
+  "results": [
+    {
+      "modification_id": "M001",
+      "cell": "K81",
+      "column": "监督人",
+      "old_value": "邓总",
+      "new_value": "",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 80.0,
+        "reason": "关键人变更"
+      },
+      "layer2_result": {
+        "risk_level": "HIGH",
+        "decision": "REVIEW",
+        "confidence": 85,
+        "key_risks": [
+          "监督人职责缺失可能导致项目监管缺位",
+          "关键决策无人审批造成项目延误",
+          "团队工作无人审核影响交付质量"
+        ],
+        "recommendation": "必须立即确认并明确新的监督人。建议：1)核查该修改是否为误操作 2)如需变更监督人，应当同步更新相关项目文件和工作流程授权 3)在空白期间可临时指定代理监督人"
+      },
+      "final_decision": "REVIEW",
+      "approval_required": true
+    }
+  ],
+  "summary": {
+    "approved": 0,
+    "conditional": 0,
+    "review_required": 1,
+    "rejected": 0,
+    "risk_distribution": {
+      "LOW": 0,
+      "MEDIUM": 0,
+      "HIGH": 1,
+      "CRITICAL": 0
+    }
+  }
+}

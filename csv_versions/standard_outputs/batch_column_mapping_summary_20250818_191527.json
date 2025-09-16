@@ -1,0 +1,15 @@
+{
+  "batch_processing_summary": {
+    "processing_time": "2025-08-18 19:15:27",
+    "input_directory": "/root/projects/tencent-doc-manager/csv_versions/standard_outputs",
+    "api_endpoint": "http://localhost:8081/api/ai-column-mapping",
+    "total_files": 1,
+    "successful_mappings": 1,
+    "failed_mappings": 0,
+    "success_rate": 1.0000,
+    "output_pattern": "*_column_mapping.json"
+  },
+  "processed_files": [
+    "table_001_diff": "success"
+  ]
+}

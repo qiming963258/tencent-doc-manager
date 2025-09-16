@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>腾讯文档API OAuth设置</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+        
+        .container {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.2);
+            max-width: 800px;
+            width: 100%;
+            padding: 40px;
+        }
+        
+        h1 {
+            color: #333;
+            margin-bottom: 10px;
+        }
+        
+        .subtitle {
+            color: #666;
+            margin-bottom: 30px;
+        }
+        
+        .status-card {
+            background: #f8f9fa;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 30px;
+        }
+        
+        .status-item {
+            display: flex;
+            justify-content: space-between;
+            margin: 10px 0;
+        }
+        
+        .status-label {
+            font-weight: 500;
+            color: #555;
+        }
+        
+        .status-value {
+            font-weight: 600;
+        }
+        
+        .status-value.success {
+            color: #28a745;
+        }
+        
+        .status-value.warning {
+            color: #ffc107;
+        }
+        
+        .status-value.danger {
+            color: #dc3545;
+        }
+        
+        .section {
+            margin: 30px 0;
+        }
+        
+        .section h2 {
+            color: #444;
+            margin-bottom: 20px;
+            font-size: 20px;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: #555;
+            font-weight: 500;
+        }
+        
+        .form-group input {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #e1e4e8;
+            border-radius: 6px;
+            font-size: 14px;
+            transition: border-color 0.3s;
+        }
+        
+        .form-group input:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+        
+        .help-text {
+            margin-top: 5px;
+            color: #888;
+            font-size: 13px;
+        }
+        
+        .btn {
+            padding: 12px 24px;
+            border: none;
+            border-radius: 6px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .btn-primary {
+            background: #667eea;
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            background: #5a67d8;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+        }
+        
+        .btn-success {
+            background: #28a745;
+            color: white;
+        }
+        
+        .btn-success:hover {
+            background: #218838;
+        }
+        
+        .btn-warning {
+            background: #ffc107;
+            color: #333;
+        }
+        
+        .btn-warning:hover {
+            background: #e0a800;
+        }
+        
+        .btn-group {
+            display: flex;
+            gap: 10px;
+            margin-top: 20px;
+        }
+        
+        .steps {
+            background: #f0f7ff;
+            border-left: 4px solid #667eea;
+            padding: 20px;
+            border-radius: 6px;
+            margin: 20px 0;
+        }
+        
+        .steps h3 {
+            color: #667eea;
+            margin-bottom: 15px;
+        }
+        
+        .steps ol {
+            margin-left: 20px;
+            color: #555;
+        }
+        
+        .steps li {
+            margin: 10px 0;
+            line-height: 1.6;
+        }
+        
+        .alert {
+            padding: 15px;
+            border-radius: 6px;
+            margin: 20px 0;
+        }
+        
+        .alert-info {
+            background: #e3f2fd;
+            color: #1976d2;
+            border-left: 4px solid #1976d2;
+        }
+        
+        .alert-success {
+            background: #e8f5e9;
+            color: #2e7d32;
+            border-left: 4px solid #2e7d32;
+        }
+        
+        .alert-warning {
+            background: #fff3e0;
+            color: #f57c00;
+            border-left: 4px solid #f57c00;
+        }
+        
+        .link-button {
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 600;
+        }
+        
+        .link-button:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🔐 腾讯文档API OAuth设置</h1>
+        <p class="subtitle">配置OAuth认证，实现稳定的API访问</p>
+        
+        <!-- 当前状态 -->
+        <div class="status-card">
+            <h3>当前状态</h3>
+            <div class="status-item">
+                <span class="status-label">OAuth配置:</span>
+                <span class="status-value" id="oauth-configured">检查中...</span>
+            </div>
+            <div class="status-item">
+                <span class="status-label">授权状态:</span>
+                <span class="status-value" id="oauth-authorized">检查中...</span>
+            </div>
+            <div class="status-item">
+                <span class="status-label">Token状态:</span>
+                <span class="status-value" id="token-status">检查中...</span>
+            </div>
+            <div class="status-item">
+                <span class="status-label">过期时间:</span>
+                <span class="status-value" id="token-expires">--</span>
+            </div>
+        </div>
+        
+        <!-- 快速开始指南 -->
+        <div class="steps">
+            <h3>🚀 快速开始</h3>
+            <ol>
+                <li>访问 <a href="https://docs.qq.com/open/" target="_blank" class="link-button">腾讯文档开放平台</a> 注册开发者账号</li>
+                <li>创建应用，获取 Client ID 和 Client Secret</li>
+                <li>在下方填写配置信息</li>
+                <li>点击"开始授权"完成OAuth认证</li>
+                <li>测试API下载功能</li>
+            </ol>
+        </div>
+        
+        <!-- 配置表单 -->
+        <div class="section">
+            <h2>1️⃣ OAuth配置</h2>
+            <form id="oauth-config-form">
+                <div class="form-group">
+                    <label for="client-id">Client ID</label>
+                    <input type="text" id="client-id" placeholder="从腾讯文档开放平台获取" required>
+                    <div class="help-text">在开放平台应用管理页面可以找到</div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="client-secret">Client Secret</label>
+                    <input type="password" id="client-secret" placeholder="从腾讯文档开放平台获取" required>
+                    <div class="help-text">请妥善保管，不要泄露</div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="redirect-uri">回调URL</label>
+                    <input type="text" id="redirect-uri" value="http://202.140.143.88:8089/oauth/callback" required>
+                    <div class="help-text">需要与开放平台配置的回调URL一致</div>
+                </div>
+                
+                <button type="submit" class="btn btn-primary">保存配置</button>
+            </form>
+        </div>
+        
+        <!-- 授权操作 -->
+        <div class="section">
+            <h2>2️⃣ OAuth授权</h2>
+            <div class="alert alert-info">
+                授权后可以获得访问腾讯文档API的权限，Token有效期约30天
+            </div>
+            <div class="btn-group">
+                <button id="start-auth" class="btn btn-success">🔑 开始授权</button>
+                <button id="refresh-token" class="btn btn-warning">🔄 刷新Token</button>
+            </div>
+        </div>
+        
+        <!-- 功能测试 -->
+        <div class="section">
+            <h2>3️⃣ API测试</h2>
+            <div class="form-group">
+                <label for="test-file-id">文档ID</label>
+                <input type="text" id="test-file-id" placeholder="例如: DWEVjZndkR2xVSWJN">
+                <div class="help-text">从文档URL中提取，如 https://docs.qq.com/sheet/DWEVjZndkR2xVSWJN</div>
+            </div>
+            <button id="test-download" class="btn btn-primary">📥 测试下载</button>
+            
+            <div id="test-result" style="margin-top: 20px;"></div>
+        </div>
+    </div>
+    
+    <script>
+        // 检查OAuth状态
+        async function checkOAuthStatus() {
+            try {
+                const response = await fetch('/api/oauth/status');
+                const data = await response.json();
+                
+                // 更新状态显示
+                const configuredEl = document.getElementById('oauth-configured');
+                const authorizedEl = document.getElementById('oauth-authorized');
+                const tokenStatusEl = document.getElementById('token-status');
+                const tokenExpiresEl = document.getElementById('token-expires');
+                
+                if (data.configured) {
+                    configuredEl.textContent = '✅ 已配置';
+                    configuredEl.className = 'status-value success';
+                } else {
+                    configuredEl.textContent = '❌ 未配置';
+                    configuredEl.className = 'status-value danger';
+                }
+                
+                if (data.authorized) {
+                    authorizedEl.textContent = '✅ 已授权';
+                    authorizedEl.className = 'status-value success';
+                } else {
+                    authorizedEl.textContent = '❌ 未授权';
+                    authorizedEl.className = 'status-value danger';
+                }
+                
+                if (data.token_valid) {
+                    tokenStatusEl.textContent = '✅ 有效';
+                    tokenStatusEl.className = 'status-value success';
+                } else if (data.authorized) {
+                    tokenStatusEl.textContent = '⚠️ 已过期';
+                    tokenStatusEl.className = 'status-value warning';
+                } else {
+                    tokenStatusEl.textContent = '❌ 无效';
+                    tokenStatusEl.className = 'status-value danger';
+                }
+                
+                if (data.expires_at) {
+                    const expires = new Date(data.expires_at);
+                    tokenExpiresEl.textContent = expires.toLocaleString();
+                } else {
+                    tokenExpiresEl.textContent = '--';
+                }
+                
+            } catch (error) {
+                console.error('检查OAuth状态失败:', error);
+            }
+        }
+        
+        // 保存OAuth配置
+        document.getElementById('oauth-config-form').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            const config = {
+                client_id: document.getElementById('client-id').value,
+                client_secret: document.getElementById('client-secret').value,
+                redirect_uri: document.getElementById('redirect-uri').value
+            };
+            
+            try {
+                const response = await fetch('/api/oauth/config', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(config)
+                });
+                
+                const data = await response.json();
+                
+                if (data.success) {
+                    alert('✅ 配置保存成功！');
+                    checkOAuthStatus();
+                } else {
+                    alert('❌ 保存失败: ' + (data.error || '未知错误'));
+                }
+            } catch (error) {
+                alert('❌ 保存失败: ' + error.message);
+            }
+        });
+        
+        // 开始OAuth授权
+        document.getElementById('start-auth').addEventListener('click', async () => {
+            try {
+                const response = await fetch('/api/oauth/authorize');
+                const data = await response.json();
+                
+                if (data.auth_url) {
+                    // 在新窗口打开授权页面
+                    const authWindow = window.open(data.auth_url, 'oauth', 'width=600,height=700');
+                    
+                    // 监听授权完成消息
+                    window.addEventListener('message', (event) => {
+                        if (event.data.type === 'oauth_success') {
+                            checkOAuthStatus();
+                            alert('✅ 授权成功！');
+                        }
+                    });
+                } else {
+                    alert('❌ ' + (data.error || '无法启动授权流程'));
+                }
+            } catch (error) {
+                alert('❌ 启动授权失败: ' + error.message);
+            }
+        });
+        
+        // 刷新Token
+        document.getElementById('refresh-token').addEventListener('click', async () => {
+            try {
+                const response = await fetch('/api/oauth/refresh', {
+                    method: 'POST'
+                });
+                const data = await response.json();
+                
+                if (data.success) {
+                    alert('✅ Token刷新成功！');
+                    checkOAuthStatus();
+                } else {
+                    alert('❌ 刷新失败: ' + (data.error || '未知错误'));
+                }
+            } catch (error) {
+                alert('❌ 刷新失败: ' + error.message);
+            }
+        });
+        
+        // 测试API下载
+        document.getElementById('test-download').addEventListener('click', async () => {
+            const fileId = document.getElementById('test-file-id').value;
+            
+            if (!fileId) {
+                alert('请输入文档ID');
+                return;
+            }
+            
+            const resultDiv = document.getElementById('test-result');
+            resultDiv.innerHTML = '<div class="alert alert-info">⏳ 正在下载...</div>';
+            
+            try {
+                const response = await fetch('/api/test-api-download', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ file_id: fileId })
+                });
+                
+                const data = await response.json();
+                
+                if (data.success) {
+                    resultDiv.innerHTML = `
+                        <div class="alert alert-success">
+                            <h4>✅ 下载成功！</h4>
+                            <p>文件路径: ${data.file_path}</p>
+                            <p>API调用次数: ${data.stats.api_calls}</p>
+                            <p>成功下载: ${data.stats.successful_downloads}</p>
+                        </div>
+                    `;
+                } else {
+                    resultDiv.innerHTML = `
+                        <div class="alert alert-warning">
+                            <h4>❌ 下载失败</h4>
+                            <p>${data.error}</p>
+                        </div>
+                    `;
+                }
+            } catch (error) {
+                resultDiv.innerHTML = `
+                    <div class="alert alert-warning">
+                        <h4>❌ 请求失败</h4>
+                        <p>${error.message}</p>
+                    </div>
+                `;
+            }
+        });
+        
+        // 页面加载时检查状态
+        checkOAuthStatus();
+        
+        // 定时检查状态
+        setInterval(checkOAuthStatus, 30000);  // 每30秒检查一次
+    </script>
+</body>
+</html>

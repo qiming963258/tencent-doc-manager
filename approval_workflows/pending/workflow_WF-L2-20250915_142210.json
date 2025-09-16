@@ -1,0 +1,33 @@
+{
+  "workflow_id": "WF-L2-20250915_142210",
+  "created_time": "2025-09-15 14:22:10",
+  "pending_approvals": [
+    {
+      "modification_id": "M001",
+      "cell": "B10",
+      "column": "项目类型",
+      "old_value": "目标管理",
+      "new_value": "",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 80.0,
+        "reason": "关键字段空"
+      },
+      "layer2_result": {
+        "risk_level": "CRITICAL",
+        "decision": "REVIEW",
+        "confidence": 85,
+        "key_risks": [
+          "项目性质不明确导致目标偏移",
+          "执行计划与项目类型不匹配",
+          "团队工作方向混乱",
+          "可能造成重大时间延误"
+        ],
+        "recommendation": "1. 必须补充完整新项目类型值\n2. 需评估新项目类型与现有项目框架的兼容性\n3. 建议召开项目类型变更评审会议\n4. 如需变更，应同步更新相关文档和计划"
+      },
+      "final_decision": "REVIEW",
+      "approval_required": true
+    }
+  ],
+  "auto_approved": []
+}

@@ -1,0 +1,32 @@
+{
+  "workflow_id": "WF-L2-20250915_144230",
+  "created_time": "2025-09-15 14:42:30",
+  "pending_approvals": [
+    {
+      "modification_id": "M001",
+      "cell": "I31",
+      "column": "负责人",
+      "old_value": "蔡悦莹",
+      "new_value": "\n\n0506-\n美国新产品培训预约销售部门预计在本周四召开,需要将培训内容录制视频进行钉钉课程学习\n\n",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 90.0,
+        "reason": "负责人删除"
+      },
+      "layer2_result": {
+        "risk_level": "CRITICAL",
+        "decision": "REJECT",
+        "confidence": 95,
+        "key_risks": [
+          "负责人信息被完全删除",
+          "单元格内容从人名变成无关的培训安排",
+          "可能导致责任归属不明"
+        ],
+        "recommendation": "1. 必须保留负责人字段信息\n2. 培训安排内容应放在专门的培训记录表中\n3. 如需修改负责人信息，应提供明确的新负责人姓名\n4. 建议检查是否存在误操作或数据输入错误"
+      },
+      "final_decision": "REJECT",
+      "approval_required": true
+    }
+  ],
+  "auto_approved": []
+}

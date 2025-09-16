@@ -1,0 +1,48 @@
+{
+  "metadata": {
+    "analysis_time": "2025-09-15 14:17:12",
+    "total_modifications": 1,
+    "layer1_passed": 0,
+    "layer2_analyzed": 1,
+    "processing_time": "15.5s"
+  },
+  "results": [
+    {
+      "modification_id": "M001",
+      "cell": "J4",
+      "column": "协助人",
+      "old_value": "曾利萍,杨佳玲,朱瀚桔",
+      "new_value": "赖铁荔",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 80.0,
+        "reason": "人员变更"
+      },
+      "layer2_result": {
+        "risk_level": "HIGH",
+        "decision": "REVIEW",
+        "confidence": 85,
+        "key_risks": [
+          "团队协作经验缺失：原协助人团队被完全替换，新协助人可能缺乏项目背景知识",
+          "工作交接风险：未保留任何原团队成员，可能导致关键信息丢失",
+          "责任集中：从三人协作变为单人负责，增加了单点故障风险"
+        ],
+        "recommendation": "建议：1) 保留至少1名原协助人过渡 2) 新增协助人需接受完整项目交接培训 3) 评估赖铁荔的项目经验匹配度 4) 修改前需获得项目经理书面批准"
+      },
+      "final_decision": "REVIEW",
+      "approval_required": true
+    }
+  ],
+  "summary": {
+    "approved": 0,
+    "conditional": 0,
+    "review_required": 1,
+    "rejected": 0,
+    "risk_distribution": {
+      "LOW": 0,
+      "MEDIUM": 0,
+      "HIGH": 1,
+      "CRITICAL": 0
+    }
+  }
+}

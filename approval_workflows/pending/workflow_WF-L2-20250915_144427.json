@@ -1,0 +1,32 @@
+{
+  "workflow_id": "WF-L2-20250915_144427",
+  "created_time": "2025-09-15 14:44:27",
+  "pending_approvals": [
+    {
+      "modification_id": "M001",
+      "cell": "I33",
+      "column": "负责人",
+      "old_value": "徐志杰",
+      "new_value": "0\n\n0310-\n具体登记内容已记录在悦莹的个人工作计划清单；",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 80.0,
+        "reason": "关键人变更"
+      },
+      "layer2_result": {
+        "risk_level": "HIGH",
+        "decision": "REVIEW",
+        "confidence": 85,
+        "key_risks": [
+          "负责人信息被删除可能导致责任不明确",
+          "项目执行和跟进可能受到影响",
+          "团队协作中可能出现沟通障碍"
+        ],
+        "recommendation": "建议明确该单元格为何需要将负责人信息改为0，并提供补充说明或调整负责人为其他有效人员。如果确实需要删除负责人信息，应确保有替代的跟进机制并且通知所有相关团队成员。"
+      },
+      "final_decision": "REVIEW",
+      "approval_required": true
+    }
+  ],
+  "auto_approved": []
+}

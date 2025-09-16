@@ -1,0 +1,868 @@
+{
+  "metadata": {
+    "baseline_file": "/root/projects/tencent-doc-manager/csv_versions/2025_W36/midweek/tencent_副本-测试版本-出国销售计划表-工作表1_csv_20250905_0033_midweek_W36.csv",
+    "target_file": "/root/projects/tencent-doc-manager/csv_versions/2025_W36/midweek/tencent_副本-副本-测试版本-出国销售计划表-工作表1_csv_20250905_0034_midweek_W36.csv",
+    "comparison_time": "2025-09-05T01:06:59.916266",
+    "baseline_structure": {
+      "rows": 114,
+      "columns": 19,
+      "column_names": [
+        "序号",
+        "计划输出思路\n8/28",
+        "项目类型",
+        "来源",
+        "任务发起时间",
+        "目标对齐",
+        "关键KR对齐",
+        "具体计划内容",
+        "邓总指导登记（日更新）",
+        "负责人",
+        "协助人",
+        "重要程度",
+        "预计完成时间",
+        "完成链接",
+        "总完成进度",
+        "经理分析复盘",
+        "",
+        "",
+        ""
+      ]
+    },
+    "target_structure": {
+      "rows": 114,
+      "columns": 26,
+      "column_names": [
+        "序号",
+        "计划输出思路\n8/28",
+        "项目类型",
+        "来源",
+        "任务发起时间",
+        "目标对齐",
+        "关键KR对齐",
+        "具体计划内容",
+        "邓总指导登记（日更新）",
+        "负责人",
+        "协助人",
+        "重要程度",
+        "预计完成时间",
+        "完成链接",
+        "总完成进度",
+        "经理分析复盘",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ]
+    }
+  },
+  "summary": {
+    "similarity_score": 0.978744939271255,
+    "total_differences": 63,
+    "modified_cells": 63,
+    "added_rows": 0,
+    "deleted_rows": 0
+  },
+  "details": {
+    "modified_cells": [
+      {
+        "cell": "C4",
+        "column": "C",
+        "column_name": "项目类型",
+        "row_number": 4,
+        "baseline_value": "目标管理",
+        "target_value": "固定计划"
+      },
+      {
+        "cell": "D5",
+        "column": "D",
+        "column_name": "来源",
+        "row_number": 5,
+        "baseline_value": "总经理交办",
+        "target_value": "个人复盘"
+      },
+      {
+        "cell": "E6",
+        "column": "E",
+        "column_name": "任务发起时间",
+        "row_number": 6,
+        "baseline_value": "2025/3/12",
+        "target_value": "2025/3/11"
+      },
+      {
+        "cell": "F7",
+        "column": "F",
+        "column_name": "目标对齐",
+        "row_number": 7,
+        "baseline_value": "成本利润管理",
+        "target_value": "产品策略管理"
+      },
+      {
+        "cell": "G8",
+        "column": "G",
+        "column_name": "关键KR对齐",
+        "row_number": 8,
+        "baseline_value": "资源转化",
+        "target_value": "123"
+      },
+      {
+        "cell": "H9",
+        "column": "H",
+        "column_name": "具体计划内容",
+        "row_number": 9,
+        "baseline_value": "清单计划的罗列整改",
+        "target_value": "123"
+      },
+      {
+        "cell": "I10",
+        "column": "I",
+        "column_name": "邓总指导登记（日更新）",
+        "row_number": 10,
+        "baseline_value": "",
+        "target_value": "123"
+      },
+      {
+        "cell": "J11",
+        "column": "J",
+        "column_name": "负责人",
+        "row_number": 11,
+        "baseline_value": "赖铁荔",
+        "target_value": "杨顺鑫"
+      },
+      {
+        "cell": "K12",
+        "column": "K",
+        "column_name": "协助人",
+        "row_number": 12,
+        "baseline_value": "杨顺鑫",
+        "target_value": "赖铁荔"
+      },
+      {
+        "cell": "L13",
+        "column": "L",
+        "column_name": "重要程度",
+        "row_number": 13,
+        "baseline_value": "0",
+        "target_value": "5"
+      },
+      {
+        "cell": "M14",
+        "column": "M",
+        "column_name": "预计完成时间",
+        "row_number": 14,
+        "baseline_value": "",
+        "target_value": "2025/9/3"
+      },
+      {
+        "cell": "N15",
+        "column": "N",
+        "column_name": "完成链接",
+        "row_number": 15,
+        "baseline_value": "问题问诊与帮扶素材案例库",
+        "target_value": "123"
+      },
+      {
+        "cell": "O16",
+        "column": "O",
+        "column_name": "总完成进度",
+        "row_number": 16,
+        "baseline_value": "100%",
+        "target_value": "3%"
+      },
+      {
+        "cell": "P17",
+        "column": "P",
+        "column_name": "经理分析复盘",
+        "row_number": 17,
+        "baseline_value": "2025/5/26",
+        "target_value": "2025/5/27"
+      },
+      {
+        "cell": "Q18",
+        "column": "Q",
+        "column_name": "",
+        "row_number": 18,
+        "baseline_value": "已汇报已结项",
+        "target_value": "尚未汇报"
+      },
+      {
+        "cell": "R19",
+        "column": "R",
+        "column_name": "",
+        "row_number": 19,
+        "baseline_value": "已纳入目标管理维度",
+        "target_value": "已应用未落地的项目"
+      },
+      {
+        "cell": "S20",
+        "column": "S",
+        "column_name": "",
+        "row_number": 20,
+        "baseline_value": "",
+        "target_value": "123"
+      },
+      {
+        "cell": "T21",
+        "column": "T",
+        "column_name": "Column19",
+        "row_number": 21,
+        "baseline_value": "",
+        "target_value": "123"
+      },
+      {
+        "cell": "U22",
+        "column": "U",
+        "column_name": "Column20",
+        "row_number": 22,
+        "baseline_value": "",
+        "target_value": "123"
+      },
+      {
+        "cell": "V23",
+        "column": "V",
+        "column_name": "Column21",
+        "row_number": 23,
+        "baseline_value": "",
+        "target_value": "123"
+      }
+    ],
+    "added_rows": [],
+    "deleted_rows": []
+  },
+  "difference_parameters": [
+    "C4_项目类型_目标管理|固定计划",
+    "D5_来源_总经理交办|个人复盘",
+    "E6_任务发起时间_2025/3/12|2025/3/11",
+    "F7_目标对齐_成本利润管理|产品策略管理",
+    "G8_关键KR对齐_资源转化|123",
+    "H9_具体计划内容_清单计划的罗列整改|123",
+    "I10_邓总指导登记（日更新）_|123",
+    "J11_负责人_赖铁荔|杨顺鑫",
+    "K12_协助人_杨顺鑫|赖铁荔",
+    "L13_重要程度_0|5",
+    "M14_预计完成时间_|2025/9/3",
+    "N15_完成链接_问题问诊与帮扶素材案例库|123",
+    "O16_总完成进度_100%|3%",
+    "P17_经理分析复盘_2025/5/26|2025/5/27",
+    "Q18__已汇报已结项|尚未汇报",
+    "R19__已纳入目标管理维度|已应用未落地的项目",
+    "S20__|123",
+    "T21_Column19_|123",
+    "U22_Column20_|123",
+    "V23_Column21_|123",
+    "W24_Column22_|123",
+    "X25_Column23_|123",
+    "Y26_Column24_|123",
+    "P107_经理分析复盘_|最新复盘时间",
+    "Q107__|对上汇报",
+    "R107__|应用情况",
+    "S107__|分析总结",
+    "P108_经理分析复盘_|最新复盘时间",
+    "Q108__|对上汇报",
+    "R108__|应用情况",
+    "S108__|分析总结",
+    "P109_经理分析复盘_|最新复盘时间",
+    "Q109__|对上汇报",
+    "R109__|应用情况",
+    "S109__|分析总结",
+    "P110_经理分析复盘_|最新复盘时间",
+    "Q110__|对上汇报",
+    "R110__|应用情况",
+    "S110__|分析总结",
+    "P111_经理分析复盘_|最新复盘时间",
+    "Q111__|对上汇报",
+    "R111__|应用情况",
+    "S111__|分析总结",
+    "P112_经理分析复盘_|最新复盘时间",
+    "Q112__|对上汇报",
+    "R112__|应用情况",
+    "S112__|分析总结",
+    "P113_经理分析复盘_|最新复盘时间",
+    "Q113__|对上汇报",
+    "R113__|应用情况"
+  ],
+  "all_differences": {
+    "modified_cells": [
+      {
+        "cell": "C4",
+        "column": "C",
+        "column_name": "项目类型",
+        "row_number": 4,
+        "baseline_value": "目标管理",
+        "target_value": "固定计划"
+      },
+      {
+        "cell": "D5",
+        "column": "D",
+        "column_name": "来源",
+        "row_number": 5,
+        "baseline_value": "总经理交办",
+        "target_value": "个人复盘"
+      },
+      {
+        "cell": "E6",
+        "column": "E",
+        "column_name": "任务发起时间",
+        "row_number": 6,
+        "baseline_value": "2025/3/12",
+        "target_value": "2025/3/11"
+      },
+      {
+        "cell": "F7",
+        "column": "F",
+        "column_name": "目标对齐",
+        "row_number": 7,
+        "baseline_value": "成本利润管理",
+        "target_value": "产品策略管理"
+      },
+      {
+        "cell": "G8",
+        "column": "G",
+        "column_name": "关键KR对齐",
+        "row_number": 8,
+        "baseline_value": "资源转化",
+        "target_value": "123"
+      },
+      {
+        "cell": "H9",
+        "column": "H",
+        "column_name": "具体计划内容",
+        "row_number": 9,
+        "baseline_value": "清单计划的罗列整改",
+        "target_value": "123"
+      },
+      {
+        "cell": "I10",
+        "column": "I",
+        "column_name": "邓总指导登记（日更新）",
+        "row_number": 10,
+        "baseline_value": "",
+        "target_value": "123"
+      },
+      {
+        "cell": "J11",
+        "column": "J",
+        "column_name": "负责人",
+        "row_number": 11,
+        "baseline_value": "赖铁荔",
+        "target_value": "杨顺鑫"
+      },
+      {
+        "cell": "K12",
+        "column": "K",
+        "column_name": "协助人",
+        "row_number": 12,
+        "baseline_value": "杨顺鑫",
+        "target_value": "赖铁荔"
+      },
+      {
+        "cell": "L13",
+        "column": "L",
+        "column_name": "重要程度",
+        "row_number": 13,
+        "baseline_value": "0",
+        "target_value": "5"
+      },
+      {
+        "cell": "M14",
+        "column": "M",
+        "column_name": "预计完成时间",
+        "row_number": 14,
+        "baseline_value": "",
+        "target_value": "2025/9/3"
+      },
+      {
+        "cell": "N15",
+        "column": "N",
+        "column_name": "完成链接",
+        "row_number": 15,
+        "baseline_value": "问题问诊与帮扶素材案例库",
+        "target_value": "123"
+      },
+      {
+        "cell": "O16",
+        "column": "O",
+        "column_name": "总完成进度",
+        "row_number": 16,
+        "baseline_value": "100%",
+        "target_value": "3%"
+      },
+      {
+        "cell": "P17",
+        "column": "P",
+        "column_name": "经理分析复盘",
+        "row_number": 17,
+        "baseline_value": "2025/5/26",
+        "target_value": "2025/5/27"
+      },
+      {
+        "cell": "Q18",
+        "column": "Q",
+        "column_name": "",
+        "row_number": 18,
+        "baseline_value": "已汇报已结项",
+        "target_value": "尚未汇报"
+      },
+      {
+        "cell": "R19",
+        "column": "R",
+        "column_name": "",
+        "row_number": 19,
+        "baseline_value": "已纳入目标管理维度",
+        "target_value": "已应用未落地的项目"
+      },
+      {
+        "cell": "S20",
+        "column": "S",
+        "column_name": "",
+        "row_number": 20,
+        "baseline_value": "",
+        "target_value": "123"
+      },
+      {
+        "cell": "T21",
+        "column": "T",
+        "column_name": "Column19",
+        "row_number": 21,
+        "baseline_value": "",
+        "target_value": "123"
+      },
+      {
+        "cell": "U22",
+        "column": "U",
+        "column_name": "Column20",
+        "row_number": 22,
+        "baseline_value": "",
+        "target_value": "123"
+      },
+      {
+        "cell": "V23",
+        "column": "V",
+        "column_name": "Column21",
+        "row_number": 23,
+        "baseline_value": "",
+        "target_value": "123"
+      },
+      {
+        "cell": "W24",
+        "column": "W",
+        "column_name": "Column22",
+        "row_number": 24,
+        "baseline_value": "",
+        "target_value": "123"
+      },
+      {
+        "cell": "X25",
+        "column": "X",
+        "column_name": "Column23",
+        "row_number": 25,
+        "baseline_value": "",
+        "target_value": "123"
+      },
+      {
+        "cell": "Y26",
+        "column": "Y",
+        "column_name": "Column24",
+        "row_number": 26,
+        "baseline_value": "",
+        "target_value": "123"
+      },
+      {
+        "cell": "P107",
+        "column": "P",
+        "column_name": "经理分析复盘",
+        "row_number": 107,
+        "baseline_value": "",
+        "target_value": "最新复盘时间"
+      },
+      {
+        "cell": "Q107",
+        "column": "Q",
+        "column_name": "",
+        "row_number": 107,
+        "baseline_value": "",
+        "target_value": "对上汇报"
+      },
+      {
+        "cell": "R107",
+        "column": "R",
+        "column_name": "",
+        "row_number": 107,
+        "baseline_value": "",
+        "target_value": "应用情况"
+      },
+      {
+        "cell": "S107",
+        "column": "S",
+        "column_name": "",
+        "row_number": 107,
+        "baseline_value": "",
+        "target_value": "分析总结"
+      },
+      {
+        "cell": "P108",
+        "column": "P",
+        "column_name": "经理分析复盘",
+        "row_number": 108,
+        "baseline_value": "",
+        "target_value": "最新复盘时间"
+      },
+      {
+        "cell": "Q108",
+        "column": "Q",
+        "column_name": "",
+        "row_number": 108,
+        "baseline_value": "",
+        "target_value": "对上汇报"
+      },
+      {
+        "cell": "R108",
+        "column": "R",
+        "column_name": "",
+        "row_number": 108,
+        "baseline_value": "",
+        "target_value": "应用情况"
+      },
+      {
+        "cell": "S108",
+        "column": "S",
+        "column_name": "",
+        "row_number": 108,
+        "baseline_value": "",
+        "target_value": "分析总结"
+      },
+      {
+        "cell": "P109",
+        "column": "P",
+        "column_name": "经理分析复盘",
+        "row_number": 109,
+        "baseline_value": "",
+        "target_value": "最新复盘时间"
+      },
+      {
+        "cell": "Q109",
+        "column": "Q",
+        "column_name": "",
+        "row_number": 109,
+        "baseline_value": "",
+        "target_value": "对上汇报"
+      },
+      {
+        "cell": "R109",
+        "column": "R",
+        "column_name": "",
+        "row_number": 109,
+        "baseline_value": "",
+        "target_value": "应用情况"
+      },
+      {
+        "cell": "S109",
+        "column": "S",
+        "column_name": "",
+        "row_number": 109,
+        "baseline_value": "",
+        "target_value": "分析总结"
+      },
+      {
+        "cell": "P110",
+        "column": "P",
+        "column_name": "经理分析复盘",
+        "row_number": 110,
+        "baseline_value": "",
+        "target_value": "最新复盘时间"
+      },
+      {
+        "cell": "Q110",
+        "column": "Q",
+        "column_name": "",
+        "row_number": 110,
+        "baseline_value": "",
+        "target_value": "对上汇报"
+      },
+      {
+        "cell": "R110",
+        "column": "R",
+        "column_name": "",
+        "row_number": 110,
+        "baseline_value": "",
+        "target_value": "应用情况"
+      },
+      {
+        "cell": "S110",
+        "column": "S",
+        "column_name": "",
+        "row_number": 110,
+        "baseline_value": "",
+        "target_value": "分析总结"
+      },
+      {
+        "cell": "P111",
+        "column": "P",
+        "column_name": "经理分析复盘",
+        "row_number": 111,
+        "baseline_value": "",
+        "target_value": "最新复盘时间"
+      },
+      {
+        "cell": "Q111",
+        "column": "Q",
+        "column_name": "",
+        "row_number": 111,
+        "baseline_value": "",
+        "target_value": "对上汇报"
+      },
+      {
+        "cell": "R111",
+        "column": "R",
+        "column_name": "",
+        "row_number": 111,
+        "baseline_value": "",
+        "target_value": "应用情况"
+      },
+      {
+        "cell": "S111",
+        "column": "S",
+        "column_name": "",
+        "row_number": 111,
+        "baseline_value": "",
+        "target_value": "分析总结"
+      },
+      {
+        "cell": "P112",
+        "column": "P",
+        "column_name": "经理分析复盘",
+        "row_number": 112,
+        "baseline_value": "",
+        "target_value": "最新复盘时间"
+      },
+      {
+        "cell": "Q112",
+        "column": "Q",
+        "column_name": "",
+        "row_number": 112,
+        "baseline_value": "",
+        "target_value": "对上汇报"
+      },
+      {
+        "cell": "R112",
+        "column": "R",
+        "column_name": "",
+        "row_number": 112,
+        "baseline_value": "",
+        "target_value": "应用情况"
+      },
+      {
+        "cell": "S112",
+        "column": "S",
+        "column_name": "",
+        "row_number": 112,
+        "baseline_value": "",
+        "target_value": "分析总结"
+      },
+      {
+        "cell": "P113",
+        "column": "P",
+        "column_name": "经理分析复盘",
+        "row_number": 113,
+        "baseline_value": "",
+        "target_value": "最新复盘时间"
+      },
+      {
+        "cell": "Q113",
+        "column": "Q",
+        "column_name": "",
+        "row_number": 113,
+        "baseline_value": "",
+        "target_value": "对上汇报"
+      },
+      {
+        "cell": "R113",
+        "column": "R",
+        "column_name": "",
+        "row_number": 113,
+        "baseline_value": "",
+        "target_value": "应用情况"
+      },
+      {
+        "cell": "S113",
+        "column": "S",
+        "column_name": "",
+        "row_number": 113,
+        "baseline_value": "",
+        "target_value": "分析总结"
+      },
+      {
+        "cell": "P114",
+        "column": "P",
+        "column_name": "经理分析复盘",
+        "row_number": 114,
+        "baseline_value": "",
+        "target_value": "最新复盘时间"
+      },
+      {
+        "cell": "Q114",
+        "column": "Q",
+        "column_name": "",
+        "row_number": 114,
+        "baseline_value": "",
+        "target_value": "对上汇报"
+      },
+      {
+        "cell": "R114",
+        "column": "R",
+        "column_name": "",
+        "row_number": 114,
+        "baseline_value": "",
+        "target_value": "应用情况"
+      },
+      {
+        "cell": "S114",
+        "column": "S",
+        "column_name": "",
+        "row_number": 114,
+        "baseline_value": "",
+        "target_value": "分析总结"
+      },
+      {
+        "cell": "P115",
+        "column": "P",
+        "column_name": "经理分析复盘",
+        "row_number": 115,
+        "baseline_value": "",
+        "target_value": "最新复盘时间"
+      },
+      {
+        "cell": "Q115",
+        "column": "Q",
+        "column_name": "",
+        "row_number": 115,
+        "baseline_value": "",
+        "target_value": "对上汇报"
+      },
+      {
+        "cell": "R115",
+        "column": "R",
+        "column_name": "",
+        "row_number": 115,
+        "baseline_value": "",
+        "target_value": "应用情况"
+      },
+      {
+        "cell": "S115",
+        "column": "S",
+        "column_name": "",
+        "row_number": 115,
+        "baseline_value": "",
+        "target_value": "分析总结"
+      },
+      {
+        "cell": "P116",
+        "column": "P",
+        "column_name": "经理分析复盘",
+        "row_number": 116,
+        "baseline_value": "",
+        "target_value": "最新复盘时间"
+      },
+      {
+        "cell": "Q116",
+        "column": "Q",
+        "column_name": "",
+        "row_number": 116,
+        "baseline_value": "",
+        "target_value": "对上汇报"
+      },
+      {
+        "cell": "R116",
+        "column": "R",
+        "column_name": "",
+        "row_number": 116,
+        "baseline_value": "",
+        "target_value": "应用情况"
+      },
+      {
+        "cell": "S116",
+        "column": "S",
+        "column_name": "",
+        "row_number": 116,
+        "baseline_value": "",
+        "target_value": "分析总结"
+      }
+    ],
+    "added_rows": [],
+    "deleted_rows": [],
+    "differences": [
+      "C4_项目类型_目标管理|固定计划",
+      "D5_来源_总经理交办|个人复盘",
+      "E6_任务发起时间_2025/3/12|2025/3/11",
+      "F7_目标对齐_成本利润管理|产品策略管理",
+      "G8_关键KR对齐_资源转化|123",
+      "H9_具体计划内容_清单计划的罗列整改|123",
+      "I10_邓总指导登记（日更新）_|123",
+      "J11_负责人_赖铁荔|杨顺鑫",
+      "K12_协助人_杨顺鑫|赖铁荔",
+      "L13_重要程度_0|5",
+      "M14_预计完成时间_|2025/9/3",
+      "N15_完成链接_问题问诊与帮扶素材案例库|123",
+      "O16_总完成进度_100%|3%",
+      "P17_经理分析复盘_2025/5/26|2025/5/27",
+      "Q18__已汇报已结项|尚未汇报",
+      "R19__已纳入目标管理维度|已应用未落地的项目",
+      "S20__|123",
+      "T21_Column19_|123",
+      "U22_Column20_|123",
+      "V23_Column21_|123",
+      "W24_Column22_|123",
+      "X25_Column23_|123",
+      "Y26_Column24_|123",
+      "P107_经理分析复盘_|最新复盘时间",
+      "Q107__|对上汇报",
+      "R107__|应用情况",
+      "S107__|分析总结",
+      "P108_经理分析复盘_|最新复盘时间",
+      "Q108__|对上汇报",
+      "R108__|应用情况",
+      "S108__|分析总结",
+      "P109_经理分析复盘_|最新复盘时间",
+      "Q109__|对上汇报",
+      "R109__|应用情况",
+      "S109__|分析总结",
+      "P110_经理分析复盘_|最新复盘时间",
+      "Q110__|对上汇报",
+      "R110__|应用情况",
+      "S110__|分析总结",
+      "P111_经理分析复盘_|最新复盘时间",
+      "Q111__|对上汇报",
+      "R111__|应用情况",
+      "S111__|分析总结",
+      "P112_经理分析复盘_|最新复盘时间",
+      "Q112__|对上汇报",
+      "R112__|应用情况",
+      "S112__|分析总结",
+      "P113_经理分析复盘_|最新复盘时间",
+      "Q113__|对上汇报",
+      "R113__|应用情况",
+      "S113__|分析总结",
+      "P114_经理分析复盘_|最新复盘时间",
+      "Q114__|对上汇报",
+      "R114__|应用情况",
+      "S114__|分析总结",
+      "P115_经理分析复盘_|最新复盘时间",
+      "Q115__|对上汇报",
+      "R115__|应用情况",
+      "S115__|分析总结",
+      "P116_经理分析复盘_|最新复盘时间",
+      "Q116__|对上汇报",
+      "R116__|应用情况",
+      "S116__|分析总结"
+    ],
+    "total_differences": 63,
+    "total_added": 0,
+    "total_deleted": 0,
+    "total_modified_cells": 63
+  }
+}

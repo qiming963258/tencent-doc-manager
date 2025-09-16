@@ -1,0 +1,32 @@
+{
+  "workflow_id": "WF-L2-20250915_153937",
+  "created_time": "2025-09-15 15:39:37",
+  "pending_approvals": [
+    {
+      "modification_id": "M001",
+      "cell": "K89",
+      "column": "监督人",
+      "old_value": "邓总",
+      "new_value": "",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 80.0,
+        "reason": "关键角色缺失"
+      },
+      "layer2_result": {
+        "risk_level": "HIGH",
+        "decision": "REVIEW",
+        "confidence": 85,
+        "key_risks": [
+          "监督人由邓总改为空值可能导致监管缺失",
+          "项目关键决策可能延迟或停滞",
+          "团队协作可能因缺乏监督而效率降低"
+        ],
+        "recommendation": "建议明确新的监督人后再提交修改。若确实需要临时删除监督人，应设置临时负责人并明确期限，同时通知相关团队。"
+      },
+      "final_decision": "REVIEW",
+      "approval_required": true
+    }
+  ],
+  "auto_approved": []
+}

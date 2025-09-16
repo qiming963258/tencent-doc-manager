@@ -1,0 +1,48 @@
+{
+  "metadata": {
+    "analysis_time": "2025-09-15 14:37:48",
+    "total_modifications": 1,
+    "layer1_passed": 0,
+    "layer2_analyzed": 1,
+    "processing_time": "12.7s"
+  },
+  "results": [
+    {
+      "modification_id": "M001",
+      "cell": "I26",
+      "column": "负责人",
+      "old_value": "蔡悦莹",
+      "new_value": "",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 90.0,
+        "reason": "关键人缺失"
+      },
+      "layer2_result": {
+        "risk_level": "HIGH",
+        "decision": "REVIEW",
+        "confidence": 85,
+        "key_risks": [
+          "负责人信息被清空，导致责任人不明确",
+          "可能影响项目执行和跟进效率",
+          "潜在的管理混乱风险"
+        ],
+        "recommendation": "1. 立即确认删除操作是否故意为之\n2. 如需删除，请先指定新的负责人后再执行\n3. 建议保留修改记录和原因说明\n4. 若为新负责人未确定的情况，建议使用临时占位符如'TBD'而非空值"
+      },
+      "final_decision": "REVIEW",
+      "approval_required": true
+    }
+  ],
+  "summary": {
+    "approved": 0,
+    "conditional": 0,
+    "review_required": 1,
+    "rejected": 0,
+    "risk_distribution": {
+      "LOW": 0,
+      "MEDIUM": 0,
+      "HIGH": 1,
+      "CRITICAL": 0
+    }
+  }
+}

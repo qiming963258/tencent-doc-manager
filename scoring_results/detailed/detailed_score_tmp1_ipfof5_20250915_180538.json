@@ -1,0 +1,579 @@
+{
+  "metadata": {
+    "table_name": "tmp1_ipfof5",
+    "source_file": "/tmp/tmp1_ipfof5.json",
+    "scoring_time": "2025-09-15 18:05:38",
+    "total_modifications": 18,
+    "scoring_version": "v1.0"
+  },
+  "scores": [
+    {
+      "modification_id": "M001",
+      "cell": "B4",
+      "column_name": "计划输出思路\n8/28",
+      "column_level": "L3",
+      "old_value": "",
+      "new_value": "123",
+      "scoring_details": {
+        "base_score": 0.2,
+        "change_factor": 1.0,
+        "importance_weight": 1.0,
+        "ai_adjustment": 1.0,
+        "confidence_weight": 1.0,
+        "final_score": 0.2
+      },
+      "ai_analysis": {
+        "ai_used": false,
+        "reason": "L3_column_rule_based"
+      },
+      "risk_assessment": {
+        "risk_level": "LOW",
+        "risk_color": "green",
+        "risk_icon": "🟢",
+        "action_required": "log_only",
+        "priority": 4
+      }
+    },
+    {
+      "modification_id": "M002",
+      "cell": "C5",
+      "column_name": "项目类型",
+      "column_level": "L2",
+      "old_value": "目标管理",
+      "new_value": "体系建设",
+      "scoring_details": {
+        "base_score": 0.5,
+        "change_factor": 1.0,
+        "importance_weight": 1.0,
+        "ai_adjustment": 1.2,
+        "confidence_weight": 0.9,
+        "final_score": 0.6
+      },
+      "ai_analysis": {
+        "ai_used": true,
+        "ai_decision": "REVIEW",
+        "ai_confidence": 80,
+        "layer1_result": {
+          "judgment": "RISKY",
+          "confidence": 80.0,
+          "reason": "范围扩大"
+        },
+        "layer2_result": {
+          "risk_level": "HIGH",
+          "decision": "REVIEW",
+          "confidence": 80,
+          "key_risks": [
+            "项目性质发生根本性改变，可能导致原有项目目标失效",
+            "执行计划需要全面调整，可能产生资源冲突",
+            "团队需要重新理解项目定位，协作模式可能改变",
+            "交付时间很可能需要延长"
+          ],
+          "recommendation": "建议召开项目变更评估会议，重点审查以下内容：1)新旧项目类型的关联性和转换可行性；2)调整后的项目目标与组织战略的匹配度；3)修改后的资源需求计划。需获得原项目发起人的正式批准。"
+        }
+      },
+      "risk_assessment": {
+        "risk_level": "HIGH",
+        "risk_color": "orange",
+        "risk_icon": "🟠",
+        "action_required": "manual_review",
+        "priority": 2
+      }
+    },
+    {
+      "modification_id": "M003",
+      "cell": "D6",
+      "column_name": "来源",
+      "column_level": "L1",
+      "old_value": "总经理交办",
+      "new_value": "总助检查整改",
+      "scoring_details": {
+        "base_score": 0.8,
+        "change_factor": 1.0,
+        "importance_weight": 1.0,
+        "ai_adjustment": 1.0,
+        "confidence_weight": 1.0,
+        "final_score": 0.8
+      },
+      "ai_analysis": {
+        "ai_used": false,
+        "reason": "L1_column_rule_based"
+      },
+      "risk_assessment": {
+        "risk_level": "EXTREME_HIGH",
+        "risk_color": "red",
+        "risk_icon": "🔴",
+        "action_required": "immediate_review",
+        "priority": 1
+      }
+    },
+    {
+      "modification_id": "M004",
+      "cell": "E7",
+      "column_name": "任务发起时间",
+      "column_level": "L1",
+      "old_value": "2025/3/13",
+      "new_value": "2025/3/21",
+      "scoring_details": {
+        "base_score": 0.8,
+        "change_factor": 1.0,
+        "importance_weight": 1.3,
+        "ai_adjustment": 1.0,
+        "confidence_weight": 1.0,
+        "final_score": 1.0
+      },
+      "ai_analysis": {
+        "ai_used": false,
+        "reason": "L1_column_rule_based"
+      },
+      "risk_assessment": {
+        "risk_level": "EXTREME_HIGH",
+        "risk_color": "red",
+        "risk_icon": "🔴",
+        "action_required": "immediate_review",
+        "priority": 1
+      }
+    },
+    {
+      "modification_id": "M005",
+      "cell": "F7",
+      "column_name": "目标对齐",
+      "column_level": "L1",
+      "old_value": "成本利润管理",
+      "new_value": "风险及异常订单管理",
+      "scoring_details": {
+        "base_score": 0.8,
+        "change_factor": 1.0,
+        "importance_weight": 1.0,
+        "ai_adjustment": 1.0,
+        "confidence_weight": 1.0,
+        "final_score": 0.8
+      },
+      "ai_analysis": {
+        "ai_used": false,
+        "reason": "L1_column_rule_based"
+      },
+      "risk_assessment": {
+        "risk_level": "EXTREME_HIGH",
+        "risk_color": "red",
+        "risk_icon": "🔴",
+        "action_required": "immediate_review",
+        "priority": 1
+      }
+    },
+    {
+      "modification_id": "M006",
+      "cell": "G8",
+      "column_name": "关键KR对齐",
+      "column_level": "L1",
+      "old_value": "资源转化",
+      "new_value": "123123",
+      "scoring_details": {
+        "base_score": 0.8,
+        "change_factor": 1.0,
+        "importance_weight": 1.0,
+        "ai_adjustment": 1.0,
+        "confidence_weight": 1.0,
+        "final_score": 0.8
+      },
+      "ai_analysis": {
+        "ai_used": false,
+        "reason": "L1_column_rule_based"
+      },
+      "risk_assessment": {
+        "risk_level": "EXTREME_HIGH",
+        "risk_color": "red",
+        "risk_icon": "🔴",
+        "action_required": "immediate_review",
+        "priority": 1
+      }
+    },
+    {
+      "modification_id": "M007",
+      "cell": "H9",
+      "column_name": "具体计划内容",
+      "column_level": "L2",
+      "old_value": "清单计划的罗列整改",
+      "new_value": "123123",
+      "scoring_details": {
+        "base_score": 0.5,
+        "change_factor": 1.0,
+        "importance_weight": 1.0,
+        "ai_adjustment": 1.5,
+        "confidence_weight": 1.0,
+        "final_score": 0.75
+      },
+      "ai_analysis": {
+        "ai_used": true,
+        "ai_decision": "REJECT",
+        "ai_confidence": 95,
+        "layer1_result": {
+          "judgment": "RISKY",
+          "confidence": 90.0,
+          "reason": "内容替换"
+        },
+        "layer2_result": {
+          "risk_level": "CRITICAL",
+          "decision": "REJECT",
+          "confidence": 95,
+          "key_risks": [
+            "无效内容替换：将原本有实际意义的计划内容改成了无意义的数字串",
+            "信息丢失：原值'清单计划的罗列整改'包含明确的工作指示，新值完全丧失了工作计划信息",
+            "执行混乱：团队成员无法从修改后的内容获得任何可执行信息",
+            "质量隐患：这种随意改动会严重影响项目文档的严肃性和可靠性"
+          ],
+          "recommendation": "1) 必须恢复原值或提供同等详细的新计划内容\n2) 需要调查修改原因并加强文档修改规范培训\n3) 建议启用文档修改审批流程防止类似情况\n4) 如果测试修改，应明确标注测试性质并立即恢复"
+        }
+      },
+      "risk_assessment": {
+        "risk_level": "HIGH",
+        "risk_color": "orange",
+        "risk_icon": "🟠",
+        "action_required": "manual_review",
+        "priority": 2
+      }
+    },
+    {
+      "modification_id": "M008",
+      "cell": "I10",
+      "column_name": "邓总指导登记（日更新）",
+      "column_level": "L2",
+      "old_value": "",
+      "new_value": "123123",
+      "scoring_details": {
+        "base_score": 0.5,
+        "change_factor": 1.0,
+        "importance_weight": 1.15,
+        "ai_adjustment": 0.6,
+        "confidence_weight": 1.0,
+        "final_score": 0.6
+      },
+      "ai_analysis": {
+        "ai_used": true,
+        "ai_decision": "APPROVE",
+        "ai_confidence": 90.0,
+        "layer1_result": {
+          "judgment": "SAFE",
+          "confidence": 90.0,
+          "reason": "数据填充"
+        },
+        "layer2_result": null
+      },
+      "risk_assessment": {
+        "risk_level": "HIGH",
+        "risk_color": "orange",
+        "risk_icon": "🟠",
+        "action_required": "manual_review",
+        "priority": 2
+      }
+    },
+    {
+      "modification_id": "M009",
+      "cell": "J11",
+      "column_name": "负责人",
+      "column_level": "L2",
+      "old_value": "赖铁荔",
+      "new_value": "王寒晓,各责任人",
+      "scoring_details": {
+        "base_score": 0.5,
+        "change_factor": 1.0,
+        "importance_weight": 1.2,
+        "ai_adjustment": 0.8,
+        "confidence_weight": 0.9,
+        "final_score": 0.6
+      },
+      "ai_analysis": {
+        "ai_used": true,
+        "ai_decision": "CONDITIONAL",
+        "ai_confidence": 75,
+        "layer1_result": {
+          "judgment": "RISKY",
+          "confidence": 75.0,
+          "reason": "负责变更多"
+        },
+        "layer2_result": {
+          "risk_level": "MEDIUM",
+          "decision": "CONDITIONAL",
+          "confidence": 75,
+          "key_risks": [
+            "责任主体模糊化：从单一明确负责人变为多人+模糊描述，可能导致责任推诿",
+            "团队协作复杂度增加：需要重新建立多责任人之间的沟通机制",
+            "执行计划调整风险：原工作计划可能不适用新的责任分工模式"
+          ],
+          "recommendation": "建议补充说明：1)明确各责任人的具体分工范围 2)新增协调负责人字段 3)配套修改相关RACI矩阵。需确保至少保留一名最终决策者。"
+        }
+      },
+      "risk_assessment": {
+        "risk_level": "HIGH",
+        "risk_color": "orange",
+        "risk_icon": "🟠",
+        "action_required": "manual_review",
+        "priority": 2
+      }
+    },
+    {
+      "modification_id": "M010",
+      "cell": "K12",
+      "column_name": "协助人",
+      "column_level": "L2",
+      "old_value": "杨顺鑫",
+      "new_value": "赖铁荔",
+      "scoring_details": {
+        "base_score": 0.5,
+        "change_factor": 1.0,
+        "importance_weight": 1.0,
+        "ai_adjustment": 0.6,
+        "confidence_weight": 1.0,
+        "final_score": 0.6
+      },
+      "ai_analysis": {
+        "ai_used": true,
+        "ai_decision": "APPROVE",
+        "ai_confidence": 90.0,
+        "layer1_result": {
+          "judgment": "SAFE",
+          "confidence": 90.0,
+          "reason": "人员替换"
+        },
+        "layer2_result": null
+      },
+      "risk_assessment": {
+        "risk_level": "HIGH",
+        "risk_color": "orange",
+        "risk_icon": "🟠",
+        "action_required": "manual_review",
+        "priority": 2
+      }
+    },
+    {
+      "modification_id": "M011",
+      "cell": "L13",
+      "column_name": "重要程度",
+      "column_level": "L1",
+      "old_value": "0",
+      "new_value": "4",
+      "scoring_details": {
+        "base_score": 0.8,
+        "change_factor": 1.0,
+        "importance_weight": 1.4,
+        "ai_adjustment": 1.0,
+        "confidence_weight": 1.0,
+        "final_score": 1.0
+      },
+      "ai_analysis": {
+        "ai_used": false,
+        "reason": "L1_column_rule_based"
+      },
+      "risk_assessment": {
+        "risk_level": "EXTREME_HIGH",
+        "risk_color": "red",
+        "risk_icon": "🔴",
+        "action_required": "immediate_review",
+        "priority": 1
+      }
+    },
+    {
+      "modification_id": "M012",
+      "cell": "M14",
+      "column_name": "预计完成时间",
+      "column_level": "L1",
+      "old_value": "",
+      "new_value": "2025/9/25",
+      "scoring_details": {
+        "base_score": 0.8,
+        "change_factor": 1.0,
+        "importance_weight": 1.2,
+        "ai_adjustment": 1.0,
+        "confidence_weight": 1.0,
+        "final_score": 0.96
+      },
+      "ai_analysis": {
+        "ai_used": false,
+        "reason": "L1_column_rule_based"
+      },
+      "risk_assessment": {
+        "risk_level": "EXTREME_HIGH",
+        "risk_color": "red",
+        "risk_icon": "🔴",
+        "action_required": "immediate_review",
+        "priority": 1
+      }
+    },
+    {
+      "modification_id": "M013",
+      "cell": "N15",
+      "column_name": "完成链接",
+      "column_level": "L3",
+      "old_value": "问题问诊与帮扶素材案例库",
+      "new_value": "123123123",
+      "scoring_details": {
+        "base_score": 0.2,
+        "change_factor": 0.8,
+        "importance_weight": 1.0,
+        "ai_adjustment": 1.0,
+        "confidence_weight": 1.0,
+        "final_score": 0.16000000000000003
+      },
+      "ai_analysis": {
+        "ai_used": false,
+        "reason": "L3_column_rule_based"
+      },
+      "risk_assessment": {
+        "risk_level": "EXTREME_LOW",
+        "risk_color": "blue",
+        "risk_icon": "🔵",
+        "action_required": "none",
+        "priority": 5
+      }
+    },
+    {
+      "modification_id": "M014",
+      "cell": "O16",
+      "column_name": "总完成进度",
+      "column_level": "L3",
+      "old_value": "100%",
+      "new_value": "12%",
+      "scoring_details": {
+        "base_score": 0.2,
+        "change_factor": 1.0,
+        "importance_weight": 1.0,
+        "ai_adjustment": 1.0,
+        "confidence_weight": 1.0,
+        "final_score": 0.2
+      },
+      "ai_analysis": {
+        "ai_used": false,
+        "reason": "L3_column_rule_based"
+      },
+      "risk_assessment": {
+        "risk_level": "LOW",
+        "risk_color": "green",
+        "risk_icon": "🟢",
+        "action_required": "log_only",
+        "priority": 4
+      }
+    },
+    {
+      "modification_id": "M015",
+      "cell": "P17",
+      "column_name": "经理分析复盘",
+      "column_level": "L3",
+      "old_value": "2025/5/26",
+      "new_value": "2025/5/28",
+      "scoring_details": {
+        "base_score": 0.2,
+        "change_factor": 1.0,
+        "importance_weight": 1.0,
+        "ai_adjustment": 1.0,
+        "confidence_weight": 1.0,
+        "final_score": 0.2
+      },
+      "ai_analysis": {
+        "ai_used": false,
+        "reason": "L3_column_rule_based"
+      },
+      "risk_assessment": {
+        "risk_level": "LOW",
+        "risk_color": "green",
+        "risk_icon": "🟢",
+        "action_required": "log_only",
+        "priority": 4
+      }
+    },
+    {
+      "modification_id": "M016",
+      "cell": "Q18",
+      "column_name": "",
+      "column_level": "L3",
+      "old_value": "已汇报已结项",
+      "new_value": "尚未汇报",
+      "scoring_details": {
+        "base_score": 0.2,
+        "change_factor": 1.0,
+        "importance_weight": 1.0,
+        "ai_adjustment": 1.0,
+        "confidence_weight": 1.0,
+        "final_score": 0.2
+      },
+      "ai_analysis": {
+        "ai_used": false,
+        "reason": "L3_column_rule_based"
+      },
+      "risk_assessment": {
+        "risk_level": "LOW",
+        "risk_color": "green",
+        "risk_icon": "🟢",
+        "action_required": "log_only",
+        "priority": 4
+      }
+    },
+    {
+      "modification_id": "M017",
+      "cell": "R19",
+      "column_name": "",
+      "column_level": "L3",
+      "old_value": "已纳入目标管理维度",
+      "new_value": "已应用未落地的项目",
+      "scoring_details": {
+        "base_score": 0.2,
+        "change_factor": 1.0,
+        "importance_weight": 1.0,
+        "ai_adjustment": 1.0,
+        "confidence_weight": 1.0,
+        "final_score": 0.2
+      },
+      "ai_analysis": {
+        "ai_used": false,
+        "reason": "L3_column_rule_based"
+      },
+      "risk_assessment": {
+        "risk_level": "LOW",
+        "risk_color": "green",
+        "risk_icon": "🟢",
+        "action_required": "log_only",
+        "priority": 4
+      }
+    },
+    {
+      "modification_id": "M018",
+      "cell": "S20",
+      "column_name": "",
+      "column_level": "L3",
+      "old_value": "",
+      "new_value": "123123",
+      "scoring_details": {
+        "base_score": 0.2,
+        "change_factor": 1.0,
+        "importance_weight": 1.0,
+        "ai_adjustment": 1.0,
+        "confidence_weight": 1.0,
+        "final_score": 0.2
+      },
+      "ai_analysis": {
+        "ai_used": false,
+        "reason": "L3_column_rule_based"
+      },
+      "risk_assessment": {
+        "risk_level": "LOW",
+        "risk_color": "green",
+        "risk_icon": "🟢",
+        "action_required": "log_only",
+        "priority": 4
+      }
+    }
+  ],
+  "summary": {
+    "total_score": 9.87,
+    "average_score": 0.548,
+    "risk_distribution": {
+      "LOW": 6,
+      "HIGH": 5,
+      "EXTREME_HIGH": 6,
+      "EXTREME_LOW": 1
+    },
+    "ai_usage": {
+      "total_ai_calls": 5,
+      "layer1_passes": 2,
+      "layer2_analyses": 3
+    }
+  }
+}

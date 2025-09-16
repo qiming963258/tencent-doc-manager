@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>测试8098界面按钮点击</title>
+</head>
+<body>
+    <h1>测试8098界面按钮功能</h1>
+    
+    <iframe id="targetFrame" src="http://202.140.143.88:8098" 
+            style="width: 100%; height: 600px; border: 1px solid #ccc;">
+    </iframe>
+    
+    <div style="margin: 20px; padding: 20px; border: 1px solid #ccc;">
+        <h2>测试控制台</h2>
+        <button onclick="testButtonClick()">模拟点击"开始处理"按钮</button>
+        <button onclick="checkFrameContent()">检查iframe内容</button>
+        <pre id="output" style="background: #f0f0f0; padding: 10px; min-height: 100px;">
+等待测试...
+        </pre>
+    </div>
+    
+    <script>
+        function testButtonClick() {
+            const output = document.getElementById('output');
+            output.textContent = '尝试访问iframe内容...\n';
+            
+            try {
+                const frame = document.getElementById('targetFrame');
+                const frameDoc = frame.contentDocument || frame.contentWindow.document;
+                
+                if (frameDoc) {
+                    const processBtn = frameDoc.getElementById('processBtn');
+                    if (processBtn) {
+                        output.textContent += '找到按钮，尝试点击...\n';
+                        processBtn.click();
+                        output.textContent += '点击成功！\n';
+                    } else {
+                        output.textContent += '未找到processBtn按钮\n';
+                    }
+                } else {
+                    output.textContent += '无法访问iframe文档（可能是跨域限制）\n';
+                }
+            } catch (e) {
+                output.textContent += '错误: ' + e.message + '\n';
+                output.textContent += '由于跨域限制，无法直接访问iframe内容\n';
+                output.textContent += '请直接访问 http://202.140.143.88:8098 进行测试\n';
+            }
+        }
+        
+        function checkFrameContent() {
+            const output = document.getElementById('output');
+            output.textContent = '检查iframe状态...\n';
+            
+            const frame = document.getElementById('targetFrame');
+            output.textContent += 'iframe源地址: ' + frame.src + '\n';
+            output.textContent += 'iframe就绪状态: ' + frame.readyState + '\n';
+            
+            // 直接打开新窗口测试
+            output.textContent += '\n建议：在新窗口中打开 http://202.140.143.88:8098 进行测试\n';
+            window.open('http://202.140.143.88:8098', '_blank');
+        }
+    </script>
+</body>
+</html>

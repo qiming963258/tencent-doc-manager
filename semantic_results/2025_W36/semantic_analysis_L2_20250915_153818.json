@@ -1,0 +1,49 @@
+{
+  "metadata": {
+    "analysis_time": "2025-09-15 15:38:18",
+    "total_modifications": 1,
+    "layer1_passed": 0,
+    "layer2_analyzed": 1,
+    "processing_time": "8.1s"
+  },
+  "results": [
+    {
+      "modification_id": "M001",
+      "cell": "G88",
+      "column": "具体计划内容",
+      "old_value": "【内容定位工作流程及优化机制建立】\n建立内容定位优化机制，根据内容定位-AI智能体优化-员工使用情况收集-数据反馈结果-内容定位AI求索校正及优化-修改调整内容定位的闭环链路进行工作流的拉通形成机制，",
+      "new_value": "定价与报价系统优化",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 80.0,
+        "reason": "主题变更"
+      },
+      "layer2_result": {
+        "risk_level": "HIGH",
+        "decision": "REVIEW",
+        "confidence": 85,
+        "key_risks": [
+          "项目目标发生重大改变",
+          "原有工作流程被完全替换",
+          "团队可能缺乏新系统优化的专业知识",
+          "交付时间可能因重新规划而延长"
+        ],
+        "recommendation": "建议召开变更评审会议：1.明确变更原因及新需求的完整性2.评估资源重组需求3.重新制定时间规划4.确认相关团队是否具备执行新计划的能力5.更新相关文档确保一致性"
+      },
+      "final_decision": "REVIEW",
+      "approval_required": true
+    }
+  ],
+  "summary": {
+    "approved": 0,
+    "conditional": 0,
+    "review_required": 1,
+    "rejected": 0,
+    "risk_distribution": {
+      "LOW": 0,
+      "MEDIUM": 0,
+      "HIGH": 1,
+      "CRITICAL": 0
+    }
+  }
+}

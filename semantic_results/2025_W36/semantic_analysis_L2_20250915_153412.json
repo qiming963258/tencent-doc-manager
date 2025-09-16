@@ -1,0 +1,49 @@
+{
+  "metadata": {
+    "analysis_time": "2025-09-15 15:34:12",
+    "total_modifications": 1,
+    "layer1_passed": 0,
+    "layer2_analyzed": 1,
+    "processing_time": "16.3s"
+  },
+  "results": [
+    {
+      "modification_id": "M001",
+      "cell": "B84",
+      "column": "项目类型",
+      "old_value": "目标管理",
+      "new_value": "",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 90.0,
+        "reason": "关键信息缺失"
+      },
+      "layer2_result": {
+        "risk_level": "CRITICAL",
+        "decision": "REJECT",
+        "confidence": 95,
+        "key_risks": [
+          "项目类型定义缺失导致项目方向失焦",
+          "项目性质不确定造成资源配置紊乱",
+          "关键分类信息缺失影响跨部门协作",
+          "无法进行准确的项目进度追踪"
+        ],
+        "recommendation": "必须补充有效的项目类型值。建议：1) 如为临时清空需说明原因并设定恢复时限 2) 如要变更项目类型需同步更新项目章程和相关文档 3) 建立变更控制流程避免关键字段空值"
+      },
+      "final_decision": "REJECT",
+      "approval_required": true
+    }
+  ],
+  "summary": {
+    "approved": 0,
+    "conditional": 0,
+    "review_required": 0,
+    "rejected": 1,
+    "risk_distribution": {
+      "LOW": 0,
+      "MEDIUM": 0,
+      "HIGH": 0,
+      "CRITICAL": 1
+    }
+  }
+}

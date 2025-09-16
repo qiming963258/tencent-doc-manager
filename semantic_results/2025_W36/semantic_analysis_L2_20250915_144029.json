@@ -1,0 +1,48 @@
+{
+  "metadata": {
+    "analysis_time": "2025-09-15 14:40:29",
+    "total_modifications": 1,
+    "layer1_passed": 0,
+    "layer2_analyzed": 1,
+    "processing_time": "18.0s"
+  },
+  "results": [
+    {
+      "modification_id": "M001",
+      "cell": "G29",
+      "column": "具体计划内容",
+      "old_value": "1.周原创选题落地有效性与内容定位方向反馈，同步知识点优化\n2.智能体原创选题链路优化打通",
+      "new_value": "晒单板块",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 80.0,
+        "reason": "内容变更"
+      },
+      "layer2_result": {
+        "risk_level": "HIGH",
+        "decision": "REVIEW",
+        "confidence": 85,
+        "key_risks": [
+          "原计划中的原创选题优化与智能体链路打通等核心内容被完全删除",
+          "新值'晒单板块'与原有项目目标可能存在方向性偏离",
+          "可能影响项目交付时间与质量"
+        ],
+        "recommendation": "建议与项目团队确认变更原因，评估晒单板块与项目目标的关联性，并制定过渡计划确保原有核心工作不受严重影响。若确认变更必要，需同步更新相关项目文档与时间计划。"
+      },
+      "final_decision": "REVIEW",
+      "approval_required": true
+    }
+  ],
+  "summary": {
+    "approved": 0,
+    "conditional": 0,
+    "review_required": 1,
+    "rejected": 0,
+    "risk_distribution": {
+      "LOW": 0,
+      "MEDIUM": 0,
+      "HIGH": 1,
+      "CRITICAL": 0
+    }
+  }
+}

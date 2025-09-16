@@ -1,0 +1,48 @@
+{
+  "metadata": {
+    "analysis_time": "2025-09-15 14:41:05",
+    "total_modifications": 1,
+    "layer1_passed": 0,
+    "layer2_analyzed": 1,
+    "processing_time": "9.9s"
+  },
+  "results": [
+    {
+      "modification_id": "M001",
+      "cell": "K29",
+      "column": "监督人",
+      "old_value": "徐志杰",
+      "new_value": "各责任人",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 80.0,
+        "reason": "责任主体变更"
+      },
+      "layer2_result": {
+        "risk_level": "MEDIUM",
+        "decision": "REVIEW",
+        "confidence": 75,
+        "key_risks": [
+          "监督责任分散导致监管力度下降",
+          "可能导致责任推诿情况",
+          "项目质量管控难度增加"
+        ],
+        "recommendation": "建议明确各责任人的具体监督职责范围，并保留徐志杰作为总体监督协调人。修改前需要与项目团队沟通确认新的监督机制能够有效运作。"
+      },
+      "final_decision": "REVIEW",
+      "approval_required": true
+    }
+  ],
+  "summary": {
+    "approved": 0,
+    "conditional": 0,
+    "review_required": 1,
+    "rejected": 0,
+    "risk_distribution": {
+      "LOW": 0,
+      "MEDIUM": 0,
+      "HIGH": 1,
+      "CRITICAL": 0
+    }
+  }
+}

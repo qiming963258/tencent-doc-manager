@@ -1,0 +1,49 @@
+{
+  "metadata": {
+    "analysis_time": "2025-09-15 14:48:48",
+    "total_modifications": 1,
+    "layer1_passed": 0,
+    "layer2_analyzed": 1,
+    "processing_time": "13.0s"
+  },
+  "results": [
+    {
+      "modification_id": "M001",
+      "cell": "I37",
+      "column": "负责人",
+      "old_value": "徐志杰",
+      "new_value": "0728-",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 90.0,
+        "reason": "关键人变更"
+      },
+      "layer2_result": {
+        "risk_level": "HIGH",
+        "decision": "REVIEW",
+        "confidence": 85,
+        "key_risks": [
+          "负责人信息被删除可能导致责任归属不明确",
+          "使用临时编号代替具体负责人影响任务跟踪",
+          "团队协作时无法快速确认负责人身份",
+          "项目监管和汇报流程可能受阻"
+        ],
+        "recommendation": "建议核实修改原因，确保负责人字段包含有效责任人信息。若为临时变更，需补充说明原因和预期恢复时间，并通知相关干系人。同时建议在项目文档中添加变更记录。"
+      },
+      "final_decision": "REVIEW",
+      "approval_required": true
+    }
+  ],
+  "summary": {
+    "approved": 0,
+    "conditional": 0,
+    "review_required": 1,
+    "rejected": 0,
+    "risk_distribution": {
+      "LOW": 0,
+      "MEDIUM": 0,
+      "HIGH": 1,
+      "CRITICAL": 0
+    }
+  }
+}

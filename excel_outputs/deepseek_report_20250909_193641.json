@@ -1,0 +1,14 @@
+{
+  "timestamp": "20250909_193641",
+  "input_file": "/root/projects/tencent-doc-manager/downloads/tencent_doc_DWEVjZndkR2xVSWJN_csv_20250827_102631.csv",
+  "output_file": "/root/projects/tencent-doc-manager/excel_outputs/deepseek_analyzed_20250909_193641_tencent_doc_DWEVjZndkR2xVSWJN_csv_20250827_102631.csv",
+  "analysis": {
+    "risk_level": "medium",
+    "confidence": 0.85,
+    "approval_status": "review",
+    "analysis": "模拟分析结果：检测到中等风险的数据变更",
+    "recommendations": "建议人工审核后批准"
+  },
+  "api_model": "deepseek-v3",
+  "api_provider": "siliconflow"
+}

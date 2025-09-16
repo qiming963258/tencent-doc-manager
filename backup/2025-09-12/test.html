@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>测试页面</title>
+</head>
+<body>
+    <h1>系统运行正常</h1>
+    <p>服务器时间: <span id="time"></span></p>
+    <p>API数据状态: <span id="api-status">检查中...</span></p>
+    
+    <script>
+        document.getElementById('time').textContent = new Date().toLocaleString();
+        
+        fetch('/api/data')
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('api-status').textContent = 
+                    data.success ? '✅ 正常' : '❌ 异常';
+            })
+            .catch(error => {
+                document.getElementById('api-status').textContent = '❌ 连接失败';
+            });
+    </script>
+</body>
+</html>

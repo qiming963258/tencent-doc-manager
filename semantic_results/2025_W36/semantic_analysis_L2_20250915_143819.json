@@ -1,0 +1,48 @@
+{
+  "metadata": {
+    "analysis_time": "2025-09-15 14:38:19",
+    "total_modifications": 1,
+    "layer1_passed": 0,
+    "layer2_analyzed": 1,
+    "processing_time": "11.7s"
+  },
+  "results": [
+    {
+      "modification_id": "M001",
+      "cell": "B27",
+      "column": "项目类型",
+      "old_value": "目标管理",
+      "new_value": "",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 80.0,
+        "reason": "关键信息缺失"
+      },
+      "layer2_result": {
+        "risk_level": "CRITICAL",
+        "decision": "REJECT",
+        "confidence": 90,
+        "key_risks": [
+          "项目类型清空将导致项目性质不明确",
+          "影响所有基于项目类型的后续决策和执行",
+          "可能导致资源分配和目标设定完全失准"
+        ],
+        "recommendation": "1. 必须明确指定项目类型值\n2. 如要变更项目类型，建议进行完整的项目范围评估\n3. 如需删除，应同步更新所有相关文档和计划\n4. 建议与项目干系人沟通后再做修改"
+      },
+      "final_decision": "REJECT",
+      "approval_required": true
+    }
+  ],
+  "summary": {
+    "approved": 0,
+    "conditional": 0,
+    "review_required": 0,
+    "rejected": 1,
+    "risk_distribution": {
+      "LOW": 0,
+      "MEDIUM": 0,
+      "HIGH": 0,
+      "CRITICAL": 1
+    }
+  }
+}

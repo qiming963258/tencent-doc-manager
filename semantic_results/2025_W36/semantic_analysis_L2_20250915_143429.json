@@ -1,0 +1,48 @@
+{
+  "metadata": {
+    "analysis_time": "2025-09-15 14:34:29",
+    "total_modifications": 1,
+    "layer1_passed": 0,
+    "layer2_analyzed": 1,
+    "processing_time": "9.4s"
+  },
+  "results": [
+    {
+      "modification_id": "M001",
+      "cell": "G23",
+      "column": "具体计划内容",
+      "old_value": "建立爆款库共享机制，及时同频爆款笔记进行二创发布@新媒体运营-朱瀚桔",
+      "new_value": "评估方面",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 80.0,
+        "reason": "内容变更"
+      },
+      "layer2_result": {
+        "risk_level": "HIGH",
+        "decision": "REVIEW",
+        "confidence": 85,
+        "key_risks": [
+          "计划内容从具体执行方案变为模糊的评估方向，可能导致执行不明确",
+          "删除了明确的负责人信息，影响责任归属",
+          "取消了具体的运营机制，影响项目执行效率"
+        ],
+        "recommendation": "建议澄清修改原因，并补充新值'评估方面'的具体含义和评估标准。如果确实需要修改，应重新指定负责人并明确评估流程。"
+      },
+      "final_decision": "REVIEW",
+      "approval_required": true
+    }
+  ],
+  "summary": {
+    "approved": 0,
+    "conditional": 0,
+    "review_required": 1,
+    "rejected": 0,
+    "risk_distribution": {
+      "LOW": 0,
+      "MEDIUM": 0,
+      "HIGH": 1,
+      "CRITICAL": 0
+    }
+  }
+}

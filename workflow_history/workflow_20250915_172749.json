@@ -1,0 +1,36 @@
+{
+  "id": "20250915_172749",
+  "start_time": "2025-09-15T17:27:49.080454",
+  "end_time": "2025-09-15T17:29:02.151257",
+  "status": "error",
+  "results": {},
+  "logs": [
+    {
+      "timestamp": "17:27:49",
+      "level": "INFO",
+      "message": "开始获取基线文档..."
+    },
+    {
+      "timestamp": "17:27:49",
+      "level": "INFO",
+      "message": "🔄 强制下载模式：跳过本地文件检查"
+    },
+    {
+      "timestamp": "17:27:49",
+      "level": "INFO",
+      "message": "开始下载基线文档并规范化存储..."
+    },
+    {
+      "timestamp": "17:29:02",
+      "level": "ERROR",
+      "message": "❌ 执行出错: 基线文档下载或存储失败"
+    }
+  ],
+  "settings": {
+    "force_download": true,
+    "skip_baseline_change_detection": true,
+    "skip_semantic_analysis": false,
+    "skip_excel_marking": false,
+    "skip_upload": true
+  }
+}

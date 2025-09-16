@@ -1,0 +1,48 @@
+{
+  "metadata": {
+    "analysis_time": "2025-09-15 14:54:51",
+    "total_modifications": 1,
+    "layer1_passed": 0,
+    "layer2_analyzed": 1,
+    "processing_time": "12.4s"
+  },
+  "results": [
+    {
+      "modification_id": "M001",
+      "cell": "K43",
+      "column": "监督人",
+      "old_value": "邓总",
+      "new_value": "王寒晓",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 80.0,
+        "reason": "人员变更"
+      },
+      "layer2_result": {
+        "risk_level": "MEDIUM",
+        "decision": "REVIEW",
+        "confidence": 75,
+        "key_risks": [
+          "监督人变更可能导致责任交接不明确",
+          "新任监督人可能对项目历史了解不足",
+          "团队成员需要时间适应新的监督风格"
+        ],
+        "recommendation": "建议进行以下操作：1.组织正式的监督人交接会议；2.确保新监督人全面了解项目背景；3.建立过渡期的双监督机制；4.更新所有相关文档中的监督人信息"
+      },
+      "final_decision": "REVIEW",
+      "approval_required": true
+    }
+  ],
+  "summary": {
+    "approved": 0,
+    "conditional": 0,
+    "review_required": 1,
+    "rejected": 0,
+    "risk_distribution": {
+      "LOW": 0,
+      "MEDIUM": 0,
+      "HIGH": 1,
+      "CRITICAL": 0
+    }
+  }
+}

@@ -1,0 +1,49 @@
+{
+  "metadata": {
+    "analysis_time": "2025-09-15 14:20:36",
+    "total_modifications": 1,
+    "layer1_passed": 0,
+    "layer2_analyzed": 1,
+    "processing_time": "14.8s"
+  },
+  "results": [
+    {
+      "modification_id": "M001",
+      "cell": "I8",
+      "column": "负责人",
+      "old_value": "蔡悦莹",
+      "new_value": "",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 80.0,
+        "reason": "关键人缺失"
+      },
+      "layer2_result": {
+        "risk_level": "HIGH",
+        "decision": "REVIEW",
+        "confidence": 85,
+        "key_risks": [
+          "负责人信息缺失导致责任归属不明确",
+          "任务执行可能中断",
+          "团队沟通渠道断裂",
+          "关键决策无明确负责人"
+        ],
+        "recommendation": "1. 必须确认新负责人人选后再提交修改\n2. 如需暂时清空，需同时设置临时负责人\n3. 修改前应确保工作交接已完成\n4. 建议保留原负责人至新负责人确认\n5. 需要更新相关通讯录和权限系统"
+      },
+      "final_decision": "REVIEW",
+      "approval_required": true
+    }
+  ],
+  "summary": {
+    "approved": 0,
+    "conditional": 0,
+    "review_required": 1,
+    "rejected": 0,
+    "risk_distribution": {
+      "LOW": 0,
+      "MEDIUM": 0,
+      "HIGH": 1,
+      "CRITICAL": 0
+    }
+  }
+}

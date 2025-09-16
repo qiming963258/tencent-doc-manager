@@ -1,0 +1,146 @@
+{
+  "version": "1.0",
+  "description": "统一路径配置文件 - 解决路径不一致问题",
+  "created": "2025-09-10",
+  "base_paths": {
+    "project_root": "/root/projects/tencent-doc-manager",
+    "parent_root": "/root/projects"
+  },
+  "storage_paths": {
+    "config": {
+      "path": "{project_root}/config",
+      "description": "配置文件存储目录",
+      "status": "active"
+    },
+    "downloads": {
+      "path": "{project_root}/downloads",
+      "description": "腾讯文档下载存储目录",
+      "status": "active",
+      "note": "包含350+个UUID命名的临时文件，需要清理机制"
+    },
+    "csv_versions": {
+      "path": "{project_root}/csv_versions",
+      "description": "CSV版本管理目录",
+      "status": "active",
+      "subdirs": {
+        "current": "当前版本",
+        "archive": "归档版本",
+        "comparison": "对比结果（计划但未实现）",
+        "comparison_cache": "对比缓存（计划但未实现）",
+        "standard_outputs": "标准化输出（计划但未实现）"
+      }
+    },
+    "comparison_results": {
+      "path": "{project_root}/comparison_results",
+      "description": "CSV对比结果JSON文件",
+      "status": "active"
+    },
+    "comparison_baseline": {
+      "path": "{project_root}/comparison_baseline",
+      "description": "对比基准文件",
+      "status": "active"
+    },
+    "comparison_target": {
+      "path": "{project_root}/comparison_target",
+      "description": "对比目标文件",
+      "status": "active"
+    },
+    "scoring_results": {
+      "detailed": {
+        "path": "{project_root}/scoring_results/detailed",
+        "description": "详细打分结果（已修正到正确位置）",
+        "status": "active",
+        "note": "2025-09-10: 已从parent_root迁移到project_root"
+      },
+      "comprehensive": {
+        "path": "{project_root}/scoring_results/comprehensive",
+        "description": "综合打分结果",
+        "status": "planned"
+      }
+    },
+    "semantic_results": {
+      "path": "{project_root}/semantic_results",
+      "description": "语义分析结果",
+      "status": "active",
+      "subdirs": {
+        "2025_W36": "周次存储",
+        "latest": "最新结果"
+      }
+    },
+    "semantic_logs": {
+      "path": "{project_root}/semantic_logs",
+      "description": "语义分析日志",
+      "status": "created_but_empty",
+      "subdirs": {
+        "layer1_logs": "第一层筛选日志（空）",
+        "layer2_logs": "第二层分析日志（空）",
+        "performance_logs": "性能日志（空）"
+      }
+    },
+    "excel_output": {
+      "path": "{project_root}/excel_output",
+      "description": "Excel标记输出",
+      "status": "active"
+    },
+    "excel_uploads": {
+      "path": "{project_root}/excel_uploads",
+      "description": "Excel上传文件存储",
+      "status": "active"
+    },
+    "ui_data": {
+      "path": "{project_root}/ui_data",
+      "description": "UI界面数据文件",
+      "status": "active"
+    },
+    "logs": {
+      "path": "{project_root}/logs",
+      "description": "系统日志目录",
+      "status": "active"
+    }
+  },
+  "production_paths": {
+    "core_modules": "{project_root}/production/core_modules",
+    "servers": "{project_root}/production/servers",
+    "scoring_engine": "{project_root}/production/scoring_engine",
+    "config": "{project_root}/production/config"
+  },
+  "issues": {
+    "scoring_results_mismatch": {
+      "problem": "integrated_scorer.py使用相对路径计算，导致scoring_results在parent_root而非project_root",
+      "impact": "高 - 核心功能路径错误",
+      "solution": "修改integrated_scorer.py使用统一配置路径"
+    },
+    "phantom_paths": {
+      "problem": "多个路径在文档中存在但实际未创建",
+      "paths": [
+        "csv_versions/comparison_cache",
+        "csv_versions/comparison",
+        "csv_versions/standard_outputs"
+      ],
+      "impact": "中 - 文档误导",
+      "solution": "删除文档中的幽灵路径或创建这些目录"
+    },
+    "downloads_cleanup": {
+      "problem": "downloads目录包含350+个UUID文件无清理机制",
+      "impact": "中 - 磁盘空间浪费",
+      "solution": "实现定期清理策略（建议7天）"
+    }
+  },
+  "recommendations": {
+    "immediate": [
+      "修复integrated_scorer.py的路径计算逻辑",
+      "创建PathManager类统一管理所有路径",
+      "实现downloads目录清理脚本"
+    ],
+    "short_term": [
+      "更新所有模块使用统一路径配置",
+      "删除文档中的幽灵路径引用",
+      "添加路径健康检查功能"
+    ],
+    "long_term": [
+      "实现路径版本迁移机制",
+      "建立路径监控和告警系统",
+      "文档自动化验证工具"
+    ]
+  }
+}

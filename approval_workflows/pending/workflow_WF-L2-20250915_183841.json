@@ -1,0 +1,33 @@
+{
+  "workflow_id": "WF-L2-20250915_183841",
+  "created_time": "2025-09-15 18:38:41",
+  "pending_approvals": [
+    {
+      "modification_id": "M001",
+      "cell": "C35",
+      "column": "项目类型",
+      "old_value": "目标管理",
+      "new_value": "",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 90.0,
+        "reason": "关键信息缺失"
+      },
+      "layer2_result": {
+        "risk_level": "CRITICAL",
+        "decision": "REJECT",
+        "confidence": 95,
+        "key_risks": [
+          "项目类型完全被清空会导致项目失去基本方向和分类标准",
+          "可能导致资源配置错误和执行计划混乱",
+          "团队协作将失去统一的标准和依据",
+          "项目交付时间可能因方向不明确而严重延迟"
+        ],
+        "recommendation": "建议：1)必须补充新的项目类型值；2)如果确实需要删除，应先评估影响并通知所有相关方；3)建议召开变更评审会议；4)变更后需要更新所有相关文档和计划"
+      },
+      "final_decision": "REJECT",
+      "approval_required": true
+    }
+  ],
+  "auto_approved": []
+}

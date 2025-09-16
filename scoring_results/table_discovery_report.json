@@ -1,0 +1,34 @@
+{
+  "total_tables": 3,
+  "modified_count": 2,
+  "unmodified_count": 1,
+  "tables": [
+    {
+      "table_name": "副本-测试版本-出国销售计划表",
+      "table_url": "https://docs.qq.com/sheet/DWEFNU25TemFnZXJN",
+      "doc_id": "DWEFNU25TemFnZXJN",
+      "is_modified": false,
+      "status": "UNMODIFIED",
+      "modifications_count": 0,
+      "aggregated_score": 0.0
+    },
+    {
+      "table_name": "副本-测试版本-回国销售计划表",
+      "table_url": "https://docs.qq.com/sheet/DWGZDZkxpaGVQaURr",
+      "doc_id": "DWGZDZkxpaGVQaURr",
+      "is_modified": false,
+      "status": "UNMODIFIED",
+      "modifications_count": 0,
+      "aggregated_score": 0.0
+    },
+    {
+      "table_name": "测试版本-小红书部门",
+      "table_url": "https://docs.qq.com/sheet/DWFJzdWNwd0RGbU5R",
+      "doc_id": "DWFJzdWNwd0RGbU5R",
+      "is_modified": false,
+      "status": "UNMODIFIED",
+      "modifications_count": 0,
+      "aggregated_score": 0.0
+    }
+  ]
+}

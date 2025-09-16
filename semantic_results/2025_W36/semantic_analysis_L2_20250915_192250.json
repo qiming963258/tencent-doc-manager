@@ -1,0 +1,48 @@
+{
+  "metadata": {
+    "analysis_time": "2025-09-15 19:22:50",
+    "total_modifications": 1,
+    "layer1_passed": 0,
+    "layer2_analyzed": 1,
+    "processing_time": "12.0s"
+  },
+  "results": [
+    {
+      "modification_id": "M001",
+      "cell": "C6",
+      "column": "项目类型",
+      "old_value": "目标管理",
+      "new_value": "经理日常交办,周会决策待办",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 75.0,
+        "reason": "范围扩大"
+      },
+      "layer2_result": {
+        "risk_level": "MEDIUM",
+        "decision": "REVIEW",
+        "confidence": 75,
+        "key_risks": [
+          "项目类型从单一目标变为复合类型，可能导致优先级冲突",
+          "日常交办和决策待办可能分散团队注意力",
+          "交付时间可能因工作性质改变而受影响"
+        ],
+        "recommendation": "建议召开项目类型变更评审会，明确：1)新项目类型的优先级排序标准 2)对应的工作流程调整 3)资源和时间的重新分配方案。在各方达成一致前暂缓变更实施。"
+      },
+      "final_decision": "REVIEW",
+      "approval_required": true
+    }
+  ],
+  "summary": {
+    "approved": 0,
+    "conditional": 0,
+    "review_required": 1,
+    "rejected": 0,
+    "risk_distribution": {
+      "LOW": 0,
+      "MEDIUM": 0,
+      "HIGH": 1,
+      "CRITICAL": 0
+    }
+  }
+}

@@ -1,0 +1,1361 @@
+{
+  "metadata": {
+    "week": "W03",
+    "generation_time": "2025-09-12 13:17:36",
+    "total_tables": 18,
+    "total_modifications": 67,
+    "scoring_version": "v1.0"
+  },
+  "table_scores": [
+    {
+      "table_name": "副本-测试版本-出国销售计划表",
+      "table_url": "https://docs.qq.com/sheet/DWFJzdWNwd0RGbU5R",
+      "modifications_count": 2,
+      "column_scores": {
+        "应用情况": {
+          "column_level": "L3",
+          "modifications": 1,
+          "scores": [
+            0.336
+          ],
+          "aggregated_score": 0.336,
+          "max_score": 0.336,
+          "min_score": 0.336,
+          "risk_trend": "stable",
+          "ai_decisions": null
+        },
+        "形成计划清单": {
+          "column_level": "L2",
+          "modifications": 1,
+          "scores": [
+            0.573
+          ],
+          "aggregated_score": 0.573,
+          "max_score": 0.573,
+          "min_score": 0.573,
+          "risk_trend": "stable",
+          "ai_decisions": null
+        }
+      },
+      "table_summary": {
+        "overall_risk_score": 0.455,
+        "risk_level": "LOW-MEDIUM",
+        "top_risks": [
+          {
+            "column": "形成计划清单",
+            "score": 0.573
+          },
+          {
+            "column": "应用情况",
+            "score": 0.336
+          }
+        ],
+        "recommended_action": "routine_check"
+      }
+    },
+    {
+      "table_name": "副本-测试版本-回国销售计划表",
+      "table_url": "https://docs.qq.com/sheet/DWGZDZkxpaGVQaURr",
+      "modifications_count": 6,
+      "column_scores": {
+        "对上汇报": {
+          "column_level": "L2",
+          "modifications": 1,
+          "scores": [
+            0.487
+          ],
+          "aggregated_score": 0.487,
+          "max_score": 0.487,
+          "min_score": 0.487,
+          "risk_trend": "stable",
+          "ai_decisions": null
+        },
+        "协助人": {
+          "column_level": "L3",
+          "modifications": 1,
+          "scores": [
+            0.134
+          ],
+          "aggregated_score": 0.134,
+          "max_score": 0.134,
+          "min_score": 0.134,
+          "risk_trend": "stable",
+          "ai_decisions": null
+        },
+        "任务发起时间": {
+          "column_level": "L1",
+          "modifications": 1,
+          "scores": [
+            0.92
+          ],
+          "aggregated_score": 0.92,
+          "max_score": 0.92,
+          "min_score": 0.92,
+          "risk_trend": "stable",
+          "ai_decisions": null
+        },
+        "重要程度": {
+          "column_level": "L1",
+          "modifications": 1,
+          "scores": [
+            0.922
+          ],
+          "aggregated_score": 0.922,
+          "max_score": 0.922,
+          "min_score": 0.922,
+          "risk_trend": "stable",
+          "ai_decisions": {
+            "CONDITIONAL": 1
+          }
+        },
+        "形成计划清单": {
+          "column_level": "L2",
+          "modifications": 1,
+          "scores": [
+            0.511
+          ],
+          "aggregated_score": 0.511,
+          "max_score": 0.511,
+          "min_score": 0.511,
+          "risk_trend": "stable",
+          "ai_decisions": null
+        },
+        "邓总指导登记": {
+          "column_level": "L2",
+          "modifications": 1,
+          "scores": [
+            0.47
+          ],
+          "aggregated_score": 0.47,
+          "max_score": 0.47,
+          "min_score": 0.47,
+          "risk_trend": "stable",
+          "ai_decisions": null
+        }
+      },
+      "table_summary": {
+        "overall_risk_score": 0.574,
+        "risk_level": "MEDIUM",
+        "top_risks": [
+          {
+            "column": "重要程度",
+            "score": 0.922
+          },
+          {
+            "column": "任务发起时间",
+            "score": 0.92
+          },
+          {
+            "column": "形成计划清单",
+            "score": 0.511
+          }
+        ],
+        "recommended_action": "manual_review"
+      }
+    },
+    {
+      "table_name": "测试版本-小红书部门",
+      "table_url": "https://docs.qq.com/sheet/DWGZDZkxpaGVQaURr",
+      "modifications_count": 2,
+      "column_scores": {
+        "形成计划清单": {
+          "column_level": "L2",
+          "modifications": 1,
+          "scores": [
+            0.588
+          ],
+          "aggregated_score": 0.588,
+          "max_score": 0.588,
+          "min_score": 0.588,
+          "risk_trend": "stable",
+          "ai_decisions": null
+        },
+        "备注说明": {
+          "column_level": "L3",
+          "modifications": 1,
+          "scores": [
+            0.162
+          ],
+          "aggregated_score": 0.162,
+          "max_score": 0.162,
+          "min_score": 0.162,
+          "risk_trend": "stable",
+          "ai_decisions": null
+        }
+      },
+      "table_summary": {
+        "overall_risk_score": 0.375,
+        "risk_level": "LOW-MEDIUM",
+        "top_risks": [
+          {
+            "column": "形成计划清单",
+            "score": 0.588
+          },
+          {
+            "column": "备注说明",
+            "score": 0.162
+          }
+        ],
+        "recommended_action": "routine_check"
+      }
+    },
+    {
+      "table_name": "测试版本-抖音运营",
+      "table_url": "https://docs.qq.com/sheet/DWGZDZkxpaGVQaURr",
+      "modifications_count": 3,
+      "column_scores": {
+        "任务发起时间": {
+          "column_level": "L1",
+          "modifications": 1,
+          "scores": [
+            0.975
+          ],
+          "aggregated_score": 0.975,
+          "max_score": 0.975,
+          "min_score": 0.975,
+          "risk_trend": "stable",
+          "ai_decisions": {
+            "APPROVE": 1
+          }
+        },
+        "对上汇报": {
+          "column_level": "L2",
+          "modifications": 1,
+          "scores": [
+            0.428
+          ],
+          "aggregated_score": 0.428,
+          "max_score": 0.428,
+          "min_score": 0.428,
+          "risk_trend": "stable",
+          "ai_decisions": null
+        },
+        "关键KR对齐": {
+          "column_level": "L1",
+          "modifications": 1,
+          "scores": [
+            0.897
+          ],
+          "aggregated_score": 0.897,
+          "max_score": 0.897,
+          "min_score": 0.897,
+          "risk_trend": "stable",
+          "ai_decisions": {
+            "REVIEW": 1
+          }
+        }
+      },
+      "table_summary": {
+        "overall_risk_score": 0.767,
+        "risk_level": "HIGH",
+        "top_risks": [
+          {
+            "column": "任务发起时间",
+            "score": 0.975
+          },
+          {
+            "column": "关键KR对齐",
+            "score": 0.897
+          },
+          {
+            "column": "对上汇报",
+            "score": 0.428
+          }
+        ],
+        "recommended_action": "priority_review"
+      }
+    },
+    {
+      "table_name": "测试版本-B站推广",
+      "table_url": "https://docs.qq.com/sheet/DWGZDZkxpaGVQaURr",
+      "modifications_count": 2,
+      "column_scores": {
+        "完成进度": {
+          "column_level": "L2",
+          "modifications": 1,
+          "scores": [
+            0.688
+          ],
+          "aggregated_score": 0.688,
+          "max_score": 0.688,
+          "min_score": 0.688,
+          "risk_trend": "stable",
+          "ai_decisions": {
+            "REVIEW": 1
+          }
+        },
+        "序号": {
+          "column_level": "L3",
+          "modifications": 1,
+          "scores": [
+            0.328
+          ],
+          "aggregated_score": 0.328,
+          "max_score": 0.328,
+          "min_score": 0.328,
+          "risk_trend": "stable",
+          "ai_decisions": null
+        }
+      },
+      "table_summary": {
+        "overall_risk_score": 0.508,
+        "risk_level": "MEDIUM",
+        "top_risks": [
+          {
+            "column": "完成进度",
+            "score": 0.688
+          },
+          {
+            "column": "序号",
+            "score": 0.328
+          }
+        ],
+        "recommended_action": "manual_review"
+      }
+    },
+    {
+      "table_name": "副本-产品研发进度表",
+      "table_url": "https://docs.qq.com/sheet/DWFJzdWNwd0RGbU5R",
+      "modifications_count": 7,
+      "column_scores": {
+        "审批状态": {
+          "column_level": "L2",
+          "modifications": 1,
+          "scores": [
+            0.688
+          ],
+          "aggregated_score": 0.688,
+          "max_score": 0.688,
+          "min_score": 0.688,
+          "risk_trend": "stable",
+          "ai_decisions": {
+            "CONDITIONAL": 1
+          }
+        },
+        "任务状态": {
+          "column_level": "L1",
+          "modifications": 1,
+          "scores": [
+            0.952
+          ],
+          "aggregated_score": 0.952,
+          "max_score": 0.952,
+          "min_score": 0.952,
+          "risk_trend": "stable",
+          "ai_decisions": {
+            "APPROVE": 1
+          }
+        },
+        "协助人": {
+          "column_level": "L3",
+          "modifications": 1,
+          "scores": [
+            0.125
+          ],
+          "aggregated_score": 0.125,
+          "max_score": 0.125,
+          "min_score": 0.125,
+          "risk_trend": "stable",
+          "ai_decisions": null
+        },
+        "形成计划清单": {
+          "column_level": "L2",
+          "modifications": 1,
+          "scores": [
+            0.635
+          ],
+          "aggregated_score": 0.635,
+          "max_score": 0.635,
+          "min_score": 0.635,
+          "risk_trend": "stable",
+          "ai_decisions": {
+            "APPROVE": 1
+          }
+        },
+        "风险等级": {
+          "column_level": "L2",
+          "modifications": 1,
+          "scores": [
+            0.622
+          ],
+          "aggregated_score": 0.622,
+          "max_score": 0.622,
+          "min_score": 0.622,
+          "risk_trend": "stable",
+          "ai_decisions": null
+        },
+        "任务发起时间": {
+          "column_level": "L1",
+          "modifications": 1,
+          "scores": [
+            0.985
+          ],
+          "aggregated_score": 0.985,
+          "max_score": 0.985,
+          "min_score": 0.985,
+          "risk_trend": "stable",
+          "ai_decisions": null
+        },
+        "备注说明": {
+          "column_level": "L3",
+          "modifications": 1,
+          "scores": [
+            0.333
+          ],
+          "aggregated_score": 0.333,
+          "max_score": 0.333,
+          "min_score": 0.333,
+          "risk_trend": "stable",
+          "ai_decisions": null
+        }
+      },
+      "table_summary": {
+        "overall_risk_score": 0.62,
+        "risk_level": "MEDIUM",
+        "top_risks": [
+          {
+            "column": "任务发起时间",
+            "score": 0.985
+          },
+          {
+            "column": "任务状态",
+            "score": 0.952
+          },
+          {
+            "column": "审批状态",
+            "score": 0.688
+          }
+        ],
+        "recommended_action": "manual_review"
+      }
+    },
+    {
+      "table_name": "副本-市场调研报告",
+      "table_url": "https://docs.qq.com/sheet/DWEFNU25TemFnZXJN",
+      "modifications_count": 2,
+      "column_scores": {
+        "序号": {
+          "column_level": "L3",
+          "modifications": 1,
+          "scores": [
+            0.392
+          ],
+          "aggregated_score": 0.392,
+          "max_score": 0.392,
+          "min_score": 0.392,
+          "risk_trend": "stable",
+          "ai_decisions": null
+        },
+        "风险等级": {
+          "column_level": "L2",
+          "modifications": 1,
+          "scores": [
+            0.53
+          ],
+          "aggregated_score": 0.53,
+          "max_score": 0.53,
+          "min_score": 0.53,
+          "risk_trend": "stable",
+          "ai_decisions": null
+        }
+      },
+      "table_summary": {
+        "overall_risk_score": 0.461,
+        "risk_level": "LOW-MEDIUM",
+        "top_risks": [
+          {
+            "column": "风险等级",
+            "score": 0.53
+          },
+          {
+            "column": "序号",
+            "score": 0.392
+          }
+        ],
+        "recommended_action": "routine_check"
+      }
+    },
+    {
+      "table_name": "测试版本-客户反馈汇总",
+      "table_url": "https://docs.qq.com/sheet/DWGZDZkxpaGVQaURr",
+      "modifications_count": 3,
+      "column_scores": {
+        "预计完成时间": {
+          "column_level": "L1",
+          "modifications": 1,
+          "scores": [
+            0.812
+          ],
+          "aggregated_score": 0.812,
+          "max_score": 0.812,
+          "min_score": 0.812,
+          "risk_trend": "stable",
+          "ai_decisions": null
+        },
+        "序号": {
+          "column_level": "L3",
+          "modifications": 1,
+          "scores": [
+            0.256
+          ],
+          "aggregated_score": 0.256,
+          "max_score": 0.256,
+          "min_score": 0.256,
+          "risk_trend": "stable",
+          "ai_decisions": null
+        },
+        "审批状态": {
+          "column_level": "L2",
+          "modifications": 1,
+          "scores": [
+            0.688
+          ],
+          "aggregated_score": 0.688,
+          "max_score": 0.688,
+          "min_score": 0.688,
+          "risk_trend": "stable",
+          "ai_decisions": null
+        }
+      },
+      "table_summary": {
+        "overall_risk_score": 0.585,
+        "risk_level": "MEDIUM",
+        "top_risks": [
+          {
+            "column": "预计完成时间",
+            "score": 0.812
+          },
+          {
+            "column": "审批状态",
+            "score": 0.688
+          },
+          {
+            "column": "序号",
+            "score": 0.256
+          }
+        ],
+        "recommended_action": "manual_review"
+      }
+    },
+    {
+      "table_name": "副本-财务预算规划",
+      "table_url": "https://docs.qq.com/sheet/DWGZDZkxpaGVQaURr",
+      "modifications_count": 3,
+      "column_scores": {
+        "任务状态": {
+          "column_level": "L1",
+          "modifications": 1,
+          "scores": [
+            0.887
+          ],
+          "aggregated_score": 0.887,
+          "max_score": 0.887,
+          "min_score": 0.887,
+          "risk_trend": "stable",
+          "ai_decisions": null
+        },
+        "邓总指导登记": {
+          "column_level": "L2",
+          "modifications": 1,
+          "scores": [
+            0.425
+          ],
+          "aggregated_score": 0.425,
+          "max_score": 0.425,
+          "min_score": 0.425,
+          "risk_trend": "stable",
+          "ai_decisions": {
+            "APPROVE": 1
+          }
+        },
+        "序号": {
+          "column_level": "L3",
+          "modifications": 1,
+          "scores": [
+            0.261
+          ],
+          "aggregated_score": 0.261,
+          "max_score": 0.261,
+          "min_score": 0.261,
+          "risk_trend": "stable",
+          "ai_decisions": null
+        }
+      },
+      "table_summary": {
+        "overall_risk_score": 0.524,
+        "risk_level": "MEDIUM",
+        "top_risks": [
+          {
+            "column": "任务状态",
+            "score": 0.887
+          },
+          {
+            "column": "邓总指导登记",
+            "score": 0.425
+          },
+          {
+            "column": "序号",
+            "score": 0.261
+          }
+        ],
+        "recommended_action": "manual_review"
+      }
+    },
+    {
+      "table_name": "测试版本-人力资源配置",
+      "table_url": "https://docs.qq.com/sheet/DWGZDZkxpaGVQaURr",
+      "modifications_count": 3,
+      "column_scores": {
+        "预计完成时间": {
+          "column_level": "L1",
+          "modifications": 1,
+          "scores": [
+            0.929
+          ],
+          "aggregated_score": 0.929,
+          "max_score": 0.929,
+          "min_score": 0.929,
+          "risk_trend": "stable",
+          "ai_decisions": {
+            "REVIEW": 1
+          }
+        },
+        "风险等级": {
+          "column_level": "L2",
+          "modifications": 1,
+          "scores": [
+            0.401
+          ],
+          "aggregated_score": 0.401,
+          "max_score": 0.401,
+          "min_score": 0.401,
+          "risk_trend": "stable",
+          "ai_decisions": null
+        },
+        "重要程度": {
+          "column_level": "L1",
+          "modifications": 1,
+          "scores": [
+            0.952
+          ],
+          "aggregated_score": 0.952,
+          "max_score": 0.952,
+          "min_score": 0.952,
+          "risk_trend": "stable",
+          "ai_decisions": null
+        }
+      },
+      "table_summary": {
+        "overall_risk_score": 0.761,
+        "risk_level": "HIGH",
+        "top_risks": [
+          {
+            "column": "重要程度",
+            "score": 0.952
+          },
+          {
+            "column": "预计完成时间",
+            "score": 0.929
+          },
+          {
+            "column": "风险等级",
+            "score": 0.401
+          }
+        ],
+        "recommended_action": "priority_review"
+      }
+    },
+    {
+      "table_name": "副本-供应链管理",
+      "table_url": "https://docs.qq.com/sheet/DWFJzdWNwd0RGbU5R",
+      "modifications_count": 7,
+      "column_scores": {
+        "序号": {
+          "column_level": "L3",
+          "modifications": 1,
+          "scores": [
+            0.398
+          ],
+          "aggregated_score": 0.398,
+          "max_score": 0.398,
+          "min_score": 0.398,
+          "risk_trend": "stable",
+          "ai_decisions": null
+        },
+        "任务发起时间": {
+          "column_level": "L1",
+          "modifications": 1,
+          "scores": [
+            0.722
+          ],
+          "aggregated_score": 0.722,
+          "max_score": 0.722,
+          "min_score": 0.722,
+          "risk_trend": "stable",
+          "ai_decisions": {
+            "REVIEW": 1
+          }
+        },
+        "应用情况": {
+          "column_level": "L3",
+          "modifications": 1,
+          "scores": [
+            0.265
+          ],
+          "aggregated_score": 0.265,
+          "max_score": 0.265,
+          "min_score": 0.265,
+          "risk_trend": "stable",
+          "ai_decisions": null
+        },
+        "审批状态": {
+          "column_level": "L2",
+          "modifications": 1,
+          "scores": [
+            0.595
+          ],
+          "aggregated_score": 0.595,
+          "max_score": 0.595,
+          "min_score": 0.595,
+          "risk_trend": "stable",
+          "ai_decisions": {
+            "REVIEW": 1
+          }
+        },
+        "负责人": {
+          "column_level": "L2",
+          "modifications": 1,
+          "scores": [
+            0.622
+          ],
+          "aggregated_score": 0.622,
+          "max_score": 0.622,
+          "min_score": 0.622,
+          "risk_trend": "stable",
+          "ai_decisions": null
+        },
+        "重要程度": {
+          "column_level": "L1",
+          "modifications": 1,
+          "scores": [
+            0.749
+          ],
+          "aggregated_score": 0.749,
+          "max_score": 0.749,
+          "min_score": 0.749,
+          "risk_trend": "stable",
+          "ai_decisions": null
+        },
+        "任务状态": {
+          "column_level": "L1",
+          "modifications": 1,
+          "scores": [
+            0.772
+          ],
+          "aggregated_score": 0.772,
+          "max_score": 0.772,
+          "min_score": 0.772,
+          "risk_trend": "stable",
+          "ai_decisions": {
+            "REVIEW": 1
+          }
+        }
+      },
+      "table_summary": {
+        "overall_risk_score": 0.589,
+        "risk_level": "MEDIUM",
+        "top_risks": [
+          {
+            "column": "任务状态",
+            "score": 0.772
+          },
+          {
+            "column": "重要程度",
+            "score": 0.749
+          },
+          {
+            "column": "任务发起时间",
+            "score": 0.722
+          }
+        ],
+        "recommended_action": "manual_review"
+      }
+    },
+    {
+      "table_name": "测试版本-质量控制报告",
+      "table_url": "https://docs.qq.com/sheet/DWEFNU25TemFnZXJN",
+      "modifications_count": 8,
+      "column_scores": {
+        "验收标准": {
+          "column_level": "L3",
+          "modifications": 1,
+          "scores": [
+            0.372
+          ],
+          "aggregated_score": 0.372,
+          "max_score": 0.372,
+          "min_score": 0.372,
+          "risk_trend": "stable",
+          "ai_decisions": null
+        },
+        "形成计划清单": {
+          "column_level": "L2",
+          "modifications": 1,
+          "scores": [
+            0.425
+          ],
+          "aggregated_score": 0.425,
+          "max_score": 0.425,
+          "min_score": 0.425,
+          "risk_trend": "stable",
+          "ai_decisions": {
+            "APPROVE": 1
+          }
+        },
+        "关键KR对齐": {
+          "column_level": "L1",
+          "modifications": 1,
+          "scores": [
+            0.986
+          ],
+          "aggregated_score": 0.986,
+          "max_score": 0.986,
+          "min_score": 0.986,
+          "risk_trend": "stable",
+          "ai_decisions": null
+        },
+        "对上汇报": {
+          "column_level": "L2",
+          "modifications": 1,
+          "scores": [
+            0.59
+          ],
+          "aggregated_score": 0.59,
+          "max_score": 0.59,
+          "min_score": 0.59,
+          "risk_trend": "stable",
+          "ai_decisions": null
+        },
+        "重要程度": {
+          "column_level": "L1",
+          "modifications": 1,
+          "scores": [
+            0.972
+          ],
+          "aggregated_score": 0.972,
+          "max_score": 0.972,
+          "min_score": 0.972,
+          "risk_trend": "stable",
+          "ai_decisions": null
+        },
+        "任务状态": {
+          "column_level": "L1",
+          "modifications": 1,
+          "scores": [
+            0.913
+          ],
+          "aggregated_score": 0.913,
+          "max_score": 0.913,
+          "min_score": 0.913,
+          "risk_trend": "stable",
+          "ai_decisions": {
+            "CONDITIONAL": 1
+          }
+        },
+        "任务发起时间": {
+          "column_level": "L1",
+          "modifications": 1,
+          "scores": [
+            0.701
+          ],
+          "aggregated_score": 0.701,
+          "max_score": 0.701,
+          "min_score": 0.701,
+          "risk_trend": "stable",
+          "ai_decisions": null
+        },
+        "备注说明": {
+          "column_level": "L3",
+          "modifications": 1,
+          "scores": [
+            0.281
+          ],
+          "aggregated_score": 0.281,
+          "max_score": 0.281,
+          "min_score": 0.281,
+          "risk_trend": "stable",
+          "ai_decisions": null
+        }
+      },
+      "table_summary": {
+        "overall_risk_score": 0.655,
+        "risk_level": "MEDIUM",
+        "top_risks": [
+          {
+            "column": "关键KR对齐",
+            "score": 0.986
+          },
+          {
+            "column": "重要程度",
+            "score": 0.972
+          },
+          {
+            "column": "任务状态",
+            "score": 0.913
+          }
+        ],
+        "recommended_action": "manual_review"
+      }
+    },
+    {
+      "table_name": "副本-项目风险评估",
+      "table_url": "https://docs.qq.com/sheet/DWEFNU25TemFnZXJN",
+      "modifications_count": 6,
+      "column_scores": {
+        "协助人": {
+          "column_level": "L3",
+          "modifications": 1,
+          "scores": [
+            0.148
+          ],
+          "aggregated_score": 0.148,
+          "max_score": 0.148,
+          "min_score": 0.148,
+          "risk_trend": "stable",
+          "ai_decisions": null
+        },
+        "备注说明": {
+          "column_level": "L3",
+          "modifications": 1,
+          "scores": [
+            0.125
+          ],
+          "aggregated_score": 0.125,
+          "max_score": 0.125,
+          "min_score": 0.125,
+          "risk_trend": "stable",
+          "ai_decisions": null
+        },
+        "序号": {
+          "column_level": "L3",
+          "modifications": 1,
+          "scores": [
+            0.386
+          ],
+          "aggregated_score": 0.386,
+          "max_score": 0.386,
+          "min_score": 0.386,
+          "risk_trend": "stable",
+          "ai_decisions": null
+        },
+        "重要程度": {
+          "column_level": "L1",
+          "modifications": 1,
+          "scores": [
+            0.989
+          ],
+          "aggregated_score": 0.989,
+          "max_score": 0.989,
+          "min_score": 0.989,
+          "risk_trend": "stable",
+          "ai_decisions": null
+        },
+        "应用情况": {
+          "column_level": "L3",
+          "modifications": 1,
+          "scores": [
+            0.248
+          ],
+          "aggregated_score": 0.248,
+          "max_score": 0.248,
+          "min_score": 0.248,
+          "risk_trend": "stable",
+          "ai_decisions": null
+        },
+        "验收标准": {
+          "column_level": "L3",
+          "modifications": 1,
+          "scores": [
+            0.33
+          ],
+          "aggregated_score": 0.33,
+          "max_score": 0.33,
+          "min_score": 0.33,
+          "risk_trend": "stable",
+          "ai_decisions": null
+        }
+      },
+      "table_summary": {
+        "overall_risk_score": 0.371,
+        "risk_level": "LOW-MEDIUM",
+        "top_risks": [
+          {
+            "column": "重要程度",
+            "score": 0.989
+          },
+          {
+            "column": "序号",
+            "score": 0.386
+          },
+          {
+            "column": "验收标准",
+            "score": 0.33
+          }
+        ],
+        "recommended_action": "routine_check"
+      }
+    },
+    {
+      "table_name": "测试版本-合作伙伴管理",
+      "table_url": "https://docs.qq.com/sheet/DWFJzdWNwd0RGbU5R",
+      "modifications_count": 2,
+      "column_scores": {
+        "任务发起时间": {
+          "column_level": "L1",
+          "modifications": 1,
+          "scores": [
+            0.946
+          ],
+          "aggregated_score": 0.946,
+          "max_score": 0.946,
+          "min_score": 0.946,
+          "risk_trend": "stable",
+          "ai_decisions": null
+        },
+        "任务状态": {
+          "column_level": "L1",
+          "modifications": 1,
+          "scores": [
+            0.877
+          ],
+          "aggregated_score": 0.877,
+          "max_score": 0.877,
+          "min_score": 0.877,
+          "risk_trend": "stable",
+          "ai_decisions": {
+            "CONDITIONAL": 1
+          }
+        }
+      },
+      "table_summary": {
+        "overall_risk_score": 0.911,
+        "risk_level": "HIGH",
+        "top_risks": [
+          {
+            "column": "任务发起时间",
+            "score": 0.946
+          },
+          {
+            "column": "任务状态",
+            "score": 0.877
+          }
+        ],
+        "recommended_action": "priority_review"
+      }
+    },
+    {
+      "table_name": "副本-技术架构设计",
+      "table_url": "https://docs.qq.com/sheet/DWEFNU25TemFnZXJN",
+      "modifications_count": 4,
+      "column_scores": {
+        "任务发起时间": {
+          "column_level": "L1",
+          "modifications": 1,
+          "scores": [
+            0.801
+          ],
+          "aggregated_score": 0.801,
+          "max_score": 0.801,
+          "min_score": 0.801,
+          "risk_trend": "stable",
+          "ai_decisions": null
+        },
+        "审批状态": {
+          "column_level": "L2",
+          "modifications": 1,
+          "scores": [
+            0.404
+          ],
+          "aggregated_score": 0.404,
+          "max_score": 0.404,
+          "min_score": 0.404,
+          "risk_trend": "stable",
+          "ai_decisions": {
+            "REVIEW": 1
+          }
+        },
+        "应用情况": {
+          "column_level": "L3",
+          "modifications": 1,
+          "scores": [
+            0.331
+          ],
+          "aggregated_score": 0.331,
+          "max_score": 0.331,
+          "min_score": 0.331,
+          "risk_trend": "stable",
+          "ai_decisions": null
+        },
+        "邓总指导登记": {
+          "column_level": "L2",
+          "modifications": 1,
+          "scores": [
+            0.642
+          ],
+          "aggregated_score": 0.642,
+          "max_score": 0.642,
+          "min_score": 0.642,
+          "risk_trend": "stable",
+          "ai_decisions": null
+        }
+      },
+      "table_summary": {
+        "overall_risk_score": 0.544,
+        "risk_level": "MEDIUM",
+        "top_risks": [
+          {
+            "column": "任务发起时间",
+            "score": 0.801
+          },
+          {
+            "column": "邓总指导登记",
+            "score": 0.642
+          },
+          {
+            "column": "审批状态",
+            "score": 0.404
+          }
+        ],
+        "recommended_action": "manual_review"
+      }
+    },
+    {
+      "table_name": "测试版本-用户体验优化",
+      "table_url": "https://docs.qq.com/sheet/DWFJzdWNwd0RGbU5R",
+      "modifications_count": 3,
+      "column_scores": {
+        "完成进度": {
+          "column_level": "L2",
+          "modifications": 1,
+          "scores": [
+            0.411
+          ],
+          "aggregated_score": 0.411,
+          "max_score": 0.411,
+          "min_score": 0.411,
+          "risk_trend": "stable",
+          "ai_decisions": {
+            "APPROVE": 1
+          }
+        },
+        "审批状态": {
+          "column_level": "L2",
+          "modifications": 1,
+          "scores": [
+            0.444
+          ],
+          "aggregated_score": 0.444,
+          "max_score": 0.444,
+          "min_score": 0.444,
+          "risk_trend": "stable",
+          "ai_decisions": {
+            "REVIEW": 1
+          }
+        },
+        "预计完成时间": {
+          "column_level": "L1",
+          "modifications": 1,
+          "scores": [
+            0.799
+          ],
+          "aggregated_score": 0.799,
+          "max_score": 0.799,
+          "min_score": 0.799,
+          "risk_trend": "stable",
+          "ai_decisions": {
+            "REVIEW": 1
+          }
+        }
+      },
+      "table_summary": {
+        "overall_risk_score": 0.551,
+        "risk_level": "MEDIUM",
+        "top_risks": [
+          {
+            "column": "预计完成时间",
+            "score": 0.799
+          },
+          {
+            "column": "审批状态",
+            "score": 0.444
+          },
+          {
+            "column": "完成进度",
+            "score": 0.411
+          }
+        ],
+        "recommended_action": "manual_review"
+      }
+    },
+    {
+      "table_name": "副本-数据分析报告",
+      "table_url": "https://docs.qq.com/sheet/DWEFNU25TemFnZXJN",
+      "modifications_count": 2,
+      "column_scores": {
+        "协助人": {
+          "column_level": "L3",
+          "modifications": 1,
+          "scores": [
+            0.378
+          ],
+          "aggregated_score": 0.378,
+          "max_score": 0.378,
+          "min_score": 0.378,
+          "risk_trend": "stable",
+          "ai_decisions": null
+        },
+        "邓总指导登记": {
+          "column_level": "L2",
+          "modifications": 1,
+          "scores": [
+            0.482
+          ],
+          "aggregated_score": 0.482,
+          "max_score": 0.482,
+          "min_score": 0.482,
+          "risk_trend": "stable",
+          "ai_decisions": null
+        }
+      },
+      "table_summary": {
+        "overall_risk_score": 0.43,
+        "risk_level": "LOW-MEDIUM",
+        "top_risks": [
+          {
+            "column": "邓总指导登记",
+            "score": 0.482
+          },
+          {
+            "column": "协助人",
+            "score": 0.378
+          }
+        ],
+        "recommended_action": "routine_check"
+      }
+    },
+    {
+      "table_name": "测试版本-法务合规审查",
+      "table_url": "https://docs.qq.com/sheet/DWFJzdWNwd0RGbU5R",
+      "modifications_count": 2,
+      "column_scores": {
+        "项目类型": {
+          "column_level": "L2",
+          "modifications": 1,
+          "scores": [
+            0.624
+          ],
+          "aggregated_score": 0.624,
+          "max_score": 0.624,
+          "min_score": 0.624,
+          "risk_trend": "stable",
+          "ai_decisions": {
+            "CONDITIONAL": 1
+          }
+        },
+        "序号": {
+          "column_level": "L3",
+          "modifications": 1,
+          "scores": [
+            0.249
+          ],
+          "aggregated_score": 0.249,
+          "max_score": 0.249,
+          "min_score": 0.249,
+          "risk_trend": "stable",
+          "ai_decisions": null
+        }
+      },
+      "table_summary": {
+        "overall_risk_score": 0.436,
+        "risk_level": "LOW-MEDIUM",
+        "top_risks": [
+          {
+            "column": "项目类型",
+            "score": 0.624
+          },
+          {
+            "column": "序号",
+            "score": 0.249
+          }
+        ],
+        "recommended_action": "routine_check"
+      }
+    }
+  ],
+  "cross_table_analysis": {
+    "column_risk_ranking": [
+      {
+        "column": "关键KR对齐",
+        "avg_score": 0.942,
+        "tables_affected": 2
+      },
+      {
+        "column": "重要程度",
+        "avg_score": 0.917,
+        "tables_affected": 5
+      },
+      {
+        "column": "任务状态",
+        "avg_score": 0.88,
+        "tables_affected": 5
+      },
+      {
+        "column": "任务发起时间",
+        "avg_score": 0.864,
+        "tables_affected": 7
+      },
+      {
+        "column": "预计完成时间",
+        "avg_score": 0.847,
+        "tables_affected": 3
+      },
+      {
+        "column": "项目类型",
+        "avg_score": 0.624,
+        "tables_affected": 1
+      },
+      {
+        "column": "负责人",
+        "avg_score": 0.622,
+        "tables_affected": 1
+      },
+      {
+        "column": "审批状态",
+        "avg_score": 0.564,
+        "tables_affected": 5
+      },
+      {
+        "column": "完成进度",
+        "avg_score": 0.549,
+        "tables_affected": 2
+      },
+      {
+        "column": "形成计划清单",
+        "avg_score": 0.546,
+        "tables_affected": 5
+      }
+    ],
+    "pattern_detection": {
+      "systematic_changes": [],
+      "anomalies": []
+    },
+    "overall_metrics": {
+      "system_risk_score": 0.562,
+      "risk_level": "MEDIUM",
+      "total_high_risks": 3,
+      "total_critical_changes": 17,
+      "ai_intervention_rate": "38%",
+      "token_efficiency": "97.9%"
+    }
+  }
+}

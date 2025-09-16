@@ -1,0 +1,32 @@
+{
+  "workflow_id": "WF-L2-20250915_151921",
+  "created_time": "2025-09-15 15:19:21",
+  "pending_approvals": [],
+  "auto_approved": [
+    {
+      "modification_id": "M001",
+      "cell": "K68",
+      "column": "监督人",
+      "old_value": "徐志杰",
+      "new_value": "邓俊,杨顺鑫",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 80.0,
+        "reason": "监督人变更"
+      },
+      "layer2_result": {
+        "risk_level": "MEDIUM",
+        "decision": "CONDITIONAL",
+        "confidence": 75,
+        "key_risks": [
+          "监督职责分散风险：从单人监督变为多人监督可能导致职责边界模糊",
+          "沟通效率风险：多人监督需要额外协调，可能影响决策效率",
+          "信息不对称风险：新监督人需要时间熟悉项目背景"
+        ],
+        "recommendation": "建议：1.明确两位监督人的具体职责分工 2.安排项目交接会议确保信息对称 3.在项目文档中记录变更原因 4.设置两周的过渡评估期"
+      },
+      "final_decision": "CONDITIONAL",
+      "approval_required": false
+    }
+  ]
+}

@@ -1,0 +1,48 @@
+{
+  "metadata": {
+    "analysis_time": "2025-09-12 15:33:18",
+    "total_modifications": 1,
+    "layer1_passed": 0,
+    "layer2_analyzed": 1,
+    "processing_time": "11.4s"
+  },
+  "results": [
+    {
+      "modification_id": "M001",
+      "cell": "J12",
+      "column": "负责人",
+      "old_value": "赖铁荔",
+      "new_value": "赖铁荔,各责任人",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 75.0,
+        "reason": "多人负责"
+      },
+      "layer2_result": {
+        "risk_level": "MEDIUM",
+        "decision": "CONDITIONAL",
+        "confidence": 75,
+        "key_risks": [
+          "责任主体模糊化可能导致执行效率下降",
+          "多责任人机制可能导致工作推诿",
+          "信息传递路径复杂化"
+        ],
+        "recommendation": "建议：1.明确各责任人的具体职责范围；2.建立协调机制；3.在修改说明中补充变更原因和预期管理方式；4.通知相关干系人。需满足这些条件方可批准修改。"
+      },
+      "final_decision": "CONDITIONAL",
+      "approval_required": false
+    }
+  ],
+  "summary": {
+    "approved": 0,
+    "conditional": 1,
+    "review_required": 0,
+    "rejected": 0,
+    "risk_distribution": {
+      "LOW": 0,
+      "MEDIUM": 0,
+      "HIGH": 0,
+      "CRITICAL": 0
+    }
+  }
+}

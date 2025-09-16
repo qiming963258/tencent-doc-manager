@@ -1,0 +1,33 @@
+{
+  "workflow_id": "WF-L2-20250915_150409",
+  "created_time": "2025-09-15 15:04:09",
+  "pending_approvals": [
+    {
+      "modification_id": "M001",
+      "cell": "I52",
+      "column": "负责人",
+      "old_value": "蔡悦莹",
+      "new_value": "",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 90.0,
+        "reason": "关键人缺失"
+      },
+      "layer2_result": {
+        "risk_level": "HIGH",
+        "decision": "REVIEW",
+        "confidence": 85,
+        "key_risks": [
+          "负责人信息清空导致责任归属不明确",
+          "可能导致任务执行停滞",
+          "影响团队沟通协调",
+          "影响进度跟踪和问责"
+        ],
+        "recommendation": "建议立即补充负责人信息或说明清空原因。如需变更负责人，请提供新负责人信息并确保交接工作已完成。在未确定新负责人前，建议保留原负责人信息。"
+      },
+      "final_decision": "REVIEW",
+      "approval_required": true
+    }
+  ],
+  "auto_approved": []
+}

@@ -1,0 +1,31 @@
+{
+  "workflow_id": "WF-L2-20250915_151759",
+  "created_time": "2025-09-15 15:17:59",
+  "pending_approvals": [
+    {
+      "modification_id": "M001",
+      "cell": "J67",
+      "column": "协助人",
+      "old_value": "朱瀚桔,杨佳玲,曾利萍",
+      "new_value": "王寒晓",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 80.0,
+        "reason": "人员变更"
+      },
+      "layer2_result": {
+        "risk_level": "MEDIUM",
+        "decision": "REVIEW",
+        "confidence": 75,
+        "key_risks": [
+          "团队协作能力可能受影响",
+          "项目执行效率可能降低"
+        ],
+        "recommendation": "建议与项目负责人及原协助人确认变更原因，并评估新协助人王寒晓是否具有足够能力承担相应职责。"
+      },
+      "final_decision": "REVIEW",
+      "approval_required": true
+    }
+  ],
+  "auto_approved": []
+}

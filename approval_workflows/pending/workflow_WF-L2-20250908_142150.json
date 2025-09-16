@@ -1,0 +1,32 @@
+{
+  "workflow_id": "WF-L2-20250908_142150",
+  "created_time": "2025-09-08 14:21:50",
+  "pending_approvals": [],
+  "auto_approved": [
+    {
+      "modification_id": "M001",
+      "cell": "J12",
+      "column": "负责人",
+      "old_value": "赖铁荔",
+      "new_value": "赖铁荔,各责任人",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 75.0,
+        "reason": "责任分散"
+      },
+      "layer2_result": {
+        "risk_level": "MEDIUM",
+        "decision": "CONDITIONAL",
+        "confidence": 75,
+        "key_risks": [
+          "职责分散导致的执行效率降低",
+          "多责任人可能引发的责任推诿",
+          "协作复杂度增加"
+        ],
+        "recommendation": "建议明确各责任人的具体分工和职责边界，并建立定期沟通机制确保协同工作。同时需要更新相关项目文档中对负责人职责的描述，确保所有团队成员理解新的责任分配。"
+      },
+      "final_decision": "CONDITIONAL",
+      "approval_required": false
+    }
+  ]
+}

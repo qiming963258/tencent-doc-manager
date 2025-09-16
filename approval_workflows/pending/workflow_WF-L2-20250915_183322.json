@@ -1,0 +1,31 @@
+{
+  "workflow_id": "WF-L2-20250915_183322",
+  "created_time": "2025-09-15 18:33:22",
+  "pending_approvals": [],
+  "auto_approved": [
+    {
+      "modification_id": "M001",
+      "cell": "I29",
+      "column": "邓总指导登记（日更新）",
+      "old_value": "0529-",
+      "new_value": "",
+      "layer1_result": {
+        "judgment": "UNSURE",
+        "confidence": 60.0,
+        "reason": "内容删除"
+      },
+      "layer2_result": {
+        "risk_level": "LOW",
+        "decision": "APPROVE",
+        "confidence": 90,
+        "key_risks": [
+          "信息丢失风险",
+          "后续追溯困难"
+        ],
+        "recommendation": "建议在清空单元格时添加说明注释，解释清空原因，或使用特定标记（如'N/A'）来明确表示该字段当前无内容而非遗漏。若为临时清空，建议记录清空操作日志。"
+      },
+      "final_decision": "APPROVE",
+      "approval_required": false
+    }
+  ]
+}

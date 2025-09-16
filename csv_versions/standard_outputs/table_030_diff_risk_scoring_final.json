@@ -1,0 +1,52 @@
+{
+  "success": true,
+  "table_number": 30,
+  "source_file": "table_030_diff.json",
+  "processing_timestamp": "2025-08-21T14:03:17.048076",
+  "risk_scoring_results": [
+    {
+      "序号": 1,
+      "行号": 29,
+      "列名": "对上汇报",
+      "列索引": 16,
+      "原值": "已汇报已结项",
+      "新值": "计划汇报",
+      "base_risk_score": 0.164,
+      "ai_confidence": 0.796,
+      "adjusted_risk_score": 0.183,
+      "final_risk_level": "L3",
+      "ai_decision": "汇报状态需要跟进，确保及时向上沟通",
+      "has_ai_analysis": true,
+      "processing_timestamp": "2025-08-21T14:03:17.048048"
+    },
+    {
+      "序号": 2,
+      "行号": 13,
+      "列名": "重要程度",
+      "列索引": 11,
+      "原值": "4",
+      "新值": "5",
+      "base_risk_score": 0.695,
+      "ai_confidence": 0.83,
+      "adjusted_risk_score": 0.787,
+      "final_risk_level": "L1",
+      "ai_decision": "重要程度提升，建议增加资源投入和监督频率",
+      "has_ai_analysis": true,
+      "processing_timestamp": "2025-08-21T14:03:17.048067"
+    }
+  ],
+  "summary": {
+    "total_analyzed": 2,
+    "l1_high_risk_count": 1,
+    "l2_medium_risk_count": 0,
+    "l3_low_risk_count": 1,
+    "avg_confidence": 0.813,
+    "avg_adjusted_score": 0.485
+  },
+  "algorithm_info": {
+    "ai_model": "claude_semantic_analysis_v1.0",
+    "risk_calculation": "weighted_column_scoring",
+    "confidence_range": "0.75-0.95",
+    "adjustment_factor": "ai_confidence_weighted"
+  }
+}

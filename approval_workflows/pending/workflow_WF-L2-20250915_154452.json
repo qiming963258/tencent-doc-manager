@@ -1,0 +1,32 @@
+{
+  "workflow_id": "WF-L2-20250915_154452",
+  "created_time": "2025-09-15 15:44:52",
+  "pending_approvals": [],
+  "auto_approved": [
+    {
+      "modification_id": "M001",
+      "cell": "K95",
+      "column": "监督人",
+      "old_value": "邓总",
+      "new_value": "王寒晓",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 80.0,
+        "reason": "关键人变更"
+      },
+      "layer2_result": {
+        "risk_level": "MEDIUM",
+        "decision": "CONDITIONAL",
+        "confidence": 75,
+        "key_risks": [
+          "监督人变更可能导致项目监督方式或标准变化",
+          "新监督人可能不熟悉项目历史或当前状态",
+          "团队需要时间适应新监督人的工作风格"
+        ],
+        "recommendation": "建议:1)安排邓总与王寒晓的交接会议2)确认王寒晓对项目要求的理解3)向团队正式宣布变更并说明原因4)设置1-2周的过渡观察期。需要补充资料:王寒晓的项目监督经验说明。"
+      },
+      "final_decision": "CONDITIONAL",
+      "approval_required": false
+    }
+  ]
+}

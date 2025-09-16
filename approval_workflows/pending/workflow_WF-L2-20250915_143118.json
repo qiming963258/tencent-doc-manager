@@ -1,0 +1,32 @@
+{
+  "workflow_id": "WF-L2-20250915_143118",
+  "created_time": "2025-09-15 14:31:18",
+  "pending_approvals": [
+    {
+      "modification_id": "M001",
+      "cell": "I19",
+      "column": "负责人",
+      "old_value": "徐志杰",
+      "new_value": "0820-\n1、员工执行内容定位的优化迭代需要前置与员工同频事项执行的意义，充分沟通怎么做，做得怎么样的指导规范",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 80.0,
+        "reason": "关键人缺失"
+      },
+      "layer2_result": {
+        "risk_level": "HIGH",
+        "decision": "REVIEW",
+        "confidence": 85,
+        "key_risks": [
+          "负责人信息被部分删除，可能导致责任归属不明确",
+          "新值'0820-'无法识别具体责任人，影响任务跟踪和沟通",
+          "项目执行过程中缺乏明确负责人可能导致决策延迟"
+        ],
+        "recommendation": "建议明确指定新的负责人姓名而非部分信息，确保项目责任链完整。如暂时无法确定具体负责人，建议保留原值并添加备注说明过渡安排。同时需要与团队沟通此次变更的原因和临时应对方案。"
+      },
+      "final_decision": "REVIEW",
+      "approval_required": true
+    }
+  ],
+  "auto_approved": []
+}

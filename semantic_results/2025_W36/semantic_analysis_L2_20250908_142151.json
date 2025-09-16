@@ -1,0 +1,48 @@
+{
+  "metadata": {
+    "analysis_time": "2025-09-08 14:21:51",
+    "total_modifications": 1,
+    "layer1_passed": 0,
+    "layer2_analyzed": 1,
+    "processing_time": "6.2s"
+  },
+  "results": [
+    {
+      "modification_id": "M001",
+      "cell": "C4",
+      "column": "项目类型",
+      "old_value": "目标管理",
+      "new_value": "体系建设",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 80.0,
+        "reason": "概念扩大"
+      },
+      "layer2_result": {
+        "risk_level": "HIGH",
+        "decision": "REVIEW",
+        "confidence": 85,
+        "key_risks": [
+          "项目性质发生根本性改变",
+          "可能导致项目目标和KPI体系重构",
+          "执行计划和资源分配可能需要重大调整"
+        ],
+        "recommendation": "建议召集项目干系人会议，重新确认以下事项：1)新项目类型的定义和范围；2)更新的项目目标和成功标准；3)受影响的计划节点。在获得正式变更批准前，应暂停相关计划调整工作。"
+      },
+      "final_decision": "REVIEW",
+      "approval_required": true
+    }
+  ],
+  "summary": {
+    "approved": 0,
+    "conditional": 0,
+    "review_required": 1,
+    "rejected": 0,
+    "risk_distribution": {
+      "LOW": 0,
+      "MEDIUM": 0,
+      "HIGH": 1,
+      "CRITICAL": 0
+    }
+  }
+}

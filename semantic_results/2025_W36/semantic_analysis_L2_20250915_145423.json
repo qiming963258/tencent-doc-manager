@@ -1,0 +1,48 @@
+{
+  "metadata": {
+    "analysis_time": "2025-09-15 14:54:23",
+    "total_modifications": 1,
+    "layer1_passed": 0,
+    "layer2_analyzed": 1,
+    "processing_time": "13.1s"
+  },
+  "results": [
+    {
+      "modification_id": "M001",
+      "cell": "G43",
+      "column": "具体计划内容",
+      "old_value": "【新兴国家新产品】：\n1、根据刷新内容定位对各账号进行布局安排，同步做好效果跟踪；以月度为单位进行内容定位刷新机制",
+      "new_value": "收款管理",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 80.0,
+        "reason": "内容替换"
+      },
+      "layer2_result": {
+        "risk_level": "HIGH",
+        "decision": "REVIEW",
+        "confidence": 85,
+        "key_risks": [
+          "项目目标偏离风险：原值为新兴国家新产品相关计划，修改后完全变为收款管理，可能导致项目目标不一致",
+          "执行计划断层风险：具体计划内容从市场策略直接跳转为财务管理，缺乏逻辑连贯性",
+          "团队协作混乱风险：不同部门（市场vs财务）的工作内容被混在同一计划中"
+        ],
+        "recommendation": "建议：1) 明确说明修改原因 2) 如需增加收款管理内容，建议新增行而非直接替换 3) 确认该修改是否经过产品经理和财务负责人的共同审批 4) 检查相关文档（如项目章程）是否需要同步更新"
+      },
+      "final_decision": "REVIEW",
+      "approval_required": true
+    }
+  ],
+  "summary": {
+    "approved": 0,
+    "conditional": 0,
+    "review_required": 1,
+    "rejected": 0,
+    "risk_distribution": {
+      "LOW": 0,
+      "MEDIUM": 0,
+      "HIGH": 1,
+      "CRITICAL": 0
+    }
+  }
+}

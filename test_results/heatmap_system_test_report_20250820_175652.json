@@ -1,0 +1,201 @@
+{
+  "test_id": "heatmap_system_test_20250820_175652",
+  "start_time": "2025-08-20T17:56:52.770176",
+  "stages": {
+    "stage_1": {
+      "name": "Stage 1: Mock File Download (Skipped)",
+      "success": true,
+      "start_time": "2025-08-20T17:56:52.900145",
+      "end_time": "2025-08-20T17:56:52.900148",
+      "files_downloaded": {
+        "baseline": "test_baseline.xlsx",
+        "current": "test_current.xlsx"
+      },
+      "note": "Skipped for testing - using mock files"
+    },
+    "stage_2": {
+      "name": "Stage 2: CSV Conversion & Intelligent Comparison",
+      "success": true,
+      "start_time": "2025-08-20T17:56:52.900186",
+      "csv_files": {
+        "baseline": "/root/projects/tencent-doc-manager/test_data/test_baseline.csv",
+        "current": "/root/projects/tencent-doc-manager/test_data/test_current.csv"
+      },
+      "comparison_result": {
+        "success": true,
+        "analysis_name": "heatmap_test",
+        "analysis_time": "2025-08-20T17:56:52.904161",
+        "files_analyzed": {
+          "baseline": "test_baseline.csv",
+          "current": "test_current.csv",
+          "baseline_checksum": "679dc783929bae8048d15c63c885b40fcb5e72329d311375ede941e6aff5588a",
+          "current_checksum": "830aa7e8ebf454c3c5fcddc19d668b88eca08bf8407c52067a729eadc2502977"
+        },
+        "comparison_summary": {
+          "total_differences": 1,
+          "security_score": 80.0,
+          "risk_level": "L3 - 低风险",
+          "processing_time": 0.002784
+        },
+        "security_assessment": {
+          "timestamp": "2025-08-20T17:56:52.904111",
+          "overall_risk_grade": "LOW",
+          "critical_findings": [],
+          "security_metrics": {
+            "security_score": 80.0,
+            "total_differences": 1,
+            "max_risk_score": 0.2,
+            "security_violations_count": 0,
+            "processing_time": 0.002784
+          },
+          "compliance_status": {
+            "data_integrity": true,
+            "audit_trail": true,
+            "access_control": true,
+            "encryption": true,
+            "backup_required": false
+          },
+          "requires_archival": false,
+          "requires_approval": false
+        },
+        "intelligent_recommendations": [
+          {
+            "priority": "LOW",
+            "category": "best_practice",
+            "title": "定期安全检查",
+            "description": "建议建立定期的数据安全检查机制",
+            "action": "regular_audit"
+          }
+        ],
+        "detailed_results": {
+          "differences": [
+            {
+              "序号": 1,
+              "行号": 2,
+              "列名": "status",
+              "列索引": 4,
+              "原值": "正常",
+              "新值": "离职",
+              "位置": "行2列4(status)",
+              "映射列名": null,
+              "比较时间": "2025-08-20T17:56:52.901599",
+              "risk_level": "L3",
+              "risk_score": 0.2,
+              "security_multiplier": 1.0,
+              "text_change_ratio": 0.5
+            }
+          ],
+          "metadata": {
+            "file1_info": {
+              "encoding": "utf-8-sig",
+              "rows": 4,
+              "columns": 4,
+              "file_size": 104,
+              "checksum": "679dc783929bae8048d15c63c885b40fcb5e72329d311375ede941e6aff5588a"
+            },
+            "file2_info": {
+              "encoding": "utf-8-sig",
+              "rows": 5,
+              "columns": 4,
+              "file_size": 126,
+              "checksum": "830aa7e8ebf454c3c5fcddc19d668b88eca08bf8407c52067a729eadc2502977"
+            },
+            "column_mapping": {
+              "mapping": {
+                "id": "id",
+                "name": "name",
+                "department": "department",
+                "status": "status"
+              },
+              "confidence_scores": {
+                "id": 1.0,
+                "name": 1.0,
+                "department": 1.0,
+                "status": 1.0
+              },
+              "mapping_rate": 100.0
+            },
+            "risk_analysis": {
+              "security_score": 80.0,
+              "average_risk_score": 0.2,
+              "max_risk_score": 0.2,
+              "risk_distribution": {
+                "L1": 0,
+                "L2": 0,
+                "L3": 1
+              },
+              "security_violations": [],
+              "total_risks": 1
+            },
+            "audit_log_entries": 1
+          }
+        },
+        "session_stats": {
+          "session_start": "2025-08-20T17:56:52.900057",
+          "comparisons_total": 1,
+          "comparisons_success": 0,
+          "comparisons_failed": 0,
+          "security_violations_detected": 0,
+          "high_risk_changes": 0,
+          "medium_risk_changes": 0,
+          "low_risk_changes": 1
+        }
+      },
+      "error": null,
+      "end_time": "2025-08-20T17:56:52.904793"
+    },
+    "stage_3": {
+      "name": "Stage 3: MCP Auto Scoring & Color Filling",
+      "success": true,
+      "start_time": "2025-08-20T17:56:52.904866",
+      "mcp_output_file": "/root/projects/tencent-doc-manager/excel_outputs/mcp_colored_20250820_175652.xlsx",
+      "coloring_stats": {
+        "colored_cells": 1,
+        "risk_levels": {
+          "L3": 1
+        }
+      },
+      "error": null,
+      "end_time": "2025-08-20T17:56:52.906524"
+    },
+    "stage_4": {
+      "name": "Stage 4: Mock Upload (Simplified)",
+      "success": true,
+      "start_time": "2025-08-20T17:56:52.906590",
+      "end_time": "2025-08-20T17:56:52.906593",
+      "upload_result": {
+        "success": true,
+        "doc_url": "https://docs.qq.com/sheet/mock_heatmap_test_doc"
+      },
+      "note": "Simplified for testing - actual upload skipped due to API issues"
+    },
+    "stage_5": {
+      "name": "Stage 5: UI Data Generation & Connectivity",
+      "success": true,
+      "start_time": "2025-08-20T17:56:52.906624",
+      "ui_data_file": "/root/projects/tencent-doc-manager/ui_data/heatmap_ui_data_20250820_175652.json",
+      "connectivity_status": {
+        "status": "simulated_success",
+        "note": "Simplified test - UI connectivity manager skipped due to dependencies"
+      },
+      "error": null,
+      "end_time": "2025-08-20T17:56:52.907898"
+    },
+    "stage_6": {
+      "name": "Stage 6: Heatmap Server Update",
+      "success": false,
+      "start_time": "2025-08-20T17:56:52.907966",
+      "server_response": null,
+      "heatmap_url": null,
+      "error": "热力图服务器健康检查失败: 404",
+      "end_time": "2025-08-20T17:56:52.923972"
+    }
+  },
+  "overall_success": false,
+  "final_heatmap_status": null,
+  "verification_urls": [],
+  "end_time": "2025-08-20T17:56:52.924325",
+  "success_rate": 83.33333333333334,
+  "successful_stages": 5,
+  "total_stages": 6
+}

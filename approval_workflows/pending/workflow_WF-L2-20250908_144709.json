@@ -1,0 +1,31 @@
+{
+  "workflow_id": "WF-L2-20250908_144709",
+  "created_time": "2025-09-08 14:47:09",
+  "pending_approvals": [],
+  "auto_approved": [
+    {
+      "modification_id": "M001",
+      "cell": "J12",
+      "column": "负责人",
+      "old_value": "赖铁荔",
+      "new_value": "赖铁荔,各责任人",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 75.0,
+        "reason": "多人负责"
+      },
+      "layer2_result": {
+        "risk_level": "MEDIUM",
+        "decision": "CONDITIONAL",
+        "confidence": 75,
+        "key_risks": [
+          "责任分配不明确",
+          "可能导致执行混乱"
+        ],
+        "recommendation": "建议明确各责任人的具体职责范围，并在文档中详细说明分工情况，以避免执行过程中的混乱。"
+      },
+      "final_decision": "CONDITIONAL",
+      "approval_required": false
+    }
+  ]
+}

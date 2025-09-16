@@ -1,0 +1,164 @@
+{
+  "metadata": {
+    "week": 37,
+    "timestamp": "2025-09-13T14:10:00",
+    "table_count": 22,
+    "total_modifications": 850
+  },
+  "tables": [
+    {
+      "table_name": "副本-测试版本-出国销售计划表",
+      "doc_url": "https://docs.qq.com/sheet/DWEFNU25TemFnZXJN",
+      "modifications": 125,
+      "risk_level": "L3",
+      "heat_values": [0.9, 0.95, 0.85, 0.9, 0.3, 0.2, 0.25, 0.7, 0.8, 0.85, 0.95, 0.9, 0.2, 0.3, 0.4, 0.8, 0.85, 0.95, 0.9]
+    },
+    {
+      "table_name": "副本-测试版本-回国销售计划表",
+      "doc_url": "https://docs.qq.com/sheet/DWGZDZkxpaGVQaURr",
+      "modifications": 98,
+      "risk_level": "L2",
+      "heat_values": [0.85, 0.9, 0.85, 0.95, 0.25, 0.3, 0.2, 0.75, 0.8, 0.85, 0.9, 0.85, 0.3, 0.25, 0.35, 0.85, 0.8, 0.9, 0.95]
+    },
+    {
+      "table_name": "测试版本-小红书部门",
+      "doc_url": "https://docs.qq.com/sheet/DWFJzdWNwd0RGbU5R",
+      "modifications": 65,
+      "risk_level": "L2",
+      "heat_values": [0.95, 0.9, 0.8, 0.85, 0.2, 0.25, 0.3, 0.75, 0.7, 0.65, 0.6, 0.55, 0.4, 0.35, 0.3, 0.65, 0.7, 0.75, 0.8]
+    },
+    {
+      "table_name": "产品库存管理表",
+      "doc_url": "https://docs.qq.com/sheet/test1",
+      "modifications": 45,
+      "risk_level": "L1",
+      "heat_values": [0.2, 0.25, 0.2, 0.15, 0.85, 0.9, 0.95, 0.35, 0.3, 0.25, 0.2, 0.15, 0.75, 0.8, 0.85, 0.25, 0.2, 0.15, 0.1]
+    },
+    {
+      "table_name": "财务报表Q3",
+      "doc_url": "https://docs.qq.com/sheet/test2",
+      "modifications": 38,
+      "risk_level": "L1",
+      "heat_values": [0.2, 0.15, 0.25, 0.2, 0.8, 0.85, 0.9, 0.3, 0.35, 0.25, 0.15, 0.2, 0.7, 0.75, 0.8, 0.15, 0.25, 0.2, 0.15]
+    },
+    {
+      "table_name": "员工考勤记录",
+      "doc_url": "https://docs.qq.com/sheet/test3",
+      "modifications": 32,
+      "risk_level": "L1",
+      "heat_values": [0.25, 0.2, 0.15, 0.25, 0.75, 0.8, 0.85, 0.25, 0.35, 0.3, 0.25, 0.15, 0.65, 0.7, 0.75, 0.2, 0.15, 0.25, 0.2]
+    },
+    {
+      "table_name": "项目进度跟踪",
+      "doc_url": "https://docs.qq.com/sheet/test4",
+      "modifications": 52,
+      "risk_level": "L2",
+      "heat_values": [0.7, 0.75, 0.8, 0.85, 0.25, 0.2, 0.15, 0.55, 0.6, 0.65, 0.7, 0.75, 0.35, 0.3, 0.25, 0.65, 0.7, 0.75, 0.8]
+    },
+    {
+      "table_name": "客户反馈汇总",
+      "doc_url": "https://docs.qq.com/sheet/test5",
+      "modifications": 28,
+      "risk_level": "L1",
+      "heat_values": [0.15, 0.2, 0.25, 0.15, 0.65, 0.7, 0.75, 0.2, 0.25, 0.15, 0.2, 0.25, 0.55, 0.6, 0.65, 0.15, 0.2, 0.15, 0.25]
+    },
+    {
+      "table_name": "供应商管理",
+      "doc_url": "https://docs.qq.com/sheet/test6",
+      "modifications": 22,
+      "risk_level": "L1",
+      "heat_values": [0.1, 0.15, 0.2, 0.15, 0.6, 0.65, 0.7, 0.15, 0.2, 0.15, 0.1, 0.15, 0.5, 0.55, 0.6, 0.1, 0.15, 0.1, 0.15]
+    },
+    {
+      "table_name": "市场营销计划",
+      "doc_url": "https://docs.qq.com/sheet/test7",
+      "modifications": 58,
+      "risk_level": "L2",
+      "heat_values": [0.75, 0.8, 0.85, 0.9, 0.15, 0.25, 0.2, 0.6, 0.65, 0.7, 0.75, 0.8, 0.25, 0.35, 0.3, 0.7, 0.75, 0.8, 0.85]
+    },
+    {
+      "table_name": "产品定价策略",
+      "doc_url": "https://docs.qq.com/sheet/test8",
+      "modifications": 18,
+      "risk_level": "L1",
+      "heat_values": [0.1, 0.15, 0.1, 0.15, 0.55, 0.6, 0.65, 0.1, 0.15, 0.1, 0.15, 0.1, 0.45, 0.5, 0.55, 0.1, 0.15, 0.1, 0.15]
+    },
+    {
+      "table_name": "技术文档管理",
+      "doc_url": "https://docs.qq.com/sheet/test9",
+      "modifications": 12,
+      "risk_level": "L1",
+      "heat_values": [0.05, 0.1, 0.15, 0.1, 0.5, 0.55, 0.6, 0.05, 0.1, 0.05, 0.1, 0.15, 0.4, 0.45, 0.5, 0.05, 0.1, 0.05, 0.1]
+    },
+    {
+      "table_name": "质量检测报告",
+      "doc_url": "https://docs.qq.com/sheet/test10",
+      "modifications": 35,
+      "risk_level": "L1",
+      "heat_values": [0.3, 0.25, 0.2, 0.3, 0.7, 0.75, 0.8, 0.3, 0.25, 0.35, 0.3, 0.2, 0.6, 0.65, 0.7, 0.25, 0.3, 0.2, 0.25]
+    },
+    {
+      "table_name": "合同管理台账",
+      "doc_url": "https://docs.qq.com/sheet/test11",
+      "modifications": 15,
+      "risk_level": "L1",
+      "heat_values": [0.15, 0.1, 0.15, 0.1, 0.45, 0.5, 0.55, 0.15, 0.1, 0.15, 0.1, 0.15, 0.35, 0.4, 0.45, 0.15, 0.1, 0.15, 0.1]
+    },
+    {
+      "table_name": "研发进度表",
+      "doc_url": "https://docs.qq.com/sheet/test12",
+      "modifications": 48,
+      "risk_level": "L2",
+      "heat_values": [0.65, 0.7, 0.75, 0.8, 0.2, 0.15, 0.25, 0.5, 0.55, 0.6, 0.65, 0.7, 0.3, 0.25, 0.35, 0.6, 0.65, 0.7, 0.75]
+    },
+    {
+      "table_name": "培训计划表",
+      "doc_url": "https://docs.qq.com/sheet/test13",
+      "modifications": 8,
+      "risk_level": "L1",
+      "heat_values": [0.05, 0.05, 0.1, 0.05, 0.4, 0.45, 0.5, 0.05, 0.05, 0.05, 0.05, 0.1, 0.3, 0.35, 0.4, 0.05, 0.05, 0.05, 0.05]
+    },
+    {
+      "table_name": "物流跟踪表",
+      "doc_url": "https://docs.qq.com/sheet/test14",
+      "modifications": 30,
+      "risk_level": "L1",
+      "heat_values": [0.25, 0.2, 0.25, 0.2, 0.65, 0.7, 0.75, 0.25, 0.2, 0.3, 0.25, 0.15, 0.55, 0.6, 0.65, 0.2, 0.25, 0.15, 0.2]
+    },
+    {
+      "table_name": "费用报销单",
+      "doc_url": "https://docs.qq.com/sheet/test15",
+      "modifications": 20,
+      "risk_level": "L1",
+      "heat_values": [0.2, 0.15, 0.2, 0.15, 0.55, 0.6, 0.65, 0.2, 0.15, 0.2, 0.15, 0.2, 0.45, 0.5, 0.55, 0.15, 0.2, 0.15, 0.2]
+    },
+    {
+      "table_name": "年度预算表",
+      "doc_url": "https://docs.qq.com/sheet/test16",
+      "modifications": 68,
+      "risk_level": "L3",
+      "heat_values": [0.8, 0.85, 0.9, 0.95, 0.1, 0.15, 0.1, 0.65, 0.7, 0.75, 0.8, 0.85, 0.2, 0.15, 0.25, 0.75, 0.8, 0.85, 0.9]
+    },
+    {
+      "table_name": "风险评估表",
+      "doc_url": "https://docs.qq.com/sheet/test17",
+      "modifications": 42,
+      "risk_level": "L2",
+      "heat_values": [0.6, 0.65, 0.7, 0.75, 0.25, 0.3, 0.2, 0.45, 0.5, 0.55, 0.6, 0.65, 0.35, 0.4, 0.3, 0.55, 0.6, 0.65, 0.7]
+    },
+    {
+      "table_name": "会议记录表",
+      "doc_url": "https://docs.qq.com/sheet/test18",
+      "modifications": 6,
+      "risk_level": "L1",
+      "heat_values": [0.1, 0.05, 0.05, 0.1, 0.35, 0.4, 0.45, 0.1, 0.05, 0.1, 0.05, 0.05, 0.25, 0.3, 0.35, 0.1, 0.05, 0.1, 0.05]
+    },
+    {
+      "table_name": "绩效考核表",
+      "doc_url": "https://docs.qq.com/sheet/test19",
+      "modifications": 25,
+      "risk_level": "L1",
+      "heat_values": [0.2, 0.25, 0.15, 0.2, 0.6, 0.65, 0.7, 0.2, 0.25, 0.2, 0.15, 0.25, 0.5, 0.55, 0.6, 0.2, 0.15, 0.2, 0.25]
+    }
+  ]
+}

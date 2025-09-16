@@ -1,0 +1,435 @@
+/* 移动端和触控优化样式 */
+
+/* 触控友好的按钮 */
+@media (hover: none) and (pointer: coarse) {
+    .btn {
+        min-height: 44px;
+        min-width: 44px;
+    }
+    
+    .btn-sm {
+        min-height: 36px;
+    }
+    
+    .btn-lg {
+        min-height: 52px;
+    }
+}
+
+/* 移动端专用样式 */
+@media (max-width: 767px) {
+    /* 禁用移动端的双击缩放 */
+    * {
+        touch-action: manipulation;
+    }
+    
+    /* 优化输入框在移动端的体验 */
+    .form-input,
+    .form-textarea,
+    .form-select {
+        font-size: 16px; /* 防止iOS自动缩放 */
+        -webkit-appearance: none;
+    }
+    
+    /* 移动端头部优化 */
+    .app-header {
+        padding: var(--space-6) 0;
+        text-align: left;
+    }
+    
+    .app-title {
+        font-size: 1.875rem;
+        line-height: 1.2;
+    }
+    
+    .app-subtitle {
+        font-size: 1rem;
+        line-height: 1.4;
+    }
+    
+    /* 移动端表单优化 */
+    .export-form {
+        padding: var(--space-6);
+        border-radius: var(--radius-lg);
+    }
+    
+    .export-options {
+        grid-template-columns: 1fr;
+        gap: var(--space-3);
+    }
+    
+    .export-option-card {
+        padding: var(--space-5);
+    }
+    
+    .export-option-icon {
+        font-size: 1.5rem;
+    }
+    
+    /* URL输入框移动端优化 */
+    .url-input {
+        padding-right: var(--space-4);
+        word-break: break-all;
+    }
+    
+    /* Cookie设置移动端优化 */
+    .cookie-section {
+        padding: var(--space-4);
+    }
+    
+    .cookie-toggle {
+        padding: var(--space-2) 0;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: var(--space-2);
+    }
+    
+    .cookie-input {
+        font-size: 14px;
+        min-height: 100px;
+    }
+    
+    /* 状态显示移动端优化 */
+    .export-status {
+        padding: var(--space-4);
+        margin-top: var(--space-4);
+    }
+    
+    .export-status-header {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: var(--space-3);
+    }
+    
+    .export-result-card,
+    .export-error {
+        padding: var(--space-4);
+    }
+    
+    .export-result-header {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: var(--space-2);
+    }
+    
+    .export-result-actions {
+        flex-direction: column;
+        width: 100%;
+    }
+    
+    .export-result-actions .btn {
+        width: 100%;
+    }
+    
+    /* 历史记录移动端优化 */
+    .history-header {
+        flex-direction: column;
+        gap: var(--space-3);
+        align-items: stretch;
+    }
+    
+    .history-item {
+        padding: var(--space-4);
+    }
+    
+    .history-item-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: var(--space-2);
+    }
+    
+    .history-item-actions {
+        flex-wrap: wrap;
+        gap: var(--space-2);
+    }
+    
+    .history-item-actions .btn {
+        flex: 1;
+        min-width: 120px;
+    }
+    
+    /* Toast移动端优化 */
+    .toast-container {
+        top: 10px;
+        right: 10px;
+        left: 10px;
+        max-width: none;
+    }
+    
+    .toast {
+        width: 100%;
+        max-width: none;
+    }
+    
+    /* 主题切换器移动端优化 */
+    .theme-toggle {
+        width: 60px;
+        height: 32px;
+        border-radius: 16px;
+    }
+    
+    .theme-toggle::before {
+        width: 28px;
+        height: 28px;
+        top: 2px;
+    }
+    
+    [data-theme="dark"] .theme-toggle::before {
+        transform: translateX(28px);
+    }
+}
+
+/* 超小屏幕优化 */
+@media (max-width: 480px) {
+    .container {
+        padding: 0 var(--space-2);
+    }
+    
+    .app-header {
+        padding: var(--space-4) 0;
+    }
+    
+    .app-title {
+        font-size: 1.5rem;
+    }
+    
+    .app-subtitle {
+        font-size: 0.875rem;
+    }
+    
+    .export-form {
+        padding: var(--space-4);
+    }
+    
+    .form-group {
+        margin-bottom: var(--space-4);
+    }
+    
+    .export-option-card {
+        padding: var(--space-4);
+    }
+    
+    .export-option-title {
+        font-size: 14px;
+    }
+    
+    .export-option-description {
+        font-size: 12px;
+    }
+    
+    .cookie-section {
+        padding: var(--space-3);
+    }
+    
+    .cookie-input {
+        min-height: 80px;
+        font-size: 13px;
+    }
+    
+    .history-section {
+        margin-top: var(--space-8);
+    }
+    
+    .text-2xl {
+        font-size: 1.25rem;
+    }
+}
+
+/* 横屏模式优化 */
+@media (max-width: 896px) and (orientation: landscape) and (max-height: 500px) {
+    .app-header {
+        padding: var(--space-4) 0;
+    }
+    
+    .app-title {
+        font-size: 1.5rem;
+    }
+    
+    .export-form {
+        padding: var(--space-4);
+    }
+    
+    .export-options {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .cookie-content.expanded {
+        max-height: 150px;
+    }
+    
+    .cookie-input {
+        min-height: 60px;
+    }
+}
+
+/* 高对比度模式支持 */
+@media (prefers-contrast: high) {
+    :root {
+        --border: #000000;
+        --text-primary: #000000;
+        --text-secondary: #333333;
+    }
+    
+    [data-theme="dark"] {
+        --border: #ffffff;
+        --text-primary: #ffffff;
+        --text-secondary: #cccccc;
+    }
+    
+    .btn-primary {
+        border: 2px solid currentColor;
+    }
+    
+    .form-input,
+    .form-textarea,
+    .form-select {
+        border-width: 2px;
+    }
+}
+
+/* 减少动画的用户偏好支持 */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+    
+    .progress-bar::after {
+        animation: none;
+    }
+}
+
+/* 打印样式 */
+@media print {
+    .app-header,
+    .theme-toggle,
+    .export-status,
+    .cookie-section,
+    .export-result-actions,
+    .history-item-actions {
+        display: none !important;
+    }
+    
+    body {
+        font-size: 12pt;
+        line-height: 1.4;
+        color: black !important;
+        background: white !important;
+    }
+    
+    .export-form,
+    .card {
+        box-shadow: none;
+        border: 1px solid #ccc;
+    }
+    
+    .export-result-card {
+        page-break-inside: avoid;
+    }
+}
+
+/* 无障碍访问增强 */
+@media (prefers-reduced-transparency: reduce) {
+    .app-header::before {
+        display: none;
+    }
+    
+    .export-status,
+    .export-result-card,
+    .export-error,
+    .cookie-section {
+        background: var(--surface) !important;
+    }
+}
+
+/* Focus可见性增强 */
+.btn:focus-visible,
+.form-input:focus-visible,
+.form-textarea:focus-visible,
+.form-select:focus-visible {
+    outline: 3px solid var(--primary-500);
+    outline-offset: 2px;
+}
+
+/* 选中状态优化 */
+::selection {
+    background: rgba(59, 130, 246, 0.2);
+    color: inherit;
+}
+
+[data-theme="dark"] ::selection {
+    background: rgba(59, 130, 246, 0.4);
+}
+
+/* 滚动优化 */
+@supports (scroll-behavior: smooth) {
+    html {
+        scroll-behavior: smooth;
+    }
+}
+
+/* iOS Safari底部安全区域 */
+@supports (padding-bottom: env(safe-area-inset-bottom)) {
+    body {
+        padding-bottom: env(safe-area-inset-bottom);
+    }
+}
+
+/* 触控反馈 */
+.btn:active,
+.export-option:active,
+.history-item:active {
+    transform: scale(0.98);
+}
+
+/* 加载状态优化 */
+.export-form:has([disabled]) {
+    pointer-events: none;
+    opacity: 0.7;
+}
+
+/* 表单验证样式 */
+.form-input:invalid:not(:placeholder-shown) {
+    border-color: var(--error);
+}
+
+.form-input:valid {
+    border-color: var(--success);
+}
+
+/* 键盘导航优化 */
+.btn:focus,
+.export-option:focus-within {
+    z-index: 1;
+    position: relative;
+}
+
+/* 状态变化过渡 */
+.export-status,
+.export-result,
+.export-error {
+    transition: all var(--duration-normal) ease;
+}
+
+/* 长内容处理 */
+.history-item-url {
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    hyphens: auto;
+}
+
+/* 空状态样式 */
+.history-list:empty::after {
+    content: '暂无导出历史记录';
+    display: block;
+    text-align: center;
+    color: var(--text-muted);
+    padding: var(--space-8);
+    font-style: italic;
+}

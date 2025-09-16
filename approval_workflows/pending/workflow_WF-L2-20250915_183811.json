@@ -1,0 +1,31 @@
+{
+  "workflow_id": "WF-L2-20250915_183811",
+  "created_time": "2025-09-15 18:38:11",
+  "pending_approvals": [
+    {
+      "modification_id": "M001",
+      "cell": "K34",
+      "column": "协助人",
+      "old_value": "赖铁荔",
+      "new_value": "",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 75.0,
+        "reason": "删除协助人"
+      },
+      "layer2_result": {
+        "risk_level": "HIGH",
+        "decision": "REVIEW",
+        "confidence": 85,
+        "key_risks": [
+          "协助人信息缺失可能导致责任不明",
+          "关键任务无人负责导致进度延误"
+        ],
+        "recommendation": "建议确认K34单元格应为空值的合理性。如确实需要清空，请补充说明原因并指定替代责任人，或明确该任务无需协助人。需得到项目经理书面确认后方可执行此变更。"
+      },
+      "final_decision": "REVIEW",
+      "approval_required": true
+    }
+  ],
+  "auto_approved": []
+}

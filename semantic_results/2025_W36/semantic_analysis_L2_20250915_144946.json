@@ -1,0 +1,48 @@
+{
+  "metadata": {
+    "analysis_time": "2025-09-15 14:49:46",
+    "total_modifications": 1,
+    "layer1_passed": 0,
+    "layer2_analyzed": 1,
+    "processing_time": "15.9s"
+  },
+  "results": [
+    {
+      "modification_id": "M001",
+      "cell": "I38",
+      "column": "负责人",
+      "old_value": "朱瀚桔",
+      "new_value": "0506-\n\n\n0310-\n确认，无异议，正常推进",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 80.0,
+        "reason": "负责人变更"
+      },
+      "layer2_result": {
+        "risk_level": "CRITICAL",
+        "decision": "REJECT",
+        "confidence": 95,
+        "key_risks": [
+          "负责人信息被替换为不明含义的编号，可能导致责任归属不明确",
+          "项目执行过程中缺乏明确的负责人指引",
+          "团队协作效率可能因缺乏明确沟通对象而下降"
+        ],
+        "recommendation": "立即恢复原有负责人信息或明确新负责人的具体信息。若0506-0310-为临时编号，需补充完整的负责人姓名及联系方式，并在变更日志中记录原因。建议召开团队会议说明此次变更的背景和后续安排。"
+      },
+      "final_decision": "REJECT",
+      "approval_required": true
+    }
+  ],
+  "summary": {
+    "approved": 0,
+    "conditional": 0,
+    "review_required": 0,
+    "rejected": 1,
+    "risk_distribution": {
+      "LOW": 0,
+      "MEDIUM": 0,
+      "HIGH": 0,
+      "CRITICAL": 1
+    }
+  }
+}

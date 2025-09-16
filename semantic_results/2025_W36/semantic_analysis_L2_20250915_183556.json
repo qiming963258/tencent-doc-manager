@@ -1,0 +1,47 @@
+{
+  "metadata": {
+    "analysis_time": "2025-09-15 18:35:56",
+    "total_modifications": 1,
+    "layer1_passed": 0,
+    "layer2_analyzed": 1,
+    "processing_time": "10.0s"
+  },
+  "results": [
+    {
+      "modification_id": "M001",
+      "cell": "H32",
+      "column": "具体计划内容",
+      "old_value": "监管问责梳理",
+      "new_value": "",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 90.0,
+        "reason": "删除内容"
+      },
+      "layer2_result": {
+        "risk_level": "HIGH",
+        "decision": "REVIEW",
+        "confidence": 85,
+        "key_risks": [
+          "关键监管流程被删除可能造成合规风险",
+          "项目问责机制缺失可能导致执行失控"
+        ],
+        "recommendation": "1. 要求补充说明删除'监管问责梳理'的具体原因\n2. 如确实需要删除，应提供替代性监管方案\n3. 需要合规部门确认该变更不会违反监管要求\n4. 建议保留修改记录以备审计"
+      },
+      "final_decision": "REVIEW",
+      "approval_required": true
+    }
+  ],
+  "summary": {
+    "approved": 0,
+    "conditional": 0,
+    "review_required": 1,
+    "rejected": 0,
+    "risk_distribution": {
+      "LOW": 0,
+      "MEDIUM": 0,
+      "HIGH": 1,
+      "CRITICAL": 0
+    }
+  }
+}

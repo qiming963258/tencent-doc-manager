@@ -1,0 +1,32 @@
+{
+  "workflow_id": "WF-L2-20250915_143948",
+  "created_time": "2025-09-15 14:39:48",
+  "pending_approvals": [
+    {
+      "modification_id": "M001",
+      "cell": "I28",
+      "column": "负责人",
+      "old_value": "蔡悦莹",
+      "new_value": "0519\n1.跨部门应知应会维度调整与补充【时限要求】\n2.各群聊做好跨部门信息回复及互动机制\n\n\n0506-",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 80.0,
+        "reason": "负责人变更"
+      },
+      "layer2_result": {
+        "risk_level": "HIGH",
+        "decision": "REVIEW",
+        "confidence": 85,
+        "key_risks": [
+          "负责人信息被替换为疑似日期/编号，可能导致责任归属不明确",
+          "新值0519缺乏上下文说明，可能造成执行混乱",
+          "原始负责人信息被删除，历史追踪困难"
+        ],
+        "recommendation": "1. 要求修改者补充说明0519的具体含义（如为新负责人编号需明确身份）\n2. 保留原始负责人信息或在变更日志中注明变更原因\n3. 评估该变更对跨部门协调机制的影响，需相关干系人确认"
+      },
+      "final_decision": "REVIEW",
+      "approval_required": true
+    }
+  ],
+  "auto_approved": []
+}

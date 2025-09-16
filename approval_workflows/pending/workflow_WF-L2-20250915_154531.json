@@ -1,0 +1,22 @@
+{
+  "workflow_id": "WF-L2-20250915_154531",
+  "created_time": "2025-09-15 15:45:31",
+  "pending_approvals": [],
+  "auto_approved": [
+    {
+      "modification_id": "M001",
+      "cell": "G99",
+      "column": "具体计划内容",
+      "old_value": "",
+      "new_value": "定价与报价系统优化",
+      "layer1_result": {
+        "judgment": "SAFE",
+        "confidence": 90.0,
+        "reason": "内容补充"
+      },
+      "layer2_result": null,
+      "final_decision": "APPROVE",
+      "approval_required": false
+    }
+  ]
+}

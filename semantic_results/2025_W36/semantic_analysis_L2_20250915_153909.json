@@ -1,0 +1,47 @@
+{
+  "metadata": {
+    "analysis_time": "2025-09-15 15:39:09",
+    "total_modifications": 1,
+    "layer1_passed": 0,
+    "layer2_analyzed": 1,
+    "processing_time": "19.6s"
+  },
+  "results": [
+    {
+      "modification_id": "M001",
+      "cell": "G89",
+      "column": "具体计划内容",
+      "old_value": "王佳怡工作时间调整为10：00-18：30，安排晚上拿手机在家值班回复资源信息",
+      "new_value": "定价与报价系统优化",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 80.0,
+        "reason": "内容变更大"
+      },
+      "layer2_result": {
+        "risk_level": "HIGH",
+        "decision": "REVIEW",
+        "confidence": 80,
+        "key_risks": [
+          "工作安排与资源分配的重大变更",
+          "定价系统优化可能涉及跨部门协作"
+        ],
+        "recommendation": "建议召开变更评审会议，明确以下内容：1)原工作安排取消的影响及替代方案；2)定价系统优化的具体范围、责任人和资源需求；3)确保所有相关干系人知悉并同意该变更。需补充变更申请文档说明变更原因和预期收益。"
+      },
+      "final_decision": "REVIEW",
+      "approval_required": true
+    }
+  ],
+  "summary": {
+    "approved": 0,
+    "conditional": 0,
+    "review_required": 1,
+    "rejected": 0,
+    "risk_distribution": {
+      "LOW": 0,
+      "MEDIUM": 0,
+      "HIGH": 1,
+      "CRITICAL": 0
+    }
+  }
+}

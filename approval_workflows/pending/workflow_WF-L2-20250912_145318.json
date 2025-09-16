@@ -1,0 +1,31 @@
+{
+  "workflow_id": "WF-L2-20250912_145318",
+  "created_time": "2025-09-12 14:53:18",
+  "pending_approvals": [],
+  "auto_approved": [
+    {
+      "modification_id": "M001",
+      "cell": "J12",
+      "column": "负责人",
+      "old_value": "赖铁荔",
+      "new_value": "赖铁荔,各责任人",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 75.0,
+        "reason": "责任分散"
+      },
+      "layer2_result": {
+        "risk_level": "MEDIUM",
+        "decision": "CONDITIONAL",
+        "confidence": 75,
+        "key_risks": [
+          "责任分散风险：多头负责可能导致责任不明确",
+          "执行效率风险：需要额外协调多个责任人的工作"
+        ],
+        "recommendation": "建议明确各责任人的具体职责范围，并建立协调沟通机制。修改前需获得原负责人赖铁荔的确认，并通知所有相关责任人。"
+      },
+      "final_decision": "CONDITIONAL",
+      "approval_required": false
+    }
+  ]
+}

@@ -1,0 +1,49 @@
+{
+  "metadata": {
+    "analysis_time": "2025-09-15 14:54:36",
+    "total_modifications": 1,
+    "layer1_passed": 0,
+    "layer2_analyzed": 1,
+    "processing_time": "12.6s"
+  },
+  "results": [
+    {
+      "modification_id": "M001",
+      "cell": "I43",
+      "column": "负责人",
+      "old_value": "蔡悦莹",
+      "new_value": "",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 80.0,
+        "reason": "关键人缺失"
+      },
+      "layer2_result": {
+        "risk_level": "CRITICAL",
+        "decision": "REVIEW",
+        "confidence": 85,
+        "key_risks": [
+          "负责人字段清空导致责任归属缺失",
+          "项目关键节点可能因无人负责而延误",
+          "团队协作可能出现混乱",
+          "项目目标可能无法达成"
+        ],
+        "recommendation": "建议1. 立即补充新的负责人信息；2. 如果暂时无人接替，应设立临时负责人；3. 通知相关团队成员此变更；4. 评估是否需要调整项目计划。需要项目总监审批此变更。"
+      },
+      "final_decision": "REVIEW",
+      "approval_required": true
+    }
+  ],
+  "summary": {
+    "approved": 0,
+    "conditional": 0,
+    "review_required": 1,
+    "rejected": 0,
+    "risk_distribution": {
+      "LOW": 0,
+      "MEDIUM": 0,
+      "HIGH": 1,
+      "CRITICAL": 0
+    }
+  }
+}

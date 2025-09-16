@@ -1,0 +1,48 @@
+{
+  "metadata": {
+    "analysis_time": "2025-09-15 16:41:38",
+    "total_modifications": 1,
+    "layer1_passed": 0,
+    "layer2_analyzed": 1,
+    "processing_time": "13.7s"
+  },
+  "results": [
+    {
+      "modification_id": "M001",
+      "cell": "H4",
+      "column": "具体计划内容",
+      "old_value": "按照所负责事项的目标，拆解到承接人员：玉佳、穗云、邓俊",
+      "new_value": "2025回国搬家日追踪数据\n目标复盘执行计划表",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 90.0,
+        "reason": "目标变更"
+      },
+      "layer2_result": {
+        "risk_level": "CRITICAL",
+        "decision": "REJECT",
+        "confidence": 90,
+        "key_risks": [
+          "计划内容从具体执行人员分配转变为模糊的时间追踪，导致责任主体消失",
+          "新内容与原项目目标严重偏离，可能造成执行混乱",
+          "缺少可操作性指引，严重影响项目交付质量"
+        ],
+        "recommendation": "建议保留原人员分工内容，如确需新增时间追踪计划，应在其他独立单元格或新增行处理。必须确保：1)保留原始责任人信息 2)明确2025数据追踪的具体执行方案 3)与项目目标保持强关联"
+      },
+      "final_decision": "REJECT",
+      "approval_required": true
+    }
+  ],
+  "summary": {
+    "approved": 0,
+    "conditional": 0,
+    "review_required": 0,
+    "rejected": 1,
+    "risk_distribution": {
+      "LOW": 0,
+      "MEDIUM": 0,
+      "HIGH": 0,
+      "CRITICAL": 1
+    }
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "metadata": {
+    "analysis_time": "2025-09-15 15:41:02",
+    "total_modifications": 1,
+    "layer1_passed": 0,
+    "layer2_analyzed": 1,
+    "processing_time": "12.4s"
+  },
+  "results": [
+    {
+      "modification_id": "M001",
+      "cell": "G91",
+      "column": "具体计划内容",
+      "old_value": "【主管层】\n根据部门工作流及关键流程，梳理优化运营主管（悦莹）工作台（中观）",
+      "new_value": "定价与报价系统优化",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 80.0,
+        "reason": "职责变更"
+      },
+      "layer2_result": {
+        "risk_level": "HIGH",
+        "decision": "REVIEW",
+        "confidence": 85,
+        "key_risks": [
+          "计划性质发生根本性改变（从工作流优化变为系统优化）",
+          "可能导致资源重新分配和优先级调整",
+          "可能影响主管层既定工作流程"
+        ],
+        "recommendation": "建议召开跨部门协调会，明确：1）变更的必要性说明 2）新旧工作的衔接方案 3）资源调配计划。需获得主管层（特别是悦莹）签字确认后再实施变更。"
+      },
+      "final_decision": "REVIEW",
+      "approval_required": true
+    }
+  ],
+  "summary": {
+    "approved": 0,
+    "conditional": 0,
+    "review_required": 1,
+    "rejected": 0,
+    "risk_distribution": {
+      "LOW": 0,
+      "MEDIUM": 0,
+      "HIGH": 1,
+      "CRITICAL": 0
+    }
+  }
+}

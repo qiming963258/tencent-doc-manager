@@ -1,0 +1,49 @@
+{
+  "metadata": {
+    "analysis_time": "2025-09-08 14:20:49",
+    "total_modifications": 1,
+    "layer1_passed": 0,
+    "layer2_analyzed": 1,
+    "processing_time": "11.1s"
+  },
+  "results": [
+    {
+      "modification_id": "M001",
+      "cell": "C4",
+      "column": "项目类型",
+      "old_value": "目标管理",
+      "new_value": "体系建设",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 80.0,
+        "reason": "范围扩大"
+      },
+      "layer2_result": {
+        "risk_level": "HIGH",
+        "decision": "REVIEW",
+        "confidence": 75,
+        "key_risks": [
+          "项目性质发生根本性改变",
+          "可能导致原有项目目标完全失效",
+          "执行计划需要全面调整",
+          "团队分工结构需要重组"
+        ],
+        "recommendation": "建议召开项目变更评审会，重新评估以下方面：1)新项目类型与战略目标的匹配性；2)资源重新配置方案；3)时间线调整影响。需获得所有关键干系人签字确认后再实施变更。"
+      },
+      "final_decision": "REVIEW",
+      "approval_required": true
+    }
+  ],
+  "summary": {
+    "approved": 0,
+    "conditional": 0,
+    "review_required": 1,
+    "rejected": 0,
+    "risk_distribution": {
+      "LOW": 0,
+      "MEDIUM": 0,
+      "HIGH": 1,
+      "CRITICAL": 0
+    }
+  }
+}

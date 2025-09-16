@@ -1,0 +1,105 @@
+{
+  "summary": {
+    "total_pending": 520,
+    "total_approved_this_week": 1055,
+    "total_rejected_this_week": 45,
+    "average_approval_time": "4.2 hours",
+    "overdue_approvals": 23
+  },
+  "by_priority": {
+    "P0_critical": {
+      "count": 52,
+      "average_response_time": "1.5 hours",
+      "approval_rate": 0.62,
+      "escalation_rate": 0.23
+    },
+    "P1_high": {
+      "count": 104,
+      "average_response_time": "3.2 hours",
+      "approval_rate": 0.71,
+      "escalation_rate": 0.15
+    },
+    "P2_medium": {
+      "count": 364,
+      "average_response_time": "6.5 hours",
+      "approval_rate": 0.83,
+      "escalation_rate": 0.08
+    }
+  },
+  "by_approver": [
+    {
+      "role": "部门主管",
+      "pending": 85,
+      "approved_this_week": 156,
+      "rejected_this_week": 12,
+      "average_response_time": "2.8 hours",
+      "approval_rate": 0.93
+    },
+    {
+      "role": "项目经理",
+      "pending": 234,
+      "approved_this_week": 489,
+      "rejected_this_week": 23,
+      "average_response_time": "4.5 hours",
+      "approval_rate": 0.95
+    },
+    {
+      "role": "副总裁",
+      "pending": 12,
+      "approved_this_week": 45,
+      "rejected_this_week": 8,
+      "average_response_time": "8.2 hours",
+      "approval_rate": 0.85
+    },
+    {
+      "role": "HR经理",
+      "pending": 189,
+      "approved_this_week": 365,
+      "rejected_this_week": 2,
+      "average_response_time": "5.1 hours",
+      "approval_rate": 0.99
+    }
+  ],
+  "by_table": [
+    {
+      "table_name": "副本-测试版本-出国销售计划表",
+      "pending": 196,
+      "approval_rate": 0.88,
+      "high_risk_items": 23
+    },
+    {
+      "table_name": "副本-测试版本-回国销售计划表",
+      "pending": 165,
+      "approval_rate": 0.91,
+      "high_risk_items": 15
+    },
+    {
+      "table_name": "测试版本-小红书部门",
+      "pending": 159,
+      "approval_rate": 0.89,
+      "high_risk_items": 14
+    }
+  ],
+  "trends": {
+    "daily_approvals": [145, 156, 167, 148, 152, 143, 144],
+    "daily_rejections": [5, 8, 6, 7, 9, 5, 5],
+    "response_time_trend": [4.5, 4.3, 4.1, 4.2, 4.0, 4.2, 4.2]
+  },
+  "alerts": [
+    {
+      "type": "OVERDUE",
+      "count": 23,
+      "message": "23个审批项已超过截止时间"
+    },
+    {
+      "type": "HIGH_RISK_PENDING",
+      "count": 52,
+      "message": "52个高风险项待审批"
+    },
+    {
+      "type": "ESCALATION_NEEDED",
+      "count": 8,
+      "message": "8个项目需要升级到更高级别审批"
+    }
+  ]
+}

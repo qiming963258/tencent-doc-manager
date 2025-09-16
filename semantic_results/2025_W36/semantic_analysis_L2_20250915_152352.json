@@ -1,0 +1,48 @@
+{
+  "metadata": {
+    "analysis_time": "2025-09-15 15:23:52",
+    "total_modifications": 1,
+    "layer1_passed": 0,
+    "layer2_analyzed": 1,
+    "processing_time": "14.3s"
+  },
+  "results": [
+    {
+      "modification_id": "M001",
+      "cell": "I73",
+      "column": "负责人",
+      "old_value": "朱瀚桔",
+      "new_value": "",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 80.0,
+        "reason": "负责人清空"
+      },
+      "layer2_result": {
+        "risk_level": "CRITICAL",
+        "decision": "REVIEW",
+        "confidence": 85,
+        "key_risks": [
+          "负责人信息被完全删除，导致责任人不明确",
+          "可能导致项目任务无人负责，影响项目进度",
+          "团队协作可能因缺少明确负责人而受阻"
+        ],
+        "recommendation": "1. 必须补充新的负责人信息 2. 如需要删除原负责人，应确保有完整的交接流程 3. 建议在修改前与相关团队沟通确认 4. 如需暂时留空，应设置临时负责人并明确期限"
+      },
+      "final_decision": "REVIEW",
+      "approval_required": true
+    }
+  ],
+  "summary": {
+    "approved": 0,
+    "conditional": 0,
+    "review_required": 1,
+    "rejected": 0,
+    "risk_distribution": {
+      "LOW": 0,
+      "MEDIUM": 0,
+      "HIGH": 1,
+      "CRITICAL": 0
+    }
+  }
+}

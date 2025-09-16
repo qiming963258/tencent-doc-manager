@@ -1,0 +1,140 @@
+{
+  "出国销售计划表": {
+    "table_name": "出国销售计划表",
+    "total_rows": 270,
+    "total_differences": 18,
+    "column_modifications": {
+      "计划输出思路\n8/28": {
+        "rows": [
+          1
+        ],
+        "count": 1,
+        "score": 0.5
+      },
+      "项目类型": {
+        "rows": [
+          2
+        ],
+        "count": 1,
+        "score": 0.5
+      },
+      "来源": {
+        "rows": [
+          3
+        ],
+        "count": 1,
+        "score": 0.5
+      },
+      "任务发起时间": {
+        "rows": [
+          4
+        ],
+        "count": 1,
+        "score": 0.5
+      },
+      "目标对齐": {
+        "rows": [
+          4
+        ],
+        "count": 1,
+        "score": 0.5
+      },
+      "关键KR对齐": {
+        "rows": [
+          5
+        ],
+        "count": 1,
+        "score": 0.5
+      },
+      "具体计划内容": {
+        "rows": [
+          6
+        ],
+        "count": 1,
+        "score": 0.5
+      },
+      "邓总指导登记（日更新）": {
+        "rows": [
+          7
+        ],
+        "count": 1,
+        "score": 0.5
+      },
+      "负责人": {
+        "rows": [
+          8
+        ],
+        "count": 1,
+        "score": 0.5
+      },
+      "协助人": {
+        "rows": [
+          9
+        ],
+        "count": 1,
+        "score": 0.5
+      },
+      "重要程度": {
+        "rows": [
+          10
+        ],
+        "count": 1,
+        "score": 0.5
+      },
+      "预计完成时间": {
+        "rows": [
+          11
+        ],
+        "count": 1,
+        "score": 0.5
+      },
+      "完成链接": {
+        "rows": [
+          12
+        ],
+        "count": 1,
+        "score": 0.5
+      },
+      "总完成进度": {
+        "rows": [
+          13
+        ],
+        "count": 1,
+        "score": 0.5
+      },
+      "经理分析复盘": {
+        "rows": [
+          14
+        ],
+        "count": 1,
+        "score": 0.5
+      },
+      "对上汇报": {
+        "rows": [
+          15
+        ],
+        "count": 1,
+        "score": 0.5
+      },
+      "应用情况": {
+        "rows": [
+          16
+        ],
+        "count": 1,
+        "score": 0.5
+      },
+      "分析总结": {
+        "rows": [
+          17
+        ],
+        "count": 1,
+        "score": 0.5
+      }
+    },
+    "risk_distribution": {
+      "L1": 6,
+      "L2": 4,
+      "L3": 8
+    }
+  }
+}

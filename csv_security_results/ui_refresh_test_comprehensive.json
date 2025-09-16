@@ -1,0 +1,149 @@
+{
+  "success": true,
+  "analysis_name": "ui_refresh_test",
+  "analysis_time": "2025-08-20T18:01:10.372874",
+  "files_analyzed": {
+    "baseline": "baseline.csv",
+    "current": "current.csv",
+    "baseline_checksum": "2bb348bfd7825d3c24fd4c10ab0a552fe65aeb9d31ff0b488dbe6317378643c0",
+    "current_checksum": "5551ef056b43d77434efc2064483312942795e6e31618aeb261e893ac6af0002"
+  },
+  "comparison_summary": {
+    "total_differences": 2,
+    "security_score": 43.6,
+    "risk_level": "L2 - 中风险",
+    "processing_time": 0.003271
+  },
+  "security_assessment": {
+    "timestamp": "2025-08-20T18:01:10.372784",
+    "overall_risk_grade": "HIGH",
+    "critical_findings": [],
+    "security_metrics": {
+      "security_score": 43.6,
+      "total_differences": 2,
+      "max_risk_score": 0.72,
+      "security_violations_count": 0,
+      "processing_time": 0.003271
+    },
+    "compliance_status": {
+      "data_integrity": false,
+      "audit_trail": true,
+      "access_control": true,
+      "encryption": true,
+      "backup_required": true
+    },
+    "requires_archival": false,
+    "requires_approval": true
+  },
+  "intelligent_recommendations": [
+    {
+      "priority": "HIGH",
+      "category": "approval_required",
+      "title": "需要管理层批准",
+      "description": "变更涉及高风险字段，需要获得相应管理层批准",
+      "action": "require_approval"
+    },
+    {
+      "priority": "MEDIUM",
+      "category": "compliance",
+      "title": "加强数据完整性校验",
+      "description": "建议增加额外的数据完整性校验措施",
+      "action": "enhance_integrity"
+    },
+    {
+      "priority": "LOW",
+      "category": "best_practice",
+      "title": "定期安全检查",
+      "description": "建议建立定期的数据安全检查机制",
+      "action": "regular_audit"
+    }
+  ],
+  "detailed_results": {
+    "differences": [
+      {
+        "序号": 1,
+        "行号": 2,
+        "列名": "负责人",
+        "列索引": 2,
+        "原值": "李四",
+        "新值": "李小明",
+        "位置": "行2列2(负责人)",
+        "映射列名": null,
+        "比较时间": "2025-08-20T18:01:10.367951",
+        "risk_level": "L2",
+        "risk_score": 0.72,
+        "security_multiplier": 1.2,
+        "text_change_ratio": 0.54
+      },
+      {
+        "序号": 2,
+        "行号": 3,
+        "列名": "状态",
+        "列索引": 4,
+        "原值": "正常",
+        "新值": "离职",
+        "位置": "行3列4(状态)",
+        "映射列名": null,
+        "比较时间": "2025-08-20T18:01:10.367969",
+        "risk_level": "L3",
+        "risk_score": 0.2,
+        "security_multiplier": 1.0,
+        "text_change_ratio": 0.5
+      }
+    ],
+    "metadata": {
+      "file1_info": {
+        "encoding": "utf-8-sig",
+        "rows": 5,
+        "columns": 4,
+        "file_size": 128,
+        "checksum": "2bb348bfd7825d3c24fd4c10ab0a552fe65aeb9d31ff0b488dbe6317378643c0"
+      },
+      "file2_info": {
+        "encoding": "utf-8-sig",
+        "rows": 6,
+        "columns": 4,
+        "file_size": 155,
+        "checksum": "5551ef056b43d77434efc2064483312942795e6e31618aeb261e893ac6af0002"
+      },
+      "column_mapping": {
+        "mapping": {
+          "id": "id",
+          "负责人": "负责人",
+          "部门": "部门",
+          "状态": "状态"
+        },
+        "confidence_scores": {
+          "id": 1.0,
+          "负责人": 1.0,
+          "部门": 1.0,
+          "状态": 1.0
+        },
+        "mapping_rate": 100.0
+      },
+      "risk_analysis": {
+        "security_score": 43.6,
+        "average_risk_score": 0.46,
+        "max_risk_score": 0.72,
+        "risk_distribution": {
+          "L1": 0,
+          "L2": 1,
+          "L3": 1
+        },
+        "security_violations": [],
+        "total_risks": 2
+      },
+      "audit_log_entries": 1
+    }
+  },
+  "session_stats": {
+    "session_start": "2025-08-20T18:01:10.366423",
+    "comparisons_total": 1,
+    "comparisons_success": 0,
+    "comparisons_failed": 0,
+    "security_violations_detected": 0,
+    "high_risk_changes": 0,
+    "medium_risk_changes": 2,
+    "low_risk_changes": 0
+  }
+}

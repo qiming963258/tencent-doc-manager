@@ -1,0 +1,29 @@
+{
+  "comparison_summary": {
+    "baseline_file": "baseline_table_030_20250818.csv",
+    "current_file": "current_用户增长部_table_030_20250819.csv",
+    "total_differences": 2,
+    "rows_compared": 104,
+    "columns_compared": 19
+  },
+  "differences": [
+    {
+      "序号": 1,
+      "行号": 29,
+      "列名": "对上汇报",
+      "列索引": 16,
+      "原值": "已汇报已结项",
+      "新值": "计划汇报",
+      "位置": "行29列16(对上汇报)"
+    },
+    {
+      "序号": 2,
+      "行号": 13,
+      "列名": "重要程度",
+      "列索引": 11,
+      "原值": "4",
+      "新值": "5",
+      "位置": "行13列11(重要程度)"
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "workflow_id": "WF-L2-20250908_142447",
+  "created_time": "2025-09-08 14:24:47",
+  "pending_approvals": [
+    {
+      "modification_id": "M001",
+      "cell": "C4",
+      "column": "项目类型",
+      "old_value": "目标管理",
+      "new_value": "体系建设",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 80.0,
+        "reason": "范围扩大"
+      },
+      "layer2_result": {
+        "risk_level": "MEDIUM",
+        "decision": "REVIEW",
+        "confidence": 75,
+        "key_risks": [
+          "项目性质的根本性改变可能导致原有规划失效",
+          "需要重新评估资源配置和团队技能匹配度",
+          "可能引起相关干系人对项目方向的质疑"
+        ],
+        "recommendation": "建议召开项目变更评审会，邀请核心干系人共同评估：1.确认修改原因和必要性；2.评估新项目类型下的目标可行性；3.制定详细的过渡计划；4.更新相关项目文档和沟通计划"
+      },
+      "final_decision": "REVIEW",
+      "approval_required": true
+    }
+  ],
+  "auto_approved": []
+}

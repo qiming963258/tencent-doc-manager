@@ -1,0 +1,31 @@
+{
+  "workflow_id": "WF-L2-20250909_133857",
+  "created_time": "2025-09-09 13:38:57",
+  "pending_approvals": [],
+  "auto_approved": [
+    {
+      "modification_id": "M001",
+      "cell": "J12",
+      "column": "负责人",
+      "old_value": "赖铁荔",
+      "new_value": "赖铁荔,各责任人",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 75.0,
+        "reason": "责任变更"
+      },
+      "layer2_result": {
+        "risk_level": "MEDIUM",
+        "decision": "CONDITIONAL",
+        "confidence": 75,
+        "key_risks": [
+          "责任主体模糊化风险",
+          "多责任人协作效率风险"
+        ],
+        "recommendation": "建议：1. 若采用多人负责制，需明确定义各责任人具体分工（如通过备注列说明职责范围）；2. 补充修订说明记录本次变更原因；3. 通知所有相关干系人此变更情况。需配套措施到位后方可批准。"
+      },
+      "final_decision": "CONDITIONAL",
+      "approval_required": false
+    }
+  ]
+}

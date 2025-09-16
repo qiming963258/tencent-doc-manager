@@ -1,0 +1,48 @@
+{
+  "metadata": {
+    "analysis_time": "2025-09-15 15:03:59",
+    "total_modifications": 1,
+    "layer1_passed": 0,
+    "layer2_analyzed": 1,
+    "processing_time": "17.5s"
+  },
+  "results": [
+    {
+      "modification_id": "M001",
+      "cell": "G52",
+      "column": "具体计划内容",
+      "old_value": "通过AI查词搜索完成小红书搜索的下拉词条清洗，通过盘点品牌词下拉关联词条，对近似词不断进行ai搜索关键词，提升关键词的搜索次数，建立品牌词下拉的关键词条改变用户搜索关键词下拉词条的显示结果，引导用户搜",
+      "new_value": "新产品定价与区域覆盖",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 80.0,
+        "reason": "计划变更"
+      },
+      "layer2_result": {
+        "risk_level": "HIGH",
+        "decision": "REVIEW",
+        "confidence": 85,
+        "key_risks": [
+          "性质完全改变：从AI关键词优化转变为定价策略，可能导致项目目标偏离",
+          "执行计划中断：原SEO工作可能被废弃",
+          "资源浪费：前期AI相关投入可能无法回收"
+        ],
+        "recommendation": "建议召开变更评审会：1) 确认战略方向是否调整 2) 评估是否需要保留部分原计划 3) 制定过渡方案 4) 更新所有关联文档（特别是KPI指标）。若无合理业务转型理由，应恢复原计划。"
+      },
+      "final_decision": "REVIEW",
+      "approval_required": true
+    }
+  ],
+  "summary": {
+    "approved": 0,
+    "conditional": 0,
+    "review_required": 1,
+    "rejected": 0,
+    "risk_distribution": {
+      "LOW": 0,
+      "MEDIUM": 0,
+      "HIGH": 1,
+      "CRITICAL": 0
+    }
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "workflow_id": "WF-L2-20250915_153117",
+  "created_time": "2025-09-15 15:31:17",
+  "pending_approvals": [
+    {
+      "modification_id": "M001",
+      "cell": "B81",
+      "column": "项目类型",
+      "old_value": "目标管理",
+      "new_value": "",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 80.0,
+        "reason": "关键信息缺失"
+      },
+      "layer2_result": {
+        "risk_level": "CRITICAL",
+        "decision": "REJECT",
+        "confidence": 95,
+        "key_risks": [
+          "项目类型清空将导致项目分类体系崩溃",
+          "无法进行后续的项目管理和资源分配",
+          "KPI考核体系失效",
+          "报表统计功能瘫痪"
+        ],
+        "recommendation": "1.必须保留项目类型字段值\n2.如需修改，应提供合法的替代值\n3.建议采用标准项目类型库中的选项\n4.修改前需通过PMO审批流程"
+      },
+      "final_decision": "REJECT",
+      "approval_required": true
+    }
+  ],
+  "auto_approved": []
+}

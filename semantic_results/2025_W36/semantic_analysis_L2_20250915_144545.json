@@ -1,0 +1,48 @@
+{
+  "metadata": {
+    "analysis_time": "2025-09-15 14:45:45",
+    "total_modifications": 1,
+    "layer1_passed": 0,
+    "layer2_analyzed": 1,
+    "processing_time": "17.1s"
+  },
+  "results": [
+    {
+      "modification_id": "M001",
+      "cell": "I34",
+      "column": "负责人",
+      "old_value": "朱瀚桔",
+      "new_value": "0714-\n新兴国家的关键词需要针对性植入对应的某个国家，使用热门词或长尾流量词",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 90.0,
+        "reason": "负责人变更"
+      },
+      "layer2_result": {
+        "risk_level": "HIGH",
+        "decision": "REVIEW",
+        "confidence": 85,
+        "key_risks": [
+          "负责人信息被替换为非人员标识，可能导致责任归属不清",
+          "新值'0714-'明显不符合负责人字段的常规格式要求",
+          "修改说明与单元格内容变更不符，存在严重的不一致性"
+        ],
+        "recommendation": "1. 要求提交者明确说明将负责人从人名改为编号的原因\n2. 确认'0714-'是否代表某个内部编码系统\n3. 核对修改说明文本是否错误粘贴到了不相关的字段\n4. 如果是误操作，应恢复原值并重新提交正确的修改"
+      },
+      "final_decision": "REVIEW",
+      "approval_required": true
+    }
+  ],
+  "summary": {
+    "approved": 0,
+    "conditional": 0,
+    "review_required": 1,
+    "rejected": 0,
+    "risk_distribution": {
+      "LOW": 0,
+      "MEDIUM": 0,
+      "HIGH": 1,
+      "CRITICAL": 0
+    }
+  }
+}

@@ -1,0 +1,1267 @@
+{
+  "metadata": {
+    "version": "2.0",
+    "generated_at": "2025-09-13T18:23:52.461475",
+    "week_number": "W03",
+    "total_tables": 18,
+    "total_modifications": 95,
+    "data_type": "comprehensive_scoring",
+    "description": "真实随机分布的综合打分数据"
+  },
+  "summary": {
+    "total_modifications": 95,
+    "risk_distribution": {
+      "L1": 12,
+      "L2": 46,
+      "L3": 37
+    },
+    "tables_with_modifications": 18,
+    "tables_without_modifications": 0,
+    "average_modifications_per_table": 5.28,
+    "max_modifications_in_table": 8,
+    "min_modifications_in_table": 2
+  },
+  "tables": [
+    {
+      "table_id": 15,
+      "table_name": "创新实验室",
+      "total_rows": 58,
+      "total_columns": 19,
+      "modifications": [
+        {
+          "row": 24,
+          "column": 8,
+          "column_name": "负责人",
+          "old_value": "原始值_9225",
+          "new_value": "修改值_4756",
+          "risk_level": "L2",
+          "change_type": "correction",
+          "timestamp": "2025-01-12T11:28:05"
+        },
+        {
+          "row": 18,
+          "column": 17,
+          "column_name": "应用情况",
+          "old_value": "原始值_1163",
+          "new_value": "修改值_5385",
+          "risk_level": "L2",
+          "change_type": "addition",
+          "timestamp": "2025-01-12T18:52:13"
+        },
+        {
+          "row": 52,
+          "column": 13,
+          "column_name": "完成进度",
+          "old_value": "原始值_9149",
+          "new_value": "修改值_8811",
+          "risk_level": "L1",
+          "change_type": "correction",
+          "timestamp": "2025-01-12T09:46:13"
+        },
+        {
+          "row": 41,
+          "column": 10,
+          "column_name": "监督人",
+          "old_value": "原始值_5760",
+          "new_value": "修改值_9582",
+          "risk_level": "L2",
+          "change_type": "correction",
+          "timestamp": "2025-01-12T17:18:32"
+        },
+        {
+          "row": 22,
+          "column": 13,
+          "column_name": "完成进度",
+          "old_value": "原始值_5581",
+          "new_value": "修改值_6201",
+          "risk_level": "L2",
+          "change_type": "addition",
+          "timestamp": "2025-01-12T13:37:45"
+        },
+        {
+          "row": 43,
+          "column": 9,
+          "column_name": "协助人",
+          "old_value": "原始值_8056",
+          "new_value": "修改值_1337",
+          "risk_level": "L1",
+          "change_type": "addition",
+          "timestamp": "2025-01-12T18:35:44"
+        },
+        {
+          "row": 54,
+          "column": 8,
+          "column_name": "负责人",
+          "old_value": "原始值_8124",
+          "new_value": "修改值_8990",
+          "risk_level": "L3",
+          "change_type": "addition",
+          "timestamp": "2025-01-12T09:23:18"
+        },
+        {
+          "row": 53,
+          "column": 12,
+          "column_name": "预计完成时间",
+          "old_value": "原始值_5885",
+          "new_value": "修改值_8540",
+          "risk_level": "L2",
+          "change_type": "update",
+          "timestamp": "2025-01-12T18:29:09"
+        }
+      ],
+      "modification_count": 8,
+      "risk_summary": {
+        "L1": 2,
+        "L2": 5,
+        "L3": 1
+      },
+      "overall_risk_score": 0.562
+    },
+    {
+      "table_id": 10,
+      "table_name": "移动端开发",
+      "total_rows": 69,
+      "total_columns": 19,
+      "modifications": [
+        {
+          "row": 46,
+          "column": 8,
+          "column_name": "负责人",
+          "old_value": "原始值_8171",
+          "new_value": "修改值_7244",
+          "risk_level": "L2",
+          "change_type": "addition",
+          "timestamp": "2025-01-12T08:51:49"
+        },
+        {
+          "row": 19,
+          "column": 14,
+          "column_name": "形成计划清单",
+          "old_value": "原始值_9433",
+          "new_value": "修改值_1760",
+          "risk_level": "L2",
+          "change_type": "correction",
+          "timestamp": "2025-01-12T10:03:24"
+        },
+        {
+          "row": 27,
+          "column": 15,
+          "column_name": "复盘时间",
+          "old_value": "原始值_3506",
+          "new_value": "修改值_3467",
+          "risk_level": "L3",
+          "change_type": "update",
+          "timestamp": "2025-01-12T13:48:40"
+        },
+        {
+          "row": 23,
+          "column": 18,
+          "column_name": "进度分析总结",
+          "old_value": "原始值_2179",
+          "new_value": "修改值_7150",
+          "risk_level": "L2",
+          "change_type": "addition",
+          "timestamp": "2025-01-12T14:20:26"
+        },
+        {
+          "row": 37,
+          "column": 17,
+          "column_name": "应用情况",
+          "old_value": "原始值_9991",
+          "new_value": "修改值_4093",
+          "risk_level": "L1",
+          "change_type": "correction",
+          "timestamp": "2025-01-12T09:21:38"
+        },
+        {
+          "row": 31,
+          "column": 15,
+          "column_name": "复盘时间",
+          "old_value": "原始值_3741",
+          "new_value": "修改值_3306",
+          "risk_level": "L2",
+          "change_type": "addition",
+          "timestamp": "2025-01-12T11:59:53"
+        }
+      ],
+      "modification_count": 6,
+      "risk_summary": {
+        "L1": 1,
+        "L2": 4,
+        "L3": 1
+      },
+      "overall_risk_score": 0.517
+    },
+    {
+      "table_id": 11,
+      "table_name": "云服务迁移",
+      "total_rows": 40,
+      "total_columns": 19,
+      "modifications": [
+        {
+          "row": 17,
+          "column": 16,
+          "column_name": "对上汇报",
+          "old_value": "原始值_8718",
+          "new_value": "修改值_8381",
+          "risk_level": "L1",
+          "change_type": "correction",
+          "timestamp": "2025-01-12T14:07:05"
+        },
+        {
+          "row": 29,
+          "column": 10,
+          "column_name": "监督人",
+          "old_value": "原始值_4235",
+          "new_value": "修改值_8517",
+          "risk_level": "L2",
+          "change_type": "update",
+          "timestamp": "2025-01-12T12:47:34"
+        },
+        {
+          "row": 13,
+          "column": 0,
+          "column_name": "序号",
+          "old_value": "原始值_3246",
+          "new_value": "修改值_6737",
+          "risk_level": "L3",
+          "change_type": "correction",
+          "timestamp": "2025-01-12T15:48:27"
+        },
+        {
+          "row": 26,
+          "column": 13,
+          "column_name": "完成进度",
+          "old_value": "原始值_6709",
+          "new_value": "修改值_4080",
+          "risk_level": "L2",
+          "change_type": "addition",
+          "timestamp": "2025-01-12T12:22:17"
+        },
+        {
+          "row": 30,
+          "column": 6,
+          "column_name": "具体计划内容",
+          "old_value": "原始值_9418",
+          "new_value": "修改值_4784",
+          "risk_level": "L2",
+          "change_type": "addition",
+          "timestamp": "2025-01-12T17:48:36"
+        },
+        {
+          "row": 6,
+          "column": 7,
+          "column_name": "邓总指导登记",
+          "old_value": "原始值_2244",
+          "new_value": "修改值_1400",
+          "risk_level": "L2",
+          "change_type": "update",
+          "timestamp": "2025-01-12T11:25:53"
+        }
+      ],
+      "modification_count": 6,
+      "risk_summary": {
+        "L1": 1,
+        "L2": 4,
+        "L3": 1
+      },
+      "overall_risk_score": 0.517
+    },
+    {
+      "table_id": 13,
+      "table_name": "国际业务拓展",
+      "total_rows": 75,
+      "total_columns": 19,
+      "modifications": [
+        {
+          "row": 71,
+          "column": 7,
+          "column_name": "邓总指导登记",
+          "old_value": "原始值_4264",
+          "new_value": "修改值_7392",
+          "risk_level": "L2",
+          "change_type": "correction",
+          "timestamp": "2025-01-12T17:16:30"
+        },
+        {
+          "row": 4,
+          "column": 3,
+          "column_name": "任务发起时间",
+          "old_value": "原始值_5654",
+          "new_value": "修改值_7791",
+          "risk_level": "L2",
+          "change_type": "addition",
+          "timestamp": "2025-01-12T16:16:21"
+        }
+      ],
+      "modification_count": 2,
+      "risk_summary": {
+        "L1": 0,
+        "L2": 2,
+        "L3": 0
+      },
+      "overall_risk_score": 0.5
+    },
+    {
+      "table_id": 14,
+      "table_name": "品牌建设项目",
+      "total_rows": 42,
+      "total_columns": 19,
+      "modifications": [
+        {
+          "row": 37,
+          "column": 0,
+          "column_name": "序号",
+          "old_value": "原始值_2144",
+          "new_value": "修改值_1155",
+          "risk_level": "L2",
+          "change_type": "addition",
+          "timestamp": "2025-01-12T09:14:06"
+        },
+        {
+          "row": 40,
+          "column": 13,
+          "column_name": "完成进度",
+          "old_value": "原始值_6627",
+          "new_value": "修改值_3289",
+          "risk_level": "L2",
+          "change_type": "addition",
+          "timestamp": "2025-01-12T09:56:18"
+        }
+      ],
+      "modification_count": 2,
+      "risk_summary": {
+        "L1": 0,
+        "L2": 2,
+        "L3": 0
+      },
+      "overall_risk_score": 0.5
+    },
+    {
+      "table_id": 3,
+      "table_name": "产品研发进度",
+      "total_rows": 73,
+      "total_columns": 19,
+      "modifications": [
+        {
+          "row": 43,
+          "column": 8,
+          "column_name": "负责人",
+          "old_value": "原始值_6338",
+          "new_value": "修改值_1917",
+          "risk_level": "L3",
+          "change_type": "addition",
+          "timestamp": "2025-01-12T14:12:44"
+        },
+        {
+          "row": 32,
+          "column": 5,
+          "column_name": "关键KR对齐",
+          "old_value": "原始值_1967",
+          "new_value": "修改值_4561",
+          "risk_level": "L2",
+          "change_type": "correction",
+          "timestamp": "2025-01-12T16:51:02"
+        },
+        {
+          "row": 51,
+          "column": 12,
+          "column_name": "预计完成时间",
+          "old_value": "原始值_6540",
+          "new_value": "修改值_3053",
+          "risk_level": "L1",
+          "change_type": "update",
+          "timestamp": "2025-01-12T14:33:01"
+        },
+        {
+          "row": 11,
+          "column": 12,
+          "column_name": "预计完成时间",
+          "old_value": "原始值_2543",
+          "new_value": "修改值_2476",
+          "risk_level": "L3",
+          "change_type": "update",
+          "timestamp": "2025-01-12T14:15:06"
+        },
+        {
+          "row": 70,
+          "column": 8,
+          "column_name": "负责人",
+          "old_value": "原始值_3622",
+          "new_value": "修改值_9071",
+          "risk_level": "L2",
+          "change_type": "update",
+          "timestamp": "2025-01-12T12:14:52"
+        },
+        {
+          "row": 39,
+          "column": 3,
+          "column_name": "任务发起时间",
+          "old_value": "原始值_8614",
+          "new_value": "修改值_8629",
+          "risk_level": "L1",
+          "change_type": "addition",
+          "timestamp": "2025-01-12T12:31:49"
+        },
+        {
+          "row": 20,
+          "column": 15,
+          "column_name": "复盘时间",
+          "old_value": "原始值_5817",
+          "new_value": "修改值_4525",
+          "risk_level": "L3",
+          "change_type": "correction",
+          "timestamp": "2025-01-12T15:27:33"
+        }
+      ],
+      "modification_count": 7,
+      "risk_summary": {
+        "L1": 2,
+        "L2": 2,
+        "L3": 3
+      },
+      "overall_risk_score": 0.486
+    },
+    {
+      "table_id": 7,
+      "table_name": "人力资源规划",
+      "total_rows": 75,
+      "total_columns": 19,
+      "modifications": [
+        {
+          "row": 37,
+          "column": 12,
+          "column_name": "预计完成时间",
+          "old_value": "原始值_6609",
+          "new_value": "修改值_5978",
+          "risk_level": "L2",
+          "change_type": "addition",
+          "timestamp": "2025-01-12T13:36:29"
+        },
+        {
+          "row": 72,
+          "column": 10,
+          "column_name": "监督人",
+          "old_value": "原始值_6545",
+          "new_value": "修改值_3961",
+          "risk_level": "L3",
+          "change_type": "correction",
+          "timestamp": "2025-01-12T13:43:12"
+        },
+        {
+          "row": 43,
+          "column": 16,
+          "column_name": "对上汇报",
+          "old_value": "原始值_2192",
+          "new_value": "修改值_8777",
+          "risk_level": "L1",
+          "change_type": "update",
+          "timestamp": "2025-01-12T13:41:19"
+        },
+        {
+          "row": 37,
+          "column": 5,
+          "column_name": "关键KR对齐",
+          "old_value": "原始值_9829",
+          "new_value": "修改值_4597",
+          "risk_level": "L2",
+          "change_type": "correction",
+          "timestamp": "2025-01-12T09:47:50"
+        },
+        {
+          "row": 61,
+          "column": 11,
+          "column_name": "重要程度",
+          "old_value": "原始值_8364",
+          "new_value": "修改值_3258",
+          "risk_level": "L3",
+          "change_type": "addition",
+          "timestamp": "2025-01-12T18:18:30"
+        },
+        {
+          "row": 7,
+          "column": 11,
+          "column_name": "重要程度",
+          "old_value": "原始值_4718",
+          "new_value": "修改值_1086",
+          "risk_level": "L2",
+          "change_type": "update",
+          "timestamp": "2025-01-12T18:47:04"
+        }
+      ],
+      "modification_count": 6,
+      "risk_summary": {
+        "L1": 1,
+        "L2": 3,
+        "L3": 2
+      },
+      "overall_risk_score": 0.467
+    },
+    {
+      "table_id": 8,
+      "table_name": "技术架构升级",
+      "total_rows": 56,
+      "total_columns": 19,
+      "modifications": [
+        {
+          "row": 35,
+          "column": 1,
+          "column_name": "项目类型",
+          "old_value": "原始值_1133",
+          "new_value": "修改值_7772",
+          "risk_level": "L2",
+          "change_type": "correction",
+          "timestamp": "2025-01-12T12:09:36"
+        },
+        {
+          "row": 30,
+          "column": 7,
+          "column_name": "邓总指导登记",
+          "old_value": "原始值_2748",
+          "new_value": "修改值_7741",
+          "risk_level": "L2",
+          "change_type": "addition",
+          "timestamp": "2025-01-12T18:56:39"
+        },
+        {
+          "row": 19,
+          "column": 6,
+          "column_name": "具体计划内容",
+          "old_value": "原始值_4522",
+          "new_value": "修改值_6333",
+          "risk_level": "L2",
+          "change_type": "correction",
+          "timestamp": "2025-01-12T08:08:55"
+        },
+        {
+          "row": 29,
+          "column": 3,
+          "column_name": "任务发起时间",
+          "old_value": "原始值_7515",
+          "new_value": "修改值_4691",
+          "risk_level": "L3",
+          "change_type": "update",
+          "timestamp": "2025-01-12T09:18:44"
+        },
+        {
+          "row": 10,
+          "column": 3,
+          "column_name": "任务发起时间",
+          "old_value": "原始值_7147",
+          "new_value": "修改值_8980",
+          "risk_level": "L2",
+          "change_type": "update",
+          "timestamp": "2025-01-12T17:30:01"
+        },
+        {
+          "row": 39,
+          "column": 15,
+          "column_name": "复盘时间",
+          "old_value": "原始值_7081",
+          "new_value": "修改值_5681",
+          "risk_level": "L2",
+          "change_type": "addition",
+          "timestamp": "2025-01-12T10:47:50"
+        }
+      ],
+      "modification_count": 6,
+      "risk_summary": {
+        "L1": 0,
+        "L2": 5,
+        "L3": 1
+      },
+      "overall_risk_score": 0.45
+    },
+    {
+      "table_id": 5,
+      "table_name": "供应链管理",
+      "total_rows": 70,
+      "total_columns": 19,
+      "modifications": [
+        {
+          "row": 23,
+          "column": 5,
+          "column_name": "关键KR对齐",
+          "old_value": "原始值_6352",
+          "new_value": "修改值_4571",
+          "risk_level": "L2",
+          "change_type": "addition",
+          "timestamp": "2025-01-12T18:31:24"
+        },
+        {
+          "row": 56,
+          "column": 12,
+          "column_name": "预计完成时间",
+          "old_value": "原始值_1311",
+          "new_value": "修改值_4073",
+          "risk_level": "L3",
+          "change_type": "correction",
+          "timestamp": "2025-01-12T09:16:38"
+        },
+        {
+          "row": 62,
+          "column": 0,
+          "column_name": "序号",
+          "old_value": "原始值_3843",
+          "new_value": "修改值_9006",
+          "risk_level": "L2",
+          "change_type": "update",
+          "timestamp": "2025-01-12T08:01:08"
+        },
+        {
+          "row": 2,
+          "column": 15,
+          "column_name": "复盘时间",
+          "old_value": "原始值_5926",
+          "new_value": "修改值_9101",
+          "risk_level": "L2",
+          "change_type": "update",
+          "timestamp": "2025-01-12T17:59:26"
+        }
+      ],
+      "modification_count": 4,
+      "risk_summary": {
+        "L1": 0,
+        "L2": 3,
+        "L3": 1
+      },
+      "overall_risk_score": 0.425
+    },
+    {
+      "table_id": 4,
+      "table_name": "客户服务优化",
+      "total_rows": 65,
+      "total_columns": 19,
+      "modifications": [
+        {
+          "row": 46,
+          "column": 14,
+          "column_name": "形成计划清单",
+          "old_value": "原始值_9143",
+          "new_value": "修改值_8348",
+          "risk_level": "L3",
+          "change_type": "addition",
+          "timestamp": "2025-01-12T14:50:33"
+        },
+        {
+          "row": 55,
+          "column": 5,
+          "column_name": "关键KR对齐",
+          "old_value": "原始值_1660",
+          "new_value": "修改值_6333",
+          "risk_level": "L2",
+          "change_type": "addition",
+          "timestamp": "2025-01-12T15:55:27"
+        },
+        {
+          "row": 47,
+          "column": 7,
+          "column_name": "邓总指导登记",
+          "old_value": "原始值_9673",
+          "new_value": "修改值_1170",
+          "risk_level": "L3",
+          "change_type": "correction",
+          "timestamp": "2025-01-12T15:11:06"
+        },
+        {
+          "row": 29,
+          "column": 13,
+          "column_name": "完成进度",
+          "old_value": "原始值_8951",
+          "new_value": "修改值_5278",
+          "risk_level": "L1",
+          "change_type": "addition",
+          "timestamp": "2025-01-12T10:54:54"
+        },
+        {
+          "row": 19,
+          "column": 15,
+          "column_name": "复盘时间",
+          "old_value": "原始值_8810",
+          "new_value": "修改值_2387",
+          "risk_level": "L2",
+          "change_type": "update",
+          "timestamp": "2025-01-12T09:49:55"
+        },
+        {
+          "row": 56,
+          "column": 8,
+          "column_name": "负责人",
+          "old_value": "原始值_9611",
+          "new_value": "修改值_2738",
+          "risk_level": "L3",
+          "change_type": "addition",
+          "timestamp": "2025-01-12T14:43:14"
+        }
+      ],
+      "modification_count": 6,
+      "risk_summary": {
+        "L1": 1,
+        "L2": 2,
+        "L3": 3
+      },
+      "overall_risk_score": 0.417
+    },
+    {
+      "table_id": 6,
+      "table_name": "财务预算执行",
+      "total_rows": 43,
+      "total_columns": 19,
+      "modifications": [
+        {
+          "row": 24,
+          "column": 4,
+          "column_name": "目标对齐",
+          "old_value": "原始值_1677",
+          "new_value": "修改值_9204",
+          "risk_level": "L3",
+          "change_type": "update",
+          "timestamp": "2025-01-12T10:20:43"
+        },
+        {
+          "row": 27,
+          "column": 5,
+          "column_name": "关键KR对齐",
+          "old_value": "原始值_8694",
+          "new_value": "修改值_5272",
+          "risk_level": "L3",
+          "change_type": "update",
+          "timestamp": "2025-01-12T18:45:44"
+        },
+        {
+          "row": 27,
+          "column": 11,
+          "column_name": "重要程度",
+          "old_value": "原始值_2665",
+          "new_value": "修改值_5952",
+          "risk_level": "L2",
+          "change_type": "addition",
+          "timestamp": "2025-01-12T13:35:09"
+        },
+        {
+          "row": 8,
+          "column": 1,
+          "column_name": "项目类型",
+          "old_value": "原始值_2673",
+          "new_value": "修改值_9732",
+          "risk_level": "L2",
+          "change_type": "correction",
+          "timestamp": "2025-01-12T14:03:10"
+        },
+        {
+          "row": 35,
+          "column": 13,
+          "column_name": "完成进度",
+          "old_value": "原始值_4233",
+          "new_value": "修改值_4877",
+          "risk_level": "L1",
+          "change_type": "addition",
+          "timestamp": "2025-01-12T08:35:24"
+        },
+        {
+          "row": 39,
+          "column": 14,
+          "column_name": "形成计划清单",
+          "old_value": "原始值_9737",
+          "new_value": "修改值_4711",
+          "risk_level": "L3",
+          "change_type": "correction",
+          "timestamp": "2025-01-12T13:44:21"
+        },
+        {
+          "row": 37,
+          "column": 12,
+          "column_name": "预计完成时间",
+          "old_value": "原始值_9702",
+          "new_value": "修改值_1139",
+          "risk_level": "L2",
+          "change_type": "correction",
+          "timestamp": "2025-01-12T15:26:37"
+        },
+        {
+          "row": 29,
+          "column": 12,
+          "column_name": "预计完成时间",
+          "old_value": "原始值_2629",
+          "new_value": "修改值_4494",
+          "risk_level": "L3",
+          "change_type": "update",
+          "timestamp": "2025-01-12T12:21:02"
+        }
+      ],
+      "modification_count": 8,
+      "risk_summary": {
+        "L1": 1,
+        "L2": 3,
+        "L3": 4
+      },
+      "overall_risk_score": 0.4
+    },
+    {
+      "table_id": 12,
+      "table_name": "安全合规审查",
+      "total_rows": 35,
+      "total_columns": 19,
+      "modifications": [
+        {
+          "row": 8,
+          "column": 8,
+          "column_name": "负责人",
+          "old_value": "原始值_8105",
+          "new_value": "修改值_6829",
+          "risk_level": "L3",
+          "change_type": "correction",
+          "timestamp": "2025-01-12T11:55:57"
+        },
+        {
+          "row": 6,
+          "column": 2,
+          "column_name": "来源",
+          "old_value": "原始值_7189",
+          "new_value": "修改值_6655",
+          "risk_level": "L2",
+          "change_type": "addition",
+          "timestamp": "2025-01-12T16:45:35"
+        },
+        {
+          "row": 18,
+          "column": 17,
+          "column_name": "应用情况",
+          "old_value": "原始值_6482",
+          "new_value": "修改值_3864",
+          "risk_level": "L3",
+          "change_type": "correction",
+          "timestamp": "2025-01-12T11:50:06"
+        },
+        {
+          "row": 22,
+          "column": 2,
+          "column_name": "来源",
+          "old_value": "原始值_6589",
+          "new_value": "修改值_9991",
+          "risk_level": "L1",
+          "change_type": "update",
+          "timestamp": "2025-01-12T17:29:50"
+        },
+        {
+          "row": 5,
+          "column": 14,
+          "column_name": "形成计划清单",
+          "old_value": "原始值_5161",
+          "new_value": "修改值_9062",
+          "risk_level": "L2",
+          "change_type": "addition",
+          "timestamp": "2025-01-12T16:49:41"
+        },
+        {
+          "row": 23,
+          "column": 16,
+          "column_name": "对上汇报",
+          "old_value": "原始值_4999",
+          "new_value": "修改值_4036",
+          "risk_level": "L3",
+          "change_type": "update",
+          "timestamp": "2025-01-12T17:53:00"
+        },
+        {
+          "row": 33,
+          "column": 6,
+          "column_name": "具体计划内容",
+          "old_value": "原始值_2853",
+          "new_value": "修改值_4347",
+          "risk_level": "L3",
+          "change_type": "update",
+          "timestamp": "2025-01-12T08:03:56"
+        },
+        {
+          "row": 22,
+          "column": 0,
+          "column_name": "序号",
+          "old_value": "原始值_9009",
+          "new_value": "修改值_7343",
+          "risk_level": "L2",
+          "change_type": "correction",
+          "timestamp": "2025-01-12T12:25:07"
+        }
+      ],
+      "modification_count": 8,
+      "risk_summary": {
+        "L1": 1,
+        "L2": 3,
+        "L3": 4
+      },
+      "overall_risk_score": 0.4
+    },
+    {
+      "table_id": 17,
+      "table_name": "战略合作伙伴",
+      "total_rows": 46,
+      "total_columns": 19,
+      "modifications": [
+        {
+          "row": 39,
+          "column": 8,
+          "column_name": "负责人",
+          "old_value": "原始值_4713",
+          "new_value": "修改值_4872",
+          "risk_level": "L3",
+          "change_type": "correction",
+          "timestamp": "2025-01-12T14:06:56"
+        },
+        {
+          "row": 17,
+          "column": 10,
+          "column_name": "监督人",
+          "old_value": "原始值_7951",
+          "new_value": "修改值_9753",
+          "risk_level": "L3",
+          "change_type": "update",
+          "timestamp": "2025-01-12T15:32:16"
+        },
+        {
+          "row": 14,
+          "column": 13,
+          "column_name": "完成进度",
+          "old_value": "原始值_2332",
+          "new_value": "修改值_9357",
+          "risk_level": "L1",
+          "change_type": "update",
+          "timestamp": "2025-01-12T10:15:46"
+        },
+        {
+          "row": 37,
+          "column": 5,
+          "column_name": "关键KR对齐",
+          "old_value": "原始值_6785",
+          "new_value": "修改值_1843",
+          "risk_level": "L3",
+          "change_type": "addition",
+          "timestamp": "2025-01-12T15:12:47"
+        },
+        {
+          "row": 18,
+          "column": 11,
+          "column_name": "重要程度",
+          "old_value": "原始值_3301",
+          "new_value": "修改值_7347",
+          "risk_level": "L2",
+          "change_type": "addition",
+          "timestamp": "2025-01-12T16:17:25"
+        }
+      ],
+      "modification_count": 5,
+      "risk_summary": {
+        "L1": 1,
+        "L2": 1,
+        "L3": 3
+      },
+      "overall_risk_score": 0.4
+    },
+    {
+      "table_id": 18,
+      "table_name": "年度总结报告",
+      "total_rows": 32,
+      "total_columns": 19,
+      "modifications": [
+        {
+          "row": 24,
+          "column": 14,
+          "column_name": "形成计划清单",
+          "old_value": "原始值_9835",
+          "new_value": "修改值_1668",
+          "risk_level": "L3",
+          "change_type": "correction",
+          "timestamp": "2025-01-12T13:33:30"
+        },
+        {
+          "row": 15,
+          "column": 5,
+          "column_name": "关键KR对齐",
+          "old_value": "原始值_8128",
+          "new_value": "修改值_3445",
+          "risk_level": "L2",
+          "change_type": "update",
+          "timestamp": "2025-01-12T08:03:24"
+        },
+        {
+          "row": 18,
+          "column": 7,
+          "column_name": "邓总指导登记",
+          "old_value": "原始值_4192",
+          "new_value": "修改值_3527",
+          "risk_level": "L3",
+          "change_type": "update",
+          "timestamp": "2025-01-12T10:49:16"
+        },
+        {
+          "row": 21,
+          "column": 9,
+          "column_name": "协助人",
+          "old_value": "原始值_2993",
+          "new_value": "修改值_9227",
+          "risk_level": "L3",
+          "change_type": "addition",
+          "timestamp": "2025-01-12T16:33:07"
+        },
+        {
+          "row": 3,
+          "column": 10,
+          "column_name": "监督人",
+          "old_value": "原始值_3398",
+          "new_value": "修改值_9780",
+          "risk_level": "L1",
+          "change_type": "update",
+          "timestamp": "2025-01-12T09:05:31"
+        },
+        {
+          "row": 25,
+          "column": 15,
+          "column_name": "复盘时间",
+          "old_value": "原始值_1049",
+          "new_value": "修改值_8144",
+          "risk_level": "L3",
+          "change_type": "addition",
+          "timestamp": "2025-01-12T10:22:51"
+        },
+        {
+          "row": 1,
+          "column": 6,
+          "column_name": "具体计划内容",
+          "old_value": "原始值_1329",
+          "new_value": "修改值_4005",
+          "risk_level": "L3",
+          "change_type": "addition",
+          "timestamp": "2025-01-12T11:30:17"
+        },
+        {
+          "row": 0,
+          "column": 11,
+          "column_name": "重要程度",
+          "old_value": "原始值_5529",
+          "new_value": "修改值_9314",
+          "risk_level": "L2",
+          "change_type": "update",
+          "timestamp": "2025-01-12T15:37:02"
+        }
+      ],
+      "modification_count": 8,
+      "risk_summary": {
+        "L1": 1,
+        "L2": 2,
+        "L3": 5
+      },
+      "overall_risk_score": 0.362
+    },
+    {
+      "table_id": 1,
+      "table_name": "销售部门Q4计划",
+      "total_rows": 37,
+      "total_columns": 19,
+      "modifications": [
+        {
+          "row": 2,
+          "column": 3,
+          "column_name": "任务发起时间",
+          "old_value": "原始值_9004",
+          "new_value": "修改值_8268",
+          "risk_level": "L3",
+          "change_type": "update",
+          "timestamp": "2025-01-12T15:58:14"
+        },
+        {
+          "row": 20,
+          "column": 17,
+          "column_name": "应用情况",
+          "old_value": "原始值_6659",
+          "new_value": "修改值_7889",
+          "risk_level": "L2",
+          "change_type": "correction",
+          "timestamp": "2025-01-12T13:48:21"
+        }
+      ],
+      "modification_count": 2,
+      "risk_summary": {
+        "L1": 0,
+        "L2": 1,
+        "L3": 1
+      },
+      "overall_risk_score": 0.35
+    },
+    {
+      "table_id": 9,
+      "table_name": "数据分析平台",
+      "total_rows": 60,
+      "total_columns": 19,
+      "modifications": [
+        {
+          "row": 44,
+          "column": 6,
+          "column_name": "具体计划内容",
+          "old_value": "原始值_6629",
+          "new_value": "修改值_5131",
+          "risk_level": "L2",
+          "change_type": "addition",
+          "timestamp": "2025-01-12T09:39:45"
+        },
+        {
+          "row": 12,
+          "column": 17,
+          "column_name": "应用情况",
+          "old_value": "原始值_9189",
+          "new_value": "修改值_4552",
+          "risk_level": "L3",
+          "change_type": "update",
+          "timestamp": "2025-01-12T14:17:37"
+        },
+        {
+          "row": 29,
+          "column": 17,
+          "column_name": "应用情况",
+          "old_value": "原始值_9098",
+          "new_value": "修改值_6876",
+          "risk_level": "L2",
+          "change_type": "update",
+          "timestamp": "2025-01-12T09:49:36"
+        },
+        {
+          "row": 40,
+          "column": 17,
+          "column_name": "应用情况",
+          "old_value": "原始值_7507",
+          "new_value": "修改值_5148",
+          "risk_level": "L3",
+          "change_type": "update",
+          "timestamp": "2025-01-12T10:03:17"
+        }
+      ],
+      "modification_count": 4,
+      "risk_summary": {
+        "L1": 0,
+        "L2": 2,
+        "L3": 2
+      },
+      "overall_risk_score": 0.35
+    },
+    {
+      "table_id": 2,
+      "table_name": "市场推广方案",
+      "total_rows": 34,
+      "total_columns": 19,
+      "modifications": [
+        {
+          "row": 30,
+          "column": 13,
+          "column_name": "完成进度",
+          "old_value": "原始值_1518",
+          "new_value": "修改值_4372",
+          "risk_level": "L2",
+          "change_type": "correction",
+          "timestamp": "2025-01-12T08:37:09"
+        },
+        {
+          "row": 1,
+          "column": 1,
+          "column_name": "项目类型",
+          "old_value": "原始值_2115",
+          "new_value": "修改值_9158",
+          "risk_level": "L2",
+          "change_type": "correction",
+          "timestamp": "2025-01-12T17:45:47"
+        },
+        {
+          "row": 4,
+          "column": 12,
+          "column_name": "预计完成时间",
+          "old_value": "原始值_4316",
+          "new_value": "修改值_5919",
+          "risk_level": "L3",
+          "change_type": "update",
+          "timestamp": "2025-01-12T09:50:15"
+        },
+        {
+          "row": 32,
+          "column": 13,
+          "column_name": "完成进度",
+          "old_value": "原始值_7911",
+          "new_value": "修改值_5328",
+          "risk_level": "L3",
+          "change_type": "addition",
+          "timestamp": "2025-01-12T14:30:25"
+        },
+        {
+          "row": 16,
+          "column": 18,
+          "column_name": "进度分析总结",
+          "old_value": "原始值_9508",
+          "new_value": "修改值_9619",
+          "risk_level": "L3",
+          "change_type": "correction",
+          "timestamp": "2025-01-12T08:45:25"
+        }
+      ],
+      "modification_count": 5,
+      "risk_summary": {
+        "L1": 0,
+        "L2": 2,
+        "L3": 3
+      },
+      "overall_risk_score": 0.32
+    },
+    {
+      "table_id": 16,
+      "table_name": "数字化转型",
+      "total_rows": 37,
+      "total_columns": 19,
+      "modifications": [
+        {
+          "row": 2,
+          "column": 6,
+          "column_name": "具体计划内容",
+          "old_value": "原始值_3381",
+          "new_value": "修改值_7390",
+          "risk_level": "L3",
+          "change_type": "update",
+          "timestamp": "2025-01-12T11:22:29"
+        },
+        {
+          "row": 13,
+          "column": 7,
+          "column_name": "邓总指导登记",
+          "old_value": "原始值_2189",
+          "new_value": "修改值_3286",
+          "risk_level": "L3",
+          "change_type": "correction",
+          "timestamp": "2025-01-12T18:58:58"
+        }
+      ],
+      "modification_count": 2,
+      "risk_summary": {
+        "L1": 0,
+        "L2": 0,
+        "L3": 2
+      },
+      "overall_risk_score": 0.2
+    }
+  ],
+  "column_definitions": [
+    "序号",
+    "项目类型",
+    "来源",
+    "任务发起时间",
+    "目标对齐",
+    "关键KR对齐",
+    "具体计划内容",
+    "邓总指导登记",
+    "负责人",
+    "协助人",
+    "监督人",
+    "重要程度",
+    "预计完成时间",
+    "完成进度",
+    "形成计划清单",
+    "复盘时间",
+    "对上汇报",
+    "应用情况",
+    "进度分析总结"
+  ]
+}

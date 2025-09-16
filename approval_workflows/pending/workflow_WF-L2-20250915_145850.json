@@ -1,0 +1,32 @@
+{
+  "workflow_id": "WF-L2-20250915_145850",
+  "created_time": "2025-09-15 14:58:50",
+  "pending_approvals": [
+    {
+      "modification_id": "M001",
+      "cell": "J47",
+      "column": "协助人",
+      "old_value": "徐志杰,朱瀚桔,杨佳玲,曾利萍,魏经理",
+      "new_value": "赖铁荔",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 80.0,
+        "reason": "关键人员变更"
+      },
+      "layer2_result": {
+        "risk_level": "HIGH",
+        "decision": "REVIEW",
+        "confidence": 85,
+        "key_risks": [
+          "团队协作中断：原协助人员全被替换，可能中断现有协作关系",
+          "执行风险：新协助人可能不了解项目历史和当前状态",
+          "责任转移风险：原协助人中的'魏经理'可能承担特殊角色"
+        ],
+        "recommendation": "建议：\n1. 核实变更原因并书面记录\n2. 确保赖铁荔已完成充分交接\n3. 确认魏经理职责是否需重新分配\n4. 更新相关沟通机制和协作文档\n5. 设置过渡期监督机制"
+      },
+      "final_decision": "REVIEW",
+      "approval_required": true
+    }
+  ],
+  "auto_approved": []
+}

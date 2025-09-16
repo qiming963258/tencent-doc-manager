@@ -1,0 +1,63 @@
+{
+  "workflow_id": "WF-20250908-053",
+  "table_name": "副本-测试版本-出国销售计划表-工作表1",
+  "created_time": "2025-09-08 16:22:46",
+  "pending_approvals": [
+    {
+      "modification_id": "M001",
+      "column": "项目类型",
+      "old_value": "目标管理",
+      "new_value": "体系建设",
+      "layer1_result": "RISKY|80.0",
+      "layer2_result": {
+        "risk_level": "MEDIUM",
+        "decision": "REVIEW",
+        "confidence": 75,
+        "key_risks": [
+          "项目性质发生根本性转变",
+          "可能导致资源分配和团队分工的重大调整",
+          "可能影响项目交付时间表"
+        ],
+        "recommendation": "建议召开项目变更评审会，评估以下内容：1)新版项目类型与整体战略的匹配度 2)资源重分配计划 3)时间表调整方案 4)利益相关方沟通计划。在获得主要干系人确认前暂缓执行修改。"
+      },
+      "final_decision": "REVIEW",
+      "approval_required": true,
+      "analysis_details": {}
+    },
+    {
+      "modification_id": "M003",
+      "column": "负责人",
+      "old_value": "赖铁荔",
+      "new_value": "赖铁荔,各责任人",
+      "layer1_result": "RISKY|75.0",
+      "layer2_result": {
+        "risk_level": "MEDIUM",
+        "decision": "CONDITIONAL",
+        "confidence": 75,
+        "key_risks": [
+          "责任主体模糊化可能导致执行效率下降",
+          "多人责任制可能引发任务推诿现象",
+          "信息同步不及时可能造成工作重复"
+        ],
+        "recommendation": "建议在改为多人责任制时：1.明确各责任人的具体分工范围 2.建立定期沟通机制 3.在项目管理工具中清晰标注协作关系 4.补充说明修改原因和预期效果"
+      },
+      "final_decision": "CONDITIONAL",
+      "approval_required": true,
+      "analysis_details": {}
+    }
+  ],
+  "auto_approved": [
+    {
+      "modification_id": "M002",
+      "column": "邓总指导登记（日更新）",
+      "old_value": "0813-\n1、根据周度运营数据识别出来的一般及无效笔记，分析对应的内容定位进行优化；\n2、系统功能下周一上线前，前置识别需要优化的内容定位进行调整\n3、下周一重点汇报半月度内容定位优化迭代进度、内容",
+      "new_value": "---0813-\n1、根据周度运营数据识别出来的一般及无效笔记，分析对应的内容定位进行优化；\n2、系统功能下周一上线前，前置识别需要优化的内容定位进行调整\n3、下周一重点汇报半月度内容定位优化迭代进度",
+      "layer1_result": "SAFE|90.0",
+      "layer2_result": null,
+      "final_decision": "APPROVE",
+      "approval_required": false,
+      "analysis_details": {}
+    }
+  ],
+  "rejected": []
+}

@@ -1,0 +1,32 @@
+{
+  "workflow_id": "WF-L2-20250915_143354",
+  "created_time": "2025-09-15 14:33:54",
+  "pending_approvals": [
+    {
+      "modification_id": "M001",
+      "cell": "I22",
+      "column": "负责人",
+      "old_value": "蔡悦莹",
+      "new_value": "\n1、悦莹根据当前内容定位的工作流及管理，识别需要系统协助的功能提交经理打通系统看板及部分智能化的功能上线；",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 75.0,
+        "reason": "格式破坏"
+      },
+      "layer2_result": {
+        "risk_level": "MEDIUM",
+        "decision": "REVIEW",
+        "confidence": 75,
+        "key_risks": [
+          "负责人职责范围扩大可能导致工作重心偏离",
+          "系统性功能变更可能影响原有工作流程",
+          "缺乏明确的时间节点影响进度管控"
+        ],
+        "recommendation": "建议：1.明确系统功能需求的具体范围和时间节点 2.评估现有工作流与系统化功能的兼容性 3.制定过渡期工作计划 4.要求补充具体实施计划和资源分配方案后再审议"
+      },
+      "final_decision": "REVIEW",
+      "approval_required": true
+    }
+  ],
+  "auto_approved": []
+}

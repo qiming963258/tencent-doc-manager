@@ -1,0 +1,197 @@
+{
+  "generation_time": "2025-09-13T15:30:00.000000",
+  "scoring_version": "3.0",
+  "scoring_standard": "0000-颜色和级别打分标准",
+
+  "table_names": [
+    "小红书内容审核记录表",
+    "企业风险评估矩阵表",
+    "财务月度报表汇总表"
+  ],
+
+  "column_avg_scores": {
+    "序号": 0.85,
+    "项目类型": 0.92,
+    "来源": 0.25,
+    "任务发起时间": 0.28,
+    "目标对齐": 0.88,
+    "关键KR对齐": 0.91,
+    "具体计划内容": 0.22,
+    "邓总指导登记": 0.27,
+    "负责人": 0.55,
+    "协助人": 0.58,
+    "监督人": 0.59,
+    "重要程度": 0.56,
+    "预计完成时间": 0.54,
+    "完成进度": 0.53,
+    "形成计划清单": 0.28,
+    "复盘时间": 0.24,
+    "对上汇报": 0.25,
+    "应用情况": 0.22,
+    "进度分析总结": 0.23
+  },
+
+  "table_scores": [
+    {
+      "table_id": 0,
+      "table_name": "小红书内容审核记录表",
+      "table_url": "https://docs.qq.com/sheet/DWEFNU25TemFnZXJN",
+      "total_rows": 92,
+      "total_modifications": 15,
+      "overall_risk_score": 0.65,
+
+      "column_scores": {
+        "项目类型": {
+          "column_level": "L1",
+          "avg_score": 0.98,
+          "modified_rows": [5, 12, 28],
+          "row_scores": [0.95, 0.99, 1.0],
+          "modifications": 3,
+          "risk_level": "HIGH"
+        },
+        "负责人": {
+          "column_level": "L2",
+          "avg_score": 0.55,
+          "modified_rows": [8, 15, 22, 35, 67],
+          "row_scores": [0.45, 0.52, 0.58, 0.61, 0.59],
+          "modifications": 5,
+          "risk_level": "MEDIUM",
+          "ai_decisions": ["APPROVE", "APPROVE", "REVIEW", "REVIEW", "REVIEW"],
+          "ai_confidence": [0.85, 0.82, 0.75, 0.73, 0.76]
+        },
+        "来源": {
+          "column_level": "L3",
+          "avg_score": 0.21,
+          "modified_rows": [2, 45],
+          "row_scores": [0.18, 0.24],
+          "modifications": 2,
+          "risk_level": "LOW"
+        }
+      }
+    },
+    {
+      "table_id": 1,
+      "table_name": "企业风险评估矩阵表",
+      "table_url": "https://docs.qq.com/sheet/DWGZDZkxpaGVQaURr",
+      "total_rows": 75,
+      "total_modifications": 8,
+      "overall_risk_score": 0.48,
+      "column_scores": {
+        "目标对齐": {
+          "column_level": "L1",
+          "avg_score": 0.88,
+          "modified_rows": [10, 25],
+          "row_scores": [0.85, 0.91],
+          "modifications": 2,
+          "risk_level": "HIGH"
+        },
+        "预计完成时间": {
+          "column_level": "L2",
+          "avg_score": 0.54,
+          "modified_rows": [30, 42, 58],
+          "row_scores": [0.52, 0.55, 0.55],
+          "modifications": 3,
+          "risk_level": "MEDIUM",
+          "ai_decisions": ["APPROVE", "REVIEW", "REVIEW"],
+          "ai_confidence": [0.81, 0.72, 0.74]
+        },
+        "进度分析总结": {
+          "column_level": "L3",
+          "avg_score": 0.23,
+          "modified_rows": [5, 18, 66],
+          "row_scores": [0.22, 0.24, 0.23],
+          "modifications": 3,
+          "risk_level": "LOW"
+        }
+      }
+    },
+    {
+      "table_id": 2,
+      "table_name": "财务月度报表汇总表",
+      "table_url": "https://docs.qq.com/sheet/DWFJzdWNwd0RGbU5R",
+      "total_rows": 120,
+      "total_modifications": 12,
+      "overall_risk_score": 0.72,
+      "column_scores": {
+        "关键KR对齐": {
+          "column_level": "L1",
+          "avg_score": 0.91,
+          "modified_rows": [3, 15, 45, 78],
+          "row_scores": [0.89, 0.92, 0.91, 0.92],
+          "modifications": 4,
+          "risk_level": "HIGH"
+        },
+        "监督人": {
+          "column_level": "L2",
+          "avg_score": 0.59,
+          "modified_rows": [20, 35, 50, 65, 80, 95],
+          "row_scores": [0.58, 0.60, 0.59, 0.61, 0.57, 0.59],
+          "modifications": 6,
+          "risk_level": "MEDIUM",
+          "ai_decisions": ["REVIEW", "REVIEW", "APPROVE", "REVIEW", "REVIEW", "APPROVE"],
+          "ai_confidence": [0.73, 0.74, 0.82, 0.72, 0.73, 0.81]
+        },
+        "复盘时间": {
+          "column_level": "L3",
+          "avg_score": 0.24,
+          "modified_rows": [12, 88],
+          "row_scores": [0.23, 0.25],
+          "modifications": 2,
+          "risk_level": "LOW"
+        }
+      }
+    }
+  ],
+
+  "total_modifications": 35,
+
+  "risk_summary": {
+    "high_risk_count": 12,
+    "medium_risk_count": 15,
+    "low_risk_count": 8,
+    "risk_distribution_by_level": {
+      "L1": 9,
+      "L2": 14,
+      "L3": 12
+    }
+  },
+
+  "ai_analysis_summary": {
+    "total_ai_evaluations": 14,
+    "approvals": 5,
+    "reviews": 9,
+    "rejects": 0,
+    "average_confidence": 0.77
+  },
+
+  "ui_mapping_guide": {
+    "heatmap_matrix": {
+      "y_axis": "table_names",
+      "x_axis": "19_standard_columns",
+      "cell_color": "table_scores[i].column_scores[col].avg_score",
+      "color_mapping": {
+        "red": "score >= 0.8",
+        "orange": "0.6 <= score < 0.8",
+        "yellow": "0.4 <= score < 0.6",
+        "green": "0.1 <= score < 0.4",
+        "blue": "score < 0.1"
+      }
+    },
+    "hover_tooltip": {
+      "table_name": "table_scores[i].table_name",
+      "column_name": "column_key",
+      "modified_rows": "column_scores[col].modified_rows",
+      "risk_scores": "column_scores[col].row_scores",
+      "ai_decision": "column_scores[col].ai_decisions"
+    },
+    "right_panel": {
+      "bar_width": "based_on_avg_score",
+      "bar_color": "based_on_risk_level",
+      "modification_count": "modifications"
+    },
+    "table_links": {
+      "click_action": "open_new_tab",
+      "url_source": "table_scores[i].table_url"
+    }
+  }
+}

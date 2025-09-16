@@ -1,0 +1,33 @@
+{
+  "workflow_id": "WF-L2-20250915_143420",
+  "created_time": "2025-09-15 14:34:20",
+  "pending_approvals": [
+    {
+      "modification_id": "M001",
+      "cell": "B23",
+      "column": "项目类型",
+      "old_value": "目标管理",
+      "new_value": "",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 90.0,
+        "reason": "关键字段空"
+      },
+      "layer2_result": {
+        "risk_level": "CRITICAL",
+        "decision": "REVIEW",
+        "confidence": 80,
+        "key_risks": [
+          "项目类型关键字段被清空将导致项目分类体系断裂",
+          "可能影响后续资源分配和进度跟踪",
+          "团队对项目性质的理解可能产生混乱",
+          "报表统计和数据分析将失去基准"
+        ],
+        "recommendation": "1.必须补充有效项目类型值\n2.如确需清空应同步更新所有关联系统\n3.建议实施前进行影响评估会议\n4.需建立临时项目分类应急方案"
+      },
+      "final_decision": "REVIEW",
+      "approval_required": true
+    }
+  ],
+  "auto_approved": []
+}

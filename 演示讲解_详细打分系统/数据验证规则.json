@@ -1,0 +1,21 @@
+{
+  "_数据验证规则": "服务器启动时的完整性检查",
+  "必需字段检查": [
+    "table_names必须是数组",
+    "column_avg_scores必须包含19个标准列",
+    "table_scores数组长度必须与table_names一致",
+    "每个table_score必须包含table_url",
+    "total_modifications必须是数字"
+  ],
+  "打分规则验证": [
+    "L1列打分不能低于0.8",
+    "L2列打分不能低于0.4",
+    "L3列打分必须大于0.1",
+    "所有打分必须在0-1范围内"
+  ],
+  "数据一致性": [
+    "modified_rows和row_scores长度必须相同",
+    "modifications应等于modified_rows长度",
+    "total_modifications应等于所有表格修改数之和"
+  ]
+}

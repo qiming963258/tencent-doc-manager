@@ -1,0 +1,47 @@
+{
+  "metadata": {
+    "analysis_time": "2025-09-15 18:29:04",
+    "total_modifications": 1,
+    "layer1_passed": 0,
+    "layer2_analyzed": 1,
+    "processing_time": "19.3s"
+  },
+  "results": [
+    {
+      "modification_id": "M001",
+      "cell": "I21",
+      "column": "邓总指导登记（日更新）",
+      "old_value": "0724-",
+      "new_value": "",
+      "layer1_result": {
+        "judgment": "UNSURE",
+        "confidence": 60.0,
+        "reason": "关键信息清空"
+      },
+      "layer2_result": {
+        "risk_level": "MEDIUM",
+        "decision": "REVIEW",
+        "confidence": 75,
+        "key_risks": [
+          "关键领导指导记录丢失可能导致后续工作缺乏依据",
+          "日更新机制被破坏可能影响项目透明度"
+        ],
+        "recommendation": "1. 确认是否为故意清空 2. 如需清空建议增加备注说明 3. 检查相关日期的其他指导记录是否完整 4. 确认邓总是否知晓此修改"
+      },
+      "final_decision": "REVIEW",
+      "approval_required": true
+    }
+  ],
+  "summary": {
+    "approved": 0,
+    "conditional": 0,
+    "review_required": 1,
+    "rejected": 0,
+    "risk_distribution": {
+      "LOW": 0,
+      "MEDIUM": 0,
+      "HIGH": 1,
+      "CRITICAL": 0
+    }
+  }
+}

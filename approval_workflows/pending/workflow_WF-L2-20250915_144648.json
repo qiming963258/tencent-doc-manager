@@ -1,0 +1,33 @@
+{
+  "workflow_id": "WF-L2-20250915_144648",
+  "created_time": "2025-09-15 14:46:48",
+  "pending_approvals": [
+    {
+      "modification_id": "M001",
+      "cell": "I35",
+      "column": "负责人",
+      "old_value": "朱瀚桔",
+      "new_value": "0527-",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 90.0,
+        "reason": "关键人变更"
+      },
+      "layer2_result": {
+        "risk_level": "CRITICAL",
+        "decision": "REJECT",
+        "confidence": 95,
+        "key_risks": [
+          "负责人信息从具体人名变为不明代码，可能导致责任归属不明确",
+          "项目执行过程中缺乏明确负责人会造成决策链断裂",
+          "团队协作中无法确定最终决策者和责任人",
+          "可能违反项目文档管理规范中关于责任人标识的要求"
+        ],
+        "recommendation": "建议保留原负责人姓名或提供合法的负责人变更说明。如确需修改为代码，应确保：1)代码具有明确对应的负责人信息；2)在文档其他位置或配套文件中提供代码对照表；3)获得项目管理办公室(PMO)的书面批准。"
+      },
+      "final_decision": "REJECT",
+      "approval_required": true
+    }
+  ],
+  "auto_approved": []
+}

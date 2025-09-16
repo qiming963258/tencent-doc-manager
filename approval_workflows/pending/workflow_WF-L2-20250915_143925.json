@@ -1,0 +1,33 @@
+{
+  "workflow_id": "WF-L2-20250915_143925",
+  "created_time": "2025-09-15 14:39:25",
+  "pending_approvals": [
+    {
+      "modification_id": "M001",
+      "cell": "B28",
+      "column": "项目类型",
+      "old_value": "目标管理",
+      "new_value": "",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 80.0,
+        "reason": "关键信息缺失"
+      },
+      "layer2_result": {
+        "risk_level": "CRITICAL",
+        "decision": "REJECT",
+        "confidence": 95,
+        "key_risks": [
+          "项目类型完全空白将导致项目分类系统崩溃",
+          "无法进行项目资源分配和优先级排序",
+          "关键KPI指标无法计算",
+          "进度跟踪和报告系统将失效"
+        ],
+        "recommendation": "1. 必须立即恢复项目类型值\n2. 如确需修改，应先建立备选值清单\n3. 需要评估所有依赖该字段的系统影响\n4. 建议采用下拉菜单限制输入而非自由文本"
+      },
+      "final_decision": "REJECT",
+      "approval_required": true
+    }
+  ],
+  "auto_approved": []
+}

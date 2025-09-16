@@ -1,0 +1,48 @@
+{
+  "metadata": {
+    "analysis_time": "2025-09-15 14:33:43",
+    "total_modifications": 1,
+    "layer1_passed": 0,
+    "layer2_analyzed": 1,
+    "processing_time": "7.4s"
+  },
+  "results": [
+    {
+      "modification_id": "M001",
+      "cell": "G22",
+      "column": "具体计划内容",
+      "old_value": "内容库优化计划清单的封面图片优化计划清单的kr措施需要进一步细化@新媒体运营－蔡悦莹",
+      "new_value": "评估方面",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 75.0,
+        "reason": "关键内容变更"
+      },
+      "layer2_result": {
+        "risk_level": "HIGH",
+        "decision": "REVIEW",
+        "confidence": 85,
+        "key_risks": [
+          "原计划内容被完全替换，可能导致执行方向不明确",
+          "关键实施细节(KR措施)被删除，影响项目可执行性",
+          "责任人不明确可能影响任务跟进"
+        ],
+        "recommendation": "建议补充说明：1)新'评估方面'的具体评估标准；2)保留必要的KR措施；3)明确执行责任人。需与@新媒体运营－蔡悦莹确认变更意图后再审批。"
+      },
+      "final_decision": "REVIEW",
+      "approval_required": true
+    }
+  ],
+  "summary": {
+    "approved": 0,
+    "conditional": 0,
+    "review_required": 1,
+    "rejected": 0,
+    "risk_distribution": {
+      "LOW": 0,
+      "MEDIUM": 0,
+      "HIGH": 1,
+      "CRITICAL": 0
+    }
+  }
+}

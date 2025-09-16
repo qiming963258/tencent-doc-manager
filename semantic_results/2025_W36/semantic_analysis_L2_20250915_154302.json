@@ -1,0 +1,49 @@
+{
+  "metadata": {
+    "analysis_time": "2025-09-15 15:43:02",
+    "total_modifications": 1,
+    "layer1_passed": 0,
+    "layer2_analyzed": 1,
+    "processing_time": "11.2s"
+  },
+  "results": [
+    {
+      "modification_id": "M001",
+      "cell": "I93",
+      "column": "负责人",
+      "old_value": "蔡悦莹",
+      "new_value": "",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 90.0,
+        "reason": "关键人缺失"
+      },
+      "layer2_result": {
+        "risk_level": "HIGH",
+        "decision": "REVIEW",
+        "confidence": 85,
+        "key_risks": [
+          "负责人信息缺失导致任务无人负责",
+          "可能影响项目责任链条的完整性",
+          "团队协作可能出现混乱",
+          "关键决策可能缺乏明确责任人"
+        ],
+        "recommendation": "建议确认该职位的必要性：1)如果该职位仍需要负责人，应立即补充新负责人信息；2)如果该职位不再需要负责人，应明确说明原因并调整项目责任分工。修改前需与项目管理团队和原负责人沟通确认。"
+      },
+      "final_decision": "REVIEW",
+      "approval_required": true
+    }
+  ],
+  "summary": {
+    "approved": 0,
+    "conditional": 0,
+    "review_required": 1,
+    "rejected": 0,
+    "risk_distribution": {
+      "LOW": 0,
+      "MEDIUM": 0,
+      "HIGH": 1,
+      "CRITICAL": 0
+    }
+  }
+}

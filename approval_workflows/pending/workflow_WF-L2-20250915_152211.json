@@ -1,0 +1,33 @@
+{
+  "workflow_id": "WF-L2-20250915_152211",
+  "created_time": "2025-09-15 15:22:11",
+  "pending_approvals": [
+    {
+      "modification_id": "M001",
+      "cell": "K71",
+      "column": "监督人",
+      "old_value": "邓总",
+      "new_value": "",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 80.0,
+        "reason": "关键人变更"
+      },
+      "layer2_result": {
+        "risk_level": "HIGH",
+        "decision": "REVIEW",
+        "confidence": 85,
+        "key_risks": [
+          "监督职责缺失可能导致项目失控",
+          "关键决策缺乏权威审批",
+          "团队工作缺乏监督影响质量",
+          "利益相关方沟通渠道中断"
+        ],
+        "recommendation": "1. 必须明确新监督人后再提交修改\n2. 如确需清空，应设置临时监督机制\n3. 修改前需与项目管理办公室(PMO)确认\n4. 建议保留原值直至新监督人到位"
+      },
+      "final_decision": "REVIEW",
+      "approval_required": true
+    }
+  ],
+  "auto_approved": []
+}

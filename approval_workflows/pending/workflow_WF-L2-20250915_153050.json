@@ -1,0 +1,32 @@
+{
+  "workflow_id": "WF-L2-20250915_153050",
+  "created_time": "2025-09-15 15:30:50",
+  "pending_approvals": [
+    {
+      "modification_id": "M001",
+      "cell": "J80",
+      "column": "协助人",
+      "old_value": "蔡悦莹,朱瀚桔",
+      "new_value": "王寒晓",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 80.0,
+        "reason": "人员变更"
+      },
+      "layer2_result": {
+        "risk_level": "MEDIUM",
+        "decision": "REVIEW",
+        "confidence": 75,
+        "key_risks": [
+          "原协助人蔡悦莹和朱瀚桔可能掌握关键项目知识",
+          "新协助人王寒晓可能缺乏必要的项目背景",
+          "团队协作关系可能受到影响"
+        ],
+        "recommendation": "建议进行以下操作后再批准修改：1. 确认王寒晓已接受充分的项目交接培训；2. 与蔡悦莹和朱瀚桔确认关键知识已转移；3. 更新相关文档记录这次变更"
+      },
+      "final_decision": "REVIEW",
+      "approval_required": true
+    }
+  ],
+  "auto_approved": []
+}

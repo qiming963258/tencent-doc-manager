@@ -1,0 +1,49 @@
+{
+  "metadata": {
+    "analysis_time": "2025-09-15 16:43:57",
+    "total_modifications": 1,
+    "layer1_passed": 0,
+    "layer2_analyzed": 1,
+    "processing_time": "9.7s"
+  },
+  "results": [
+    {
+      "modification_id": "M001",
+      "cell": "C8",
+      "column": "项目类型",
+      "old_value": "目标管理",
+      "new_value": "",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 75.0,
+        "reason": "关键信息缺失"
+      },
+      "layer2_result": {
+        "risk_level": "HIGH",
+        "decision": "REVIEW",
+        "confidence": 80,
+        "key_risks": [
+          "项目类型空白可能导致项目目标不明确",
+          "项目类型缺失会影响后续执行计划的制定",
+          "团队协作可能因项目类型不明确而产生混乱",
+          "项目交付时间可能因缺乏明确类型而延误"
+        ],
+        "recommendation": "建议明确填写项目类型或提供临时占位符。如果是临时修改，需要注明原因和预计恢复时间；如果是永久性修改，需要重新评估项目目标和执行计划。"
+      },
+      "final_decision": "REVIEW",
+      "approval_required": true
+    }
+  ],
+  "summary": {
+    "approved": 0,
+    "conditional": 0,
+    "review_required": 1,
+    "rejected": 0,
+    "risk_distribution": {
+      "LOW": 0,
+      "MEDIUM": 0,
+      "HIGH": 1,
+      "CRITICAL": 0
+    }
+  }
+}

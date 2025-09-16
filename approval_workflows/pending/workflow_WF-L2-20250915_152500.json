@@ -1,0 +1,31 @@
+{
+  "workflow_id": "WF-L2-20250915_152500",
+  "created_time": "2025-09-15 15:25:00",
+  "pending_approvals": [],
+  "auto_approved": [
+    {
+      "modification_id": "M001",
+      "cell": "K74",
+      "column": "监督人",
+      "old_value": "徐志杰",
+      "new_value": "邓俊",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 75.0,
+        "reason": "更换监督人"
+      },
+      "layer2_result": {
+        "risk_level": "MEDIUM",
+        "decision": "CONDITIONAL",
+        "confidence": 75,
+        "key_risks": [
+          "监督人变更可能导致项目监督风格变化",
+          "新监督人需要时间熟悉项目进度和要求"
+        ],
+        "recommendation": "建议安排徐志杰和邓俊进行工作交接，确保邓俊完全了解项目目标、进度和关键节点。同时通知相关团队成员监督人变更事宜，并明确后续沟通流程。"
+      },
+      "final_decision": "CONDITIONAL",
+      "approval_required": false
+    }
+  ]
+}

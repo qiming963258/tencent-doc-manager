@@ -1,0 +1,7638 @@
+{
+  "metadata": {
+    "week": 37,
+    "timestamp": "2025-09-15T10:00:00",
+    "table_count": 22,
+    "total_modifications": 3451,
+    "description": "连贯热度分布测试数据"
+  },
+  "table_scores": [
+    {
+      "table_name": "副本-测试版本-出国销售计划表",
+      "name": "副本-测试版本-出国销售计划表",
+      "doc_url": "https://docs.qq.com/sheet/test1",
+      "url": "https://docs.qq.com/sheet/test1",
+      "modifications": 125,
+      "risk_level": "L3",
+      "heat_values": [
+        0.21,
+        0.34,
+        0.34,
+        0.31,
+        0.38,
+        0.4,
+        0.72,
+        0.87,
+        0.95,
+        0.95,
+        0.95,
+        0.91,
+        0.76,
+        0.4,
+        0.38,
+        0.25,
+        0.25,
+        0.26,
+        0.32
+      ],
+      "column_scores": {
+        "序号": {
+          "modified_rows": [
+            128,
+            245
+          ],
+          "modifications": 2,
+          "risk_level": "L1",
+          "aggregated_score": 21.0,
+          "heat_value": 0.21
+        },
+        "项目类型": {
+          "modified_rows": [
+            105,
+            124,
+            160,
+            165
+          ],
+          "modifications": 4,
+          "risk_level": "L1",
+          "aggregated_score": 34.0,
+          "heat_value": 0.34
+        },
+        "来源": {
+          "modified_rows": [
+            79,
+            207,
+            219,
+            240
+          ],
+          "modifications": 4,
+          "risk_level": "L1",
+          "aggregated_score": 34.0,
+          "heat_value": 0.34
+        },
+        "任务发起时间": {
+          "modified_rows": [
+            60,
+            189,
+            216
+          ],
+          "modifications": 3,
+          "risk_level": "L1",
+          "aggregated_score": 31.0,
+          "heat_value": 0.31
+        },
+        "目标对齐": {
+          "modified_rows": [
+            144,
+            196,
+            229,
+            250
+          ],
+          "modifications": 4,
+          "risk_level": "L1",
+          "aggregated_score": 38.0,
+          "heat_value": 0.38
+        },
+        "关键KR对齐": {
+          "modified_rows": [
+            34,
+            71,
+            142,
+            171,
+            186
+          ],
+          "modifications": 5,
+          "risk_level": "L1",
+          "aggregated_score": 40.0,
+          "heat_value": 0.4
+        },
+        "具体计划内容": {
+          "modified_rows": [
+            3,
+            11,
+            24,
+            31,
+            39,
+            43,
+            44,
+            76,
+            148,
+            113,
+            64,
+            111
+          ],
+          "modifications": 12,
+          "risk_level": "L3",
+          "aggregated_score": 72.0,
+          "heat_value": 0.72
+        },
+        "邓总指导登记": {
+          "modified_rows": [
+            11,
+            12,
+            24,
+            30,
+            61,
+            80,
+            86,
+            119,
+            143,
+            233,
+            173
+          ],
+          "modifications": 11,
+          "risk_level": "L3",
+          "aggregated_score": 87.0,
+          "heat_value": 0.87
+        },
+        "负责人": {
+          "modified_rows": [
+            1,
+            13,
+            17,
+            31,
+            37,
+            38,
+            67,
+            73,
+            78,
+            197,
+            257,
+            48
+          ],
+          "modifications": 12,
+          "risk_level": "L3",
+          "aggregated_score": 95.0,
+          "heat_value": 0.95
+        },
+        "协助人": {
+          "modified_rows": [
+            5,
+            15,
+            17,
+            20,
+            26,
+            48,
+            59,
+            62,
+            108,
+            161,
+            181,
+            4,
+            160
+          ],
+          "modifications": 13,
+          "risk_level": "L3",
+          "aggregated_score": 95.0,
+          "heat_value": 0.95
+        },
+        "监督人": {
+          "modified_rows": [
+            8,
+            13,
+            19,
+            24,
+            37,
+            41,
+            42,
+            52,
+            64,
+            73,
+            78
+          ],
+          "modifications": 11,
+          "risk_level": "L3",
+          "aggregated_score": 95.0,
+          "heat_value": 0.95
+        },
+        "重要程度": {
+          "modified_rows": [
+            4,
+            8,
+            9,
+            14,
+            15,
+            24,
+            47,
+            53,
+            154,
+            251,
+            270
+          ],
+          "modifications": 11,
+          "risk_level": "L3",
+          "aggregated_score": 91.0,
+          "heat_value": 0.91
+        },
+        "预计完成时间": {
+          "modified_rows": [
+            11,
+            40,
+            53,
+            59,
+            62,
+            79,
+            156,
+            181,
+            252,
+            56,
+            4
+          ],
+          "modifications": 11,
+          "risk_level": "L3",
+          "aggregated_score": 76.0,
+          "heat_value": 0.76
+        },
+        "完成进度": {
+          "modified_rows": [
+            5,
+            79,
+            99,
+            170,
+            172
+          ],
+          "modifications": 5,
+          "risk_level": "L1",
+          "aggregated_score": 40.0,
+          "heat_value": 0.4
+        },
+        "形成计划清单": {
+          "modified_rows": [
+            157,
+            184,
+            209,
+            249
+          ],
+          "modifications": 4,
+          "risk_level": "L1",
+          "aggregated_score": 38.0,
+          "heat_value": 0.38
+        },
+        "复盘时间": {
+          "modified_rows": [
+            110,
+            123,
+            252
+          ],
+          "modifications": 3,
+          "risk_level": "L1",
+          "aggregated_score": 25.0,
+          "heat_value": 0.25
+        },
+        "对上汇报": {
+          "modified_rows": [
+            57,
+            59,
+            231
+          ],
+          "modifications": 3,
+          "risk_level": "L1",
+          "aggregated_score": 25.0,
+          "heat_value": 0.25
+        },
+        "应用情况": {
+          "modified_rows": [
+            145,
+            218,
+            265
+          ],
+          "modifications": 3,
+          "risk_level": "L1",
+          "aggregated_score": 26.0,
+          "heat_value": 0.26
+        },
+        "进度分析总结": {
+          "modified_rows": [
+            139,
+            145,
+            196,
+            259
+          ],
+          "modifications": 4,
+          "risk_level": "L1",
+          "aggregated_score": 32.0,
+          "heat_value": 0.32
+        }
+      },
+      "total_rows": 270,
+      "detailed_stats": {
+        "total_modifications": 125,
+        "total_rows": 270,
+        "modification_rate": 46.3,
+        "columns_with_changes": 19
+      }
+    },
+    {
+      "table_name": "副本-测试版本-回国销售计划表",
+      "name": "副本-测试版本-回国销售计划表",
+      "doc_url": "https://docs.qq.com/sheet/test2",
+      "url": "https://docs.qq.com/sheet/test2",
+      "modifications": 150,
+      "risk_level": "L3",
+      "heat_values": [
+        0.36,
+        0.39,
+        0.31,
+        0.41,
+        0.47,
+        0.64,
+        0.65,
+        0.92,
+        0.91,
+        0.95,
+        0.95,
+        0.95,
+        0.92,
+        0.62,
+        0.42,
+        0.29,
+        0.31,
+        0.32,
+        0.24
+      ],
+      "column_scores": {
+        "序号": {
+          "modified_rows": [
+            173,
+            175,
+            206,
+            210
+          ],
+          "modifications": 4,
+          "risk_level": "L1",
+          "aggregated_score": 36.0,
+          "heat_value": 0.36
+        },
+        "项目类型": {
+          "modified_rows": [
+            58,
+            172,
+            214,
+            227,
+            230
+          ],
+          "modifications": 5,
+          "risk_level": "L1",
+          "aggregated_score": 39.0,
+          "heat_value": 0.39
+        },
+        "来源": {
+          "modified_rows": [
+            99,
+            215,
+            236,
+            254
+          ],
+          "modifications": 4,
+          "risk_level": "L1",
+          "aggregated_score": 31.0,
+          "heat_value": 0.31
+        },
+        "任务发起时间": {
+          "modified_rows": [
+            59,
+            116,
+            133,
+            166,
+            179
+          ],
+          "modifications": 5,
+          "risk_level": "L2",
+          "aggregated_score": 41.0,
+          "heat_value": 0.41
+        },
+        "目标对齐": {
+          "modified_rows": [
+            118,
+            119,
+            125,
+            156,
+            160,
+            168
+          ],
+          "modifications": 6,
+          "risk_level": "L2",
+          "aggregated_score": 47.0,
+          "heat_value": 0.47
+        },
+        "关键KR对齐": {
+          "modified_rows": [
+            67,
+            74,
+            139,
+            140,
+            147,
+            186,
+            189,
+            203,
+            25,
+            253
+          ],
+          "modifications": 10,
+          "risk_level": "L2",
+          "aggregated_score": 64.0,
+          "heat_value": 0.64
+        },
+        "具体计划内容": {
+          "modified_rows": [
+            80,
+            82,
+            83,
+            116,
+            130,
+            136,
+            137,
+            146,
+            32
+          ],
+          "modifications": 9,
+          "risk_level": "L2",
+          "aggregated_score": 65.0,
+          "heat_value": 0.65
+        },
+        "邓总指导登记": {
+          "modified_rows": [
+            1,
+            6,
+            8,
+            17,
+            23,
+            31,
+            37,
+            42,
+            43,
+            47,
+            59,
+            175,
+            7
+          ],
+          "modifications": 13,
+          "risk_level": "L3",
+          "aggregated_score": 92.0,
+          "heat_value": 0.92
+        },
+        "负责人": {
+          "modified_rows": [
+            8,
+            12,
+            17,
+            22,
+            29,
+            48,
+            51,
+            52,
+            56,
+            60,
+            86,
+            233
+          ],
+          "modifications": 12,
+          "risk_level": "L3",
+          "aggregated_score": 91.0,
+          "heat_value": 0.91
+        },
+        "协助人": {
+          "modified_rows": [
+            4,
+            6,
+            8,
+            29,
+            30,
+            39,
+            45,
+            53,
+            62,
+            66,
+            169,
+            178
+          ],
+          "modifications": 12,
+          "risk_level": "L3",
+          "aggregated_score": 95.0,
+          "heat_value": 0.95
+        },
+        "监督人": {
+          "modified_rows": [
+            8,
+            9,
+            18,
+            27,
+            49,
+            54,
+            72,
+            76,
+            81,
+            222,
+            227,
+            238
+          ],
+          "modifications": 12,
+          "risk_level": "L3",
+          "aggregated_score": 95.0,
+          "heat_value": 0.95
+        },
+        "重要程度": {
+          "modified_rows": [
+            17,
+            19,
+            41,
+            60,
+            61,
+            66,
+            71,
+            75,
+            80,
+            103,
+            182,
+            267,
+            150,
+            131,
+            8
+          ],
+          "modifications": 15,
+          "risk_level": "L3",
+          "aggregated_score": 95.0,
+          "heat_value": 0.95
+        },
+        "预计完成时间": {
+          "modified_rows": [
+            16,
+            22,
+            38,
+            39,
+            45,
+            47,
+            60,
+            61,
+            80,
+            89,
+            97,
+            168,
+            73
+          ],
+          "modifications": 13,
+          "risk_level": "L3",
+          "aggregated_score": 92.0,
+          "heat_value": 0.92
+        },
+        "完成进度": {
+          "modified_rows": [
+            46,
+            77,
+            79,
+            99,
+            117,
+            145,
+            161,
+            195,
+            158
+          ],
+          "modifications": 9,
+          "risk_level": "L2",
+          "aggregated_score": 62.0,
+          "heat_value": 0.62
+        },
+        "形成计划清单": {
+          "modified_rows": [
+            80,
+            121,
+            132,
+            154,
+            190
+          ],
+          "modifications": 5,
+          "risk_level": "L2",
+          "aggregated_score": 42.0,
+          "heat_value": 0.42
+        },
+        "复盘时间": {
+          "modified_rows": [
+            110,
+            120,
+            218
+          ],
+          "modifications": 3,
+          "risk_level": "L1",
+          "aggregated_score": 29.0,
+          "heat_value": 0.29
+        },
+        "对上汇报": {
+          "modified_rows": [
+            68,
+            159,
+            170,
+            224
+          ],
+          "modifications": 4,
+          "risk_level": "L1",
+          "aggregated_score": 31.0,
+          "heat_value": 0.31
+        },
+        "应用情况": {
+          "modified_rows": [
+            39,
+            43,
+            109,
+            210
+          ],
+          "modifications": 4,
+          "risk_level": "L1",
+          "aggregated_score": 32.0,
+          "heat_value": 0.32
+        },
+        "进度分析总结": {
+          "modified_rows": [
+            127,
+            131,
+            183
+          ],
+          "modifications": 3,
+          "risk_level": "L1",
+          "aggregated_score": 24.0,
+          "heat_value": 0.24
+        }
+      },
+      "total_rows": 270,
+      "detailed_stats": {
+        "total_modifications": 150,
+        "total_rows": 270,
+        "modification_rate": 55.56,
+        "columns_with_changes": 19
+      }
+    },
+    {
+      "table_name": "测试版本-小红书部门",
+      "name": "测试版本-小红书部门",
+      "doc_url": "https://docs.qq.com/sheet/test3",
+      "url": "https://docs.qq.com/sheet/test3",
+      "modifications": 153,
+      "risk_level": "L3",
+      "heat_values": [
+        0.42,
+        0.47,
+        0.54,
+        0.51,
+        0.54,
+        0.64,
+        0.74,
+        0.71,
+        0.72,
+        0.82,
+        0.95,
+        0.95,
+        0.95,
+        0.84,
+        0.63,
+        0.49,
+        0.47,
+        0.35,
+        0.4
+      ],
+      "column_scores": {
+        "序号": {
+          "modified_rows": [
+            73,
+            80,
+            157,
+            163,
+            164
+          ],
+          "modifications": 5,
+          "risk_level": "L2",
+          "aggregated_score": 42.0,
+          "heat_value": 0.42
+        },
+        "项目类型": {
+          "modified_rows": [
+            89,
+            117,
+            124,
+            139,
+            148
+          ],
+          "modifications": 5,
+          "risk_level": "L2",
+          "aggregated_score": 47.0,
+          "heat_value": 0.47
+        },
+        "来源": {
+          "modified_rows": [
+            71,
+            96,
+            132,
+            135,
+            148,
+            173,
+            263,
+            237
+          ],
+          "modifications": 8,
+          "risk_level": "L2",
+          "aggregated_score": 54.0,
+          "heat_value": 0.54
+        },
+        "任务发起时间": {
+          "modified_rows": [
+            116,
+            121,
+            128,
+            137,
+            146,
+            169,
+            198,
+            141,
+            96
+          ],
+          "modifications": 9,
+          "risk_level": "L2",
+          "aggregated_score": 51.0,
+          "heat_value": 0.51
+        },
+        "目标对齐": {
+          "modified_rows": [
+            59,
+            104,
+            125,
+            133,
+            167,
+            181
+          ],
+          "modifications": 6,
+          "risk_level": "L2",
+          "aggregated_score": 54.0,
+          "heat_value": 0.54
+        },
+        "关键KR对齐": {
+          "modified_rows": [
+            88,
+            98,
+            110,
+            125,
+            138,
+            150,
+            156,
+            168
+          ],
+          "modifications": 8,
+          "risk_level": "L2",
+          "aggregated_score": 64.0,
+          "heat_value": 0.64
+        },
+        "具体计划内容": {
+          "modified_rows": [
+            5,
+            8,
+            29,
+            53,
+            54,
+            69,
+            81,
+            194,
+            207
+          ],
+          "modifications": 9,
+          "risk_level": "L3",
+          "aggregated_score": 74.0,
+          "heat_value": 0.74
+        },
+        "邓总指导登记": {
+          "modified_rows": [
+            8,
+            13,
+            19,
+            47,
+            67,
+            71,
+            133,
+            134,
+            94
+          ],
+          "modifications": 9,
+          "risk_level": "L3",
+          "aggregated_score": 71.0,
+          "heat_value": 0.71
+        },
+        "负责人": {
+          "modified_rows": [
+            21,
+            38,
+            50,
+            61,
+            64,
+            74,
+            111,
+            113,
+            127
+          ],
+          "modifications": 9,
+          "risk_level": "L3",
+          "aggregated_score": 72.0,
+          "heat_value": 0.72
+        },
+        "协助人": {
+          "modified_rows": [
+            2,
+            3,
+            30,
+            34,
+            45,
+            61,
+            71,
+            76,
+            201,
+            203,
+            64,
+            151,
+            73
+          ],
+          "modifications": 13,
+          "risk_level": "L3",
+          "aggregated_score": 82.0,
+          "heat_value": 0.82
+        },
+        "监督人": {
+          "modified_rows": [
+            13,
+            18,
+            21,
+            32,
+            35,
+            48,
+            50,
+            69,
+            78,
+            102,
+            158,
+            201
+          ],
+          "modifications": 12,
+          "risk_level": "L3",
+          "aggregated_score": 95.0,
+          "heat_value": 0.95
+        },
+        "重要程度": {
+          "modified_rows": [
+            5,
+            6,
+            15,
+            23,
+            29,
+            32,
+            37,
+            122,
+            197,
+            210,
+            239
+          ],
+          "modifications": 11,
+          "risk_level": "L3",
+          "aggregated_score": 95.0,
+          "heat_value": 0.95
+        },
+        "预计完成时间": {
+          "modified_rows": [
+            4,
+            15,
+            16,
+            21,
+            30,
+            58,
+            59,
+            64,
+            71,
+            168,
+            172
+          ],
+          "modifications": 11,
+          "risk_level": "L3",
+          "aggregated_score": 95.0,
+          "heat_value": 0.95
+        },
+        "完成进度": {
+          "modified_rows": [
+            2,
+            5,
+            20,
+            21,
+            25,
+            34,
+            36,
+            54,
+            55,
+            60
+          ],
+          "modifications": 10,
+          "risk_level": "L3",
+          "aggregated_score": 84.0,
+          "heat_value": 0.84
+        },
+        "形成计划清单": {
+          "modified_rows": [
+            95,
+            98,
+            108,
+            113,
+            139,
+            167,
+            171,
+            153
+          ],
+          "modifications": 8,
+          "risk_level": "L2",
+          "aggregated_score": 63.0,
+          "heat_value": 0.63
+        },
+        "复盘时间": {
+          "modified_rows": [
+            65,
+            80,
+            114,
+            123,
+            158,
+            191
+          ],
+          "modifications": 6,
+          "risk_level": "L2",
+          "aggregated_score": 49.0,
+          "heat_value": 0.49
+        },
+        "对上汇报": {
+          "modified_rows": [
+            116,
+            146,
+            172,
+            183,
+            202
+          ],
+          "modifications": 5,
+          "risk_level": "L2",
+          "aggregated_score": 47.0,
+          "heat_value": 0.47
+        },
+        "应用情况": {
+          "modified_rows": [
+            72,
+            128,
+            146,
+            162
+          ],
+          "modifications": 4,
+          "risk_level": "L1",
+          "aggregated_score": 35.0,
+          "heat_value": 0.35
+        },
+        "进度分析总结": {
+          "modified_rows": [
+            84,
+            89,
+            108,
+            148,
+            229
+          ],
+          "modifications": 5,
+          "risk_level": "L1",
+          "aggregated_score": 40.0,
+          "heat_value": 0.4
+        }
+      },
+      "total_rows": 270,
+      "detailed_stats": {
+        "total_modifications": 153,
+        "total_rows": 270,
+        "modification_rate": 56.67,
+        "columns_with_changes": 19
+      }
+    },
+    {
+      "table_name": "产品库存管理表",
+      "name": "产品库存管理表",
+      "doc_url": "https://docs.qq.com/sheet/test4",
+      "url": "https://docs.qq.com/sheet/test4",
+      "modifications": 143,
+      "risk_level": "L3",
+      "heat_values": [
+        0.53,
+        0.42,
+        0.58,
+        0.6,
+        0.74,
+        0.62,
+        0.54,
+        0.59,
+        0.59,
+        0.61,
+        0.74,
+        0.95,
+        0.95,
+        0.95,
+        0.95,
+        0.76,
+        0.49,
+        0.43,
+        0.44
+      ],
+      "column_scores": {
+        "序号": {
+          "modified_rows": [
+            88,
+            108,
+            152,
+            177,
+            181,
+            210
+          ],
+          "modifications": 6,
+          "risk_level": "L2",
+          "aggregated_score": 53.0,
+          "heat_value": 0.53
+        },
+        "项目类型": {
+          "modified_rows": [
+            174,
+            182,
+            186,
+            226
+          ],
+          "modifications": 4,
+          "risk_level": "L2",
+          "aggregated_score": 42.0,
+          "heat_value": 0.42
+        },
+        "来源": {
+          "modified_rows": [
+            71,
+            82,
+            133,
+            146,
+            162,
+            170
+          ],
+          "modifications": 6,
+          "risk_level": "L2",
+          "aggregated_score": 58.0,
+          "heat_value": 0.58
+        },
+        "任务发起时间": {
+          "modified_rows": [
+            66,
+            92,
+            118,
+            138,
+            177,
+            184
+          ],
+          "modifications": 6,
+          "risk_level": "L2",
+          "aggregated_score": 60.0,
+          "heat_value": 0.6
+        },
+        "目标对齐": {
+          "modified_rows": [
+            26,
+            40,
+            44,
+            48,
+            52,
+            67,
+            72,
+            73,
+            177,
+            251
+          ],
+          "modifications": 10,
+          "risk_level": "L3",
+          "aggregated_score": 74.0,
+          "heat_value": 0.74
+        },
+        "关键KR对齐": {
+          "modified_rows": [
+            89,
+            97,
+            129,
+            158,
+            161,
+            168,
+            176
+          ],
+          "modifications": 7,
+          "risk_level": "L2",
+          "aggregated_score": 62.0,
+          "heat_value": 0.62
+        },
+        "具体计划内容": {
+          "modified_rows": [
+            89,
+            115,
+            135,
+            137,
+            156,
+            161,
+            107
+          ],
+          "modifications": 7,
+          "risk_level": "L2",
+          "aggregated_score": 54.0,
+          "heat_value": 0.54
+        },
+        "邓总指导登记": {
+          "modified_rows": [
+            51,
+            127,
+            130,
+            145,
+            171,
+            182
+          ],
+          "modifications": 6,
+          "risk_level": "L2",
+          "aggregated_score": 59.0,
+          "heat_value": 0.59
+        },
+        "负责人": {
+          "modified_rows": [
+            65,
+            68,
+            109,
+            142,
+            161,
+            170
+          ],
+          "modifications": 6,
+          "risk_level": "L2",
+          "aggregated_score": 59.0,
+          "heat_value": 0.59
+        },
+        "协助人": {
+          "modified_rows": [
+            88,
+            105,
+            129,
+            179,
+            190,
+            235
+          ],
+          "modifications": 6,
+          "risk_level": "L2",
+          "aggregated_score": 61.0,
+          "heat_value": 0.61
+        },
+        "监督人": {
+          "modified_rows": [
+            3,
+            6,
+            16,
+            32,
+            39,
+            65,
+            224,
+            258
+          ],
+          "modifications": 8,
+          "risk_level": "L3",
+          "aggregated_score": 74.0,
+          "heat_value": 0.74
+        },
+        "重要程度": {
+          "modified_rows": [
+            3,
+            50,
+            55,
+            63,
+            79,
+            106,
+            122,
+            180,
+            190,
+            219,
+            74
+          ],
+          "modifications": 11,
+          "risk_level": "L3",
+          "aggregated_score": 95.0,
+          "heat_value": 0.95
+        },
+        "预计完成时间": {
+          "modified_rows": [
+            4,
+            15,
+            26,
+            27,
+            29,
+            30,
+            33,
+            63,
+            96,
+            205,
+            131,
+            232
+          ],
+          "modifications": 12,
+          "risk_level": "L3",
+          "aggregated_score": 95.0,
+          "heat_value": 0.95
+        },
+        "完成进度": {
+          "modified_rows": [
+            3,
+            27,
+            30,
+            37,
+            50,
+            59,
+            65,
+            70,
+            75,
+            264,
+            112
+          ],
+          "modifications": 11,
+          "risk_level": "L3",
+          "aggregated_score": 95.0,
+          "heat_value": 0.95
+        },
+        "形成计划清单": {
+          "modified_rows": [
+            31,
+            36,
+            39,
+            67,
+            73,
+            81,
+            91,
+            120,
+            130,
+            239,
+            83
+          ],
+          "modifications": 11,
+          "risk_level": "L3",
+          "aggregated_score": 95.0,
+          "heat_value": 0.95
+        },
+        "复盘时间": {
+          "modified_rows": [
+            1,
+            13,
+            26,
+            31,
+            57,
+            174,
+            185,
+            247,
+            144,
+            29,
+            251
+          ],
+          "modifications": 11,
+          "risk_level": "L3",
+          "aggregated_score": 76.0,
+          "heat_value": 0.76
+        },
+        "对上汇报": {
+          "modified_rows": [
+            81,
+            95,
+            130,
+            141,
+            182
+          ],
+          "modifications": 5,
+          "risk_level": "L2",
+          "aggregated_score": 49.0,
+          "heat_value": 0.49
+        },
+        "应用情况": {
+          "modified_rows": [
+            81,
+            127,
+            166,
+            269
+          ],
+          "modifications": 4,
+          "risk_level": "L2",
+          "aggregated_score": 43.0,
+          "heat_value": 0.43
+        },
+        "进度分析总结": {
+          "modified_rows": [
+            78,
+            95,
+            135,
+            175,
+            199
+          ],
+          "modifications": 5,
+          "risk_level": "L2",
+          "aggregated_score": 44.0,
+          "heat_value": 0.44
+        }
+      },
+      "total_rows": 270,
+      "detailed_stats": {
+        "total_modifications": 143,
+        "total_rows": 270,
+        "modification_rate": 52.96,
+        "columns_with_changes": 19
+      }
+    },
+    {
+      "table_name": "财务报表Q3",
+      "name": "财务报表Q3",
+      "doc_url": "https://docs.qq.com/sheet/test5",
+      "url": "https://docs.qq.com/sheet/test5",
+      "modifications": 148,
+      "risk_level": "L3",
+      "heat_values": [
+        0.45,
+        0.54,
+        0.64,
+        0.64,
+        0.76,
+        0.69,
+        0.55,
+        0.56,
+        0.45,
+        0.51,
+        0.49,
+        0.74,
+        0.93,
+        0.95,
+        0.95,
+        0.89,
+        0.66,
+        0.54,
+        0.57
+      ],
+      "column_scores": {
+        "序号": {
+          "modified_rows": [
+            58,
+            98,
+            113,
+            134,
+            162
+          ],
+          "modifications": 5,
+          "risk_level": "L2",
+          "aggregated_score": 45.0,
+          "heat_value": 0.45
+        },
+        "项目类型": {
+          "modified_rows": [
+            92,
+            98,
+            128,
+            134,
+            159,
+            185,
+            108
+          ],
+          "modifications": 7,
+          "risk_level": "L2",
+          "aggregated_score": 54.0,
+          "heat_value": 0.54
+        },
+        "来源": {
+          "modified_rows": [
+            66,
+            116,
+            120,
+            128,
+            132,
+            152,
+            207,
+            171
+          ],
+          "modifications": 8,
+          "risk_level": "L2",
+          "aggregated_score": 64.0,
+          "heat_value": 0.64
+        },
+        "任务发起时间": {
+          "modified_rows": [
+            74,
+            94,
+            103,
+            132,
+            148,
+            192,
+            195,
+            118
+          ],
+          "modifications": 8,
+          "risk_level": "L2",
+          "aggregated_score": 64.0,
+          "heat_value": 0.64
+        },
+        "目标对齐": {
+          "modified_rows": [
+            10,
+            18,
+            32,
+            33,
+            49,
+            52,
+            78,
+            97,
+            47
+          ],
+          "modifications": 9,
+          "risk_level": "L3",
+          "aggregated_score": 76.0,
+          "heat_value": 0.76
+        },
+        "关键KR对齐": {
+          "modified_rows": [
+            44,
+            80,
+            84,
+            91,
+            110,
+            141,
+            155,
+            173
+          ],
+          "modifications": 8,
+          "risk_level": "L2",
+          "aggregated_score": 69.0,
+          "heat_value": 0.69
+        },
+        "具体计划内容": {
+          "modified_rows": [
+            1,
+            95,
+            109,
+            119,
+            147,
+            178,
+            41
+          ],
+          "modifications": 7,
+          "risk_level": "L2",
+          "aggregated_score": 55.0,
+          "heat_value": 0.55
+        },
+        "邓总指导登记": {
+          "modified_rows": [
+            112,
+            121,
+            138,
+            139,
+            181,
+            201,
+            115
+          ],
+          "modifications": 7,
+          "risk_level": "L2",
+          "aggregated_score": 56.0,
+          "heat_value": 0.56
+        },
+        "负责人": {
+          "modified_rows": [
+            69,
+            181,
+            204,
+            205,
+            213
+          ],
+          "modifications": 5,
+          "risk_level": "L2",
+          "aggregated_score": 45.0,
+          "heat_value": 0.45
+        },
+        "协助人": {
+          "modified_rows": [
+            104,
+            105,
+            109,
+            164,
+            187,
+            208
+          ],
+          "modifications": 6,
+          "risk_level": "L2",
+          "aggregated_score": 51.0,
+          "heat_value": 0.51
+        },
+        "监督人": {
+          "modified_rows": [
+            88,
+            104,
+            134,
+            144,
+            154
+          ],
+          "modifications": 5,
+          "risk_level": "L2",
+          "aggregated_score": 49.0,
+          "heat_value": 0.49
+        },
+        "重要程度": {
+          "modified_rows": [
+            8,
+            14,
+            47,
+            62,
+            67,
+            69,
+            74,
+            101,
+            120
+          ],
+          "modifications": 9,
+          "risk_level": "L3",
+          "aggregated_score": 74.0,
+          "heat_value": 0.74
+        },
+        "预计完成时间": {
+          "modified_rows": [
+            8,
+            12,
+            23,
+            37,
+            50,
+            79,
+            84,
+            154,
+            194,
+            196,
+            203
+          ],
+          "modifications": 11,
+          "risk_level": "L3",
+          "aggregated_score": 93.0,
+          "heat_value": 0.93
+        },
+        "完成进度": {
+          "modified_rows": [
+            22,
+            27,
+            32,
+            37,
+            60,
+            73,
+            74,
+            81,
+            200,
+            234,
+            269
+          ],
+          "modifications": 11,
+          "risk_level": "L3",
+          "aggregated_score": 95.0,
+          "heat_value": 0.95
+        },
+        "形成计划清单": {
+          "modified_rows": [
+            10,
+            11,
+            12,
+            57,
+            76,
+            103,
+            113,
+            166,
+            200,
+            229,
+            256
+          ],
+          "modifications": 11,
+          "risk_level": "L3",
+          "aggregated_score": 95.0,
+          "heat_value": 0.95
+        },
+        "复盘时间": {
+          "modified_rows": [
+            6,
+            7,
+            30,
+            35,
+            54,
+            64,
+            66,
+            70,
+            80,
+            221,
+            180
+          ],
+          "modifications": 11,
+          "risk_level": "L3",
+          "aggregated_score": 89.0,
+          "heat_value": 0.89
+        },
+        "对上汇报": {
+          "modified_rows": [
+            111,
+            141,
+            147,
+            158,
+            170,
+            210,
+            241
+          ],
+          "modifications": 7,
+          "risk_level": "L2",
+          "aggregated_score": 66.0,
+          "heat_value": 0.66
+        },
+        "应用情况": {
+          "modified_rows": [
+            55,
+            120,
+            135,
+            139,
+            140,
+            219,
+            161
+          ],
+          "modifications": 7,
+          "risk_level": "L2",
+          "aggregated_score": 54.0,
+          "heat_value": 0.54
+        },
+        "进度分析总结": {
+          "modified_rows": [
+            82,
+            109,
+            138,
+            148,
+            161,
+            202
+          ],
+          "modifications": 6,
+          "risk_level": "L2",
+          "aggregated_score": 57.0,
+          "heat_value": 0.57
+        }
+      },
+      "total_rows": 270,
+      "detailed_stats": {
+        "total_modifications": 148,
+        "total_rows": 270,
+        "modification_rate": 54.81,
+        "columns_with_changes": 19
+      }
+    },
+    {
+      "table_name": "员工考勤记录",
+      "name": "员工考勤记录",
+      "doc_url": "https://docs.qq.com/sheet/test6",
+      "url": "https://docs.qq.com/sheet/test6",
+      "modifications": 172,
+      "risk_level": "L3",
+      "heat_values": [
+        0.67,
+        0.75,
+        0.65,
+        0.66,
+        0.66,
+        0.68,
+        0.61,
+        0.59,
+        0.43,
+        0.45,
+        0.59,
+        0.69,
+        0.83,
+        0.95,
+        0.95,
+        0.95,
+        0.95,
+        0.71,
+        0.54
+      ],
+      "column_scores": {
+        "序号": {
+          "modified_rows": [
+            75,
+            78,
+            103,
+            125,
+            148,
+            177,
+            202,
+            204
+          ],
+          "modifications": 8,
+          "risk_level": "L2",
+          "aggregated_score": 67.0,
+          "heat_value": 0.67
+        },
+        "项目类型": {
+          "modified_rows": [
+            34,
+            47,
+            58,
+            67,
+            91,
+            104,
+            149,
+            245,
+            262
+          ],
+          "modifications": 9,
+          "risk_level": "L3",
+          "aggregated_score": 75.0,
+          "heat_value": 0.75
+        },
+        "来源": {
+          "modified_rows": [
+            89,
+            94,
+            122,
+            126,
+            159,
+            174,
+            181,
+            187
+          ],
+          "modifications": 8,
+          "risk_level": "L2",
+          "aggregated_score": 65.0,
+          "heat_value": 0.65
+        },
+        "任务发起时间": {
+          "modified_rows": [
+            69,
+            74,
+            110,
+            117,
+            131,
+            172,
+            196,
+            202,
+            154
+          ],
+          "modifications": 9,
+          "risk_level": "L2",
+          "aggregated_score": 66.0,
+          "heat_value": 0.66
+        },
+        "目标对齐": {
+          "modified_rows": [
+            106,
+            125,
+            130,
+            156,
+            160,
+            163,
+            165,
+            174,
+            24
+          ],
+          "modifications": 9,
+          "risk_level": "L2",
+          "aggregated_score": 66.0,
+          "heat_value": 0.66
+        },
+        "关键KR对齐": {
+          "modified_rows": [
+            63,
+            92,
+            106,
+            121,
+            127,
+            137,
+            177,
+            184,
+            203
+          ],
+          "modifications": 9,
+          "risk_level": "L2",
+          "aggregated_score": 68.0,
+          "heat_value": 0.68
+        },
+        "具体计划内容": {
+          "modified_rows": [
+            75,
+            142,
+            148,
+            152,
+            169,
+            187,
+            228
+          ],
+          "modifications": 7,
+          "risk_level": "L2",
+          "aggregated_score": 61.0,
+          "heat_value": 0.61
+        },
+        "邓总指导登记": {
+          "modified_rows": [
+            22,
+            111,
+            114,
+            120,
+            128,
+            133,
+            146
+          ],
+          "modifications": 7,
+          "risk_level": "L2",
+          "aggregated_score": 59.0,
+          "heat_value": 0.59
+        },
+        "负责人": {
+          "modified_rows": [
+            64,
+            106,
+            111,
+            115,
+            166
+          ],
+          "modifications": 5,
+          "risk_level": "L2",
+          "aggregated_score": 43.0,
+          "heat_value": 0.43
+        },
+        "协助人": {
+          "modified_rows": [
+            59,
+            86,
+            172,
+            181,
+            204
+          ],
+          "modifications": 5,
+          "risk_level": "L2",
+          "aggregated_score": 45.0,
+          "heat_value": 0.45
+        },
+        "监督人": {
+          "modified_rows": [
+            86,
+            89,
+            107,
+            134,
+            156,
+            177,
+            216
+          ],
+          "modifications": 7,
+          "risk_level": "L2",
+          "aggregated_score": 59.0,
+          "heat_value": 0.59
+        },
+        "重要程度": {
+          "modified_rows": [
+            75,
+            108,
+            131,
+            136,
+            142,
+            146,
+            152,
+            269,
+            63,
+            227
+          ],
+          "modifications": 10,
+          "risk_level": "L2",
+          "aggregated_score": 69.0,
+          "heat_value": 0.69
+        },
+        "预计完成时间": {
+          "modified_rows": [
+            2,
+            11,
+            22,
+            23,
+            24,
+            29,
+            47,
+            69,
+            73,
+            75,
+            258
+          ],
+          "modifications": 11,
+          "risk_level": "L3",
+          "aggregated_score": 83.0,
+          "heat_value": 0.83
+        },
+        "完成进度": {
+          "modified_rows": [
+            2,
+            8,
+            12,
+            14,
+            36,
+            37,
+            45,
+            50,
+            64,
+            68,
+            155,
+            246
+          ],
+          "modifications": 12,
+          "risk_level": "L3",
+          "aggregated_score": 95.0,
+          "heat_value": 0.95
+        },
+        "形成计划清单": {
+          "modified_rows": [
+            3,
+            4,
+            16,
+            35,
+            47,
+            75,
+            81,
+            116,
+            119,
+            126,
+            143,
+            236,
+            134,
+            146
+          ],
+          "modifications": 14,
+          "risk_level": "L3",
+          "aggregated_score": 95.0,
+          "heat_value": 0.95
+        },
+        "复盘时间": {
+          "modified_rows": [
+            4,
+            19,
+            27,
+            28,
+            36,
+            41,
+            62,
+            72,
+            73,
+            80,
+            151,
+            216,
+            125
+          ],
+          "modifications": 13,
+          "risk_level": "L3",
+          "aggregated_score": 95.0,
+          "heat_value": 0.95
+        },
+        "对上汇报": {
+          "modified_rows": [
+            5,
+            6,
+            12,
+            32,
+            34,
+            48,
+            73,
+            83,
+            88,
+            177,
+            180,
+            226,
+            194
+          ],
+          "modifications": 13,
+          "risk_level": "L3",
+          "aggregated_score": 95.0,
+          "heat_value": 0.95
+        },
+        "应用情况": {
+          "modified_rows": [
+            11,
+            17,
+            24,
+            49,
+            82,
+            132,
+            139,
+            174,
+            210,
+            173
+          ],
+          "modifications": 10,
+          "risk_level": "L3",
+          "aggregated_score": 71.0,
+          "heat_value": 0.71
+        },
+        "进度分析总结": {
+          "modified_rows": [
+            112,
+            117,
+            124,
+            134,
+            166,
+            184
+          ],
+          "modifications": 6,
+          "risk_level": "L2",
+          "aggregated_score": 54.0,
+          "heat_value": 0.54
+        }
+      },
+      "total_rows": 270,
+      "detailed_stats": {
+        "total_modifications": 172,
+        "total_rows": 270,
+        "modification_rate": 63.7,
+        "columns_with_changes": 19
+      }
+    },
+    {
+      "table_name": "项目进度跟踪",
+      "name": "项目进度跟踪",
+      "doc_url": "https://docs.qq.com/sheet/test7",
+      "url": "https://docs.qq.com/sheet/test7",
+      "modifications": 166,
+      "risk_level": "L3",
+      "heat_values": [
+        0.6,
+        0.7,
+        0.68,
+        0.81,
+        0.85,
+        0.7,
+        0.54,
+        0.49,
+        0.61,
+        0.43,
+        0.5,
+        0.55,
+        0.72,
+        0.77,
+        0.95,
+        0.95,
+        0.95,
+        0.89,
+        0.83
+      ],
+      "column_scores": {
+        "序号": {
+          "modified_rows": [
+            75,
+            114,
+            129,
+            170,
+            186,
+            228,
+            231,
+            190,
+            32
+          ],
+          "modifications": 9,
+          "risk_level": "L2",
+          "aggregated_score": 60.0,
+          "heat_value": 0.6
+        },
+        "项目类型": {
+          "modified_rows": [
+            64,
+            112,
+            128,
+            143,
+            171,
+            193,
+            197,
+            202,
+            101
+          ],
+          "modifications": 9,
+          "risk_level": "L2",
+          "aggregated_score": 70.0,
+          "heat_value": 0.7
+        },
+        "来源": {
+          "modified_rows": [
+            43,
+            50,
+            111,
+            118,
+            145,
+            163,
+            167,
+            208
+          ],
+          "modifications": 8,
+          "risk_level": "L2",
+          "aggregated_score": 68.0,
+          "heat_value": 0.68
+        },
+        "任务发起时间": {
+          "modified_rows": [
+            3,
+            46,
+            65,
+            67,
+            68,
+            71,
+            80,
+            140,
+            141
+          ],
+          "modifications": 9,
+          "risk_level": "L3",
+          "aggregated_score": 81.0,
+          "heat_value": 0.81
+        },
+        "目标对齐": {
+          "modified_rows": [
+            6,
+            8,
+            12,
+            16,
+            26,
+            47,
+            63,
+            78,
+            81,
+            86,
+            258
+          ],
+          "modifications": 11,
+          "risk_level": "L3",
+          "aggregated_score": 85.0,
+          "heat_value": 0.85
+        },
+        "关键KR对齐": {
+          "modified_rows": [
+            35,
+            93,
+            102,
+            137,
+            143,
+            150,
+            158,
+            164
+          ],
+          "modifications": 8,
+          "risk_level": "L2",
+          "aggregated_score": 70.0,
+          "heat_value": 0.7
+        },
+        "具体计划内容": {
+          "modified_rows": [
+            71,
+            93,
+            104,
+            116,
+            119,
+            170,
+            169
+          ],
+          "modifications": 7,
+          "risk_level": "L2",
+          "aggregated_score": 54.0,
+          "heat_value": 0.54
+        },
+        "邓总指导登记": {
+          "modified_rows": [
+            18,
+            75,
+            107,
+            145,
+            204,
+            229
+          ],
+          "modifications": 6,
+          "risk_level": "L2",
+          "aggregated_score": 49.0,
+          "heat_value": 0.49
+        },
+        "负责人": {
+          "modified_rows": [
+            1,
+            84,
+            101,
+            128,
+            131,
+            144,
+            175
+          ],
+          "modifications": 7,
+          "risk_level": "L2",
+          "aggregated_score": 61.0,
+          "heat_value": 0.61
+        },
+        "协助人": {
+          "modified_rows": [
+            115,
+            123,
+            146,
+            165,
+            166
+          ],
+          "modifications": 5,
+          "risk_level": "L2",
+          "aggregated_score": 43.0,
+          "heat_value": 0.43
+        },
+        "监督人": {
+          "modified_rows": [
+            97,
+            116,
+            123,
+            151,
+            154,
+            182
+          ],
+          "modifications": 6,
+          "risk_level": "L2",
+          "aggregated_score": 50.0,
+          "heat_value": 0.5
+        },
+        "重要程度": {
+          "modified_rows": [
+            101,
+            102,
+            122,
+            133,
+            166,
+            188
+          ],
+          "modifications": 6,
+          "risk_level": "L2",
+          "aggregated_score": 55.0,
+          "heat_value": 0.55
+        },
+        "预计完成时间": {
+          "modified_rows": [
+            3,
+            32,
+            40,
+            41,
+            49,
+            65,
+            67,
+            71,
+            244
+          ],
+          "modifications": 9,
+          "risk_level": "L3",
+          "aggregated_score": 72.0,
+          "heat_value": 0.72
+        },
+        "完成进度": {
+          "modified_rows": [
+            8,
+            19,
+            20,
+            25,
+            50,
+            91,
+            107,
+            154,
+            269,
+            173
+          ],
+          "modifications": 10,
+          "risk_level": "L3",
+          "aggregated_score": 77.0,
+          "heat_value": 0.77
+        },
+        "形成计划清单": {
+          "modified_rows": [
+            6,
+            10,
+            13,
+            19,
+            44,
+            47,
+            68,
+            74,
+            201,
+            232,
+            245
+          ],
+          "modifications": 11,
+          "risk_level": "L3",
+          "aggregated_score": 95.0,
+          "heat_value": 0.95
+        },
+        "复盘时间": {
+          "modified_rows": [
+            15,
+            21,
+            27,
+            30,
+            43,
+            52,
+            54,
+            61,
+            68,
+            118,
+            144,
+            165
+          ],
+          "modifications": 12,
+          "risk_level": "L3",
+          "aggregated_score": 95.0,
+          "heat_value": 0.95
+        },
+        "对上汇报": {
+          "modified_rows": [
+            9,
+            18,
+            47,
+            49,
+            52,
+            60,
+            72,
+            109,
+            156,
+            159,
+            189,
+            167,
+            242
+          ],
+          "modifications": 13,
+          "risk_level": "L3",
+          "aggregated_score": 95.0,
+          "heat_value": 0.95
+        },
+        "应用情况": {
+          "modified_rows": [
+            3,
+            6,
+            9,
+            12,
+            37,
+            39,
+            64,
+            75,
+            139,
+            197
+          ],
+          "modifications": 10,
+          "risk_level": "L3",
+          "aggregated_score": 89.0,
+          "heat_value": 0.89
+        },
+        "进度分析总结": {
+          "modified_rows": [
+            10,
+            13,
+            14,
+            22,
+            23,
+            24,
+            28,
+            58,
+            73,
+            112
+          ],
+          "modifications": 10,
+          "risk_level": "L3",
+          "aggregated_score": 83.0,
+          "heat_value": 0.83
+        }
+      },
+      "total_rows": 270,
+      "detailed_stats": {
+        "total_modifications": 166,
+        "total_rows": 270,
+        "modification_rate": 61.48,
+        "columns_with_changes": 19
+      }
+    },
+    {
+      "table_name": "客户反馈汇总",
+      "name": "客户反馈汇总",
+      "doc_url": "https://docs.qq.com/sheet/test8",
+      "url": "https://docs.qq.com/sheet/test8",
+      "modifications": 151,
+      "risk_level": "L3",
+      "heat_values": [
+        0.68,
+        0.65,
+        0.73,
+        0.77,
+        0.85,
+        0.74,
+        0.78,
+        0.72,
+        0.51,
+        0.62,
+        0.53,
+        0.61,
+        0.57,
+        0.67,
+        0.93,
+        0.95,
+        0.95,
+        0.95,
+        0.9
+      ],
+      "column_scores": {
+        "序号": {
+          "modified_rows": [
+            91,
+            103,
+            115,
+            130,
+            134,
+            136,
+            182,
+            55
+          ],
+          "modifications": 8,
+          "risk_level": "L2",
+          "aggregated_score": 68.0,
+          "heat_value": 0.68
+        },
+        "项目类型": {
+          "modified_rows": [
+            61,
+            86,
+            87,
+            113,
+            126,
+            194,
+            239,
+            56,
+            88
+          ],
+          "modifications": 9,
+          "risk_level": "L2",
+          "aggregated_score": 65.0,
+          "heat_value": 0.65
+        },
+        "来源": {
+          "modified_rows": [
+            5,
+            9,
+            62,
+            79,
+            168,
+            214,
+            217,
+            57
+          ],
+          "modifications": 8,
+          "risk_level": "L3",
+          "aggregated_score": 73.0,
+          "heat_value": 0.73
+        },
+        "任务发起时间": {
+          "modified_rows": [
+            7,
+            15,
+            23,
+            31,
+            32,
+            59,
+            162,
+            168
+          ],
+          "modifications": 8,
+          "risk_level": "L3",
+          "aggregated_score": 77.0,
+          "heat_value": 0.77
+        },
+        "目标对齐": {
+          "modified_rows": [
+            16,
+            27,
+            29,
+            37,
+            60,
+            145,
+            157,
+            167,
+            227
+          ],
+          "modifications": 9,
+          "risk_level": "L3",
+          "aggregated_score": 85.0,
+          "heat_value": 0.85
+        },
+        "关键KR对齐": {
+          "modified_rows": [
+            1,
+            3,
+            4,
+            17,
+            22,
+            58,
+            224
+          ],
+          "modifications": 7,
+          "risk_level": "L3",
+          "aggregated_score": 74.0,
+          "heat_value": 0.74
+        },
+        "具体计划内容": {
+          "modified_rows": [
+            3,
+            19,
+            60,
+            69,
+            79,
+            81,
+            215,
+            252,
+            40
+          ],
+          "modifications": 9,
+          "risk_level": "L3",
+          "aggregated_score": 78.0,
+          "heat_value": 0.78
+        },
+        "邓总指导登记": {
+          "modified_rows": [
+            12,
+            15,
+            33,
+            66,
+            73,
+            77,
+            163
+          ],
+          "modifications": 7,
+          "risk_level": "L3",
+          "aggregated_score": 72.0,
+          "heat_value": 0.72
+        },
+        "负责人": {
+          "modified_rows": [
+            114,
+            144,
+            147,
+            163,
+            196
+          ],
+          "modifications": 5,
+          "risk_level": "L2",
+          "aggregated_score": 51.0,
+          "heat_value": 0.51
+        },
+        "协助人": {
+          "modified_rows": [
+            89,
+            140,
+            152,
+            153,
+            162,
+            234
+          ],
+          "modifications": 6,
+          "risk_level": "L2",
+          "aggregated_score": 62.0,
+          "heat_value": 0.62
+        },
+        "监督人": {
+          "modified_rows": [
+            41,
+            115,
+            125,
+            130,
+            173
+          ],
+          "modifications": 5,
+          "risk_level": "L2",
+          "aggregated_score": 53.0,
+          "heat_value": 0.53
+        },
+        "重要程度": {
+          "modified_rows": [
+            58,
+            77,
+            124,
+            126,
+            172,
+            194
+          ],
+          "modifications": 6,
+          "risk_level": "L2",
+          "aggregated_score": 61.0,
+          "heat_value": 0.61
+        },
+        "预计完成时间": {
+          "modified_rows": [
+            59,
+            106,
+            114,
+            117,
+            124,
+            192,
+            261
+          ],
+          "modifications": 7,
+          "risk_level": "L2",
+          "aggregated_score": 57.0,
+          "heat_value": 0.57
+        },
+        "完成进度": {
+          "modified_rows": [
+            63,
+            120,
+            127,
+            139,
+            171,
+            213,
+            215
+          ],
+          "modifications": 7,
+          "risk_level": "L2",
+          "aggregated_score": 67.0,
+          "heat_value": 0.67
+        },
+        "形成计划清单": {
+          "modified_rows": [
+            9,
+            38,
+            49,
+            63,
+            71,
+            109,
+            164,
+            180,
+            235,
+            202
+          ],
+          "modifications": 10,
+          "risk_level": "L3",
+          "aggregated_score": 93.0,
+          "heat_value": 0.93
+        },
+        "复盘时间": {
+          "modified_rows": [
+            2,
+            19,
+            25,
+            40,
+            64,
+            68,
+            73,
+            204,
+            228,
+            243
+          ],
+          "modifications": 10,
+          "risk_level": "L3",
+          "aggregated_score": 95.0,
+          "heat_value": 0.95
+        },
+        "对上汇报": {
+          "modified_rows": [
+            8,
+            17,
+            31,
+            56,
+            61,
+            62,
+            77,
+            78,
+            151,
+            247
+          ],
+          "modifications": 10,
+          "risk_level": "L3",
+          "aggregated_score": 95.0,
+          "heat_value": 0.95
+        },
+        "应用情况": {
+          "modified_rows": [
+            27,
+            35,
+            36,
+            38,
+            48,
+            50,
+            57,
+            62,
+            71,
+            174
+          ],
+          "modifications": 10,
+          "risk_level": "L3",
+          "aggregated_score": 95.0,
+          "heat_value": 0.95
+        },
+        "进度分析总结": {
+          "modified_rows": [
+            5,
+            12,
+            16,
+            19,
+            61,
+            62,
+            63,
+            115,
+            167
+          ],
+          "modifications": 9,
+          "risk_level": "L3",
+          "aggregated_score": 90.0,
+          "heat_value": 0.9
+        }
+      },
+      "total_rows": 270,
+      "detailed_stats": {
+        "total_modifications": 151,
+        "total_rows": 270,
+        "modification_rate": 55.93,
+        "columns_with_changes": 19
+      }
+    },
+    {
+      "table_name": "供应商管理",
+      "name": "供应商管理",
+      "doc_url": "https://docs.qq.com/sheet/test9",
+      "url": "https://docs.qq.com/sheet/test9",
+      "modifications": 149,
+      "risk_level": "L3",
+      "heat_values": [
+        0.58,
+        0.52,
+        0.71,
+        0.73,
+        0.86,
+        0.89,
+        0.87,
+        0.65,
+        0.58,
+        0.68,
+        0.62,
+        0.55,
+        0.69,
+        0.78,
+        0.95,
+        0.95,
+        0.95,
+        0.95,
+        0.95
+      ],
+      "column_scores": {
+        "序号": {
+          "modified_rows": [
+            82,
+            143,
+            147,
+            150,
+            186,
+            114,
+            151
+          ],
+          "modifications": 7,
+          "risk_level": "L2",
+          "aggregated_score": 58.0,
+          "heat_value": 0.58
+        },
+        "项目类型": {
+          "modified_rows": [
+            86,
+            142,
+            168,
+            193,
+            199,
+            205
+          ],
+          "modifications": 6,
+          "risk_level": "L2",
+          "aggregated_score": 52.0,
+          "heat_value": 0.52
+        },
+        "来源": {
+          "modified_rows": [
+            28,
+            32,
+            75,
+            81,
+            107,
+            234,
+            263,
+            60
+          ],
+          "modifications": 8,
+          "risk_level": "L3",
+          "aggregated_score": 71.0,
+          "heat_value": 0.71
+        },
+        "任务发起时间": {
+          "modified_rows": [
+            5,
+            70,
+            98,
+            113,
+            115,
+            120,
+            257
+          ],
+          "modifications": 7,
+          "risk_level": "L3",
+          "aggregated_score": 73.0,
+          "heat_value": 0.73
+        },
+        "目标对齐": {
+          "modified_rows": [
+            6,
+            11,
+            24,
+            37,
+            79,
+            84,
+            212,
+            217
+          ],
+          "modifications": 8,
+          "risk_level": "L3",
+          "aggregated_score": 86.0,
+          "heat_value": 0.86
+        },
+        "关键KR对齐": {
+          "modified_rows": [
+            6,
+            44,
+            54,
+            66,
+            75,
+            97,
+            185,
+            241,
+            263,
+            192
+          ],
+          "modifications": 10,
+          "risk_level": "L3",
+          "aggregated_score": 89.0,
+          "heat_value": 0.89
+        },
+        "具体计划内容": {
+          "modified_rows": [
+            6,
+            7,
+            23,
+            30,
+            53,
+            182,
+            190,
+            254,
+            26
+          ],
+          "modifications": 9,
+          "risk_level": "L3",
+          "aggregated_score": 87.0,
+          "heat_value": 0.87
+        },
+        "邓总指导登记": {
+          "modified_rows": [
+            108,
+            115,
+            121,
+            133,
+            140,
+            151
+          ],
+          "modifications": 6,
+          "risk_level": "L2",
+          "aggregated_score": 65.0,
+          "heat_value": 0.65
+        },
+        "负责人": {
+          "modified_rows": [
+            50,
+            98,
+            133,
+            166,
+            169
+          ],
+          "modifications": 5,
+          "risk_level": "L2",
+          "aggregated_score": 58.0,
+          "heat_value": 0.58
+        },
+        "协助人": {
+          "modified_rows": [
+            99,
+            105,
+            113,
+            128,
+            170,
+            184,
+            226,
+            48
+          ],
+          "modifications": 8,
+          "risk_level": "L2",
+          "aggregated_score": 68.0,
+          "heat_value": 0.68
+        },
+        "监督人": {
+          "modified_rows": [
+            76,
+            102,
+            115,
+            151,
+            165,
+            170
+          ],
+          "modifications": 6,
+          "risk_level": "L2",
+          "aggregated_score": 62.0,
+          "heat_value": 0.62
+        },
+        "重要程度": {
+          "modified_rows": [
+            86,
+            135,
+            154,
+            218,
+            228,
+            128
+          ],
+          "modifications": 6,
+          "risk_level": "L2",
+          "aggregated_score": 55.0,
+          "heat_value": 0.55
+        },
+        "预计完成时间": {
+          "modified_rows": [
+            19,
+            61,
+            103,
+            124,
+            140,
+            153,
+            163
+          ],
+          "modifications": 7,
+          "risk_level": "L2",
+          "aggregated_score": 69.0,
+          "heat_value": 0.69
+        },
+        "完成进度": {
+          "modified_rows": [
+            11,
+            35,
+            62,
+            63,
+            81,
+            197,
+            199,
+            236,
+            145
+          ],
+          "modifications": 9,
+          "risk_level": "L3",
+          "aggregated_score": 78.0,
+          "heat_value": 0.78
+        },
+        "形成计划清单": {
+          "modified_rows": [
+            2,
+            7,
+            23,
+            33,
+            53,
+            55,
+            63,
+            73,
+            120
+          ],
+          "modifications": 9,
+          "risk_level": "L3",
+          "aggregated_score": 95.0,
+          "heat_value": 0.95
+        },
+        "复盘时间": {
+          "modified_rows": [
+            21,
+            26,
+            32,
+            43,
+            47,
+            67,
+            78,
+            106,
+            149
+          ],
+          "modifications": 9,
+          "risk_level": "L3",
+          "aggregated_score": 95.0,
+          "heat_value": 0.95
+        },
+        "对上汇报": {
+          "modified_rows": [
+            1,
+            26,
+            28,
+            56,
+            64,
+            69,
+            91,
+            96,
+            180,
+            170
+          ],
+          "modifications": 10,
+          "risk_level": "L3",
+          "aggregated_score": 95.0,
+          "heat_value": 0.95
+        },
+        "应用情况": {
+          "modified_rows": [
+            2,
+            7,
+            62,
+            63,
+            68,
+            77,
+            99,
+            174,
+            211,
+            152
+          ],
+          "modifications": 10,
+          "risk_level": "L3",
+          "aggregated_score": 95.0,
+          "heat_value": 0.95
+        },
+        "进度分析总结": {
+          "modified_rows": [
+            5,
+            19,
+            24,
+            37,
+            61,
+            62,
+            97,
+            163,
+            173
+          ],
+          "modifications": 9,
+          "risk_level": "L3",
+          "aggregated_score": 95.0,
+          "heat_value": 0.95
+        }
+      },
+      "total_rows": 270,
+      "detailed_stats": {
+        "total_modifications": 149,
+        "total_rows": 270,
+        "modification_rate": 55.19,
+        "columns_with_changes": 19
+      }
+    },
+    {
+      "table_name": "市场营销计划",
+      "name": "市场营销计划",
+      "doc_url": "https://docs.qq.com/sheet/test10",
+      "url": "https://docs.qq.com/sheet/test10",
+      "modifications": 151,
+      "risk_level": "L3",
+      "heat_values": [
+        0.48,
+        0.56,
+        0.52,
+        0.59,
+        0.77,
+        0.84,
+        0.84,
+        0.88,
+        0.87,
+        0.63,
+        0.64,
+        0.58,
+        0.66,
+        0.69,
+        0.77,
+        0.95,
+        0.95,
+        0.95,
+        0.95
+      ],
+      "column_scores": {
+        "序号": {
+          "modified_rows": [
+            82,
+            131,
+            165,
+            193,
+            240
+          ],
+          "modifications": 5,
+          "risk_level": "L2",
+          "aggregated_score": 48.0,
+          "heat_value": 0.48
+        },
+        "项目类型": {
+          "modified_rows": [
+            84,
+            100,
+            133,
+            152,
+            162
+          ],
+          "modifications": 5,
+          "risk_level": "L2",
+          "aggregated_score": 56.0,
+          "heat_value": 0.56
+        },
+        "来源": {
+          "modified_rows": [
+            52,
+            90,
+            169,
+            177,
+            186
+          ],
+          "modifications": 5,
+          "risk_level": "L2",
+          "aggregated_score": 52.0,
+          "heat_value": 0.52
+        },
+        "任务发起时间": {
+          "modified_rows": [
+            77,
+            97,
+            141,
+            178,
+            192,
+            193
+          ],
+          "modifications": 6,
+          "risk_level": "L2",
+          "aggregated_score": 59.0,
+          "heat_value": 0.59
+        },
+        "目标对齐": {
+          "modified_rows": [
+            17,
+            22,
+            27,
+            34,
+            41,
+            47,
+            49,
+            106
+          ],
+          "modifications": 8,
+          "risk_level": "L3",
+          "aggregated_score": 77.0,
+          "heat_value": 0.77
+        },
+        "关键KR对齐": {
+          "modified_rows": [
+            24,
+            48,
+            53,
+            59,
+            61,
+            104,
+            146,
+            243
+          ],
+          "modifications": 8,
+          "risk_level": "L3",
+          "aggregated_score": 84.0,
+          "heat_value": 0.84
+        },
+        "具体计划内容": {
+          "modified_rows": [
+            5,
+            9,
+            11,
+            26,
+            64,
+            111,
+            122,
+            236,
+            62
+          ],
+          "modifications": 9,
+          "risk_level": "L3",
+          "aggregated_score": 84.0,
+          "heat_value": 0.84
+        },
+        "邓总指导登记": {
+          "modified_rows": [
+            12,
+            27,
+            32,
+            45,
+            51,
+            57,
+            75,
+            76,
+            97
+          ],
+          "modifications": 9,
+          "risk_level": "L3",
+          "aggregated_score": 88.0,
+          "heat_value": 0.88
+        },
+        "负责人": {
+          "modified_rows": [
+            6,
+            38,
+            41,
+            42,
+            72,
+            74,
+            77,
+            165,
+            264,
+            224
+          ],
+          "modifications": 10,
+          "risk_level": "L3",
+          "aggregated_score": 87.0,
+          "heat_value": 0.87
+        },
+        "协助人": {
+          "modified_rows": [
+            81,
+            109,
+            130,
+            140,
+            147,
+            163
+          ],
+          "modifications": 6,
+          "risk_level": "L2",
+          "aggregated_score": 63.0,
+          "heat_value": 0.63
+        },
+        "监督人": {
+          "modified_rows": [
+            109,
+            111,
+            135,
+            156,
+            163,
+            176
+          ],
+          "modifications": 6,
+          "risk_level": "L2",
+          "aggregated_score": 64.0,
+          "heat_value": 0.64
+        },
+        "重要程度": {
+          "modified_rows": [
+            99,
+            108,
+            138,
+            139,
+            178,
+            193
+          ],
+          "modifications": 6,
+          "risk_level": "L2",
+          "aggregated_score": 58.0,
+          "heat_value": 0.58
+        },
+        "预计完成时间": {
+          "modified_rows": [
+            91,
+            99,
+            100,
+            145,
+            163,
+            171,
+            174
+          ],
+          "modifications": 7,
+          "risk_level": "L2",
+          "aggregated_score": 66.0,
+          "heat_value": 0.66
+        },
+        "完成进度": {
+          "modified_rows": [
+            42,
+            87,
+            135,
+            161,
+            172,
+            199,
+            206,
+            86
+          ],
+          "modifications": 8,
+          "risk_level": "L2",
+          "aggregated_score": 69.0,
+          "heat_value": 0.69
+        },
+        "形成计划清单": {
+          "modified_rows": [
+            14,
+            27,
+            31,
+            36,
+            47,
+            71,
+            99,
+            173,
+            152,
+            120
+          ],
+          "modifications": 10,
+          "risk_level": "L3",
+          "aggregated_score": 77.0,
+          "heat_value": 0.77
+        },
+        "复盘时间": {
+          "modified_rows": [
+            14,
+            28,
+            47,
+            62,
+            63,
+            69,
+            72,
+            81,
+            135,
+            209
+          ],
+          "modifications": 10,
+          "risk_level": "L3",
+          "aggregated_score": 95.0,
+          "heat_value": 0.95
+        },
+        "对上汇报": {
+          "modified_rows": [
+            22,
+            31,
+            43,
+            46,
+            48,
+            69,
+            72,
+            204,
+            256,
+            260
+          ],
+          "modifications": 10,
+          "risk_level": "L3",
+          "aggregated_score": 95.0,
+          "heat_value": 0.95
+        },
+        "应用情况": {
+          "modified_rows": [
+            21,
+            26,
+            48,
+            56,
+            57,
+            64,
+            69,
+            75,
+            103,
+            220,
+            247,
+            161
+          ],
+          "modifications": 12,
+          "risk_level": "L3",
+          "aggregated_score": 95.0,
+          "heat_value": 0.95
+        },
+        "进度分析总结": {
+          "modified_rows": [
+            7,
+            9,
+            21,
+            59,
+            65,
+            72,
+            80,
+            90,
+            108,
+            258,
+            14
+          ],
+          "modifications": 11,
+          "risk_level": "L3",
+          "aggregated_score": 95.0,
+          "heat_value": 0.95
+        }
+      },
+      "total_rows": 270,
+      "detailed_stats": {
+        "total_modifications": 151,
+        "total_rows": 270,
+        "modification_rate": 55.93,
+        "columns_with_changes": 19
+      }
+    },
+    {
+      "table_name": "产品定价策略",
+      "name": "产品定价策略",
+      "doc_url": "https://docs.qq.com/sheet/test11",
+      "url": "https://docs.qq.com/sheet/test11",
+      "modifications": 149,
+      "risk_level": "L3",
+      "heat_values": [
+        0.63,
+        0.64,
+        0.51,
+        0.67,
+        0.64,
+        0.78,
+        0.71,
+        0.83,
+        0.86,
+        0.85,
+        0.78,
+        0.75,
+        0.71,
+        0.7,
+        0.9,
+        0.95,
+        0.95,
+        0.95,
+        0.95
+      ],
+      "column_scores": {
+        "序号": {
+          "modified_rows": [
+            95,
+            127,
+            136,
+            139,
+            147,
+            193
+          ],
+          "modifications": 6,
+          "risk_level": "L2",
+          "aggregated_score": 63.0,
+          "heat_value": 0.63
+        },
+        "项目类型": {
+          "modified_rows": [
+            124,
+            131,
+            136,
+            139,
+            165,
+            178,
+            106
+          ],
+          "modifications": 7,
+          "risk_level": "L2",
+          "aggregated_score": 64.0,
+          "heat_value": 0.64
+        },
+        "来源": {
+          "modified_rows": [
+            22,
+            80,
+            144,
+            163,
+            184
+          ],
+          "modifications": 5,
+          "risk_level": "L2",
+          "aggregated_score": 51.0,
+          "heat_value": 0.51
+        },
+        "任务发起时间": {
+          "modified_rows": [
+            18,
+            61,
+            89,
+            207,
+            211,
+            214
+          ],
+          "modifications": 6,
+          "risk_level": "L2",
+          "aggregated_score": 67.0,
+          "heat_value": 0.67
+        },
+        "目标对齐": {
+          "modified_rows": [
+            60,
+            75,
+            143,
+            151,
+            180,
+            192,
+            79
+          ],
+          "modifications": 7,
+          "risk_level": "L2",
+          "aggregated_score": 64.0,
+          "heat_value": 0.64
+        },
+        "关键KR对齐": {
+          "modified_rows": [
+            16,
+            31,
+            33,
+            66,
+            71,
+            100,
+            169,
+            157
+          ],
+          "modifications": 8,
+          "risk_level": "L3",
+          "aggregated_score": 78.0,
+          "heat_value": 0.78
+        },
+        "具体计划内容": {
+          "modified_rows": [
+            2,
+            5,
+            23,
+            52,
+            61,
+            189,
+            247,
+            214
+          ],
+          "modifications": 8,
+          "risk_level": "L3",
+          "aggregated_score": 71.0,
+          "heat_value": 0.71
+        },
+        "邓总指导登记": {
+          "modified_rows": [
+            2,
+            11,
+            23,
+            49,
+            68,
+            101,
+            243,
+            262
+          ],
+          "modifications": 8,
+          "risk_level": "L3",
+          "aggregated_score": 83.0,
+          "heat_value": 0.83
+        },
+        "负责人": {
+          "modified_rows": [
+            37,
+            58,
+            60,
+            65,
+            68,
+            73,
+            152,
+            265
+          ],
+          "modifications": 8,
+          "risk_level": "L3",
+          "aggregated_score": 86.0,
+          "heat_value": 0.86
+        },
+        "协助人": {
+          "modified_rows": [
+            6,
+            25,
+            41,
+            46,
+            51,
+            62,
+            69,
+            232
+          ],
+          "modifications": 8,
+          "risk_level": "L3",
+          "aggregated_score": 85.0,
+          "heat_value": 0.85
+        },
+        "监督人": {
+          "modified_rows": [
+            4,
+            12,
+            33,
+            57,
+            73,
+            77,
+            79,
+            90
+          ],
+          "modifications": 8,
+          "risk_level": "L3",
+          "aggregated_score": 78.0,
+          "heat_value": 0.78
+        },
+        "重要程度": {
+          "modified_rows": [
+            3,
+            35,
+            41,
+            48,
+            55,
+            84,
+            215
+          ],
+          "modifications": 7,
+          "risk_level": "L3",
+          "aggregated_score": 75.0,
+          "heat_value": 0.75
+        },
+        "预计完成时间": {
+          "modified_rows": [
+            4,
+            9,
+            15,
+            25,
+            36,
+            61,
+            75
+          ],
+          "modifications": 7,
+          "risk_level": "L3",
+          "aggregated_score": 71.0,
+          "heat_value": 0.71
+        },
+        "完成进度": {
+          "modified_rows": [
+            78,
+            99,
+            110,
+            147,
+            162,
+            171,
+            219,
+            166,
+            8
+          ],
+          "modifications": 9,
+          "risk_level": "L2",
+          "aggregated_score": 70.0,
+          "heat_value": 0.7
+        },
+        "形成计划清单": {
+          "modified_rows": [
+            4,
+            6,
+            16,
+            40,
+            59,
+            65,
+            124,
+            153,
+            154
+          ],
+          "modifications": 9,
+          "risk_level": "L3",
+          "aggregated_score": 90.0,
+          "heat_value": 0.9
+        },
+        "复盘时间": {
+          "modified_rows": [
+            18,
+            26,
+            57,
+            58,
+            68,
+            80,
+            148,
+            222,
+            265
+          ],
+          "modifications": 9,
+          "risk_level": "L3",
+          "aggregated_score": 95.0,
+          "heat_value": 0.95
+        },
+        "对上汇报": {
+          "modified_rows": [
+            4,
+            17,
+            29,
+            33,
+            51,
+            57,
+            64,
+            80,
+            123,
+            6
+          ],
+          "modifications": 10,
+          "risk_level": "L3",
+          "aggregated_score": 95.0,
+          "heat_value": 0.95
+        },
+        "应用情况": {
+          "modified_rows": [
+            12,
+            18,
+            22,
+            37,
+            45,
+            66,
+            70,
+            81,
+            127
+          ],
+          "modifications": 9,
+          "risk_level": "L3",
+          "aggregated_score": 95.0,
+          "heat_value": 0.95
+        },
+        "进度分析总结": {
+          "modified_rows": [
+            16,
+            20,
+            36,
+            48,
+            58,
+            65,
+            178,
+            247,
+            255,
+            25
+          ],
+          "modifications": 10,
+          "risk_level": "L3",
+          "aggregated_score": 95.0,
+          "heat_value": 0.95
+        }
+      },
+      "total_rows": 270,
+      "detailed_stats": {
+        "total_modifications": 149,
+        "total_rows": 270,
+        "modification_rate": 55.19,
+        "columns_with_changes": 19
+      }
+    },
+    {
+      "table_name": "技术文档管理",
+      "name": "技术文档管理",
+      "doc_url": "https://docs.qq.com/sheet/test12",
+      "url": "https://docs.qq.com/sheet/test12",
+      "modifications": 187,
+      "risk_level": "L3",
+      "heat_values": [
+        0.62,
+        0.66,
+        0.56,
+        0.66,
+        0.61,
+        0.72,
+        0.7,
+        0.82,
+        0.72,
+        0.95,
+        0.9,
+        0.95,
+        0.82,
+        0.83,
+        0.89,
+        0.95,
+        0.95,
+        0.95,
+        0.95
+      ],
+      "column_scores": {
+        "序号": {
+          "modified_rows": [
+            96,
+            111,
+            139,
+            148,
+            150,
+            183,
+            208
+          ],
+          "modifications": 7,
+          "risk_level": "L2",
+          "aggregated_score": 62.0,
+          "heat_value": 0.62
+        },
+        "项目类型": {
+          "modified_rows": [
+            79,
+            135,
+            150,
+            156,
+            162,
+            179,
+            251,
+            268
+          ],
+          "modifications": 8,
+          "risk_level": "L2",
+          "aggregated_score": 66.0,
+          "heat_value": 0.66
+        },
+        "来源": {
+          "modified_rows": [
+            83,
+            89,
+            127,
+            150,
+            166,
+            167
+          ],
+          "modifications": 6,
+          "risk_level": "L2",
+          "aggregated_score": 56.0,
+          "heat_value": 0.56
+        },
+        "任务发起时间": {
+          "modified_rows": [
+            62,
+            92,
+            99,
+            101,
+            102,
+            124,
+            150,
+            169,
+            237,
+            114
+          ],
+          "modifications": 10,
+          "risk_level": "L2",
+          "aggregated_score": 66.0,
+          "heat_value": 0.66
+        },
+        "目标对齐": {
+          "modified_rows": [
+            56,
+            65,
+            96,
+            98,
+            101,
+            112,
+            116
+          ],
+          "modifications": 7,
+          "risk_level": "L2",
+          "aggregated_score": 61.0,
+          "heat_value": 0.61
+        },
+        "关键KR对齐": {
+          "modified_rows": [
+            4,
+            22,
+            24,
+            34,
+            35,
+            77,
+            79,
+            131
+          ],
+          "modifications": 8,
+          "risk_level": "L3",
+          "aggregated_score": 72.0,
+          "heat_value": 0.72
+        },
+        "具体计划内容": {
+          "modified_rows": [
+            114,
+            120,
+            125,
+            135,
+            156,
+            162,
+            185,
+            205,
+            101,
+            221
+          ],
+          "modifications": 10,
+          "risk_level": "L2",
+          "aggregated_score": 70.0,
+          "heat_value": 0.7
+        },
+        "邓总指导登记": {
+          "modified_rows": [
+            3,
+            8,
+            23,
+            37,
+            39,
+            45,
+            54,
+            58,
+            66,
+            67,
+            211
+          ],
+          "modifications": 11,
+          "risk_level": "L3",
+          "aggregated_score": 82.0,
+          "heat_value": 0.82
+        },
+        "负责人": {
+          "modified_rows": [
+            3,
+            21,
+            22,
+            31,
+            33,
+            53,
+            55,
+            241
+          ],
+          "modifications": 8,
+          "risk_level": "L3",
+          "aggregated_score": 72.0,
+          "heat_value": 0.72
+        },
+        "协助人": {
+          "modified_rows": [
+            1,
+            10,
+            18,
+            31,
+            34,
+            52,
+            55,
+            59,
+            79,
+            151,
+            194
+          ],
+          "modifications": 11,
+          "risk_level": "L3",
+          "aggregated_score": 95.0,
+          "heat_value": 0.95
+        },
+        "监督人": {
+          "modified_rows": [
+            12,
+            26,
+            28,
+            30,
+            46,
+            50,
+            55,
+            65,
+            72,
+            75,
+            77,
+            253
+          ],
+          "modifications": 12,
+          "risk_level": "L3",
+          "aggregated_score": 90.0,
+          "heat_value": 0.9
+        },
+        "重要程度": {
+          "modified_rows": [
+            8,
+            9,
+            11,
+            14,
+            15,
+            25,
+            33,
+            41,
+            76,
+            79,
+            246
+          ],
+          "modifications": 11,
+          "risk_level": "L3",
+          "aggregated_score": 95.0,
+          "heat_value": 0.95
+        },
+        "预计完成时间": {
+          "modified_rows": [
+            22,
+            27,
+            49,
+            67,
+            77,
+            80,
+            196,
+            206,
+            261,
+            264,
+            23
+          ],
+          "modifications": 11,
+          "risk_level": "L3",
+          "aggregated_score": 82.0,
+          "heat_value": 0.82
+        },
+        "完成进度": {
+          "modified_rows": [
+            8,
+            12,
+            14,
+            22,
+            28,
+            42,
+            58,
+            63,
+            71,
+            223
+          ],
+          "modifications": 10,
+          "risk_level": "L3",
+          "aggregated_score": 83.0,
+          "heat_value": 0.83
+        },
+        "形成计划清单": {
+          "modified_rows": [
+            5,
+            20,
+            35,
+            49,
+            50,
+            66,
+            104,
+            111,
+            208,
+            267
+          ],
+          "modifications": 10,
+          "risk_level": "L3",
+          "aggregated_score": 89.0,
+          "heat_value": 0.89
+        },
+        "复盘时间": {
+          "modified_rows": [
+            16,
+            19,
+            27,
+            29,
+            39,
+            40,
+            57,
+            59,
+            63,
+            70,
+            90,
+            103
+          ],
+          "modifications": 12,
+          "risk_level": "L3",
+          "aggregated_score": 95.0,
+          "heat_value": 0.95
+        },
+        "对上汇报": {
+          "modified_rows": [
+            1,
+            4,
+            9,
+            10,
+            18,
+            27,
+            66,
+            76,
+            135,
+            149,
+            267
+          ],
+          "modifications": 11,
+          "risk_level": "L3",
+          "aggregated_score": 95.0,
+          "heat_value": 0.95
+        },
+        "应用情况": {
+          "modified_rows": [
+            2,
+            7,
+            23,
+            24,
+            26,
+            47,
+            50,
+            61,
+            67,
+            79,
+            216,
+            1
+          ],
+          "modifications": 12,
+          "risk_level": "L3",
+          "aggregated_score": 95.0,
+          "heat_value": 0.95
+        },
+        "进度分析总结": {
+          "modified_rows": [
+            1,
+            6,
+            32,
+            42,
+            45,
+            47,
+            65,
+            80,
+            81,
+            152,
+            233,
+            200
+          ],
+          "modifications": 12,
+          "risk_level": "L3",
+          "aggregated_score": 95.0,
+          "heat_value": 0.95
+        }
+      },
+      "total_rows": 270,
+      "detailed_stats": {
+        "total_modifications": 187,
+        "total_rows": 270,
+        "modification_rate": 69.26,
+        "columns_with_changes": 19
+      }
+    },
+    {
+      "table_name": "质量检测报告",
+      "name": "质量检测报告",
+      "doc_url": "https://docs.qq.com/sheet/test13",
+      "url": "https://docs.qq.com/sheet/test13",
+      "modifications": 152,
+      "risk_level": "L3",
+      "heat_values": [
+        0.62,
+        0.68,
+        0.71,
+        0.64,
+        0.67,
+        0.68,
+        0.7,
+        0.64,
+        0.81,
+        0.69,
+        0.91,
+        0.82,
+        0.86,
+        0.93,
+        0.95,
+        0.95,
+        0.95,
+        0.95,
+        0.95
+      ],
+      "column_scores": {
+        "序号": {
+          "modified_rows": [
+            39,
+            72,
+            105,
+            115,
+            121,
+            177
+          ],
+          "modifications": 6,
+          "risk_level": "L2",
+          "aggregated_score": 62.0,
+          "heat_value": 0.62
+        },
+        "项目类型": {
+          "modified_rows": [
+            108,
+            115,
+            140,
+            144,
+            179,
+            183
+          ],
+          "modifications": 6,
+          "risk_level": "L2",
+          "aggregated_score": 68.0,
+          "heat_value": 0.68
+        },
+        "来源": {
+          "modified_rows": [
+            5,
+            11,
+            13,
+            19,
+            26,
+            67,
+            157
+          ],
+          "modifications": 7,
+          "risk_level": "L3",
+          "aggregated_score": 71.0,
+          "heat_value": 0.71
+        },
+        "任务发起时间": {
+          "modified_rows": [
+            54,
+            119,
+            126,
+            138,
+            182,
+            201,
+            95
+          ],
+          "modifications": 7,
+          "risk_level": "L2",
+          "aggregated_score": 64.0,
+          "heat_value": 0.64
+        },
+        "目标对齐": {
+          "modified_rows": [
+            30,
+            48,
+            68,
+            131,
+            133,
+            139
+          ],
+          "modifications": 6,
+          "risk_level": "L2",
+          "aggregated_score": 67.0,
+          "heat_value": 0.67
+        },
+        "关键KR对齐": {
+          "modified_rows": [
+            80,
+            85,
+            102,
+            152,
+            197,
+            235,
+            178
+          ],
+          "modifications": 7,
+          "risk_level": "L2",
+          "aggregated_score": 68.0,
+          "heat_value": 0.68
+        },
+        "具体计划内容": {
+          "modified_rows": [
+            87,
+            123,
+            124,
+            127,
+            130,
+            134,
+            173
+          ],
+          "modifications": 7,
+          "risk_level": "L2",
+          "aggregated_score": 70.0,
+          "heat_value": 0.7
+        },
+        "邓总指导登记": {
+          "modified_rows": [
+            52,
+            107,
+            109,
+            157,
+            165,
+            199,
+            207
+          ],
+          "modifications": 7,
+          "risk_level": "L2",
+          "aggregated_score": 64.0,
+          "heat_value": 0.64
+        },
+        "负责人": {
+          "modified_rows": [
+            16,
+            20,
+            27,
+            37,
+            57,
+            76,
+            161,
+            164
+          ],
+          "modifications": 8,
+          "risk_level": "L3",
+          "aggregated_score": 81.0,
+          "heat_value": 0.81
+        },
+        "协助人": {
+          "modified_rows": [
+            61,
+            118,
+            135,
+            153,
+            178,
+            221,
+            101
+          ],
+          "modifications": 7,
+          "risk_level": "L2",
+          "aggregated_score": 69.0,
+          "heat_value": 0.69
+        },
+        "监督人": {
+          "modified_rows": [
+            13,
+            24,
+            35,
+            44,
+            57,
+            58,
+            60,
+            62,
+            73
+          ],
+          "modifications": 9,
+          "risk_level": "L3",
+          "aggregated_score": 91.0,
+          "heat_value": 0.91
+        },
+        "重要程度": {
+          "modified_rows": [
+            7,
+            10,
+            27,
+            32,
+            46,
+            84,
+            141,
+            221,
+            250
+          ],
+          "modifications": 9,
+          "risk_level": "L3",
+          "aggregated_score": 82.0,
+          "heat_value": 0.82
+        },
+        "预计完成时间": {
+          "modified_rows": [
+            8,
+            29,
+            40,
+            41,
+            49,
+            59,
+            78,
+            116
+          ],
+          "modifications": 8,
+          "risk_level": "L3",
+          "aggregated_score": 86.0,
+          "heat_value": 0.86
+        },
+        "完成进度": {
+          "modified_rows": [
+            11,
+            12,
+            36,
+            38,
+            56,
+            66,
+            209,
+            219,
+            233,
+            187
+          ],
+          "modifications": 10,
+          "risk_level": "L3",
+          "aggregated_score": 93.0,
+          "heat_value": 0.93
+        },
+        "形成计划清单": {
+          "modified_rows": [
+            8,
+            11,
+            25,
+            27,
+            65,
+            75,
+            80,
+            164,
+            205,
+            239
+          ],
+          "modifications": 10,
+          "risk_level": "L3",
+          "aggregated_score": 95.0,
+          "heat_value": 0.95
+        },
+        "复盘时间": {
+          "modified_rows": [
+            5,
+            36,
+            47,
+            62,
+            68,
+            76,
+            78,
+            86,
+            110,
+            105
+          ],
+          "modifications": 10,
+          "risk_level": "L3",
+          "aggregated_score": 95.0,
+          "heat_value": 0.95
+        },
+        "对上汇报": {
+          "modified_rows": [
+            3,
+            5,
+            50,
+            54,
+            55,
+            71,
+            73,
+            89,
+            146
+          ],
+          "modifications": 9,
+          "risk_level": "L3",
+          "aggregated_score": 95.0,
+          "heat_value": 0.95
+        },
+        "应用情况": {
+          "modified_rows": [
+            3,
+            12,
+            17,
+            31,
+            32,
+            48,
+            68,
+            69,
+            179,
+            19
+          ],
+          "modifications": 10,
+          "risk_level": "L3",
+          "aggregated_score": 95.0,
+          "heat_value": 0.95
+        },
+        "进度分析总结": {
+          "modified_rows": [
+            3,
+            13,
+            26,
+            28,
+            40,
+            42,
+            59,
+            73,
+            189
+          ],
+          "modifications": 9,
+          "risk_level": "L3",
+          "aggregated_score": 95.0,
+          "heat_value": 0.95
+        }
+      },
+      "total_rows": 270,
+      "detailed_stats": {
+        "total_modifications": 152,
+        "total_rows": 270,
+        "modification_rate": 56.3,
+        "columns_with_changes": 19
+      }
+    },
+    {
+      "table_name": "合同管理台账",
+      "name": "合同管理台账",
+      "doc_url": "https://docs.qq.com/sheet/test14",
+      "url": "https://docs.qq.com/sheet/test14",
+      "modifications": 157,
+      "risk_level": "L3",
+      "heat_values": [
+        0.71,
+        0.7,
+        0.65,
+        0.59,
+        0.62,
+        0.72,
+        0.73,
+        0.57,
+        0.67,
+        0.67,
+        0.74,
+        0.86,
+        0.95,
+        0.95,
+        0.95,
+        0.95,
+        0.95,
+        0.95,
+        0.95
+      ],
+      "column_scores": {
+        "序号": {
+          "modified_rows": [
+            8,
+            30,
+            71,
+            97,
+            143,
+            190,
+            259
+          ],
+          "modifications": 7,
+          "risk_level": "L3",
+          "aggregated_score": 71.0,
+          "heat_value": 0.71
+        },
+        "项目类型": {
+          "modified_rows": [
+            104,
+            107,
+            124,
+            143,
+            153,
+            190,
+            195
+          ],
+          "modifications": 7,
+          "risk_level": "L2",
+          "aggregated_score": 70.0,
+          "heat_value": 0.7
+        },
+        "来源": {
+          "modified_rows": [
+            81,
+            106,
+            112,
+            123,
+            126,
+            132
+          ],
+          "modifications": 6,
+          "risk_level": "L2",
+          "aggregated_score": 65.0,
+          "heat_value": 0.65
+        },
+        "任务发起时间": {
+          "modified_rows": [
+            82,
+            90,
+            96,
+            120,
+            166,
+            174
+          ],
+          "modifications": 6,
+          "risk_level": "L2",
+          "aggregated_score": 59.0,
+          "heat_value": 0.59
+        },
+        "目标对齐": {
+          "modified_rows": [
+            37,
+            59,
+            126,
+            152,
+            160,
+            162
+          ],
+          "modifications": 6,
+          "risk_level": "L2",
+          "aggregated_score": 62.0,
+          "heat_value": 0.62
+        },
+        "关键KR对齐": {
+          "modified_rows": [
+            24,
+            27,
+            45,
+            58,
+            73,
+            80,
+            230
+          ],
+          "modifications": 7,
+          "risk_level": "L3",
+          "aggregated_score": 72.0,
+          "heat_value": 0.72
+        },
+        "具体计划内容": {
+          "modified_rows": [
+            12,
+            29,
+            46,
+            51,
+            65,
+            70,
+            173
+          ],
+          "modifications": 7,
+          "risk_level": "L3",
+          "aggregated_score": 73.0,
+          "heat_value": 0.73
+        },
+        "邓总指导登记": {
+          "modified_rows": [
+            88,
+            121,
+            123,
+            160,
+            175,
+            177
+          ],
+          "modifications": 6,
+          "risk_level": "L2",
+          "aggregated_score": 57.0,
+          "heat_value": 0.57
+        },
+        "负责人": {
+          "modified_rows": [
+            81,
+            95,
+            108,
+            150,
+            158,
+            195,
+            255,
+            106
+          ],
+          "modifications": 8,
+          "risk_level": "L2",
+          "aggregated_score": 67.0,
+          "heat_value": 0.67
+        },
+        "协助人": {
+          "modified_rows": [
+            33,
+            73,
+            111,
+            129,
+            199,
+            202,
+            206
+          ],
+          "modifications": 7,
+          "risk_level": "L2",
+          "aggregated_score": 67.0,
+          "heat_value": 0.67
+        },
+        "监督人": {
+          "modified_rows": [
+            8,
+            14,
+            20,
+            32,
+            55,
+            72,
+            78
+          ],
+          "modifications": 7,
+          "risk_level": "L3",
+          "aggregated_score": 74.0,
+          "heat_value": 0.74
+        },
+        "重要程度": {
+          "modified_rows": [
+            5,
+            27,
+            41,
+            46,
+            49,
+            52,
+            57,
+            202,
+            270,
+            223
+          ],
+          "modifications": 10,
+          "risk_level": "L3",
+          "aggregated_score": 86.0,
+          "heat_value": 0.86
+        },
+        "预计完成时间": {
+          "modified_rows": [
+            2,
+            4,
+            7,
+            24,
+            54,
+            60,
+            80,
+            162,
+            186,
+            257
+          ],
+          "modifications": 10,
+          "risk_level": "L3",
+          "aggregated_score": 95.0,
+          "heat_value": 0.95
+        },
+        "完成进度": {
+          "modified_rows": [
+            2,
+            3,
+            50,
+            54,
+            55,
+            57,
+            79,
+            114,
+            157,
+            232,
+            66
+          ],
+          "modifications": 11,
+          "risk_level": "L3",
+          "aggregated_score": 95.0,
+          "heat_value": 0.95
+        },
+        "形成计划清单": {
+          "modified_rows": [
+            4,
+            25,
+            30,
+            45,
+            49,
+            57,
+            67,
+            74,
+            128,
+            199
+          ],
+          "modifications": 10,
+          "risk_level": "L3",
+          "aggregated_score": 95.0,
+          "heat_value": 0.95
+        },
+        "复盘时间": {
+          "modified_rows": [
+            11,
+            13,
+            43,
+            46,
+            54,
+            64,
+            67,
+            74,
+            207,
+            238
+          ],
+          "modifications": 10,
+          "risk_level": "L3",
+          "aggregated_score": 95.0,
+          "heat_value": 0.95
+        },
+        "对上汇报": {
+          "modified_rows": [
+            14,
+            25,
+            36,
+            41,
+            63,
+            72,
+            75,
+            123,
+            138,
+            148,
+            104
+          ],
+          "modifications": 11,
+          "risk_level": "L3",
+          "aggregated_score": 95.0,
+          "heat_value": 0.95
+        },
+        "应用情况": {
+          "modified_rows": [
+            6,
+            9,
+            34,
+            40,
+            41,
+            46,
+            53,
+            64,
+            113,
+            134
+          ],
+          "modifications": 10,
+          "risk_level": "L3",
+          "aggregated_score": 95.0,
+          "heat_value": 0.95
+        },
+        "进度分析总结": {
+          "modified_rows": [
+            1,
+            14,
+            23,
+            24,
+            25,
+            39,
+            56,
+            65,
+            77,
+            113,
+            31
+          ],
+          "modifications": 11,
+          "risk_level": "L3",
+          "aggregated_score": 95.0,
+          "heat_value": 0.95
+        }
+      },
+      "total_rows": 270,
+      "detailed_stats": {
+        "total_modifications": 157,
+        "total_rows": 270,
+        "modification_rate": 58.15,
+        "columns_with_changes": 19
+      }
+    },
+    {
+      "table_name": "研发进度表",
+      "name": "研发进度表",
+      "doc_url": "https://docs.qq.com/sheet/test15",
+      "url": "https://docs.qq.com/sheet/test15",
+      "modifications": 180,
+      "risk_level": "L3",
+      "heat_values": [
+        0.6,
+        0.63,
+        0.55,
+        0.56,
+        0.62,
+        0.73,
+        0.65,
+        0.63,
+        0.6,
+        0.77,
+        0.74,
+        0.78,
+        0.88,
+        0.95,
+        0.95,
+        0.95,
+        0.95,
+        0.95,
+        0.95
+      ],
+      "column_scores": {
+        "序号": {
+          "modified_rows": [
+            65,
+            102,
+            104,
+            110,
+            122,
+            134,
+            224
+          ],
+          "modifications": 7,
+          "risk_level": "L2",
+          "aggregated_score": 60.0,
+          "heat_value": 0.6
+        },
+        "项目类型": {
+          "modified_rows": [
+            50,
+            122,
+            125,
+            133,
+            168,
+            173,
+            199
+          ],
+          "modifications": 7,
+          "risk_level": "L2",
+          "aggregated_score": 63.0,
+          "heat_value": 0.63
+        },
+        "来源": {
+          "modified_rows": [
+            72,
+            104,
+            136,
+            137,
+            178,
+            185
+          ],
+          "modifications": 6,
+          "risk_level": "L2",
+          "aggregated_score": 55.0,
+          "heat_value": 0.55
+        },
+        "任务发起时间": {
+          "modified_rows": [
+            134,
+            144,
+            150,
+            155,
+            166,
+            180
+          ],
+          "modifications": 6,
+          "risk_level": "L2",
+          "aggregated_score": 56.0,
+          "heat_value": 0.56
+        },
+        "目标对齐": {
+          "modified_rows": [
+            63,
+            109,
+            123,
+            126,
+            131,
+            134,
+            153
+          ],
+          "modifications": 7,
+          "risk_level": "L2",
+          "aggregated_score": 62.0,
+          "heat_value": 0.62
+        },
+        "关键KR对齐": {
+          "modified_rows": [
+            13,
+            19,
+            31,
+            44,
+            54,
+            59,
+            62,
+            81,
+            207,
+            60
+          ],
+          "modifications": 10,
+          "risk_level": "L3",
+          "aggregated_score": 73.0,
+          "heat_value": 0.73
+        },
+        "具体计划内容": {
+          "modified_rows": [
+            81,
+            101,
+            103,
+            113,
+            129,
+            152,
+            182,
+            189,
+            12,
+            25
+          ],
+          "modifications": 10,
+          "risk_level": "L2",
+          "aggregated_score": 65.0,
+          "heat_value": 0.65
+        },
+        "邓总指导登记": {
+          "modified_rows": [
+            76,
+            111,
+            112,
+            115,
+            120,
+            181,
+            205,
+            33
+          ],
+          "modifications": 8,
+          "risk_level": "L2",
+          "aggregated_score": 63.0,
+          "heat_value": 0.63
+        },
+        "负责人": {
+          "modified_rows": [
+            103,
+            107,
+            110,
+            111,
+            127,
+            130,
+            137,
+            41
+          ],
+          "modifications": 8,
+          "risk_level": "L2",
+          "aggregated_score": 60.0,
+          "heat_value": 0.6
+        },
+        "协助人": {
+          "modified_rows": [
+            9,
+            14,
+            20,
+            67,
+            86,
+            175,
+            186,
+            207,
+            212,
+            177,
+            222
+          ],
+          "modifications": 11,
+          "risk_level": "L3",
+          "aggregated_score": 77.0,
+          "heat_value": 0.77
+        },
+        "监督人": {
+          "modified_rows": [
+            18,
+            24,
+            30,
+            33,
+            40,
+            53,
+            198,
+            202,
+            268
+          ],
+          "modifications": 9,
+          "risk_level": "L3",
+          "aggregated_score": 74.0,
+          "heat_value": 0.74
+        },
+        "重要程度": {
+          "modified_rows": [
+            2,
+            20,
+            26,
+            33,
+            62,
+            65,
+            164,
+            260,
+            267
+          ],
+          "modifications": 9,
+          "risk_level": "L3",
+          "aggregated_score": 78.0,
+          "heat_value": 0.78
+        },
+        "预计完成时间": {
+          "modified_rows": [
+            28,
+            32,
+            33,
+            38,
+            39,
+            57,
+            187,
+            220,
+            239,
+            270,
+            230
+          ],
+          "modifications": 11,
+          "risk_level": "L3",
+          "aggregated_score": 88.0,
+          "heat_value": 0.88
+        },
+        "完成进度": {
+          "modified_rows": [
+            1,
+            6,
+            15,
+            54,
+            63,
+            66,
+            69,
+            72,
+            79,
+            97,
+            247
+          ],
+          "modifications": 11,
+          "risk_level": "L3",
+          "aggregated_score": 95.0,
+          "heat_value": 0.95
+        },
+        "形成计划清单": {
+          "modified_rows": [
+            1,
+            39,
+            41,
+            54,
+            57,
+            59,
+            64,
+            87,
+            178,
+            200,
+            255
+          ],
+          "modifications": 11,
+          "risk_level": "L3",
+          "aggregated_score": 95.0,
+          "heat_value": 0.95
+        },
+        "复盘时间": {
+          "modified_rows": [
+            4,
+            22,
+            28,
+            32,
+            54,
+            74,
+            80,
+            86,
+            125,
+            135,
+            146
+          ],
+          "modifications": 11,
+          "risk_level": "L3",
+          "aggregated_score": 95.0,
+          "heat_value": 0.95
+        },
+        "对上汇报": {
+          "modified_rows": [
+            7,
+            14,
+            35,
+            39,
+            53,
+            54,
+            75,
+            79,
+            95,
+            201,
+            243,
+            56,
+            188,
+            43
+          ],
+          "modifications": 14,
+          "risk_level": "L3",
+          "aggregated_score": 95.0,
+          "heat_value": 0.95
+        },
+        "应用情况": {
+          "modified_rows": [
+            8,
+            19,
+            36,
+            39,
+            53,
+            71,
+            73,
+            85,
+            172,
+            229,
+            232,
+            193
+          ],
+          "modifications": 12,
+          "risk_level": "L3",
+          "aggregated_score": 95.0,
+          "heat_value": 0.95
+        },
+        "进度分析总结": {
+          "modified_rows": [
+            10,
+            12,
+            15,
+            27,
+            42,
+            43,
+            57,
+            63,
+            71,
+            93,
+            264,
+            197
+          ],
+          "modifications": 12,
+          "risk_level": "L3",
+          "aggregated_score": 95.0,
+          "heat_value": 0.95
+        }
+      },
+      "total_rows": 270,
+      "detailed_stats": {
+        "total_modifications": 180,
+        "total_rows": 270,
+        "modification_rate": 66.67,
+        "columns_with_changes": 19
+      }
+    },
+    {
+      "table_name": "培训计划表",
+      "name": "培训计划表",
+      "doc_url": "https://docs.qq.com/sheet/test16",
+      "url": "https://docs.qq.com/sheet/test16",
+      "modifications": 166,
+      "risk_level": "L3",
+      "heat_values": [
+        0.72,
+        0.57,
+        0.63,
+        0.68,
+        0.75,
+        0.71,
+        0.74,
+        0.62,
+        0.72,
+        0.76,
+        0.82,
+        0.92,
+        0.95,
+        0.95,
+        0.95,
+        0.95,
+        0.95,
+        0.95,
+        0.95
+      ],
+      "column_scores": {
+        "序号": {
+          "modified_rows": [
+            34,
+            37,
+            69,
+            79,
+            90,
+            212,
+            247,
+            26,
+            70,
+            72
+          ],
+          "modifications": 10,
+          "risk_level": "L3",
+          "aggregated_score": 72.0,
+          "heat_value": 0.72
+        },
+        "项目类型": {
+          "modified_rows": [
+            113,
+            121,
+            126,
+            140,
+            145,
+            173
+          ],
+          "modifications": 6,
+          "risk_level": "L2",
+          "aggregated_score": 57.0,
+          "heat_value": 0.57
+        },
+        "来源": {
+          "modified_rows": [
+            43,
+            98,
+            109,
+            194,
+            207,
+            210
+          ],
+          "modifications": 6,
+          "risk_level": "L2",
+          "aggregated_score": 63.0,
+          "heat_value": 0.63
+        },
+        "任务发起时间": {
+          "modified_rows": [
+            53,
+            74,
+            85,
+            92,
+            114,
+            141,
+            152,
+            83
+          ],
+          "modifications": 8,
+          "risk_level": "L2",
+          "aggregated_score": 68.0,
+          "heat_value": 0.68
+        },
+        "目标对齐": {
+          "modified_rows": [
+            11,
+            26,
+            31,
+            75,
+            78,
+            114,
+            116,
+            141
+          ],
+          "modifications": 8,
+          "risk_level": "L3",
+          "aggregated_score": 75.0,
+          "heat_value": 0.75
+        },
+        "关键KR对齐": {
+          "modified_rows": [
+            23,
+            26,
+            45,
+            63,
+            135,
+            184,
+            243
+          ],
+          "modifications": 7,
+          "risk_level": "L3",
+          "aggregated_score": 71.0,
+          "heat_value": 0.71
+        },
+        "具体计划内容": {
+          "modified_rows": [
+            18,
+            23,
+            30,
+            44,
+            63,
+            186,
+            253,
+            266
+          ],
+          "modifications": 8,
+          "risk_level": "L3",
+          "aggregated_score": 74.0,
+          "heat_value": 0.74
+        },
+        "邓总指导登记": {
+          "modified_rows": [
+            125,
+            138,
+            169,
+            179,
+            183,
+            199
+          ],
+          "modifications": 6,
+          "risk_level": "L2",
+          "aggregated_score": 62.0,
+          "heat_value": 0.62
+        },
+        "负责人": {
+          "modified_rows": [
+            30,
+            36,
+            40,
+            45,
+            46,
+            98,
+            199
+          ],
+          "modifications": 7,
+          "risk_level": "L3",
+          "aggregated_score": 72.0,
+          "heat_value": 0.72
+        },
+        "协助人": {
+          "modified_rows": [
+            11,
+            29,
+            36,
+            45,
+            59,
+            65,
+            70,
+            219
+          ],
+          "modifications": 8,
+          "risk_level": "L3",
+          "aggregated_score": 76.0,
+          "heat_value": 0.76
+        },
+        "监督人": {
+          "modified_rows": [
+            8,
+            14,
+            19,
+            46,
+            47,
+            53,
+            54,
+            65
+          ],
+          "modifications": 8,
+          "risk_level": "L3",
+          "aggregated_score": 82.0,
+          "heat_value": 0.82
+        },
+        "重要程度": {
+          "modified_rows": [
+            5,
+            37,
+            48,
+            55,
+            70,
+            87,
+            144,
+            188,
+            202,
+            68
+          ],
+          "modifications": 10,
+          "risk_level": "L3",
+          "aggregated_score": 92.0,
+          "heat_value": 0.92
+        },
+        "预计完成时间": {
+          "modified_rows": [
+            6,
+            21,
+            25,
+            47,
+            50,
+            57,
+            67,
+            106,
+            148,
+            219,
+            160
+          ],
+          "modifications": 11,
+          "risk_level": "L3",
+          "aggregated_score": 95.0,
+          "heat_value": 0.95
+        },
+        "完成进度": {
+          "modified_rows": [
+            7,
+            12,
+            20,
+            37,
+            55,
+            61,
+            64,
+            103,
+            174,
+            184
+          ],
+          "modifications": 10,
+          "risk_level": "L3",
+          "aggregated_score": 95.0,
+          "heat_value": 0.95
+        },
+        "形成计划清单": {
+          "modified_rows": [
+            10,
+            13,
+            34,
+            45,
+            50,
+            58,
+            68,
+            99,
+            214,
+            228,
+            105
+          ],
+          "modifications": 11,
+          "risk_level": "L3",
+          "aggregated_score": 95.0,
+          "heat_value": 0.95
+        },
+        "复盘时间": {
+          "modified_rows": [
+            6,
+            26,
+            35,
+            45,
+            55,
+            58,
+            79,
+            142,
+            188,
+            201
+          ],
+          "modifications": 10,
+          "risk_level": "L3",
+          "aggregated_score": 95.0,
+          "heat_value": 0.95
+        },
+        "对上汇报": {
+          "modified_rows": [
+            13,
+            39,
+            43,
+            52,
+            58,
+            81,
+            94,
+            187,
+            232,
+            248
+          ],
+          "modifications": 10,
+          "risk_level": "L3",
+          "aggregated_score": 95.0,
+          "heat_value": 0.95
+        },
+        "应用情况": {
+          "modified_rows": [
+            25,
+            47,
+            54,
+            64,
+            65,
+            68,
+            74,
+            75,
+            157,
+            252
+          ],
+          "modifications": 10,
+          "risk_level": "L3",
+          "aggregated_score": 95.0,
+          "heat_value": 0.95
+        },
+        "进度分析总结": {
+          "modified_rows": [
+            1,
+            32,
+            44,
+            49,
+            50,
+            53,
+            56,
+            69,
+            81,
+            161,
+            75
+          ],
+          "modifications": 11,
+          "risk_level": "L3",
+          "aggregated_score": 95.0,
+          "heat_value": 0.95
+        }
+      },
+      "total_rows": 270,
+      "detailed_stats": {
+        "total_modifications": 166,
+        "total_rows": 270,
+        "modification_rate": 61.48,
+        "columns_with_changes": 19
+      }
+    },
+    {
+      "table_name": "物流跟踪表",
+      "name": "物流跟踪表",
+      "doc_url": "https://docs.qq.com/sheet/test17",
+      "url": "https://docs.qq.com/sheet/test17",
+      "modifications": 150,
+      "risk_level": "L3",
+      "heat_values": [
+        0.71,
+        0.65,
+        0.7,
+        0.61,
+        0.77,
+        0.65,
+        0.77,
+        0.59,
+        0.59,
+        0.76,
+        0.75,
+        0.95,
+        0.95,
+        0.95,
+        0.95,
+        0.95,
+        0.95,
+        0.95,
+        0.95
+      ],
+      "column_scores": {
+        "序号": {
+          "modified_rows": [
+            18,
+            36,
+            45,
+            72,
+            77,
+            208,
+            263,
+            232,
+            146
+          ],
+          "modifications": 9,
+          "risk_level": "L3",
+          "aggregated_score": 71.0,
+          "heat_value": 0.71
+        },
+        "项目类型": {
+          "modified_rows": [
+            148,
+            155,
+            164,
+            175,
+            203,
+            209
+          ],
+          "modifications": 6,
+          "risk_level": "L2",
+          "aggregated_score": 65.0,
+          "heat_value": 0.65
+        },
+        "来源": {
+          "modified_rows": [
+            113,
+            132,
+            134,
+            171,
+            190,
+            191,
+            100
+          ],
+          "modifications": 7,
+          "risk_level": "L2",
+          "aggregated_score": 70.0,
+          "heat_value": 0.7
+        },
+        "任务发起时间": {
+          "modified_rows": [
+            21,
+            99,
+            133,
+            168,
+            180,
+            233,
+            16
+          ],
+          "modifications": 7,
+          "risk_level": "L2",
+          "aggregated_score": 61.0,
+          "heat_value": 0.61
+        },
+        "目标对齐": {
+          "modified_rows": [
+            3,
+            4,
+            14,
+            52,
+            60,
+            127,
+            171
+          ],
+          "modifications": 7,
+          "risk_level": "L3",
+          "aggregated_score": 77.0,
+          "heat_value": 0.77
+        },
+        "关键KR对齐": {
+          "modified_rows": [
+            77,
+            101,
+            104,
+            105,
+            121,
+            172,
+            113
+          ],
+          "modifications": 7,
+          "risk_level": "L2",
+          "aggregated_score": 65.0,
+          "heat_value": 0.65
+        },
+        "具体计划内容": {
+          "modified_rows": [
+            4,
+            7,
+            41,
+            43,
+            51,
+            71,
+            75,
+            111
+          ],
+          "modifications": 8,
+          "risk_level": "L3",
+          "aggregated_score": 77.0,
+          "heat_value": 0.77
+        },
+        "邓总指导登记": {
+          "modified_rows": [
+            48,
+            112,
+            122,
+            158,
+            161,
+            150
+          ],
+          "modifications": 6,
+          "risk_level": "L2",
+          "aggregated_score": 59.0,
+          "heat_value": 0.59
+        },
+        "负责人": {
+          "modified_rows": [
+            90,
+            134,
+            149,
+            167,
+            193,
+            105
+          ],
+          "modifications": 6,
+          "risk_level": "L2",
+          "aggregated_score": 59.0,
+          "heat_value": 0.59
+        },
+        "协助人": {
+          "modified_rows": [
+            9,
+            10,
+            15,
+            19,
+            74,
+            155,
+            241
+          ],
+          "modifications": 7,
+          "risk_level": "L3",
+          "aggregated_score": 76.0,
+          "heat_value": 0.76
+        },
+        "监督人": {
+          "modified_rows": [
+            5,
+            6,
+            41,
+            61,
+            132,
+            236,
+            241
+          ],
+          "modifications": 7,
+          "risk_level": "L3",
+          "aggregated_score": 75.0,
+          "heat_value": 0.75
+        },
+        "重要程度": {
+          "modified_rows": [
+            6,
+            12,
+            19,
+            29,
+            49,
+            56,
+            62,
+            149,
+            243
+          ],
+          "modifications": 9,
+          "risk_level": "L3",
+          "aggregated_score": 95.0,
+          "heat_value": 0.95
+        },
+        "预计完成时间": {
+          "modified_rows": [
+            10,
+            13,
+            23,
+            40,
+            46,
+            51,
+            56,
+            79,
+            142,
+            261
+          ],
+          "modifications": 10,
+          "risk_level": "L3",
+          "aggregated_score": 95.0,
+          "heat_value": 0.95
+        },
+        "完成进度": {
+          "modified_rows": [
+            2,
+            4,
+            8,
+            40,
+            54,
+            57,
+            62,
+            72,
+            81
+          ],
+          "modifications": 9,
+          "risk_level": "L3",
+          "aggregated_score": 95.0,
+          "heat_value": 0.95
+        },
+        "形成计划清单": {
+          "modified_rows": [
+            2,
+            29,
+            39,
+            46,
+            59,
+            64,
+            73,
+            80,
+            98
+          ],
+          "modifications": 9,
+          "risk_level": "L3",
+          "aggregated_score": 95.0,
+          "heat_value": 0.95
+        },
+        "复盘时间": {
+          "modified_rows": [
+            8,
+            18,
+            30,
+            33,
+            43,
+            114,
+            127,
+            196,
+            213
+          ],
+          "modifications": 9,
+          "risk_level": "L3",
+          "aggregated_score": 95.0,
+          "heat_value": 0.95
+        },
+        "对上汇报": {
+          "modified_rows": [
+            3,
+            14,
+            21,
+            40,
+            63,
+            82,
+            178,
+            235,
+            250
+          ],
+          "modifications": 9,
+          "risk_level": "L3",
+          "aggregated_score": 95.0,
+          "heat_value": 0.95
+        },
+        "应用情况": {
+          "modified_rows": [
+            9,
+            33,
+            41,
+            43,
+            66,
+            70,
+            74,
+            80,
+            131
+          ],
+          "modifications": 9,
+          "risk_level": "L3",
+          "aggregated_score": 95.0,
+          "heat_value": 0.95
+        },
+        "进度分析总结": {
+          "modified_rows": [
+            22,
+            31,
+            40,
+            50,
+            54,
+            64,
+            66,
+            69,
+            188
+          ],
+          "modifications": 9,
+          "risk_level": "L3",
+          "aggregated_score": 95.0,
+          "heat_value": 0.95
+        }
+      },
+      "total_rows": 270,
+      "detailed_stats": {
+        "total_modifications": 150,
+        "total_rows": 270,
+        "modification_rate": 55.56,
+        "columns_with_changes": 19
+      }
+    },
+    {
+      "table_name": "费用报销单",
+      "name": "费用报销单",
+      "doc_url": "https://docs.qq.com/sheet/test18",
+      "url": "https://docs.qq.com/sheet/test18",
+      "modifications": 151,
+      "risk_level": "L3",
+      "heat_values": [
+        0.66,
+        0.7,
+        0.69,
+        0.76,
+        0.66,
+        0.64,
+        0.68,
+        0.73,
+        0.64,
+        0.84,
+        0.83,
+        0.95,
+        0.95,
+        0.95,
+        0.95,
+        0.95,
+        0.95,
+        0.95,
+        0.76
+      ],
+      "column_scores": {
+        "序号": {
+          "modified_rows": [
+            81,
+            134,
+            151,
+            152,
+            181,
+            189
+          ],
+          "modifications": 6,
+          "risk_level": "L2",
+          "aggregated_score": 66.0,
+          "heat_value": 0.66
+        },
+        "项目类型": {
+          "modified_rows": [
+            65,
+            77,
+            79,
+            147,
+            154,
+            252,
+            247,
+            199
+          ],
+          "modifications": 8,
+          "risk_level": "L2",
+          "aggregated_score": 70.0,
+          "heat_value": 0.7
+        },
+        "来源": {
+          "modified_rows": [
+            80,
+            107,
+            128,
+            170,
+            182,
+            196
+          ],
+          "modifications": 6,
+          "risk_level": "L2",
+          "aggregated_score": 69.0,
+          "heat_value": 0.69
+        },
+        "任务发起时间": {
+          "modified_rows": [
+            2,
+            19,
+            52,
+            63,
+            66,
+            68,
+            73
+          ],
+          "modifications": 7,
+          "risk_level": "L3",
+          "aggregated_score": 76.0,
+          "heat_value": 0.76
+        },
+        "目标对齐": {
+          "modified_rows": [
+            83,
+            160,
+            164,
+            170,
+            181,
+            200,
+            255
+          ],
+          "modifications": 7,
+          "risk_level": "L2",
+          "aggregated_score": 66.0,
+          "heat_value": 0.66
+        },
+        "关键KR对齐": {
+          "modified_rows": [
+            112,
+            148,
+            163,
+            165,
+            193,
+            248
+          ],
+          "modifications": 6,
+          "risk_level": "L2",
+          "aggregated_score": 64.0,
+          "heat_value": 0.64
+        },
+        "具体计划内容": {
+          "modified_rows": [
+            90,
+            113,
+            118,
+            119,
+            153,
+            181
+          ],
+          "modifications": 6,
+          "risk_level": "L2",
+          "aggregated_score": 68.0,
+          "heat_value": 0.68
+        },
+        "邓总指导登记": {
+          "modified_rows": [
+            3,
+            15,
+            17,
+            36,
+            52,
+            64,
+            148
+          ],
+          "modifications": 7,
+          "risk_level": "L3",
+          "aggregated_score": 73.0,
+          "heat_value": 0.73
+        },
+        "负责人": {
+          "modified_rows": [
+            116,
+            117,
+            150,
+            163,
+            173,
+            180
+          ],
+          "modifications": 6,
+          "risk_level": "L2",
+          "aggregated_score": 64.0,
+          "heat_value": 0.64
+        },
+        "协助人": {
+          "modified_rows": [
+            21,
+            42,
+            45,
+            46,
+            63,
+            64,
+            163,
+            207,
+            70
+          ],
+          "modifications": 9,
+          "risk_level": "L3",
+          "aggregated_score": 84.0,
+          "heat_value": 0.84
+        },
+        "监督人": {
+          "modified_rows": [
+            5,
+            11,
+            38,
+            50,
+            62,
+            67,
+            74,
+            108
+          ],
+          "modifications": 8,
+          "risk_level": "L3",
+          "aggregated_score": 83.0,
+          "heat_value": 0.83
+        },
+        "重要程度": {
+          "modified_rows": [
+            10,
+            11,
+            13,
+            28,
+            30,
+            32,
+            33,
+            43,
+            74,
+            54
+          ],
+          "modifications": 10,
+          "risk_level": "L3",
+          "aggregated_score": 95.0,
+          "heat_value": 0.95
+        },
+        "预计完成时间": {
+          "modified_rows": [
+            18,
+            29,
+            48,
+            50,
+            64,
+            69,
+            73,
+            75,
+            171,
+            162
+          ],
+          "modifications": 10,
+          "risk_level": "L3",
+          "aggregated_score": 95.0,
+          "heat_value": 0.95
+        },
+        "完成进度": {
+          "modified_rows": [
+            26,
+            43,
+            59,
+            68,
+            71,
+            72,
+            153,
+            258,
+            270,
+            101,
+            61
+          ],
+          "modifications": 11,
+          "risk_level": "L3",
+          "aggregated_score": 95.0,
+          "heat_value": 0.95
+        },
+        "形成计划清单": {
+          "modified_rows": [
+            1,
+            6,
+            9,
+            12,
+            38,
+            54,
+            58,
+            64,
+            247
+          ],
+          "modifications": 9,
+          "risk_level": "L3",
+          "aggregated_score": 95.0,
+          "heat_value": 0.95
+        },
+        "复盘时间": {
+          "modified_rows": [
+            4,
+            6,
+            26,
+            30,
+            35,
+            72,
+            81,
+            247,
+            262
+          ],
+          "modifications": 9,
+          "risk_level": "L3",
+          "aggregated_score": 95.0,
+          "heat_value": 0.95
+        },
+        "对上汇报": {
+          "modified_rows": [
+            24,
+            46,
+            58,
+            61,
+            66,
+            94,
+            150,
+            183,
+            218,
+            127
+          ],
+          "modifications": 10,
+          "risk_level": "L3",
+          "aggregated_score": 95.0,
+          "heat_value": 0.95
+        },
+        "应用情况": {
+          "modified_rows": [
+            5,
+            33,
+            35,
+            38,
+            50,
+            51,
+            55,
+            68,
+            154
+          ],
+          "modifications": 9,
+          "risk_level": "L3",
+          "aggregated_score": 95.0,
+          "heat_value": 0.95
+        },
+        "进度分析总结": {
+          "modified_rows": [
+            20,
+            27,
+            41,
+            43,
+            68,
+            72,
+            150
+          ],
+          "modifications": 7,
+          "risk_level": "L3",
+          "aggregated_score": 76.0,
+          "heat_value": 0.76
+        }
+      },
+      "total_rows": 270,
+      "detailed_stats": {
+        "total_modifications": 151,
+        "total_rows": 270,
+        "modification_rate": 55.93,
+        "columns_with_changes": 19
+      }
+    },
+    {
+      "table_name": "年度预算表",
+      "name": "年度预算表",
+      "doc_url": "https://docs.qq.com/sheet/test19",
+      "url": "https://docs.qq.com/sheet/test19",
+      "modifications": 159,
+      "risk_level": "L3",
+      "heat_values": [
+        0.62,
+        0.73,
+        0.7,
+        0.6,
+        0.72,
+        0.76,
+        0.73,
+        0.74,
+        0.83,
+        0.87,
+        0.95,
+        0.95,
+        0.95,
+        0.95,
+        0.95,
+        0.95,
+        0.95,
+        0.81,
+        0.81
+      ],
+      "column_scores": {
+        "序号": {
+          "modified_rows": [
+            95,
+            141,
+            142,
+            153,
+            165,
+            188,
+            132,
+            126
+          ],
+          "modifications": 8,
+          "risk_level": "L2",
+          "aggregated_score": 62.0,
+          "heat_value": 0.62
+        },
+        "项目类型": {
+          "modified_rows": [
+            32,
+            41,
+            44,
+            63,
+            144,
+            175,
+            178,
+            80
+          ],
+          "modifications": 8,
+          "risk_level": "L3",
+          "aggregated_score": 73.0,
+          "heat_value": 0.73
+        },
+        "来源": {
+          "modified_rows": [
+            93,
+            112,
+            153,
+            156,
+            163,
+            180,
+            228
+          ],
+          "modifications": 7,
+          "risk_level": "L2",
+          "aggregated_score": 70.0,
+          "heat_value": 0.7
+        },
+        "任务发起时间": {
+          "modified_rows": [
+            93,
+            108,
+            130,
+            132,
+            140,
+            159,
+            208
+          ],
+          "modifications": 7,
+          "risk_level": "L2",
+          "aggregated_score": 60.0,
+          "heat_value": 0.6
+        },
+        "目标对齐": {
+          "modified_rows": [
+            12,
+            14,
+            15,
+            18,
+            35,
+            55,
+            59
+          ],
+          "modifications": 7,
+          "risk_level": "L3",
+          "aggregated_score": 72.0,
+          "heat_value": 0.72
+        },
+        "关键KR对齐": {
+          "modified_rows": [
+            4,
+            8,
+            21,
+            25,
+            53,
+            135,
+            209,
+            226
+          ],
+          "modifications": 8,
+          "risk_level": "L3",
+          "aggregated_score": 76.0,
+          "heat_value": 0.76
+        },
+        "具体计划内容": {
+          "modified_rows": [
+            8,
+            16,
+            32,
+            43,
+            50,
+            127,
+            233
+          ],
+          "modifications": 7,
+          "risk_level": "L3",
+          "aggregated_score": 73.0,
+          "heat_value": 0.73
+        },
+        "邓总指导登记": {
+          "modified_rows": [
+            2,
+            13,
+            31,
+            51,
+            71,
+            72,
+            109,
+            26
+          ],
+          "modifications": 8,
+          "risk_level": "L3",
+          "aggregated_score": 74.0,
+          "heat_value": 0.74
+        },
+        "负责人": {
+          "modified_rows": [
+            1,
+            14,
+            23,
+            58,
+            105,
+            126,
+            158,
+            194
+          ],
+          "modifications": 8,
+          "risk_level": "L3",
+          "aggregated_score": 83.0,
+          "heat_value": 0.83
+        },
+        "协助人": {
+          "modified_rows": [
+            6,
+            29,
+            51,
+            60,
+            65,
+            74,
+            158,
+            175
+          ],
+          "modifications": 8,
+          "risk_level": "L3",
+          "aggregated_score": 87.0,
+          "heat_value": 0.87
+        },
+        "监督人": {
+          "modified_rows": [
+            12,
+            13,
+            25,
+            41,
+            55,
+            60,
+            69,
+            125,
+            203
+          ],
+          "modifications": 9,
+          "risk_level": "L3",
+          "aggregated_score": 95.0,
+          "heat_value": 0.95
+        },
+        "重要程度": {
+          "modified_rows": [
+            20,
+            24,
+            37,
+            39,
+            47,
+            58,
+            72,
+            175,
+            253
+          ],
+          "modifications": 9,
+          "risk_level": "L3",
+          "aggregated_score": 95.0,
+          "heat_value": 0.95
+        },
+        "预计完成时间": {
+          "modified_rows": [
+            14,
+            46,
+            56,
+            64,
+            80,
+            115,
+            180,
+            233,
+            255
+          ],
+          "modifications": 9,
+          "risk_level": "L3",
+          "aggregated_score": 95.0,
+          "heat_value": 0.95
+        },
+        "完成进度": {
+          "modified_rows": [
+            1,
+            8,
+            22,
+            32,
+            34,
+            62,
+            76,
+            191,
+            257,
+            121
+          ],
+          "modifications": 10,
+          "risk_level": "L3",
+          "aggregated_score": 95.0,
+          "heat_value": 0.95
+        },
+        "形成计划清单": {
+          "modified_rows": [
+            6,
+            9,
+            27,
+            55,
+            56,
+            78,
+            79,
+            118,
+            191,
+            209
+          ],
+          "modifications": 10,
+          "risk_level": "L3",
+          "aggregated_score": 95.0,
+          "heat_value": 0.95
+        },
+        "复盘时间": {
+          "modified_rows": [
+            14,
+            30,
+            36,
+            40,
+            71,
+            73,
+            76,
+            128,
+            189,
+            129
+          ],
+          "modifications": 10,
+          "risk_level": "L3",
+          "aggregated_score": 95.0,
+          "heat_value": 0.95
+        },
+        "对上汇报": {
+          "modified_rows": [
+            3,
+            5,
+            19,
+            24,
+            31,
+            32,
+            33,
+            36,
+            71
+          ],
+          "modifications": 9,
+          "risk_level": "L3",
+          "aggregated_score": 95.0,
+          "heat_value": 0.95
+        },
+        "应用情况": {
+          "modified_rows": [
+            8,
+            20,
+            45,
+            57,
+            60,
+            65,
+            80,
+            111
+          ],
+          "modifications": 8,
+          "risk_level": "L3",
+          "aggregated_score": 81.0,
+          "heat_value": 0.81
+        },
+        "进度分析总结": {
+          "modified_rows": [
+            3,
+            25,
+            34,
+            43,
+            73,
+            79,
+            84,
+            88,
+            143
+          ],
+          "modifications": 9,
+          "risk_level": "L3",
+          "aggregated_score": 81.0,
+          "heat_value": 0.81
+        }
+      },
+      "total_rows": 270,
+      "detailed_stats": {
+        "total_modifications": 159,
+        "total_rows": 270,
+        "modification_rate": 58.89,
+        "columns_with_changes": 19
+      }
+    },
+    {
+      "table_name": "风险评估表",
+      "name": "风险评估表",
+      "doc_url": "https://docs.qq.com/sheet/test20",
+      "url": "https://docs.qq.com/sheet/test20",
+      "modifications": 160,
+      "risk_level": "L3",
+      "heat_values": [
+        0.74,
+        0.75,
+        0.62,
+        0.61,
+        0.71,
+        0.78,
+        0.73,
+        0.71,
+        0.95,
+        0.95,
+        0.95,
+        0.95,
+        0.95,
+        0.95,
+        0.95,
+        0.94,
+        0.86,
+        0.75,
+        0.68
+      ],
+      "column_scores": {
+        "序号": {
+          "modified_rows": [
+            17,
+            23,
+            24,
+            25,
+            57,
+            66,
+            212
+          ],
+          "modifications": 7,
+          "risk_level": "L3",
+          "aggregated_score": 74.0,
+          "heat_value": 0.74
+        },
+        "项目类型": {
+          "modified_rows": [
+            25,
+            32,
+            33,
+            52,
+            57,
+            60,
+            78
+          ],
+          "modifications": 7,
+          "risk_level": "L3",
+          "aggregated_score": 75.0,
+          "heat_value": 0.75
+        },
+        "来源": {
+          "modified_rows": [
+            47,
+            90,
+            102,
+            108,
+            170,
+            207
+          ],
+          "modifications": 6,
+          "risk_level": "L2",
+          "aggregated_score": 62.0,
+          "heat_value": 0.62
+        },
+        "任务发起时间": {
+          "modified_rows": [
+            66,
+            67,
+            83,
+            98,
+            156,
+            167,
+            69,
+            254,
+            101
+          ],
+          "modifications": 9,
+          "risk_level": "L2",
+          "aggregated_score": 61.0,
+          "heat_value": 0.61
+        },
+        "目标对齐": {
+          "modified_rows": [
+            16,
+            17,
+            32,
+            43,
+            52,
+            78,
+            197
+          ],
+          "modifications": 7,
+          "risk_level": "L3",
+          "aggregated_score": 71.0,
+          "heat_value": 0.71
+        },
+        "关键KR对齐": {
+          "modified_rows": [
+            12,
+            26,
+            51,
+            61,
+            62,
+            63,
+            82,
+            84,
+            174
+          ],
+          "modifications": 9,
+          "risk_level": "L3",
+          "aggregated_score": 78.0,
+          "heat_value": 0.78
+        },
+        "具体计划内容": {
+          "modified_rows": [
+            8,
+            14,
+            18,
+            39,
+            65,
+            163,
+            214
+          ],
+          "modifications": 7,
+          "risk_level": "L3",
+          "aggregated_score": 73.0,
+          "heat_value": 0.73
+        },
+        "邓总指导登记": {
+          "modified_rows": [
+            25,
+            33,
+            50,
+            93,
+            99,
+            162,
+            240,
+            1
+          ],
+          "modifications": 8,
+          "risk_level": "L3",
+          "aggregated_score": 71.0,
+          "heat_value": 0.71
+        },
+        "负责人": {
+          "modified_rows": [
+            8,
+            22,
+            49,
+            54,
+            56,
+            63,
+            126,
+            159,
+            170
+          ],
+          "modifications": 9,
+          "risk_level": "L3",
+          "aggregated_score": 95.0,
+          "heat_value": 0.95
+        },
+        "协助人": {
+          "modified_rows": [
+            3,
+            19,
+            28,
+            29,
+            47,
+            52,
+            55,
+            117,
+            187,
+            88
+          ],
+          "modifications": 10,
+          "risk_level": "L3",
+          "aggregated_score": 95.0,
+          "heat_value": 0.95
+        },
+        "监督人": {
+          "modified_rows": [
+            25,
+            34,
+            39,
+            50,
+            65,
+            78,
+            79,
+            180,
+            208,
+            115
+          ],
+          "modifications": 10,
+          "risk_level": "L3",
+          "aggregated_score": 95.0,
+          "heat_value": 0.95
+        },
+        "重要程度": {
+          "modified_rows": [
+            14,
+            31,
+            39,
+            56,
+            68,
+            74,
+            75,
+            88,
+            198,
+            19,
+            13
+          ],
+          "modifications": 11,
+          "risk_level": "L3",
+          "aggregated_score": 95.0,
+          "heat_value": 0.95
+        },
+        "预计完成时间": {
+          "modified_rows": [
+            8,
+            25,
+            28,
+            29,
+            47,
+            60,
+            75,
+            84,
+            170
+          ],
+          "modifications": 9,
+          "risk_level": "L3",
+          "aggregated_score": 95.0,
+          "heat_value": 0.95
+        },
+        "完成进度": {
+          "modified_rows": [
+            5,
+            7,
+            25,
+            31,
+            36,
+            40,
+            50,
+            76,
+            78
+          ],
+          "modifications": 9,
+          "risk_level": "L3",
+          "aggregated_score": 95.0,
+          "heat_value": 0.95
+        },
+        "形成计划清单": {
+          "modified_rows": [
+            4,
+            8,
+            27,
+            30,
+            50,
+            51,
+            74,
+            122,
+            181
+          ],
+          "modifications": 9,
+          "risk_level": "L3",
+          "aggregated_score": 95.0,
+          "heat_value": 0.95
+        },
+        "复盘时间": {
+          "modified_rows": [
+            2,
+            6,
+            23,
+            24,
+            49,
+            55,
+            63,
+            66,
+            70
+          ],
+          "modifications": 9,
+          "risk_level": "L3",
+          "aggregated_score": 94.0,
+          "heat_value": 0.94
+        },
+        "对上汇报": {
+          "modified_rows": [
+            5,
+            7,
+            8,
+            25,
+            47,
+            54,
+            58,
+            78,
+            63,
+            218
+          ],
+          "modifications": 10,
+          "risk_level": "L3",
+          "aggregated_score": 86.0,
+          "heat_value": 0.86
+        },
+        "应用情况": {
+          "modified_rows": [
+            59,
+            61,
+            63,
+            67,
+            69,
+            84,
+            195
+          ],
+          "modifications": 7,
+          "risk_level": "L3",
+          "aggregated_score": 75.0,
+          "heat_value": 0.75
+        },
+        "进度分析总结": {
+          "modified_rows": [
+            84,
+            97,
+            99,
+            130,
+            157,
+            166,
+            179
+          ],
+          "modifications": 7,
+          "risk_level": "L2",
+          "aggregated_score": 68.0,
+          "heat_value": 0.68
+        }
+      },
+      "total_rows": 270,
+      "detailed_stats": {
+        "total_modifications": 160,
+        "total_rows": 270,
+        "modification_rate": 59.26,
+        "columns_with_changes": 19
+      }
+    },
+    {
+      "table_name": "会议记录表",
+      "name": "会议记录表",
+      "doc_url": "https://docs.qq.com/sheet/test21",
+      "url": "https://docs.qq.com/sheet/test21",
+      "modifications": 166,
+      "risk_level": "L3",
+      "heat_values": [
+        0.7,
+        0.74,
+        0.73,
+        0.74,
+        0.74,
+        0.74,
+        0.9,
+        0.95,
+        0.95,
+        0.95,
+        0.95,
+        0.95,
+        0.95,
+        0.95,
+        0.93,
+        0.86,
+        0.79,
+        0.63,
+        0.78
+      ],
+      "column_scores": {
+        "序号": {
+          "modified_rows": [
+            79,
+            103,
+            125,
+            127,
+            138,
+            141,
+            205
+          ],
+          "modifications": 7,
+          "risk_level": "L2",
+          "aggregated_score": 70.0,
+          "heat_value": 0.7
+        },
+        "项目类型": {
+          "modified_rows": [
+            7,
+            23,
+            38,
+            43,
+            61,
+            69,
+            199,
+            144
+          ],
+          "modifications": 8,
+          "risk_level": "L3",
+          "aggregated_score": 74.0,
+          "heat_value": 0.74
+        },
+        "来源": {
+          "modified_rows": [
+            2,
+            3,
+            26,
+            50,
+            55,
+            64,
+            127
+          ],
+          "modifications": 7,
+          "risk_level": "L3",
+          "aggregated_score": 73.0,
+          "heat_value": 0.73
+        },
+        "任务发起时间": {
+          "modified_rows": [
+            36,
+            37,
+            44,
+            54,
+            60,
+            61,
+            112
+          ],
+          "modifications": 7,
+          "risk_level": "L3",
+          "aggregated_score": 74.0,
+          "heat_value": 0.74
+        },
+        "目标对齐": {
+          "modified_rows": [
+            6,
+            18,
+            24,
+            54,
+            56,
+            77,
+            137,
+            234,
+            21
+          ],
+          "modifications": 9,
+          "risk_level": "L3",
+          "aggregated_score": 74.0,
+          "heat_value": 0.74
+        },
+        "关键KR对齐": {
+          "modified_rows": [
+            7,
+            36,
+            56,
+            63,
+            106,
+            183,
+            197
+          ],
+          "modifications": 7,
+          "risk_level": "L3",
+          "aggregated_score": 74.0,
+          "heat_value": 0.74
+        },
+        "具体计划内容": {
+          "modified_rows": [
+            4,
+            13,
+            21,
+            34,
+            38,
+            39,
+            59,
+            70,
+            100,
+            190,
+            140
+          ],
+          "modifications": 11,
+          "risk_level": "L3",
+          "aggregated_score": 90.0,
+          "heat_value": 0.9
+        },
+        "邓总指导登记": {
+          "modified_rows": [
+            4,
+            6,
+            35,
+            42,
+            57,
+            80,
+            84,
+            213,
+            214,
+            61
+          ],
+          "modifications": 10,
+          "risk_level": "L3",
+          "aggregated_score": 95.0,
+          "heat_value": 0.95
+        },
+        "负责人": {
+          "modified_rows": [
+            4,
+            22,
+            38,
+            40,
+            54,
+            56,
+            70,
+            74,
+            79,
+            155,
+            239,
+            119
+          ],
+          "modifications": 12,
+          "risk_level": "L3",
+          "aggregated_score": 95.0,
+          "heat_value": 0.95
+        },
+        "协助人": {
+          "modified_rows": [
+            17,
+            33,
+            40,
+            58,
+            61,
+            73,
+            75,
+            93,
+            194
+          ],
+          "modifications": 9,
+          "risk_level": "L3",
+          "aggregated_score": 95.0,
+          "heat_value": 0.95
+        },
+        "监督人": {
+          "modified_rows": [
+            17,
+            19,
+            31,
+            36,
+            43,
+            53,
+            64,
+            182,
+            193,
+            117
+          ],
+          "modifications": 10,
+          "risk_level": "L3",
+          "aggregated_score": 95.0,
+          "heat_value": 0.95
+        },
+        "重要程度": {
+          "modified_rows": [
+            5,
+            17,
+            20,
+            37,
+            46,
+            73,
+            156,
+            201,
+            231
+          ],
+          "modifications": 9,
+          "risk_level": "L3",
+          "aggregated_score": 95.0,
+          "heat_value": 0.95
+        },
+        "预计完成时间": {
+          "modified_rows": [
+            6,
+            39,
+            49,
+            75,
+            79,
+            82,
+            145,
+            191,
+            210
+          ],
+          "modifications": 9,
+          "risk_level": "L3",
+          "aggregated_score": 95.0,
+          "heat_value": 0.95
+        },
+        "完成进度": {
+          "modified_rows": [
+            5,
+            19,
+            39,
+            40,
+            45,
+            50,
+            79,
+            205,
+            246
+          ],
+          "modifications": 9,
+          "risk_level": "L3",
+          "aggregated_score": 95.0,
+          "heat_value": 0.95
+        },
+        "形成计划清单": {
+          "modified_rows": [
+            20,
+            21,
+            28,
+            44,
+            49,
+            56,
+            72,
+            79,
+            238
+          ],
+          "modifications": 9,
+          "risk_level": "L3",
+          "aggregated_score": 93.0,
+          "heat_value": 0.93
+        },
+        "复盘时间": {
+          "modified_rows": [
+            6,
+            13,
+            48,
+            68,
+            75,
+            83,
+            124,
+            196
+          ],
+          "modifications": 8,
+          "risk_level": "L3",
+          "aggregated_score": 86.0,
+          "heat_value": 0.86
+        },
+        "对上汇报": {
+          "modified_rows": [
+            1,
+            3,
+            50,
+            57,
+            62,
+            65,
+            74,
+            178,
+            203
+          ],
+          "modifications": 9,
+          "risk_level": "L3",
+          "aggregated_score": 79.0,
+          "heat_value": 0.79
+        },
+        "应用情况": {
+          "modified_rows": [
+            41,
+            82,
+            101,
+            103,
+            148,
+            157,
+            226
+          ],
+          "modifications": 7,
+          "risk_level": "L2",
+          "aggregated_score": 63.0,
+          "heat_value": 0.63
+        },
+        "进度分析总结": {
+          "modified_rows": [
+            15,
+            30,
+            34,
+            38,
+            56,
+            80,
+            148,
+            252,
+            79
+          ],
+          "modifications": 9,
+          "risk_level": "L3",
+          "aggregated_score": 78.0,
+          "heat_value": 0.78
+        }
+      },
+      "total_rows": 270,
+      "detailed_stats": {
+        "total_modifications": 166,
+        "total_rows": 270,
+        "modification_rate": 61.48,
+        "columns_with_changes": 19
+      }
+    },
+    {
+      "table_name": "绩效考核表",
+      "name": "绩效考核表",
+      "doc_url": "https://docs.qq.com/sheet/test22",
+      "url": "https://docs.qq.com/sheet/test22",
+      "modifications": 166,
+      "risk_level": "L3",
+      "heat_values": [
+        0.6,
+        0.72,
+        0.7,
+        0.64,
+        0.68,
+        0.81,
+        0.95,
+        0.95,
+        0.95,
+        0.95,
+        0.95,
+        0.95,
+        0.95,
+        0.88,
+        0.72,
+        0.68,
+        0.77,
+        0.72,
+        0.74
+      ],
+      "column_scores": {
+        "序号": {
+          "modified_rows": [
+            102,
+            131,
+            154,
+            167,
+            188,
+            213
+          ],
+          "modifications": 6,
+          "risk_level": "L2",
+          "aggregated_score": 60.0,
+          "heat_value": 0.6
+        },
+        "项目类型": {
+          "modified_rows": [
+            11,
+            64,
+            71,
+            133,
+            145,
+            178,
+            233
+          ],
+          "modifications": 7,
+          "risk_level": "L3",
+          "aggregated_score": 72.0,
+          "heat_value": 0.72
+        },
+        "来源": {
+          "modified_rows": [
+            79,
+            120,
+            121,
+            139,
+            153,
+            158,
+            169,
+            231
+          ],
+          "modifications": 8,
+          "risk_level": "L2",
+          "aggregated_score": 70.0,
+          "heat_value": 0.7
+        },
+        "任务发起时间": {
+          "modified_rows": [
+            86,
+            105,
+            130,
+            149,
+            193,
+            210,
+            109
+          ],
+          "modifications": 7,
+          "risk_level": "L2",
+          "aggregated_score": 64.0,
+          "heat_value": 0.64
+        },
+        "目标对齐": {
+          "modified_rows": [
+            115,
+            118,
+            129,
+            133,
+            150,
+            153,
+            156,
+            55
+          ],
+          "modifications": 8,
+          "risk_level": "L2",
+          "aggregated_score": 68.0,
+          "heat_value": 0.68
+        },
+        "关键KR对齐": {
+          "modified_rows": [
+            15,
+            19,
+            39,
+            52,
+            58,
+            73,
+            116,
+            132,
+            211
+          ],
+          "modifications": 9,
+          "risk_level": "L3",
+          "aggregated_score": 81.0,
+          "heat_value": 0.81
+        },
+        "具体计划内容": {
+          "modified_rows": [
+            2,
+            18,
+            21,
+            29,
+            64,
+            69,
+            71,
+            178,
+            205,
+            245
+          ],
+          "modifications": 10,
+          "risk_level": "L3",
+          "aggregated_score": 95.0,
+          "heat_value": 0.95
+        },
+        "邓总指导登记": {
+          "modified_rows": [
+            29,
+            31,
+            40,
+            67,
+            74,
+            76,
+            77,
+            100,
+            179,
+            227,
+            65
+          ],
+          "modifications": 11,
+          "risk_level": "L3",
+          "aggregated_score": 95.0,
+          "heat_value": 0.95
+        },
+        "负责人": {
+          "modified_rows": [
+            2,
+            6,
+            7,
+            18,
+            38,
+            53,
+            61,
+            62,
+            178,
+            224,
+            269,
+            149
+          ],
+          "modifications": 12,
+          "risk_level": "L3",
+          "aggregated_score": 95.0,
+          "heat_value": 0.95
+        },
+        "协助人": {
+          "modified_rows": [
+            11,
+            16,
+            17,
+            20,
+            32,
+            35,
+            50,
+            51,
+            78,
+            200
+          ],
+          "modifications": 10,
+          "risk_level": "L3",
+          "aggregated_score": 95.0,
+          "heat_value": 0.95
+        },
+        "监督人": {
+          "modified_rows": [
+            15,
+            19,
+            23,
+            27,
+            33,
+            57,
+            73,
+            143,
+            265,
+            267
+          ],
+          "modifications": 10,
+          "risk_level": "L3",
+          "aggregated_score": 95.0,
+          "heat_value": 0.95
+        },
+        "重要程度": {
+          "modified_rows": [
+            6,
+            10,
+            13,
+            18,
+            31,
+            38,
+            45,
+            67,
+            71,
+            270
+          ],
+          "modifications": 10,
+          "risk_level": "L3",
+          "aggregated_score": 95.0,
+          "heat_value": 0.95
+        },
+        "预计完成时间": {
+          "modified_rows": [
+            9,
+            15,
+            17,
+            33,
+            46,
+            50,
+            66,
+            68,
+            140,
+            150
+          ],
+          "modifications": 10,
+          "risk_level": "L3",
+          "aggregated_score": 95.0,
+          "heat_value": 0.95
+        },
+        "完成进度": {
+          "modified_rows": [
+            24,
+            31,
+            32,
+            45,
+            47,
+            67,
+            79,
+            115,
+            161
+          ],
+          "modifications": 9,
+          "risk_level": "L3",
+          "aggregated_score": 88.0,
+          "heat_value": 0.88
+        },
+        "形成计划清单": {
+          "modified_rows": [
+            1,
+            9,
+            13,
+            20,
+            34,
+            164,
+            251
+          ],
+          "modifications": 7,
+          "risk_level": "L3",
+          "aggregated_score": 72.0,
+          "heat_value": 0.72
+        },
+        "复盘时间": {
+          "modified_rows": [
+            36,
+            53,
+            96,
+            129,
+            131,
+            157,
+            175
+          ],
+          "modifications": 7,
+          "risk_level": "L2",
+          "aggregated_score": 68.0,
+          "heat_value": 0.68
+        },
+        "对上汇报": {
+          "modified_rows": [
+            17,
+            44,
+            47,
+            55,
+            57,
+            66,
+            69,
+            75,
+            131
+          ],
+          "modifications": 9,
+          "risk_level": "L3",
+          "aggregated_score": 77.0,
+          "heat_value": 0.77
+        },
+        "应用情况": {
+          "modified_rows": [
+            5,
+            17,
+            38,
+            42,
+            51,
+            64,
+            77,
+            9
+          ],
+          "modifications": 8,
+          "risk_level": "L3",
+          "aggregated_score": 72.0,
+          "heat_value": 0.72
+        },
+        "进度分析总结": {
+          "modified_rows": [
+            2,
+            21,
+            26,
+            34,
+            46,
+            156,
+            205,
+            269
+          ],
+          "modifications": 8,
+          "risk_level": "L3",
+          "aggregated_score": 74.0,
+          "heat_value": 0.74
+        }
+      },
+      "total_rows": 270,
+      "detailed_stats": {
+        "total_modifications": 166,
+        "total_rows": 270,
+        "modification_rate": 61.48,
+        "columns_with_changes": 19
+      }
+    }
+  ],
+  "total_modifications": 3451
+}

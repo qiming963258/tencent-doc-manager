@@ -1,0 +1,49 @@
+{
+  "metadata": {
+    "analysis_time": "2025-09-15 18:34:15",
+    "total_modifications": 1,
+    "layer1_passed": 0,
+    "layer2_analyzed": 1,
+    "processing_time": "10.2s"
+  },
+  "results": [
+    {
+      "modification_id": "M001",
+      "cell": "J30",
+      "column": "负责人",
+      "old_value": "赖铁荔",
+      "new_value": "",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 80.0,
+        "reason": "关键人缺失"
+      },
+      "layer2_result": {
+        "risk_level": "HIGH",
+        "decision": "REVIEW",
+        "confidence": 85,
+        "key_risks": [
+          "负责人信息被清空可能导致责任不明确",
+          "关键角色缺失可能影响项目执行",
+          "团队协调可能出现问题",
+          "项目进度可能延误"
+        ],
+        "recommendation": "建议立即确认该岗位负责人信息，如果是交接过渡期，需注明临时负责人和交接时间节点。修改前需获得项目经理和人力资源部门的双重确认，并通知相关团队成员。"
+      },
+      "final_decision": "REVIEW",
+      "approval_required": true
+    }
+  ],
+  "summary": {
+    "approved": 0,
+    "conditional": 0,
+    "review_required": 1,
+    "rejected": 0,
+    "risk_distribution": {
+      "LOW": 0,
+      "MEDIUM": 0,
+      "HIGH": 1,
+      "CRITICAL": 0
+    }
+  }
+}

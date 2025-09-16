@@ -1,0 +1,48 @@
+{
+  "metadata": {
+    "analysis_time": "2025-09-15 14:46:16",
+    "total_modifications": 1,
+    "layer1_passed": 0,
+    "layer2_analyzed": 1,
+    "processing_time": "14.8s"
+  },
+  "results": [
+    {
+      "modification_id": "M001",
+      "cell": "B35",
+      "column": "项目类型",
+      "old_value": "项目管理",
+      "new_value": "",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 80.0,
+        "reason": "关键信息缺失"
+      },
+      "layer2_result": {
+        "risk_level": "HIGH",
+        "decision": "REVIEW",
+        "confidence": 85,
+        "key_risks": [
+          "项目类型定义缺失可能导致项目定位不明确",
+          "关键分类信息缺失可能影响后续资源分配和计划制定",
+          "团队对项目性质理解不一致可能导致协作混乱"
+        ],
+        "recommendation": "1. 必须明确填写项目类型\n2. 如新类型未确定，建议保留原值并标记待定\n3. 如确需删除，需同步更新项目章程和WBS\n4. 需要相关干系人会议确认变更影响"
+      },
+      "final_decision": "REVIEW",
+      "approval_required": true
+    }
+  ],
+  "summary": {
+    "approved": 0,
+    "conditional": 0,
+    "review_required": 1,
+    "rejected": 0,
+    "risk_distribution": {
+      "LOW": 0,
+      "MEDIUM": 0,
+      "HIGH": 1,
+      "CRITICAL": 0
+    }
+  }
+}

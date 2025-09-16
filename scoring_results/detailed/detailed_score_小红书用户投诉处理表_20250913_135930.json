@@ -1,0 +1,537 @@
+{
+  "metadata": {
+    "table_id": 12,
+    "table_name": "小红书用户投诉处理表",
+    "generation_time": "2025-09-13T13:59:30.964659",
+    "scoring_standard": "0000-颜色和级别打分标准",
+    "scoring_version": "2.0"
+  },
+  "comparison_info": {
+    "baseline_file": "baseline_table_013_20250818.csv",
+    "current_file": "current_产品运营部_table_013_20250819.csv",
+    "total_rows": 98,
+    "total_columns": 19,
+    "comparison_time": ""
+  },
+  "modifications_summary": {
+    "total_modifications": 28,
+    "high_risk_count": 12,
+    "medium_risk_count": 7,
+    "low_risk_count": 9
+  },
+  "column_scores": {
+    "项目类型": {
+      "column_level": "L1",
+      "modifications": 1,
+      "modified_rows": [
+        14
+      ],
+      "row_scores": [
+        0.989
+      ],
+      "avg_score": 0.989,
+      "max_score": 0.989,
+      "min_score": 0.989
+    },
+    "来源": {
+      "column_level": "L3",
+      "modifications": 3,
+      "modified_rows": [
+        5,
+        6,
+        15
+      ],
+      "row_scores": [
+        0.13,
+        0.177,
+        0.224
+      ],
+      "avg_score": 0.177,
+      "max_score": 0.224,
+      "min_score": 0.13
+    },
+    "任务发起时间": {
+      "column_level": "L3",
+      "modifications": 2,
+      "modified_rows": [
+        13,
+        18
+      ],
+      "row_scores": [
+        0.116,
+        0.203
+      ],
+      "avg_score": 0.16,
+      "max_score": 0.203,
+      "min_score": 0.116
+    },
+    "目标对齐": {
+      "column_level": "L1",
+      "modifications": 3,
+      "modified_rows": [
+        8,
+        20,
+        21
+      ],
+      "row_scores": [
+        0.913,
+        0.861,
+        0.828
+      ],
+      "avg_score": 0.867,
+      "max_score": 0.913,
+      "min_score": 0.828
+    },
+    "关键KR对齐": {
+      "column_level": "L1",
+      "modifications": 3,
+      "modified_rows": [
+        2,
+        6,
+        17
+      ],
+      "row_scores": [
+        0.905,
+        0.945,
+        0.931
+      ],
+      "avg_score": 0.927,
+      "max_score": 0.945,
+      "min_score": 0.905
+    },
+    "负责人": {
+      "column_level": "L2",
+      "modifications": 3,
+      "modified_rows": [
+        10,
+        15,
+        19
+      ],
+      "row_scores": [
+        0.538,
+        0.679,
+        0.453
+      ],
+      "avg_score": 0.557,
+      "max_score": 0.679,
+      "min_score": 0.453,
+      "ai_decisions": {
+        "APPROVE": 1,
+        "REVIEW": 2
+      }
+    },
+    "协助人": {
+      "column_level": "L2",
+      "modifications": 2,
+      "modified_rows": [
+        12,
+        30
+      ],
+      "row_scores": [
+        0.622,
+        0.472
+      ],
+      "avg_score": 0.547,
+      "max_score": 0.622,
+      "min_score": 0.472,
+      "ai_decisions": {
+        "APPROVE": 1,
+        "REVIEW": 1
+      }
+    },
+    "监督人": {
+      "column_level": "L2",
+      "modifications": 1,
+      "modified_rows": [
+        23
+      ],
+      "row_scores": [
+        0.694
+      ],
+      "avg_score": 0.694,
+      "max_score": 0.694,
+      "min_score": 0.694,
+      "ai_decisions": {
+        "APPROVE": 0,
+        "REVIEW": 1
+      }
+    },
+    "重要程度": {
+      "column_level": "L2",
+      "modifications": 3,
+      "modified_rows": [
+        6,
+        19,
+        25
+      ],
+      "row_scores": [
+        0.433,
+        0.626,
+        0.558
+      ],
+      "avg_score": 0.539,
+      "max_score": 0.626,
+      "min_score": 0.433,
+      "ai_decisions": {
+        "APPROVE": 1,
+        "REVIEW": 2
+      }
+    },
+    "预计完成时间": {
+      "column_level": "L2",
+      "modifications": 1,
+      "modified_rows": [
+        16
+      ],
+      "row_scores": [
+        0.65
+      ],
+      "avg_score": 0.65,
+      "max_score": 0.65,
+      "min_score": 0.65,
+      "ai_decisions": {
+        "APPROVE": 0,
+        "REVIEW": 1
+      }
+    },
+    "完成进度": {
+      "column_level": "L2",
+      "modifications": 2,
+      "modified_rows": [
+        12,
+        16
+      ],
+      "row_scores": [
+        0.517,
+        0.542
+      ],
+      "avg_score": 0.53,
+      "max_score": 0.542,
+      "min_score": 0.517,
+      "ai_decisions": {
+        "APPROVE": 0,
+        "REVIEW": 2
+      }
+    },
+    "形成计划清单": {
+      "column_level": "L3",
+      "modifications": 1,
+      "modified_rows": [
+        27
+      ],
+      "row_scores": [
+        0.177
+      ],
+      "avg_score": 0.177,
+      "max_score": 0.177,
+      "min_score": 0.177
+    },
+    "应用情况": {
+      "column_level": "L3",
+      "modifications": 2,
+      "modified_rows": [
+        12,
+        27
+      ],
+      "row_scores": [
+        0.342,
+        0.105
+      ],
+      "avg_score": 0.224,
+      "max_score": 0.342,
+      "min_score": 0.105
+    },
+    "进度分析总结": {
+      "column_level": "L3",
+      "modifications": 1,
+      "modified_rows": [
+        26
+      ],
+      "row_scores": [
+        0.177
+      ],
+      "avg_score": 0.177,
+      "max_score": 0.177,
+      "min_score": 0.177
+    }
+  },
+  "detailed_modifications": [
+    {
+      "row": 17,
+      "column": "关键KR对齐",
+      "column_level": "L1",
+      "old_value": "原始关键KR对齐_56",
+      "new_value": "修改关键KR对齐_4",
+      "score": 0.905,
+      "risk_level": "极高风险"
+    },
+    {
+      "row": 19,
+      "column": "负责人",
+      "column_level": "L2",
+      "old_value": "李月",
+      "new_value": "李月",
+      "score": 0.538,
+      "risk_level": "中风险",
+      "ai_decision": "REVIEW",
+      "ai_confidence": 0.77
+    },
+    {
+      "row": 8,
+      "column": "目标对齐",
+      "column_level": "L1",
+      "old_value": "原始目标对齐_61",
+      "new_value": "修改目标对齐_14",
+      "score": 0.913,
+      "risk_level": "极高风险"
+    },
+    {
+      "row": 6,
+      "column": "重要程度",
+      "column_level": "L2",
+      "old_value": "5",
+      "new_value": "4",
+      "score": 0.433,
+      "risk_level": "中风险",
+      "ai_decision": "APPROVE",
+      "ai_confidence": 0.76
+    },
+    {
+      "row": 16,
+      "column": "完成进度",
+      "column_level": "L2",
+      "old_value": "10%",
+      "new_value": "80%",
+      "score": 0.517,
+      "risk_level": "中风险",
+      "ai_decision": "REVIEW",
+      "ai_confidence": 0.95
+    },
+    {
+      "row": 30,
+      "column": "协助人",
+      "column_level": "L2",
+      "old_value": "李月",
+      "new_value": "杨佳玲,陈小明",
+      "score": 0.622,
+      "risk_level": "高风险",
+      "ai_decision": "REVIEW",
+      "ai_confidence": 0.91
+    },
+    {
+      "row": 26,
+      "column": "进度分析总结",
+      "column_level": "L3",
+      "old_value": "原始进度分析总结_82",
+      "new_value": "修改进度分析总结_8",
+      "score": 0.177,
+      "risk_level": "低风险"
+    },
+    {
+      "row": 23,
+      "column": "监督人",
+      "column_level": "L2",
+      "old_value": "蔡悦莹",
+      "new_value": "张三",
+      "score": 0.694,
+      "risk_level": "高风险",
+      "ai_decision": "REVIEW",
+      "ai_confidence": 0.72
+    },
+    {
+      "row": 25,
+      "column": "重要程度",
+      "column_level": "L2",
+      "old_value": "4",
+      "new_value": "1",
+      "score": 0.626,
+      "risk_level": "高风险",
+      "ai_decision": "REVIEW",
+      "ai_confidence": 0.85
+    },
+    {
+      "row": 27,
+      "column": "形成计划清单",
+      "column_level": "L3",
+      "old_value": "原始形成计划清单_48",
+      "new_value": "修改形成计划清单_28",
+      "score": 0.177,
+      "risk_level": "低风险"
+    },
+    {
+      "row": 13,
+      "column": "任务发起时间",
+      "column_level": "L3",
+      "old_value": "2025/7/1",
+      "new_value": "2025/8/18",
+      "score": 0.116,
+      "risk_level": "低风险"
+    },
+    {
+      "row": 15,
+      "column": "来源",
+      "column_level": "L3",
+      "old_value": "战略项目调整",
+      "new_value": "临时紧急任务",
+      "score": 0.13,
+      "risk_level": "低风险"
+    },
+    {
+      "row": 18,
+      "column": "任务发起时间",
+      "column_level": "L3",
+      "old_value": "2025/7/8",
+      "new_value": "2025/8/29",
+      "score": 0.203,
+      "risk_level": "低风险"
+    },
+    {
+      "row": 14,
+      "column": "项目类型",
+      "column_level": "L1",
+      "old_value": "内容策划",
+      "new_value": "流程优化",
+      "score": 0.989,
+      "risk_level": "极高风险"
+    },
+    {
+      "row": 6,
+      "column": "关键KR对齐",
+      "column_level": "L1",
+      "old_value": "原始关键KR对齐_28",
+      "new_value": "修改关键KR对齐_19",
+      "score": 0.945,
+      "risk_level": "极高风险"
+    },
+    {
+      "row": 19,
+      "column": "重要程度",
+      "column_level": "L2",
+      "old_value": "4",
+      "new_value": "2",
+      "score": 0.558,
+      "risk_level": "中风险",
+      "ai_decision": "REVIEW",
+      "ai_confidence": 0.76
+    },
+    {
+      "row": 5,
+      "column": "来源",
+      "column_level": "L3",
+      "old_value": "经理日常交办",
+      "new_value": "客户需求反馈,月度规划",
+      "score": 0.177,
+      "risk_level": "低风险"
+    },
+    {
+      "row": 27,
+      "column": "应用情况",
+      "column_level": "L3",
+      "old_value": "原始应用情况_80",
+      "new_value": "修改应用情况_10",
+      "score": 0.342,
+      "risk_level": "低风险"
+    },
+    {
+      "row": 10,
+      "column": "负责人",
+      "column_level": "L2",
+      "old_value": "王五",
+      "new_value": "王五",
+      "score": 0.679,
+      "risk_level": "高风险",
+      "ai_decision": "REVIEW",
+      "ai_confidence": 0.87
+    },
+    {
+      "row": 12,
+      "column": "协助人",
+      "column_level": "L2",
+      "old_value": "陈小明",
+      "new_value": "李月",
+      "score": 0.472,
+      "risk_level": "中风险",
+      "ai_decision": "APPROVE",
+      "ai_confidence": 0.75
+    },
+    {
+      "row": 12,
+      "column": "应用情况",
+      "column_level": "L3",
+      "old_value": "原始应用情况_24",
+      "new_value": "修改应用情况_73",
+      "score": 0.105,
+      "risk_level": "低风险"
+    },
+    {
+      "row": 16,
+      "column": "预计完成时间",
+      "column_level": "L2",
+      "old_value": "2025/7/12",
+      "new_value": "2025/8/16",
+      "score": 0.65,
+      "risk_level": "高风险",
+      "ai_decision": "REVIEW",
+      "ai_confidence": 0.9
+    },
+    {
+      "row": 2,
+      "column": "关键KR对齐",
+      "column_level": "L1",
+      "old_value": "原始关键KR对齐_5",
+      "new_value": "修改关键KR对齐_22",
+      "score": 0.931,
+      "risk_level": "极高风险"
+    },
+    {
+      "row": 6,
+      "column": "来源",
+      "column_level": "L3",
+      "old_value": "战略项目调整",
+      "new_value": "战略项目调整",
+      "score": 0.224,
+      "risk_level": "低风险"
+    },
+    {
+      "row": 15,
+      "column": "负责人",
+      "column_level": "L2",
+      "old_value": "邓总",
+      "new_value": "李月",
+      "score": 0.453,
+      "risk_level": "中风险",
+      "ai_decision": "APPROVE",
+      "ai_confidence": 0.93
+    },
+    {
+      "row": 20,
+      "column": "目标对齐",
+      "column_level": "L1",
+      "old_value": "原始目标对齐_44",
+      "new_value": "修改目标对齐_57",
+      "score": 0.861,
+      "risk_level": "极高风险"
+    },
+    {
+      "row": 12,
+      "column": "完成进度",
+      "column_level": "L2",
+      "old_value": "50%",
+      "new_value": "90%",
+      "score": 0.542,
+      "risk_level": "中风险",
+      "ai_decision": "REVIEW",
+      "ai_confidence": 0.86
+    },
+    {
+      "row": 21,
+      "column": "目标对齐",
+      "column_level": "L1",
+      "old_value": "原始目标对齐_54",
+      "new_value": "修改目标对齐_68",
+      "score": 0.828,
+      "risk_level": "极高风险"
+    }
+  ],
+  "overall_risk_score": 0.529
+}

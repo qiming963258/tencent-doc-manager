@@ -1,0 +1,64 @@
+{
+  "metadata": {
+    "analysis_time": "2025-09-15 14:40:50",
+    "total_modifications": 1,
+    "layer1_passed": 0,
+    "layer2_analyzed": 1,
+    "processing_time": "21.1s"
+  },
+  "results": [
+    {
+      "modification_id": "M001",
+      "cell": "I29",
+      "column": "负责人",
+      "old_value": "蔡悦莹",
+      "new_value": "0529-",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 85.0,
+        "reason": "负责人变更"
+      },
+      "layer2_result": {
+        "risk_level": "CRITICAL",
+        "decision": "REJECT",
+        "confidence": 95,
+        "key_risks": [
+          "责任人字段被替换为无意义数字串，导致责任主体缺失",
+          "项目跟踪出现断点，无法明确任务归属",
+          "可能影响相关工作的审批和进度确认",
+          "团队协作中无法识别实际负责人"
+        ],
+        "recommendation": "1.立即核实修改意图\n2.恢复有效负责人姓名\n3.如确需变更，应明确新负责人完整信息\n4.建立负责人字段修改审批流程\n5.检查关联文档同步更新情况",
+        "analysis": {
+          "change_nature": "性质改变（责任人→非责任人标识）",
+          "impact_scores": {
+            "project_objective": 9,
+            "execution_plan": 8,
+            "team_collaboration": 9,
+            "delivery_timeline": 7
+          },
+          "special_checks": {
+            "responsibility_clear": false,
+            "traceability": false,
+            "authority_match": false,
+            "historical_records": "断裂风险"
+          }
+        }
+      },
+      "final_decision": "REJECT",
+      "approval_required": true
+    }
+  ],
+  "summary": {
+    "approved": 0,
+    "conditional": 0,
+    "review_required": 0,
+    "rejected": 1,
+    "risk_distribution": {
+      "LOW": 0,
+      "MEDIUM": 0,
+      "HIGH": 0,
+      "CRITICAL": 1
+    }
+  }
+}

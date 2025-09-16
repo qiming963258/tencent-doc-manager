@@ -1,0 +1,46 @@
+{
+  "workflow_id": "WF-L2-20250908_142116",
+  "created_time": "2025-09-08 14:21:16",
+  "pending_approvals": [],
+  "auto_approved": [
+    {
+      "modification_id": "M001",
+      "cell": "J12",
+      "column": "负责人",
+      "old_value": "赖铁荔",
+      "new_value": "赖铁荔,各责任人",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 75.0,
+        "reason": "多人负责"
+      },
+      "layer2_result": {
+        "risk_level": "MEDIUM",
+        "decision": "CONDITIONAL",
+        "confidence": 70,
+        "key_risks": [
+          "责任模糊化风险：从单人负责变为多人负责可能降低明确性",
+          "协调成本增加：需要额外建立多责任人协作机制",
+          "决策效率降低：关键节点可能需要多方确认"
+        ],
+        "recommendation": "建议补充说明：1)各责任人的具体分工范围 2)最终决策权归属 3)冲突解决机制。同时更新相关RACI矩阵文档。该修改需同步通知所有相关方并获得确认。",
+        "analysis_details": {
+          "change_nature": "性质改变（从明确责任人变为共享责任）",
+          "impact_assessment": {
+            "project_objectives": 4,
+            "execution_plan": 5,
+            "team_collaboration": 7,
+            "delivery_timeline": 3
+          },
+          "special_checks": {
+            "responsibility_clarity": "需验证是否更新了相关责任文档",
+            "approval_chain": "需确认多责任人情况下的审批流程",
+            "historical_precedent": "检查项目历史是否存在类似变更"
+          }
+        }
+      },
+      "final_decision": "CONDITIONAL",
+      "approval_required": false
+    }
+  ]
+}

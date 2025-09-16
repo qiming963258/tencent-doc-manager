@@ -1,0 +1,13 @@
+{
+  "timestamp": "2025-08-28T16:31:08.256208",
+  "test_phase": "upload",
+  "modified_file": "/root/projects/tencent-doc-manager/real_test_results/complete_flow_test/测试版本-小红书部门_修改标记.xlsx",
+  "upload_result": {
+    "success": true,
+    "file_path": "/root/projects/tencent-doc-manager/real_test_results/complete_flow_test/测试版本-小红书部门_修改标记.xlsx",
+    "file_size": 5288,
+    "upload_timestamp": "2025-08-28T16:31:08.256105",
+    "target_url": "https://docs.qq.com/desktop",
+    "upload_method": "automated_browser_upload"
+  }
+}

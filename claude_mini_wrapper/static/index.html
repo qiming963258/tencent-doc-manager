@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Claude AI 测试界面</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans SC', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .container {
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            width: 100%;
+            max-width: 800px;
+            overflow: hidden;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 28px;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .status {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 14px;
+            margin-top: 10px;
+        }
+
+        .status-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: #10b981;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+
+        .chat-container {
+            padding: 30px;
+            height: 400px;
+            overflow-y: auto;
+            background: #f9fafb;
+        }
+
+        .message {
+            margin-bottom: 20px;
+            animation: fadeIn 0.3s ease-in;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .message-user {
+            text-align: right;
+        }
+
+        .message-content {
+            display: inline-block;
+            padding: 12px 18px;
+            border-radius: 18px;
+            max-width: 70%;
+            word-wrap: break-word;
+        }
+
+        .message-user .message-content {
+            background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+            color: white;
+        }
+
+        .message-assistant .message-content {
+            background: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .message-label {
+            font-size: 12px;
+            color: #6b7280;
+            margin-bottom: 5px;
+        }
+
+        .input-container {
+            padding: 20px 30px 30px;
+            background: white;
+            border-top: 1px solid #e5e7eb;
+        }
+
+        .input-wrapper {
+            display: flex;
+            gap: 10px;
+        }
+
+        .input-field {
+            flex: 1;
+            padding: 14px 20px;
+            border: 2px solid #e5e7eb;
+            border-radius: 12px;
+            font-size: 16px;
+            transition: all 0.3s;
+            outline: none;
+        }
+
+        .input-field:focus {
+            border-color: #6366f1;
+            box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
+        }
+
+        .send-button {
+            padding: 14px 28px;
+            background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+            color: white;
+            border: none;
+            border-radius: 12px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .send-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(99, 102, 241, 0.3);
+        }
+
+        .send-button:active {
+            transform: translateY(0);
+        }
+
+        .send-button:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .loading {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 3px solid #e5e7eb;
+            border-top-color: #6366f1;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        .quick-tests {
+            padding: 0 30px 20px;
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .quick-test-btn {
+            padding: 8px 16px;
+            background: #f3f4f6;
+            border: 1px solid #e5e7eb;
+            border-radius: 8px;
+            font-size: 14px;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .quick-test-btn:hover {
+            background: #e5e7eb;
+            transform: translateY(-1px);
+        }
+
+        .info-panel {
+            padding: 15px 30px;
+            background: #fef3c7;
+            border-left: 4px solid #f59e0b;
+            margin: 20px 30px;
+            border-radius: 8px;
+            font-size: 14px;
+            color: #92400e;
+        }
+
+        .model-info {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 5px 10px;
+            border-radius: 6px;
+            font-size: 12px;
+            color: #6b7280;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🤖 Claude AI 测试界面</h1>
+            <div class="status">
+                <span class="status-dot"></span>
+                <span>API 服务运行中</span>
+            </div>
+        </div>
+
+        <div class="info-panel">
+            💡 这是一个用于测试Claude API连通性的极简界面。输入问题并发送以测试AI响应。
+        </div>
+
+        <div class="quick-tests">
+            <button class="quick-test-btn" onclick="quickTest('你好，请介绍一下你自己')">基础测试</button>
+            <button class="quick-test-btn" onclick="quickTest('9.9和9.11哪个大？')">数学测试</button>
+            <button class="quick-test-btn" onclick="quickTest('将负责人从张三改为李四，风险等级如何？')">业务分析</button>
+            <button class="quick-test-btn" onclick="quickTest('请用JSON格式返回当前时间')">格式化测试</button>
+        </div>
+
+        <div class="chat-container" id="chatContainer">
+            <div class="message message-assistant">
+                <div class="message-label">Claude</div>
+                <div class="message-content">
+                    你好！我是Claude AI助手。请输入您的问题来测试API连接。
+                </div>
+            </div>
+        </div>
+
+        <div class="input-container">
+            <div class="input-wrapper">
+                <input 
+                    type="text" 
+                    class="input-field" 
+                    id="messageInput" 
+                    placeholder="输入您的问题..."
+                    onkeypress="handleKeyPress(event)"
+                >
+                <button class="send-button" id="sendButton" onclick="sendMessage()">
+                    发送
+                </button>
+            </div>
+        </div>
+
+        <div class="model-info" id="modelInfo">
+            模型: 加载中...
+        </div>
+    </div>
+
+    <script>
+        let isLoading = false;
+
+        // 页面加载时获取模型信息
+        window.onload = async function() {
+            try {
+                const response = await fetch('/health');
+                const data = await response.json();
+                document.getElementById('modelInfo').textContent = 
+                    `模型: ${data.models_available?.[0] || 'Unknown'}`;
+            } catch (error) {
+                console.error('Failed to fetch model info:', error);
+            }
+        };
+
+        function handleKeyPress(event) {
+            if (event.key === 'Enter' && !isLoading) {
+                sendMessage();
+            }
+        }
+
+        function quickTest(text) {
+            document.getElementById('messageInput').value = text;
+            sendMessage();
+        }
+
+        async function sendMessage() {
+            const input = document.getElementById('messageInput');
+            const message = input.value.trim();
+            
+            if (!message || isLoading) return;
+
+            isLoading = true;
+            const sendButton = document.getElementById('sendButton');
+            const originalText = sendButton.innerHTML;
+            sendButton.innerHTML = '<div class="loading"></div>';
+            sendButton.disabled = true;
+
+            // 添加用户消息
+            addMessage(message, 'user');
+            input.value = '';
+
+            try {
+                const response = await fetch('/chat', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        messages: [
+                            { role: 'user', content: message }
+                        ],
+                        max_tokens: 500
+                    })
+                });
+
+                const data = await response.json();
+                
+                if (response.ok) {
+                    const aiResponse = data.choices[0].message.content;
+                    addMessage(aiResponse, 'assistant');
+                    
+                    // 显示token使用情况
+                    if (data.usage) {
+                        console.log('Token usage:', data.usage);
+                    }
+                } else {
+                    addMessage(`错误: ${data.detail || '请求失败'}`, 'assistant');
+                }
+            } catch (error) {
+                addMessage(`连接错误: ${error.message}`, 'assistant');
+            } finally {
+                isLoading = false;
+                sendButton.innerHTML = originalText;
+                sendButton.disabled = false;
+                input.focus();
+            }
+        }
+
+        function addMessage(content, role) {
+            const chatContainer = document.getElementById('chatContainer');
+            const messageDiv = document.createElement('div');
+            messageDiv.className = `message message-${role}`;
+            
+            const label = document.createElement('div');
+            label.className = 'message-label';
+            label.textContent = role === 'user' ? '您' : 'Claude';
+            
+            const contentDiv = document.createElement('div');
+            contentDiv.className = 'message-content';
+            contentDiv.textContent = content;
+            
+            messageDiv.appendChild(label);
+            messageDiv.appendChild(contentDiv);
+            chatContainer.appendChild(messageDiv);
+            
+            // 滚动到底部
+            chatContainer.scrollTop = chatContainer.scrollHeight;
+        }
+    </script>
+</body>
+</html>

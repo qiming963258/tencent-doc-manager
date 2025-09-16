@@ -1,0 +1,33 @@
+{
+  "workflow_id": "WF-L2-20250915_183053",
+  "created_time": "2025-09-15 18:30:53",
+  "pending_approvals": [
+    {
+      "modification_id": "M001",
+      "cell": "C27",
+      "column": "项目类型",
+      "old_value": "目标管理",
+      "new_value": "",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 90.0,
+        "reason": "关键信息缺失"
+      },
+      "layer2_result": {
+        "risk_level": "HIGH",
+        "decision": "REVIEW",
+        "confidence": 85,
+        "key_risks": [
+          "项目性质不明确可能导致目标偏离",
+          "执行计划失去基准参考",
+          "团队工作方向混乱",
+          "交付时间估算失效"
+        ],
+        "recommendation": "必须补充完整项目类型信息。建议：1)恢复原值或填写明确的新项目类型；2)如确需留空，需同步更新项目章程和WBS文档；3)通知所有干系人此变更"
+      },
+      "final_decision": "REVIEW",
+      "approval_required": true
+    }
+  ],
+  "auto_approved": []
+}

@@ -1,0 +1,48 @@
+{
+  "metadata": {
+    "analysis_time": "2025-09-15 16:42:59",
+    "total_modifications": 1,
+    "layer1_passed": 0,
+    "layer2_analyzed": 1,
+    "processing_time": "13.3s"
+  },
+  "results": [
+    {
+      "modification_id": "M001",
+      "cell": "C6",
+      "column": "项目类型",
+      "old_value": "目标管理",
+      "new_value": "",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 80.0,
+        "reason": "关键信息缺失"
+      },
+      "layer2_result": {
+        "risk_level": "HIGH",
+        "decision": "REVIEW",
+        "confidence": 85,
+        "key_risks": [
+          "项目类型定义不清可能导致目标错位",
+          "空值状态违反数据完整性原则",
+          "影响下游依赖该字段的系统或流程"
+        ],
+        "recommendation": "1. 必须明确说明删除'目标管理'的原因\n2. 如确需清空，应提供替代方案或临时值\n3. 评估所有关联系统影响\n4. 建议在变更前完成影响分析报告\n5. 如需保留空值状态，应添加明确的占位符说明"
+      },
+      "final_decision": "REVIEW",
+      "approval_required": true
+    }
+  ],
+  "summary": {
+    "approved": 0,
+    "conditional": 0,
+    "review_required": 1,
+    "rejected": 0,
+    "risk_distribution": {
+      "LOW": 0,
+      "MEDIUM": 0,
+      "HIGH": 1,
+      "CRITICAL": 0
+    }
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "metadata": {
+    "analysis_time": "2025-09-15 18:22:14",
+    "total_modifications": 1,
+    "layer1_passed": 0,
+    "layer2_analyzed": 1,
+    "processing_time": "16.2s"
+  },
+  "results": [
+    {
+      "modification_id": "M001",
+      "cell": "C6",
+      "column": "项目类型",
+      "old_value": "目标管理",
+      "new_value": "",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 80.0,
+        "reason": "关键信息缺失"
+      },
+      "layer2_result": {
+        "risk_level": "HIGH",
+        "decision": "REVIEW",
+        "confidence": 85,
+        "key_risks": [
+          "项目类型清空可能导致后续工作方向不明确",
+          "缺少项目类型定义会严重影响项目分类和资源分配",
+          "可能违反项目管理规范中的必填字段要求"
+        ],
+        "recommendation": "1. 要求补充新值或恢复原值\n2. 如确需清空，需补充书面说明并获PMO批准\n3. 检查所有依赖项目类型的关联字段和报表"
+      },
+      "final_decision": "REVIEW",
+      "approval_required": true
+    }
+  ],
+  "summary": {
+    "approved": 0,
+    "conditional": 0,
+    "review_required": 1,
+    "rejected": 0,
+    "risk_distribution": {
+      "LOW": 0,
+      "MEDIUM": 0,
+      "HIGH": 1,
+      "CRITICAL": 0
+    }
+  }
+}

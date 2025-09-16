@@ -1,0 +1,61 @@
+{
+  "test_id": "heatmap_system_test_20250820_175454",
+  "start_time": "2025-08-20T17:54:54.792965",
+  "stages": {
+    "stage_1": {
+      "name": "Stage 1: Mock File Download (Skipped)",
+      "success": true,
+      "start_time": "2025-08-20T17:54:54.916753",
+      "end_time": "2025-08-20T17:54:54.916756",
+      "files_downloaded": {
+        "baseline": "test_baseline.xlsx",
+        "current": "test_current.xlsx"
+      },
+      "note": "Skipped for testing - using mock files"
+    },
+    "stage_2": {
+      "name": "Stage 2: CSV Conversion & Intelligent Comparison",
+      "success": false,
+      "start_time": "2025-08-20T17:54:54.916792",
+      "csv_files": {
+        "baseline": "/root/projects/tencent-doc-manager/test_data/test_baseline.csv",
+        "current": "/root/projects/tencent-doc-manager/test_data/test_current.csv"
+      },
+      "comparison_result": null,
+      "error": "'CSVSecurityManager' object has no attribute 'intelligent_csv_comparison'",
+      "end_time": "2025-08-20T17:54:54.916882"
+    },
+    "stage_3": {
+      "name": "Stage 3: MCP Auto Scoring & Color Filling",
+      "success": false,
+      "start_time": "2025-08-20T17:54:54.916974",
+      "mcp_output_file": null,
+      "coloring_stats": {},
+      "error": "'NoneType' object has no attribute 'get'",
+      "end_time": "2025-08-20T17:54:54.917006"
+    },
+    "stage_4": {
+      "name": "Stage 4: Mock Upload (Simulated)",
+      "success": true,
+      "start_time": "2025-08-20T17:54:54.917076",
+      "end_time": "2025-08-20T17:54:54.917079",
+      "note": "Simulated for testing"
+    },
+    "stage_5": {
+      "name": "Stage 5: UI Data Generation & Connectivity",
+      "success": false,
+      "start_time": "2025-08-20T17:54:54.917123",
+      "ui_data_file": null,
+      "connectivity_status": null,
+      "error": "'NoneType' object has no attribute 'get'",
+      "end_time": "2025-08-20T17:54:54.917151"
+    }
+  },
+  "overall_success": false,
+  "final_heatmap_status": null,
+  "verification_urls": [],
+  "end_time": "2025-08-20T17:54:54.917329",
+  "success_rate": 40.0,
+  "successful_stages": 2,
+  "total_stages": 5
+}

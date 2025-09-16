@@ -1,0 +1,87 @@
+{
+  "metadata": {
+    "analysis_time": "2025-09-08 16:07:09",
+    "total_modifications": 3,
+    "layer1_passed": 1,
+    "layer2_analyzed": 2,
+    "processing_time": "35.6s"
+  },
+  "results": [
+    {
+      "modification_id": "M001",
+      "cell": "C4",
+      "column": "项目类型",
+      "old_value": "目标管理",
+      "new_value": "体系建设",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 80.0,
+        "reason": "类型变更"
+      },
+      "layer2_result": {
+        "risk_level": "MEDIUM",
+        "decision": "REVIEW",
+        "confidence": 75,
+        "key_risks": [
+          "项目性质发生根本性变化可能导致原有资源配置不合理",
+          "目标管理体系与体系建设方法论存在差异可能影响项目交付标准"
+        ],
+        "recommendation": "建议召开项目变更评审会，重点评估：1)新项目类型对现有WBS结构的影响 2)是否需要调整项目管理方法论 3)相关方对新交付物的期望管理"
+      },
+      "final_decision": "REVIEW",
+      "approval_required": true
+    },
+    {
+      "modification_id": "M002",
+      "cell": "I11",
+      "column": "邓总指导登记（日更新）",
+      "old_value": "0813-\n1、根据周度运营数据识别出来的一般及无效笔记，分析对应的内容定位进行优化；\n2、系统功能下周一上线前，前置识别需要优化的内容定位进行调整\n3、下周一重点汇报半月度内容定位优化迭代进度、内容",
+      "new_value": "---0813-\n1、根据周度运营数据识别出来的一般及无效笔记，分析对应的内容定位进行优化；\n2、系统功能下周一上线前，前置识别需要优化的内容定位进行调整\n3、下周一重点汇报半月度内容定位优化迭代进度",
+      "layer1_result": {
+        "judgment": "SAFE",
+        "confidence": 90.0,
+        "reason": "格式微调"
+      },
+      "layer2_result": null,
+      "final_decision": "APPROVE",
+      "approval_required": false
+    },
+    {
+      "modification_id": "M003",
+      "cell": "J12",
+      "column": "负责人",
+      "old_value": "赖铁荔",
+      "new_value": "赖铁荔,各责任人",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 75.0,
+        "reason": "责任变更"
+      },
+      "layer2_result": {
+        "risk_level": "MEDIUM",
+        "decision": "CONDITIONAL",
+        "confidence": 80,
+        "key_risks": [
+          "责任主体模糊化风险：新增'各责任人'可能弱化主要责任人的决策权威",
+          "执行效率风险：多人共责可能导致任务响应延迟或推诿",
+          "信息传递风险：未明确指定具体协同责任人可能造成沟通断层"
+        ],
+        "recommendation": "建议补充说明以下内容后批准修改：1)'各责任人'的具体名单及分工 2)保留原负责人作为最终决策者 3)新增协作机制说明条款"
+      },
+      "final_decision": "CONDITIONAL",
+      "approval_required": false
+    }
+  ],
+  "summary": {
+    "approved": 1,
+    "conditional": 1,
+    "review_required": 1,
+    "rejected": 0,
+    "risk_distribution": {
+      "LOW": 1,
+      "MEDIUM": 0,
+      "HIGH": 1,
+      "CRITICAL": 0
+    }
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "metadata": {
+    "analysis_time": "2025-09-15 15:17:37",
+    "total_modifications": 1,
+    "layer1_passed": 0,
+    "layer2_analyzed": 1,
+    "processing_time": "13.0s"
+  },
+  "results": [
+    {
+      "modification_id": "M001",
+      "cell": "G67",
+      "column": "具体计划内容",
+      "old_value": "1.周度对账号数据看板更新\n2.账号数据指标有效性评估（员工共创指标关联性影响因素）\n3.数据复盘模板迭代优化",
+      "new_value": "新产品管理机制",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 90.0,
+        "reason": "内容替换"
+      },
+      "layer2_result": {
+        "risk_level": "HIGH",
+        "decision": "REVIEW",
+        "confidence": 85,
+        "key_risks": [
+          "原计划内容被完全替换，可能导致数据监控和评估工作缺失",
+          "新产品管理机制与原数据工作计划性质完全不同",
+          "未明确新产品管理机制与原有工作内容的衔接方式"
+        ],
+        "recommendation": "建议补充说明：1.为何要完全替换原有工作计划 2.新产品管理机制如何与原有数据工作衔接 3.是否需要保留部分数据监控工作。在未明确这些信息前，建议暂缓修改。"
+      },
+      "final_decision": "REVIEW",
+      "approval_required": true
+    }
+  ],
+  "summary": {
+    "approved": 0,
+    "conditional": 0,
+    "review_required": 1,
+    "rejected": 0,
+    "risk_distribution": {
+      "LOW": 0,
+      "MEDIUM": 0,
+      "HIGH": 1,
+      "CRITICAL": 0
+    }
+  }
+}

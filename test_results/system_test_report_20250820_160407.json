@@ -1,0 +1,521 @@
+{
+  "test_summary": {
+    "overall_grade": "B- (Needs Improvement)",
+    "overall_score": 71.1,
+    "total_tests": 12,
+    "passed_tests": 9,
+    "failed_tests": 3,
+    "total_duration": 45.77,
+    "timestamp": "2025-08-20T16:04:07.965684"
+  },
+  "component_scores": {
+    "Cookie Manager": 90.0,
+    "Upload Manager": 84.33333333333333,
+    "CSV Security Manager": 76.66666666666667,
+    "Claude API": 0.0,
+    "System Integration": 100.0
+  },
+  "detailed_results": {
+    "Cookie Manager": [
+      {
+        "component": "Cookie Manager",
+        "test_name": "Initialization",
+        "success": true,
+        "grade": "B+",
+        "score": 85.0,
+        "error": null,
+        "details": {
+          "initialized": true,
+          "encryption_enabled": true,
+          "config_loaded": true
+        },
+        "duration": 0.11929774284362793,
+        "timestamp": "2025-08-20T16:03:22.191142"
+      },
+      {
+        "component": "Cookie Manager",
+        "test_name": "Real Authentication Test",
+        "success": true,
+        "grade": "A",
+        "score": 95.0,
+        "error": null,
+        "details": {
+          "has_valid_cookies": true,
+          "authentication_working": true,
+          "validation_message": "Cookie有效，用户已登录"
+        },
+        "duration": 9.704574346542358,
+        "timestamp": "2025-08-20T16:03:22.310458"
+      },
+      {
+        "component": "Cookie Manager",
+        "test_name": "Health Status",
+        "success": true,
+        "grade": "A-",
+        "score": 90.0,
+        "error": null,
+        "details": {
+          "healthy": true,
+          "primary_cookie_valid": true,
+          "backup_cookies_count": 0,
+          "last_validation": "2025-08-20T15:31:41.150704",
+          "encryption_enabled": true,
+          "errors": []
+        },
+        "duration": 4.735514163970947,
+        "timestamp": "2025-08-20T16:03:32.015043"
+      }
+    ],
+    "Upload Manager": [
+      {
+        "component": "Upload Manager",
+        "test_name": "Initialization",
+        "success": true,
+        "grade": "B+",
+        "score": 85.0,
+        "error": null,
+        "details": {
+          "browser_initialized": true,
+          "headless_mode": true
+        },
+        "duration": 0.5325617790222168,
+        "timestamp": "2025-08-20T16:03:36.750626"
+      },
+      {
+        "component": "Upload Manager",
+        "test_name": "Cookie Setup",
+        "success": true,
+        "grade": "B",
+        "score": 80.0,
+        "error": null,
+        "details": {
+          "cookie_setup_successful": true,
+          "authentication_ready": true
+        },
+        "duration": 5.296016216278076,
+        "timestamp": "2025-08-20T16:03:37.418696"
+      },
+      {
+        "component": "Upload Manager",
+        "test_name": "System Status",
+        "success": true,
+        "grade": "A-",
+        "score": 88.0,
+        "error": null,
+        "details": {
+          "browser_ready": true,
+          "cookie_health": {
+            "healthy": true,
+            "primary_cookie_valid": true,
+            "backup_cookies_count": 0,
+            "last_validation": "2025-08-20T15:31:41.150704",
+            "encryption_enabled": true,
+            "errors": []
+          },
+          "stats": {
+            "uploads": {
+              "success": 0,
+              "failed": 0,
+              "total": 0
+            },
+            "downloads": {
+              "success": 0,
+              "failed": 0,
+              "total": 0
+            },
+            "cookie_refreshes": 1,
+            "session_start": "2025-08-20T16:03:42.775072"
+          },
+          "success_rate": {
+            "uploads": 0.0,
+            "downloads": 0.0
+          },
+          "directories": {
+            "upload_dir": "/root/projects/tencent-doc-manager/uploads",
+            "download_dir": "/root/projects/tencent-doc-manager/downloads",
+            "records_dir": "/root/projects/tencent-doc-manager/upload_records"
+          }
+        },
+        "duration": 10.01114535331726,
+        "timestamp": "2025-08-20T16:03:42.774959"
+      }
+    ],
+    "CSV Security Manager": [
+      {
+        "component": "CSV Security Manager",
+        "test_name": "Initialization",
+        "success": true,
+        "grade": "A",
+        "score": 95.0,
+        "error": null,
+        "details": {
+          "initialized": true,
+          "security_config_loaded": true,
+          "directories_created": true
+        },
+        "duration": 0.0003304481506347656,
+        "timestamp": "2025-08-20T16:03:52.845720"
+      },
+      {
+        "component": "CSV Security Manager",
+        "test_name": "CSV Comparison",
+        "success": true,
+        "grade": "B+",
+        "score": 80.0,
+        "error": null,
+        "details": {
+          "success": true,
+          "analysis_name": "test_comparison",
+          "analysis_time": "2025-08-20T16:03:52.849677",
+          "files_analyzed": {
+            "baseline": "test_baseline.csv",
+            "current": "test_current.csv",
+            "baseline_checksum": "679dc783929bae8048d15c63c885b40fcb5e72329d311375ede941e6aff5588a",
+            "current_checksum": "830aa7e8ebf454c3c5fcddc19d668b88eca08bf8407c52067a729eadc2502977"
+          },
+          "comparison_summary": {
+            "total_differences": 1,
+            "security_score": 80.0,
+            "risk_level": "L3 - 低风险",
+            "processing_time": 0.002685
+          },
+          "security_assessment": {
+            "timestamp": "2025-08-20T16:03:52.849623",
+            "overall_risk_grade": "LOW",
+            "critical_findings": [],
+            "security_metrics": {
+              "security_score": 80.0,
+              "total_differences": 1,
+              "max_risk_score": 0.2,
+              "security_violations_count": 0,
+              "processing_time": 0.002685
+            },
+            "compliance_status": {
+              "data_integrity": true,
+              "audit_trail": true,
+              "access_control": true,
+              "encryption": true,
+              "backup_required": false
+            },
+            "requires_archival": false,
+            "requires_approval": false
+          },
+          "intelligent_recommendations": [
+            {
+              "priority": "LOW",
+              "category": "best_practice",
+              "title": "定期安全检查",
+              "description": "建议建立定期的数据安全检查机制",
+              "action": "regular_audit"
+            }
+          ],
+          "detailed_results": {
+            "differences": [
+              {
+                "序号": 1,
+                "行号": 2,
+                "列名": "status",
+                "列索引": 4,
+                "原值": "正常",
+                "新值": "离职",
+                "位置": "行2列4(status)",
+                "映射列名": null,
+                "比较时间": "2025-08-20T16:03:52.847649",
+                "risk_level": "L3",
+                "risk_score": 0.2,
+                "security_multiplier": 1.0,
+                "text_change_ratio": 0.5
+              }
+            ],
+            "metadata": {
+              "file1_info": {
+                "encoding": "utf-8-sig",
+                "rows": 4,
+                "columns": 4,
+                "file_size": 104,
+                "checksum": "679dc783929bae8048d15c63c885b40fcb5e72329d311375ede941e6aff5588a"
+              },
+              "file2_info": {
+                "encoding": "utf-8-sig",
+                "rows": 5,
+                "columns": 4,
+                "file_size": 126,
+                "checksum": "830aa7e8ebf454c3c5fcddc19d668b88eca08bf8407c52067a729eadc2502977"
+              },
+              "column_mapping": {
+                "mapping": {
+                  "id": "id",
+                  "name": "name",
+                  "department": "department",
+                  "status": "status"
+                },
+                "confidence_scores": {
+                  "id": 1.0,
+                  "name": 1.0,
+                  "department": 1.0,
+                  "status": 1.0
+                },
+                "mapping_rate": 100.0
+              },
+              "risk_analysis": {
+                "security_score": 80.0,
+                "average_risk_score": 0.2,
+                "max_risk_score": 0.2,
+                "risk_distribution": {
+                  "L1": 0,
+                  "L2": 0,
+                  "L3": 1
+                },
+                "security_violations": [],
+                "total_risks": 1
+              },
+              "audit_log_entries": 1
+            }
+          },
+          "session_stats": {
+            "session_start": "2025-08-20T16:03:52.846138",
+            "comparisons_total": 1,
+            "comparisons_success": 0,
+            "comparisons_failed": 0,
+            "security_violations_detected": 0,
+            "high_risk_changes": 0,
+            "medium_risk_changes": 0,
+            "low_risk_changes": 1
+          }
+        },
+        "duration": 0.004036664962768555,
+        "timestamp": "2025-08-20T16:03:52.846055"
+      },
+      {
+        "component": "CSV Security Manager",
+        "test_name": "System Status",
+        "success": false,
+        "grade": "C",
+        "score": 55.0,
+        "error": "System performance below optimal",
+        "details": {
+          "system_grade": "🔴 C (需要优化)",
+          "success_rate": "0.0%",
+          "session_stats": {
+            "session_start": "2025-08-20T16:03:52.850190",
+            "comparisons_total": 0,
+            "comparisons_success": 0,
+            "comparisons_failed": 0,
+            "security_violations_detected": 0,
+            "high_risk_changes": 0,
+            "medium_risk_changes": 0,
+            "low_risk_changes": 0
+          },
+          "security_subsystem": {
+            "security_config": {
+              "max_file_size": "100.0MB",
+              "max_rows": 500000,
+              "max_columns": 1000,
+              "allowed_extensions": [
+                ".csv",
+                ".xlsx",
+                ".xls"
+              ],
+              "security_features": [
+                "checksum_validation",
+                "audit_logging",
+                "sensitive_content_detection"
+              ]
+            },
+            "audit_log_entries": 0,
+            "risk_levels_config": {
+              "L1": {
+                "score": 1.0,
+                "name": "绝对不能修改",
+                "color": "red"
+              },
+              "L2": {
+                "score": 0.6,
+                "name": "需要语义审核",
+                "color": "orange"
+              },
+              "L3": {
+                "score": 0.2,
+                "name": "可自由编辑",
+                "color": "green"
+              }
+            },
+            "standard_columns_count": 19,
+            "system_status": "operational"
+          },
+          "cookie_subsystem": {
+            "healthy": true,
+            "primary_cookie_valid": true,
+            "backup_cookies_count": 0,
+            "last_validation": "2025-08-20T15:31:41.150704",
+            "encryption_enabled": true,
+            "errors": []
+          },
+          "directories": {
+            "results_dir": "/root/projects/tencent-doc-manager/csv_security_results",
+            "archive_dir": "/root/projects/tencent-doc-manager/csv_security_archive"
+          },
+          "capabilities": [
+            "intelligent_csv_comparison",
+            "security_risk_assessment",
+            "automated_recommendations",
+            "audit_logging",
+            "checksum_validation",
+            "sensitive_content_detection",
+            "compliance_monitoring"
+          ]
+        },
+        "duration": 4.760601043701172,
+        "timestamp": "2025-08-20T16:03:52.850096"
+      }
+    ],
+    "Claude API": [
+      {
+        "component": "Claude API",
+        "test_name": "Connectivity Test",
+        "success": false,
+        "grade": "F",
+        "score": 0.0,
+        "error": "Claude API at port 8081 not accessible",
+        "details": {},
+        "duration": 0.004153728485107422,
+        "timestamp": "2025-08-20T16:03:57.610771"
+      },
+      {
+        "component": "Claude API",
+        "test_name": "Performance & Reliability Test",
+        "success": false,
+        "grade": "D",
+        "score": 0.0,
+        "error": "High failure rate: 100.0%",
+        "details": {
+          "success_rate": "0.0%",
+          "failure_rate": "100.0%",
+          "successful_requests": 0,
+          "total_requests": 20,
+          "performance_grade": "Poor"
+        },
+        "duration": 0.013088464736938477,
+        "timestamp": "2025-08-20T16:03:57.615037"
+      }
+    ],
+    "System Integration": [
+      {
+        "component": "System Integration",
+        "test_name": "End-to-End Workflow",
+        "success": true,
+        "grade": "A",
+        "score": 100.0,
+        "error": null,
+        "details": {
+          "cookie_system": true,
+          "upload_system": true,
+          "csv_system": true,
+          "integration_status": "Excellent"
+        },
+        "duration": 10.337260723114014,
+        "timestamp": "2025-08-20T16:03:57.628255"
+      }
+    ]
+  },
+  "critical_issues": [
+    {
+      "component": "Claude API",
+      "test": "Connectivity Test",
+      "issue": "Claude API at port 8081 not accessible",
+      "impact": "High"
+    },
+    {
+      "component": "Claude API",
+      "test": "Performance & Reliability Test",
+      "issue": "High failure rate: 100.0%",
+      "impact": "High"
+    }
+  ],
+  "production_readiness": {
+    "readiness_level": "NEARLY READY",
+    "readiness_percentage": 80.0,
+    "deployment_recommendation": "Minor fixes needed before production",
+    "component_status": {
+      "authentication_system": true,
+      "upload_system": true,
+      "data_processing": true,
+      "ai_integration": false,
+      "end_to_end_workflow": true
+    },
+    "blocking_issues": [
+      "Claude API at port 8081 not accessible",
+      "High failure rate: 100.0%"
+    ]
+  },
+  "recommendations": [
+    {
+      "priority": "HIGH",
+      "component": "Claude API",
+      "issue": "API connectivity or performance issues",
+      "recommendation": "Verify Claude API server at port 8081 and implement better error handling",
+      "impact": "Improves AI analysis reliability"
+    }
+  ],
+  "verification_against_claims": {
+    "cookie_single_point_failure": {
+      "claim_verified": false,
+      "actual_success_rate": "100.0%",
+      "assessment": "RESOLVED"
+    },
+    "upload_100_percent_failure": {
+      "claim_verified": false,
+      "actual_success_rate": "100.0%",
+      "assessment": "RESOLVED"
+    },
+    "claude_api_11_percent_failure": {
+      "claim_verified": true,
+      "actual_failure_rate": "100.0%",
+      "assessment": "CONFIRMED"
+    },
+    "system_d_plus_grade": {
+      "claim_verified": false,
+      "actual_grade": "B- (Needs Improvement)",
+      "actual_score": "71.1%",
+      "assessment": "IMPROVED"
+    }
+  },
+  "system_capabilities": {
+    "working_features": [
+      {
+        "component": "Cookie Manager",
+        "score": 90.0,
+        "status": "OPERATIONAL"
+      },
+      {
+        "component": "Upload Manager",
+        "score": 84.3,
+        "status": "OPERATIONAL"
+      },
+      {
+        "component": "System Integration",
+        "score": 100.0,
+        "status": "OPERATIONAL"
+      }
+    ],
+    "partially_working_features": [
+      {
+        "component": "CSV Security Manager",
+        "score": 76.7,
+        "status": "NEEDS_IMPROVEMENT"
+      }
+    ],
+    "broken_features": [
+      {
+        "component": "Claude API",
+        "score": 0.0,
+        "status": "CRITICAL_FAILURE"
+      }
+    ],
+    "recommended_priorities": [
+      "FIX CRITICAL FAILURES FIRST",
+      "IMPROVE PARTIALLY WORKING SYSTEMS",
+      "ACHIEVE FULL SYSTEM INTEGRATION"
+    ]
+  }
+}

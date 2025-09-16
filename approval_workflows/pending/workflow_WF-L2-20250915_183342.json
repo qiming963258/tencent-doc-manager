@@ -1,0 +1,32 @@
+{
+  "workflow_id": "WF-L2-20250915_183342",
+  "created_time": "2025-09-15 18:33:42",
+  "pending_approvals": [
+    {
+      "modification_id": "M001",
+      "cell": "K29",
+      "column": "协助人",
+      "old_value": "各责任人",
+      "new_value": "",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 80.0,
+        "reason": "责任不明确"
+      },
+      "layer2_result": {
+        "risk_level": "HIGH",
+        "decision": "REVIEW",
+        "confidence": 85,
+        "key_risks": [
+          "责任归属模糊化导致执行真空",
+          "协作机制弱化影响任务推进",
+          "关键路径任务可能缺乏必要支持"
+        ],
+        "recommendation": "建议补充明确协助人名单或保留原值。如需清空该字段，应同步更新RACI矩阵确保所有任务有明确责任人，并评估是否需要调整项目管理计划中的协作机制。修改前需获得PMO批准并通知所有干系人。"
+      },
+      "final_decision": "REVIEW",
+      "approval_required": true
+    }
+  ],
+  "auto_approved": []
+}

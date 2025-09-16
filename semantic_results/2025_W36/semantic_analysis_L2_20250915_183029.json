@@ -1,0 +1,48 @@
+{
+  "metadata": {
+    "analysis_time": "2025-09-15 18:30:29",
+    "total_modifications": 1,
+    "layer1_passed": 0,
+    "layer2_analyzed": 1,
+    "processing_time": "11.5s"
+  },
+  "results": [
+    {
+      "modification_id": "M001",
+      "cell": "I25",
+      "column": "邓总指导登记（日更新）",
+      "old_value": "\n\n晒单项目现阶段需要瀚桔介入些许给跨部门进行打板示范协助解决卡点问题\n\n",
+      "new_value": "",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 90.0,
+        "reason": "删除内容"
+      },
+      "layer2_result": {
+        "risk_level": "HIGH",
+        "decision": "REVIEW",
+        "confidence": 85,
+        "key_risks": [
+          "信息完全丢失风险",
+          "关键指导记录缺失",
+          "跨部门协调依据消失"
+        ],
+        "recommendation": "建议立即核实修改原因：1.如果是误操作，应恢复原值并记录事件；2.如果是经批准的正式变更，应在单元格添加变更注释说明原因；3.若需清空该记录，应在项目管理系统中对应位置补充变更说明文档。同时检查该列其他单元格是否出现类似情况。"
+      },
+      "final_decision": "REVIEW",
+      "approval_required": true
+    }
+  ],
+  "summary": {
+    "approved": 0,
+    "conditional": 0,
+    "review_required": 1,
+    "rejected": 0,
+    "risk_distribution": {
+      "LOW": 0,
+      "MEDIUM": 0,
+      "HIGH": 1,
+      "CRITICAL": 0
+    }
+  }
+}

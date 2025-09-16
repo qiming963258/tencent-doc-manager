@@ -1,0 +1,32 @@
+{
+  "workflow_id": "WF-L2-20250915_165205",
+  "created_time": "2025-09-15 16:52:05",
+  "pending_approvals": [
+    {
+      "modification_id": "M001",
+      "cell": "I25",
+      "column": "邓总指导登记（日更新）",
+      "old_value": "\n\n晒单项目现阶段需要瀚桔介入些许给跨部门进行打板示范协助解决卡点问题\n\n",
+      "new_value": "",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 90.0,
+        "reason": "删除内容"
+      },
+      "layer2_result": {
+        "risk_level": "CRITICAL",
+        "decision": "REVIEW",
+        "confidence": 90,
+        "key_risks": [
+          "关键信息被完全删除，可能导致跨部门协作方向不明确",
+          "邓总指导记录失去具体工作内容依据",
+          "项目卡点解决进度无法追踪"
+        ],
+        "recommendation": "建议：1. 要求修改者补充新的指导内容或恢复原值 2. 如确需清空，需同步书面说明原因并抄送相关干系人 3. 更新后需重新登记具体卡点解决方案"
+      },
+      "final_decision": "REVIEW",
+      "approval_required": true
+    }
+  ],
+  "auto_approved": []
+}

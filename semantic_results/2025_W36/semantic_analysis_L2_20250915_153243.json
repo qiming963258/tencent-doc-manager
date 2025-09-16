@@ -1,0 +1,49 @@
+{
+  "metadata": {
+    "analysis_time": "2025-09-15 15:32:43",
+    "total_modifications": 1,
+    "layer1_passed": 0,
+    "layer2_analyzed": 1,
+    "processing_time": "16.6s"
+  },
+  "results": [
+    {
+      "modification_id": "M001",
+      "cell": "I82",
+      "column": "负责人",
+      "old_value": "徐志杰",
+      "new_value": "",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 80.0,
+        "reason": "移除负责人"
+      },
+      "layer2_result": {
+        "risk_level": "HIGH",
+        "decision": "REVIEW",
+        "confidence": 85,
+        "key_risks": [
+          "负责人信息被清空可能导致任务无人负责",
+          "关键角色缺失可能导致任务执行停滞",
+          "团队协作可能因责任不明确而受影响",
+          "项目进度可能因责任缺失而延误"
+        ],
+        "recommendation": "建议立即补充负责人信息或明确该任务的处理方案。如需删除负责人，应确保有相应的任务重新分配或调整计划。该修改必须经过项目经理审批确认。"
+      },
+      "final_decision": "REVIEW",
+      "approval_required": true
+    }
+  ],
+  "summary": {
+    "approved": 0,
+    "conditional": 0,
+    "review_required": 1,
+    "rejected": 0,
+    "risk_distribution": {
+      "LOW": 0,
+      "MEDIUM": 0,
+      "HIGH": 1,
+      "CRITICAL": 0
+    }
+  }
+}

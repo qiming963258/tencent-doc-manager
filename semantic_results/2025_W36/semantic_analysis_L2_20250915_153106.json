@@ -1,0 +1,48 @@
+{
+  "metadata": {
+    "analysis_time": "2025-09-15 15:31:06",
+    "total_modifications": 1,
+    "layer1_passed": 0,
+    "layer2_analyzed": 1,
+    "processing_time": "16.7s"
+  },
+  "results": [
+    {
+      "modification_id": "M001",
+      "cell": "K80",
+      "column": "监督人",
+      "old_value": "邓总",
+      "new_value": "",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 75.0,
+        "reason": "删除监督人"
+      },
+      "layer2_result": {
+        "risk_level": "MEDIUM",
+        "decision": "REVIEW",
+        "confidence": 75,
+        "key_risks": [
+          "监督人角色空白可能导致项目监督缺位",
+          "关键决策点可能缺乏必要审批",
+          "团队沟通渠道可能中断"
+        ],
+        "recommendation": "建议：1.明确说明删除监督人的原因 2.提供替代监督方案(如临时监督人) 3.评估是否需要重新分配监督职责 4.更新相关项目文件中的监督流程说明"
+      },
+      "final_decision": "REVIEW",
+      "approval_required": true
+    }
+  ],
+  "summary": {
+    "approved": 0,
+    "conditional": 0,
+    "review_required": 1,
+    "rejected": 0,
+    "risk_distribution": {
+      "LOW": 0,
+      "MEDIUM": 0,
+      "HIGH": 1,
+      "CRITICAL": 0
+    }
+  }
+}

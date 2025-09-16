@@ -1,0 +1,48 @@
+{
+  "metadata": {
+    "analysis_time": "2025-09-15 16:42:33",
+    "total_modifications": 1,
+    "layer1_passed": 0,
+    "layer2_analyzed": 1,
+    "processing_time": "18.0s"
+  },
+  "results": [
+    {
+      "modification_id": "M001",
+      "cell": "H5",
+      "column": "具体计划内容",
+      "old_value": "1、负责目标的维度表梳理，设定工作计划，紧急重要的节前节中，重要不紧急的节后\n2、团队事项分工：如玉佳承接事项，需有中长期的事项计划",
+      "new_value": "月度人力资源管理工作计划（仓库与回国）",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 80.0,
+        "reason": "内容变更"
+      },
+      "layer2_result": {
+        "risk_level": "HIGH",
+        "decision": "REVIEW",
+        "confidence": 85,
+        "key_risks": [
+          "计划内容从具体任务描述变为笼统主题，可能导致执行方向模糊",
+          "原计划中明确的团队分工(POC)和事项优先级被删除",
+          "失去原有的时间节点管理指导(节前/节中/节后)"
+        ],
+        "recommendation": "建议补充说明：1)新计划与原有目标维度的关联性 2)具体的执行方案和责任人 3)明确的时间节点。若无补充说明需评估是否需重新制定计划。"
+      },
+      "final_decision": "REVIEW",
+      "approval_required": true
+    }
+  ],
+  "summary": {
+    "approved": 0,
+    "conditional": 0,
+    "review_required": 1,
+    "rejected": 0,
+    "risk_distribution": {
+      "LOW": 0,
+      "MEDIUM": 0,
+      "HIGH": 1,
+      "CRITICAL": 0
+    }
+  }
+}

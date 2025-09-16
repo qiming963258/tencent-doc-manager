@@ -1,0 +1,48 @@
+{
+  "metadata": {
+    "analysis_time": "2025-09-15 15:20:47",
+    "total_modifications": 1,
+    "layer1_passed": 0,
+    "layer2_analyzed": 1,
+    "processing_time": "17.7s"
+  },
+  "results": [
+    {
+      "modification_id": "M001",
+      "cell": "G70",
+      "column": "具体计划内容",
+      "old_value": "3.部门设备清点，对应人员持有设备对应【用途】进行梳理\n@新媒体运营-朱瀚桔",
+      "new_value": "利润目标管理建立",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 90.0,
+        "reason": "目标变更"
+      },
+      "layer2_result": {
+        "risk_level": "HIGH",
+        "decision": "REVIEW",
+        "confidence": 85,
+        "key_risks": [
+          "计划性质完全改变：从设备管理变为利润管理，可能导致资源分配冲突",
+          "责任主体不明确：新值删除了原指定责任人，缺少执行主体",
+          "项目范围偏移：设备清点是基础工作，突然变更为利润目标可能影响整体项目规划"
+        ],
+        "recommendation": "建议：1) 明确利润目标管理的具体责任人和执行方案 2) 评估设备清点工作是否仍需执行 3) 召开跨部门协调会确认该变更的必要性和优先级。必须补充修订说明和影响分析报告后方可批准。"
+      },
+      "final_decision": "REVIEW",
+      "approval_required": true
+    }
+  ],
+  "summary": {
+    "approved": 0,
+    "conditional": 0,
+    "review_required": 1,
+    "rejected": 0,
+    "risk_distribution": {
+      "LOW": 0,
+      "MEDIUM": 0,
+      "HIGH": 1,
+      "CRITICAL": 0
+    }
+  }
+}

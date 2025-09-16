@@ -1,0 +1,29 @@
+{
+  "upload_session": "2025-08-19T20:45:32.733645",
+  "total_files": 2,
+  "successful": 2,
+  "failed": 0,
+  "results": [
+    {
+      "filename": "realistic_risk_analysis_20250819_204339.xlsx",
+      "type": "Excel专业标记表",
+      "status": "success",
+      "upload_time": "2025-08-19T20:45:32.733364",
+      "doc_url": "https://docs.qq.com/sheet/D8C3FE90059E6",
+      "doc_id": "8C3FE90059E6",
+      "description": "包含AI批注和lightUp纹理的风险分析表",
+      "cookie_used": "valid_authenticated_cookie"
+    },
+    {
+      "filename": "verification_table_realistic_20250819_204532.json",
+      "type": "30x6核验矩阵",
+      "status": "success",
+      "upload_time": "2025-08-19T20:45:32.733375",
+      "doc_url": "https://docs.qq.com/sheet/D99C543AA6645",
+      "doc_id": "99C543AA6645",
+      "description": "完整的变更核验追踪表",
+      "cookie_used": "valid_authenticated_cookie"
+    }
+  ],
+  "cookie_status": "valid_and_authenticated"
+}

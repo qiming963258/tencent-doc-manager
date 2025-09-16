@@ -1,0 +1,47 @@
+{
+  "metadata": {
+    "analysis_time": "2025-09-15 16:50:22",
+    "total_modifications": 1,
+    "layer1_passed": 0,
+    "layer2_analyzed": 1,
+    "processing_time": "13.8s"
+  },
+  "results": [
+    {
+      "modification_id": "M001",
+      "cell": "I21",
+      "column": "邓总指导登记（日更新）",
+      "old_value": "0724-",
+      "new_value": "",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 90.0,
+        "reason": "删除内容"
+      },
+      "layer2_result": {
+        "risk_level": "LOW",
+        "decision": "REVIEW",
+        "confidence": 85,
+        "key_risks": [
+          "记录不完整可能导致未来参考缺失",
+          "领导指导信息缺失可能影响执行方向"
+        ],
+        "recommendation": "建议确认该单元格留空的原因：1.如果是数据暂未更新，需标注'待更新'状态；2.如果是邓总当日无指导，建议填写'N/A'保持记录完整性。同时检查其他相关记录是否同步更新。"
+      },
+      "final_decision": "REVIEW",
+      "approval_required": true
+    }
+  ],
+  "summary": {
+    "approved": 0,
+    "conditional": 0,
+    "review_required": 1,
+    "rejected": 0,
+    "risk_distribution": {
+      "LOW": 0,
+      "MEDIUM": 0,
+      "HIGH": 1,
+      "CRITICAL": 0
+    }
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "workflow_id": "WF-L2-20250915_154309",
+  "created_time": "2025-09-15 15:43:09",
+  "pending_approvals": [],
+  "auto_approved": [
+    {
+      "modification_id": "M001",
+      "cell": "K93",
+      "column": "监督人",
+      "old_value": "徐志杰",
+      "new_value": "邓文",
+      "layer1_result": {
+        "judgment": "SAFE",
+        "confidence": 90.0,
+        "reason": "人员变更"
+      },
+      "layer2_result": null,
+      "final_decision": "APPROVE",
+      "approval_required": false
+    }
+  ]
+}

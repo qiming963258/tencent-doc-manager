@@ -1,0 +1,122 @@
+{
+  "cookies": [
+    {
+      "name": "fingerprint",
+      "value": "e979148633684123810b8625c5e988b082"
+    },
+    {
+      "name": "low_login_enable",
+      "value": "1"
+    },
+    {
+      "name": "RK",
+      "value": "MA/9rNDTsw"
+    },
+    {
+      "name": "ptcz",
+      "value": "af0b3d4029bba7dffa892366ad18dd8f4ff5aa12bc499e7dd00e3247fed6cbba"
+    },
+    {
+      "name": "DOC_QQ_APPID",
+      "value": "101458937"
+    },
+    {
+      "name": "polish_tooltip",
+      "value": "true"
+    },
+    {
+      "name": "pgv_pvid",
+      "value": "1277470832102926"
+    },
+    {
+      "name": "_qimei_uuid42",
+      "value": "1960c092216100a0a13d2af50c259fa2bbe9316a3d"
+    },
+    {
+      "name": "_qimei_h38",
+      "value": "8213826aa13d2af50c259fa202000009a1960c"
+    },
+    {
+      "name": "_qimei_fingerprint",
+      "value": "cb237a82a78862fdd0ebd18db76ab2f8"
+    },
+    {
+      "name": "adtag",
+      "value": "s_pcqq_liaotianjilu"
+    },
+    {
+      "name": "adtag",
+      "value": "s_pcqq_liaotianjilu"
+    },
+    {
+      "name": "_clck",
+      "value": "3990794656|1|fwy|0"
+    },
+    {
+      "name": "DOC_QQ_OPENID",
+      "value": "138EA9B807B6C2DCFE96C5B1A650E932"
+    },
+    {
+      "name": "dark_mode_setting",
+      "value": "system"
+    },
+    {
+      "name": "uid",
+      "value": "144115414584628119"
+    },
+    {
+      "name": "utype",
+      "value": "qq"
+    },
+    {
+      "name": "env_id",
+      "value": "gray-pct25"
+    },
+    {
+      "name": "gray_user",
+      "value": "true"
+    },
+    {
+      "name": "DOC_SID",
+      "value": "ec95c29d7ca948298ae4869ccdf3d6ac7946c1ae31ef4454b25c723572b0051b"
+    },
+    {
+      "name": "SID",
+      "value": "ec95c29d7ca948298ae4869ccdf3d6ac7946c1ae31ef4454b25c723572b0051b"
+    },
+    {
+      "name": "uid_key",
+      "value": "EOP1mMQHGixjdXdYOUF6V2cwTTM3eFB5TG9ob3RGVUJUM0p5eXFNb29qbEc2WmhWTFFvPSKBAmV5SmhiR2NpT2lKQlEwTkJURWNpTENKMGVYQWlPaUpLVjFRaWZRLmV5SlVhVzU1U1VRaU9pSXhORFF4TVRVME1UUTFPRFEyTWpneE1Ua2lMQ0pXWlhJaU9pSXhJaXdpUkc5dFlXbHVJam9pYzJGaGMxOTBiMk1pTENKU1ppSTZJbmhGYzNsWVZDSXNJbVY0Y0NJNk1UYzFPVFExTkRjNU1Td2lhV0YwSWpveE56VTJPRFl5TnpreExDSnBjM01pT2lKVVpXNWpaVzUwSUVSdlkzTWlmUS5YSGVTN3VEX2RUQ2NSMkNtN3VfZ2ZrNXhOZHpEZGFoLUU1a1F3Y2RYRDJ3KMfM%2FMYGMAE4%2BcewMEIgMTM4RUE5QjgwN0I2QzJEQ0ZFOTZDNUIxQTY1MEU5MzI%3D"
+    },
+    {
+      "name": "optimal_cdn_domain",
+      "value": "docs2.gtimg.com"
+    },
+    {
+      "name": "traceid",
+      "value": "0e07eb666b"
+    },
+    {
+      "name": "language",
+      "value": "zh-CN"
+    },
+    {
+      "name": "TOK",
+      "value": "0e07eb666ba9575c"
+    },
+    {
+      "name": "hashkey",
+      "value": "0e07eb66"
+    },
+    {
+      "name": "loginTime",
+      "value": "1757344191271"
+    },
+    {
+      "name": "backup_cdn_domain",
+      "value": "docs2.gtimg.com"
+    }
+  ],
+  "cookie_string": "fingerprint=e979148633684123810b8625c5e988b082; low_login_enable=1; RK=MA/9rNDTsw; ptcz=af0b3d4029bba7dffa892366ad18dd8f4ff5aa12bc499e7dd00e3247fed6cbba; DOC_QQ_APPID=101458937; polish_tooltip=true; pgv_pvid=1277470832102926; _qimei_uuid42=1960c092216100a0a13d2af50c259fa2bbe9316a3d; _qimei_h38=8213826aa13d2af50c259fa202000009a1960c; _qimei_fingerprint=cb237a82a78862fdd0ebd18db76ab2f8; adtag=s_pcqq_liaotianjilu; adtag=s_pcqq_liaotianjilu; _clck=3990794656|1|fwy|0; DOC_QQ_OPENID=138EA9B807B6C2DCFE96C5B1A650E932; dark_mode_setting=system; uid=144115414584628119; utype=qq; env_id=gray-pct25; gray_user=true; DOC_SID=ec95c29d7ca948298ae4869ccdf3d6ac7946c1ae31ef4454b25c723572b0051b; SID=ec95c29d7ca948298ae4869ccdf3d6ac7946c1ae31ef4454b25c723572b0051b; uid_key=EOP1mMQHGixjdXdYOUF6V2cwTTM3eFB5TG9ob3RGVUJUM0p5eXFNb29qbEc2WmhWTFFvPSKBAmV5SmhiR2NpT2lKQlEwTkJURWNpTENKMGVYQWlPaUpLVjFRaWZRLmV5SlVhVzU1U1VRaU9pSXhORFF4TVRVME1UUTFPRFEyTWpneE1Ua2lMQ0pXWlhJaU9pSXhJaXdpUkc5dFlXbHVJam9pYzJGaGMxOTBiMk1pTENKU1ppSTZJbmhGYzNsWVZDSXNJbVY0Y0NJNk1UYzFPVFExTkRjNU1Td2lhV0YwSWpveE56VTJPRFl5TnpreExDSnBjM01pT2lKVVpXNWpaVzUwSUVSdlkzTWlmUS5YSGVTN3VEX2RUQ2NSMkNtN3VfZ2ZrNXhOZHpEZGFoLUU1a1F3Y2RYRDJ3KMfM%2FMYGMAE4%2BcewMEIgMTM4RUE5QjgwN0I2QzJEQ0ZFOTZDNUIxQTY1MEU5MzI%3D; optimal_cdn_domain=docs2.gtimg.com; traceid=0e07eb666b; language=zh-CN; TOK=0e07eb666ba9575c; hashkey=0e07eb66; loginTime=1757344191271; backup_cdn_domain=docs2.gtimg.com",
+  "last_updated": "2025-09-09 22:24:45"
+}

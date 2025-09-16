@@ -1,0 +1,48 @@
+{
+  "metadata": {
+    "analysis_time": "2025-09-15 18:24:06",
+    "total_modifications": 1,
+    "layer1_passed": 0,
+    "layer2_analyzed": 1,
+    "processing_time": "16.1s"
+  },
+  "results": [
+    {
+      "modification_id": "M001",
+      "cell": "C10",
+      "column": "项目类型",
+      "old_value": "目标管理",
+      "new_value": "项目管理",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 80.0,
+        "reason": "核心概念变更"
+      },
+      "layer2_result": {
+        "risk_level": "MEDIUM",
+        "decision": "REVIEW",
+        "confidence": 75,
+        "key_risks": [
+          "项目范围可能发生实质性改变",
+          "可能导致现有执行计划与项目类型不匹配",
+          "团队成员可能需要重新调整角色定位"
+        ],
+        "recommendation": "建议召开项目类型变更评审会，明确以下内容：1)新的项目类型的定义和边界；2)对现有项目计划的影响评估；3)必要时的计划调整方案。需获得所有关键干系人确认后方可执行变更。"
+      },
+      "final_decision": "REVIEW",
+      "approval_required": true
+    }
+  ],
+  "summary": {
+    "approved": 0,
+    "conditional": 0,
+    "review_required": 1,
+    "rejected": 0,
+    "risk_distribution": {
+      "LOW": 0,
+      "MEDIUM": 0,
+      "HIGH": 1,
+      "CRITICAL": 0
+    }
+  }
+}

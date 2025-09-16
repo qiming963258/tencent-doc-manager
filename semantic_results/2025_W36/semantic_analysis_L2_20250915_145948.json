@@ -1,0 +1,48 @@
+{
+  "metadata": {
+    "analysis_time": "2025-09-15 14:59:48",
+    "total_modifications": 1,
+    "layer1_passed": 0,
+    "layer2_analyzed": 1,
+    "processing_time": "15.6s"
+  },
+  "results": [
+    {
+      "modification_id": "M001",
+      "cell": "J48",
+      "column": "协助人",
+      "old_value": "徐志杰,朱瀚桔,杨佳玲,曾利萍,魏经理",
+      "new_value": "赖铁荔",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 80.0,
+        "reason": "人员变更"
+      },
+      "layer2_result": {
+        "risk_level": "HIGH",
+        "decision": "REVIEW",
+        "confidence": 85,
+        "key_risks": [
+          "协助人数量从5人大幅缩减至1人，可能导致资源不足",
+          "原有团队成员被全部替换，可能影响项目连续性",
+          "失去魏经理这一管理层的参与支持"
+        ],
+        "recommendation": "建议明确以下事项后方可批准：1) 新协助人赖铁荔是否具备足够能力承担所有协助工作；2) 为何要移除原有全部协助人；3) 是否有其他资源补充机制。同时建议保留至少1-2名原协助人作为过渡。"
+      },
+      "final_decision": "REVIEW",
+      "approval_required": true
+    }
+  ],
+  "summary": {
+    "approved": 0,
+    "conditional": 0,
+    "review_required": 1,
+    "rejected": 0,
+    "risk_distribution": {
+      "LOW": 0,
+      "MEDIUM": 0,
+      "HIGH": 1,
+      "CRITICAL": 0
+    }
+  }
+}

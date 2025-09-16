@@ -1,0 +1,48 @@
+{
+  "metadata": {
+    "analysis_time": "2025-09-15 18:32:20",
+    "total_modifications": 1,
+    "layer1_passed": 0,
+    "layer2_analyzed": 1,
+    "processing_time": "16.9s"
+  },
+  "results": [
+    {
+      "modification_id": "M001",
+      "cell": "H28",
+      "column": "具体计划内容",
+      "old_value": "针对咨询单件物品或不足一立方给出对应指导话术指导；",
+      "new_value": "",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 90.0,
+        "reason": "删除内容"
+      },
+      "layer2_result": {
+        "risk_level": "HIGH",
+        "decision": "REVIEW",
+        "confidence": 85,
+        "key_risks": [
+          "计划内容被完全清空可能导致业务指导缺失",
+          "项目执行缺乏具体指引标准",
+          "团队成员可能产生操作不一致问题"
+        ],
+        "recommendation": "建议明确说明删除该计划内容的原因，并确认是否有替代方案。如需删除，应同步更新相关培训材料和操作指南，并通知所有执行团队。在批准前需要项目负责人确认业务影响。"
+      },
+      "final_decision": "REVIEW",
+      "approval_required": true
+    }
+  ],
+  "summary": {
+    "approved": 0,
+    "conditional": 0,
+    "review_required": 1,
+    "rejected": 0,
+    "risk_distribution": {
+      "LOW": 0,
+      "MEDIUM": 0,
+      "HIGH": 1,
+      "CRITICAL": 0
+    }
+  }
+}

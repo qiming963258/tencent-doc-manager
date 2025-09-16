@@ -1,0 +1,33 @@
+{
+  "workflow_id": "WF-L2-20250915_152835",
+  "created_time": "2025-09-15 15:28:35",
+  "pending_approvals": [
+    {
+      "modification_id": "M001",
+      "cell": "G78",
+      "column": "具体计划内容",
+      "old_value": "1、周迪维度：以半月度为单位更新迭代回访机制sop@新媒体运营-朱瀚桔",
+      "new_value": "成本、产品、利润管理",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 80.0,
+        "reason": "内容替换"
+      },
+      "layer2_result": {
+        "risk_level": "HIGH",
+        "decision": "REVIEW",
+        "confidence": 85,
+        "key_risks": [
+          "内容性质完全改变，从执行细节变为管理范畴",
+          "原责任人分工(JHZ)被删除可能导致执行断层",
+          "管理类内容缺乏可执行细节",
+          "与'具体计划内容'字段定义存在偏差"
+        ],
+        "recommendation": "建议：1.核实修改意图是否应放入其他管理类字段；2.如需保留修改，应补充执行负责人和KPI；3.确认原回访机制sop是否需在其他位置保留。需业务方书面说明变更原因后方可批准。"
+      },
+      "final_decision": "REVIEW",
+      "approval_required": true
+    }
+  ],
+  "auto_approved": []
+}

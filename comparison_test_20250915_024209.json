@@ -1,0 +1,138 @@
+{
+  "test_time": "2025-09-15T02:42:09.721920",
+  "baseline_file": "/root/projects/tencent-doc-manager/csv_versions/2025_W38/baseline/tencent_出国销售计划表_20250915_0145_baseline_W38.csv",
+  "target_file": "/root/projects/tencent-doc-manager/csv_versions/2025_W38/midweek/tencent_111测试版本-出国销售计划表-工作表1_20250915_0239_midweek_W38.csv",
+  "total_changes": 18,
+  "change_stats": {
+    "cell_changed": 18
+  },
+  "key_changes_count": 6,
+  "sample_changes": [
+    {
+      "type": "cell_changed",
+      "row": 3,
+      "col": 1,
+      "old_value": "",
+      "new_value": "123"
+    },
+    {
+      "type": "cell_changed",
+      "row": 4,
+      "col": 2,
+      "old_value": "目标管理",
+      "new_value": "体系建设"
+    },
+    {
+      "type": "cell_changed",
+      "row": 5,
+      "col": 3,
+      "old_value": "总经理交办",
+      "new_value": "总助检查整改"
+    },
+    {
+      "type": "cell_changed",
+      "row": 6,
+      "col": 4,
+      "old_value": "2025/3/13",
+      "new_value": "2025/3/21"
+    },
+    {
+      "type": "cell_changed",
+      "row": 6,
+      "col": 5,
+      "old_value": "成本利润管理",
+      "new_value": "风险及异常订单管理"
+    },
+    {
+      "type": "cell_changed",
+      "row": 7,
+      "col": 6,
+      "old_value": "资源转化",
+      "new_value": "123123"
+    },
+    {
+      "type": "cell_changed",
+      "row": 8,
+      "col": 7,
+      "old_value": "清单计划的罗列整改",
+      "new_value": "123123"
+    },
+    {
+      "type": "cell_changed",
+      "row": 9,
+      "col": 8,
+      "old_value": "",
+      "new_value": "123123"
+    },
+    {
+      "type": "cell_changed",
+      "row": 10,
+      "col": 9,
+      "old_value": "赖铁荔",
+      "new_value": "王寒晓,各责任人"
+    },
+    {
+      "type": "cell_changed",
+      "row": 11,
+      "col": 10,
+      "old_value": "杨顺鑫",
+      "new_value": "赖铁荔"
+    },
+    {
+      "type": "cell_changed",
+      "row": 12,
+      "col": 11,
+      "old_value": "0",
+      "new_value": "4"
+    },
+    {
+      "type": "cell_changed",
+      "row": 13,
+      "col": 12,
+      "old_value": "",
+      "new_value": "2025/9/25"
+    },
+    {
+      "type": "cell_changed",
+      "row": 14,
+      "col": 13,
+      "old_value": "问题问诊与帮扶素材案例库",
+      "new_value": "123123123"
+    },
+    {
+      "type": "cell_changed",
+      "row": 15,
+      "col": 14,
+      "old_value": "100%",
+      "new_value": "12%"
+    },
+    {
+      "type": "cell_changed",
+      "row": 16,
+      "col": 15,
+      "old_value": "2025/5/26",
+      "new_value": "2025/5/28"
+    },
+    {
+      "type": "cell_changed",
+      "row": 17,
+      "col": 16,
+      "old_value": "已汇报已结项",
+      "new_value": "尚未汇报"
+    },
+    {
+      "type": "cell_changed",
+      "row": 18,
+      "col": 17,
+      "old_value": "已纳入目标管理维度",
+      "new_value": "已应用未落地的项目"
+    },
+    {
+      "type": "cell_changed",
+      "row": 19,
+      "col": 18,
+      "old_value": "",
+      "new_value": "123123"
+    }
+  ]
+}

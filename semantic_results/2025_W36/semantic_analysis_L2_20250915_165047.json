@@ -1,0 +1,48 @@
+{
+  "metadata": {
+    "analysis_time": "2025-09-15 16:50:47",
+    "total_modifications": 1,
+    "layer1_passed": 0,
+    "layer2_analyzed": 1,
+    "processing_time": "10.8s"
+  },
+  "results": [
+    {
+      "modification_id": "M001",
+      "cell": "I22",
+      "column": "邓总指导登记（日更新）",
+      "old_value": "\n1、悦莹根据当前内容定位的工作流及管理，识别需要系统协助的功能提交经理打通系统看板及部分智能化的功能上线；",
+      "new_value": "",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 90.0,
+        "reason": "删除内容"
+      },
+      "layer2_result": {
+        "risk_level": "MEDIUM",
+        "decision": "REVIEW",
+        "confidence": 75,
+        "key_risks": [
+          "清空邓总指导内容可能影响工作推进方向",
+          "删减特定工作说明可能导致执行偏差",
+          "日更新机制失效影响管理层监控"
+        ],
+        "recommendation": "1. 确认是否为误操作或刻意删除\n2. 如需清空，建议补充说明原因或替代方案\n3. 评估受影响工作流是否已转移至其他追踪机制\n4. 与邓总确认该指导事项是否已完成或取消"
+      },
+      "final_decision": "REVIEW",
+      "approval_required": true
+    }
+  ],
+  "summary": {
+    "approved": 0,
+    "conditional": 0,
+    "review_required": 1,
+    "rejected": 0,
+    "risk_distribution": {
+      "LOW": 0,
+      "MEDIUM": 0,
+      "HIGH": 1,
+      "CRITICAL": 0
+    }
+  }
+}

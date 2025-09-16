@@ -1,0 +1,32 @@
+{
+  "workflow_id": "WF-L2-20250915_152142",
+  "created_time": "2025-09-15 15:21:42",
+  "pending_approvals": [
+    {
+      "modification_id": "M001",
+      "cell": "G71",
+      "column": "具体计划内容",
+      "old_value": "【账号认证】\n企业号年审延期事项：\n1、回国账号【名称审核周期异常】，与客服沟通频率为2次/日；年审目前2028年-2030年",
+      "new_value": "利润目标管理建立",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 90.0,
+        "reason": "主题变更"
+      },
+      "layer2_result": {
+        "risk_level": "HIGH",
+        "decision": "REVIEW",
+        "confidence": 85,
+        "key_risks": [
+          "项目目标不明确，原账号认证工作被替换为利润目标管理，可能导致项目方向偏移",
+          "执行计划中断，原计划中的企业号年审延期事项被删除，可能影响业务合规性",
+          "团队协作需求变化，从客服沟通转为财务目标管理，需要重新分配资源"
+        ],
+        "recommendation": "建议与相关方确认变更原因，评估项目目标是否需要调整，并确保企业号年审延期事项有其他处理方案。修改前应明确利润目标管理的具体内容和与当前项目的关联性。"
+      },
+      "final_decision": "REVIEW",
+      "approval_required": true
+    }
+  ],
+  "auto_approved": []
+}

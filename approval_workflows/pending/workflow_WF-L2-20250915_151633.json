@@ -1,0 +1,33 @@
+{
+  "workflow_id": "WF-L2-20250915_151633",
+  "created_time": "2025-09-15 15:16:33",
+  "pending_approvals": [
+    {
+      "modification_id": "M001",
+      "cell": "B66",
+      "column": "项目类型",
+      "old_value": "目标管理",
+      "new_value": "",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 80.0,
+        "reason": "关键信息缺失"
+      },
+      "layer2_result": {
+        "risk_level": "HIGH",
+        "decision": "REVIEW",
+        "confidence": 85,
+        "key_risks": [
+          "项目类型定义不明确导致目标偏离",
+          "执行计划可能需要进行重大调整",
+          "团队成员角色和责任可能受到影响",
+          "交付时间可能延长"
+        ],
+        "recommendation": "建议在修改项目类型前完成以下步骤：1) 明确新项目类型的定义和目标；2) 评估对现有执行计划的影响；3) 与团队沟通变更内容；4) 重新评估时间线。确保所有相关方都了解并同意变更。"
+      },
+      "final_decision": "REVIEW",
+      "approval_required": true
+    }
+  ],
+  "auto_approved": []
+}

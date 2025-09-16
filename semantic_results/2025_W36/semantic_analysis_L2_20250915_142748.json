@@ -1,0 +1,48 @@
+{
+  "metadata": {
+    "analysis_time": "2025-09-15 14:27:48",
+    "total_modifications": 1,
+    "layer1_passed": 0,
+    "layer2_analyzed": 1,
+    "processing_time": "14.7s"
+  },
+  "results": [
+    {
+      "modification_id": "M001",
+      "cell": "B16",
+      "column": "项目类型",
+      "old_value": "目标管理",
+      "new_value": "",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 80.0,
+        "reason": "关键字段空"
+      },
+      "layer2_result": {
+        "risk_level": "HIGH",
+        "decision": "REVIEW",
+        "confidence": 85,
+        "key_risks": [
+          "项目类型从'目标管理'变更为空值，可能导致项目性质不明确",
+          "空的项目类型可能导致执行计划和资源分配混乱",
+          "团队协作可能受到负面影响，因为角色和责任可能不清晰"
+        ],
+        "recommendation": "请确保在修改项目类型时为单元格B16提供一个明确的新值。建议补充项目类型，如'战略规划'或'运营优化'等，以保持项目目标和执行计划的清晰性。如果项目类型确实需要留空，应提供充分的理由并通知所有相关方。"
+      },
+      "final_decision": "REVIEW",
+      "approval_required": true
+    }
+  ],
+  "summary": {
+    "approved": 0,
+    "conditional": 0,
+    "review_required": 1,
+    "rejected": 0,
+    "risk_distribution": {
+      "LOW": 0,
+      "MEDIUM": 0,
+      "HIGH": 1,
+      "CRITICAL": 0
+    }
+  }
+}

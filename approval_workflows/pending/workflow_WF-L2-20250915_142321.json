@@ -1,0 +1,33 @@
+{
+  "workflow_id": "WF-L2-20250915_142321",
+  "created_time": "2025-09-15 14:23:21",
+  "pending_approvals": [
+    {
+      "modification_id": "M001",
+      "cell": "B11",
+      "column": "项目类型",
+      "old_value": "目标管理",
+      "new_value": "",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 80.0,
+        "reason": "关键信息缺失"
+      },
+      "layer2_result": {
+        "risk_level": "HIGH",
+        "decision": "REVIEW",
+        "confidence": 80,
+        "key_risks": [
+          "项目类型定义不明确可能导致目标不清晰",
+          "执行计划可能需要进行重大调整",
+          "团队可能对项目方向产生困惑",
+          "交付时间可能因重新规划而延迟"
+        ],
+        "recommendation": "建议补充完整的项目类型定义，并评估该变更对项目整体框架的影响。在批准前需要项目负责人确认新项目类型的详细说明和变更必要性。"
+      },
+      "final_decision": "REVIEW",
+      "approval_required": true
+    }
+  ],
+  "auto_approved": []
+}

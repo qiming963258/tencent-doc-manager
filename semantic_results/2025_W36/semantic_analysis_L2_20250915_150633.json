@@ -1,0 +1,49 @@
+{
+  "metadata": {
+    "analysis_time": "2025-09-15 15:06:33",
+    "total_modifications": 1,
+    "layer1_passed": 0,
+    "layer2_analyzed": 1,
+    "processing_time": "11.5s"
+  },
+  "results": [
+    {
+      "modification_id": "M001",
+      "cell": "B55",
+      "column": "项目类型",
+      "old_value": "目标管理",
+      "new_value": "",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 90.0,
+        "reason": "缺失关键信息"
+      },
+      "layer2_result": {
+        "risk_level": "HIGH",
+        "decision": "REVIEW",
+        "confidence": 80,
+        "key_risks": [
+          "项目类型定义不清晰可能影响项目目标达成",
+          "空白项目类型可能导致资源分配混乱",
+          "执行计划可能失去基准方向",
+          "团队协作可能缺乏统一标准"
+        ],
+        "recommendation": "建议：\n1. 必须补充项目类型具体值\n2. 需要重新评估修改后的项目类型是否与项目目标一致\n3. 修改后需通知所有相关方并确认理解一致\n4. 如果改为其他类型，需要同步更新相关管理计划"
+      },
+      "final_decision": "REVIEW",
+      "approval_required": true
+    }
+  ],
+  "summary": {
+    "approved": 0,
+    "conditional": 0,
+    "review_required": 1,
+    "rejected": 0,
+    "risk_distribution": {
+      "LOW": 0,
+      "MEDIUM": 0,
+      "HIGH": 1,
+      "CRITICAL": 0
+    }
+  }
+}

@@ -1,0 +1,49 @@
+{
+  "metadata": {
+    "analysis_time": "2025-09-15 15:32:16",
+    "total_modifications": 1,
+    "layer1_passed": 0,
+    "layer2_analyzed": 1,
+    "processing_time": "22.3s"
+  },
+  "results": [
+    {
+      "modification_id": "M001",
+      "cell": "B82",
+      "column": "项目类型",
+      "old_value": "目标管理",
+      "new_value": "",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 80.0,
+        "reason": "关键信息缺失"
+      },
+      "layer2_result": {
+        "risk_level": "CRITICAL",
+        "decision": "REVIEW",
+        "confidence": 85,
+        "key_risks": [
+          "项目性质完全改变可能导致目标失焦",
+          "执行计划需要全面重构",
+          "团队角色和协作模式需重大调整",
+          "交付时间可能大幅延迟"
+        ],
+        "recommendation": "1.要求填写方补充完整新项目类型\n2.组织专项评审会评估变更影响\n3.如确需变更，需同步更新：\n   -项目章程\n   -WBS分解\n   -资源分配计划\n4.建立变更追踪机制，监控后续影响"
+      },
+      "final_decision": "REVIEW",
+      "approval_required": true
+    }
+  ],
+  "summary": {
+    "approved": 0,
+    "conditional": 0,
+    "review_required": 1,
+    "rejected": 0,
+    "risk_distribution": {
+      "LOW": 0,
+      "MEDIUM": 0,
+      "HIGH": 1,
+      "CRITICAL": 0
+    }
+  }
+}

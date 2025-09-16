@@ -1,0 +1,32 @@
+{
+  "workflow_id": "WF-L2-20250915_144601",
+  "created_time": "2025-09-15 14:46:01",
+  "pending_approvals": [],
+  "auto_approved": [
+    {
+      "modification_id": "M001",
+      "cell": "K34",
+      "column": "监督人",
+      "old_value": "徐志杰",
+      "new_value": "赖铁荔",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 75.0,
+        "reason": "更换监督人"
+      },
+      "layer2_result": {
+        "risk_level": "MEDIUM",
+        "decision": "CONDITIONAL",
+        "confidence": 75,
+        "key_risks": [
+          "监督人变更可能导致项目监督风格和标准不一致",
+          "新监督人需要时间熟悉项目进度和团队成员",
+          "可能影响团队与监督人之间的既有沟通模式"
+        ],
+        "recommendation": "1. 确保新旧监督人进行充分交接\n2. 安排新监督人与团队关键成员进行沟通\n3. 更新相关文档并通知所有利益相关者\n4. 监控变更后1-2周内的项目执行情况"
+      },
+      "final_decision": "CONDITIONAL",
+      "approval_required": false
+    }
+  ]
+}

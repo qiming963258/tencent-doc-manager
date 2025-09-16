@@ -1,0 +1,49 @@
+{
+  "metadata": {
+    "analysis_time": "2025-09-15 15:10:28",
+    "total_modifications": 1,
+    "layer1_passed": 0,
+    "layer2_analyzed": 1,
+    "processing_time": "12.1s"
+  },
+  "results": [
+    {
+      "modification_id": "M001",
+      "cell": "G59",
+      "column": "具体计划内容",
+      "old_value": "新员工外部互暖试点工程的应用与落地\n1、外部付费互暖规则建立\n2、外部互暖群的渠道搭建\n@新媒体运营-朱瀚桔",
+      "new_value": "新产品技能与管理流程拉通",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 80.0,
+        "reason": "重大内容变更"
+      },
+      "layer2_result": {
+        "risk_level": "HIGH",
+        "decision": "REVIEW",
+        "confidence": 85,
+        "key_risks": [
+          "项目目标发生实质性改变",
+          "执行计划需要完全重构",
+          "原定负责人朱瀚桔可能不再适用",
+          "交付时间可能受到影响"
+        ],
+        "recommendation": "建议召开项目变更评审会议，明确以下事项：1. 新计划与项目整体目标的匹配性 2. 新计划的可执行性和资源需求 3. 是否需要调整项目组成员 4. 对项目时间表的影响评估。在未完成评估前暂缓实施此变更。"
+      },
+      "final_decision": "REVIEW",
+      "approval_required": true
+    }
+  ],
+  "summary": {
+    "approved": 0,
+    "conditional": 0,
+    "review_required": 1,
+    "rejected": 0,
+    "risk_distribution": {
+      "LOW": 0,
+      "MEDIUM": 0,
+      "HIGH": 1,
+      "CRITICAL": 0
+    }
+  }
+}

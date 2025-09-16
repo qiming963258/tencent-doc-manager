@@ -1,0 +1,21 @@
+{
+  "workflow_timestamp": "2025-08-28T17:48:00.277812",
+  "overall_success": false,
+  "modification_phase": {
+    "success": true,
+    "modified_file": "/root/projects/tencent-doc-manager/real_test_results/direct_download_174042/测试版本-回国销售计划表_I6修改.xlsx",
+    "original_size": 12347,
+    "modified_size": 11706,
+    "modification_content": "【已修改】测试内容",
+    "cell_location": "I6",
+    "timestamp": "2025-08-28T17:47:22.781040"
+  },
+  "upload_phase": {
+    "success": false,
+    "error": "Timeout 30000ms exceeded."
+  },
+  "target_document": {
+    "url": "https://docs.qq.com/sheet/DRFppYm15RGZ2WExN",
+    "name": "测试版本-回国销售计划表"
+  }
+}

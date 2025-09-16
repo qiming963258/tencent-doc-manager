@@ -1,0 +1,47 @@
+{
+  "metadata": {
+    "analysis_time": "2025-09-08 13:55:11",
+    "total_modifications": 1,
+    "layer1_passed": 0,
+    "layer2_analyzed": 1,
+    "processing_time": "9.5s"
+  },
+  "results": [
+    {
+      "modification_id": "M001",
+      "cell": "A1",
+      "column": "项目类型",
+      "old_value": "目标管理",
+      "new_value": "体系建设",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 75.0,
+        "reason": "概念转换"
+      },
+      "layer2_result": {
+        "risk_level": "MEDIUM",
+        "decision": "REVIEW",
+        "confidence": 75,
+        "key_risks": [
+          "项目性质的潜在重大转变",
+          "可能导致项目目标不清晰"
+        ],
+        "recommendation": "建议组织项目相关方会议，明确'体系建设'的具体含义和预期成果，并评估是否需要调整项目章程和范围说明书。同时需要检查项目预算和资源分配是否需要相应调整。"
+      },
+      "final_decision": "REVIEW",
+      "approval_required": true
+    }
+  ],
+  "summary": {
+    "approved": 0,
+    "conditional": 0,
+    "review_required": 1,
+    "rejected": 0,
+    "risk_distribution": {
+      "LOW": 0,
+      "MEDIUM": 0,
+      "HIGH": 1,
+      "CRITICAL": 0
+    }
+  }
+}

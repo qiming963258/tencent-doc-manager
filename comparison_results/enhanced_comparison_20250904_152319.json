@@ -1,0 +1,603 @@
+{
+  "metadata": {
+    "timestamp": "20250904_152319",
+    "baseline_file": "/root/projects/tencent-doc-manager/csv_versions/2025_W36/baseline/tencent_副本-副本-测试版本-出国销售计划表-工作表1_csv_20250903_1200_baseline_W36.csv",
+    "target_file": "/root/projects/tencent-doc-manager/csv_versions/2025_W36/midweek/tencent_副本-副本-测试版本-出国销售计划表-工作表1_csv_20250904_1417_midweek_W36.csv",
+    "document_name": "副本-副本-测试版本-出国销售计划表-工作表1",
+    "document_type": "🏢 真实",
+    "is_real_document": true
+  },
+  "summary": {
+    "similarity_score": 0.9865047233468286,
+    "total_differences": 40,
+    "modified_cells": 40,
+    "added_rows": 0,
+    "deleted_rows": 0
+  },
+  "details": {
+    "modified_cells": [
+      {
+        "cell": "P107",
+        "column": "P",
+        "column_name": "经理分析复盘",
+        "row_number": 107,
+        "baseline_value": "",
+        "target_value": "最新复盘时间"
+      },
+      {
+        "cell": "Q107",
+        "column": "Q",
+        "column_name": "",
+        "row_number": 107,
+        "baseline_value": "",
+        "target_value": "对上汇报"
+      },
+      {
+        "cell": "R107",
+        "column": "R",
+        "column_name": "",
+        "row_number": 107,
+        "baseline_value": "",
+        "target_value": "应用情况"
+      },
+      {
+        "cell": "S107",
+        "column": "S",
+        "column_name": "",
+        "row_number": 107,
+        "baseline_value": "",
+        "target_value": "分析总结"
+      },
+      {
+        "cell": "P108",
+        "column": "P",
+        "column_name": "经理分析复盘",
+        "row_number": 108,
+        "baseline_value": "",
+        "target_value": "最新复盘时间"
+      },
+      {
+        "cell": "Q108",
+        "column": "Q",
+        "column_name": "",
+        "row_number": 108,
+        "baseline_value": "",
+        "target_value": "对上汇报"
+      },
+      {
+        "cell": "R108",
+        "column": "R",
+        "column_name": "",
+        "row_number": 108,
+        "baseline_value": "",
+        "target_value": "应用情况"
+      },
+      {
+        "cell": "S108",
+        "column": "S",
+        "column_name": "",
+        "row_number": 108,
+        "baseline_value": "",
+        "target_value": "分析总结"
+      },
+      {
+        "cell": "P109",
+        "column": "P",
+        "column_name": "经理分析复盘",
+        "row_number": 109,
+        "baseline_value": "",
+        "target_value": "最新复盘时间"
+      },
+      {
+        "cell": "Q109",
+        "column": "Q",
+        "column_name": "",
+        "row_number": 109,
+        "baseline_value": "",
+        "target_value": "对上汇报"
+      },
+      {
+        "cell": "R109",
+        "column": "R",
+        "column_name": "",
+        "row_number": 109,
+        "baseline_value": "",
+        "target_value": "应用情况"
+      },
+      {
+        "cell": "S109",
+        "column": "S",
+        "column_name": "",
+        "row_number": 109,
+        "baseline_value": "",
+        "target_value": "分析总结"
+      },
+      {
+        "cell": "P110",
+        "column": "P",
+        "column_name": "经理分析复盘",
+        "row_number": 110,
+        "baseline_value": "",
+        "target_value": "最新复盘时间"
+      },
+      {
+        "cell": "Q110",
+        "column": "Q",
+        "column_name": "",
+        "row_number": 110,
+        "baseline_value": "",
+        "target_value": "对上汇报"
+      },
+      {
+        "cell": "R110",
+        "column": "R",
+        "column_name": "",
+        "row_number": 110,
+        "baseline_value": "",
+        "target_value": "应用情况"
+      },
+      {
+        "cell": "S110",
+        "column": "S",
+        "column_name": "",
+        "row_number": 110,
+        "baseline_value": "",
+        "target_value": "分析总结"
+      },
+      {
+        "cell": "P111",
+        "column": "P",
+        "column_name": "经理分析复盘",
+        "row_number": 111,
+        "baseline_value": "",
+        "target_value": "最新复盘时间"
+      },
+      {
+        "cell": "Q111",
+        "column": "Q",
+        "column_name": "",
+        "row_number": 111,
+        "baseline_value": "",
+        "target_value": "对上汇报"
+      },
+      {
+        "cell": "R111",
+        "column": "R",
+        "column_name": "",
+        "row_number": 111,
+        "baseline_value": "",
+        "target_value": "应用情况"
+      },
+      {
+        "cell": "S111",
+        "column": "S",
+        "column_name": "",
+        "row_number": 111,
+        "baseline_value": "",
+        "target_value": "分析总结"
+      }
+    ],
+    "added_rows": [],
+    "deleted_rows": []
+  },
+  "difference_parameters": [
+    "P107_经理分析复盘_|最新复盘时间",
+    "Q107__|对上汇报",
+    "R107__|应用情况",
+    "S107__|分析总结",
+    "P108_经理分析复盘_|最新复盘时间",
+    "Q108__|对上汇报",
+    "R108__|应用情况",
+    "S108__|分析总结",
+    "P109_经理分析复盘_|最新复盘时间",
+    "Q109__|对上汇报",
+    "R109__|应用情况",
+    "S109__|分析总结",
+    "P110_经理分析复盘_|最新复盘时间",
+    "Q110__|对上汇报",
+    "R110__|应用情况",
+    "S110__|分析总结",
+    "P111_经理分析复盘_|最新复盘时间",
+    "Q111__|对上汇报",
+    "R111__|应用情况",
+    "S111__|分析总结",
+    "P112_经理分析复盘_|最新复盘时间",
+    "Q112__|对上汇报",
+    "R112__|应用情况",
+    "S112__|分析总结",
+    "P113_经理分析复盘_|最新复盘时间",
+    "Q113__|对上汇报",
+    "R113__|应用情况",
+    "S113__|分析总结",
+    "P114_经理分析复盘_|最新复盘时间",
+    "Q114__|对上汇报",
+    "R114__|应用情况",
+    "S114__|分析总结",
+    "P115_经理分析复盘_|最新复盘时间",
+    "Q115__|对上汇报",
+    "R115__|应用情况",
+    "S115__|分析总结",
+    "P116_经理分析复盘_|最新复盘时间",
+    "Q116__|对上汇报",
+    "R116__|应用情况",
+    "S116__|分析总结"
+  ],
+  "all_differences": {
+    "modified_cells": [
+      {
+        "cell": "P107",
+        "column": "P",
+        "column_name": "经理分析复盘",
+        "row_number": 107,
+        "baseline_value": "",
+        "target_value": "最新复盘时间"
+      },
+      {
+        "cell": "Q107",
+        "column": "Q",
+        "column_name": "",
+        "row_number": 107,
+        "baseline_value": "",
+        "target_value": "对上汇报"
+      },
+      {
+        "cell": "R107",
+        "column": "R",
+        "column_name": "",
+        "row_number": 107,
+        "baseline_value": "",
+        "target_value": "应用情况"
+      },
+      {
+        "cell": "S107",
+        "column": "S",
+        "column_name": "",
+        "row_number": 107,
+        "baseline_value": "",
+        "target_value": "分析总结"
+      },
+      {
+        "cell": "P108",
+        "column": "P",
+        "column_name": "经理分析复盘",
+        "row_number": 108,
+        "baseline_value": "",
+        "target_value": "最新复盘时间"
+      },
+      {
+        "cell": "Q108",
+        "column": "Q",
+        "column_name": "",
+        "row_number": 108,
+        "baseline_value": "",
+        "target_value": "对上汇报"
+      },
+      {
+        "cell": "R108",
+        "column": "R",
+        "column_name": "",
+        "row_number": 108,
+        "baseline_value": "",
+        "target_value": "应用情况"
+      },
+      {
+        "cell": "S108",
+        "column": "S",
+        "column_name": "",
+        "row_number": 108,
+        "baseline_value": "",
+        "target_value": "分析总结"
+      },
+      {
+        "cell": "P109",
+        "column": "P",
+        "column_name": "经理分析复盘",
+        "row_number": 109,
+        "baseline_value": "",
+        "target_value": "最新复盘时间"
+      },
+      {
+        "cell": "Q109",
+        "column": "Q",
+        "column_name": "",
+        "row_number": 109,
+        "baseline_value": "",
+        "target_value": "对上汇报"
+      },
+      {
+        "cell": "R109",
+        "column": "R",
+        "column_name": "",
+        "row_number": 109,
+        "baseline_value": "",
+        "target_value": "应用情况"
+      },
+      {
+        "cell": "S109",
+        "column": "S",
+        "column_name": "",
+        "row_number": 109,
+        "baseline_value": "",
+        "target_value": "分析总结"
+      },
+      {
+        "cell": "P110",
+        "column": "P",
+        "column_name": "经理分析复盘",
+        "row_number": 110,
+        "baseline_value": "",
+        "target_value": "最新复盘时间"
+      },
+      {
+        "cell": "Q110",
+        "column": "Q",
+        "column_name": "",
+        "row_number": 110,
+        "baseline_value": "",
+        "target_value": "对上汇报"
+      },
+      {
+        "cell": "R110",
+        "column": "R",
+        "column_name": "",
+        "row_number": 110,
+        "baseline_value": "",
+        "target_value": "应用情况"
+      },
+      {
+        "cell": "S110",
+        "column": "S",
+        "column_name": "",
+        "row_number": 110,
+        "baseline_value": "",
+        "target_value": "分析总结"
+      },
+      {
+        "cell": "P111",
+        "column": "P",
+        "column_name": "经理分析复盘",
+        "row_number": 111,
+        "baseline_value": "",
+        "target_value": "最新复盘时间"
+      },
+      {
+        "cell": "Q111",
+        "column": "Q",
+        "column_name": "",
+        "row_number": 111,
+        "baseline_value": "",
+        "target_value": "对上汇报"
+      },
+      {
+        "cell": "R111",
+        "column": "R",
+        "column_name": "",
+        "row_number": 111,
+        "baseline_value": "",
+        "target_value": "应用情况"
+      },
+      {
+        "cell": "S111",
+        "column": "S",
+        "column_name": "",
+        "row_number": 111,
+        "baseline_value": "",
+        "target_value": "分析总结"
+      },
+      {
+        "cell": "P112",
+        "column": "P",
+        "column_name": "经理分析复盘",
+        "row_number": 112,
+        "baseline_value": "",
+        "target_value": "最新复盘时间"
+      },
+      {
+        "cell": "Q112",
+        "column": "Q",
+        "column_name": "",
+        "row_number": 112,
+        "baseline_value": "",
+        "target_value": "对上汇报"
+      },
+      {
+        "cell": "R112",
+        "column": "R",
+        "column_name": "",
+        "row_number": 112,
+        "baseline_value": "",
+        "target_value": "应用情况"
+      },
+      {
+        "cell": "S112",
+        "column": "S",
+        "column_name": "",
+        "row_number": 112,
+        "baseline_value": "",
+        "target_value": "分析总结"
+      },
+      {
+        "cell": "P113",
+        "column": "P",
+        "column_name": "经理分析复盘",
+        "row_number": 113,
+        "baseline_value": "",
+        "target_value": "最新复盘时间"
+      },
+      {
+        "cell": "Q113",
+        "column": "Q",
+        "column_name": "",
+        "row_number": 113,
+        "baseline_value": "",
+        "target_value": "对上汇报"
+      },
+      {
+        "cell": "R113",
+        "column": "R",
+        "column_name": "",
+        "row_number": 113,
+        "baseline_value": "",
+        "target_value": "应用情况"
+      },
+      {
+        "cell": "S113",
+        "column": "S",
+        "column_name": "",
+        "row_number": 113,
+        "baseline_value": "",
+        "target_value": "分析总结"
+      },
+      {
+        "cell": "P114",
+        "column": "P",
+        "column_name": "经理分析复盘",
+        "row_number": 114,
+        "baseline_value": "",
+        "target_value": "最新复盘时间"
+      },
+      {
+        "cell": "Q114",
+        "column": "Q",
+        "column_name": "",
+        "row_number": 114,
+        "baseline_value": "",
+        "target_value": "对上汇报"
+      },
+      {
+        "cell": "R114",
+        "column": "R",
+        "column_name": "",
+        "row_number": 114,
+        "baseline_value": "",
+        "target_value": "应用情况"
+      },
+      {
+        "cell": "S114",
+        "column": "S",
+        "column_name": "",
+        "row_number": 114,
+        "baseline_value": "",
+        "target_value": "分析总结"
+      },
+      {
+        "cell": "P115",
+        "column": "P",
+        "column_name": "经理分析复盘",
+        "row_number": 115,
+        "baseline_value": "",
+        "target_value": "最新复盘时间"
+      },
+      {
+        "cell": "Q115",
+        "column": "Q",
+        "column_name": "",
+        "row_number": 115,
+        "baseline_value": "",
+        "target_value": "对上汇报"
+      },
+      {
+        "cell": "R115",
+        "column": "R",
+        "column_name": "",
+        "row_number": 115,
+        "baseline_value": "",
+        "target_value": "应用情况"
+      },
+      {
+        "cell": "S115",
+        "column": "S",
+        "column_name": "",
+        "row_number": 115,
+        "baseline_value": "",
+        "target_value": "分析总结"
+      },
+      {
+        "cell": "P116",
+        "column": "P",
+        "column_name": "经理分析复盘",
+        "row_number": 116,
+        "baseline_value": "",
+        "target_value": "最新复盘时间"
+      },
+      {
+        "cell": "Q116",
+        "column": "Q",
+        "column_name": "",
+        "row_number": 116,
+        "baseline_value": "",
+        "target_value": "对上汇报"
+      },
+      {
+        "cell": "R116",
+        "column": "R",
+        "column_name": "",
+        "row_number": 116,
+        "baseline_value": "",
+        "target_value": "应用情况"
+      },
+      {
+        "cell": "S116",
+        "column": "S",
+        "column_name": "",
+        "row_number": 116,
+        "baseline_value": "",
+        "target_value": "分析总结"
+      }
+    ],
+    "added_rows": [],
+    "deleted_rows": [],
+    "differences": [
+      "P107_经理分析复盘_|最新复盘时间",
+      "Q107__|对上汇报",
+      "R107__|应用情况",
+      "S107__|分析总结",
+      "P108_经理分析复盘_|最新复盘时间",
+      "Q108__|对上汇报",
+      "R108__|应用情况",
+      "S108__|分析总结",
+      "P109_经理分析复盘_|最新复盘时间",
+      "Q109__|对上汇报",
+      "R109__|应用情况",
+      "S109__|分析总结",
+      "P110_经理分析复盘_|最新复盘时间",
+      "Q110__|对上汇报",
+      "R110__|应用情况",
+      "S110__|分析总结",
+      "P111_经理分析复盘_|最新复盘时间",
+      "Q111__|对上汇报",
+      "R111__|应用情况",
+      "S111__|分析总结",
+      "P112_经理分析复盘_|最新复盘时间",
+      "Q112__|对上汇报",
+      "R112__|应用情况",
+      "S112__|分析总结",
+      "P113_经理分析复盘_|最新复盘时间",
+      "Q113__|对上汇报",
+      "R113__|应用情况",
+      "S113__|分析总结",
+      "P114_经理分析复盘_|最新复盘时间",
+      "Q114__|对上汇报",
+      "R114__|应用情况",
+      "S114__|分析总结",
+      "P115_经理分析复盘_|最新复盘时间",
+      "Q115__|对上汇报",
+      "R115__|应用情况",
+      "S115__|分析总结",
+      "P116_经理分析复盘_|最新复盘时间",
+      "Q116__|对上汇报",
+      "R116__|应用情况",
+      "S116__|分析总结"
+    ],
+    "total_differences": 40,
+    "total_added": 0,
+    "total_deleted": 0,
+    "total_modified_cells": 40
+  },
+  "execution_time": 0.015666,
+  "document_info": {
+    "name": "副本-副本-测试版本-出国销售计划表-工作表1",
+    "type": "🏢 真实",
+    "is_real": true
+  }
+}

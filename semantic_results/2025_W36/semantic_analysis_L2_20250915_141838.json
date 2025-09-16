@@ -1,0 +1,48 @@
+{
+  "metadata": {
+    "analysis_time": "2025-09-15 14:18:38",
+    "total_modifications": 1,
+    "layer1_passed": 0,
+    "layer2_analyzed": 1,
+    "processing_time": "8.0s"
+  },
+  "results": [
+    {
+      "modification_id": "M001",
+      "cell": "I6",
+      "column": "负责人",
+      "old_value": "蔡悦莹",
+      "new_value": "",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 80.0,
+        "reason": "删除责任人"
+      },
+      "layer2_result": {
+        "risk_level": "HIGH",
+        "decision": "REVIEW",
+        "confidence": 85,
+        "key_risks": [
+          "项目责任主体缺失风险",
+          "任务执行连续性中断风险",
+          "团队协作沟通断层风险"
+        ],
+        "recommendation": "建议立即补充负责人信息，或明确临时负责人安排。如确需清空该字段，需同步提供：1) 任务重新分配方案 2) 过渡期联系人 3) 受影响进度的评估报告。需项目总监审批后方可执行修改。"
+      },
+      "final_decision": "REVIEW",
+      "approval_required": true
+    }
+  ],
+  "summary": {
+    "approved": 0,
+    "conditional": 0,
+    "review_required": 1,
+    "rejected": 0,
+    "risk_distribution": {
+      "LOW": 0,
+      "MEDIUM": 0,
+      "HIGH": 1,
+      "CRITICAL": 0
+    }
+  }
+}

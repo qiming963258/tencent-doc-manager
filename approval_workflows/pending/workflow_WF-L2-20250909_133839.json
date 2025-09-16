@@ -1,0 +1,31 @@
+{
+  "workflow_id": "WF-L2-20250909_133839",
+  "created_time": "2025-09-09 13:38:39",
+  "pending_approvals": [],
+  "auto_approved": [
+    {
+      "modification_id": "M001",
+      "cell": "I11",
+      "column": "邓总指导登记（日更新）",
+      "old_value": "0813-\n1、根据周度运营数据识别出来的一般及无效笔记，分析对应的内容定位进行优化；\n2、系统功能下周一上线前，前置识别需要优化的内容定位进行调整\n3、下周一重点汇报半月度内容定位优化迭代进度、内容",
+      "new_value": "---0813-\n1、根据周度运营数据识别出来的一般及无效笔记，分析对应的内容定位进行优化；\n2、系统功能下周一上线前，前置识别需要优化的内容定位进行调整\n3、下周一重点汇报半月度内容定位优化迭代进度",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 80.0,
+        "reason": "删除内容"
+      },
+      "layer2_result": {
+        "risk_level": "LOW",
+        "decision": "APPROVE",
+        "confidence": 90,
+        "key_risks": [
+          "信息不完整可能导致执行偏差",
+          "删除部分内容可能影响任务理解"
+        ],
+        "recommendation": "1. 建议补充0806-第三条的完整内容\n2. 确认0813-前的'---'是否为格式错误\n3. 对重要指导意见的修改应通过邮件或其他正式方式同步相关执行人"
+      },
+      "final_decision": "APPROVE",
+      "approval_required": false
+    }
+  ]
+}

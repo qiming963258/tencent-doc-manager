@@ -1,0 +1,45 @@
+{
+  "workflow_id": "WF-L2-20250909_131925",
+  "created_time": "2025-09-09 13:19:25",
+  "pending_approvals": [],
+  "auto_approved": [
+    {
+      "modification_id": "M001",
+      "cell": "J12",
+      "column": "负责人",
+      "old_value": "赖铁荔",
+      "new_value": "赖铁荔,各责任人",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 75.0,
+        "reason": "多人负责"
+      },
+      "layer2_result": {
+        "risk_level": "MEDIUM",
+        "decision": "CONDITIONAL",
+        "confidence": 75,
+        "key_risks": [
+          "责任主体模糊化风险",
+          "多责任人协作风险"
+        ],
+        "recommendation": "建议明确各责任人的具体分工和职责范围。若为矩阵式管理，需同步更新相关管理文档；若为临时调整，建议补充变更说明文档并由原负责人签字确认。修改前需获取所有新增责任人的书面确认。",
+        "analysis": {
+          "change_nature": "性质改变",
+          "impact_assessment": {
+            "project_objective": 4,
+            "execution_plan": 5,
+            "team_collaboration": 7,
+            "delivery_timeline": 3
+          },
+          "special_check": {
+            "responsibility_clarity": false,
+            "authority_overlap": true,
+            "approval_chain": "待确认"
+          }
+        }
+      },
+      "final_decision": "CONDITIONAL",
+      "approval_required": false
+    }
+  ]
+}

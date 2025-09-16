@@ -1,0 +1,82 @@
+{
+  "metadata": {
+    "source_file": "/root/projects/tencent-doc-manager/comparison_results/simplified_副本-测试版本-出国销售计划表-工作表1_vs_副本-副本-测试版本-出国销售计划表-工作表1_20250906_222914.json",
+    "analysis_time": "2025-09-08 00:11:07",
+    "total_modifications": 6,
+    "layer1_passed": 4,
+    "layer2_analyzed": 2,
+    "processing_time": "1.1s"
+  },
+  "results": [
+    {
+      "modification_id": "M001",
+      "column": "项目类型",
+      "old_value": "目标管理",
+      "new_value": "体系建设",
+      "layer1_result": "UNSURE|60",
+      "layer2_result": "REVIEW",
+      "final_decision": "REVIEW",
+      "approval_required": true
+    },
+    {
+      "modification_id": "M002",
+      "column": "任务发起时间",
+      "old_value": "2025/3/12",
+      "new_value": "2025/3/13",
+      "layer1_result": "SAFE|95",
+      "layer2_result": null,
+      "final_decision": "APPROVE",
+      "approval_required": false
+    },
+    {
+      "modification_id": "M003",
+      "column": "关键KR对齐",
+      "old_value": "资源转化",
+      "new_value": "---",
+      "layer1_result": "RISKY|90",
+      "layer2_result": "REVIEW",
+      "final_decision": "REVIEW",
+      "approval_required": true
+    },
+    {
+      "modification_id": "M004",
+      "column": "邓总指导登记（日更新）",
+      "old_value": "0813-\n1、根据周度运营数据识别出来的一般及无效笔记，分析对应的内容定位进行优化；\n2、系统功能下周一上线前，前置识别需要优化的内容定位进行调整\n3、下周一重点汇报半月度内容定位优化迭代进度、内容",
+      "new_value": "---0813-\n1、根据周度运营数据识别出来的一般及无效笔记，分析对应的内容定位进行优化；\n2、系统功能下周一上线前，前置识别需要优化的内容定位进行调整\n3、下周一重点汇报半月度内容定位优化迭代进度",
+      "layer1_result": "SAFE|86",
+      "layer2_result": null,
+      "final_decision": "APPROVE",
+      "approval_required": false
+    },
+    {
+      "modification_id": "M005",
+      "column": "负责人",
+      "old_value": "赖铁荔",
+      "new_value": "赖铁荔,各责任人",
+      "layer1_result": "SAFE|88",
+      "layer2_result": null,
+      "final_decision": "APPROVE",
+      "approval_required": false
+    },
+    {
+      "modification_id": "M006",
+      "column": "预计完成时间",
+      "old_value": "",
+      "new_value": "2025/9/28",
+      "layer1_result": "SAFE|91",
+      "layer2_result": null,
+      "final_decision": "APPROVE",
+      "approval_required": false
+    }
+  ],
+  "summary": {
+    "approved": 4,
+    "review_required": 2,
+    "rejected": 0,
+    "risk_distribution": {
+      "LOW": 4,
+      "MEDIUM": 1,
+      "HIGH": 1
+    }
+  }
+}

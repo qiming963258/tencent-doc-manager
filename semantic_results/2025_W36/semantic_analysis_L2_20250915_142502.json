@@ -1,0 +1,48 @@
+{
+  "metadata": {
+    "analysis_time": "2025-09-15 14:25:02",
+    "total_modifications": 1,
+    "layer1_passed": 0,
+    "layer2_analyzed": 1,
+    "processing_time": "10.4s"
+  },
+  "results": [
+    {
+      "modification_id": "M001",
+      "cell": "B13",
+      "column": "项目类型",
+      "old_value": "目标管理",
+      "new_value": "",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 90.0,
+        "reason": "关键信息缺失"
+      },
+      "layer2_result": {
+        "risk_level": "HIGH",
+        "decision": "REVIEW",
+        "confidence": 85,
+        "key_risks": [
+          "项目类型完全清空导致项目分类体系混乱",
+          "可能造成后续资源配置和进度跟踪的困难",
+          "团队对项目性质的理解可能产生偏差"
+        ],
+        "recommendation": "建议：1)必须说明清空原因并提供替代方案；2)需评估对其他相关字段的影响；3)需要项目管理办公室(PMO)审批。该修改必须附带变更申请文档。"
+      },
+      "final_decision": "REVIEW",
+      "approval_required": true
+    }
+  ],
+  "summary": {
+    "approved": 0,
+    "conditional": 0,
+    "review_required": 1,
+    "rejected": 0,
+    "risk_distribution": {
+      "LOW": 0,
+      "MEDIUM": 0,
+      "HIGH": 1,
+      "CRITICAL": 0
+    }
+  }
+}

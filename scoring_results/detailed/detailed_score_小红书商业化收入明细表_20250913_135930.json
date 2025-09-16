@@ -1,0 +1,99 @@
+{
+  "metadata": {
+    "table_id": 1,
+    "table_name": "小红书商业化收入明细表",
+    "generation_time": "2025-09-13T13:59:30.950248",
+    "scoring_standard": "0000-颜色和级别打分标准",
+    "scoring_version": "2.0"
+  },
+  "comparison_info": {
+    "baseline_file": "baseline_table_002_20250818.csv",
+    "current_file": "current_社群管理部_table_002_20250819.csv",
+    "total_rows": 57,
+    "total_columns": 19,
+    "comparison_time": ""
+  },
+  "modifications_summary": {
+    "total_modifications": 3,
+    "high_risk_count": 0,
+    "medium_risk_count": 1,
+    "low_risk_count": 2
+  },
+  "column_scores": {
+    "邓总指导登记": {
+      "column_level": "L3",
+      "modifications": 1,
+      "modified_rows": [
+        15
+      ],
+      "row_scores": [
+        0.25
+      ],
+      "avg_score": 0.25,
+      "max_score": 0.25,
+      "min_score": 0.25
+    },
+    "预计完成时间": {
+      "column_level": "L2",
+      "modifications": 1,
+      "modified_rows": [
+        10
+      ],
+      "row_scores": [
+        0.435
+      ],
+      "avg_score": 0.435,
+      "max_score": 0.435,
+      "min_score": 0.435,
+      "ai_decisions": {
+        "APPROVE": 1,
+        "REVIEW": 0
+      }
+    },
+    "形成计划清单": {
+      "column_level": "L3",
+      "modifications": 1,
+      "modified_rows": [
+        3
+      ],
+      "row_scores": [
+        0.295
+      ],
+      "avg_score": 0.295,
+      "max_score": 0.295,
+      "min_score": 0.295
+    }
+  },
+  "detailed_modifications": [
+    {
+      "row": 3,
+      "column": "形成计划清单",
+      "column_level": "L3",
+      "old_value": "原始形成计划清单_16",
+      "new_value": "修改形成计划清单_51",
+      "score": 0.295,
+      "risk_level": "低风险"
+    },
+    {
+      "row": 15,
+      "column": "邓总指导登记",
+      "column_level": "L3",
+      "old_value": "原始邓总指导登记_6",
+      "new_value": "修改邓总指导登记_44",
+      "score": 0.25,
+      "risk_level": "低风险"
+    },
+    {
+      "row": 10,
+      "column": "预计完成时间",
+      "column_level": "L2",
+      "old_value": "2025/7/25",
+      "new_value": "2025/8/9",
+      "score": 0.435,
+      "risk_level": "中风险",
+      "ai_decision": "APPROVE",
+      "ai_confidence": 0.76
+    }
+  ],
+  "overall_risk_score": 0.327
+}

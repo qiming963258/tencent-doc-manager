@@ -1,0 +1,49 @@
+{
+  "metadata": {
+    "analysis_time": "2025-09-15 18:37:26",
+    "total_modifications": 1,
+    "layer1_passed": 0,
+    "layer2_analyzed": 1,
+    "processing_time": "11.9s"
+  },
+  "results": [
+    {
+      "modification_id": "M001",
+      "cell": "C34",
+      "column": "项目类型",
+      "old_value": "目标管理",
+      "new_value": "",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 80.0,
+        "reason": "关键信息缺失"
+      },
+      "layer2_result": {
+        "risk_level": "CRITICAL",
+        "decision": "REVIEW",
+        "confidence": 90,
+        "key_risks": [
+          "项目类型完全缺失可能导致项目目标不明确",
+          "项目类型空白会严重影响项目分类和资源分配",
+          "缺乏项目类型定义将导致执行计划无法正确制定",
+          "团队协作因缺乏共同理解基础而效率降低"
+        ],
+        "recommendation": "必须补充完整项目类型信息。建议：1) 明确空白原因，是否属于数据遗漏；2) 如需删除原有值，应当用新值替代而非留空；3) 组织项目团队重新确认项目类型定义；4) 检查所有关联文档确保一致性。"
+      },
+      "final_decision": "REVIEW",
+      "approval_required": true
+    }
+  ],
+  "summary": {
+    "approved": 0,
+    "conditional": 0,
+    "review_required": 1,
+    "rejected": 0,
+    "risk_distribution": {
+      "LOW": 0,
+      "MEDIUM": 0,
+      "HIGH": 1,
+      "CRITICAL": 0
+    }
+  }
+}

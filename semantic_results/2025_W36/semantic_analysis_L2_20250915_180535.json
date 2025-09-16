@@ -1,0 +1,48 @@
+{
+  "metadata": {
+    "analysis_time": "2025-09-15 18:05:35",
+    "total_modifications": 1,
+    "layer1_passed": 0,
+    "layer2_analyzed": 1,
+    "processing_time": "23.2s"
+  },
+  "results": [
+    {
+      "modification_id": "M001",
+      "cell": "J11",
+      "column": "负责人",
+      "old_value": "赖铁荔",
+      "new_value": "王寒晓,各责任人",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 75.0,
+        "reason": "负责变更多"
+      },
+      "layer2_result": {
+        "risk_level": "MEDIUM",
+        "decision": "CONDITIONAL",
+        "confidence": 75,
+        "key_risks": [
+          "责任主体模糊化：从单一明确负责人变为多人+模糊描述，可能导致责任推诿",
+          "团队协作复杂度增加：需要重新建立多责任人之间的沟通机制",
+          "执行计划调整风险：原工作计划可能不适用新的责任分工模式"
+        ],
+        "recommendation": "建议补充说明：1)明确各责任人的具体分工范围 2)新增协调负责人字段 3)配套修改相关RACI矩阵。需确保至少保留一名最终决策者。"
+      },
+      "final_decision": "CONDITIONAL",
+      "approval_required": false
+    }
+  ],
+  "summary": {
+    "approved": 0,
+    "conditional": 1,
+    "review_required": 0,
+    "rejected": 0,
+    "risk_distribution": {
+      "LOW": 0,
+      "MEDIUM": 0,
+      "HIGH": 0,
+      "CRITICAL": 0
+    }
+  }
+}

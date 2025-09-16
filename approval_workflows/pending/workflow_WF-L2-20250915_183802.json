@@ -1,0 +1,33 @@
+{
+  "workflow_id": "WF-L2-20250915_183802",
+  "created_time": "2025-09-15 18:38:02",
+  "pending_approvals": [
+    {
+      "modification_id": "M001",
+      "cell": "J34",
+      "column": "负责人",
+      "old_value": "赖铁荔",
+      "new_value": "",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 75.0,
+        "reason": "关键人变更"
+      },
+      "layer2_result": {
+        "risk_level": "CRITICAL",
+        "decision": "REVIEW",
+        "confidence": 95,
+        "key_risks": [
+          "负责人信息被清空导致责任归属不明确",
+          "项目关键节点的监督和执行可能中断",
+          "团队沟通链条出现断裂",
+          "质量管控体系出现缺口"
+        ],
+        "recommendation": "必须立即核查：1.这是否是操作失误导致的空值 2.是否有正式的负责人变更程序正在进行 3.是否存在继任负责人未及时更新的情况。建议在24小时内完成新负责人的指定，并同步更新相关项目文档和通知团队成员。在过渡期间应指定临时负责人，确保项目关键决策不受影响。"
+      },
+      "final_decision": "REVIEW",
+      "approval_required": true
+    }
+  ],
+  "auto_approved": []
+}

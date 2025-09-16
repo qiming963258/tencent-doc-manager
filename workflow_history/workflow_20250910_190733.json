@@ -1,0 +1,23 @@
+{
+  "id": "20250910_190733",
+  "start_time": "2025-09-10T19:07:33.920802",
+  "end_time": "2025-09-10T19:08:49.281175",
+  "status": "error",
+  "results": {},
+  "logs": [
+    {
+      "time": "19:07:33",
+      "level": "INFO",
+      "message": "开始下载基线文档..."
+    },
+    {
+      "time": "19:08:49",
+      "level": "ERROR",
+      "message": "❌ 执行出错: 基线文档下载失败"
+    }
+  ],
+  "settings": {
+    "upload_option": "new",
+    "verbose_logging": true
+  }
+}

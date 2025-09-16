@@ -1,0 +1,33 @@
+{
+  "workflow_id": "WF-L2-20250915_151750",
+  "created_time": "2025-09-15 15:17:50",
+  "pending_approvals": [
+    {
+      "modification_id": "M001",
+      "cell": "I67",
+      "column": "负责人",
+      "old_value": "徐志杰",
+      "new_value": "",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 90.0,
+        "reason": "关键人缺失"
+      },
+      "layer2_result": {
+        "risk_level": "HIGH",
+        "decision": "REVIEW",
+        "confidence": 85,
+        "key_risks": [
+          "负责人字段清空会导致任务无明确责任人",
+          "可能导致任务无人跟进或执行延迟",
+          "影响团队协作和信息流转",
+          "责任归属不明确可能引发工作纠纷"
+        ],
+        "recommendation": "建议：1)立即确认是否遗漏填写新负责人；2)如需清空负责人，应先指定临时负责人；3)修改前需与相关干系人沟通确认。该修改需经项目经理审批后才可生效。"
+      },
+      "final_decision": "REVIEW",
+      "approval_required": true
+    }
+  ],
+  "auto_approved": []
+}

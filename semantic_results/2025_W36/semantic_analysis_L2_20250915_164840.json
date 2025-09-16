@@ -1,0 +1,47 @@
+{
+  "metadata": {
+    "analysis_time": "2025-09-15 16:48:40",
+    "total_modifications": 1,
+    "layer1_passed": 0,
+    "layer2_analyzed": 1,
+    "processing_time": "10.4s"
+  },
+  "results": [
+    {
+      "modification_id": "M001",
+      "cell": "I16",
+      "column": "邓总指导登记（日更新）",
+      "old_value": "0813-\n短视频的爆款可调用小红书板块历史爆款笔记作为原创脚本进行调用，同步优化内容库执行表单进行脚本撰写的数量要求及登记跟踪\n\n0811-",
+      "new_value": "",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 90.0,
+        "reason": "删除指导"
+      },
+      "layer2_result": {
+        "risk_level": "MEDIUM",
+        "decision": "REVIEW",
+        "confidence": 75,
+        "key_risks": [
+          "关键指导意见被删除，可能导致执行方向不明确",
+          "内容库优化和脚本撰写数量要求等重要信息丢失"
+        ],
+        "recommendation": "建议与邓总确认该单元格内容清空是否确实不需要保留历史指导意见。如确实不再需要，建议添加备注说明原因。如仍需保留指导意见，应恢复原值或补充新的指导意见内容。"
+      },
+      "final_decision": "REVIEW",
+      "approval_required": true
+    }
+  ],
+  "summary": {
+    "approved": 0,
+    "conditional": 0,
+    "review_required": 1,
+    "rejected": 0,
+    "risk_distribution": {
+      "LOW": 0,
+      "MEDIUM": 0,
+      "HIGH": 1,
+      "CRITICAL": 0
+    }
+  }
+}

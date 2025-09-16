@@ -1,0 +1,32 @@
+{
+  "workflow_id": "WF-L2-20250915_143653",
+  "created_time": "2025-09-15 14:36:53",
+  "pending_approvals": [
+    {
+      "modification_id": "M001",
+      "cell": "I25",
+      "column": "负责人",
+      "old_value": "蔡悦莹",
+      "new_value": "\n\n晒单项目现阶段需要瀚桔介入些许给跨部门进行打板示范协助解决卡点问题\n\n",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 90.0,
+        "reason": "删除负责人"
+      },
+      "layer2_result": {
+        "risk_level": "HIGH",
+        "decision": "REVIEW",
+        "confidence": 75,
+        "key_risks": [
+          "负责人字段被清空可能导致任务无人负责",
+          "新增说明文字未明确指定责任人",
+          "跨部门协作需求未明确职责划分"
+        ],
+        "recommendation": "建议：1. 必须保留明确负责人姓名；2. 如需瀚桔介入，应在负责人字段注明『蔡悦莹（由瀚桔协助）』；3. 补充跨部门协作的具体对接机制说明。请在修改前与项目管理办公室确认。"
+      },
+      "final_decision": "REVIEW",
+      "approval_required": true
+    }
+  ],
+  "auto_approved": []
+}

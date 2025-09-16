@@ -1,0 +1,49 @@
+{
+  "metadata": {
+    "analysis_time": "2025-09-15 18:27:49",
+    "total_modifications": 1,
+    "layer1_passed": 0,
+    "layer2_analyzed": 1,
+    "processing_time": "17.4s"
+  },
+  "results": [
+    {
+      "modification_id": "M001",
+      "cell": "H18",
+      "column": "具体计划内容",
+      "old_value": "系统激活提示管理显示，解决转化人员激活管理，同时周末与日常沟通；",
+      "new_value": "海运费可以找邱雯找国内拼箱公司，包括回国的整柜，找代理提供订舱与运输服务；（国外服务费，海运费，国内费用）三个模块解决，海运费是大头需要解决；在开展的过程中如有源头可直接对庄家走货；",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 90.0,
+        "reason": "内容完全变更"
+      },
+      "layer2_result": {
+        "risk_level": "HIGH",
+        "decision": "REVIEW",
+        "confidence": 85,
+        "key_risks": [
+          "内容性质发生根本性改变，从系统管理事项转向物流运输事项",
+          "修改内容与原项目目标关联性存疑",
+          "新内容涉及外部合作方和资金安排，需额外审批流程",
+          "可能影响项目整体进度和资源分配"
+        ],
+        "recommendation": "建议：1) 确认该修改是否经过项目变更流程审批；2) 核实物流运输事项与项目目标的关联性；3) 评估新增的物流工作对现有资源的影响；4) 如需保留修改，建议在文档中添加变更说明和审批记录"
+      },
+      "final_decision": "REVIEW",
+      "approval_required": true
+    }
+  ],
+  "summary": {
+    "approved": 0,
+    "conditional": 0,
+    "review_required": 1,
+    "rejected": 0,
+    "risk_distribution": {
+      "LOW": 0,
+      "MEDIUM": 0,
+      "HIGH": 1,
+      "CRITICAL": 0
+    }
+  }
+}

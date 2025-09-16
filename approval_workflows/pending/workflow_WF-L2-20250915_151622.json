@@ -1,0 +1,32 @@
+{
+  "workflow_id": "WF-L2-20250915_151622",
+  "created_time": "2025-09-15 15:16:22",
+  "pending_approvals": [],
+  "auto_approved": [
+    {
+      "modification_id": "M001",
+      "cell": "K65",
+      "column": "监督人",
+      "old_value": "徐志杰",
+      "new_value": "林玉佳,李穗云",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 75.0,
+        "reason": "负责人变更"
+      },
+      "layer2_result": {
+        "risk_level": "MEDIUM",
+        "decision": "CONDITIONAL",
+        "confidence": 75,
+        "key_risks": [
+          "监督人责任分散风险",
+          "沟通协调复杂度增加",
+          "潜在决策冲突"
+        ],
+        "recommendation": "建议：1.明确双监督人分工(如林玉佳主责质量监督/李穗云主责进度监督)；2.在项目文档补充双人协作机制说明；3.设置并行监督的过渡期(如2周)并评估效果；4.需项目经理签字确认该变更。"
+      },
+      "final_decision": "CONDITIONAL",
+      "approval_required": false
+    }
+  ]
+}

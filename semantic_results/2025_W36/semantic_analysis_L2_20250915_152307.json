@@ -1,0 +1,47 @@
+{
+  "metadata": {
+    "analysis_time": "2025-09-15 15:23:07",
+    "total_modifications": 1,
+    "layer1_passed": 0,
+    "layer2_analyzed": 1,
+    "processing_time": "10.9s"
+  },
+  "results": [
+    {
+      "modification_id": "M001",
+      "cell": "K72",
+      "column": "监督人",
+      "old_value": "徐志杰",
+      "new_value": "杨顺鑫",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 80.0,
+        "reason": "责任人变更"
+      },
+      "layer2_result": {
+        "risk_level": "MEDIUM",
+        "decision": "CONDITIONAL",
+        "confidence": 75,
+        "key_risks": [
+          "监督人变更可能导致监督标准和方式的变化",
+          "新监督人需要时间熟悉项目和团队"
+        ],
+        "recommendation": "建议安排徐志杰和杨顺鑫进行工作交接，确保项目监督的连续性；同时向团队明确传达监督人变更信息，并安排杨顺鑫与关键成员进行沟通。"
+      },
+      "final_decision": "CONDITIONAL",
+      "approval_required": false
+    }
+  ],
+  "summary": {
+    "approved": 0,
+    "conditional": 1,
+    "review_required": 0,
+    "rejected": 0,
+    "risk_distribution": {
+      "LOW": 0,
+      "MEDIUM": 0,
+      "HIGH": 0,
+      "CRITICAL": 0
+    }
+  }
+}

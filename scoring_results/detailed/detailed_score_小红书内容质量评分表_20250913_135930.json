@@ -1,0 +1,232 @@
+{
+  "metadata": {
+    "table_id": 14,
+    "table_name": "小红书内容质量评分表",
+    "generation_time": "2025-09-13T13:59:30.968214",
+    "scoring_standard": "0000-颜色和级别打分标准",
+    "scoring_version": "2.0"
+  },
+  "comparison_info": {
+    "baseline_file": "baseline_table_015_20250818.csv",
+    "current_file": "current_社群管理部_table_015_20250819.csv",
+    "total_rows": 67,
+    "total_columns": 19,
+    "comparison_time": ""
+  },
+  "modifications_summary": {
+    "total_modifications": 9,
+    "high_risk_count": 3,
+    "medium_risk_count": 1,
+    "low_risk_count": 5
+  },
+  "column_scores": {
+    "来源": {
+      "column_level": "L3",
+      "modifications": 2,
+      "modified_rows": [
+        16,
+        20
+      ],
+      "row_scores": [
+        0.375,
+        0.173
+      ],
+      "avg_score": 0.274,
+      "max_score": 0.375,
+      "min_score": 0.173
+    },
+    "任务发起时间": {
+      "column_level": "L3",
+      "modifications": 1,
+      "modified_rows": [
+        11
+      ],
+      "row_scores": [
+        0.184
+      ],
+      "avg_score": 0.184,
+      "max_score": 0.184,
+      "min_score": 0.184
+    },
+    "目标对齐": {
+      "column_level": "L1",
+      "modifications": 1,
+      "modified_rows": [
+        12
+      ],
+      "row_scores": [
+        0.947
+      ],
+      "avg_score": 0.947,
+      "max_score": 0.947,
+      "min_score": 0.947
+    },
+    "重要程度": {
+      "column_level": "L2",
+      "modifications": 1,
+      "modified_rows": [
+        21
+      ],
+      "row_scores": [
+        0.62
+      ],
+      "avg_score": 0.62,
+      "max_score": 0.62,
+      "min_score": 0.62,
+      "ai_decisions": {
+        "APPROVE": 0,
+        "REVIEW": 1
+      }
+    },
+    "预计完成时间": {
+      "column_level": "L2",
+      "modifications": 1,
+      "modified_rows": [
+        29
+      ],
+      "row_scores": [
+        0.622
+      ],
+      "avg_score": 0.622,
+      "max_score": 0.622,
+      "min_score": 0.622,
+      "ai_decisions": {
+        "APPROVE": 0,
+        "REVIEW": 1
+      }
+    },
+    "完成进度": {
+      "column_level": "L2",
+      "modifications": 1,
+      "modified_rows": [
+        14
+      ],
+      "row_scores": [
+        0.509
+      ],
+      "avg_score": 0.509,
+      "max_score": 0.509,
+      "min_score": 0.509,
+      "ai_decisions": {
+        "APPROVE": 0,
+        "REVIEW": 1
+      }
+    },
+    "对上汇报": {
+      "column_level": "L3",
+      "modifications": 1,
+      "modified_rows": [
+        23
+      ],
+      "row_scores": [
+        0.314
+      ],
+      "avg_score": 0.314,
+      "max_score": 0.314,
+      "min_score": 0.314
+    },
+    "应用情况": {
+      "column_level": "L3",
+      "modifications": 1,
+      "modified_rows": [
+        3
+      ],
+      "row_scores": [
+        0.213
+      ],
+      "avg_score": 0.213,
+      "max_score": 0.213,
+      "min_score": 0.213
+    }
+  },
+  "detailed_modifications": [
+    {
+      "row": 29,
+      "column": "预计完成时间",
+      "column_level": "L2",
+      "old_value": "2025/7/28",
+      "new_value": "2025/8/20",
+      "score": 0.622,
+      "risk_level": "高风险",
+      "ai_decision": "REVIEW",
+      "ai_confidence": 0.89
+    },
+    {
+      "row": 16,
+      "column": "来源",
+      "column_level": "L3",
+      "old_value": "周会决策待办",
+      "new_value": "临时紧急任务,月度规划",
+      "score": 0.375,
+      "risk_level": "低风险"
+    },
+    {
+      "row": 23,
+      "column": "对上汇报",
+      "column_level": "L3",
+      "old_value": "已汇报已结项",
+      "new_value": "计划汇报",
+      "score": 0.314,
+      "risk_level": "低风险"
+    },
+    {
+      "row": 21,
+      "column": "重要程度",
+      "column_level": "L2",
+      "old_value": "2",
+      "new_value": "4",
+      "score": 0.62,
+      "risk_level": "高风险",
+      "ai_decision": "REVIEW",
+      "ai_confidence": 0.87
+    },
+    {
+      "row": 3,
+      "column": "应用情况",
+      "column_level": "L3",
+      "old_value": "原始应用情况_50",
+      "new_value": "修改应用情况_85",
+      "score": 0.213,
+      "risk_level": "低风险"
+    },
+    {
+      "row": 20,
+      "column": "来源",
+      "column_level": "L3",
+      "old_value": "经理日常交办",
+      "new_value": "周会决策待办",
+      "score": 0.173,
+      "risk_level": "低风险"
+    },
+    {
+      "row": 14,
+      "column": "完成进度",
+      "column_level": "L2",
+      "old_value": "50%",
+      "new_value": "00%",
+      "score": 0.509,
+      "risk_level": "中风险",
+      "ai_decision": "REVIEW",
+      "ai_confidence": 0.72
+    },
+    {
+      "row": 12,
+      "column": "目标对齐",
+      "column_level": "L1",
+      "old_value": "原始目标对齐_66",
+      "new_value": "修改目标对齐_14",
+      "score": 0.947,
+      "risk_level": "极高风险"
+    },
+    {
+      "row": 11,
+      "column": "任务发起时间",
+      "column_level": "L3",
+      "old_value": "2025/7/24",
+      "new_value": "2025/8/10",
+      "score": 0.184,
+      "risk_level": "低风险"
+    }
+  ],
+  "overall_risk_score": 0.44
+}

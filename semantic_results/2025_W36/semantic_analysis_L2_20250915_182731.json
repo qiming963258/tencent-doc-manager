@@ -1,0 +1,48 @@
+{
+  "metadata": {
+    "analysis_time": "2025-09-15 18:27:31",
+    "total_modifications": 1,
+    "layer1_passed": 0,
+    "layer2_analyzed": 1,
+    "processing_time": "14.4s"
+  },
+  "results": [
+    {
+      "modification_id": "M001",
+      "cell": "H17",
+      "column": "具体计划内容",
+      "old_value": "矩阵号咨询企微转入至业务部门赵欣进行计划与号码移交",
+      "new_value": "增减体积设定递减式排序，增加越多单价越低的方式；",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 90.0,
+        "reason": "内容大改"
+      },
+      "layer2_result": {
+        "risk_level": "HIGH",
+        "decision": "REVIEW",
+        "confidence": 85,
+        "key_risks": [
+          "计划性质的根本性改变：从具体执行步骤转变为定价策略，可能导致项目目标偏离",
+          "团队协作风险：原计划涉及部门间移交工作，新内容可能导致责任主体不明确",
+          "执行计划断裂：新内容与上下文计划内容缺乏逻辑衔接"
+        ],
+        "recommendation": "建议要求修改者说明：1)这个定价策略为何放在计划内容单元格 2)与整体项目计划的关联性 3)负责执行的具体部门。同时检查是否存在单元格定位错误的情况。"
+      },
+      "final_decision": "REVIEW",
+      "approval_required": true
+    }
+  ],
+  "summary": {
+    "approved": 0,
+    "conditional": 0,
+    "review_required": 1,
+    "rejected": 0,
+    "risk_distribution": {
+      "LOW": 0,
+      "MEDIUM": 0,
+      "HIGH": 1,
+      "CRITICAL": 0
+    }
+  }
+}

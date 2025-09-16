@@ -1,0 +1,33 @@
+{
+  "workflow_id": "WF-L2-20250915_145039",
+  "created_time": "2025-09-15 14:50:39",
+  "pending_approvals": [
+    {
+      "modification_id": "M001",
+      "cell": "I39",
+      "column": "负责人",
+      "old_value": "蔡悦莹",
+      "new_value": "",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 80.0,
+        "reason": "关键人缺失"
+      },
+      "layer2_result": {
+        "risk_level": "HIGH",
+        "decision": "REVIEW",
+        "confidence": 85,
+        "key_risks": [
+          "关键岗位负责人空缺可能导致任务无人跟进",
+          "项目责任链断裂影响整体进度",
+          "团队协作可能出现沟通断层",
+          "对利益相关者的承诺可能无法兑现"
+        ],
+        "recommendation": "必须立即确认新的负责人人选，并完成以下事项：\n1. 新负责人需在24小时内完成工作交接\n2. 更新相关方沟通矩阵\n3. 评估是否需要调整项目进度计划\n4. 向团队正式通报负责人变更情况\n\n如果72小时内无法确定合适人选，建议升级为CRITICAL风险"
+      },
+      "final_decision": "REVIEW",
+      "approval_required": true
+    }
+  ],
+  "auto_approved": []
+}

@@ -1,0 +1,31 @@
+{
+  "workflow_id": "WF-L2-20250915_182817",
+  "created_time": "2025-09-15 18:28:17",
+  "pending_approvals": [
+    {
+      "modification_id": "M001",
+      "cell": "I19",
+      "column": "邓总指导登记（日更新）",
+      "old_value": "0820-\n1、员工执行内容定位的优化迭代需要前置与员工同频事项执行的意义，充分沟通怎么做，做得怎么样的指导规范",
+      "new_value": "",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 80.0,
+        "reason": "删除内容"
+      },
+      "layer2_result": {
+        "risk_level": "MEDIUM",
+        "decision": "REVIEW",
+        "confidence": 75,
+        "key_risks": [
+          "指导内容完全删除可能影响员工执行标准",
+          "日更新指导缺失可能导致团队执行方向不明确"
+        ],
+        "recommendation": "建议补充说明删除该指导内容的原因，或提供替代性指导意见。如需删除，需同步通知相关执行团队并确认理解。对于'邓总指导登记（日更新）'这类关键管理工具，建议保留变更记录和审批追溯。"
+      },
+      "final_decision": "REVIEW",
+      "approval_required": true
+    }
+  ],
+  "auto_approved": []
+}

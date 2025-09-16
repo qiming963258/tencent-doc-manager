@@ -1,0 +1,49 @@
+{
+  "metadata": {
+    "analysis_time": "2025-09-15 14:52:48",
+    "total_modifications": 1,
+    "layer1_passed": 0,
+    "layer2_analyzed": 1,
+    "processing_time": "10.9s"
+  },
+  "results": [
+    {
+      "modification_id": "M001",
+      "cell": "G41",
+      "column": "具体计划内容",
+      "old_value": "1.目前【负面优化】以【目标管理机制】进行推进，周执行与复盘推进【目标导向】展开,按照周度周三,周五进行汇报\n2.根据出国专员入职排期进行项目排期，由员工执行汇报机制",
+      "new_value": "收款管理",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 80.0,
+        "reason": "关键变更"
+      },
+      "layer2_result": {
+        "risk_level": "HIGH",
+        "decision": "REVIEW",
+        "confidence": 80,
+        "key_risks": [
+          "内容性质完全改变：从详细执行计划变为宽泛主题",
+          "可能丧失原有执行框架",
+          "团队协作机制被删除",
+          "关键汇报节点消失"
+        ],
+        "recommendation": "要求修改者补充说明：1.是否完全废弃原执行机制 2.新的'收款管理'具体实施计划 3.如何确保团队协作和进度汇报。建议保留原执行框架的关键要素，或提供同等详细的新计划。"
+      },
+      "final_decision": "REVIEW",
+      "approval_required": true
+    }
+  ],
+  "summary": {
+    "approved": 0,
+    "conditional": 0,
+    "review_required": 1,
+    "rejected": 0,
+    "risk_distribution": {
+      "LOW": 0,
+      "MEDIUM": 0,
+      "HIGH": 1,
+      "CRITICAL": 0
+    }
+  }
+}

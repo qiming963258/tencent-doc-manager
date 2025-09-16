@@ -90,28 +90,46 @@ class WeekTimeManager:
     
     def validate_file_naming(self, filename: str) -> bool:
         """
-        验证文件命名规范
+        验证文件命名规范 - 支持新旧两种格式
         
-        格式: tencent_csv_YYYYMMDD_HHMM_版本类型_W周数.csv
+        旧格式: tencent_{文件名}_csv_{YYYYMMDD_HHMM}_{版本类型}_W{周数}.csv
+        新格式: tencent_{文件名}_{YYYYMMDD_HHMM}_{版本类型}_W{周数}.{扩展名}
         """
-        pattern = r'^tencent_csv_\d{8}_\d{4}_(baseline|midweek|weekend)_W\d{1,2}\.csv$'
-        return re.match(pattern, filename) is not None
+        # 新格式（支持任意扩展名）
+        new_pattern = r'^tencent_(.+?)_(\d{8})_(\d{4})_(baseline|midweek|weekend)_W\d{1,2}\.(csv|xlsx|xls|xlsm)$'
+        # 旧格式（向后兼容）
+        old_pattern = r'^tencent_(.+?)_csv_(\d{8})_(\d{4})_(baseline|midweek|weekend)_W\d{1,2}\.csv$'
+        
+        return re.match(new_pattern, filename) is not None or re.match(old_pattern, filename) is not None
     
     def generate_filename(self, file_time: datetime.datetime, 
-                         version_type: str, week_number: int) -> str:
+                         version_type: str, week_number: int, 
+                         doc_name: str = "未命名文档", 
+                         file_extension: str = "csv") -> str:
         """
-        生成标准文件名
+        生成标准文件名 - 支持动态扩展名
         
         Args:
             file_time: 文件时间
             version_type: baseline/midweek/weekend
             week_number: 周数
+            doc_name: 文档名称
+            file_extension: 文件扩展名 (csv/xlsx/xls等)，默认csv
             
         Returns:
             str: 标准格式的文件名
         """
+        # 清理文档名称和扩展名
+        import re
+        doc_name = re.sub(r'\.(csv|xlsx|xls)$', '', doc_name, flags=re.IGNORECASE)
+        doc_name = re.sub(r'[<>:"/\\|?*]', '', doc_name)  # 移除非法字符
+        
+        # 清理扩展名（移除点号如果有的话）
+        file_extension = file_extension.lstrip('.')
+        
         timestamp = file_time.strftime("%Y%m%d_%H%M")
-        return f"tencent_csv_{timestamp}_{version_type}_W{week_number:02d}.csv"
+        # 新格式：tencent_{文件名}_{YYYYMMDD_HHMM}_{版本类型}_W{周数}.{扩展名}
+        return f"tencent_{doc_name}_{timestamp}_{version_type}_W{week_number:02d}.{file_extension}"
     
     def find_baseline_files(self) -> Tuple[List[str], str]:
         """
@@ -129,9 +147,15 @@ class WeekTimeManager:
         week_dir = self.get_week_directory(current_year, target_week)
         baseline_dir = week_dir / "baseline"
         
-        # 查找基准版文件
-        pattern = f"*_baseline_W{target_week:02d}.csv"
-        baseline_files = glob.glob(str(baseline_dir / pattern))
+        # 查找基准版文件（支持多种扩展名）
+        patterns = [
+            f"*_baseline_W{target_week:02d}.csv",
+            f"*_baseline_W{target_week:02d}.xlsx",
+            f"*_baseline_W{target_week:02d}.xls"
+        ]
+        baseline_files = []
+        for pattern in patterns:
+            baseline_files.extend(glob.glob(str(baseline_dir / pattern)))
         
         if not baseline_files:
             if strategy == "current_week":
@@ -151,7 +175,7 @@ class WeekTimeManager:
     
     def find_latest_files(self, version_type: str = "current") -> List[str]:
         """
-        查找最新文件
+        查找最新文件（旧版本，保留兼容性）
         
         Args:
             version_type: current/midweek/weekend
@@ -160,9 +184,8 @@ class WeekTimeManager:
             list: 最新文件列表
         """
         if version_type == "current":
-            # 查找csv_versions根目录下的最新文件
-            pattern = str(self.csv_versions_dir / "*.csv")
-            files = glob.glob(pattern)
+            # 使用新的目标文件查找逻辑
+            return self.find_target_files()
         else:
             # 查找指定版本类型的最新文件
             week_info = self.get_current_week_info()
@@ -174,6 +197,61 @@ class WeekTimeManager:
         # 按修改时间排序，返回最新的
         if files:
             files.sort(key=os.path.getmtime, reverse=True)
+        
+        return files
+    
+    def find_target_files(self, doc_name: str = None) -> List[str]:
+        """
+        查找目标文件 - 根据当前时间动态选择版本类型
+        符合03-CSV对比文件查找规范
+        
+        Args:
+            doc_name: 可选的文档名称过滤
+            
+        Returns:
+            目标文件路径列表（按时间倒序）
+        """
+        now = datetime.datetime.now()
+        weekday = now.weekday()  # 0=周一, 1=周二...5=周六
+        hour = now.hour
+        week_info = now.isocalendar()
+        
+        # 确定使用哪一周的数据
+        if weekday < 1 or (weekday == 1 and hour < 12):
+            # 周一全天 OR 周二12点前 → 使用上周
+            target_week = week_info[1] - 1
+        else:
+            # 周二12点后 至 周日 → 使用本周
+            target_week = week_info[1]
+        
+        # 确定查找哪个版本文件夹
+        if weekday == 5 and hour >= 19:  # 周六晚上7点后
+            version_type = "weekend"
+        else:  # 其他所有时间默认查找midweek
+            version_type = "midweek"
+        
+        # 构建查找路径
+        week_dir = self.get_week_directory(week_info[0], target_week)
+        search_folder = week_dir / version_type
+        
+        # 查找文件（支持多种扩展名）
+        extensions = ['csv', 'xlsx', 'xls']
+        files = []
+        
+        for ext in extensions:
+            if doc_name:
+                pattern = str(search_folder / f"*{doc_name}*_{version_type}_W{target_week}.{ext}")
+            else:
+                pattern = str(search_folder / f"*_{version_type}_W{target_week}.{ext}")
+            files.extend(glob.glob(pattern))
+        
+        if not files:
+            # 目标文件可以为空（表示还没有新数据）
+            # 注：目标文件缺失不是错误，这是正常情况
+            return []
+        
+        # 按修改时间倒序排序，返回最新的
+        files.sort(key=os.path.getmtime, reverse=True)
         
         return files
     

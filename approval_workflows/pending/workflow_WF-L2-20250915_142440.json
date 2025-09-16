@@ -1,0 +1,32 @@
+{
+  "workflow_id": "WF-L2-20250915_142440",
+  "created_time": "2025-09-15 14:24:40",
+  "pending_approvals": [
+    {
+      "modification_id": "M001",
+      "cell": "I12",
+      "column": "负责人",
+      "old_value": "蔡悦莹",
+      "new_value": "",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 80.0,
+        "reason": "关键人变更"
+      },
+      "layer2_result": {
+        "risk_level": "HIGH",
+        "decision": "REVIEW",
+        "confidence": 85,
+        "key_risks": [
+          "职责不明导致项目推进受阻",
+          "关键任务无人负责导致延误",
+          "团队沟通协调机制中断"
+        ],
+        "recommendation": "必须立即确认该岗位的新负责人并更新相关文档，建议在24小时内完成以下工作：\n1. 由项目经理发起正式交接流程\n2. 新负责人需在3个工作日内完成工作交接确认\n3. 同步更新所有关联文档中的责任人信息\n4. 向项目组全员发送变更通知"
+      },
+      "final_decision": "REVIEW",
+      "approval_required": true
+    }
+  ],
+  "auto_approved": []
+}

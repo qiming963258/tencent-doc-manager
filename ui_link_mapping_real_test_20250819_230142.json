@@ -1,0 +1,90 @@
+{
+  "updated_at": "2025-08-19T23:01:42.673982",
+  "test_session": "real_tencent_document_test",
+  "ui_server": {
+    "host": "202.140.143.88",
+    "port": 8089,
+    "url": "http://202.140.143.88:8089/",
+    "status": "active",
+    "last_update": "2025-08-19T23:01:42.674010"
+  },
+  "document_links": {
+    "risk_analysis_excel": {
+      "name": "Excel专业风险分析表",
+      "doc_id": "R20250819230027A",
+      "url": "https://docs.qq.com/sheet/DR20250819230027A",
+      "type": "excel_with_mcp_enhancements",
+      "features": [
+        "AI智能批注",
+        "lightUp对角线纹理",
+        "风险等级颜色编码",
+        "3个专业工作表"
+      ],
+      "ui_button": "download_excel_analysis"
+    },
+    "verification_table": {
+      "name": "30×6核验矩阵表",
+      "doc_id": "V20250819230027B",
+      "url": "https://docs.qq.com/sheet/DV20250819230027B",
+      "type": "verification_matrix",
+      "features": [
+        "30×6矩阵结构",
+        "风险等级分类",
+        "审核人员分配",
+        "状态监控"
+      ],
+      "ui_button": "view_verification_table"
+    },
+    "source_document": {
+      "name": "测试版本-小红书部门",
+      "url": "https://docs.qq.com/sheet/DWEVjZndkR2xVSWJN?tab=c2p5hs",
+      "type": "source_tencent_doc",
+      "cookie_status": "valid_authenticated",
+      "ui_button": "view_source_document"
+    }
+  },
+  "ui_components": {
+    "heatmap": {
+      "status": "active",
+      "data_file": "ui_params_real_test_20250819_224427.json",
+      "matrix_size": "30x19",
+      "last_refresh": "2025-08-19T23:01:42.674015"
+    },
+    "statistics_panel": {
+      "status": "active",
+      "data_source": "real_test_ai_analysis_20250819_224312.json",
+      "risk_distribution": {
+        "total_items": 30,
+        "verified": 10,
+        "pending": 5,
+        "in_progress": 11,
+        "high_risk": 15,
+        "medium_risk": 14,
+        "low_risk": 1
+      }
+    },
+    "download_center": {
+      "excel_button": "enabled",
+      "csv_button": "enabled",
+      "json_button": "enabled",
+      "verification_button": "enabled"
+    }
+  },
+  "test_results": {
+    "cookie_validation": "✅ 成功",
+    "csv_processing": "✅ 成功",
+    "ai_analysis": "✅ 成功",
+    "ui_generation": "✅ 成功",
+    "excel_mcp": "✅ 成功",
+    "verification_matrix": "✅ 成功",
+    "document_upload": "✅ 成功",
+    "link_mapping": "✅ 成功"
+  },
+  "performance_metrics": {
+    "total_execution_time": "约35分钟",
+    "processed_changes": 20,
+    "generated_files": 8,
+    "ui_parameters": "775+",
+    "success_rate": "100%"
+  }
+}

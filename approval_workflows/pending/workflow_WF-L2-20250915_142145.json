@@ -1,0 +1,32 @@
+{
+  "workflow_id": "WF-L2-20250915_142145",
+  "created_time": "2025-09-15 14:21:45",
+  "pending_approvals": [
+    {
+      "modification_id": "M001",
+      "cell": "J9",
+      "column": "协助人",
+      "old_value": "曾利萍,杨佳玲,朱瀚桔",
+      "new_value": "赖铁荔",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 80.0,
+        "reason": "人员变更"
+      },
+      "layer2_result": {
+        "risk_level": "HIGH",
+        "decision": "REVIEW",
+        "confidence": 85,
+        "key_risks": [
+          "原协助人团队被完全替换，可能造成交接风险",
+          "新协助人可能需要时间熟悉项目",
+          "原团队成员的专业知识可能丢失"
+        ],
+        "recommendation": "建议: 1)保留至少一位原协助人过渡 2)确保新协助人已完成必要培训 3)安排详细的知识转移会议 4)监控过渡期项目进展"
+      },
+      "final_decision": "REVIEW",
+      "approval_required": true
+    }
+  ],
+  "auto_approved": []
+}

@@ -1,0 +1,21 @@
+{
+  "total_changes": 0,
+  "added_rows": 0,
+  "modified_rows": 0,
+  "deleted_rows": 0,
+  "similarity_score": 1.0,
+  "details": {
+    "baseline_total_rows": 115,
+    "target_total_rows": 115,
+    "common_rows": 106,
+    "baseline_columns": 26,
+    "target_columns": 26
+  },
+  "added_samples": [],
+  "deleted_samples": [],
+  "metadata": {
+    "timestamp": "20250903_112453",
+    "system_version": "3.0.0",
+    "comparison_method": "adaptive"
+  }
+}

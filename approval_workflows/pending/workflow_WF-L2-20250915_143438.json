@@ -1,0 +1,32 @@
+{
+  "workflow_id": "WF-L2-20250915_143438",
+  "created_time": "2025-09-15 14:34:38",
+  "pending_approvals": [
+    {
+      "modification_id": "M001",
+      "cell": "I23",
+      "column": "负责人",
+      "old_value": "朱瀚桔",
+      "new_value": "",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 80.0,
+        "reason": "负责人变更"
+      },
+      "layer2_result": {
+        "risk_level": "CRITICAL",
+        "decision": "REVIEW",
+        "confidence": 85,
+        "key_risks": [
+          "负责人信息缺失可能导致责任不明确",
+          "关键任务无人负责可能导致项目延误",
+          "团队协作可能出现混乱"
+        ],
+        "recommendation": "强烈建议补充新的负责人信息。如果确实需要清空该字段，应确保：1) 有其他机制明确该任务的责任归属 2) 相关团队成员知悉此变更 3) 更新相关项目文档记录此变更原因。建议召开简短会议讨论此变更的影响。"
+      },
+      "final_decision": "REVIEW",
+      "approval_required": true
+    }
+  ],
+  "auto_approved": []
+}

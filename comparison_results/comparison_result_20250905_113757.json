@@ -1,0 +1,92 @@
+{
+  "total_changes": 19,
+  "added_rows": 0,
+  "deleted_rows": 0,
+  "modified_rows": 19,
+  "similarity_score": 0.926,
+  "details": {
+    "baseline_total_rows": 116,
+    "target_total_rows": 116,
+    "baseline_columns": 20,
+    "target_columns": 26,
+    "common_columns": 20,
+    "total_cells_compared": 2320,
+    "identical_cells": 2301,
+    "modified_cells": 19,
+    "cell_similarity": 0.992,
+    "structure_similarity": 0.769,
+    "row_similarity": 1.0
+  },
+  "added_samples": [],
+  "deleted_samples": [],
+  "comparator_type": "SimpleComparison",
+  "warning": "列数不匹配：基线 20 列，目标 26 列。仅对比前 20 列。",
+  "professional_metadata": {
+    "baseline_file": "csv_versions/2025_W36/midweek/tencent_副本-测试版本-出国销售计划表-工作表1_csv_20250905_1137_midweek_W36.csv",
+    "target_file": "csv_versions/2025_W36/midweek/tencent_副本-副本-测试版本-出国销售计划表-工作表1_csv_20250905_1137_midweek_W36.csv",
+    "comparison_time": "2025-09-05T11:37:57.822088",
+    "baseline_structure": {
+      "rows": 114,
+      "columns": 19,
+      "column_names": [
+        "序号",
+        "计划输出思路\n8/28",
+        "项目类型",
+        "来源",
+        "任务发起时间",
+        "目标对齐",
+        "关键KR对齐",
+        "具体计划内容",
+        "邓总指导登记（日更新）",
+        "负责人",
+        "协助人",
+        "重要程度",
+        "预计完成时间",
+        "完成链接",
+        "总完成进度",
+        "经理分析复盘",
+        "",
+        "",
+        ""
+      ]
+    },
+    "target_structure": {
+      "rows": 114,
+      "columns": 26,
+      "column_names": [
+        "序号",
+        "计划输出思路\n8/28",
+        "项目类型",
+        "来源",
+        "任务发起时间",
+        "目标对齐",
+        "关键KR对齐",
+        "具体计划内容",
+        "邓总指导登记（日更新）",
+        "负责人",
+        "协助人",
+        "重要程度",
+        "预计完成时间",
+        "完成链接",
+        "总完成进度",
+        "经理分析复盘",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ]
+    }
+  },
+  "execution_time": 0.012649297714233398,
+  "metadata": {
+    "timestamp": "20250905_113757",
+    "system_version": "3.0.0",
+    "comparison_method": "adaptive"
+  }
+}

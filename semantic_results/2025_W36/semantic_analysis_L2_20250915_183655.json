@@ -1,0 +1,47 @@
+{
+  "metadata": {
+    "analysis_time": "2025-09-15 18:36:55",
+    "total_modifications": 1,
+    "layer1_passed": 0,
+    "layer2_analyzed": 1,
+    "processing_time": "17.0s"
+  },
+  "results": [
+    {
+      "modification_id": "M001",
+      "cell": "I33",
+      "column": "邓总指导登记（日更新）",
+      "old_value": "0\n\n0310-\n具体登记内容已记录在悦莹的个人工作计划清单；",
+      "new_value": "",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 80.0,
+        "reason": "删除内容"
+      },
+      "layer2_result": {
+        "risk_level": "LOW",
+        "decision": "APPROVE",
+        "confidence": 85,
+        "key_risks": [
+          "信息透明度降低",
+          "跟踪机制弱化"
+        ],
+        "recommendation": "1. 建议在'悦莹的个人工作计划清单'中明确标注邓总指导记录的来源\n2. 确保相关团队成员知晓信息转移情况\n3. 定期检查备份记录的有效性"
+      },
+      "final_decision": "APPROVE",
+      "approval_required": false
+    }
+  ],
+  "summary": {
+    "approved": 1,
+    "conditional": 0,
+    "review_required": 0,
+    "rejected": 0,
+    "risk_distribution": {
+      "LOW": 1,
+      "MEDIUM": 0,
+      "HIGH": 0,
+      "CRITICAL": 0
+    }
+  }
+}

@@ -1,0 +1,49 @@
+{
+  "metadata": {
+    "analysis_time": "2025-09-15 15:44:26",
+    "total_modifications": 1,
+    "layer1_passed": 0,
+    "layer2_analyzed": 1,
+    "processing_time": "14.7s"
+  },
+  "results": [
+    {
+      "modification_id": "M001",
+      "cell": "G95",
+      "column": "具体计划内容",
+      "old_value": "【部门群日汇报机制的优化迭代】\n1、周期维度-周度识别员工一周群日汇报的卡点与问题进行优化与迭代\n1、按需维度-根据员工至下而上反馈的群日汇报卡点与问题进行及时优化与解决",
+      "new_value": "定价与报价系统优化",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 90.0,
+        "reason": "主题变更"
+      },
+      "layer2_result": {
+        "risk_level": "HIGH",
+        "decision": "REVIEW",
+        "confidence": 85,
+        "key_risks": [
+          "内容性质完全改变，原计划聚焦于内部沟通机制优化，新值转向定价系统，可能导致资源错配",
+          "项目目标发生重大偏移，可能影响整体战略执行",
+          "团队原定工作计划需全面调整，可能造成时间浪费",
+          "两个主题的专业领域差异大，可能面临团队成员技能不匹配问题"
+        ],
+        "recommendation": "建议组织专项评估会议：1) 确认战略优先级是否确实变更 2) 评估资源重分配方案 3) 制定过渡计划 4) 重新测算项目时间线。需获得项目发起人书面批准后方可实施变更。"
+      },
+      "final_decision": "REVIEW",
+      "approval_required": true
+    }
+  ],
+  "summary": {
+    "approved": 0,
+    "conditional": 0,
+    "review_required": 1,
+    "rejected": 0,
+    "risk_distribution": {
+      "LOW": 0,
+      "MEDIUM": 0,
+      "HIGH": 1,
+      "CRITICAL": 0
+    }
+  }
+}

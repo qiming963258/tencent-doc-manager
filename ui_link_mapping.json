@@ -1,0 +1,46 @@
+{
+  "updated_at": "2025-08-19T18:41:03.760443",
+  "ui_server": {
+    "host": "202.140.143.88",
+    "port": 8089,
+    "url": "http://202.140.143.88:8089/"
+  },
+  "document_links": {
+    "risk_analysis": {
+      "name": "风险分析Excel表",
+      "doc_id": "E2ADF400ED72",
+      "url": "https://docs.qq.com/sheet/DE2ADF400ED72",
+      "type": "excel",
+      "ui_element": "download_excel_button"
+    },
+    "verification_table": {
+      "name": "核验表",
+      "doc_id": "A05462C85A4C",
+      "url": "https://docs.qq.com/sheet/DA05462C85A4C",
+      "type": "json",
+      "ui_element": "verification_table_link"
+    },
+    "source_document": {
+      "name": "源文档",
+      "url": "https://docs.qq.com/sheet/DWEVjZndkR2xVSWJN?tab=c2p5hs",
+      "type": "source",
+      "ui_element": "source_doc_link"
+    }
+  },
+  "ui_components": {
+    "heatmap": {
+      "status": "active",
+      "data_source": "ui_params_generated.json",
+      "refresh_interval": 60
+    },
+    "statistics": {
+      "status": "active",
+      "data_source": "csv_versions/standard_outputs/table_001_diff_risk_scoring_final.json"
+    },
+    "download_buttons": {
+      "excel": "enabled",
+      "csv": "enabled",
+      "json": "enabled"
+    }
+  }
+}

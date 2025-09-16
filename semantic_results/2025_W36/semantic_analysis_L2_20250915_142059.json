@@ -1,0 +1,48 @@
+{
+  "metadata": {
+    "analysis_time": "2025-09-15 14:20:59",
+    "total_modifications": 1,
+    "layer1_passed": 0,
+    "layer2_analyzed": 1,
+    "processing_time": "11.6s"
+  },
+  "results": [
+    {
+      "modification_id": "M001",
+      "cell": "K8",
+      "column": "监督人",
+      "old_value": "徐志杰",
+      "new_value": "魏志广",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 75.0,
+        "reason": "关键人变更"
+      },
+      "layer2_result": {
+        "risk_level": "MEDIUM",
+        "decision": "CONDITIONAL",
+        "confidence": 75,
+        "key_risks": [
+          "监督人变更可能导致项目监督风格变化",
+          "新监督人需要时间熟悉项目情况",
+          "团队需要适应新监督人的工作方式"
+        ],
+        "recommendation": "建议：1. 安排新监督人完整交接；2. 通知相关干系人变更；3. 评估新监督人能力匹配度；4. 设置2周过渡观察期"
+      },
+      "final_decision": "CONDITIONAL",
+      "approval_required": false
+    }
+  ],
+  "summary": {
+    "approved": 0,
+    "conditional": 1,
+    "review_required": 0,
+    "rejected": 0,
+    "risk_distribution": {
+      "LOW": 0,
+      "MEDIUM": 0,
+      "HIGH": 0,
+      "CRITICAL": 0
+    }
+  }
+}

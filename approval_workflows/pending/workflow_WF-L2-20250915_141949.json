@@ -1,0 +1,31 @@
+{
+  "workflow_id": "WF-L2-20250915_141949",
+  "created_time": "2025-09-15 14:19:49",
+  "pending_approvals": [
+    {
+      "modification_id": "M001",
+      "cell": "K7",
+      "column": "监督人",
+      "old_value": "徐志杰",
+      "new_value": "魏志广",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 75.0,
+        "reason": "更换监督人"
+      },
+      "layer2_result": {
+        "risk_level": "MEDIUM",
+        "decision": "REVIEW",
+        "confidence": 75,
+        "key_risks": [
+          "监督人变更可能导致项目监督的标准和方式发生变化",
+          "新监督人需要时间熟悉项目情况，可能短期内影响工作效率"
+        ],
+        "recommendation": "建议组织一次交接会议，确保新监督人全面了解项目背景、当前状态和关键风险点，并明确监督标准和期望。同时，建议在变更后的初期增加项目进度检查频率以确保平稳过渡。"
+      },
+      "final_decision": "REVIEW",
+      "approval_required": true
+    }
+  ],
+  "auto_approved": []
+}

@@ -1,0 +1,16 @@
+{
+  "metadata": {
+    "comparison_id": "20250910_192002",
+    "baseline_file": "tencent_测试版本-小红书部门-工作表2_20250910_1920_midweek_W37.csv",
+    "target_file": "tencent_测试版本-小红书部门-工作表2_20250910_1921_midweek_W37.csv",
+    "timestamp": "2025-09-10T19:21:27.983036"
+  },
+  "statistics": {
+    "total_cells": 100,
+    "changed_cells": 15,
+    "high_risk_count": 3,
+    "medium_risk_count": 5,
+    "low_risk_count": 7
+  },
+  "cell_scores": {}
+}

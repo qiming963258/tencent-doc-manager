@@ -1,0 +1,46 @@
+{
+  "workflow_id": "WF-L2-20250915_143327",
+  "created_time": "2025-09-15 14:33:27",
+  "pending_approvals": [],
+  "auto_approved": [
+    {
+      "modification_id": "M001",
+      "cell": "K21",
+      "column": "监督人",
+      "old_value": "徐志杰",
+      "new_value": "赖铁荔",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 75.0,
+        "reason": "关键人变更"
+      },
+      "layer2_result": {
+        "risk_level": "MEDIUM",
+        "decision": "CONDITIONAL",
+        "confidence": 75,
+        "key_risks": [
+          "监督人变更可能导致项目监督风格和标准变化",
+          "新监督人需要时间熟悉项目情况",
+          "可能影响团队与监督人之间的既有协作关系"
+        ],
+        "recommendation": "建议：1. 安排项目交接会议，确保新监督人全面了解项目情况；2. 明确监督标准和期望；3. 监控初期1-2周的项目执行情况，确保平稳过渡。待交接确认完成后正式批准变更。",
+        "detailed_analysis": {
+          "change_nature": "性质改变",
+          "impact_assessment": {
+            "project_objectives": 5,
+            "execution_plan": 4,
+            "team_collaboration": 6,
+            "delivery_timeline": 3
+          },
+          "special_checks": {
+            "supervisor_qualification": "需确认赖铁荔是否具备同等监督资质",
+            "project_knowledge": "需评估赖铁荔对项目的熟悉程度",
+            "reporting_structure": "需确认汇报关系是否发生变化"
+          }
+        }
+      },
+      "final_decision": "CONDITIONAL",
+      "approval_required": false
+    }
+  ]
+}

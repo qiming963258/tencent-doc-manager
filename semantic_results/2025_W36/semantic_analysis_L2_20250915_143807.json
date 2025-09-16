@@ -1,0 +1,48 @@
+{
+  "metadata": {
+    "analysis_time": "2025-09-15 14:38:07",
+    "total_modifications": 1,
+    "layer1_passed": 0,
+    "layer2_analyzed": 1,
+    "processing_time": "15.0s"
+  },
+  "results": [
+    {
+      "modification_id": "M001",
+      "cell": "K26",
+      "column": "监督人",
+      "old_value": "邓总",
+      "new_value": "赖铁荔",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 80.0,
+        "reason": "负责人变更"
+      },
+      "layer2_result": {
+        "risk_level": "MEDIUM",
+        "decision": "REVIEW",
+        "confidence": 75,
+        "key_risks": [
+          "监督人角色变更可能导致项目监督风格和决策方式的变化",
+          "新监督人可能需要时间熟悉项目背景和当前进展",
+          "团队需要适应新的领导和沟通方式"
+        ],
+        "recommendation": "建议：1)安排项目交接会议确保知识传递；2)评估新监督人的可用性和熟悉项目的时间需求；3)通知所有相关方监督人变更事宜；4)考虑设置过渡期进行双重监督"
+      },
+      "final_decision": "REVIEW",
+      "approval_required": true
+    }
+  ],
+  "summary": {
+    "approved": 0,
+    "conditional": 0,
+    "review_required": 1,
+    "rejected": 0,
+    "risk_distribution": {
+      "LOW": 0,
+      "MEDIUM": 0,
+      "HIGH": 1,
+      "CRITICAL": 0
+    }
+  }
+}

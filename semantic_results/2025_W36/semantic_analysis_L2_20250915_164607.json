@@ -1,0 +1,48 @@
+{
+  "metadata": {
+    "analysis_time": "2025-09-15 16:46:07",
+    "total_modifications": 1,
+    "layer1_passed": 0,
+    "layer2_analyzed": 1,
+    "processing_time": "22.9s"
+  },
+  "results": [
+    {
+      "modification_id": "M001",
+      "cell": "C11",
+      "column": "项目类型",
+      "old_value": "目标管理",
+      "new_value": "项目管理",
+      "layer1_result": {
+        "judgment": "UNSURE",
+        "confidence": 60.0,
+        "reason": "类型变更"
+      },
+      "layer2_result": {
+        "risk_level": "MEDIUM",
+        "decision": "REVIEW",
+        "confidence": 75,
+        "key_risks": [
+          "项目范围可能发生变更",
+          "现有执行计划可能需要调整",
+          "干系人预期可能受到影响"
+        ],
+        "recommendation": "建议在修改前：1. 评估项目章程是否需要同步更新；2. 与核心干系人确认变更影响；3. 检查WBS和项目计划是否需要调整。确认无重大影响后再执行修改。"
+      },
+      "final_decision": "REVIEW",
+      "approval_required": true
+    }
+  ],
+  "summary": {
+    "approved": 0,
+    "conditional": 0,
+    "review_required": 1,
+    "rejected": 0,
+    "risk_distribution": {
+      "LOW": 0,
+      "MEDIUM": 0,
+      "HIGH": 1,
+      "CRITICAL": 0
+    }
+  }
+}

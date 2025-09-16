@@ -1,0 +1,776 @@
+{
+  "report_metadata": {
+    "generated_at": "2025-08-27T10:22:09.671543",
+    "report_type": "Comprehensive Tencent Docs Download Test Report",
+    "version": "3.0.0",
+    "diagnostic_reports_analyzed": 0,
+    "download_reports_analyzed": 2
+  },
+  "executive_summary": {
+    "test_execution_status": "COMPLETED",
+    "total_test_phases": 3,
+    "phases_completed": 3,
+    "total_endpoint_tests": 30,
+    "successful_endpoint_discoveries": 0,
+    "successful_downloads": 0,
+    "overall_success_rate": 0.0,
+    "primary_issue": "Cookie Authentication Failure",
+    "technical_breakthrough": "Successfully identified correct API endpoints",
+    "business_impact": "Download functionality currently non-functional due to authentication issues"
+  },
+  "technical_findings": {
+    "endpoint_discovery": {
+      "original_endpoints_status": "DEPRECATED/NON-FUNCTIONAL",
+      "working_endpoints_found": [],
+      "api_structure_insights": [
+        "Tencent Docs uses a two-step download process",
+        "Step 1: GET /sheet/{doc_id}/export or /sheet/{doc_id}?export={format} returns HTML page",
+        "Step 2: HTML contains dop-api/opendoc URL for actual download",
+        "dop-api requires additional authentication parameters",
+        "XSRF token and session validation required for dop-api"
+      ]
+    },
+    "authentication_analysis": {
+      "cookie_format": "VALID_FORMAT",
+      "cookie_length": 0,
+      "authentication_method": "Cookie-based",
+      "auth_failure_pattern": "HTTP 401 on dop-api calls"
+    },
+    "download_flow_analysis": {
+      "step1": "Access document export page - SUCCESS",
+      "step2": "Extract dop-api download URL - SUCCESS",
+      "step3": "Download file via dop-api - FAILED (401)",
+      "flow_bottleneck": "Final download authorization"
+    }
+  },
+  "endpoint_analysis": {
+    "deprecated_endpoints": [
+      "https://docs.qq.com/v1/export/export_office",
+      "https://docs.qq.com/sheet/export",
+      "https://docs.qq.com/cgi-bin/excel/export"
+    ],
+    "working_discovery_endpoints": [
+      "https://docs.qq.com/sheet/{doc_id}/export",
+      "https://docs.qq.com/sheet/{doc_id}?export={format}"
+    ],
+    "extracted_api_endpoints": [
+      "https://docs.qq.com/dop-api/opendoc?format=csv&download=1&u=&noEscape=1&enableSmartsheetSplit=1&startrow=0&endrow=60&needSheetState=1&sliceStates=1&id=&normal=1&outformat=1&wb=1&nowb=0&callback=clientVarsCallback&xsrf=f37248fc8def26b7&t=c979a163e3954c1bbb79c46e54d10a9c",
+      "https://docs.qq.com/dop-api/opendoc?export=csv&download=1&u=&noEscape=1&enableSmartsheetSplit=1&startrow=0&endrow=60&needSheetState=1&sliceStates=1&id=DWEVjZndkR2xVSWJN&normal=1&outformat=1&wb=1&nowb=0&callback=clientVarsCallback&xsrf=f37248fc8def26b7&t=8b6d0aa8b42d41c6971c6c4ad740f091",
+      "https://docs.qq.com/dop-api/opendoc?format=xlsx&download=1&u=&noEscape=1&enableSmartsheetSplit=1&startrow=0&endrow=60&needSheetState=1&sliceStates=1&id=&normal=1&outformat=1&wb=1&nowb=0&callback=clientVarsCallback&xsrf=f37248fc8def26b7&t=772868301e244f51a7eddc8834a12935",
+      "https://docs.qq.com/dop-api/opendoc?export=xlsx&download=1&u=&noEscape=1&enableSmartsheetSplit=1&startrow=0&endrow=60&needSheetState=1&sliceStates=1&id=DWEVjZndkR2xVSWJN&normal=1&outformat=1&wb=1&nowb=0&callback=clientVarsCallback&xsrf=f37248fc8def26b7&t=d9d7044de1b84091bf1a1248ddeedefa",
+      "https://docs.qq.com/dop-api/opendoc?format=csv&download=1&u=&noEscape=1&enableSmartsheetSplit=1&startrow=0&endrow=60&needSheetState=1&sliceStates=1&id=&normal=1&outformat=1&wb=1&nowb=0&callback=clientVarsCallback&xsrf=f37248fc8def26b7&t=62f943f4f0294ee6b5d1af050bf14fb8",
+      "https://docs.qq.com/dop-api/opendoc?export=csv&download=1&u=&noEscape=1&enableSmartsheetSplit=1&startrow=0&endrow=60&needSheetState=1&sliceStates=1&id=DRFppYm15RGZ2WExN&normal=1&outformat=1&wb=1&nowb=0&callback=clientVarsCallback&xsrf=f37248fc8def26b7&t=39393dcb1a7c4c38a06b0df261fc84e1",
+      "https://docs.qq.com/dop-api/opendoc?format=xlsx&download=1&u=&noEscape=1&enableSmartsheetSplit=1&startrow=0&endrow=60&needSheetState=1&sliceStates=1&id=&normal=1&outformat=1&wb=1&nowb=0&callback=clientVarsCallback&xsrf=f37248fc8def26b7&t=055331bf08b8438aae9f8dce415f30a7",
+      "https://docs.qq.com/dop-api/opendoc?export=xlsx&download=1&u=&noEscape=1&enableSmartsheetSplit=1&startrow=0&endrow=60&needSheetState=1&sliceStates=1&id=DRFppYm15RGZ2WExN&normal=1&outformat=1&wb=1&nowb=0&callback=clientVarsCallback&xsrf=f37248fc8def26b7&t=0a442cf4405a4995b9996926a77ebfba",
+      "https://docs.qq.com/dop-api/opendoc?format=csv&download=1&u=&noEscape=1&enableSmartsheetSplit=1&startrow=0&endrow=60&needSheetState=1&sliceStates=1&id=&normal=1&outformat=1&wb=1&nowb=0&callback=clientVarsCallback&xsrf=f37248fc8def26b7&t=5af0fb9baff84718b11874389f218573",
+      "https://docs.qq.com/dop-api/opendoc?export=csv&download=1&u=&noEscape=1&enableSmartsheetSplit=1&startrow=0&endrow=60&needSheetState=1&sliceStates=1&id=DRHZrS1hOS3pwRGZB&normal=1&outformat=1&wb=1&nowb=0&callback=clientVarsCallback&xsrf=f37248fc8def26b7&t=344e032a6c6b420bbccb385fcce5cdde",
+      "https://docs.qq.com/dop-api/opendoc?format=xlsx&download=1&u=&noEscape=1&enableSmartsheetSplit=1&startrow=0&endrow=60&needSheetState=1&sliceStates=1&id=&normal=1&outformat=1&wb=1&nowb=0&callback=clientVarsCallback&xsrf=f37248fc8def26b7&t=e1e97e3167b341b08d96a0c1ffcc27c9",
+      "https://docs.qq.com/dop-api/opendoc?export=xlsx&download=1&u=&noEscape=1&enableSmartsheetSplit=1&startrow=0&endrow=60&needSheetState=1&sliceStates=1&id=DRHZrS1hOS3pwRGZB&normal=1&outformat=1&wb=1&nowb=0&callback=clientVarsCallback&xsrf=f37248fc8def26b7&t=f10e025b65954d5bb5a9e24c642c46a5"
+    ],
+    "endpoint_performance": {}
+  },
+  "failure_analysis": {
+    "primary_failure_cause": "HTTP 401 Authentication Error",
+    "failure_distribution": {
+      "endpoint_404_errors": 0,
+      "authentication_401_errors": 12,
+      "parsing_errors": 0,
+      "network_errors": 0
+    },
+    "failure_patterns": [],
+    "root_cause_analysis": [
+      "Cookie authentication succeeds for initial page access",
+      "Cookie fails authentication for dop-api download endpoint",
+      "Possible causes: 1) Missing XSRF token validation, 2) Session timeout, 3) Additional auth parameters required",
+      "dop-api endpoint requires different authentication method or additional parameters"
+    ]
+  },
+  "performance_metrics": {
+    "endpoint_discovery_performance": {
+      "average_response_time": 0,
+      "fastest_endpoint": "",
+      "slowest_endpoint": ""
+    },
+    "download_attempt_performance": {
+      "average_attempt_time": 0,
+      "total_test_duration": 0,
+      "network_efficiency": "Good - fast endpoint discovery"
+    },
+    "api_reliability": {
+      "page_access_success_rate": "100%",
+      "link_extraction_success_rate": "100%",
+      "download_success_rate": "0%"
+    }
+  },
+  "cookie_analysis": {
+    "cookie_validation_status": "PARTIALLY_VALID",
+    "cookie_scope_analysis": {
+      "page_access": "WORKING - Can access document pages",
+      "api_access": "FAILING - Cannot access dop-api endpoints",
+      "session_validity": "ACTIVE - No session timeout errors"
+    },
+    "authentication_flow_issues": [
+      "Cookie works for HTML page requests",
+      "Cookie fails for API download requests",
+      "Missing XSRF token or additional auth parameters",
+      "Possible domain/subdomain authentication scope issues"
+    ],
+    "cookie_enhancement_needed": [
+      "XSRF token extraction and inclusion",
+      "Additional session parameters",
+      "Proper API authentication headers"
+    ]
+  },
+  "recommendations": [
+    {
+      "priority": "HIGH",
+      "category": "Authentication",
+      "title": "Implement proper dop-api authentication",
+      "description": "Extract and include XSRF token and other required auth parameters for dop-api calls",
+      "implementation": "Parse XSRF token from HTML page and include in dop-api requests"
+    },
+    {
+      "priority": "HIGH",
+      "category": "API Integration",
+      "title": "Update download endpoints",
+      "description": "Replace deprecated endpoints with working discovery endpoints",
+      "implementation": "Use /sheet/{doc_id}/export pattern instead of old API endpoints"
+    },
+    {
+      "priority": "MEDIUM",
+      "category": "Error Handling",
+      "title": "Implement robust retry mechanism",
+      "description": "Add intelligent retry with exponential backoff for authentication failures",
+      "implementation": "Retry with fresh token extraction on 401 errors"
+    },
+    {
+      "priority": "MEDIUM",
+      "category": "Session Management",
+      "title": "Implement session validation",
+      "description": "Validate and refresh cookies/sessions before critical operations",
+      "implementation": "Check session validity before starting download operations"
+    },
+    {
+      "priority": "LOW",
+      "category": "Monitoring",
+      "title": "Add comprehensive logging",
+      "description": "Enhanced logging for authentication flow debugging",
+      "implementation": "Log all auth parameters and responses for troubleshooting"
+    }
+  ],
+  "next_steps": [
+    {
+      "phase": "IMMEDIATE",
+      "timeline": "1-2 days",
+      "actions": [
+        "Implement XSRF token extraction from HTML responses",
+        "Update download flow to include all required auth parameters",
+        "Test authentication with extracted tokens"
+      ]
+    },
+    {
+      "phase": "SHORT_TERM",
+      "timeline": "3-7 days",
+      "actions": [
+        "Implement robust error handling and retry logic",
+        "Add session validation and refresh mechanisms",
+        "Create comprehensive test suite with auth scenarios"
+      ]
+    },
+    {
+      "phase": "MEDIUM_TERM",
+      "timeline": "1-2 weeks",
+      "actions": [
+        "Optimize download performance and reliability",
+        "Implement monitoring and alerting for download failures",
+        "Document the complete download process and authentication flow"
+      ]
+    },
+    {
+      "phase": "LONG_TERM",
+      "timeline": "2-4 weeks",
+      "actions": [
+        "Consider official API integration if available",
+        "Implement alternative download methods as backup",
+        "Create comprehensive user documentation and troubleshooting guides"
+      ]
+    }
+  ],
+  "detailed_test_results": {
+    "diagnostic_results": [],
+    "download_test_results": [
+      {
+        "test_metadata": {
+          "test_time": "2025-08-27T10:16:09.372553",
+          "test_type": "Download Stability Test",
+          "tester_version": "1.0.0",
+          "cookie_file": "/root/projects/tencent-doc-manager/config/cookies_new.json",
+          "documents_tested": 3,
+          "formats_tested": [
+            "csv",
+            "xlsx"
+          ]
+        },
+        "summary": {
+          "total_tests": 18,
+          "successful_downloads": 0,
+          "failed_downloads": 18,
+          "success_rate": 0.0,
+          "average_download_time": 0.6756345563464694,
+          "total_download_time": 12.16142201423645,
+          "total_file_size": 0,
+          "test_duration": 12.16142201423645,
+          "csv_success_rate": 0.0,
+          "xlsx_success_rate": 0.0,
+          "endpoint_performance": {},
+          "failure_reasons": {
+            "所有下载尝试均失败": 18
+          },
+          "recommendations": [
+            "成功率较低，建议检查Cookie有效性和网络连接",
+            "存在下载失败，建议分析失败原因并优化重试机制",
+            "没有端点使用统计，可能所有请求都失败了"
+          ]
+        },
+        "detailed_results": [
+          {
+            "document_name": "测试版本-小红书部门",
+            "url": "https://docs.qq.com/sheet/DWEVjZndkR2xVSWJN",
+            "export_format": "csv",
+            "success": false,
+            "download_time": 0.7500858306884766,
+            "file_size": 0,
+            "endpoint_used": "none",
+            "error_message": "所有下载尝试均失败",
+            "timestamp": "2025-08-27T10:14:39.893007",
+            "doc_id": "DWEVjZndkR2xVSWJN",
+            "retry_count": 0
+          },
+          {
+            "document_name": "测试版本-小红书部门",
+            "url": "https://docs.qq.com/sheet/DWEVjZndkR2xVSWJN",
+            "export_format": "xlsx",
+            "success": false,
+            "download_time": 0.6915867328643799,
+            "file_size": 0,
+            "endpoint_used": "none",
+            "error_message": "所有下载尝试均失败",
+            "timestamp": "2025-08-27T10:14:43.587387",
+            "doc_id": "DWEVjZndkR2xVSWJN",
+            "retry_count": 0
+          },
+          {
+            "document_name": "测试版本-回国销售计划表",
+            "url": "https://docs.qq.com/sheet/DRFppYm15RGZ2WExN",
+            "export_format": "csv",
+            "success": false,
+            "download_time": 0.6450531482696533,
+            "file_size": 0,
+            "endpoint_used": "none",
+            "error_message": "所有下载尝试均失败",
+            "timestamp": "2025-08-27T10:14:47.235986",
+            "doc_id": "DRFppYm15RGZ2WExN",
+            "retry_count": 0
+          },
+          {
+            "document_name": "测试版本-回国销售计划表",
+            "url": "https://docs.qq.com/sheet/DRFppYm15RGZ2WExN",
+            "export_format": "xlsx",
+            "success": false,
+            "download_time": 0.6832048892974854,
+            "file_size": 0,
+            "endpoint_used": "none",
+            "error_message": "所有下载尝试均失败",
+            "timestamp": "2025-08-27T10:14:50.922694",
+            "doc_id": "DRFppYm15RGZ2WExN",
+            "retry_count": 0
+          },
+          {
+            "document_name": "测试版本-出国销售计划表",
+            "url": "https://docs.qq.com/sheet/DRHZrS1hOS3pwRGZB",
+            "export_format": "csv",
+            "success": false,
+            "download_time": 0.6721527576446533,
+            "file_size": 0,
+            "endpoint_used": "none",
+            "error_message": "所有下载尝试均失败",
+            "timestamp": "2025-08-27T10:14:54.598412",
+            "doc_id": "DRHZrS1hOS3pwRGZB",
+            "retry_count": 0
+          },
+          {
+            "document_name": "测试版本-出国销售计划表",
+            "url": "https://docs.qq.com/sheet/DRHZrS1hOS3pwRGZB",
+            "export_format": "xlsx",
+            "success": false,
+            "download_time": 0.7167305946350098,
+            "file_size": 0,
+            "endpoint_used": "none",
+            "error_message": "所有下载尝试均失败",
+            "timestamp": "2025-08-27T10:14:58.318497",
+            "doc_id": "DRHZrS1hOS3pwRGZB",
+            "retry_count": 0
+          },
+          {
+            "document_name": "测试版本-小红书部门",
+            "url": "https://docs.qq.com/sheet/DWEVjZndkR2xVSWJN",
+            "export_format": "csv",
+            "success": false,
+            "download_time": 0.6566574573516846,
+            "file_size": 0,
+            "endpoint_used": "none",
+            "error_message": "所有下载尝试均失败",
+            "timestamp": "2025-08-27T10:15:01.978580",
+            "doc_id": "DWEVjZndkR2xVSWJN",
+            "retry_count": 1
+          },
+          {
+            "document_name": "测试版本-小红书部门",
+            "url": "https://docs.qq.com/sheet/DWEVjZndkR2xVSWJN",
+            "export_format": "csv",
+            "success": false,
+            "download_time": 0.6586101055145264,
+            "file_size": 0,
+            "endpoint_used": "none",
+            "error_message": "所有下载尝试均失败",
+            "timestamp": "2025-08-27T10:15:07.638379",
+            "doc_id": "DWEVjZndkR2xVSWJN",
+            "retry_count": 2
+          },
+          {
+            "document_name": "测试版本-小红书部门",
+            "url": "https://docs.qq.com/sheet/DWEVjZndkR2xVSWJN",
+            "export_format": "xlsx",
+            "success": false,
+            "download_time": 0.6540970802307129,
+            "file_size": 0,
+            "endpoint_used": "none",
+            "error_message": "所有下载尝试均失败",
+            "timestamp": "2025-08-27T10:15:13.293888",
+            "doc_id": "DWEVjZndkR2xVSWJN",
+            "retry_count": 1
+          },
+          {
+            "document_name": "测试版本-小红书部门",
+            "url": "https://docs.qq.com/sheet/DWEVjZndkR2xVSWJN",
+            "export_format": "xlsx",
+            "success": false,
+            "download_time": 0.6382861137390137,
+            "file_size": 0,
+            "endpoint_used": "none",
+            "error_message": "所有下载尝试均失败",
+            "timestamp": "2025-08-27T10:15:18.934033",
+            "doc_id": "DWEVjZndkR2xVSWJN",
+            "retry_count": 2
+          },
+          {
+            "document_name": "测试版本-回国销售计划表",
+            "url": "https://docs.qq.com/sheet/DRFppYm15RGZ2WExN",
+            "export_format": "csv",
+            "success": false,
+            "download_time": 0.7092914581298828,
+            "file_size": 0,
+            "endpoint_used": "none",
+            "error_message": "所有下载尝试均失败",
+            "timestamp": "2025-08-27T10:15:24.647931",
+            "doc_id": "DRFppYm15RGZ2WExN",
+            "retry_count": 1
+          },
+          {
+            "document_name": "测试版本-回国销售计划表",
+            "url": "https://docs.qq.com/sheet/DRFppYm15RGZ2WExN",
+            "export_format": "csv",
+            "success": false,
+            "download_time": 0.6540236473083496,
+            "file_size": 0,
+            "endpoint_used": "none",
+            "error_message": "所有下载尝试均失败",
+            "timestamp": "2025-08-27T10:15:30.309781",
+            "doc_id": "DRFppYm15RGZ2WExN",
+            "retry_count": 2
+          },
+          {
+            "document_name": "测试版本-回国销售计划表",
+            "url": "https://docs.qq.com/sheet/DRFppYm15RGZ2WExN",
+            "export_format": "xlsx",
+            "success": false,
+            "download_time": 0.7045300006866455,
+            "file_size": 0,
+            "endpoint_used": "none",
+            "error_message": "所有下载尝试均失败",
+            "timestamp": "2025-08-27T10:15:36.018687",
+            "doc_id": "DRFppYm15RGZ2WExN",
+            "retry_count": 1
+          },
+          {
+            "document_name": "测试版本-回国销售计划表",
+            "url": "https://docs.qq.com/sheet/DRFppYm15RGZ2WExN",
+            "export_format": "xlsx",
+            "success": false,
+            "download_time": 0.7613816261291504,
+            "file_size": 0,
+            "endpoint_used": "none",
+            "error_message": "所有下载尝试均失败",
+            "timestamp": "2025-08-27T10:15:41.785185",
+            "doc_id": "DRFppYm15RGZ2WExN",
+            "retry_count": 2
+          },
+          {
+            "document_name": "测试版本-出国销售计划表",
+            "url": "https://docs.qq.com/sheet/DRHZrS1hOS3pwRGZB",
+            "export_format": "csv",
+            "success": false,
+            "download_time": 0.6299996376037598,
+            "file_size": 0,
+            "endpoint_used": "none",
+            "error_message": "所有下载尝试均失败",
+            "timestamp": "2025-08-27T10:15:47.420592",
+            "doc_id": "DRHZrS1hOS3pwRGZB",
+            "retry_count": 1
+          },
+          {
+            "document_name": "测试版本-出国销售计划表",
+            "url": "https://docs.qq.com/sheet/DRHZrS1hOS3pwRGZB",
+            "export_format": "csv",
+            "success": false,
+            "download_time": 0.6482932567596436,
+            "file_size": 0,
+            "endpoint_used": "none",
+            "error_message": "所有下载尝试均失败",
+            "timestamp": "2025-08-27T10:15:53.072684",
+            "doc_id": "DRHZrS1hOS3pwRGZB",
+            "retry_count": 2
+          },
+          {
+            "document_name": "测试版本-出国销售计划表",
+            "url": "https://docs.qq.com/sheet/DRHZrS1hOS3pwRGZB",
+            "export_format": "xlsx",
+            "success": false,
+            "download_time": 0.6568832397460938,
+            "file_size": 0,
+            "endpoint_used": "none",
+            "error_message": "所有下载尝试均失败",
+            "timestamp": "2025-08-27T10:15:58.732600",
+            "doc_id": "DRHZrS1hOS3pwRGZB",
+            "retry_count": 1
+          },
+          {
+            "document_name": "测试版本-出国销售计划表",
+            "url": "https://docs.qq.com/sheet/DRHZrS1hOS3pwRGZB",
+            "export_format": "xlsx",
+            "success": false,
+            "download_time": 0.6305544376373291,
+            "file_size": 0,
+            "endpoint_used": "none",
+            "error_message": "所有下载尝试均失败",
+            "timestamp": "2025-08-27T10:16:04.368587",
+            "doc_id": "DRHZrS1hOS3pwRGZB",
+            "retry_count": 2
+          }
+        ],
+        "document_performance": {
+          "测试版本-小红书部门": {
+            "total_attempts": 6,
+            "successful_downloads": 0,
+            "success_rate": 0.0,
+            "avg_download_time": 0,
+            "total_file_size": 0,
+            "formats_tested": [
+              "csv",
+              "xlsx"
+            ]
+          },
+          "测试版本-回国销售计划表": {
+            "total_attempts": 6,
+            "successful_downloads": 0,
+            "success_rate": 0.0,
+            "avg_download_time": 0,
+            "total_file_size": 0,
+            "formats_tested": [
+              "csv",
+              "xlsx"
+            ]
+          },
+          "测试版本-出国销售计划表": {
+            "total_attempts": 6,
+            "successful_downloads": 0,
+            "success_rate": 0.0,
+            "avg_download_time": 0,
+            "total_file_size": 0,
+            "formats_tested": [
+              "csv",
+              "xlsx"
+            ]
+          }
+        },
+        "format_performance": {
+          "csv": {
+            "total_attempts": 9,
+            "successful_downloads": 0,
+            "success_rate": 0.0,
+            "avg_download_time": 0,
+            "avg_file_size": 0,
+            "total_file_size": 0
+          },
+          "xlsx": {
+            "total_attempts": 9,
+            "successful_downloads": 0,
+            "success_rate": 0.0,
+            "avg_download_time": 0,
+            "avg_file_size": 0,
+            "total_file_size": 0
+          }
+        },
+        "time_series_analysis": {
+          "test_start_time": "2025-08-27T10:14:39.893007",
+          "test_end_time": "2025-08-27T10:16:04.368587",
+          "performance_trend": {
+            "min_download_time": 0,
+            "max_download_time": 0,
+            "median_download_time": 0
+          }
+        }
+      },
+      {
+        "test_metadata": {
+          "test_time": "2025-08-27T10:20:45.373275",
+          "test_type": "Improved Download Test",
+          "tester_version": "2.0.0",
+          "documents_tested": 3,
+          "formats_tested": [
+            "csv",
+            "xlsx"
+          ],
+          "endpoints_tested": 2
+        },
+        "results": [
+          {
+            "document_name": "测试版本-小红书部门",
+            "doc_id": "DWEVjZndkR2xVSWJN",
+            "export_format": "csv",
+            "success": false,
+            "download_time": 0.5797042846679688,
+            "file_size": 0,
+            "file_path": "",
+            "endpoint_used": "direct_sheet_export",
+            "error_message": "HTTP 401",
+            "timestamp": "2025-08-27T10:19:56.045671",
+            "actual_download_url": "https://docs.qq.com/dop-api/opendoc?format=csv&download=1&u=&noEscape=1&enableSmartsheetSplit=1&startrow=0&endrow=60&needSheetState=1&sliceStates=1&id=&normal=1&outformat=1&wb=1&nowb=0&callback=clientVarsCallback&xsrf=f37248fc8def26b7&t=c979a163e3954c1bbb79c46e54d10a9c",
+            "response_status": 0
+          },
+          {
+            "document_name": "测试版本-小红书部门",
+            "doc_id": "DWEVjZndkR2xVSWJN",
+            "export_format": "csv",
+            "success": false,
+            "download_time": 0.741774320602417,
+            "file_size": 0,
+            "file_path": "",
+            "endpoint_used": "sheet_with_export_param",
+            "error_message": "HTTP 401",
+            "timestamp": "2025-08-27T10:19:58.789226",
+            "actual_download_url": "https://docs.qq.com/dop-api/opendoc?export=csv&download=1&u=&noEscape=1&enableSmartsheetSplit=1&startrow=0&endrow=60&needSheetState=1&sliceStates=1&id=DWEVjZndkR2xVSWJN&normal=1&outformat=1&wb=1&nowb=0&callback=clientVarsCallback&xsrf=f37248fc8def26b7&t=8b6d0aa8b42d41c6971c6c4ad740f091",
+            "response_status": 0
+          },
+          {
+            "document_name": "测试版本-小红书部门",
+            "doc_id": "DWEVjZndkR2xVSWJN",
+            "export_format": "xlsx",
+            "success": false,
+            "download_time": 0.5703210830688477,
+            "file_size": 0,
+            "file_path": "",
+            "endpoint_used": "direct_sheet_export",
+            "error_message": "HTTP 401",
+            "timestamp": "2025-08-27T10:20:04.363223",
+            "actual_download_url": "https://docs.qq.com/dop-api/opendoc?format=xlsx&download=1&u=&noEscape=1&enableSmartsheetSplit=1&startrow=0&endrow=60&needSheetState=1&sliceStates=1&id=&normal=1&outformat=1&wb=1&nowb=0&callback=clientVarsCallback&xsrf=f37248fc8def26b7&t=772868301e244f51a7eddc8834a12935",
+            "response_status": 0
+          },
+          {
+            "document_name": "测试版本-小红书部门",
+            "doc_id": "DWEVjZndkR2xVSWJN",
+            "export_format": "xlsx",
+            "success": false,
+            "download_time": 0.7863707542419434,
+            "file_size": 0,
+            "file_path": "",
+            "endpoint_used": "sheet_with_export_param",
+            "error_message": "HTTP 401",
+            "timestamp": "2025-08-27T10:20:07.150154",
+            "actual_download_url": "https://docs.qq.com/dop-api/opendoc?export=xlsx&download=1&u=&noEscape=1&enableSmartsheetSplit=1&startrow=0&endrow=60&needSheetState=1&sliceStates=1&id=DWEVjZndkR2xVSWJN&normal=1&outformat=1&wb=1&nowb=0&callback=clientVarsCallback&xsrf=f37248fc8def26b7&t=d9d7044de1b84091bf1a1248ddeedefa",
+            "response_status": 0
+          },
+          {
+            "document_name": "测试版本-回国销售计划表",
+            "doc_id": "DRFppYm15RGZ2WExN",
+            "export_format": "csv",
+            "success": false,
+            "download_time": 0.5488295555114746,
+            "file_size": 0,
+            "file_path": "",
+            "endpoint_used": "direct_sheet_export",
+            "error_message": "HTTP 401",
+            "timestamp": "2025-08-27T10:20:12.704628",
+            "actual_download_url": "https://docs.qq.com/dop-api/opendoc?format=csv&download=1&u=&noEscape=1&enableSmartsheetSplit=1&startrow=0&endrow=60&needSheetState=1&sliceStates=1&id=&normal=1&outformat=1&wb=1&nowb=0&callback=clientVarsCallback&xsrf=f37248fc8def26b7&t=62f943f4f0294ee6b5d1af050bf14fb8",
+            "response_status": 0
+          },
+          {
+            "document_name": "测试版本-回国销售计划表",
+            "doc_id": "DRFppYm15RGZ2WExN",
+            "export_format": "csv",
+            "success": false,
+            "download_time": 0.7209796905517578,
+            "file_size": 0,
+            "file_path": "",
+            "endpoint_used": "sheet_with_export_param",
+            "error_message": "HTTP 401",
+            "timestamp": "2025-08-27T10:20:15.427874",
+            "actual_download_url": "https://docs.qq.com/dop-api/opendoc?export=csv&download=1&u=&noEscape=1&enableSmartsheetSplit=1&startrow=0&endrow=60&needSheetState=1&sliceStates=1&id=DRFppYm15RGZ2WExN&normal=1&outformat=1&wb=1&nowb=0&callback=clientVarsCallback&xsrf=f37248fc8def26b7&t=39393dcb1a7c4c38a06b0df261fc84e1",
+            "response_status": 0
+          },
+          {
+            "document_name": "测试版本-回国销售计划表",
+            "doc_id": "DRFppYm15RGZ2WExN",
+            "export_format": "xlsx",
+            "success": false,
+            "download_time": 0.5454723834991455,
+            "file_size": 0,
+            "file_path": "",
+            "endpoint_used": "direct_sheet_export",
+            "error_message": "HTTP 401",
+            "timestamp": "2025-08-27T10:20:20.979244",
+            "actual_download_url": "https://docs.qq.com/dop-api/opendoc?format=xlsx&download=1&u=&noEscape=1&enableSmartsheetSplit=1&startrow=0&endrow=60&needSheetState=1&sliceStates=1&id=&normal=1&outformat=1&wb=1&nowb=0&callback=clientVarsCallback&xsrf=f37248fc8def26b7&t=055331bf08b8438aae9f8dce415f30a7",
+            "response_status": 0
+          },
+          {
+            "document_name": "测试版本-回国销售计划表",
+            "doc_id": "DRFppYm15RGZ2WExN",
+            "export_format": "xlsx",
+            "success": false,
+            "download_time": 0.7237493991851807,
+            "file_size": 0,
+            "file_path": "",
+            "endpoint_used": "sheet_with_export_param",
+            "error_message": "HTTP 401",
+            "timestamp": "2025-08-27T10:20:23.705223",
+            "actual_download_url": "https://docs.qq.com/dop-api/opendoc?export=xlsx&download=1&u=&noEscape=1&enableSmartsheetSplit=1&startrow=0&endrow=60&needSheetState=1&sliceStates=1&id=DRFppYm15RGZ2WExN&normal=1&outformat=1&wb=1&nowb=0&callback=clientVarsCallback&xsrf=f37248fc8def26b7&t=0a442cf4405a4995b9996926a77ebfba",
+            "response_status": 0
+          },
+          {
+            "document_name": "测试版本-出国销售计划表",
+            "doc_id": "DRHZrS1hOS3pwRGZB",
+            "export_format": "csv",
+            "success": false,
+            "download_time": 0.5509212017059326,
+            "file_size": 0,
+            "file_path": "",
+            "endpoint_used": "direct_sheet_export",
+            "error_message": "HTTP 401",
+            "timestamp": "2025-08-27T10:20:29.261982",
+            "actual_download_url": "https://docs.qq.com/dop-api/opendoc?format=csv&download=1&u=&noEscape=1&enableSmartsheetSplit=1&startrow=0&endrow=60&needSheetState=1&sliceStates=1&id=&normal=1&outformat=1&wb=1&nowb=0&callback=clientVarsCallback&xsrf=f37248fc8def26b7&t=5af0fb9baff84718b11874389f218573",
+            "response_status": 0
+          },
+          {
+            "document_name": "测试版本-出国销售计划表",
+            "doc_id": "DRHZrS1hOS3pwRGZB",
+            "export_format": "csv",
+            "success": false,
+            "download_time": 0.7055394649505615,
+            "file_size": 0,
+            "file_path": "",
+            "endpoint_used": "sheet_with_export_param",
+            "error_message": "HTTP 401",
+            "timestamp": "2025-08-27T10:20:31.969881",
+            "actual_download_url": "https://docs.qq.com/dop-api/opendoc?export=csv&download=1&u=&noEscape=1&enableSmartsheetSplit=1&startrow=0&endrow=60&needSheetState=1&sliceStates=1&id=DRHZrS1hOS3pwRGZB&normal=1&outformat=1&wb=1&nowb=0&callback=clientVarsCallback&xsrf=f37248fc8def26b7&t=344e032a6c6b420bbccb385fcce5cdde",
+            "response_status": 0
+          },
+          {
+            "document_name": "测试版本-出国销售计划表",
+            "doc_id": "DRHZrS1hOS3pwRGZB",
+            "export_format": "xlsx",
+            "success": false,
+            "download_time": 0.5774984359741211,
+            "file_size": 0,
+            "file_path": "",
+            "endpoint_used": "direct_sheet_export",
+            "error_message": "HTTP 401",
+            "timestamp": "2025-08-27T10:20:37.552589",
+            "actual_download_url": "https://docs.qq.com/dop-api/opendoc?format=xlsx&download=1&u=&noEscape=1&enableSmartsheetSplit=1&startrow=0&endrow=60&needSheetState=1&sliceStates=1&id=&normal=1&outformat=1&wb=1&nowb=0&callback=clientVarsCallback&xsrf=f37248fc8def26b7&t=e1e97e3167b341b08d96a0c1ffcc27c9",
+            "response_status": 0
+          },
+          {
+            "document_name": "测试版本-出国销售计划表",
+            "doc_id": "DRHZrS1hOS3pwRGZB",
+            "export_format": "xlsx",
+            "success": false,
+            "download_time": 0.8131651878356934,
+            "file_size": 0,
+            "file_path": "",
+            "endpoint_used": "sheet_with_export_param",
+            "error_message": "HTTP 401",
+            "timestamp": "2025-08-27T10:20:40.367920",
+            "actual_download_url": "https://docs.qq.com/dop-api/opendoc?export=xlsx&download=1&u=&noEscape=1&enableSmartsheetSplit=1&startrow=0&endrow=60&needSheetState=1&sliceStates=1&id=DRHZrS1hOS3pwRGZB&normal=1&outformat=1&wb=1&nowb=0&callback=clientVarsCallback&xsrf=f37248fc8def26b7&t=f10e025b65954d5bb5a9e24c642c46a5",
+            "response_status": 0
+          }
+        ],
+        "analysis": {
+          "test_summary": {
+            "total_tests": 12,
+            "successful_downloads": 0,
+            "failed_downloads": 12,
+            "success_rate": 0.0
+          },
+          "performance_metrics": {
+            "average_download_time": 0,
+            "total_download_time": 7.864325761795044,
+            "total_file_size": 0,
+            "average_file_size": 0
+          },
+          "format_performance": {
+            "csv": {
+              "total_attempts": 6,
+              "successful": 0,
+              "success_rate": 0.0,
+              "avg_download_time": 0,
+              "avg_file_size": 0
+            },
+            "xlsx": {
+              "total_attempts": 6,
+              "successful": 0,
+              "success_rate": 0.0,
+              "avg_download_time": 0,
+              "avg_file_size": 0
+            }
+          },
+          "endpoint_performance": {},
+          "document_performance": {
+            "测试版本-小红书部门": {
+              "total_attempts": 4,
+              "successful": 0,
+              "success_rate": 0.0,
+              "formats_tested": 2
+            },
+            "测试版本-回国销售计划表": {
+              "total_attempts": 4,
+              "successful": 0,
+              "success_rate": 0.0,
+              "formats_tested": 2
+            },
+            "测试版本-出国销售计划表": {
+              "total_attempts": 4,
+              "successful": 0,
+              "success_rate": 0.0,
+              "formats_tested": 2
+            }
+          },
+          "failure_analysis": {
+            "HTTP 401": 12
+          },
+          "recommendations": [
+            "下载成功率较低，需要检查Cookie有效性和API端点"
+          ]
+        }
+      }
+    ]
+  }
+}

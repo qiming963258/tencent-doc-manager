@@ -1,0 +1,46 @@
+{
+  "id": "20250914_210322",
+  "start_time": "2025-09-14T21:03:22.349804",
+  "end_time": "2025-09-14T21:03:22.456179",
+  "status": "error",
+  "results": {},
+  "logs": [
+    {
+      "time": "21:03:22",
+      "level": "INFO",
+      "message": "开始获取基线文档..."
+    },
+    {
+      "time": "21:03:22",
+      "level": "INFO",
+      "message": "✅ 使用本地基线文件: tencent_tencent_副本-测试版本-出国销售计划表-工作表1_20250911_2013_baseline_W37.csv"
+    },
+    {
+      "time": "21:03:22",
+      "level": "INFO",
+      "message": "开始获取目标文档..."
+    },
+    {
+      "time": "21:03:22",
+      "level": "INFO",
+      "message": "✅ 使用本地目标文件: tencent_副本-副本-测试版本-出国销售计划表_20250912_1534_midweek_W37.xlsx"
+    },
+    {
+      "time": "21:03:22",
+      "level": "INFO",
+      "message": "开始对比分析..."
+    },
+    {
+      "time": "21:03:22",
+      "level": "ERROR",
+      "message": "❌ 执行出错: 'utf-8' codec can't decode byte 0xae in position 54: invalid start byte"
+    }
+  ],
+  "settings": {
+    "task_type": "full",
+    "auto_download": true,
+    "enable_ai_analysis": true,
+    "enable_excel_marking": true,
+    "enable_upload": true
+  }
+}

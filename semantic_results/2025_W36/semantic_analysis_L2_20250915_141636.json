@@ -1,0 +1,49 @@
+{
+  "metadata": {
+    "analysis_time": "2025-09-15 14:16:36",
+    "total_modifications": 1,
+    "layer1_passed": 0,
+    "layer2_analyzed": 1,
+    "processing_time": "11.6s"
+  },
+  "results": [
+    {
+      "modification_id": "M001",
+      "cell": "B4",
+      "column": "项目类型",
+      "old_value": "目标管理",
+      "new_value": "123",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 90.0,
+        "reason": "关键信息变更"
+      },
+      "layer2_result": {
+        "risk_level": "HIGH",
+        "decision": "REJECT",
+        "confidence": 85,
+        "key_risks": [
+          "项目类型从描述性文本改为无意义的数字，导致信息丢失",
+          "影响项目分类和后续管理流程",
+          "可能造成团队理解混乱",
+          "影响项目报告和数据分析"
+        ],
+        "recommendation": "建议保留原有描述性项目类型或使用标准化的分类值。如确需修改，应提供完整的分类体系说明，并通知所有相关方。当前修改建议回退至原值或使用有意义的分类值。"
+      },
+      "final_decision": "REJECT",
+      "approval_required": true
+    }
+  ],
+  "summary": {
+    "approved": 0,
+    "conditional": 0,
+    "review_required": 0,
+    "rejected": 1,
+    "risk_distribution": {
+      "LOW": 0,
+      "MEDIUM": 0,
+      "HIGH": 0,
+      "CRITICAL": 1
+    }
+  }
+}

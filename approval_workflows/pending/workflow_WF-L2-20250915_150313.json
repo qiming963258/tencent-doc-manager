@@ -1,0 +1,34 @@
+{
+  "workflow_id": "WF-L2-20250915_150313",
+  "created_time": "2025-09-15 15:03:13",
+  "pending_approvals": [
+    {
+      "modification_id": "M001",
+      "cell": "J51",
+      "column": "协助人",
+      "old_value": "徐志杰,朱瀚桔,杨佳玲,曾利萍,魏经理",
+      "new_value": "赖铁荔",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 80.0,
+        "reason": "人员变更"
+      },
+      "layer2_result": {
+        "risk_level": "CRITICAL",
+        "decision": "REJECT",
+        "confidence": 90,
+        "key_risks": [
+          "团队协作能力大幅削弱",
+          "关键人员经验流失",
+          "项目执行资源严重不足",
+          "责任归属不明确",
+          "应急响应机制被破坏"
+        ],
+        "recommendation": "建议拒绝该修改请求，或至少保留原团队核心成员（如魏经理）。若必须修改，要求提交详细的人员交接计划和能力证明，并需项目总监书面批准。同时建议：1)对新协助人进行能力评估；2)设置至少2周的过渡期；3)修改项目计划重新评估时间节点。"
+      },
+      "final_decision": "REJECT",
+      "approval_required": true
+    }
+  ],
+  "auto_approved": []
+}

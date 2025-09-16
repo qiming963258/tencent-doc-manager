@@ -1,0 +1,31 @@
+{
+  "workflow_id": "WF-L2-20250912_153306",
+  "created_time": "2025-09-12 15:33:06",
+  "pending_approvals": [],
+  "auto_approved": [
+    {
+      "modification_id": "M001",
+      "cell": "I5",
+      "column": "邓总指导登记（日更新）",
+      "old_value": "0730-",
+      "new_value": "0730-123123",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 80.0,
+        "reason": "格式变更"
+      },
+      "layer2_result": {
+        "risk_level": "LOW",
+        "decision": "APPROVE",
+        "confidence": 90,
+        "key_risks": [
+          "信息不完整可能导致误解",
+          "后续追踪困难"
+        ],
+        "recommendation": "建议添加更完整的备注信息以确保记录的完整性，并定期检查指导登记的更新情况"
+      },
+      "final_decision": "APPROVE",
+      "approval_required": false
+    }
+  ]
+}

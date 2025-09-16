@@ -1,0 +1,32 @@
+{
+  "workflow_id": "WF-L2-20250915_151948",
+  "created_time": "2025-09-15 15:19:48",
+  "pending_approvals": [
+    {
+      "modification_id": "M001",
+      "cell": "G69",
+      "column": "具体计划内容",
+      "old_value": "2.根据【人员异动】及【账号异动】进行【账号安排】【账号数量规划】调整\n@新媒体运营-朱瀚桔",
+      "new_value": "新产品管理机制",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 80.0,
+        "reason": "概念替换"
+      },
+      "layer2_result": {
+        "risk_level": "HIGH",
+        "decision": "REVIEW",
+        "confidence": 85,
+        "key_risks": [
+          "性质改变风险：从具体的账号管理操作变为模糊的新机制，可能导致执行方向不明确",
+          "责任变更风险：原责任人(朱瀚桔)被移除但新机制未明确责任归属",
+          "计划衔接风险：新机制可能无法覆盖原先的账号管理需求"
+        ],
+        "recommendation": "要求修改者补充说明：1)新产品管理机制的具体内容 2)如何覆盖原账号管理需求 3)明确责任人。建议保留原有账号管理内容的同时补充新机制说明。"
+      },
+      "final_decision": "REVIEW",
+      "approval_required": true
+    }
+  ],
+  "auto_approved": []
+}

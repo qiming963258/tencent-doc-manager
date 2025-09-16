@@ -1,0 +1,48 @@
+{
+  "metadata": {
+    "analysis_time": "2025-09-15 15:27:08",
+    "total_modifications": 1,
+    "layer1_passed": 0,
+    "layer2_analyzed": 1,
+    "processing_time": "9.4s"
+  },
+  "results": [
+    {
+      "modification_id": "M001",
+      "cell": "B77",
+      "column": "项目类型",
+      "old_value": "目标管理",
+      "new_value": "",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 80.0,
+        "reason": "关键信息删除"
+      },
+      "layer2_result": {
+        "risk_level": "HIGH",
+        "decision": "REVIEW",
+        "confidence": 85,
+        "key_risks": [
+          "项目类型清空可能导致项目分类体系混乱",
+          "后续流程可能因缺少项目类型信息而无法正常执行",
+          "报表统计和分析功能可能受到影响"
+        ],
+        "recommendation": "建议：1. 确认是否为误操作；2. 如需清空，应先评估所有依赖此字段的系统和流程；3. 提供临时替代方案或默认值；4. 通知所有相关团队此变更。必须获得PMO批准后方可执行此修改。"
+      },
+      "final_decision": "REVIEW",
+      "approval_required": true
+    }
+  ],
+  "summary": {
+    "approved": 0,
+    "conditional": 0,
+    "review_required": 1,
+    "rejected": 0,
+    "risk_distribution": {
+      "LOW": 0,
+      "MEDIUM": 0,
+      "HIGH": 1,
+      "CRITICAL": 0
+    }
+  }
+}

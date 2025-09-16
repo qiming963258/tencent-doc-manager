@@ -1,0 +1,48 @@
+{
+  "metadata": {
+    "analysis_time": "2025-09-15 14:23:46",
+    "total_modifications": 1,
+    "layer1_passed": 0,
+    "layer2_analyzed": 1,
+    "processing_time": "10.8s"
+  },
+  "results": [
+    {
+      "modification_id": "M001",
+      "cell": "I11",
+      "column": "负责人",
+      "old_value": "蔡悦莹",
+      "new_value": "0813-\n1、根据周度运营数据识别出来的一般及无效笔记，分析对应的内容定位进行优化；\n2、系统功能下周一上线前，前置识别需要优化的内容定位进行调整\n3、下周一重点汇报半月度内容定位优化迭代进度、内容",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 90.0,
+        "reason": "信息截断"
+      },
+      "layer2_result": {
+        "risk_level": "CRITICAL",
+        "decision": "REVIEW",
+        "confidence": 85,
+        "key_risks": [
+          "负责人信息缺失导致责任归属不明确",
+          "工作任务描述变更未明确交接或确认",
+          "新增内容定位优化任务可能影响现有工作排期"
+        ],
+        "recommendation": "建议：1.明确新负责人身份并正式交接；2.组织专项会议确认新增优化任务的优先级和资源分配；3.评估0806新增需求对现有排期的影响，必要时调整交付时间。需补充完整的负责人姓名和正式交接记录后方可批准变更。"
+      },
+      "final_decision": "REVIEW",
+      "approval_required": true
+    }
+  ],
+  "summary": {
+    "approved": 0,
+    "conditional": 0,
+    "review_required": 1,
+    "rejected": 0,
+    "risk_distribution": {
+      "LOW": 0,
+      "MEDIUM": 0,
+      "HIGH": 1,
+      "CRITICAL": 0
+    }
+  }
+}

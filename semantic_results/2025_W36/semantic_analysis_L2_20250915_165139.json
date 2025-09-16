@@ -1,0 +1,48 @@
+{
+  "metadata": {
+    "analysis_time": "2025-09-15 16:51:39",
+    "total_modifications": 1,
+    "layer1_passed": 0,
+    "layer2_analyzed": 1,
+    "processing_time": "12.5s"
+  },
+  "results": [
+    {
+      "modification_id": "M001",
+      "cell": "H24",
+      "column": "具体计划内容",
+      "old_value": "矩阵号前段咨询客户咨询问题规范调整（不够精准）",
+      "new_value": "回国异常订单参考出国品管的【异常订单管理】执行单，把流程做规范，后续按照出国的方式走在线走起来；",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 80.0,
+        "reason": "流程变更"
+      },
+      "layer2_result": {
+        "risk_level": "MEDIUM",
+        "decision": "CONDITIONAL",
+        "confidence": 75,
+        "key_risks": [
+          "新旧内容存在实质性差异，可能导致执行方向偏离",
+          "新流程涉及跨部门协作（出国品管），可能存在沟通成本增加",
+          "流程变更需要重新培训相关人员"
+        ],
+        "recommendation": "建议：1.明确区分这是新增流程还是替代原流程；2.与出国品管部门确认流程适用性；3.评估培训需求并更新相关文档；4.补充说明变更原因。在满足这些条件后可批准修改。"
+      },
+      "final_decision": "CONDITIONAL",
+      "approval_required": false
+    }
+  ],
+  "summary": {
+    "approved": 0,
+    "conditional": 1,
+    "review_required": 0,
+    "rejected": 0,
+    "risk_distribution": {
+      "LOW": 0,
+      "MEDIUM": 0,
+      "HIGH": 0,
+      "CRITICAL": 0
+    }
+  }
+}

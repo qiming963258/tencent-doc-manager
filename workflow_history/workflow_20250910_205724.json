@@ -1,0 +1,108 @@
+{
+  "id": "20250910_205724",
+  "start_time": "2025-09-10T20:57:24.363293",
+  "end_time": "2025-09-10T20:59:38.608187",
+  "status": "error",
+  "results": {},
+  "logs": [
+    {
+      "time": "20:57:24",
+      "level": "INFO",
+      "message": "开始下载基线文档..."
+    },
+    {
+      "time": "20:58:08",
+      "level": "INFO",
+      "message": "✅ 基线文档下载成功: tencent_测试版本-小红书部门-工作表2_20250910_2058_midweek_W37.csv"
+    },
+    {
+      "time": "20:58:08",
+      "level": "INFO",
+      "message": "开始下载目标文档..."
+    },
+    {
+      "time": "20:58:52",
+      "level": "INFO",
+      "message": "✅ 目标文档下载成功: tencent_测试版本-小红书部门-工作表2_20250910_2058_midweek_W37.csv"
+    },
+    {
+      "time": "20:58:52",
+      "level": "INFO",
+      "message": "开始对比分析..."
+    },
+    {
+      "time": "20:58:52",
+      "level": "INFO",
+      "message": "✅ 对比分析完成，发现 0 处变更"
+    },
+    {
+      "time": "20:58:52",
+      "level": "INFO",
+      "message": "开始列标准化..."
+    },
+    {
+      "time": "20:58:52",
+      "level": "INFO",
+      "message": "✅ 列标准化完成，映射了 2 个列"
+    },
+    {
+      "time": "20:58:52",
+      "level": "INFO",
+      "message": "开始L2语义分析和L1L3规则打分..."
+    },
+    {
+      "time": "20:58:52",
+      "level": "WARNING",
+      "message": "⚠️ 语义分析出错: 'L2SemanticAnalyzer' object has no attribute 'analyze_changes'"
+    },
+    {
+      "time": "20:58:52",
+      "level": "INFO",
+      "message": "生成详细打分JSON..."
+    },
+    {
+      "time": "20:58:52",
+      "level": "WARNING",
+      "message": "⚠️ 真实打分生成失败: openpyxl does not support .csv file format, please check you can open it with Excel first. Supported formats are: .xlsx,.xlsm,.xltx,.xltm，使用基础打分"
+    },
+    {
+      "time": "20:58:52",
+      "level": "INFO",
+      "message": "✅ 基础打分生成完成: score_20250910_205724.json"
+    },
+    {
+      "time": "20:58:52",
+      "level": "INFO",
+      "message": "下载目标文档的Excel格式..."
+    },
+    {
+      "time": "20:59:38",
+      "level": "INFO",
+      "message": "✅ Excel文档下载成功: tencent_测试版本-小红书部门_20250910_2059_midweek_W37.xlsx"
+    },
+    {
+      "time": "20:59:38",
+      "level": "INFO",
+      "message": "修复腾讯文档Excel格式问题..."
+    },
+    {
+      "time": "20:59:38",
+      "level": "INFO",
+      "message": "✅ Excel格式修复完成"
+    },
+    {
+      "time": "20:59:38",
+      "level": "INFO",
+      "message": "应用条纹涂色标记..."
+    },
+    {
+      "time": "20:59:38",
+      "level": "ERROR",
+      "message": "❌ 执行出错: expected str, bytes or os.PathLike object, not bool"
+    }
+  ],
+  "settings": {
+    "upload_option": "new",
+    "verbose_logging": true
+  }
+}

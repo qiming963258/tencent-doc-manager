@@ -15,8 +15,8 @@ from typing import Dict, Any, Optional
 sys.path.append('/root/projects/tencent-doc-manager/production/core_modules')
 sys.path.append('/root/projects/tencent-doc-manager/测试版本-性能优化开发-20250811-001430')
 
-from baseline_manager import baseline_manager
-from week_time_manager import week_time_manager
+from .baseline_manager import baseline_manager
+from .week_time_manager import week_time_manager
 
 
 class AutoComparisonTaskHandler:

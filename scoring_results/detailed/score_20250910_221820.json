@@ -1,0 +1,16 @@
+{
+  "metadata": {
+    "comparison_id": "20250910_221820",
+    "baseline_file": "tencent_副本-副本-测试版本-出国销售计划表-工作表1_20250910_2219_midweek_W37.csv",
+    "target_file": "tencent_副本-副本-测试版本-出国销售计划表-工作表1_20250910_2221_midweek_W37.csv",
+    "timestamp": "2025-09-10T22:21:07.188804"
+  },
+  "statistics": {
+    "total_cells": 0,
+    "changed_cells": 0,
+    "high_risk_count": 3,
+    "medium_risk_count": 5,
+    "low_risk_count": 7
+  },
+  "cell_scores": {}
+}

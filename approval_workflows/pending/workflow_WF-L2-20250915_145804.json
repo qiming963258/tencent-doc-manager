@@ -1,0 +1,33 @@
+{
+  "workflow_id": "WF-L2-20250915_145804",
+  "created_time": "2025-09-15 14:58:04",
+  "pending_approvals": [
+    {
+      "modification_id": "M001",
+      "cell": "B47",
+      "column": "项目类型",
+      "old_value": "目标管理",
+      "new_value": "",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 80.0,
+        "reason": "关键字段空"
+      },
+      "layer2_result": {
+        "risk_level": "CRITICAL",
+        "decision": "REVIEW",
+        "confidence": 85,
+        "key_risks": [
+          "项目类型清空导致项目分类体系破坏",
+          "可能引发项目监控和汇报机制失效",
+          "影响项目资源分配和优先级判定",
+          "关键KPI计算基准丢失风险"
+        ],
+        "recommendation": "建议：1)必须补充新项目类型值 2)如要移除需先评估所有关联系统影响 3)需同步更新项目管理系统的类型筛选条件 4)需通知所有相关方变更情况 5)建议保留变更日志说明原因。请项目总监+PMO联合审批此变更。"
+      },
+      "final_decision": "REVIEW",
+      "approval_required": true
+    }
+  ],
+  "auto_approved": []
+}

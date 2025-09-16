@@ -1,0 +1,48 @@
+{
+  "metadata": {
+    "analysis_time": "2025-09-15 18:28:33",
+    "total_modifications": 1,
+    "layer1_passed": 0,
+    "layer2_analyzed": 1,
+    "processing_time": "16.6s"
+  },
+  "results": [
+    {
+      "modification_id": "M001",
+      "cell": "H20",
+      "column": "具体计划内容",
+      "old_value": "业务部门与资源中心，产品渠道等变化与业务变化应知应会表单建立；",
+      "new_value": "重新优化渠道的最新合作价；",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 85.0,
+        "reason": "重大内容变更"
+      },
+      "layer2_result": {
+        "risk_level": "HIGH",
+        "decision": "REVIEW",
+        "confidence": 85,
+        "key_risks": [
+          "目标偏离：从建立应知应会体系转向价格优化，可能偏离原项目目标",
+          "执行复杂度：价格优化涉及更多部门协作和商业敏感数据",
+          "资源冲突：需重新分配资源，可能影响原计划执行"
+        ],
+        "recommendation": "建议：1) 评估变更与项目目标的匹配度 2) 召开跨部门协调会确认影响 3) 如需变更需正式更新项目章程和范围文件"
+      },
+      "final_decision": "REVIEW",
+      "approval_required": true
+    }
+  ],
+  "summary": {
+    "approved": 0,
+    "conditional": 0,
+    "review_required": 1,
+    "rejected": 0,
+    "risk_distribution": {
+      "LOW": 0,
+      "MEDIUM": 0,
+      "HIGH": 1,
+      "CRITICAL": 0
+    }
+  }
+}

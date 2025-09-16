@@ -1,0 +1,46 @@
+{
+  "workflow_id": "WF-L2-20250915_192229",
+  "created_time": "2025-09-15 19:22:29",
+  "pending_approvals": [
+    {
+      "modification_id": "M001",
+      "cell": "I5",
+      "column": "邓总指导登记（日更新）",
+      "old_value": "0730-",
+      "new_value": "朱瀚桔",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 75.0,
+        "reason": "负责人变更"
+      },
+      "layer2_result": {
+        "risk_level": "HIGH",
+        "decision": "REVIEW",
+        "confidence": 80,
+        "key_risks": [
+          "性质改变：从日期标识变更为人员名称，可能改变字段的原始设计意图",
+          "数据跟踪中断：日更新字段被替换为人名，影响项目指导记录的连续性跟踪",
+          "责任归属混淆：高层指导记录被替换为非高管姓名，可能引起权限和汇报关系的混乱"
+        ],
+        "recommendation": "1. 确认该修改是否经过邓总授权\n2. 核实'朱瀚桔'是否有权限出现在高管指导登记字段\n3. 如必须修改，建议新增'执行人'字段而非替换原字段\n4. 保留修改审计痕迹",
+        "analysis": {
+          "change_nature": "性质改变（日期标识→人员名称）",
+          "impacts": {
+            "project_objective": 6,
+            "execution_plan": 7,
+            "team_collaboration": 8,
+            "delivery_timeline": 5
+          },
+          "special_check": {
+            "daily_update_integrity": "违反日更新字段的原始设计规范",
+            "leadership_tracking": "影响高层指导的可追溯性",
+            "approval_chain": "缺少可见的审批记录"
+          }
+        }
+      },
+      "final_decision": "REVIEW",
+      "approval_required": true
+    }
+  ],
+  "auto_approved": []
+}

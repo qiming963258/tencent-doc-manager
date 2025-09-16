@@ -1,0 +1,31 @@
+{
+  "workflow_id": "WF-L2-20250915_143457",
+  "created_time": "2025-09-15 14:34:57",
+  "pending_approvals": [],
+  "auto_approved": [
+    {
+      "modification_id": "M001",
+      "cell": "K23",
+      "column": "监督人",
+      "old_value": "徐志杰",
+      "new_value": "赖铁荔",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 75.0,
+        "reason": "关键人员"
+      },
+      "layer2_result": {
+        "risk_level": "MEDIUM",
+        "decision": "CONDITIONAL",
+        "confidence": 75,
+        "key_risks": [
+          "监督人变更可能导致监督方式和风格改变",
+          "新监督人可能需要时间适应项目情况"
+        ],
+        "recommendation": "建议：1. 组织新旧监督人的工作交接会议；2. 确保新监督人充分理解项目要求和监督职责；3. 在过渡期加强项目状态监控。批准变更前完成这些步骤。"
+      },
+      "final_decision": "CONDITIONAL",
+      "approval_required": false
+    }
+  ]
+}

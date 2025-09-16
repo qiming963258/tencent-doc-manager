@@ -1,0 +1,47 @@
+{
+  "metadata": {
+    "analysis_time": "2025-09-15 18:21:09",
+    "total_modifications": 1,
+    "layer1_passed": 0,
+    "layer2_analyzed": 1,
+    "processing_time": "8.8s"
+  },
+  "results": [
+    {
+      "modification_id": "M001",
+      "cell": "H4",
+      "column": "具体计划内容",
+      "old_value": "按照所负责事项的目标，拆解到承接人员：玉佳、穗云、邓俊",
+      "new_value": "2025回国搬家日追踪数据\n目标复盘执行计划表",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 80.0,
+        "reason": "内容替换"
+      },
+      "layer2_result": {
+        "risk_level": "HIGH",
+        "decision": "REVIEW",
+        "confidence": 85,
+        "key_risks": [
+          "计划内容从具体人员分工转变为模糊的时间追踪数据，可能导致执行责任不明确",
+          "新增的'目标复盘执行计划表'未明确具体内容和执行方式，可能造成项目跟踪困难"
+        ],
+        "recommendation": "建议补充说明：1)2025回国搬家日追踪数据的具体用途和追踪方式 2)目标复盘执行计划表的具体执行标准和负责人。在明确这些信息前应暂停修改。"
+      },
+      "final_decision": "REVIEW",
+      "approval_required": true
+    }
+  ],
+  "summary": {
+    "approved": 0,
+    "conditional": 0,
+    "review_required": 1,
+    "rejected": 0,
+    "risk_distribution": {
+      "LOW": 0,
+      "MEDIUM": 0,
+      "HIGH": 1,
+      "CRITICAL": 0
+    }
+  }
+}

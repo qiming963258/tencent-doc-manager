@@ -1,0 +1,48 @@
+{
+  "metadata": {
+    "analysis_time": "2025-09-15 15:19:33",
+    "total_modifications": 1,
+    "layer1_passed": 0,
+    "layer2_analyzed": 1,
+    "processing_time": "12.2s"
+  },
+  "results": [
+    {
+      "modification_id": "M001",
+      "cell": "B69",
+      "column": "项目类型",
+      "old_value": "目标管理",
+      "new_value": "",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 90.0,
+        "reason": "关键信息缺失"
+      },
+      "layer2_result": {
+        "risk_level": "HIGH",
+        "decision": "REVIEW",
+        "confidence": 85,
+        "key_risks": [
+          "项目类型清空可能导致项目分类体系混乱",
+          "影响项目资源分配和优先级排序",
+          "造成项目目标理解不一致"
+        ],
+        "recommendation": "1. 必须明确说明清空B69单元格的原因\n2. 如需变更项目类型，应同时提供新分类依据\n3. 建议在清空前先建立过渡机制\n4. 需要同步更新所有关联文档中的项目分类引用"
+      },
+      "final_decision": "REVIEW",
+      "approval_required": true
+    }
+  ],
+  "summary": {
+    "approved": 0,
+    "conditional": 0,
+    "review_required": 1,
+    "rejected": 0,
+    "risk_distribution": {
+      "LOW": 0,
+      "MEDIUM": 0,
+      "HIGH": 1,
+      "CRITICAL": 0
+    }
+  }
+}
