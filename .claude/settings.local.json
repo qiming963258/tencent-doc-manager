@@ -150,7 +150,9 @@
       "Bash(git add:*)",
       "Bash(git rev-parse:*)",
       "Bash(/root/projects/tencent-doc-manager/scripts/fix_git_status.sh:*)",
-      "Read(///**)"
+      "Read(///**)",
+      "Bash(./scripts/check_nested_git.sh:*)",
+      "Bash(./scripts/force_commit.sh:*)"
     ],
     "deny": [],
     "ask": [],
