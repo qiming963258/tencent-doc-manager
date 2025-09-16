@@ -16,13 +16,15 @@
 - **🤖 Claude AI集成**: 语义分析 + 风险评估
 - **⏰ 智能定时调度**: 周二、四、六三级定时下载系统
 
-## 🌟 最新功能更新状态 (2025-08-17)
+## 🌟 最新功能更新状态 (2025-08-18)
 
 ✅ **服务器迁移完成** - 已成功迁移至 202.140.143.88  
 ✅ **Claude API服务** - 8081端口正常运行，配置已更新  
 ✅ **Excel MCP轻量版** - 已安装并测试通过，完全符合文档描述  
 ✅ **热力图UI** - 8089端口正常服务，防火墙已配置  
 ✅ **定时下载系统** - 完整的调度器和预设任务管理功能已实现  
+✅ **项目结构优化** - 清理废弃文档，优化目录结构，保留核心功能  
+✅ **CSV版本管理** - 新规格目录结构就绪，支持基准版管理  
 
 ## 🌐 主要服务
 
@@ -121,22 +123,67 @@
 1. **docs/specifications/01-系统总体架构规格.md** - 架构设计
 2. **production/core_modules/** - 核心代码
 
-## 📁 核心代码结构
+## 📁 项目目录结构
 
 ```
-production/
-├── core_modules/                    # 核心业务逻辑
-│   ├── adaptive_table_comparator.py      # 自适应表格对比
-│   ├── document_change_analyzer.py       # 变更分析逻辑  
-│   ├── claude_wrapper_integration.py     # Claude AI集成
-│   └── excel_mcp_visualizer.py          # Excel可视化
-├── servers/                         # 服务器程序
-│   ├── enhanced_flask_api_server.py      # 主系统(5000端口)
-│   ├── final_heatmap_server.py           # 热力图UI(8089端口)
-│   └── fixed_heatmap_server.py           # 备用热力图服务
-└── claude_mini_wrapper/             # Claude AI服务(8081端口)
-    ├── main.py                           # FastAPI主服务
-    └── README.md                         # AI服务使用说明
+/root/projects/tencent-doc-manager/
+├── 📄 CLAUDE.md                           # Claude系统配置规范
+├── 📄 README.md                           # 项目说明文档
+├── 📂 claude_mini_wrapper/                # Claude AI服务 (8081端口)
+│   ├── main.py                            # FastAPI主服务
+│   ├── claude_client.py                   # Claude客户端
+│   ├── config.py                          # 配置管理
+│   └── README.md                          # AI服务使用说明
+├── 📂 config/                             # 系统配置文件
+│   ├── cookies.json                       # Cookie存储配置
+│   ├── download_settings.json             # 下载配置管理
+│   └── schedule_tasks.json                # 定时任务配置
+├── 📂 csv_versions/                       # CSV版本管理目录
+│   ├── 2025_W34/                          # 周版本目录
+│   │   ├── baseline/                      # 基准版文件
+│   │   ├── midweek/                       # 周中版文件
+│   │   └── weekend/                       # 周末版文件
+│   ├── comparison_cache/                  # 对比结果缓存
+│   ├── current_week -> 2025_W34/          # 当周软链接
+│   └── *.csv                              # 当前版本文件
+├── 📂 docs/                               # 技术文档目录
+│   ├── guides/                            # 使用指南
+│   │   ├── 01-腾讯文档自动化下载使用说明.md
+│   │   ├── 02-CSV版本管理和对比系统使用说明.md
+│   │   ├── API文档.md
+│   │   ├── Excel-MCP-AI-使用指南.md
+│   │   ├── 快速参考.md
+│   │   └── 系统部署实施计划.md
+│   ├── plans/                             # 项目计划
+│   │   └── 腾讯文档智能监控系统-实施计划.md
+│   └── specifications/                    # 技术规格
+│       ├── 01-系统总体架构规格.md
+│       ├── 02-时间管理和文件版本规格.md
+│       ├── 04-自适应表格对比算法规格.md
+│       ├── 05-AI语义分析集成规格.md
+│       ├── 06-Excel-MCP可视化标记规格.md
+│       └── ...更多规格文档
+├── 📂 downloads/                          # 下载文件存储
+│   └── *.xlsx                             # 下载的Excel文件
+├── 📂 production/                         # 生产环境代码
+│   ├── core_modules/                      # 核心业务模块
+│   │   ├── adaptive_table_comparator.py  # 自适应表格对比算法
+│   │   ├── baseline_manager.py           # 基准版管理器
+│   │   ├── week_time_manager.py          # 时间管理器
+│   │   ├── auto_comparison_task.py       # 自动对比任务
+│   │   ├── claude_wrapper_integration.py # Claude集成封装
+│   │   ├── claude_semantic_analysis.py   # AI语义分析
+│   │   ├── document_change_analyzer.py   # 文档变更分析
+│   │   └── excel_mcp_visualizer.py       # Excel可视化处理
+│   └── servers/                           # 服务器程序
+│       ├── enhanced_flask_api_server.py  # 增强版API服务器
+│       ├── final_heatmap_server.py       # 热力图UI服务器 (8089端口)
+│       ├── fixed_heatmap_server.py       # 备用热力图服务
+│       └── simple_scheduler.py           # 简化调度器
+└── 📂 测试版本-性能优化开发-20250811-001430/ # 旧版本目录（待清理）
+    ├── tencent_export_automation.py      # 腾讯文档下载器
+    ├── csv_version_manager.py            # 旧版本管理器
+    └── ...其他旧版本文件
 ```
 
 ## 🎯 AI使用建议
@@ -149,8 +196,9 @@ production/
 
 ---
 
-**系统版本**: v2.1  
+**系统版本**: v2.2 (优化版)  
 **服务器**: 202.140.143.88  
-**文档更新**: 2025-08-16  
+**文档更新**: 2025-08-18  
 **迁移状态**: ✅ 完成，服务正常  
-**维护状态**: ✅ 持续监控中
+**维护状态**: ✅ 持续监控中  
+**项目结构**: ✅ 已优化清理
