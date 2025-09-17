@@ -160,7 +160,8 @@
       "Bash(GIT_EDITOR=true git commit -m \"修复热力图聚类功能并更新文档\n\n- 添加了热聚集算法到综合打分模式\n- 生成了热点模式测试数据\n- 更新了多个技术规范文档\n- 创建了配置中心统一管理\n- 修复了Git部署相关问题\" --no-verify)",
       "Bash(source:*)",
       "Bash(git qs:*)",
-      "Bash(git qc:*)"
+      "Bash(git qc:*)",
+      "Bash(git-fix:*)"
     ],
     "deny": [],
     "ask": [],
