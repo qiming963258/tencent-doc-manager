@@ -162,7 +162,8 @@
       "Bash(git qs:*)",
       "Bash(git qc:*)",
       "Bash(git-fix:*)",
-      "Bash(gitc \"测试业界标准Git解决方案\")"
+      "Bash(gitc \"测试业界标准Git解决方案\")",
+      "Bash(git ci:*)"
     ],
     "deny": [],
     "ask": [],
