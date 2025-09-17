@@ -1,0 +1,230 @@
+{
+  "file_info": {
+    "table_name": "测试版本-小红书部门",
+    "previous_file": "previous_测试版本-小红书部门.csv",
+    "current_file": "current_测试版本-小红书部门.csv",
+    "comparison_time": "2025-09-17T20:25:39.087302"
+  },
+  "summary": {
+    "total_rows": 100,
+    "total_modifications": 12,
+    "modification_rate": 0.12
+  },
+  "modifications": [
+    {
+      "row": 38,
+      "column": "邓总指导登记",
+      "old_value": "原值_38_7",
+      "new_value": "新值_38_7",
+      "change_type": "修改"
+    },
+    {
+      "row": 81,
+      "column": "序号",
+      "old_value": "原值_81_0",
+      "new_value": "新值_81_0",
+      "change_type": "修改"
+    },
+    {
+      "row": 28,
+      "column": "预计完成时间",
+      "old_value": "原值_28_12",
+      "new_value": "新值_28_12",
+      "change_type": "新增"
+    },
+    {
+      "row": 80,
+      "column": "项目类型",
+      "old_value": "原值_80_1",
+      "new_value": "新值_80_1",
+      "change_type": "删除"
+    },
+    {
+      "row": 15,
+      "column": "经理分析复盘",
+      "old_value": "原值_15_15",
+      "new_value": "新值_15_15",
+      "change_type": "修改"
+    },
+    {
+      "row": 90,
+      "column": "项目类型",
+      "old_value": "原值_90_1",
+      "new_value": "新值_90_1",
+      "change_type": "删除"
+    },
+    {
+      "row": 37,
+      "column": "监督人",
+      "old_value": "原值_37_10",
+      "new_value": "新值_37_10",
+      "change_type": "新增"
+    },
+    {
+      "row": 22,
+      "column": "目标对齐",
+      "old_value": "原值_22_4",
+      "new_value": "新值_22_4",
+      "change_type": "新增"
+    },
+    {
+      "row": 16,
+      "column": "完成进度",
+      "old_value": "原值_16_13",
+      "new_value": "新值_16_13",
+      "change_type": "修改"
+    },
+    {
+      "row": 61,
+      "column": "经理分析复盘",
+      "old_value": "原值_61_15",
+      "new_value": "新值_61_15",
+      "change_type": "新增"
+    },
+    {
+      "row": 11,
+      "column": "完成进度",
+      "old_value": "原值_11_13",
+      "new_value": "新值_11_13",
+      "change_type": "删除"
+    },
+    {
+      "row": 18,
+      "column": "预计完成时间",
+      "old_value": "原值_18_12",
+      "new_value": "新值_18_12",
+      "change_type": "删除"
+    }
+  ],
+  "column_modifications": {
+    "序号": [
+      {
+        "row": 81,
+        "column": "序号",
+        "old_value": "原值_81_0",
+        "new_value": "新值_81_0",
+        "change_type": "修改"
+      }
+    ],
+    "项目类型": [
+      {
+        "row": 80,
+        "column": "项目类型",
+        "old_value": "原值_80_1",
+        "new_value": "新值_80_1",
+        "change_type": "删除"
+      },
+      {
+        "row": 90,
+        "column": "项目类型",
+        "old_value": "原值_90_1",
+        "new_value": "新值_90_1",
+        "change_type": "删除"
+      }
+    ],
+    "来源": [],
+    "任务发起时间": [],
+    "目标对齐": [
+      {
+        "row": 22,
+        "column": "目标对齐",
+        "old_value": "原值_22_4",
+        "new_value": "新值_22_4",
+        "change_type": "新增"
+      }
+    ],
+    "关键KR对齐": [],
+    "具体计划内容": [],
+    "邓总指导登记": [
+      {
+        "row": 38,
+        "column": "邓总指导登记",
+        "old_value": "原值_38_7",
+        "new_value": "新值_38_7",
+        "change_type": "修改"
+      }
+    ],
+    "负责人": [],
+    "协助人": [],
+    "监督人": [
+      {
+        "row": 37,
+        "column": "监督人",
+        "old_value": "原值_37_10",
+        "new_value": "新值_37_10",
+        "change_type": "新增"
+      }
+    ],
+    "重要程度": [],
+    "预计完成时间": [
+      {
+        "row": 28,
+        "column": "预计完成时间",
+        "old_value": "原值_28_12",
+        "new_value": "新值_28_12",
+        "change_type": "新增"
+      },
+      {
+        "row": 18,
+        "column": "预计完成时间",
+        "old_value": "原值_18_12",
+        "new_value": "新值_18_12",
+        "change_type": "删除"
+      }
+    ],
+    "完成进度": [
+      {
+        "row": 16,
+        "column": "完成进度",
+        "old_value": "原值_16_13",
+        "new_value": "新值_16_13",
+        "change_type": "修改"
+      },
+      {
+        "row": 11,
+        "column": "完成进度",
+        "old_value": "原值_11_13",
+        "new_value": "新值_11_13",
+        "change_type": "删除"
+      }
+    ],
+    "完成链接": [],
+    "经理分析复盘": [
+      {
+        "row": 15,
+        "column": "经理分析复盘",
+        "old_value": "原值_15_15",
+        "new_value": "新值_15_15",
+        "change_type": "修改"
+      },
+      {
+        "row": 61,
+        "column": "经理分析复盘",
+        "old_value": "原值_61_15",
+        "new_value": "新值_61_15",
+        "change_type": "新增"
+      }
+    ],
+    "最新复盘时间": [],
+    "对上汇报": [],
+    "应用情况": []
+  },
+  "differences": {
+    "added_rows": [],
+    "deleted_rows": [],
+    "modified_rows": [
+      38,
+      81,
+      28,
+      80,
+      15,
+      90,
+      37,
+      22,
+      16,
+      61,
+      11,
+      18
+    ]
+  }
+}

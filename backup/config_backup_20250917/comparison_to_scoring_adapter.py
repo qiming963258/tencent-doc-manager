@@ -3,8 +3,6 @@
 CSV对比结果到综合打分的数据适配器
 负责将CSV对比结果转换为综合打分生成器所需的格式
 严格遵循06-详细分表打分方法规范和07-综合集成打分算法规范
-
-更新：2025-09-17 - 迁移到配置中心架构
 """
 
 import json
@@ -18,16 +16,7 @@ from datetime import datetime
 import logging
 
 sys.path.append('/root/projects/tencent-doc-manager')
-
-# 使用配置中心统一管理配置
-from production.config import (
-    get_standard_columns,
-    L1_COLUMNS,
-    L2_COLUMNS,
-    L3_COLUMNS,
-    get_column_weight,
-    get_column_risk_level
-)
+from standard_columns_config import STANDARD_COLUMNS
 
 # 配置日志
 logging.basicConfig(level=logging.INFO)
@@ -36,19 +25,38 @@ logger = logging.getLogger(__name__)
 class ComparisonToScoringAdapter:
     """CSV对比结果到综合打分的适配器"""
 
+    # L1/L2/L3列分类定义（严格遵循规范06）
+    L1_COLUMNS = [
+        "来源", "任务发起时间", "目标对齐", "关键KR对齐",
+        "重要程度", "预计完成时间", "完成进度"
+    ]
+
+    L2_COLUMNS = [
+        "项目类型", "具体计划内容", "邓总指导登记",
+        "负责人", "协助人", "监督人", "形成计划清单"
+    ]
+
+    L3_COLUMNS = [
+        "序号", "最新复盘时间", "对上汇报", "应用情况",
+        "经理分析复盘",  # 注意：规范中写的是"进度分析总结"，但实际列名是"经理分析复盘"
+        "完成链接"  # 添加完成链接到L3分类（参考性信息）
+    ]
+
+    # 列权重定义（来自规范06）
+    COLUMN_WEIGHTS = {
+        # L1列权重
+        "重要程度": 1.4,
+        "任务发起时间": 1.3,
+        "预计完成时间": 1.3,
+        "完成进度": 1.1,
+        # L2列权重
+        "负责人": 1.2,
+        "邓总指导登记": 1.15,
+        "项目类型": 1.1
+    }
+
     def __init__(self):
-        """初始化适配器，从配置中心加载配置"""
-        # 从配置中心获取配置
-        self.standard_columns = get_standard_columns()
-        self.l1_columns = L1_COLUMNS
-        self.l2_columns = L2_COLUMNS
-        self.l3_columns = L3_COLUMNS
-
-        # 构建列权重字典（直接使用配置中心的函数）
-        self.get_column_weight = get_column_weight
-        self.get_column_risk_level = get_column_risk_level
-
-        # 设置基础目录
+        self.standard_columns = STANDARD_COLUMNS
         self.base_dir = Path("/root/projects/tencent-doc-manager")
 
     def load_comparison_result(self, comparison_file: str) -> Dict:
@@ -219,11 +227,11 @@ class ComparisonToScoringAdapter:
 
     def _get_column_level(self, column_name: str) -> str:
         """获取列的风险级别"""
-        if column_name in self.l1_columns:
+        if column_name in self.L1_COLUMNS:
             return "L1"
-        elif column_name in self.l2_columns:
+        elif column_name in self.L2_COLUMNS:
             return "L2"
-        elif column_name in self.l3_columns:
+        elif column_name in self.L3_COLUMNS:
             return "L3"
         else:
             # 未分类的列默认为L3
@@ -261,7 +269,7 @@ class ComparisonToScoringAdapter:
             change_factor = 1.0  # 极少修改
 
         # 获取列权重
-        column_weight = self.get_column_weight(column_name) if column_name else 1.0
+        column_weight = self.COLUMN_WEIGHTS.get(column_name, 1.0)
 
         # 计算最终分数
         score = base_score * change_factor * column_weight
@@ -354,18 +362,18 @@ class ComparisonToScoringAdapter:
         return {
             'L1': {
                 'count': l1_mods,
-                'columns': self.l1_columns,
+                'columns': self.L1_COLUMNS,
                 'risk_level': 'EXTREME_HIGH'
             },
             'L2': {
                 'count': l2_mods,
-                'columns': self.l2_columns,
+                'columns': self.L2_COLUMNS,
                 'risk_level': 'HIGH',
                 'requires_ai': True
             },
             'L3': {
                 'count': l3_mods,
-                'columns': self.l3_columns,
+                'columns': self.L3_COLUMNS,
                 'risk_level': 'LOW'
             }
         }
@@ -399,16 +407,7 @@ class ComparisonToScoringAdapter:
         total_rows = table_data.get('total_rows', 1)
 
         for col_idx, col_name in enumerate(self.standard_columns):
-            mods_list = column_mods.get(col_name, [])
-
-            # 兼容两种格式：行号列表或字典列表
-            if mods_list and isinstance(mods_list[0], dict):
-                # 如果是字典列表，提取行号
-                modified_rows = [mod['row'] for mod in mods_list]
-            else:
-                # 如果是行号列表，直接使用
-                modified_rows = mods_list
-
+            modified_rows = column_mods.get(col_name, [])
             modification_count = len(modified_rows)
 
             column_detail = {
@@ -416,7 +415,7 @@ class ComparisonToScoringAdapter:
                 'column_index': col_idx,
                 'column_level': self._get_column_level(col_name),  # 添加列级别
                 'modification_count': modification_count,
-                'modified_rows': sorted(modified_rows) if modified_rows else [],  # 确保行号排序
+                'modified_rows': sorted(modified_rows),  # 确保行号排序
                 'score': self._calculate_column_score(modification_count, total_rows, col_name)
             }
 
@@ -507,93 +506,27 @@ class ComparisonToScoringAdapter:
         }
 
     def _generate_hover_data(self, table_data_list: List[Dict]) -> Dict:
-        """生成增强版鼠标悬浮数据（包含详细信息）"""
+        """生成鼠标悬浮数据"""
         hover_data = {
-            'description': '增强版鼠标悬浮显示数据',
-            'version': '2.0',
+            'description': '鼠标悬浮显示数据',
             'data': []
         }
 
         for idx, table_data in enumerate(table_data_list):
             column_mods = table_data.get('column_modifications', {})
-            table_name = table_data.get('table_name', f'表格_{idx+1}')
-            total_rows = table_data.get('total_rows', 0)
+            column_modifications = []
 
-            # 为每列生成详细的悬浮信息
-            column_details = []
-
-            for col_idx, std_col in enumerate(self.standard_columns):
-                modifications = column_mods.get(std_col, [])
-                mod_count = len(modifications)
-
-                # 构建每列的详细悬浮信息
-                col_detail = {
-                    'column_name': std_col,
-                    'column_index': col_idx,
-                    'column_level': self._get_column_level(std_col),
-                    'modification_count': mod_count,
-                    'modification_rate': round(mod_count / total_rows * 100, 2) if total_rows > 0 else 0,
-                    'modified_rows': [],
-                    'modification_details': []
-                }
-
-                # 添加具体修改详情（最多显示前5个）
-                for mod in modifications[:5]:
-                    row_num = mod.get('row', 0)
-                    col_detail['modified_rows'].append(row_num)
-
-                    # 添加修改详细信息
-                    detail = {
-                        'row': row_num,
-                        'old_value': str(mod.get('old_value', '')),
-                        'new_value': str(mod.get('new_value', '')),
-                        'change_type': self._determine_change_type(
-                            mod.get('old_value'),
-                            mod.get('new_value')
-                        )
-                    }
-                    col_detail['modification_details'].append(detail)
-
-                # 如果修改超过5个，添加省略提示
-                if mod_count > 5:
-                    col_detail['has_more'] = True
-                    col_detail['remaining_count'] = mod_count - 5
-
-                column_details.append(col_detail)
+            for std_col in self.standard_columns:
+                mod_count = len(column_mods.get(std_col, []))
+                column_modifications.append(mod_count)
 
             hover_data['data'].append({
                 'table_index': idx,
-                'table_name': table_name,
-                'total_rows': total_rows,
-                'total_modifications': table_data.get('total_modifications', 0),
-                'column_details': column_details,
-                'risk_assessment': self._assess_table_risk(table_data)
+                'column_modifications': column_modifications,
+                'column_levels': [self._get_column_level(col) for col in self.standard_columns]  # 添加列级别信息
             })
 
         return hover_data
-
-    def _determine_change_type(self, old_value, new_value):
-        """判断变更类型"""
-        if old_value is None or old_value == '':
-            return '新增'
-        elif new_value is None or new_value == '':
-            return '删除'
-        else:
-            return '修改'
-
-    def _assess_table_risk(self, table_data):
-        """评估表格整体风险"""
-        total_mods = table_data.get('total_modifications', 0)
-        total_rows = table_data.get('total_rows', 1)
-
-        risk_score = min(total_mods / total_rows * 2, 1.0)
-
-        if risk_score >= 0.7:
-            return {'level': '高风险', 'score': risk_score, 'color': '#dc2626'}
-        elif risk_score >= 0.3:
-            return {'level': '中风险', 'score': risk_score, 'color': '#eab308'}
-        else:
-            return {'level': '低风险', 'score': risk_score, 'color': '#10b981'}
 
 
 # 测试函数

@@ -18,13 +18,14 @@ logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(
 logger = logging.getLogger(__name__)
 
 class ScoringHeatmapMapper:
-    """综合打分到热力图的智能映射器"""
-    
+    """综合打分到热力图的智能映射器（支持动态矩阵大小）"""
+
     def __init__(self):
         self.base_path = Path('/root/projects/tencent-doc-manager')
         self.scoring_path = self.base_path / 'csv_security_results'
-        self.matrix_rows = 30  # 热力图行数
-        self.matrix_cols = 19  # 热力图列数
+        # 动态设置矩阵行数（根据实际文档数量）
+        self.matrix_rows = None  # 将由实际数据决定
+        self.matrix_cols = 19  # 固定19列
         
         # L1/L2/L3风险等级基础热力值
         self.risk_base_heat = {
@@ -118,69 +119,40 @@ class ScoringHeatmapMapper:
     
     def expand_to_matrix_rows(self, table_scores: List[Dict]) -> List[List[float]]:
         """
-        将表格评分扩展到30行矩阵
-        
+        将表格评分动态扩展到N行矩阵（N=文档数量）
+
         Args:
             table_scores: 表格评分列表
-            
+
         Returns:
-            30×19的热力图矩阵
+            N×19的热力图矩阵
         """
+        # 动态设置矩阵行数
+        self.matrix_rows = len(table_scores) if table_scores else 1
+
         # 初始化矩阵
         matrix = [[0.05 for _ in range(self.matrix_cols)] for _ in range(self.matrix_rows)]
-        
-        # 计算每个真实文档占用的行数
-        num_tables = len(table_scores) if table_scores else 1
-        rows_per_table = self.matrix_rows // num_tables
-        remaining_rows = self.matrix_rows % num_tables
-        
-        current_row = 0
-        
-        for table_idx, table_data in enumerate(table_scores[:3]):  # 最多处理3个文档
-            # 计算该表格占用的行数
-            table_rows = rows_per_table + (1 if table_idx < remaining_rows else 0)
-            
+
+        # 每个表格占用一行
+        for table_idx, table_data in enumerate(table_scores):
             # 获取列评分
             column_scores = table_data.get('column_scores', {})
-            
+
             # 处理每一列
             for col_idx, col_name in enumerate(self.standard_columns):
                 if col_name in column_scores:
                     col_data = column_scores[col_name]
-                    
+
                     # 计算该列的热力值
                     base_heat = self.calculate_heat_value(col_data, col_name)
-                    
-                    # 获取详细分数列表
-                    scores = col_data.get('scores', [])
-                    
-                    if len(scores) >= table_rows:
-                        # 有足够的详细分数，直接分配
-                        for row_offset in range(table_rows):
-                            if row_offset < len(scores):
-                                # 使用详细分数计算热力值
-                                detail_heat = base_heat * (scores[row_offset] / max(scores)) if max(scores) > 0 else base_heat
-                                matrix[current_row + row_offset][col_idx] = detail_heat
-                    elif len(scores) > 0:
-                        # 分数不足，使用插值
-                        for row_offset in range(table_rows):
-                            if row_offset < len(scores):
-                                # 直接使用现有分数
-                                detail_heat = base_heat * (scores[row_offset] / max(scores)) if max(scores) > 0 else base_heat
-                            else:
-                                # 插值或使用平均值
-                                detail_heat = base_heat * 0.8  # 衰减系数
-                            matrix[current_row + row_offset][col_idx] = detail_heat
-                    else:
-                        # 无详细分数，使用聚合分数填充
-                        for row_offset in range(table_rows):
-                            matrix[current_row + row_offset][col_idx] = base_heat
-            
-            current_row += table_rows
-        
-        # 如果真实数据不足30行，生成虚拟数据填充
-        if current_row < self.matrix_rows:
-            self._fill_virtual_rows(matrix, current_row, table_scores)
+
+                    # 将热力值赋给对应的单元格
+                    matrix[table_idx][col_idx] = base_heat
+                else:
+                    # 无数据列使用默认值
+                    matrix[table_idx][col_idx] = 0.05
+
+        # 不再需要虚拟行填充，矩阵大小完全由实际数据决定
         
         return matrix
     
@@ -319,11 +291,11 @@ class ScoringHeatmapMapper:
         }
     
     def _generate_table_names(self, table_scores: List[Dict]) -> List[str]:
-        """生成30个表格名称"""
+        """动态生成表格名称（根据实际文档数量）"""
         names = []
-        
-        # 添加真实文档名称
-        for table in table_scores[:3]:
+
+        # 只添加真实文档名称，不再生成虚拟名称
+        for table in table_scores:
             # 简化表格名称
             full_name = table.get('table_name', '未知表格')
             # 提取关键部分（例如"出国销售计划表"）
@@ -338,19 +310,14 @@ class ScoringHeatmapMapper:
                 short_name = "小红书部门表"
             else:
                 short_name = full_name[:20] if len(full_name) > 20 else full_name
-            
-            # 为每个真实文档生成10个变体
-            for i in range(10):
-                if i == 0:
-                    names.append(short_name)
-                else:
-                    names.append(f"{short_name}_区域{i}")
-        
-        # 如果不足30个，添加虚拟名称
-        while len(names) < 30:
-            names.append(f"虚拟表格_{len(names)+1}")
-        
-        return names[:30]
+
+            names.append(short_name)
+
+        # 如果没有数据，至少返回一个默认名称
+        if not names:
+            names.append("无数据")
+
+        return names
     
     def _calculate_statistics(self, matrix: List[List[float]], table_scores: List[Dict]) -> Dict:
         """计算统计信息"""

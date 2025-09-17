@@ -1,0 +1,1671 @@
+{
+  "metadata": {
+    "version": "2.0",
+    "timestamp": "2025-09-17T20:27:55.693269",
+    "week": "W39",
+    "generator": "real_data_generator",
+    "total_params": 2500,
+    "processing_time": 12.5
+  },
+  "summary": {
+    "total_tables": 3,
+    "total_columns": 19,
+    "total_modifications": 22,
+    "overall_risk_score": 0.65,
+    "processing_status": "complete",
+    "data_source": "real_test_data"
+  },
+  "table_names": [
+    "副本-测试版本-出国销售计划表",
+    "副本-测试版本-回国销售计划表",
+    "测试版本-小红书部门"
+  ],
+  "column_names": [
+    "序号",
+    "项目类型",
+    "来源",
+    "任务发起时间",
+    "目标对齐",
+    "关键KR对齐",
+    "具体计划内容",
+    "邓总指导登记",
+    "负责人",
+    "协助人",
+    "监督人",
+    "重要程度",
+    "预计完成时间",
+    "完成进度",
+    "完成链接",
+    "经理分析复盘",
+    "最新复盘时间",
+    "对上汇报",
+    "应用情况"
+  ],
+  "heatmap_data": {
+    "matrix": [
+      [
+        0.05,
+        0.05,
+        0.05,
+        0.05,
+        0.2,
+        0.05,
+        0.34,
+        0.05,
+        0.05,
+        0.05,
+        0.05,
+        0.05,
+        0.05,
+        0.05,
+        0.05,
+        0.15,
+        0.05,
+        0.28,
+        0.05
+      ],
+      [
+        0.05,
+        0.05,
+        0.05,
+        0.26,
+        0.16,
+        0.05,
+        0.05,
+        0.17,
+        0.05,
+        0.05,
+        0.05,
+        0.05,
+        0.05,
+        0.05,
+        0.05,
+        0.05,
+        0.05,
+        0.14,
+        0.05
+      ],
+      [
+        0.05,
+        0.05,
+        0.05,
+        0.05,
+        0.05,
+        0.75,
+        0.05,
+        0.05,
+        0.05,
+        0.05,
+        0.05,
+        0.05,
+        0.98,
+        0.05,
+        0.05,
+        0.05,
+        0.05,
+        0.33,
+        0.05
+      ]
+    ],
+    "description": "真实测试数据热力图矩阵"
+  },
+  "table_details": [
+    {
+      "table_id": "table_000",
+      "table_name": "副本-测试版本-出国销售计划表",
+      "table_index": 0,
+      "total_rows": 150,
+      "total_modifications": 9,
+      "overall_risk_score": 0.12,
+      "excel_url": "https://docs.qq.com/sheet/example_0",
+      "column_details": [
+        {
+          "column_name": "序号",
+          "column_index": 0,
+          "column_level": "L3",
+          "modification_count": 0,
+          "modification_rate": 0,
+          "modified_rows": [],
+          "modification_details": []
+        },
+        {
+          "column_name": "项目类型",
+          "column_index": 1,
+          "column_level": "L2",
+          "modification_count": 0,
+          "modification_rate": 0,
+          "modified_rows": [],
+          "modification_details": []
+        },
+        {
+          "column_name": "来源",
+          "column_index": 2,
+          "column_level": "L3",
+          "modification_count": 0,
+          "modification_rate": 0,
+          "modified_rows": [],
+          "modification_details": []
+        },
+        {
+          "column_name": "任务发起时间",
+          "column_index": 3,
+          "column_level": "L3",
+          "modification_count": 0,
+          "modification_rate": 0,
+          "modified_rows": [],
+          "modification_details": []
+        },
+        {
+          "column_name": "目标对齐",
+          "column_index": 4,
+          "column_level": "L3",
+          "modification_count": 3,
+          "modification_rate": 2.0,
+          "modified_rows": [
+            105,
+            141,
+            80
+          ],
+          "modification_details": [
+            {
+              "row": 105,
+              "old_value": "原值_105_4",
+              "new_value": "新值_105_4",
+              "change_type": "新增"
+            },
+            {
+              "row": 141,
+              "old_value": "原值_141_4",
+              "new_value": "新值_141_4",
+              "change_type": "修改"
+            },
+            {
+              "row": 80,
+              "old_value": "原值_80_4",
+              "new_value": "新值_80_4",
+              "change_type": "删除"
+            }
+          ]
+        },
+        {
+          "column_name": "关键KR对齐",
+          "column_index": 5,
+          "column_level": "L1",
+          "modification_count": 0,
+          "modification_rate": 0,
+          "modified_rows": [],
+          "modification_details": []
+        },
+        {
+          "column_name": "具体计划内容",
+          "column_index": 6,
+          "column_level": "L3",
+          "modification_count": 2,
+          "modification_rate": 1.33,
+          "modified_rows": [
+            107,
+            49
+          ],
+          "modification_details": [
+            {
+              "row": 107,
+              "old_value": "原值_107_6",
+              "new_value": "新值_107_6",
+              "change_type": "新增"
+            },
+            {
+              "row": 49,
+              "old_value": "原值_49_6",
+              "new_value": "新值_49_6",
+              "change_type": "修改"
+            }
+          ]
+        },
+        {
+          "column_name": "邓总指导登记",
+          "column_index": 7,
+          "column_level": "L3",
+          "modification_count": 0,
+          "modification_rate": 0,
+          "modified_rows": [],
+          "modification_details": []
+        },
+        {
+          "column_name": "负责人",
+          "column_index": 8,
+          "column_level": "L2",
+          "modification_count": 0,
+          "modification_rate": 0,
+          "modified_rows": [],
+          "modification_details": []
+        },
+        {
+          "column_name": "协助人",
+          "column_index": 9,
+          "column_level": "L3",
+          "modification_count": 0,
+          "modification_rate": 0,
+          "modified_rows": [],
+          "modification_details": []
+        },
+        {
+          "column_name": "监督人",
+          "column_index": 10,
+          "column_level": "L3",
+          "modification_count": 0,
+          "modification_rate": 0,
+          "modified_rows": [],
+          "modification_details": []
+        },
+        {
+          "column_name": "重要程度",
+          "column_index": 11,
+          "column_level": "L1",
+          "modification_count": 0,
+          "modification_rate": 0,
+          "modified_rows": [],
+          "modification_details": []
+        },
+        {
+          "column_name": "预计完成时间",
+          "column_index": 12,
+          "column_level": "L1",
+          "modification_count": 0,
+          "modification_rate": 0,
+          "modified_rows": [],
+          "modification_details": []
+        },
+        {
+          "column_name": "完成进度",
+          "column_index": 13,
+          "column_level": "L2",
+          "modification_count": 0,
+          "modification_rate": 0,
+          "modified_rows": [],
+          "modification_details": []
+        },
+        {
+          "column_name": "完成链接",
+          "column_index": 14,
+          "column_level": "L3",
+          "modification_count": 0,
+          "modification_rate": 0,
+          "modified_rows": [],
+          "modification_details": []
+        },
+        {
+          "column_name": "经理分析复盘",
+          "column_index": 15,
+          "column_level": "L3",
+          "modification_count": 3,
+          "modification_rate": 2.0,
+          "modified_rows": [
+            129,
+            28,
+            139
+          ],
+          "modification_details": [
+            {
+              "row": 129,
+              "old_value": "原值_129_15",
+              "new_value": "新值_129_15",
+              "change_type": "修改"
+            },
+            {
+              "row": 28,
+              "old_value": "原值_28_15",
+              "new_value": "新值_28_15",
+              "change_type": "新增"
+            },
+            {
+              "row": 139,
+              "old_value": "原值_139_15",
+              "new_value": "新值_139_15",
+              "change_type": "修改"
+            }
+          ]
+        },
+        {
+          "column_name": "最新复盘时间",
+          "column_index": 16,
+          "column_level": "L3",
+          "modification_count": 0,
+          "modification_rate": 0,
+          "modified_rows": [],
+          "modification_details": []
+        },
+        {
+          "column_name": "对上汇报",
+          "column_index": 17,
+          "column_level": "L3",
+          "modification_count": 1,
+          "modification_rate": 0.67,
+          "modified_rows": [
+            112
+          ],
+          "modification_details": [
+            {
+              "row": 112,
+              "old_value": "原值_112_17",
+              "new_value": "新值_112_17",
+              "change_type": "修改"
+            }
+          ]
+        },
+        {
+          "column_name": "应用情况",
+          "column_index": 18,
+          "column_level": "L3",
+          "modification_count": 0,
+          "modification_rate": 0,
+          "modified_rows": [],
+          "modification_details": []
+        }
+      ]
+    },
+    {
+      "table_id": "table_001",
+      "table_name": "副本-测试版本-回国销售计划表",
+      "table_index": 1,
+      "total_rows": 120,
+      "total_modifications": 7,
+      "overall_risk_score": 0.11666666666666667,
+      "excel_url": "https://docs.qq.com/sheet/example_1",
+      "column_details": [
+        {
+          "column_name": "序号",
+          "column_index": 0,
+          "column_level": "L3",
+          "modification_count": 0,
+          "modification_rate": 0,
+          "modified_rows": [],
+          "modification_details": []
+        },
+        {
+          "column_name": "项目类型",
+          "column_index": 1,
+          "column_level": "L2",
+          "modification_count": 0,
+          "modification_rate": 0,
+          "modified_rows": [],
+          "modification_details": []
+        },
+        {
+          "column_name": "来源",
+          "column_index": 2,
+          "column_level": "L3",
+          "modification_count": 0,
+          "modification_rate": 0,
+          "modified_rows": [],
+          "modification_details": []
+        },
+        {
+          "column_name": "任务发起时间",
+          "column_index": 3,
+          "column_level": "L3",
+          "modification_count": 1,
+          "modification_rate": 0.83,
+          "modified_rows": [
+            25
+          ],
+          "modification_details": [
+            {
+              "row": 25,
+              "old_value": "原值_25_3",
+              "new_value": "新值_25_3",
+              "change_type": "删除"
+            }
+          ]
+        },
+        {
+          "column_name": "目标对齐",
+          "column_index": 4,
+          "column_level": "L3",
+          "modification_count": 3,
+          "modification_rate": 2.5,
+          "modified_rows": [
+            42,
+            64,
+            21
+          ],
+          "modification_details": [
+            {
+              "row": 42,
+              "old_value": "原值_42_4",
+              "new_value": "新值_42_4",
+              "change_type": "新增"
+            },
+            {
+              "row": 64,
+              "old_value": "原值_64_4",
+              "new_value": "新值_64_4",
+              "change_type": "修改"
+            },
+            {
+              "row": 21,
+              "old_value": "原值_21_4",
+              "new_value": "新值_21_4",
+              "change_type": "新增"
+            }
+          ]
+        },
+        {
+          "column_name": "关键KR对齐",
+          "column_index": 5,
+          "column_level": "L1",
+          "modification_count": 0,
+          "modification_rate": 0,
+          "modified_rows": [],
+          "modification_details": []
+        },
+        {
+          "column_name": "具体计划内容",
+          "column_index": 6,
+          "column_level": "L3",
+          "modification_count": 0,
+          "modification_rate": 0,
+          "modified_rows": [],
+          "modification_details": []
+        },
+        {
+          "column_name": "邓总指导登记",
+          "column_index": 7,
+          "column_level": "L3",
+          "modification_count": 2,
+          "modification_rate": 1.67,
+          "modified_rows": [
+            13,
+            22
+          ],
+          "modification_details": [
+            {
+              "row": 13,
+              "old_value": "原值_13_7",
+              "new_value": "新值_13_7",
+              "change_type": "修改"
+            },
+            {
+              "row": 22,
+              "old_value": "原值_22_7",
+              "new_value": "新值_22_7",
+              "change_type": "新增"
+            }
+          ]
+        },
+        {
+          "column_name": "负责人",
+          "column_index": 8,
+          "column_level": "L2",
+          "modification_count": 0,
+          "modification_rate": 0,
+          "modified_rows": [],
+          "modification_details": []
+        },
+        {
+          "column_name": "协助人",
+          "column_index": 9,
+          "column_level": "L3",
+          "modification_count": 0,
+          "modification_rate": 0,
+          "modified_rows": [],
+          "modification_details": []
+        },
+        {
+          "column_name": "监督人",
+          "column_index": 10,
+          "column_level": "L3",
+          "modification_count": 0,
+          "modification_rate": 0,
+          "modified_rows": [],
+          "modification_details": []
+        },
+        {
+          "column_name": "重要程度",
+          "column_index": 11,
+          "column_level": "L1",
+          "modification_count": 0,
+          "modification_rate": 0,
+          "modified_rows": [],
+          "modification_details": []
+        },
+        {
+          "column_name": "预计完成时间",
+          "column_index": 12,
+          "column_level": "L1",
+          "modification_count": 0,
+          "modification_rate": 0,
+          "modified_rows": [],
+          "modification_details": []
+        },
+        {
+          "column_name": "完成进度",
+          "column_index": 13,
+          "column_level": "L2",
+          "modification_count": 0,
+          "modification_rate": 0,
+          "modified_rows": [],
+          "modification_details": []
+        },
+        {
+          "column_name": "完成链接",
+          "column_index": 14,
+          "column_level": "L3",
+          "modification_count": 0,
+          "modification_rate": 0,
+          "modified_rows": [],
+          "modification_details": []
+        },
+        {
+          "column_name": "经理分析复盘",
+          "column_index": 15,
+          "column_level": "L3",
+          "modification_count": 0,
+          "modification_rate": 0,
+          "modified_rows": [],
+          "modification_details": []
+        },
+        {
+          "column_name": "最新复盘时间",
+          "column_index": 16,
+          "column_level": "L3",
+          "modification_count": 0,
+          "modification_rate": 0,
+          "modified_rows": [],
+          "modification_details": []
+        },
+        {
+          "column_name": "对上汇报",
+          "column_index": 17,
+          "column_level": "L3",
+          "modification_count": 1,
+          "modification_rate": 0.83,
+          "modified_rows": [
+            19
+          ],
+          "modification_details": [
+            {
+              "row": 19,
+              "old_value": "原值_19_17",
+              "new_value": "新值_19_17",
+              "change_type": "修改"
+            }
+          ]
+        },
+        {
+          "column_name": "应用情况",
+          "column_index": 18,
+          "column_level": "L3",
+          "modification_count": 0,
+          "modification_rate": 0,
+          "modified_rows": [],
+          "modification_details": []
+        }
+      ]
+    },
+    {
+      "table_id": "table_002",
+      "table_name": "测试版本-小红书部门",
+      "table_index": 2,
+      "total_rows": 100,
+      "total_modifications": 6,
+      "overall_risk_score": 0.12,
+      "excel_url": "https://docs.qq.com/sheet/example_2",
+      "column_details": [
+        {
+          "column_name": "序号",
+          "column_index": 0,
+          "column_level": "L3",
+          "modification_count": 0,
+          "modification_rate": 0,
+          "modified_rows": [],
+          "modification_details": []
+        },
+        {
+          "column_name": "项目类型",
+          "column_index": 1,
+          "column_level": "L2",
+          "modification_count": 0,
+          "modification_rate": 0,
+          "modified_rows": [],
+          "modification_details": []
+        },
+        {
+          "column_name": "来源",
+          "column_index": 2,
+          "column_level": "L3",
+          "modification_count": 0,
+          "modification_rate": 0,
+          "modified_rows": [],
+          "modification_details": []
+        },
+        {
+          "column_name": "任务发起时间",
+          "column_index": 3,
+          "column_level": "L3",
+          "modification_count": 0,
+          "modification_rate": 0,
+          "modified_rows": [],
+          "modification_details": []
+        },
+        {
+          "column_name": "目标对齐",
+          "column_index": 4,
+          "column_level": "L3",
+          "modification_count": 0,
+          "modification_rate": 0,
+          "modified_rows": [],
+          "modification_details": []
+        },
+        {
+          "column_name": "关键KR对齐",
+          "column_index": 5,
+          "column_level": "L1",
+          "modification_count": 2,
+          "modification_rate": 2.0,
+          "modified_rows": [
+            29,
+            14
+          ],
+          "modification_details": [
+            {
+              "row": 29,
+              "old_value": "原值_29_5",
+              "new_value": "新值_29_5",
+              "change_type": "删除"
+            },
+            {
+              "row": 14,
+              "old_value": "原值_14_5",
+              "new_value": "新值_14_5",
+              "change_type": "修改"
+            }
+          ]
+        },
+        {
+          "column_name": "具体计划内容",
+          "column_index": 6,
+          "column_level": "L3",
+          "modification_count": 0,
+          "modification_rate": 0,
+          "modified_rows": [],
+          "modification_details": []
+        },
+        {
+          "column_name": "邓总指导登记",
+          "column_index": 7,
+          "column_level": "L3",
+          "modification_count": 0,
+          "modification_rate": 0,
+          "modified_rows": [],
+          "modification_details": []
+        },
+        {
+          "column_name": "负责人",
+          "column_index": 8,
+          "column_level": "L2",
+          "modification_count": 0,
+          "modification_rate": 0,
+          "modified_rows": [],
+          "modification_details": []
+        },
+        {
+          "column_name": "协助人",
+          "column_index": 9,
+          "column_level": "L3",
+          "modification_count": 0,
+          "modification_rate": 0,
+          "modified_rows": [],
+          "modification_details": []
+        },
+        {
+          "column_name": "监督人",
+          "column_index": 10,
+          "column_level": "L3",
+          "modification_count": 0,
+          "modification_rate": 0,
+          "modified_rows": [],
+          "modification_details": []
+        },
+        {
+          "column_name": "重要程度",
+          "column_index": 11,
+          "column_level": "L1",
+          "modification_count": 0,
+          "modification_rate": 0,
+          "modified_rows": [],
+          "modification_details": []
+        },
+        {
+          "column_name": "预计完成时间",
+          "column_index": 12,
+          "column_level": "L1",
+          "modification_count": 2,
+          "modification_rate": 2.0,
+          "modified_rows": [
+            68,
+            24
+          ],
+          "modification_details": [
+            {
+              "row": 68,
+              "old_value": "原值_68_12",
+              "new_value": "新值_68_12",
+              "change_type": "删除"
+            },
+            {
+              "row": 24,
+              "old_value": "原值_24_12",
+              "new_value": "新值_24_12",
+              "change_type": "删除"
+            }
+          ]
+        },
+        {
+          "column_name": "完成进度",
+          "column_index": 13,
+          "column_level": "L2",
+          "modification_count": 0,
+          "modification_rate": 0,
+          "modified_rows": [],
+          "modification_details": []
+        },
+        {
+          "column_name": "完成链接",
+          "column_index": 14,
+          "column_level": "L3",
+          "modification_count": 0,
+          "modification_rate": 0,
+          "modified_rows": [],
+          "modification_details": []
+        },
+        {
+          "column_name": "经理分析复盘",
+          "column_index": 15,
+          "column_level": "L3",
+          "modification_count": 0,
+          "modification_rate": 0,
+          "modified_rows": [],
+          "modification_details": []
+        },
+        {
+          "column_name": "最新复盘时间",
+          "column_index": 16,
+          "column_level": "L3",
+          "modification_count": 0,
+          "modification_rate": 0,
+          "modified_rows": [],
+          "modification_details": []
+        },
+        {
+          "column_name": "对上汇报",
+          "column_index": 17,
+          "column_level": "L3",
+          "modification_count": 2,
+          "modification_rate": 2.0,
+          "modified_rows": [
+            8,
+            68
+          ],
+          "modification_details": [
+            {
+              "row": 8,
+              "old_value": "原值_8_17",
+              "new_value": "新值_8_17",
+              "change_type": "修改"
+            },
+            {
+              "row": 68,
+              "old_value": "原值_68_17",
+              "new_value": "新值_68_17",
+              "change_type": "删除"
+            }
+          ]
+        },
+        {
+          "column_name": "应用情况",
+          "column_index": 18,
+          "column_level": "L3",
+          "modification_count": 0,
+          "modification_rate": 0,
+          "modified_rows": [],
+          "modification_details": []
+        }
+      ]
+    }
+  ],
+  "hover_data": {
+    "version": "2.0",
+    "description": "增强版鼠标悬浮显示数据",
+    "data": [
+      {
+        "table_index": 0,
+        "table_name": "副本-测试版本-出国销售计划表",
+        "total_rows": 150,
+        "total_modifications": 9,
+        "column_details": [
+          {
+            "column_name": "序号",
+            "column_index": 0,
+            "column_level": "L3",
+            "modification_count": 0,
+            "modification_rate": 0,
+            "modified_rows": [],
+            "modification_details": []
+          },
+          {
+            "column_name": "项目类型",
+            "column_index": 1,
+            "column_level": "L2",
+            "modification_count": 0,
+            "modification_rate": 0,
+            "modified_rows": [],
+            "modification_details": []
+          },
+          {
+            "column_name": "来源",
+            "column_index": 2,
+            "column_level": "L3",
+            "modification_count": 0,
+            "modification_rate": 0,
+            "modified_rows": [],
+            "modification_details": []
+          },
+          {
+            "column_name": "任务发起时间",
+            "column_index": 3,
+            "column_level": "L3",
+            "modification_count": 0,
+            "modification_rate": 0,
+            "modified_rows": [],
+            "modification_details": []
+          },
+          {
+            "column_name": "目标对齐",
+            "column_index": 4,
+            "column_level": "L3",
+            "modification_count": 3,
+            "modification_rate": 2.0,
+            "modified_rows": [
+              105,
+              141,
+              80
+            ],
+            "modification_details": [
+              {
+                "row": 105,
+                "old_value": "原值_105_4",
+                "new_value": "新值_105_4",
+                "change_type": "新增"
+              },
+              {
+                "row": 141,
+                "old_value": "原值_141_4",
+                "new_value": "新值_141_4",
+                "change_type": "修改"
+              },
+              {
+                "row": 80,
+                "old_value": "原值_80_4",
+                "new_value": "新值_80_4",
+                "change_type": "删除"
+              }
+            ]
+          },
+          {
+            "column_name": "关键KR对齐",
+            "column_index": 5,
+            "column_level": "L1",
+            "modification_count": 0,
+            "modification_rate": 0,
+            "modified_rows": [],
+            "modification_details": []
+          },
+          {
+            "column_name": "具体计划内容",
+            "column_index": 6,
+            "column_level": "L3",
+            "modification_count": 2,
+            "modification_rate": 1.33,
+            "modified_rows": [
+              107,
+              49
+            ],
+            "modification_details": [
+              {
+                "row": 107,
+                "old_value": "原值_107_6",
+                "new_value": "新值_107_6",
+                "change_type": "新增"
+              },
+              {
+                "row": 49,
+                "old_value": "原值_49_6",
+                "new_value": "新值_49_6",
+                "change_type": "修改"
+              }
+            ]
+          },
+          {
+            "column_name": "邓总指导登记",
+            "column_index": 7,
+            "column_level": "L3",
+            "modification_count": 0,
+            "modification_rate": 0,
+            "modified_rows": [],
+            "modification_details": []
+          },
+          {
+            "column_name": "负责人",
+            "column_index": 8,
+            "column_level": "L2",
+            "modification_count": 0,
+            "modification_rate": 0,
+            "modified_rows": [],
+            "modification_details": []
+          },
+          {
+            "column_name": "协助人",
+            "column_index": 9,
+            "column_level": "L3",
+            "modification_count": 0,
+            "modification_rate": 0,
+            "modified_rows": [],
+            "modification_details": []
+          },
+          {
+            "column_name": "监督人",
+            "column_index": 10,
+            "column_level": "L3",
+            "modification_count": 0,
+            "modification_rate": 0,
+            "modified_rows": [],
+            "modification_details": []
+          },
+          {
+            "column_name": "重要程度",
+            "column_index": 11,
+            "column_level": "L1",
+            "modification_count": 0,
+            "modification_rate": 0,
+            "modified_rows": [],
+            "modification_details": []
+          },
+          {
+            "column_name": "预计完成时间",
+            "column_index": 12,
+            "column_level": "L1",
+            "modification_count": 0,
+            "modification_rate": 0,
+            "modified_rows": [],
+            "modification_details": []
+          },
+          {
+            "column_name": "完成进度",
+            "column_index": 13,
+            "column_level": "L2",
+            "modification_count": 0,
+            "modification_rate": 0,
+            "modified_rows": [],
+            "modification_details": []
+          },
+          {
+            "column_name": "完成链接",
+            "column_index": 14,
+            "column_level": "L3",
+            "modification_count": 0,
+            "modification_rate": 0,
+            "modified_rows": [],
+            "modification_details": []
+          },
+          {
+            "column_name": "经理分析复盘",
+            "column_index": 15,
+            "column_level": "L3",
+            "modification_count": 3,
+            "modification_rate": 2.0,
+            "modified_rows": [
+              129,
+              28,
+              139
+            ],
+            "modification_details": [
+              {
+                "row": 129,
+                "old_value": "原值_129_15",
+                "new_value": "新值_129_15",
+                "change_type": "修改"
+              },
+              {
+                "row": 28,
+                "old_value": "原值_28_15",
+                "new_value": "新值_28_15",
+                "change_type": "新增"
+              },
+              {
+                "row": 139,
+                "old_value": "原值_139_15",
+                "new_value": "新值_139_15",
+                "change_type": "修改"
+              }
+            ]
+          },
+          {
+            "column_name": "最新复盘时间",
+            "column_index": 16,
+            "column_level": "L3",
+            "modification_count": 0,
+            "modification_rate": 0,
+            "modified_rows": [],
+            "modification_details": []
+          },
+          {
+            "column_name": "对上汇报",
+            "column_index": 17,
+            "column_level": "L3",
+            "modification_count": 1,
+            "modification_rate": 0.67,
+            "modified_rows": [
+              112
+            ],
+            "modification_details": [
+              {
+                "row": 112,
+                "old_value": "原值_112_17",
+                "new_value": "新值_112_17",
+                "change_type": "修改"
+              }
+            ]
+          },
+          {
+            "column_name": "应用情况",
+            "column_index": 18,
+            "column_level": "L3",
+            "modification_count": 0,
+            "modification_rate": 0,
+            "modified_rows": [],
+            "modification_details": []
+          }
+        ],
+        "risk_assessment": {
+          "level": "中风险",
+          "score": 0.12,
+          "color": "#eab308"
+        }
+      },
+      {
+        "table_index": 1,
+        "table_name": "副本-测试版本-回国销售计划表",
+        "total_rows": 120,
+        "total_modifications": 7,
+        "column_details": [
+          {
+            "column_name": "序号",
+            "column_index": 0,
+            "column_level": "L3",
+            "modification_count": 0,
+            "modification_rate": 0,
+            "modified_rows": [],
+            "modification_details": []
+          },
+          {
+            "column_name": "项目类型",
+            "column_index": 1,
+            "column_level": "L2",
+            "modification_count": 0,
+            "modification_rate": 0,
+            "modified_rows": [],
+            "modification_details": []
+          },
+          {
+            "column_name": "来源",
+            "column_index": 2,
+            "column_level": "L3",
+            "modification_count": 0,
+            "modification_rate": 0,
+            "modified_rows": [],
+            "modification_details": []
+          },
+          {
+            "column_name": "任务发起时间",
+            "column_index": 3,
+            "column_level": "L3",
+            "modification_count": 1,
+            "modification_rate": 0.83,
+            "modified_rows": [
+              25
+            ],
+            "modification_details": [
+              {
+                "row": 25,
+                "old_value": "原值_25_3",
+                "new_value": "新值_25_3",
+                "change_type": "删除"
+              }
+            ]
+          },
+          {
+            "column_name": "目标对齐",
+            "column_index": 4,
+            "column_level": "L3",
+            "modification_count": 3,
+            "modification_rate": 2.5,
+            "modified_rows": [
+              42,
+              64,
+              21
+            ],
+            "modification_details": [
+              {
+                "row": 42,
+                "old_value": "原值_42_4",
+                "new_value": "新值_42_4",
+                "change_type": "新增"
+              },
+              {
+                "row": 64,
+                "old_value": "原值_64_4",
+                "new_value": "新值_64_4",
+                "change_type": "修改"
+              },
+              {
+                "row": 21,
+                "old_value": "原值_21_4",
+                "new_value": "新值_21_4",
+                "change_type": "新增"
+              }
+            ]
+          },
+          {
+            "column_name": "关键KR对齐",
+            "column_index": 5,
+            "column_level": "L1",
+            "modification_count": 0,
+            "modification_rate": 0,
+            "modified_rows": [],
+            "modification_details": []
+          },
+          {
+            "column_name": "具体计划内容",
+            "column_index": 6,
+            "column_level": "L3",
+            "modification_count": 0,
+            "modification_rate": 0,
+            "modified_rows": [],
+            "modification_details": []
+          },
+          {
+            "column_name": "邓总指导登记",
+            "column_index": 7,
+            "column_level": "L3",
+            "modification_count": 2,
+            "modification_rate": 1.67,
+            "modified_rows": [
+              13,
+              22
+            ],
+            "modification_details": [
+              {
+                "row": 13,
+                "old_value": "原值_13_7",
+                "new_value": "新值_13_7",
+                "change_type": "修改"
+              },
+              {
+                "row": 22,
+                "old_value": "原值_22_7",
+                "new_value": "新值_22_7",
+                "change_type": "新增"
+              }
+            ]
+          },
+          {
+            "column_name": "负责人",
+            "column_index": 8,
+            "column_level": "L2",
+            "modification_count": 0,
+            "modification_rate": 0,
+            "modified_rows": [],
+            "modification_details": []
+          },
+          {
+            "column_name": "协助人",
+            "column_index": 9,
+            "column_level": "L3",
+            "modification_count": 0,
+            "modification_rate": 0,
+            "modified_rows": [],
+            "modification_details": []
+          },
+          {
+            "column_name": "监督人",
+            "column_index": 10,
+            "column_level": "L3",
+            "modification_count": 0,
+            "modification_rate": 0,
+            "modified_rows": [],
+            "modification_details": []
+          },
+          {
+            "column_name": "重要程度",
+            "column_index": 11,
+            "column_level": "L1",
+            "modification_count": 0,
+            "modification_rate": 0,
+            "modified_rows": [],
+            "modification_details": []
+          },
+          {
+            "column_name": "预计完成时间",
+            "column_index": 12,
+            "column_level": "L1",
+            "modification_count": 0,
+            "modification_rate": 0,
+            "modified_rows": [],
+            "modification_details": []
+          },
+          {
+            "column_name": "完成进度",
+            "column_index": 13,
+            "column_level": "L2",
+            "modification_count": 0,
+            "modification_rate": 0,
+            "modified_rows": [],
+            "modification_details": []
+          },
+          {
+            "column_name": "完成链接",
+            "column_index": 14,
+            "column_level": "L3",
+            "modification_count": 0,
+            "modification_rate": 0,
+            "modified_rows": [],
+            "modification_details": []
+          },
+          {
+            "column_name": "经理分析复盘",
+            "column_index": 15,
+            "column_level": "L3",
+            "modification_count": 0,
+            "modification_rate": 0,
+            "modified_rows": [],
+            "modification_details": []
+          },
+          {
+            "column_name": "最新复盘时间",
+            "column_index": 16,
+            "column_level": "L3",
+            "modification_count": 0,
+            "modification_rate": 0,
+            "modified_rows": [],
+            "modification_details": []
+          },
+          {
+            "column_name": "对上汇报",
+            "column_index": 17,
+            "column_level": "L3",
+            "modification_count": 1,
+            "modification_rate": 0.83,
+            "modified_rows": [
+              19
+            ],
+            "modification_details": [
+              {
+                "row": 19,
+                "old_value": "原值_19_17",
+                "new_value": "新值_19_17",
+                "change_type": "修改"
+              }
+            ]
+          },
+          {
+            "column_name": "应用情况",
+            "column_index": 18,
+            "column_level": "L3",
+            "modification_count": 0,
+            "modification_rate": 0,
+            "modified_rows": [],
+            "modification_details": []
+          }
+        ],
+        "risk_assessment": {
+          "level": "低风险",
+          "score": 0.12,
+          "color": "#10b981"
+        }
+      },
+      {
+        "table_index": 2,
+        "table_name": "测试版本-小红书部门",
+        "total_rows": 100,
+        "total_modifications": 6,
+        "column_details": [
+          {
+            "column_name": "序号",
+            "column_index": 0,
+            "column_level": "L3",
+            "modification_count": 0,
+            "modification_rate": 0,
+            "modified_rows": [],
+            "modification_details": []
+          },
+          {
+            "column_name": "项目类型",
+            "column_index": 1,
+            "column_level": "L2",
+            "modification_count": 0,
+            "modification_rate": 0,
+            "modified_rows": [],
+            "modification_details": []
+          },
+          {
+            "column_name": "来源",
+            "column_index": 2,
+            "column_level": "L3",
+            "modification_count": 0,
+            "modification_rate": 0,
+            "modified_rows": [],
+            "modification_details": []
+          },
+          {
+            "column_name": "任务发起时间",
+            "column_index": 3,
+            "column_level": "L3",
+            "modification_count": 0,
+            "modification_rate": 0,
+            "modified_rows": [],
+            "modification_details": []
+          },
+          {
+            "column_name": "目标对齐",
+            "column_index": 4,
+            "column_level": "L3",
+            "modification_count": 0,
+            "modification_rate": 0,
+            "modified_rows": [],
+            "modification_details": []
+          },
+          {
+            "column_name": "关键KR对齐",
+            "column_index": 5,
+            "column_level": "L1",
+            "modification_count": 2,
+            "modification_rate": 2.0,
+            "modified_rows": [
+              29,
+              14
+            ],
+            "modification_details": [
+              {
+                "row": 29,
+                "old_value": "原值_29_5",
+                "new_value": "新值_29_5",
+                "change_type": "删除"
+              },
+              {
+                "row": 14,
+                "old_value": "原值_14_5",
+                "new_value": "新值_14_5",
+                "change_type": "修改"
+              }
+            ]
+          },
+          {
+            "column_name": "具体计划内容",
+            "column_index": 6,
+            "column_level": "L3",
+            "modification_count": 0,
+            "modification_rate": 0,
+            "modified_rows": [],
+            "modification_details": []
+          },
+          {
+            "column_name": "邓总指导登记",
+            "column_index": 7,
+            "column_level": "L3",
+            "modification_count": 0,
+            "modification_rate": 0,
+            "modified_rows": [],
+            "modification_details": []
+          },
+          {
+            "column_name": "负责人",
+            "column_index": 8,
+            "column_level": "L2",
+            "modification_count": 0,
+            "modification_rate": 0,
+            "modified_rows": [],
+            "modification_details": []
+          },
+          {
+            "column_name": "协助人",
+            "column_index": 9,
+            "column_level": "L3",
+            "modification_count": 0,
+            "modification_rate": 0,
+            "modified_rows": [],
+            "modification_details": []
+          },
+          {
+            "column_name": "监督人",
+            "column_index": 10,
+            "column_level": "L3",
+            "modification_count": 0,
+            "modification_rate": 0,
+            "modified_rows": [],
+            "modification_details": []
+          },
+          {
+            "column_name": "重要程度",
+            "column_index": 11,
+            "column_level": "L1",
+            "modification_count": 0,
+            "modification_rate": 0,
+            "modified_rows": [],
+            "modification_details": []
+          },
+          {
+            "column_name": "预计完成时间",
+            "column_index": 12,
+            "column_level": "L1",
+            "modification_count": 2,
+            "modification_rate": 2.0,
+            "modified_rows": [
+              68,
+              24
+            ],
+            "modification_details": [
+              {
+                "row": 68,
+                "old_value": "原值_68_12",
+                "new_value": "新值_68_12",
+                "change_type": "删除"
+              },
+              {
+                "row": 24,
+                "old_value": "原值_24_12",
+                "new_value": "新值_24_12",
+                "change_type": "删除"
+              }
+            ]
+          },
+          {
+            "column_name": "完成进度",
+            "column_index": 13,
+            "column_level": "L2",
+            "modification_count": 0,
+            "modification_rate": 0,
+            "modified_rows": [],
+            "modification_details": []
+          },
+          {
+            "column_name": "完成链接",
+            "column_index": 14,
+            "column_level": "L3",
+            "modification_count": 0,
+            "modification_rate": 0,
+            "modified_rows": [],
+            "modification_details": []
+          },
+          {
+            "column_name": "经理分析复盘",
+            "column_index": 15,
+            "column_level": "L3",
+            "modification_count": 0,
+            "modification_rate": 0,
+            "modified_rows": [],
+            "modification_details": []
+          },
+          {
+            "column_name": "最新复盘时间",
+            "column_index": 16,
+            "column_level": "L3",
+            "modification_count": 0,
+            "modification_rate": 0,
+            "modified_rows": [],
+            "modification_details": []
+          },
+          {
+            "column_name": "对上汇报",
+            "column_index": 17,
+            "column_level": "L3",
+            "modification_count": 2,
+            "modification_rate": 2.0,
+            "modified_rows": [
+              8,
+              68
+            ],
+            "modification_details": [
+              {
+                "row": 8,
+                "old_value": "原值_8_17",
+                "new_value": "新值_8_17",
+                "change_type": "修改"
+              },
+              {
+                "row": 68,
+                "old_value": "原值_68_17",
+                "new_value": "新值_68_17",
+                "change_type": "删除"
+              }
+            ]
+          },
+          {
+            "column_name": "应用情况",
+            "column_index": 18,
+            "column_level": "L3",
+            "modification_count": 0,
+            "modification_rate": 0,
+            "modified_rows": [],
+            "modification_details": []
+          }
+        ],
+        "risk_assessment": {
+          "level": "低风险",
+          "score": 0.12,
+          "color": "#10b981"
+        }
+      }
+    ]
+  },
+  "statistics": {
+    "high_risk_count": 2,
+    "medium_risk_count": 2,
+    "low_risk_count": 53,
+    "column_level_stats": {
+      "L1": {
+        "count": 2,
+        "columns": [
+          "关键KR对齐",
+          "重要程度",
+          "预计完成时间"
+        ],
+        "risk_level": "EXTREME_HIGH"
+      },
+      "L2": {
+        "count": 0,
+        "columns": [
+          "项目类型",
+          "负责人",
+          "完成进度"
+        ],
+        "risk_level": "HIGH"
+      },
+      "L3": {
+        "count": 9,
+        "columns": [
+          "序号",
+          "来源",
+          "任务发起时间",
+          "目标对齐",
+          "具体计划内容",
+          "邓总指导登记",
+          "协助人",
+          "监督人",
+          "完成链接",
+          "经理分析复盘",
+          "最新复盘时间",
+          "对上汇报",
+          "应用情况"
+        ],
+        "risk_level": "NORMAL"
+      }
+    }
+  },
+  "tables": [
+    {
+      "id": 0,
+      "name": "副本-测试版本-出国销售计划表",
+      "total_rows": 150,
+      "total_modifications": 9,
+      "risk_level": "L2",
+      "modifications": 9
+    },
+    {
+      "id": 1,
+      "name": "副本-测试版本-回国销售计划表",
+      "total_rows": 120,
+      "total_modifications": 7,
+      "risk_level": "L3",
+      "modifications": 7
+    },
+    {
+      "id": 2,
+      "name": "测试版本-小红书部门",
+      "total_rows": 100,
+      "total_modifications": 6,
+      "risk_level": "L3",
+      "modifications": 6
+    }
+  ],
+  "ui_config": {
+    "enable_hover": true,
+    "enable_click": true,
+    "enable_zoom": true,
+    "default_zoom": 1.0
+  },
+  "visualization_params": {
+    "color_scheme": "diverging",
+    "color_stops": [
+      {
+        "value": 0.05,
+        "color": "#1e40af"
+      },
+      {
+        "value": 0.25,
+        "color": "#0891b2"
+      },
+      {
+        "value": 0.5,
+        "color": "#10b981"
+      },
+      {
+        "value": 0.75,
+        "color": "#eab308"
+      },
+      {
+        "value": 1.0,
+        "color": "#dc2626"
+      }
+    ]
+  }
+}

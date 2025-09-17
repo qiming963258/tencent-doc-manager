@@ -1,0 +1,357 @@
+{
+  "file_info": {
+    "table_name": "副本-测试版本-出国销售计划表",
+    "previous_file": "previous_副本-测试版本-出国销售计划表.csv",
+    "current_file": "current_副本-测试版本-出国销售计划表.csv",
+    "comparison_time": "2025-09-17T20:25:39.083237"
+  },
+  "summary": {
+    "total_rows": 150,
+    "total_modifications": 20,
+    "modification_rate": 0.13333333333333333
+  },
+  "modifications": [
+    {
+      "row": 10,
+      "column": "完成进度",
+      "old_value": "原值_10_13",
+      "new_value": "新值_10_13",
+      "change_type": "新增"
+    },
+    {
+      "row": 104,
+      "column": "应用情况",
+      "old_value": "原值_104_18",
+      "new_value": "新值_104_18",
+      "change_type": "修改"
+    },
+    {
+      "row": 133,
+      "column": "对上汇报",
+      "old_value": "原值_133_17",
+      "new_value": "新值_133_17",
+      "change_type": "修改"
+    },
+    {
+      "row": 35,
+      "column": "来源",
+      "old_value": "原值_35_2",
+      "new_value": "新值_35_2",
+      "change_type": "新增"
+    },
+    {
+      "row": 26,
+      "column": "任务发起时间",
+      "old_value": "原值_26_3",
+      "new_value": "新值_26_3",
+      "change_type": "新增"
+    },
+    {
+      "row": 136,
+      "column": "预计完成时间",
+      "old_value": "原值_136_12",
+      "new_value": "新值_136_12",
+      "change_type": "修改"
+    },
+    {
+      "row": 88,
+      "column": "关键KR对齐",
+      "old_value": "原值_88_5",
+      "new_value": "新值_88_5",
+      "change_type": "新增"
+    },
+    {
+      "row": 37,
+      "column": "应用情况",
+      "old_value": "原值_37_18",
+      "new_value": "新值_37_18",
+      "change_type": "删除"
+    },
+    {
+      "row": 38,
+      "column": "邓总指导登记",
+      "old_value": "原值_38_7",
+      "new_value": "新值_38_7",
+      "change_type": "新增"
+    },
+    {
+      "row": 85,
+      "column": "最新复盘时间",
+      "old_value": "原值_85_16",
+      "new_value": "新值_85_16",
+      "change_type": "修改"
+    },
+    {
+      "row": 24,
+      "column": "具体计划内容",
+      "old_value": "原值_24_6",
+      "new_value": "新值_24_6",
+      "change_type": "新增"
+    },
+    {
+      "row": 149,
+      "column": "目标对齐",
+      "old_value": "原值_149_4",
+      "new_value": "新值_149_4",
+      "change_type": "删除"
+    },
+    {
+      "row": 86,
+      "column": "具体计划内容",
+      "old_value": "原值_86_6",
+      "new_value": "新值_86_6",
+      "change_type": "修改"
+    },
+    {
+      "row": 20,
+      "column": "监督人",
+      "old_value": "原值_20_10",
+      "new_value": "新值_20_10",
+      "change_type": "新增"
+    },
+    {
+      "row": 2,
+      "column": "负责人",
+      "old_value": "原值_2_8",
+      "new_value": "新值_2_8",
+      "change_type": "新增"
+    },
+    {
+      "row": 112,
+      "column": "监督人",
+      "old_value": "原值_112_10",
+      "new_value": "新值_112_10",
+      "change_type": "删除"
+    },
+    {
+      "row": 111,
+      "column": "关键KR对齐",
+      "old_value": "原值_111_5",
+      "new_value": "新值_111_5",
+      "change_type": "删除"
+    },
+    {
+      "row": 41,
+      "column": "预计完成时间",
+      "old_value": "原值_41_12",
+      "new_value": "新值_41_12",
+      "change_type": "修改"
+    },
+    {
+      "row": 90,
+      "column": "协助人",
+      "old_value": "原值_90_9",
+      "new_value": "新值_90_9",
+      "change_type": "删除"
+    },
+    {
+      "row": 126,
+      "column": "序号",
+      "old_value": "原值_126_0",
+      "new_value": "新值_126_0",
+      "change_type": "删除"
+    }
+  ],
+  "column_modifications": {
+    "序号": [
+      {
+        "row": 126,
+        "column": "序号",
+        "old_value": "原值_126_0",
+        "new_value": "新值_126_0",
+        "change_type": "删除"
+      }
+    ],
+    "项目类型": [],
+    "来源": [
+      {
+        "row": 35,
+        "column": "来源",
+        "old_value": "原值_35_2",
+        "new_value": "新值_35_2",
+        "change_type": "新增"
+      }
+    ],
+    "任务发起时间": [
+      {
+        "row": 26,
+        "column": "任务发起时间",
+        "old_value": "原值_26_3",
+        "new_value": "新值_26_3",
+        "change_type": "新增"
+      }
+    ],
+    "目标对齐": [
+      {
+        "row": 149,
+        "column": "目标对齐",
+        "old_value": "原值_149_4",
+        "new_value": "新值_149_4",
+        "change_type": "删除"
+      }
+    ],
+    "关键KR对齐": [
+      {
+        "row": 88,
+        "column": "关键KR对齐",
+        "old_value": "原值_88_5",
+        "new_value": "新值_88_5",
+        "change_type": "新增"
+      },
+      {
+        "row": 111,
+        "column": "关键KR对齐",
+        "old_value": "原值_111_5",
+        "new_value": "新值_111_5",
+        "change_type": "删除"
+      }
+    ],
+    "具体计划内容": [
+      {
+        "row": 24,
+        "column": "具体计划内容",
+        "old_value": "原值_24_6",
+        "new_value": "新值_24_6",
+        "change_type": "新增"
+      },
+      {
+        "row": 86,
+        "column": "具体计划内容",
+        "old_value": "原值_86_6",
+        "new_value": "新值_86_6",
+        "change_type": "修改"
+      }
+    ],
+    "邓总指导登记": [
+      {
+        "row": 38,
+        "column": "邓总指导登记",
+        "old_value": "原值_38_7",
+        "new_value": "新值_38_7",
+        "change_type": "新增"
+      }
+    ],
+    "负责人": [
+      {
+        "row": 2,
+        "column": "负责人",
+        "old_value": "原值_2_8",
+        "new_value": "新值_2_8",
+        "change_type": "新增"
+      }
+    ],
+    "协助人": [
+      {
+        "row": 90,
+        "column": "协助人",
+        "old_value": "原值_90_9",
+        "new_value": "新值_90_9",
+        "change_type": "删除"
+      }
+    ],
+    "监督人": [
+      {
+        "row": 20,
+        "column": "监督人",
+        "old_value": "原值_20_10",
+        "new_value": "新值_20_10",
+        "change_type": "新增"
+      },
+      {
+        "row": 112,
+        "column": "监督人",
+        "old_value": "原值_112_10",
+        "new_value": "新值_112_10",
+        "change_type": "删除"
+      }
+    ],
+    "重要程度": [],
+    "预计完成时间": [
+      {
+        "row": 136,
+        "column": "预计完成时间",
+        "old_value": "原值_136_12",
+        "new_value": "新值_136_12",
+        "change_type": "修改"
+      },
+      {
+        "row": 41,
+        "column": "预计完成时间",
+        "old_value": "原值_41_12",
+        "new_value": "新值_41_12",
+        "change_type": "修改"
+      }
+    ],
+    "完成进度": [
+      {
+        "row": 10,
+        "column": "完成进度",
+        "old_value": "原值_10_13",
+        "new_value": "新值_10_13",
+        "change_type": "新增"
+      }
+    ],
+    "完成链接": [],
+    "经理分析复盘": [],
+    "最新复盘时间": [
+      {
+        "row": 85,
+        "column": "最新复盘时间",
+        "old_value": "原值_85_16",
+        "new_value": "新值_85_16",
+        "change_type": "修改"
+      }
+    ],
+    "对上汇报": [
+      {
+        "row": 133,
+        "column": "对上汇报",
+        "old_value": "原值_133_17",
+        "new_value": "新值_133_17",
+        "change_type": "修改"
+      }
+    ],
+    "应用情况": [
+      {
+        "row": 104,
+        "column": "应用情况",
+        "old_value": "原值_104_18",
+        "new_value": "新值_104_18",
+        "change_type": "修改"
+      },
+      {
+        "row": 37,
+        "column": "应用情况",
+        "old_value": "原值_37_18",
+        "new_value": "新值_37_18",
+        "change_type": "删除"
+      }
+    ]
+  },
+  "differences": {
+    "added_rows": [],
+    "deleted_rows": [],
+    "modified_rows": [
+      10,
+      104,
+      133,
+      35,
+      26,
+      136,
+      88,
+      37,
+      38,
+      85,
+      24,
+      149,
+      86,
+      20,
+      2,
+      112,
+      111,
+      41,
+      90,
+      126
+    ]
+  }
+}
