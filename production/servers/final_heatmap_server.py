@@ -1500,6 +1500,13 @@ def get_real_csv_data():
 def get_heatmap_data():
     """获取热力图数据（严格综合打分模式）"""
     try:
+        # 获取排序参数，决定是否应用聚类算法
+        from flask import request
+        sorting_mode = request.args.get('sorting', 'default')  # 默认为'default'
+        apply_clustering = (sorting_mode == 'intelligent' or sorting_mode == 'smart')  # 只有智能排序才聚类
+
+        print(f"📊 排序模式: {sorting_mode}, 是否应用聚类: {apply_clustering}")
+
         # 🔥 强制使用综合打分模式，进行严格验证
         # 导入验证器和标准列配置
         import sys
@@ -1685,11 +1692,12 @@ def get_heatmap_data():
 
             return clustered_matrix, clustered_tables, clustered_columns, new_row_order, new_col_order
 
-        # 应用聚类算法到热力图矩阵
-        if 'heatmap_data' in data and 'matrix' in data['heatmap_data']:
-            original_matrix = data['heatmap_data']['matrix']
-            original_tables = data.get('table_names', [])
-            original_columns = data.get('column_names', STANDARD_COLUMNS.copy())
+        # 根据排序模式决定是否应用聚类算法
+        if apply_clustering and 'heatmap_data' in data and 'matrix' in data['heatmap_data']:
+            # 保存原始数据用于比较
+            original_matrix = data['heatmap_data']['matrix'].copy()
+            original_tables = data.get('table_names', []).copy()
+            original_columns = data.get('column_names', STANDARD_COLUMNS.copy()).copy()
 
             # 执行聚类
             clustered_matrix, clustered_tables, clustered_columns, row_order, col_order = apply_clustering_to_matrix(
@@ -1701,16 +1709,24 @@ def get_heatmap_data():
             # 更新数据结构
             data['heatmap_data']['matrix'] = clustered_matrix
             data['heatmap_data']['clustered'] = True
+            data['heatmap_data']['original_matrix'] = original_matrix  # 保存原始矩阵供参考
             data['table_names'] = clustered_tables
             data['column_names'] = clustered_columns
             data['clustering_info'] = {
                 'row_reorder': row_order,
                 'col_reorder': col_order,
                 'algorithm': 'heat_based_clustering',
+                'sorting_mode': sorting_mode,
                 'timestamp': datetime.datetime.now().isoformat()
             }
 
-            print(f"✅ 应用了热聚集算法: {len(row_order)}行×{len(col_order)}列重排")
+            print(f"✅ 智能排序模式: 应用了热聚集算法，{len(row_order)}行×{len(col_order)}列重排")
+        else:
+            # 默认排序，保持原始顺序
+            data['heatmap_data']['clustered'] = False
+            if 'clustering_info' in data:
+                del data['clustering_info']  # 移除聚类信息
+            print(f"📋 默认排序模式: 保持原始列顺序，不应用聚类")
 
         # 包装成前端期望的格式（模拟CSV模式响应结构）
         response_data = data.copy()
