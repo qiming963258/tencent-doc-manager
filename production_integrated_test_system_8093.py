@@ -175,14 +175,22 @@ except ImportError as e:
     logger.warning(f"⚠️ 无法导入周时间管理器: {e}")
     week_manager = None
 
-# 2. 下载模块
+# 2. 下载模块（使用符合架构规格的PlaywrightDownloader）
 try:
-    from production.core_modules.tencent_export_automation import TencentDocAutoExporter
+    from production.core_modules.playwright_downloader import PlaywrightDownloader
+    # 为了向后兼容，保留TencentDocAutoExporter的别名
+    TencentDocAutoExporter = PlaywrightDownloader
     MODULES_STATUS['downloader'] = True
-    logger.info("✅ 成功导入下载模块")
-except ImportError as e:
-    MODULES_STATUS['downloader'] = False
-    logger.error(f"❌ 无法导入下载模块: {e}")
+    logger.info("✅ 成功导入PlaywrightDownloader（符合架构规格）")
+except ImportError:
+    try:
+        # 备用：使用原有的TencentDocAutoExporter
+        from production.core_modules.tencent_export_automation import TencentDocAutoExporter
+        MODULES_STATUS['downloader'] = True
+        logger.info("✅ 成功导入TencentDocAutoExporter（备用）")
+    except ImportError as e:
+        MODULES_STATUS['downloader'] = False
+        logger.error(f"❌ 无法导入下载模块: {e}")
 
 # 3. 比较模块（使用UnifiedCSVComparator符合规范）
 try:
@@ -328,8 +336,14 @@ def download_and_store_baseline(baseline_url: str, cookie: str, week_manager=Non
             workflow_state.add_log(f"🔗 正在打开腾讯文档: {baseline_url}", "INFO")
             workflow_state.add_log("🍪 设置Cookie认证...", "INFO")
             workflow_state.add_log("⏳ 开始下载，请耐心等待（通常需要30-60秒）...", "INFO")
-        import asyncio
-        result = asyncio.run(exporter.export_document(baseline_url, cookies=cookie, format='csv'))
+        # 下载文档 - 根据下载器类型选择接口
+        if hasattr(exporter, 'download'):
+            # PlaywrightDownloader接口（异步）
+            import asyncio
+            result = asyncio.run(exporter.download(baseline_url, cookies=cookie, format='csv'))
+        else:
+            # TencentDocAutoExporter接口（同步）
+            result = exporter.export_document(baseline_url, cookies=cookie, format='csv')
         if workflow_state:
             workflow_state.add_log("✅ 下载请求已完成", "INFO")
         
@@ -346,27 +360,44 @@ def download_and_store_baseline(baseline_url: str, cookie: str, week_manager=Non
             logger.error("下载的文件不存在")
             return None
         
-        # 从 URL中提取文档名称
+        # 从配置文件获取文档名称
         doc_name = "基线文档"
         try:
-            # 尝试从 URL 解析文档名
-            parsed_url = urlparse(baseline_url)
-            if 'sheet' in parsed_url.path:
-                # 腾讯文档链接格式
-                path_parts = parsed_url.path.split('/')
-                if len(path_parts) > 2:
-                    doc_id = path_parts[-1]
-                    # 从下载的文件名中提取文档名
-                    original_name = os.path.basename(downloaded_file)
-                    # 移除时间戳和扩展名
-                    doc_name_match = re.search(r'^(.+?)_\d{8}_\d{4}', original_name)
-                    if doc_name_match:
-                        doc_name = doc_name_match.group(1)
-                    else:
-                        # 使用文件名的前部分
-                        doc_name = original_name.split('_')[0] if '_' in original_name else original_name.split('.')[0]
+            # 加载文档配置
+            import json
+            config_file = '/root/projects/tencent-doc-manager/production/config/real_documents.json'
+            with open(config_file, 'r', encoding='utf-8') as f:
+                config = json.load(f)
+
+            # 根据URL查找文档名
+            for doc in config.get('documents', []):
+                if doc['url'] in baseline_url:
+                    # 使用简化的文档名（去掉前缀）
+                    full_name = doc['name']
+                    # 去掉"副本-测试版本-"前缀
+                    doc_name = full_name.replace('副本-测试版本-', '').replace('测试版本-', '')
+                    logger.info(f"使用配置文件中的文档名: {doc_name}")
+                    break
+            else:
+                # 如果没有找到，fallback到从URL提取
+                parsed_url = urlparse(baseline_url)
+                if 'sheet' in parsed_url.path:
+                    # 腾讯文档链接格式
+                    path_parts = parsed_url.path.split('/')
+                    if len(path_parts) > 2:
+                        doc_id = path_parts[-1]
+                        # 从下载的文件名中提取文档名
+                        original_name = os.path.basename(downloaded_file)
+                        # 移除时间戳和扩展名
+                        doc_name_match = re.search(r'^(.+?)_\d{8}_\d{4}', original_name)
+                        if doc_name_match:
+                            doc_name = doc_name_match.group(1)
+                        else:
+                            # 使用文件名的前部分
+                            doc_name = original_name.split('_')[0] if '_' in original_name else original_name.split('.')[0]
+                logger.warning(f"未在配置中找到文档，使用fallback名称: {doc_name}")
         except Exception as e:
-            logger.warning(f"无法从 URL 解析文档名: {e}")
+            logger.warning(f"无法从配置解析文档名: {e}")
         
         # 生成符合规范的文件名
         # 格式: tencent_{doc_name}_{YYYYMMDD_HHMM}_baseline_W{week}.csv
@@ -414,9 +445,14 @@ def download_and_store_target(target_url: str, cookie: str, week_manager=None, w
         if workflow_state:
             workflow_state.add_log("🌐 开始下载目标文档...", "INFO")
 
-        # 下载文档 - 使用asyncio.run运行异步方法
-        import asyncio
-        result = asyncio.run(exporter.export_document(target_url, cookies=cookie, format='csv'))
+        # 下载文档 - 根据下载器类型选择接口
+        if hasattr(exporter, 'download'):
+            # PlaywrightDownloader接口（异步）
+            import asyncio
+            result = asyncio.run(exporter.download(target_url, cookies=cookie, format='csv'))
+        else:
+            # TencentDocAutoExporter接口（同步）
+            result = exporter.export_document(target_url, cookies=cookie, format='csv')
 
         if not result or not result.get('success'):
             logger.error(f"目标文档下载失败: {result.get('error') if result else '未知错误'}")
@@ -427,14 +463,33 @@ def download_and_store_target(target_url: str, cookie: str, week_manager=None, w
             logger.error(f"下载的文件不存在: {downloaded_file}")
             return None
 
-        # 从URL提取文档名
+        # 从配置文件获取文档名
         doc_name = 'target_doc'
         try:
-            from urllib.parse import urlparse
-            path_parts = urlparse(target_url).path.split('/')
-            if len(path_parts) > 1:
-                doc_name = path_parts[-1] or path_parts[-2]
-        except:
+            # 加载文档配置
+            import json
+            config_file = '/root/projects/tencent-doc-manager/production/config/real_documents.json'
+            with open(config_file, 'r', encoding='utf-8') as f:
+                config = json.load(f)
+
+            # 根据URL查找文档名
+            for doc in config.get('documents', []):
+                if doc['url'] in target_url:
+                    # 使用简化的文档名（去掉前缀）
+                    full_name = doc['name']
+                    # 去掉"副本-测试版本-"前缀
+                    doc_name = full_name.replace('副本-测试版本-', '').replace('测试版本-', '')
+                    logger.info(f"使用配置文件中的文档名: {doc_name}")
+                    break
+            else:
+                # 如果没有找到，fallback到从URL提取
+                from urllib.parse import urlparse
+                path_parts = urlparse(target_url).path.split('/')
+                if len(path_parts) > 1:
+                    doc_name = path_parts[-1] or path_parts[-2]
+                logger.warning(f"未在配置中找到文档，使用URL提取的名称: {doc_name}")
+        except Exception as e:
+            logger.error(f"获取文档名失败: {e}")
             pass
 
         # 获取当前时间信息
@@ -774,7 +829,12 @@ def run_complete_workflow(baseline_url: str, target_url: str, cookie: str, advan
             exporter_excel = TencentDocAutoExporter()
             
             import asyncio
-            excel_result = asyncio.run(exporter_excel.export_document(target_url, cookies=cookie, format='xlsx'))
+            if hasattr(exporter_excel, 'download'):
+                # PlaywrightDownloader接口
+                excel_result = asyncio.run(exporter_excel.download(target_url, cookies=cookie, format='xlsx'))
+            else:
+                # TencentDocAutoExporter接口
+                excel_result = asyncio.run(exporter_excel.export_document(target_url, cookies=cookie, format='xlsx'))
             if excel_result and excel_result.get('success'):
                 excel_file = excel_result.get('file_path')
                 workflow_state.add_log(f"✅ Excel文档下载成功: {os.path.basename(excel_file)}")

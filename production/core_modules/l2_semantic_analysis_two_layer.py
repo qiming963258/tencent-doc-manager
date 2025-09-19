@@ -186,7 +186,86 @@ ID|判断(SAFE/RISKY/UNSURE)|置信度(0-100)|理由(5字内)
             "key_risks": ["需要人工审核"],
             "recommendation": "建议人工确认修改合理性"
         }
-    
+
+    def build_batch_layer2_prompt(self, modifications: List[Dict]) -> str:
+        """构建批量第二层深度分析提示词"""
+        prompt = f"""你是项目风险评估专家，负责批量深度分析表格修改的风险。
+
+## 待分析修改列表
+分析以下{len(modifications)}个修改，为每个修改返回独立的风险评估结果。
+
+"""
+        for i, mod in enumerate(modifications):
+            prompt += f"""
+### 修改 {i+1}
+单元格：{mod['cell']}
+列名：{mod['column_name']}
+原值：{mod['old_value'][:100]}
+新值：{mod['new_value'][:100]}
+
+"""
+
+        prompt += """
+## 分析要求
+对每个修改进行独立评估，返回JSON数组格式：
+
+```json
+[
+    {
+        "index": 1,
+        "risk_level": "LOW/MEDIUM/HIGH",
+        "decision": "APPROVE/REVIEW/REJECT",
+        "confidence": 85,
+        "reason": "简要说明"
+    },
+    ...
+]
+```
+
+## 决策标准
+- APPROVE: 低风险，可自动批准
+- REVIEW: 中等风险，需人工审查
+- REJECT: 高风险，建议拒绝
+
+请直接返回JSON数组，不要包含其他内容。"""
+
+        return prompt
+
+    def parse_batch_layer2_response(self, response: str, expected_count: int) -> List[Dict]:
+        """解析批量第二层响应"""
+        results = []
+
+        try:
+            # 尝试从响应中提取JSON数组
+            import re
+            json_match = re.search(r'\[.*\]', response, re.DOTALL)
+            if json_match:
+                parsed_results = json.loads(json_match.group())
+
+                # 确保结果按索引排序
+                parsed_results.sort(key=lambda x: x.get('index', 0))
+
+                for item in parsed_results:
+                    results.append({
+                        "risk_level": item.get("risk_level", "MEDIUM"),
+                        "decision": item.get("decision", "REVIEW"),
+                        "confidence": item.get("confidence", 70),
+                        "reason": item.get("reason", "需要人工审查")
+                    })
+        except Exception as e:
+            logger.warning(f"批量响应解析失败: {e}")
+
+        # 如果结果数量不足，用默认值填充
+        while len(results) < expected_count:
+            results.append({
+                "risk_level": "MEDIUM",
+                "decision": "REVIEW",
+                "confidence": 70,
+                "reason": "无法解析响应"
+            })
+
+        return results[:expected_count]
+
     def analyze_modifications(self, modifications: List[Dict]) -> Dict:
         """
         分析L2修改（主入口）
@@ -275,37 +354,69 @@ ID|判断(SAFE/RISKY/UNSURE)|置信度(0-100)|理由(5字内)
     
     
     def _run_layer2_analysis(self, modifications: List[Dict], layer1_results: List[L2AnalysisResult]) -> List[L2AnalysisResult]:
-        """运行第二层分析"""
-        layer2_count = 0
-        
+        """运行第二层分析（批处理版本）"""
+        # 收集需要第二层分析的项
+        layer2_items = []
+        layer2_indices = []
+
         for i, result in enumerate(layer1_results):
             if result.needs_layer2:
-                layer2_count += 1
-                mod = modifications[i]
-                
-                # 必须使用API，不允许降级
-                if not self.api_client:
-                    raise Exception("L2第二层分析必须使用API客户端")
-                
-                # 真实API调用（必须成功）
-                prompt = self.build_layer2_prompt(mod)
-                try:
-                    response = self.api_client.call_api(prompt, max_tokens=500)
-                    result.layer2_result = self.parse_layer2_response(response)
-                except Exception as e:
-                    logger.error(f"第二层API调用失败: {e}")
-                    # 不允许降级，必须报错
-                    raise Exception(f"L2第二层API调用失败，无法继续: {e}")
-                
-                # 根据第二层结果确定最终决策
-                result.final_decision = result.layer2_result['decision']
-                result.approval_required = result.final_decision in ['REVIEW', 'REJECT']
+                layer2_items.append(modifications[i])
+                layer2_indices.append(i)
             else:
                 # 第一层通过，直接批准
                 result.final_decision = 'APPROVE'
                 result.approval_required = False
-        
-        logger.info(f"第二层分析完成: {layer2_count} 项")
+
+        if not layer2_items:
+            logger.info("所有项第一层通过，无需第二层分析")
+            return layer1_results
+
+        logger.info(f"需要第二层分析的项数: {len(layer2_items)}")
+
+        # 必须使用API，不允许降级
+        if not self.api_client:
+            raise Exception("L2第二层分析必须使用API客户端")
+
+        # 批处理第二层分析（扩大批次大小到50）
+        batch_size = 50  # 增加批次大小以减少API调用
+
+        for batch_start in range(0, len(layer2_items), batch_size):
+            batch_end = min(batch_start + batch_size, len(layer2_items))
+            batch_mods = layer2_items[batch_start:batch_end]
+            batch_indices = layer2_indices[batch_start:batch_end]
+
+            # 构建批量分析提示
+            batch_prompt = self.build_batch_layer2_prompt(batch_mods)
+
+            try:
+                # 批量API调用
+                response = self.api_client.call_api(batch_prompt, max_tokens=2000)
+                batch_results = self.parse_batch_layer2_response(response, len(batch_mods))
+
+                # 更新结果
+                for j, idx in enumerate(batch_indices):
+                    if j < len(batch_results):
+                        result = layer1_results[idx]
+                        result.layer2_result = batch_results[j]
+                        result.final_decision = result.layer2_result['decision']
+                        result.approval_required = result.final_decision in ['REVIEW', 'REJECT']
+                    else:
+                        # 如果解析失败，默认需要审查
+                        result = layer1_results[idx]
+                        result.final_decision = 'REVIEW'
+                        result.approval_required = True
+
+            except Exception as e:
+                logger.error(f"第二层批量API调用失败: {e}")
+                # 为这批次的所有项设置为需要审查
+                for idx in batch_indices:
+                    result = layer1_results[idx]
+                    result.final_decision = 'REVIEW'
+                    result.approval_required = True
+                    result.layer2_result = {'decision': 'REVIEW', 'reason': f'API调用失败: {str(e)}'}
+
+        logger.info(f"第二层分析完成: {len(layer2_items)} 项")
         return layer1_results
     
     

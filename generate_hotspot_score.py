@@ -92,10 +92,18 @@ def generate_hotspot_pattern_score():
         else:
             avg_risk = 0.05
 
+        # 动态生成行数，模拟不同表格的真实行数
+        if i < 3:
+            total_rows = 50  # 前3个表格50行
+        elif i < 6:
+            total_rows = 100  # 中间3个表格100行
+        else:
+            total_rows = 150  # 后面的表格150行
+
         table_detail = {
             "table_name": table_name,
             "table_index": i,
-            "total_rows": 200,
+            "total_rows": total_rows,
             "total_modifications": total_modifications,
             "column_details": column_details,
             "risk_score": avg_risk * 1.2 if i < hotspot_tables else avg_risk,  # 热点表格风险更高

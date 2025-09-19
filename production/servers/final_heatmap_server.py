@@ -1507,18 +1507,26 @@ def get_heatmap_data():
 
         print(f"📊 排序模式: {sorting_mode}, 是否应用聚类: {apply_clustering}")
 
-        # 🔥 强制使用综合打分模式，进行严格验证
-        # 导入验证器和标准列配置
+        # 🔥 优先使用已加载的全局数据
+        global comprehensive_scoring_data
+
+        # 导入标准列配置
         import sys
         sys.path.append('/root/projects/tencent-doc-manager')
-        from comprehensive_score_validator import ComprehensiveScoreValidator
         from standard_columns_config import STANDARD_COLUMNS
 
-        # 查找最新的综合打分文件
-        scoring_dir = '/root/projects/tencent-doc-manager/scoring_results/comprehensive'
-        import glob
-        pattern = os.path.join(scoring_dir, 'comprehensive_score_W*.json')
-        files = glob.glob(pattern)
+        # 如果全局数据存在，使用它
+        if comprehensive_scoring_data:
+            print(f"✅ 使用已加载的综合打分数据")
+            data = comprehensive_scoring_data
+            files = ["已加载"]  # 跳过文件查找
+        else:
+            # 否则查找最新的综合打分文件
+            from comprehensive_score_validator import ComprehensiveScoreValidator
+            scoring_dir = '/root/projects/tencent-doc-manager/scoring_results/comprehensive'
+            import glob
+            pattern = os.path.join(scoring_dir, 'comprehensive_score_W*.json')
+            files = glob.glob(pattern)
 
         if not files:
             return jsonify({
@@ -1527,13 +1535,14 @@ def get_heatmap_data():
                 "message": "请先生成符合规范的综合打分文件"
             }), 400
 
-        # 获取最新文件
-        latest_file = max(files, key=os.path.getmtime)
-        print(f"📊 加载综合打分文件: {latest_file}")
+        # 如果数据还未加载，获取最新文件
+        if not comprehensive_scoring_data:
+            latest_file = max(files, key=os.path.getmtime)
+            print(f"📊 加载综合打分文件: {latest_file}")
 
-        # 直接加载文件，跳过过时的5200参数验证
-        with open(latest_file, 'r', encoding='utf-8') as f:
-            data = json.load(f)
+            # 直接加载文件，跳过过时的5200参数验证
+            with open(latest_file, 'r', encoding='utf-8') as f:
+                data = json.load(f)
 
         # 验证基本结构，但不再要求5200参数
         is_valid = True
@@ -1712,6 +1721,7 @@ def get_heatmap_data():
             data['heatmap_data']['original_matrix'] = original_matrix  # 保存原始矩阵供参考
             data['table_names'] = clustered_tables
             data['column_names'] = clustered_columns
+            data['sorted_column_names'] = clustered_columns  # 🔥 添加排序后的列名供前端使用
             data['clustering_info'] = {
                 'row_reorder': row_order,
                 'col_reorder': col_order,
@@ -1722,11 +1732,59 @@ def get_heatmap_data():
 
             print(f"✅ 智能排序模式: 应用了热聚集算法，{len(row_order)}行×{len(col_order)}列重排")
         else:
-            # 默认排序，保持原始顺序
+            # 默认排序，恢复原始顺序
+            # 🔥 重要：当数据已经被某种方式排序后，需要恢复到原始列顺序
+            original_columns = STANDARD_COLUMNS.copy()
+            current_columns = data.get('column_names', STANDARD_COLUMNS.copy())
+
+            # 如果当前列顺序不是原始顺序，需要重新排序矩阵
+            if current_columns != original_columns and 'heatmap_data' in data and 'matrix' in data['heatmap_data']:
+                # 找到从当前顺序到原始顺序的映射
+                col_index_map = []
+                for orig_col in original_columns:
+                    try:
+                        idx = current_columns.index(orig_col)
+                        col_index_map.append(idx)
+                    except ValueError:
+                        # 如果列不存在，使用原位置
+                        col_index_map.append(original_columns.index(orig_col) if orig_col in original_columns else 0)
+
+                # 调试输出：显示列映射关系
+                print(f"🔍 列映射调试:")
+                print(f"   - 当前列前5个: {current_columns[:5]}")
+                print(f"   - 目标列前5个: {original_columns[:5]}")
+                print(f"   - 映射索引前5个: {col_index_map[:5]}")
+
+                # 显示矩阵重排前的数据
+                if data['heatmap_data']['matrix']:
+                    print(f"   - 重排前第一行前5个值: {data['heatmap_data']['matrix'][0][:5]}")
+
+                # 重新排序矩阵的列
+                original_matrix = []
+                for row in data['heatmap_data']['matrix']:
+                    new_row = []
+                    for idx in col_index_map:
+                        if idx < len(row):
+                            new_row.append(row[idx])
+                        else:
+                            new_row.append(0)  # 默认值
+                    original_matrix.append(new_row)
+
+                data['heatmap_data']['matrix'] = original_matrix
+
+                # 显示矩阵重排后的数据
+                if original_matrix:
+                    print(f"   - 重排后第一行前5个值: {original_matrix[0][:5]}")
+
+                data['column_names'] = original_columns
+                print(f"📋 默认排序模式: 已恢复原始列顺序，重排了{len(col_index_map)}列")
+            else:
+                print(f"📋 默认排序模式: 列顺序已经是原始顺序，无需重排")
+
             data['heatmap_data']['clustered'] = False
+            data['sorted_column_names'] = original_columns  # 🔥 默认排序时使用原始列名
             if 'clustering_info' in data:
                 del data['clustering_info']  # 移除聚类信息
-            print(f"📋 默认排序模式: 保持原始列顺序，不应用聚类")
 
         # 包装成前端期望的格式（模拟CSV模式响应结构）
         response_data = data.copy()
@@ -5239,7 +5297,7 @@ def get_comprehensive_heatmap_data():
                                 }
 
                 row_level_data = {
-                    'total_rows': original_table.get('total_rows', 270),
+                    'total_rows': total_rows,  # 使用已计算的真实行数
                     'total_differences': original_table.get('modifications_count', 0) or original_table.get('modifications', 0),
                     'column_modifications': column_modifications,
                     'modified_rows': []  # 汇总所有修改行
@@ -5822,12 +5880,12 @@ def index():
                   b: 0
                 };
               } else {
-                // 橙到红到白 (0.875-1.0)
+                // 橙到深红 (0.875-1.0) - 修改为深红色而不是白色
                 const t = (v - 0.875) / 0.125;
                 return {
-                  r: 255,
-                  g: Math.floor(155 + t * 100),
-                  b: Math.floor(t * 255)
+                  r: Math.floor(255 - t * 76),  // 255→179 深红
+                  g: Math.floor(155 - t * 128), // 155→27 深红
+                  b: Math.floor(0 + t * 27)     // 0→27 深红
                 };
               }
             };
@@ -5973,11 +6031,11 @@ def index():
               const b = Math.floor(50 - t * 50);   // 50→0
               return `rgb(${r}, ${g}, ${b})`;
             } else {
-              // 黄色到红色 (0.8-1.0)
+              // 橙红到深红 (0.8-1.0) - 增强警示效果
               const t = (v - 0.8) / 0.2;
-              const r = Math.floor(255);           // 255→255 保持
-              const g = Math.floor(255 - t * 190); // 255→65
-              const b = Math.floor(0);             // 0→0 保持
+              const r = Math.floor(255 - t * 102); // 255→153 深红
+              const g = Math.floor(85 - t * 58);   // 85→27 深红
+              const b = Math.floor(0 + t * 27);    // 0→27 深红
               return `rgb(${r}, ${g}, ${b})`;
             }
           };
@@ -6113,11 +6171,11 @@ def index():
             const b = Math.floor(50 - t * 50);   // 50→0
             return `rgb(${r}, ${g}, ${b})`;
           } else {
-            // 黄色到红色 (0.8-1.0)
+            // 橙红到深红 (0.8-1.0) - 增强警示效果
             const t = (v - 0.8) / 0.2;
-            const r = Math.floor(255);           // 255→255 保持
-            const g = Math.floor(255 - t * 190); // 255→65
-            const b = Math.floor(0);             // 0→0 保持
+            const r = Math.floor(255 - t * 102); // 255→153 深红
+            const g = Math.floor(85 - t * 58);   // 85→27 深红
+            const b = Math.floor(0 + t * 27);    // 0→27 深红
             return `rgb(${r}, ${g}, ${b})`;
           }
         };
@@ -6211,33 +6269,56 @@ def index():
             }
           }, [comprehensiveExpanded]);
           
-          // 定期获取工作流状态
+          // 使用useRef保持工作流完成状态，避免重复触发
+          const workflowCompleteRef = React.useRef(false);
+
+          // 定期获取工作流状态 - 修复版本，避免自动刷新
           React.useEffect(() => {
             let interval;
+
             if (workflowRunning) {
+              // 重置完成标记
+              workflowCompleteRef.current = false;
+
               interval = setInterval(async () => {
                 try {
                   const response = await fetch('/api/workflow-status');
                   const data = await response.json();
+
+                  // 更新日志（总是更新）
                   setWorkflowLogs(data.logs || []);
-                  setWorkflowRunning(data.is_running || false);
-                  
+
+                  // 检查工作流是否结束
+                  const isRunning = data.is_running || false;
+
+                  // 只在工作流真正结束时处理一次
+                  if (!isRunning && workflowRunning) {
+                    // 更新运行状态
+                    setWorkflowRunning(false);
+
+                    // 只显示一次完成消息
+                    if (!workflowCompleteRef.current) {
+                      workflowCompleteRef.current = true;
+                      console.log('🎉 工作流已完成！请手动刷新页面查看最新数据');
+                      setWorkflowLogs(prev => [...prev, {
+                        timestamp: new Date().toISOString(),
+                        message: '✅ 工作流已完成！请手动刷新页面(F5)以查看最新热力图数据',
+                        level: 'success'
+                      }]);
+                      // 绝对不自动刷新页面 - 用户明确要求不自动刷新
+                    }
+                  }
+
                   // 自动滚动到底部
                   if (logsEndRef.current) {
                     logsEndRef.current.scrollIntoView({ behavior: "smooth" });
-                  }
-                  
-                  // 如果工作流完成，更新热力图
-                  if (!data.is_running && data.uploaded_urls) {
-                    // 这里可以触发热力图更新
-                    window.location.reload(); // 简单刷新页面
                   }
                 } catch (error) {
                   console.error('获取工作流状态失败:', error);
                 }
               }, 1000);
             }
-            
+
             return () => {
               if (interval) clearInterval(interval);
             };
@@ -6517,13 +6598,13 @@ def index():
                 setDataSource('comprehensive');
                 setShowComprehensivePanel(false);
 
-                // 显示成功消息
-                alert(`已加载综合打分文件: ${file.name}\n表格数: ${file.table_count || 0}`);
+                // 显示成功消息并提示手动刷新
+                alert(`已加载综合打分文件: ${file.name}\n表格数: ${file.table_count || 0}\n\n✅ 文件已成功加载！\n请手动刷新页面(按F5)以查看更新后的热力图`);
 
-                // 刷新页面以更新热力图显示
-                setTimeout(() => {
-                  window.location.reload();
-                }, 500);
+                // 不再自动刷新，让用户手动控制
+                // setTimeout(() => {
+                //   window.location.reload();
+                // }, 500);
               } else {
                 alert(`加载文件失败: ${result.error || '未知错误'}`);
               }
@@ -6941,11 +7022,12 @@ def index():
                                 .then(response => response.json())
                                 .then(result => {
                                   if (result.success) {
-                                    setComprehensiveLoadStatus(`✅ ${result.message}`);
+                                    setComprehensiveLoadStatus(`✅ ${result.message}\n\n📌 请手动刷新页面(按F5)以查看更新后的数据`);
                                     setDataSource('comprehensive');
                                     setShowComprehensivePanel(false);  // 加载成功后自动关闭面板
-                                    // 刷新热力图数据
-                                    window.location.reload();
+                                    // 不再自动刷新，让用户手动控制
+                                    console.log('✅ 综合打分文件已加载，请手动刷新页面查看');
+                                    // window.location.reload(); // 已禁用自动刷新
                                   } else {
                                     setComprehensiveLoadStatus(`❌ ${result.error}`);
                                   }
@@ -8412,14 +8494,17 @@ def index():
           const [showSettings, setShowSettings] = React.useState(false);
           const [documentLinks, setDocumentLinks] = React.useState({});
           const [useDefaultColumnOrder, setUseDefaultColumnOrder] = React.useState(false);
+          // 🔥 修复：从URL初始化sortingMode
+          const urlParams = new URLSearchParams(window.location.search);
+          const initialSortingMode = urlParams.get('sorting') || 'default';
+          const [sortingMode, setSortingMode] = React.useState(initialSortingMode);
           const [apiData, setApiData] = React.useState(null);
           const [loading, setLoading] = React.useState(true);
           const [error, setError] = React.useState(null);
           const [detailedScores, setDetailedScores] = React.useState({});  // 🔥 新增：存储详细打分数据
-          
-          // 加载API数据
-          React.useEffect(() => {
-            const loadApiData = async () => {
+
+          // 🔥 修复：将fetchApiData提取为组件级函数
+          const fetchApiData = React.useCallback(async () => {
               try {
                 setLoading(true);
                 console.log('🔄 正在从API加载数据...');
@@ -8452,16 +8537,20 @@ def index():
                 }
 
                 let response;
+                // 🔥 修复：从URL获取当前排序模式
+                const urlParams = new URLSearchParams(window.location.search);
+                const currentSortingMode = urlParams.get('sorting') || sortingMode || 'default';
+
                 if (isComprehensiveMode) {
                     // 综合打分模式：直接使用 /api/data
-                    console.log('🎯 使用综合打分数据');
-                    response = await fetch('/api/data');
+                    console.log('🎯 使用综合打分数据，排序模式:', currentSortingMode);
+                    response = await fetch(`/api/data?sorting=${currentSortingMode}`);
                 } else {
                     // CSV模式：尝试使用真实CSV数据
-                    response = await fetch('/api/real_csv_data');
+                    response = await fetch(`/api/real_csv_data?sorting=${currentSortingMode}`);
                     if (!response.ok) {
                         console.log('⚠️ 真实数据不可用，使用原始数据');
-                        response = await fetch('/api/data');
+                        response = await fetch(`/api/data?sorting=${currentSortingMode}`);
                     }
                 }
                 const result = await response.json();
@@ -8496,32 +8585,34 @@ def index():
               } finally {
                 setLoading(false);
               }
-            };
-            
-            loadApiData();
-            
+          }, []);  // 🔥 修复：移除sortingMode依赖，因为函数内部从URL读取
+
+          // 加载API数据 - 仅在组件挂载时执行一次
+          React.useEffect(() => {
+            fetchApiData();
+
             // 禁用自动刷新功能 - 根据用户要求
             // const scheduleWeeklyRefresh = () => {
             //   const now = new Date();
             //   const nextMonday = new Date();
             //   nextMonday.setDate(now.getDate() + (1 + 7 - now.getDay()) % 7);
             //   nextMonday.setHours(9, 0, 0, 0);
-            //   
+            //
             //   const timeUntilNextMonday = nextMonday.getTime() - now.getTime();
-            //   
+            //
             //   const weeklyTimer = setTimeout(() => {
             //     loadApiData();
             //     // 设置每周循环
             //     const weeklyInterval = setInterval(loadApiData, 7 * 24 * 60 * 60 * 1000);
             //     return () => clearInterval(weeklyInterval);
             //   }, timeUntilNextMonday);
-            //   
+            //
             //   return () => clearTimeout(weeklyTimer);
             // };
-            // 
+            //
             // const cleanup = scheduleWeeklyRefresh();
             // return cleanup;
-          }, []);
+          }, []);  // 🔥 修复：使用空依赖数组，仅在组件挂载时执行一次，防止无限循环
           
           // 第十步: 加载文档链接映射
           React.useEffect(() => {
@@ -8580,10 +8671,10 @@ def index():
               // 🔥 获取表格名称
               const apiTableNames = apiData.table_names || apiData.tables?.map(t => t.name) || [];
 
-              // ⚡ UI列名永远固定为19个标准列（实际业务列名）
-              // 使用实际综合打分文件中的标准列名
-              const apiColumnNames = [
-                "序号",              // 0
+              // 🔥 修复：使用API返回的动态列名，支持不同排序模式
+              // 如果API返回了column_names或sorted_column_names，优先使用它们
+              const apiColumnNames = apiData.sorted_column_names || apiData.column_names || [
+                "序号",              // 0 - 默认备用列名
                 "项目类型",          // 1
                 "来源",              // 2
                 "任务发起时间",      // 3
@@ -8603,6 +8694,10 @@ def index():
                 "对上汇报",          // 17
                 "应用情况"           // 18
               ];
+
+              // 输出当前使用的列顺序，便于调试
+              console.log('🔥 当前列顺序模式:', sortingMode);
+              console.log('📊 使用的列名前5个:', apiColumnNames.slice(0, 5));
               
               // 🔥 获取表格风险信息（综合打分模式）
               const tableRiskInfo = apiData.table_risk_info || [];
@@ -8995,34 +9090,33 @@ def index():
                       <button
                         onClick={async () => {
                           try {
-                            // 切换列顺序模式
-                            const response = await fetch('/api/reset_column_order', {
-                              method: 'POST',
-                              headers: { 'Content-Type': 'application/json' },
-                              body: JSON.stringify({ use_default: !useDefaultColumnOrder })
-                            });
-                            const result = await response.json();
-                            if (result.success) {
-                              // 更新本地状态并刷新页面
-                              setUseDefaultColumnOrder(result.use_default);
-                              console.log(result.message);
-                              // 延迟刷新以显示状态变化
-                              setTimeout(() => window.location.reload(), 300);
-                            }
+                            // 🔥 修复：直接切换排序模式，避免502错误
+                            const newMode = sortingMode === 'intelligent' ? 'default' : 'intelligent';
+                            setSortingMode(newMode);
+                            console.log(`✅ 切换到${newMode === 'intelligent' ? '智能' : '默认'}排序模式`);
+
+                            // 更新URL参数
+                            const urlParams = new URLSearchParams(window.location.search);
+                            urlParams.set('sorting', newMode);
+                            const newUrl = `${window.location.pathname}?${urlParams.toString()}`;
+                            window.history.replaceState(null, '', newUrl);
+
+                            // 重新获取数据
+                            fetchApiData();
                           } catch (error) {
-                            console.error('切换列顺序失败:', error);
+                            console.error('切换排序模式失败:', error);
                           }
                         }}
                         className={`px-3 py-1 text-xs border rounded transition-all ${
-                          useDefaultColumnOrder
+                          sortingMode === 'default'
                             ? 'bg-slate-100 border-slate-400 text-slate-700 hover:bg-slate-200'
                             : 'bg-gradient-to-r from-blue-500 to-purple-500 border-blue-600 text-white font-medium hover:from-blue-600 hover:to-purple-600 shadow-md'
                         }`}
-                        title={useDefaultColumnOrder
+                        title={sortingMode === 'default'
                           ? "点击切换到智能聚类排序（将相似热度的数据聚集在一起）"
                           : "点击切换到默认列顺序（按原始列名顺序显示）"}
                       >
-                        {useDefaultColumnOrder
+                        {sortingMode === 'default'
                           ? "当前: 默认顺序 → 点击切换到智能聚类"
                           : "当前: 智能聚类 → 点击切换到默认顺序"}
                       </button>
@@ -9149,7 +9243,7 @@ def index():
                       <div className="absolute -top-8 left-1/2 transform -translate-x-1/2 text-sm font-medium text-slate-700">
                         列索引 (Column Index) - 相似性聚类重排序
                       </div>
-                      <div className="absolute left-2 top-1/2 transform -translate-y-1/2 -rotate-90 text-sm font-medium text-slate-700 origin-center">
+                      <div className="absolute -left-12 top-1/2 transform -translate-y-1/2 -rotate-90 text-sm font-medium text-slate-700 origin-center" style={{ whiteSpace: 'nowrap' }}>
                         表格索引 (Table Index) - 按严重度排序
                       </div>
 
@@ -9173,7 +9267,8 @@ def index():
                         }}>
                           表格名称
                         </div>
-                        {columnNames.map((colName, x) => (
+                        {/* 🔥 修复：根据排序状态使用正确的列名顺序 */}
+                        {(apiData?.sorted_column_names || columnNames).map((colName, x) => (
                           <div
                             key={x}
                             style={{ 

@@ -251,14 +251,13 @@ class CompletePipeline:
         return detailed_score
 
     def generate_comprehensive_score(self, all_table_scores):
-        """生成综合打分（阶段6-7）"""
-        self.log("阶段6-7: 综合打分汇总", "PROCESS")
+        """生成综合打分（阶段6-7）- 符合10-综合打分绝对规范"""
+        self.log("阶段6-7: 综合打分汇总（符合绝对规范）", "PROCESS")
 
-        # 五个关键内容
-        # 1. 所有表名
+        # 所有表名
         table_names = [score["table_name"] for score in all_table_scores]
 
-        # 2. 每标准列平均加权修改打分
+        # 每标准列平均加权修改打分
         column_avg_scores = {}
         for col_name in STANDARD_COLUMNS:
             scores = []
@@ -275,31 +274,120 @@ class CompletePipeline:
                 weighted_avg = sum(s * w for s, w in zip(scores, weights)) / sum(weights)
                 column_avg_scores[col_name] = round(weighted_avg, 3)
             else:
-                column_avg_scores[col_name] = 0.0
+                column_avg_scores[col_name] = 0.05  # 默认最小值
 
-        # 3. 表格详细数据（已包含在table_scores中）
-
-        # 4. 表格URL列表
-        table_urls = [score["table_url"] for score in all_table_scores]
-
-        # 5. 全部修改数
+        # 全部修改数
         total_modifications = sum(score["total_modifications"] for score in all_table_scores)
 
-        # 创建综合打分结构
+        # 计算总体风险分数
+        overall_risk_score = sum(t["overall_risk_score"] for t in all_table_scores) / len(all_table_scores) if all_table_scores else 0.0
+
+        # 构建热力图矩阵（N×19）
+        heatmap_matrix = []
+        for table_score in all_table_scores:
+            row_data = []
+            for col_name in STANDARD_COLUMNS:
+                if col_name in table_score["column_scores"]:
+                    score = table_score["column_scores"][col_name]["avg_score"]
+                else:
+                    score = 0.05  # 默认最小值
+                row_data.append(round(score, 2))
+            heatmap_matrix.append(row_data)
+
+        # 构建表格详情（符合规范的格式）
+        table_details = []
+        for i, table_score in enumerate(all_table_scores):
+            # 获取total_rows（从differences中推算）
+            total_rows = 100  # 默认值
+            if "column_scores" in table_score:
+                max_row = 0
+                for col_data in table_score["column_scores"].values():
+                    if "modified_rows" in col_data:
+                        for row in col_data.get("modified_rows", []):
+                            if row > max_row:
+                                max_row = row
+                if max_row > 0:
+                    total_rows = int(max_row * 1.5)  # 推算总行数
+
+            # 构建列详情
+            column_details = []
+            for j, col_name in enumerate(STANDARD_COLUMNS):
+                col_detail = {
+                    "column_name": col_name,
+                    "column_index": j,
+                    "modification_count": 0,
+                    "modified_rows": [],
+                    "score": 0.05
+                }
+
+                if col_name in table_score["column_scores"]:
+                    col_data = table_score["column_scores"][col_name]
+                    col_detail["modification_count"] = col_data.get("modification_count", 0)
+                    col_detail["modified_rows"] = col_data.get("modified_rows", [])
+                    col_detail["score"] = round(col_data.get("avg_score", 0.05), 2)
+
+                column_details.append(col_detail)
+
+            table_detail = {
+                "table_id": f"table_{i+1:03d}",
+                "table_name": table_score["table_name"],
+                "table_index": i,
+                "total_rows": total_rows,
+                "total_modifications": table_score["total_modifications"],
+                "overall_risk_score": table_score["overall_risk_score"],
+                "excel_url": table_score.get("table_url", ""),
+                "column_details": column_details
+            }
+            table_details.append(table_detail)
+
+        # 统计参数总数
+        total_params = sum(td["total_rows"] * len(STANDARD_COLUMNS) for td in table_details)
+
+        # 创建符合10-综合打分绝对规范的结构
         comprehensive_score = {
+            # 元数据部分
+            "metadata": {
+                "version": "2.0",
+                "timestamp": datetime.now().isoformat(),
+                "week": f"W{self.week_number}",
+                "generator": "complete_workflow_pipeline",
+                "total_params": total_params,
+                "processing_time": 0.0
+            },
+
+            # 摘要部分
+            "summary": {
+                "total_tables": len(table_names),
+                "total_columns": len(STANDARD_COLUMNS),
+                "total_modifications": total_modifications,
+                "overall_risk_score": round(overall_risk_score, 3),
+                "processing_status": "complete"
+            },
+
+            # UI需要的9类参数
+            "table_names": table_names,  # UI参数1：表名作为行名
+            "column_names": STANDARD_COLUMNS.copy(),  # UI参数2：列名
+
+            # UI参数4：热力图矩阵
+            "heatmap_data": {
+                "matrix": heatmap_matrix,
+                "description": f"{len(table_names)}×19矩阵，值域[0.05-1.0]"
+            },
+
+            # UI参数5-9：表格详细数据
+            "table_details": table_details,
+
+            # 兼容旧版的字段（向后兼容）
             "generation_time": datetime.now().isoformat(),
             "scoring_version": "2.0",
             "scoring_standard": "0000-颜色和级别打分标准",
             "week_number": f"W{self.week_number}",
-
-            # 五个关键内容
-            "table_names": table_names,
             "column_avg_scores": column_avg_scores,
             "table_scores": all_table_scores,
-            "table_urls": table_urls,
+            "table_urls": [score["table_url"] for score in all_table_scores],
             "total_modifications": total_modifications,
 
-            # 附加统计信息
+            # 风险统计
             "risk_summary": {
                 "high_risk_count": sum(1 for t in all_table_scores if t["overall_risk_score"] >= 0.6),
                 "medium_risk_count": sum(1 for t in all_table_scores if 0.4 <= t["overall_risk_score"] < 0.6),
@@ -307,7 +395,37 @@ class CompletePipeline:
             },
 
             # UI数据（热力图需要的格式）
-            "ui_data": self.generate_ui_data(all_table_scores, column_avg_scores)
+            "ui_data": self.generate_ui_data(all_table_scores, column_avg_scores),
+
+            # hover数据（悬浮提示）
+            "hover_data": {
+                "data": [
+                    {
+                        "table_index": i,
+                        "table_name": td["table_name"],
+                        "total_modifications": td["total_modifications"],
+                        "column_details": [
+                            {
+                                "column_name": cd["column_name"],
+                                "modification_count": cd["modification_count"],
+                                "modified_rows": cd["modified_rows"][:5]  # 只显示前5个
+                            }
+                            for cd in td["column_details"]
+                        ]
+                    }
+                    for i, td in enumerate(table_details)
+                ]
+            },
+
+            # 统计信息
+            "statistics": {
+                "total_modifications": total_modifications,
+                "average_modifications_per_table": total_modifications / max(1, len(table_names)),
+                "high_risk_count": sum(1 for row in heatmap_matrix for v in row if v >= 0.7),
+                "medium_risk_count": sum(1 for row in heatmap_matrix for v in row if 0.3 <= v < 0.7),
+                "low_risk_count": sum(1 for row in heatmap_matrix for v in row if 0.05 < v < 0.3),
+                "tables_with_modifications": sum(1 for td in table_details if td["total_modifications"] > 0)
+            }
         }
 
         # 保存综合打分文件

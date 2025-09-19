@@ -11,7 +11,7 @@ import time
 import argparse
 from pathlib import Path
 from playwright.async_api import async_playwright
-from csv_version_manager import CSVVersionManager
+from production.core_modules.csv_version_manager import CSVVersionManager
 
 
 class TencentDocAutoExporter:
@@ -24,7 +24,7 @@ class TencentDocAutoExporter:
         self.download_dir = download_dir or os.path.join(os.getcwd(), "downloads")
         
         # 始终启用版本管理器 - 不再作为可选项
-        from csv_version_manager import CSVVersionManager
+        from production.core_modules.csv_version_manager import CSVVersionManager
         self.version_manager = CSVVersionManager()
         
     async def start_browser(self, headless=False):
