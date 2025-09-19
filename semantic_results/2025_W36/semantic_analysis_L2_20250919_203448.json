@@ -1,0 +1,43 @@
+{
+  "metadata": {
+    "analysis_time": "2025-09-19 20:34:48",
+    "total_modifications": 1,
+    "layer1_passed": 0,
+    "layer2_analyzed": 1,
+    "processing_time": "7.0s"
+  },
+  "results": [
+    {
+      "modification_id": "M001",
+      "cell": "C16",
+      "column": "项目类型",
+      "old_value": "目标管理",
+      "new_value": "目标复盘待解决,已执行待优化",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 80.0,
+        "reason": "类型变更"
+      },
+      "layer2_result": {
+        "risk_level": "MEDIUM",
+        "decision": "REVIEW",
+        "confidence": 75,
+        "reason": "原值‘目标管理’较为笼统，新值‘目标复盘待解决,已执行待优化’包含多个状态，可能导致数据分类混乱或后续处理复杂化。"
+      },
+      "final_decision": "REVIEW",
+      "approval_required": true
+    }
+  ],
+  "summary": {
+    "approved": 0,
+    "conditional": 0,
+    "review_required": 1,
+    "rejected": 0,
+    "risk_distribution": {
+      "LOW": 0,
+      "MEDIUM": 0,
+      "HIGH": 1,
+      "CRITICAL": 0
+    }
+  }
+}

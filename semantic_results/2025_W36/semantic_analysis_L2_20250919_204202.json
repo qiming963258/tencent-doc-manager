@@ -1,0 +1,43 @@
+{
+  "metadata": {
+    "analysis_time": "2025-09-19 20:42:02",
+    "total_modifications": 1,
+    "layer1_passed": 0,
+    "layer2_analyzed": 1,
+    "processing_time": "10.5s"
+  },
+  "results": [
+    {
+      "modification_id": "M001",
+      "cell": "I28",
+      "column": "邓总指导登记（日更新）",
+      "old_value": "0519\n1.跨部门应知应会维度调整与补充【时限要求】\n2.各群聊做好跨部门信息回复及互动机制\n\n\n0506-",
+      "new_value": "蔡悦莹",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 80.0,
+        "reason": "责任人变更"
+      },
+      "layer2_result": {
+        "risk_level": "HIGH",
+        "decision": "REJECT",
+        "confidence": 90,
+        "reason": "原值包含重要的工作指导和时限要求信息，新值'蔡悦莹'完全替换了这些内容，可能导致关键信息丢失和工作指导中断"
+      },
+      "final_decision": "REJECT",
+      "approval_required": true
+    }
+  ],
+  "summary": {
+    "approved": 0,
+    "conditional": 0,
+    "review_required": 0,
+    "rejected": 1,
+    "risk_distribution": {
+      "LOW": 0,
+      "MEDIUM": 0,
+      "HIGH": 0,
+      "CRITICAL": 1
+    }
+  }
+}

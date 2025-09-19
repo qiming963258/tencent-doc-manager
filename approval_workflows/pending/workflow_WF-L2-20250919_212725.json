@@ -1,0 +1,27 @@
+{
+  "workflow_id": "WF-L2-20250919_212725",
+  "created_time": "2025-09-19 21:27:25",
+  "pending_approvals": [
+    {
+      "modification_id": "M001",
+      "cell": "K106",
+      "column": "协助人",
+      "old_value": "王寒晓",
+      "new_value": "",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 80.0,
+        "reason": "关键人变更"
+      },
+      "layer2_result": {
+        "risk_level": "MEDIUM",
+        "decision": "REVIEW",
+        "confidence": 75,
+        "reason": "删除协助人信息可能导致责任不明确，需要人工审查是否确实不需要协助人"
+      },
+      "final_decision": "REVIEW",
+      "approval_required": true
+    }
+  ],
+  "auto_approved": []
+}

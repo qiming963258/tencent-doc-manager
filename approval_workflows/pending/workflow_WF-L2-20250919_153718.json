@@ -1,0 +1,27 @@
+{
+  "workflow_id": "WF-L2-20250919_153718",
+  "created_time": "2025-09-19 15:37:18",
+  "pending_approvals": [
+    {
+      "modification_id": "M001",
+      "cell": "H87",
+      "column": "具体计划内容",
+      "old_value": "建立客户代收的建议采购计划；",
+      "new_value": "0730-\n确认，后续持续跟踪工具的测试结果随时汇报\n\n0728-",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 90.0,
+        "reason": "内容替换"
+      },
+      "layer2_result": {
+        "risk_level": "MEDIUM",
+        "decision": "REVIEW",
+        "confidence": 75,
+        "reason": "修改内容从具体的采购计划变更为带有日期标记的测试结果跟踪，可能存在计划变更风险，需要人工确认变更合理性"
+      },
+      "final_decision": "REVIEW",
+      "approval_required": true
+    }
+  ],
+  "auto_approved": []
+}

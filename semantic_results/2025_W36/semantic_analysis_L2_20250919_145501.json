@@ -1,0 +1,43 @@
+{
+  "metadata": {
+    "analysis_time": "2025-09-19 14:55:01",
+    "total_modifications": 1,
+    "layer1_passed": 0,
+    "layer2_analyzed": 1,
+    "processing_time": "9.2s"
+  },
+  "results": [
+    {
+      "modification_id": "M001",
+      "cell": "I19",
+      "column": "邓总指导登记（日更新）",
+      "old_value": "0820-\n1、员工执行内容定位的优化迭代需要前置与员工同频事项执行的意义，充分沟通怎么做，做得怎么样的指导规范",
+      "new_value": "徐志杰",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 75.0,
+        "reason": "责任人变更"
+      },
+      "layer2_result": {
+        "risk_level": "HIGH",
+        "decision": "REJECT",
+        "confidence": 90,
+        "reason": "原值包含重要的工作指导和规范内容，新值仅为个人姓名，可能导致重要信息丢失，影响工作执行。"
+      },
+      "final_decision": "REJECT",
+      "approval_required": true
+    }
+  ],
+  "summary": {
+    "approved": 0,
+    "conditional": 0,
+    "review_required": 0,
+    "rejected": 1,
+    "risk_distribution": {
+      "LOW": 0,
+      "MEDIUM": 0,
+      "HIGH": 0,
+      "CRITICAL": 1
+    }
+  }
+}

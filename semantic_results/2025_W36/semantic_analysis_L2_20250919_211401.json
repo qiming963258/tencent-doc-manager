@@ -1,0 +1,43 @@
+{
+  "metadata": {
+    "analysis_time": "2025-09-19 21:14:01",
+    "total_modifications": 1,
+    "layer1_passed": 0,
+    "layer2_analyzed": 1,
+    "processing_time": "9.0s"
+  },
+  "results": [
+    {
+      "modification_id": "M001",
+      "cell": "C84",
+      "column": "项目类型",
+      "old_value": "目标管理",
+      "new_value": "经理日常交办,周会决策待办",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 80.0,
+        "reason": "范围扩大"
+      },
+      "layer2_result": {
+        "risk_level": "MEDIUM",
+        "decision": "REVIEW",
+        "confidence": 75,
+        "reason": "项目类型从单一类别改为复合类别，可能影响后续的分类统计和项目管理，需要人工确认修改意图和合理性。"
+      },
+      "final_decision": "REVIEW",
+      "approval_required": true
+    }
+  ],
+  "summary": {
+    "approved": 0,
+    "conditional": 0,
+    "review_required": 1,
+    "rejected": 0,
+    "risk_distribution": {
+      "LOW": 0,
+      "MEDIUM": 0,
+      "HIGH": 1,
+      "CRITICAL": 0
+    }
+  }
+}

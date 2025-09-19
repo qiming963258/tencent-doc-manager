@@ -1,0 +1,43 @@
+{
+  "metadata": {
+    "analysis_time": "2025-09-19 14:45:52",
+    "total_modifications": 1,
+    "layer1_passed": 0,
+    "layer2_analyzed": 1,
+    "processing_time": "12.9s"
+  },
+  "results": [
+    {
+      "modification_id": "M001",
+      "cell": "I4",
+      "column": "邓总指导登记（日更新）",
+      "old_value": "0323-\n爆款的提醒站内站外都建立通知，站内在海龙系统的消息通知，站外通过员工qq邮箱进行通知\n\n0314-",
+      "new_value": "朱瀚桔",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 80.0,
+        "reason": "责任人变更"
+      },
+      "layer2_result": {
+        "risk_level": "HIGH",
+        "decision": "REJECT",
+        "confidence": 90,
+        "reason": "原值包含重要操作指引信息（爆款提醒通知方式），新值仅为个人姓名，可能导致关键信息丢失"
+      },
+      "final_decision": "REJECT",
+      "approval_required": true
+    }
+  ],
+  "summary": {
+    "approved": 0,
+    "conditional": 0,
+    "review_required": 0,
+    "rejected": 1,
+    "risk_distribution": {
+      "LOW": 0,
+      "MEDIUM": 0,
+      "HIGH": 0,
+      "CRITICAL": 1
+    }
+  }
+}

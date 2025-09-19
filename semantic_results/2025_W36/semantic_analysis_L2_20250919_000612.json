@@ -1,0 +1,48 @@
+{
+  "metadata": {
+    "analysis_time": "2025-09-19 00:06:12",
+    "total_modifications": 1,
+    "layer1_passed": 0,
+    "layer2_analyzed": 1,
+    "processing_time": "8.4s"
+  },
+  "results": [
+    {
+      "modification_id": "M001",
+      "cell": "C9",
+      "column": "项目类型",
+      "old_value": "目标管理",
+      "new_value": "目标复盘待解决,已执行待优化",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 75.0,
+        "reason": "类型变更"
+      },
+      "layer2_result": {
+        "risk_level": "MEDIUM",
+        "decision": "REVIEW",
+        "confidence": 75,
+        "key_risks": [
+          "项目类型描述过于复杂可能导致执行方向模糊",
+          "状态变化未明确界定优化和执行标准",
+          "可能影响项目进度跟踪的统一性"
+        ],
+        "recommendation": "建议拆分原C9单元格为两个独立状态字段：1)项目类型维持'目标管理'；2)新增'项目状态'字段记录'复盘待解决/已执行待优化'。或确保团队对新复合值含义达成明确共识。"
+      },
+      "final_decision": "REVIEW",
+      "approval_required": true
+    }
+  ],
+  "summary": {
+    "approved": 0,
+    "conditional": 0,
+    "review_required": 1,
+    "rejected": 0,
+    "risk_distribution": {
+      "LOW": 0,
+      "MEDIUM": 0,
+      "HIGH": 1,
+      "CRITICAL": 0
+    }
+  }
+}

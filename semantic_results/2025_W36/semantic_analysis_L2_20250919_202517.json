@@ -1,0 +1,43 @@
+{
+  "metadata": {
+    "analysis_time": "2025-09-19 20:25:17",
+    "total_modifications": 1,
+    "layer1_passed": 0,
+    "layer2_analyzed": 1,
+    "processing_time": "5.2s"
+  },
+  "results": [
+    {
+      "modification_id": "M001",
+      "cell": "I10",
+      "column": "邓总指导登记（日更新）",
+      "old_value": "",
+      "new_value": "123123",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 75.0,
+        "reason": "关键数据修改"
+      },
+      "layer2_result": {
+        "risk_level": "LOW",
+        "decision": "APPROVE",
+        "confidence": 90,
+        "reason": "修改内容为数字格式更新，无明显敏感信息或格式问题，风险较低"
+      },
+      "final_decision": "APPROVE",
+      "approval_required": false
+    }
+  ],
+  "summary": {
+    "approved": 1,
+    "conditional": 0,
+    "review_required": 0,
+    "rejected": 0,
+    "risk_distribution": {
+      "LOW": 1,
+      "MEDIUM": 0,
+      "HIGH": 0,
+      "CRITICAL": 0
+    }
+  }
+}

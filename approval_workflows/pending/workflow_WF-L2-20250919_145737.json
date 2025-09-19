@@ -1,0 +1,27 @@
+{
+  "workflow_id": "WF-L2-20250919_145737",
+  "created_time": "2025-09-19 14:57:37",
+  "pending_approvals": [
+    {
+      "modification_id": "M001",
+      "cell": "H23",
+      "column": "具体计划内容",
+      "old_value": "1、小红书矩阵策略维度事项的梳理形成计划；\n2、集运系统、线上支付执行进度和需要持续优化的事项计划\n周一汇报",
+      "new_value": "0721-",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 80.0,
+        "reason": "删除内容"
+      },
+      "layer2_result": {
+        "risk_level": "HIGH",
+        "decision": "REJECT",
+        "confidence": 90,
+        "reason": "原值包含具体计划和汇报要求，新值仅有一个日期标记，可能导致信息丢失和计划执行不明确"
+      },
+      "final_decision": "REJECT",
+      "approval_required": true
+    }
+  ],
+  "auto_approved": []
+}

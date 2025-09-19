@@ -1,0 +1,43 @@
+{
+  "metadata": {
+    "analysis_time": "2025-09-19 20:44:07",
+    "total_modifications": 1,
+    "layer1_passed": 0,
+    "layer2_analyzed": 1,
+    "processing_time": "11.8s"
+  },
+  "results": [
+    {
+      "modification_id": "M001",
+      "cell": "I31",
+      "column": "邓总指导登记（日更新）",
+      "old_value": "\n\n0506-\n美国新产品培训预约销售部门预计在本周四召开,需要将培训内容录制视频进行钉钉课程学习\n\n",
+      "new_value": "蔡悦莹",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 75.0,
+        "reason": "人员变更"
+      },
+      "layer2_result": {
+        "risk_level": "HIGH",
+        "decision": "REJECT",
+        "confidence": 90,
+        "reason": "原值包含重要的培训信息和安排，新值'蔡悦莹'完全替换了原内容，可能导致信息丢失和后续培训工作混乱。"
+      },
+      "final_decision": "REJECT",
+      "approval_required": true
+    }
+  ],
+  "summary": {
+    "approved": 0,
+    "conditional": 0,
+    "review_required": 0,
+    "rejected": 1,
+    "risk_distribution": {
+      "LOW": 0,
+      "MEDIUM": 0,
+      "HIGH": 0,
+      "CRITICAL": 1
+    }
+  }
+}

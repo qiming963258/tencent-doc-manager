@@ -1,0 +1,32 @@
+{
+  "workflow_id": "WF-L2-20250918_235859",
+  "created_time": "2025-09-18 23:58:59",
+  "pending_approvals": [
+    {
+      "modification_id": "M001",
+      "cell": "C4",
+      "column": "项目类型",
+      "old_value": "目标管理",
+      "new_value": "目标复盘待解决,已执行待优化",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 80.0,
+        "reason": "项目类型变更"
+      },
+      "layer2_result": {
+        "risk_level": "MEDIUM",
+        "decision": "REVIEW",
+        "confidence": 75,
+        "key_risks": [
+          "项目类型定义模糊可能导致执行方向不明确",
+          "从单一状态变为复合状态增加管理复杂度",
+          "可能影响项目进度的准确追踪"
+        ],
+        "recommendation": "建议明确项目类型的具体定义和边界条件，若必须使用复合状态，应建立对应的跟踪机制并更新执行计划。需要项目负责人确认变更意图并评估对现有流程的影响。"
+      },
+      "final_decision": "REVIEW",
+      "approval_required": true
+    }
+  ],
+  "auto_approved": []
+}

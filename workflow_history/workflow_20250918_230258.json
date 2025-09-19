@@ -1,0 +1,83 @@
+{
+  "id": "20250918_230258",
+  "start_time": "2025-09-18T23:02:58.661265",
+  "end_time": "2025-09-18T23:03:46.391020",
+  "status": "error",
+  "results": {},
+  "logs": [
+    {
+      "timestamp": "23:02:58",
+      "level": "INFO",
+      "message": "开始获取基线文档..."
+    },
+    {
+      "timestamp": "23:02:58",
+      "level": "INFO",
+      "message": "📂 刷新模式：使用现有基线文件"
+    },
+    {
+      "timestamp": "23:02:58",
+      "level": "INFO",
+      "message": "✅ 找到基线文件: tencent_出国销售计划表_20250915_0145_baseline_W38.csv"
+    },
+    {
+      "timestamp": "23:02:58",
+      "level": "INFO",
+      "message": "📊 基线描述: 使用本周W38基准版"
+    },
+    {
+      "timestamp": "23:02:58",
+      "level": "INFO",
+      "message": "开始获取目标文档..."
+    },
+    {
+      "timestamp": "23:02:58",
+      "level": "INFO",
+      "message": "🔄 强制下载模式：跳过本地文件检查"
+    },
+    {
+      "timestamp": "23:02:58",
+      "level": "INFO",
+      "message": "开始下载目标文档并规范化存储..."
+    },
+    {
+      "timestamp": "23:02:58",
+      "level": "INFO",
+      "message": "🌐 开始下载目标文档..."
+    },
+    {
+      "timestamp": "23:03:46",
+      "level": "ERROR",
+      "message": "❌ 目标文档存储失败: a coroutine was expected, got {'success': True, 'file_path': 'csv_versions/2025_W38/midweek/tencent_111测试版本-出国销售计划表-工作表1_20250918_2303_midweek_W38.csv', 'files': ['csv_versions/2025_W38/midweek/tencent_111测试版本-出国销售计划表-工作表1_20250918_2303_midweek_W38.csv'], 'error': None, 'backup_methods_used': True, 'export_format': 'csv', 'file_count': 1}"
+    },
+    {
+      "timestamp": "23:03:46",
+      "level": "ERROR",
+      "message": "❌ 目标文档下载或存储失败"
+    },
+    {
+      "timestamp": "23:03:46",
+      "level": "ERROR",
+      "message": "目标URL: https://docs.qq.com/sheet/DWEFNU25TemFnZXJN?tab=BB08J2"
+    },
+    {
+      "timestamp": "23:03:46",
+      "level": "WARNING",
+      "message": "💡 提示: 请检查Cookie是否有效或网络连接"
+    },
+    {
+      "timestamp": "23:03:46",
+      "level": "ERROR",
+      "message": "❌ 执行出错: 目标文档下载或存储失败"
+    }
+  ],
+  "settings": {
+    "task_type": "full",
+    "auto_download": true,
+    "force_download": true,
+    "enable_ai_analysis": true,
+    "enable_excel_marking": true,
+    "enable_upload": true,
+    "use_existing_baseline": true
+  }
+}

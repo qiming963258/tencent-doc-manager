@@ -1,0 +1,27 @@
+{
+  "workflow_id": "WF-L2-20250919_145155",
+  "created_time": "2025-09-19 14:51:55",
+  "pending_approvals": [
+    {
+      "modification_id": "M001",
+      "cell": "C14",
+      "column": "项目类型",
+      "old_value": "目标管理",
+      "new_value": "经理日常交办,周会决策待办",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 80.0,
+        "reason": "变更范围"
+      },
+      "layer2_result": {
+        "risk_level": "MEDIUM",
+        "decision": "REVIEW",
+        "confidence": 75,
+        "reason": "项目类型从单一值修改为多个值组合，可能影响项目分类统计和跟踪流程，需要人工确认修改意图和后续处理方式。"
+      },
+      "final_decision": "REVIEW",
+      "approval_required": true
+    }
+  ],
+  "auto_approved": []
+}

@@ -1,0 +1,43 @@
+{
+  "metadata": {
+    "analysis_time": "2025-09-19 15:19:50",
+    "total_modifications": 1,
+    "layer1_passed": 0,
+    "layer2_analyzed": 1,
+    "processing_time": "22.2s"
+  },
+  "results": [
+    {
+      "modification_id": "M001",
+      "cell": "H59",
+      "column": "具体计划内容",
+      "old_value": "标准更新机制需要建立与完善；设定负责人与调整条件；迭代与更新的机制",
+      "new_value": "0721-\n1、互暖机制要考虑历史爆款复制的因素，预判爆款指数前置做好互暖增加爆款概率\n\n0716-\n外部互暖需要建立规则\n\n0702-\n1、选择新员工部分账号进行外部付费的互暖进行试点\n2、要建立外",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 80.0,
+        "reason": "重大变更"
+      },
+      "layer2_result": {
+        "risk_level": "HIGH",
+        "decision": "REVIEW",
+        "confidence": 90,
+        "reason": "修改内容涉及外部互暖机制和付费试点，可能存在合规和预算风险，需要进一步审查"
+      },
+      "final_decision": "REVIEW",
+      "approval_required": true
+    }
+  ],
+  "summary": {
+    "approved": 0,
+    "conditional": 0,
+    "review_required": 1,
+    "rejected": 0,
+    "risk_distribution": {
+      "LOW": 0,
+      "MEDIUM": 0,
+      "HIGH": 1,
+      "CRITICAL": 0
+    }
+  }
+}

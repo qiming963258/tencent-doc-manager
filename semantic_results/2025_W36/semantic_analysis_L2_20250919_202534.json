@@ -1,0 +1,38 @@
+{
+  "metadata": {
+    "analysis_time": "2025-09-19 20:25:34",
+    "total_modifications": 1,
+    "layer1_passed": 1,
+    "layer2_analyzed": 0,
+    "processing_time": "5.7s"
+  },
+  "results": [
+    {
+      "modification_id": "M001",
+      "cell": "K12",
+      "column": "协助人",
+      "old_value": "杨顺鑫",
+      "new_value": "赖铁荔",
+      "layer1_result": {
+        "judgment": "SAFE",
+        "confidence": 90.0,
+        "reason": "人员替换"
+      },
+      "layer2_result": null,
+      "final_decision": "APPROVE",
+      "approval_required": false
+    }
+  ],
+  "summary": {
+    "approved": 1,
+    "conditional": 0,
+    "review_required": 0,
+    "rejected": 0,
+    "risk_distribution": {
+      "LOW": 1,
+      "MEDIUM": 0,
+      "HIGH": 0,
+      "CRITICAL": 0
+    }
+  }
+}

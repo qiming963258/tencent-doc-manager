@@ -1,0 +1,47 @@
+{
+  "metadata": {
+    "analysis_time": "2025-09-19 00:05:07",
+    "total_modifications": 1,
+    "layer1_passed": 0,
+    "layer2_analyzed": 1,
+    "processing_time": "27.4s"
+  },
+  "results": [
+    {
+      "modification_id": "M001",
+      "cell": "C8",
+      "column": "项目类型",
+      "old_value": "目标管理",
+      "new_value": "目标复盘待解决",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 75.0,
+        "reason": "变更范围"
+      },
+      "layer2_result": {
+        "risk_level": "MEDIUM",
+        "decision": "REVIEW",
+        "confidence": 75,
+        "key_risks": [
+          "项目性质发生实质变化，可能影响执行计划和资源分配",
+          "状态改变暗示项目存在未解决问题，可能影响交付时间和质量"
+        ],
+        "recommendation": "建议召开项目状态评审会，明确：1)'目标复盘待解决'的具体含义和问题清单 2)对应的计划调整方案 3)所需额外资源。需获得项目发起人批准后方可修改。"
+      },
+      "final_decision": "REVIEW",
+      "approval_required": true
+    }
+  ],
+  "summary": {
+    "approved": 0,
+    "conditional": 0,
+    "review_required": 1,
+    "rejected": 0,
+    "risk_distribution": {
+      "LOW": 0,
+      "MEDIUM": 0,
+      "HIGH": 1,
+      "CRITICAL": 0
+    }
+  }
+}

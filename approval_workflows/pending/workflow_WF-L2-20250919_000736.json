@@ -1,0 +1,32 @@
+{
+  "workflow_id": "WF-L2-20250919_000736",
+  "created_time": "2025-09-19 00:07:36",
+  "pending_approvals": [
+    {
+      "modification_id": "M001",
+      "cell": "C10",
+      "column": "项目类型",
+      "old_value": "目标管理",
+      "new_value": "目标复盘待解决",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 75.0,
+        "reason": "类型变更"
+      },
+      "layer2_result": {
+        "risk_level": "MEDIUM",
+        "decision": "REVIEW",
+        "confidence": 75,
+        "key_risks": [
+          "项目性质可能发生实质性变化",
+          "执行计划可能需要重大调整",
+          "团队工作重点可能转向问题解决而非目标实现"
+        ],
+        "recommendation": "建议组织项目干系人会议，明确以下内容：1) '目标复盘待解决'的具体含义和要求 2) 是否需要调整项目范围和交付物 3) 对现有时间表的影响评估。在未明确这些内容前，暂缓修改记录。"
+      },
+      "final_decision": "REVIEW",
+      "approval_required": true
+    }
+  ],
+  "auto_approved": []
+}

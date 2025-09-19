@@ -1,0 +1,27 @@
+{
+  "workflow_id": "WF-L2-20250919_154710",
+  "created_time": "2025-09-19 15:47:10",
+  "pending_approvals": [
+    {
+      "modification_id": "M001",
+      "cell": "H105",
+      "column": "具体计划内容",
+      "old_value": "美国、加拿大、澳洲、欧洲、英国、新西兰的集中托运区域进行毛利利润率的测算，设定目标值",
+      "new_value": "",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 90.0,
+        "reason": "删除内容"
+      },
+      "layer2_result": {
+        "risk_level": "HIGH",
+        "decision": "REVIEW",
+        "confidence": 90,
+        "reason": "删除重要计划内容可能影响业务分析和目标设定，需要人工审查修改原因"
+      },
+      "final_decision": "REVIEW",
+      "approval_required": true
+    }
+  ],
+  "auto_approved": []
+}

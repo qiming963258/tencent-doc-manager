@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>热力图颜色修复测试</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; background: #f5f5f5; }
+        .comparison { display: flex; gap: 40px; margin: 20px 0; }
+        .column { flex: 1; }
+        h2 { color: #333; margin-bottom: 10px; }
+        .color-bar { height: 50px; display: flex; border: 2px solid #333; margin-bottom: 10px; }
+        .segment { flex: 1; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold; text-shadow: 1px 1px 2px rgba(0,0,0,0.8); }
+        .test-values { margin-top: 20px; }
+        .value-row { display: flex; align-items: center; margin: 10px 0; }
+        .value-label { width: 100px; font-weight: bold; }
+        .color-box { width: 100px; height: 40px; border: 2px solid #333; margin: 0 20px; }
+        .color-text { font-family: monospace; }
+    </style>
+</head>
+<body>
+    <h1>🔥 热力图颜色修复对比测试</h1>
+
+    <div class="comparison">
+        <div class="column">
+            <h2>❌ 旧版（问题）：高值变白色</h2>
+            <div class="color-bar" id="oldBar"></div>
+            <div class="test-values" id="oldValues"></div>
+        </div>
+
+        <div class="column">
+            <h2>✅ 新版（已修复）：高值显示深红</h2>
+            <div class="color-bar" id="newBar"></div>
+            <div class="test-values" id="newValues"></div>
+        </div>
+    </div>
+
+    <script>
+        // 旧版颜色函数（高值变白）
+        const getThermalImageColorOld = (v) => {
+            if (v <= 0.875) {
+                // 其他颜色段保持不变
+                if (v <= 0.75) {
+                    const t = (v - 0.625) / 0.125;
+                    return {
+                        r: Math.floor(150 + t * 105),
+                        g: 255,
+                        b: 0
+                    };
+                } else {
+                    const t = (v - 0.75) / 0.125;
+                    return {
+                        r: 255,
+                        g: Math.floor(255 - t * 100),
+                        b: 0
+                    };
+                }
+            } else {
+                // 旧版：橙到红到白 (0.875-1.0)
+                const t = (v - 0.875) / 0.125;
+                return {
+                    r: 255,
+                    g: Math.floor(155 + t * 100),  // 155→255 白色
+                    b: Math.floor(t * 255)         // 0→255 白色
+                };
+            }
+        };
+
+        // 新版颜色函数（高值显示深红）
+        const getThermalImageColorNew = (v) => {
+            if (v <= 0.875) {
+                // 其他颜色段保持不变
+                if (v <= 0.75) {
+                    const t = (v - 0.625) / 0.125;
+                    return {
+                        r: Math.floor(150 + t * 105),
+                        g: 255,
+                        b: 0
+                    };
+                } else {
+                    const t = (v - 0.75) / 0.125;
+                    return {
+                        r: 255,
+                        g: Math.floor(255 - t * 100),
+                        b: 0
+                    };
+                }
+            } else {
+                // 新版：橙到深红 (0.875-1.0)
+                const t = (v - 0.875) / 0.125;
+                return {
+                    r: Math.floor(255 - t * 76),  // 255→179 深红
+                    g: Math.floor(155 - t * 128), // 155→27 深红
+                    b: Math.floor(0 + t * 27)     // 0→27 深红
+                };
+            }
+        };
+
+        // 生成颜色条
+        function createColorBar(elementId, colorFunc) {
+            const bar = document.getElementById(elementId);
+            for (let i = 0; i < 20; i++) {
+                const value = i / 19;
+                const color = colorFunc(value);
+                const div = document.createElement('div');
+                div.className = 'segment';
+                div.style.background = `rgb(${color.r}, ${color.g}, ${color.b})`;
+                if (value > 0.8) {
+                    div.textContent = value.toFixed(2);
+                }
+                bar.appendChild(div);
+            }
+        }
+
+        // 测试特定值
+        function testValues(elementId, colorFunc, label) {
+            const container = document.getElementById(elementId);
+            const testVals = [0.8, 0.85, 0.9, 0.95, 1.0];
+
+            testVals.forEach(val => {
+                const color = colorFunc(val);
+                const rgbStr = `rgb(${color.r}, ${color.g}, ${color.b})`;
+
+                const row = document.createElement('div');
+                row.className = 'value-row';
+                row.innerHTML = `
+                    <span class="value-label">值 ${val}:</span>
+                    <span class="color-box" style="background: ${rgbStr}"></span>
+                    <span class="color-text">${rgbStr}</span>
+                `;
+                container.appendChild(row);
+            });
+        }
+
+        // 生成对比
+        createColorBar('oldBar', getThermalImageColorOld);
+        createColorBar('newBar', getThermalImageColorNew);
+
+        testValues('oldValues', getThermalImageColorOld, '旧版');
+        testValues('newValues', getThermalImageColorNew, '新版');
+
+        // 添加说明
+        const note = document.createElement('div');
+        note.style.marginTop = '30px';
+        note.style.padding = '20px';
+        note.style.background = '#fff';
+        note.style.border = '2px solid #333';
+        note.innerHTML = `
+            <h3>📊 修复说明</h3>
+            <ul>
+                <li><strong>问题</strong>: 高风险值（>0.875）显示为白色 RGB(255,255,255)，缺乏警示效果</li>
+                <li><strong>解决</strong>: 修改getThermalImageColor函数，让值接近1.0时显示深红色 RGB(179,27,27)</li>
+                <li><strong>效果</strong>: 高风险区域现在显示为深红色，提供更强的视觉警告</li>
+                <li><strong>文件</strong>: final_heatmap_server.py 第5873-5881行</li>
+            </ul>
+        `;
+        document.body.appendChild(note);
+    </script>
+</body>
+</html>

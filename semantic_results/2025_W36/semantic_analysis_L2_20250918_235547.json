@@ -1,0 +1,48 @@
+{
+  "metadata": {
+    "analysis_time": "2025-09-18 23:55:47",
+    "total_modifications": 1,
+    "layer1_passed": 0,
+    "layer2_analyzed": 1,
+    "processing_time": "22.7s"
+  },
+  "results": [
+    {
+      "modification_id": "M001",
+      "cell": "C5",
+      "column": "项目类型",
+      "old_value": "目标管理",
+      "new_value": "体系建设",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 80.0,
+        "reason": "概念变更"
+      },
+      "layer2_result": {
+        "risk_level": "MEDIUM",
+        "decision": "REVIEW",
+        "confidence": 75,
+        "key_risks": [
+          "项目性质发生根本性改变",
+          "可能需要调整执行方案和资源配置",
+          "可能影响项目团队成员的角色分工"
+        ],
+        "recommendation": "建议召集项目干系人会议，明确以下事项：1) 项目类型变更的具体原因和依据；2) 新类型下的项目目标是否调整；3) 对现有执行计划的影响评估。在未完成全面评估前暂缓修改。"
+      },
+      "final_decision": "REVIEW",
+      "approval_required": true
+    }
+  ],
+  "summary": {
+    "approved": 0,
+    "conditional": 0,
+    "review_required": 1,
+    "rejected": 0,
+    "risk_distribution": {
+      "LOW": 0,
+      "MEDIUM": 0,
+      "HIGH": 1,
+      "CRITICAL": 0
+    }
+  }
+}

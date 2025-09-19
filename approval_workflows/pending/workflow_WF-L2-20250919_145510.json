@@ -1,0 +1,27 @@
+{
+  "workflow_id": "WF-L2-20250919_145510",
+  "created_time": "2025-09-19 14:55:10",
+  "pending_approvals": [
+    {
+      "modification_id": "M001",
+      "cell": "K19",
+      "column": "协助人",
+      "old_value": "赖铁荔",
+      "new_value": "邓总",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 80.0,
+        "reason": "关键人变更"
+      },
+      "layer2_result": {
+        "risk_level": "MEDIUM",
+        "decision": "REVIEW",
+        "confidence": 75,
+        "reason": "协助人变更可能影响责任归属，需要确认是否有正式的交接流程"
+      },
+      "final_decision": "REVIEW",
+      "approval_required": true
+    }
+  ],
+  "auto_approved": []
+}

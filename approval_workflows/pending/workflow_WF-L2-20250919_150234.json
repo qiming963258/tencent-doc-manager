@@ -1,0 +1,22 @@
+{
+  "workflow_id": "WF-L2-20250919_150234",
+  "created_time": "2025-09-19 15:02:34",
+  "pending_approvals": [],
+  "auto_approved": [
+    {
+      "modification_id": "M001",
+      "cell": "I31",
+      "column": "邓总指导登记（日更新）",
+      "old_value": "\n\n0506-\n美国新产品培训预约销售部门预计在本周四召开,需要将培训内容录制视频进行钉钉课程学习\n\n",
+      "new_value": "蔡悦莹",
+      "layer1_result": {
+        "judgment": "SAFE",
+        "confidence": 90.0,
+        "reason": "负责人变更"
+      },
+      "layer2_result": null,
+      "final_decision": "APPROVE",
+      "approval_required": false
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "workflow_id": "WF-L2-20250919_150443",
+  "created_time": "2025-09-19 15:04:43",
+  "pending_approvals": [
+    {
+      "modification_id": "M001",
+      "cell": "I34",
+      "column": "邓总指导登记（日更新）",
+      "old_value": "0714-\n新兴国家的关键词需要针对性植入对应的某个国家，使用热门词或长尾流量词",
+      "new_value": "朱瀚桔",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 80.0,
+        "reason": "关键人变更"
+      },
+      "layer2_result": {
+        "risk_level": "HIGH",
+        "decision": "REJECT",
+        "confidence": 90,
+        "reason": "修改内容从具体的工作指导变为了人名，可能导致信息丢失或误导"
+      },
+      "final_decision": "REJECT",
+      "approval_required": true
+    }
+  ],
+  "auto_approved": []
+}

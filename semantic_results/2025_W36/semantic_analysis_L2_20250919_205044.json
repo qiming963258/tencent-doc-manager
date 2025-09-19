@@ -1,0 +1,43 @@
+{
+  "metadata": {
+    "analysis_time": "2025-09-19 20:50:44",
+    "total_modifications": 1,
+    "layer1_passed": 0,
+    "layer2_analyzed": 1,
+    "processing_time": "3.8s"
+  },
+  "results": [
+    {
+      "modification_id": "M001",
+      "cell": "I42",
+      "column": "邓总指导登记（日更新）",
+      "old_value": "\n0515-\n后续汇报前,需要项目/事项负责人综合考虑可能出现的情况,做好全面性的考虑与前置筹备,经理需要审核\"怎么做\"\\\"做得怎样样\"的预判及审核",
+      "new_value": "蔡悦莹",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 80.0,
+        "reason": "负责人变更"
+      },
+      "layer2_result": {
+        "risk_level": "HIGH",
+        "decision": "REJECT",
+        "confidence": 90,
+        "reason": "原值包含重要的工作指导和审核要求，新值'蔡悦莹'完全替换了这些内容，可能导致重要信息丢失和执行标准不明确"
+      },
+      "final_decision": "REJECT",
+      "approval_required": true
+    }
+  ],
+  "summary": {
+    "approved": 0,
+    "conditional": 0,
+    "review_required": 0,
+    "rejected": 1,
+    "risk_distribution": {
+      "LOW": 0,
+      "MEDIUM": 0,
+      "HIGH": 0,
+      "CRITICAL": 1
+    }
+  }
+}

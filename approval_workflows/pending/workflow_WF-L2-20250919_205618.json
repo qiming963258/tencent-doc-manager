@@ -1,0 +1,27 @@
+{
+  "workflow_id": "WF-L2-20250919_205618",
+  "created_time": "2025-09-19 20:56:18",
+  "pending_approvals": [],
+  "auto_approved": [
+    {
+      "modification_id": "M001",
+      "cell": "J53",
+      "column": "负责人",
+      "old_value": "赖铁荔",
+      "new_value": "朱瀚桔",
+      "layer1_result": {
+        "judgment": "UNSURE",
+        "confidence": 60.0,
+        "reason": "负责人变更"
+      },
+      "layer2_result": {
+        "risk_level": "LOW",
+        "decision": "APPROVE",
+        "confidence": 90,
+        "reason": "负责人变更通常是常规人事调整，且未涉及关键业务流程或权限变化"
+      },
+      "final_decision": "APPROVE",
+      "approval_required": false
+    }
+  ]
+}

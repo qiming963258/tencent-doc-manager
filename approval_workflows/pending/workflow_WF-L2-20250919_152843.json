@@ -1,0 +1,27 @@
+{
+  "workflow_id": "WF-L2-20250919_152843",
+  "created_time": "2025-09-19 15:28:43",
+  "pending_approvals": [],
+  "auto_approved": [
+    {
+      "modification_id": "M001",
+      "cell": "J73",
+      "column": "负责人",
+      "old_value": "王寒晓",
+      "new_value": "曾利萍,杨佳玲",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 80.0,
+        "reason": "更换负责人"
+      },
+      "layer2_result": {
+        "risk_level": "LOW",
+        "decision": "APPROVE",
+        "confidence": 90,
+        "reason": "负责人变更为两人共同负责，属于常规人员调整，无明显风险"
+      },
+      "final_decision": "APPROVE",
+      "approval_required": false
+    }
+  ]
+}

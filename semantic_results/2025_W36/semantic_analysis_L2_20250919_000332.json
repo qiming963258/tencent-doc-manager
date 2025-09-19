@@ -1,0 +1,47 @@
+{
+  "metadata": {
+    "analysis_time": "2025-09-19 00:03:32",
+    "total_modifications": 1,
+    "layer1_passed": 0,
+    "layer2_analyzed": 1,
+    "processing_time": "6.0s"
+  },
+  "results": [
+    {
+      "modification_id": "M001",
+      "cell": "J6",
+      "column": "负责人",
+      "old_value": "赖铁荔",
+      "new_value": "",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 80.0,
+        "reason": "删除负责人"
+      },
+      "layer2_result": {
+        "risk_level": "HIGH",
+        "decision": "REVIEW",
+        "confidence": 80,
+        "key_risks": [
+          "负责人角色空缺可能导致任务无人跟进",
+          "项目关键节点可能因负责人缺失而延误"
+        ],
+        "recommendation": "建议立即确认新的负责人人选，并确保新旧负责人完成工作交接后再批准此项修改。同时应评估该变更对项目各阶段的潜在影响。"
+      },
+      "final_decision": "REVIEW",
+      "approval_required": true
+    }
+  ],
+  "summary": {
+    "approved": 0,
+    "conditional": 0,
+    "review_required": 1,
+    "rejected": 0,
+    "risk_distribution": {
+      "LOW": 0,
+      "MEDIUM": 0,
+      "HIGH": 1,
+      "CRITICAL": 0
+    }
+  }
+}

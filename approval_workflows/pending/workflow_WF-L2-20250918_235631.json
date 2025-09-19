@@ -1,0 +1,31 @@
+{
+  "workflow_id": "WF-L2-20250918_235631",
+  "created_time": "2025-09-18 23:56:31",
+  "pending_approvals": [
+    {
+      "modification_id": "M001",
+      "cell": "I10",
+      "column": "邓总指导登记（日更新）",
+      "old_value": "",
+      "new_value": "123123",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 80.0,
+        "reason": "敏感数据变更"
+      },
+      "layer2_result": {
+        "risk_level": "MEDIUM",
+        "decision": "REVIEW",
+        "confidence": 75,
+        "key_risks": [
+          "数据输入格式不规范可能导致统计错误",
+          "邓总指导登记内容不明确影响后续执行"
+        ],
+        "recommendation": "建议确认该数值的具体含义和输入标准，并补充说明注释。如果是测试数据，应当标记为测试并注明。对于关键指导登记内容，建议使用更规范的记录格式。"
+      },
+      "final_decision": "REVIEW",
+      "approval_required": true
+    }
+  ],
+  "auto_approved": []
+}

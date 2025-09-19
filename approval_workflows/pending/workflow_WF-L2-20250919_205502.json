@@ -1,0 +1,27 @@
+{
+  "workflow_id": "WF-L2-20250919_205502",
+  "created_time": "2025-09-19 20:55:02",
+  "pending_approvals": [
+    {
+      "modification_id": "M001",
+      "cell": "H51",
+      "column": "具体计划内容",
+      "old_value": "表格链路的整合打通",
+      "new_value": "0605-",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 90.0,
+        "reason": "关键内容替换"
+      },
+      "layer2_result": {
+        "risk_level": "HIGH",
+        "decision": "REJECT",
+        "confidence": 90,
+        "reason": "原值'表格链路的整合打通'是具体的技术实施内容描述，而新值'0605-'似乎是日期或编号，完全改变了字段的意义和用途，可能导致项目跟踪信息丢失或混淆。"
+      },
+      "final_decision": "REJECT",
+      "approval_required": true
+    }
+  ],
+  "auto_approved": []
+}

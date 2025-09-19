@@ -1,0 +1,27 @@
+{
+  "workflow_id": "WF-L2-20250919_205246",
+  "created_time": "2025-09-19 20:52:46",
+  "pending_approvals": [
+    {
+      "modification_id": "M001",
+      "cell": "I46",
+      "column": "邓总指导登记（日更新）",
+      "old_value": "0427\n博主现阶段重点以新员工执行落地，悦莹根据本月博主推进产生问题更新完善sop指导，五月落地博主工作流正常进行（已将指导转项目）",
+      "new_value": "蔡悦莹",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 80.0,
+        "reason": "关键人变更"
+      },
+      "layer2_result": {
+        "risk_level": "HIGH",
+        "decision": "REVIEW",
+        "confidence": 75,
+        "reason": "修改内容从具体工作描述变更为人员姓名，可能导致信息丢失或责任不明"
+      },
+      "final_decision": "REVIEW",
+      "approval_required": true
+    }
+  ],
+  "auto_approved": []
+}

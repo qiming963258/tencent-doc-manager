@@ -1,0 +1,27 @@
+{
+  "workflow_id": "WF-L2-20250919_204407",
+  "created_time": "2025-09-19 20:44:07",
+  "pending_approvals": [
+    {
+      "modification_id": "M001",
+      "cell": "I31",
+      "column": "邓总指导登记（日更新）",
+      "old_value": "\n\n0506-\n美国新产品培训预约销售部门预计在本周四召开,需要将培训内容录制视频进行钉钉课程学习\n\n",
+      "new_value": "蔡悦莹",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 75.0,
+        "reason": "人员变更"
+      },
+      "layer2_result": {
+        "risk_level": "HIGH",
+        "decision": "REJECT",
+        "confidence": 90,
+        "reason": "原值包含重要的培训信息和安排，新值'蔡悦莹'完全替换了原内容，可能导致信息丢失和后续培训工作混乱。"
+      },
+      "final_decision": "REJECT",
+      "approval_required": true
+    }
+  ],
+  "auto_approved": []
+}

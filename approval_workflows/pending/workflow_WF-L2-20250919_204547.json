@@ -1,0 +1,27 @@
+{
+  "workflow_id": "WF-L2-20250919_204547",
+  "created_time": "2025-09-19 20:45:47",
+  "pending_approvals": [
+    {
+      "modification_id": "M001",
+      "cell": "H34",
+      "column": "具体计划内容",
+      "old_value": "企业1号非工作时间自动回复建立与调整规则",
+      "new_value": "0702-\n晒单项目现阶段需要瀚桔介入些许给跨部门进行打板示范协助解决卡点问题\n\n0623-\n1、先阶段晒单项目注重质量的提升，关注流程与过程管理及跨部门沟通反馈\n\n0529\n1.跨部门沟通加入销售的",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 80.0,
+        "reason": "大幅变更"
+      },
+      "layer2_result": {
+        "risk_level": "MEDIUM",
+        "decision": "REVIEW",
+        "confidence": 75,
+        "reason": "修改内容与原值差别较大，涉及跨部门协作和流程调整，可能存在潜在沟通和执行风险"
+      },
+      "final_decision": "REVIEW",
+      "approval_required": true
+    }
+  ],
+  "auto_approved": []
+}

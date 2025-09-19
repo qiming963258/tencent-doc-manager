@@ -1,0 +1,27 @@
+{
+  "workflow_id": "WF-L2-20250919_211322",
+  "created_time": "2025-09-19 21:13:22",
+  "pending_approvals": [
+    {
+      "modification_id": "M001",
+      "cell": "K82",
+      "column": "协助人",
+      "old_value": "魏志广",
+      "new_value": "邓总",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 80.0,
+        "reason": "负责人变更"
+      },
+      "layer2_result": {
+        "risk_level": "MEDIUM",
+        "decision": "REVIEW",
+        "confidence": 75,
+        "reason": "协助人从具体员工姓名修改为'邓总'，可能涉及职责变更或数据准确性风险，需要人工确认"
+      },
+      "final_decision": "REVIEW",
+      "approval_required": true
+    }
+  ],
+  "auto_approved": []
+}

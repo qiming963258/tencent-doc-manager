@@ -1,0 +1,32 @@
+{
+  "workflow_id": "WF-L2-20250919_000913",
+  "created_time": "2025-09-19 00:09:13",
+  "pending_approvals": [],
+  "auto_approved": [
+    {
+      "modification_id": "M001",
+      "cell": "J10",
+      "column": "负责人",
+      "old_value": "赖铁荔",
+      "new_value": "蔡悦莹",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 75.0,
+        "reason": "关键人变更"
+      },
+      "layer2_result": {
+        "risk_level": "MEDIUM",
+        "decision": "CONDITIONAL",
+        "confidence": 75,
+        "key_risks": [
+          "负责人变更可能导致项目执行连续性中断",
+          "新负责人需要时间熟悉项目细节",
+          "团队成员需要调整与新负责人的工作方式"
+        ],
+        "recommendation": "建议在变更前确保：1)蔡悦莹已完整交接项目背景和当前状态；2)安排赖铁荔与蔡悦莹进行充分的工作交接；3)向团队成员正式通报负责人变更事宜。同时建议在变更后2周内密切跟踪项目进展。"
+      },
+      "final_decision": "CONDITIONAL",
+      "approval_required": false
+    }
+  ]
+}

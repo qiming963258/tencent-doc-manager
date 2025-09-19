@@ -1,0 +1,48 @@
+{
+  "metadata": {
+    "analysis_time": "2025-09-19 00:01:46",
+    "total_modifications": 1,
+    "layer1_passed": 0,
+    "layer2_analyzed": 1,
+    "processing_time": "19.8s"
+  },
+  "results": [
+    {
+      "modification_id": "M001",
+      "cell": "I5",
+      "column": "邓总指导登记（日更新）",
+      "old_value": "0730-",
+      "new_value": "朱瀚桔",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 80.0,
+        "reason": "责任人变更"
+      },
+      "layer2_result": {
+        "risk_level": "HIGH",
+        "decision": "REVIEW",
+        "confidence": 85,
+        "key_risks": [
+          "责任主体变更风险：从邓总变更为朱瀚桔，可能影响项目指导的权威性和连续性",
+          "信息完整性风险：0730-日期标记被完全替换，失去时间参考信息",
+          "角色混淆风险：'邓总指导登记'字段被非邓总人员信息替代，可能造成记录混乱"
+        ],
+        "recommendation": "建议：1.确认朱瀚桔是否有权限进行指导登记 2.保留时间标记信息(可改为'朱瀚桔0730-') 3.如需变更负责人，建议新增'当前指导人'字段而非直接替换原字段 4.向团队通报负责人变更情况"
+      },
+      "final_decision": "REVIEW",
+      "approval_required": true
+    }
+  ],
+  "summary": {
+    "approved": 0,
+    "conditional": 0,
+    "review_required": 1,
+    "rejected": 0,
+    "risk_distribution": {
+      "LOW": 0,
+      "MEDIUM": 0,
+      "HIGH": 1,
+      "CRITICAL": 0
+    }
+  }
+}

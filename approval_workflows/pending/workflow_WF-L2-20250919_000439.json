@@ -1,0 +1,32 @@
+{
+  "workflow_id": "WF-L2-20250919_000439",
+  "created_time": "2025-09-19 00:04:39",
+  "pending_approvals": [
+    {
+      "modification_id": "M001",
+      "cell": "J7",
+      "column": "负责人",
+      "old_value": "赖铁荔",
+      "new_value": "曾利萍,杨佳玲,朱瀚桔",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 80.0,
+        "reason": "多人负责"
+      },
+      "layer2_result": {
+        "risk_level": "MEDIUM",
+        "decision": "REVIEW",
+        "confidence": 75,
+        "key_risks": [
+          "职责分散可能导致责任不清",
+          "多人协作需要额外沟通成本",
+          "新任负责人的熟悉度和胜任能力不确定"
+        ],
+        "recommendation": "建议召开交接会议明确三点：1)明确三位新负责人的具体分工和主责人；2)确保新任负责人完全理解项目要求；3)设立过渡期由原负责人协助交接。同时需要更新相关沟通机制和汇报线。"
+      },
+      "final_decision": "REVIEW",
+      "approval_required": true
+    }
+  ],
+  "auto_approved": []
+}

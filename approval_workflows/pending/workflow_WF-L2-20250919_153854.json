@@ -1,0 +1,27 @@
+{
+  "workflow_id": "WF-L2-20250919_153854",
+  "created_time": "2025-09-19 15:38:54",
+  "pending_approvals": [],
+  "auto_approved": [
+    {
+      "modification_id": "M001",
+      "cell": "J90",
+      "column": "负责人",
+      "old_value": "王寒晓",
+      "new_value": "",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 75.0,
+        "reason": "负责人缺失"
+      },
+      "layer2_result": {
+        "risk_level": "LOW",
+        "decision": "APPROVE",
+        "confidence": 90,
+        "reason": "清除负责人信息是一个常规操作，通常无重大风险，除非该负责人当前负责关键任务"
+      },
+      "final_decision": "APPROVE",
+      "approval_required": false
+    }
+  ]
+}

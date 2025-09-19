@@ -1,0 +1,32 @@
+{
+  "workflow_id": "WF-L2-20250919_000010",
+  "created_time": "2025-09-19 00:00:10",
+  "pending_approvals": [],
+  "auto_approved": [
+    {
+      "modification_id": "M001",
+      "cell": "J4",
+      "column": "负责人",
+      "old_value": "赖铁荔",
+      "new_value": "曾利萍,杨佳玲,朱瀚桔",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 80.0,
+        "reason": "人员变更"
+      },
+      "layer2_result": {
+        "risk_level": "MEDIUM",
+        "decision": "CONDITIONAL",
+        "confidence": 75,
+        "key_risks": [
+          "责任分散风险：从单一负责人变更为多人负责，可能导致责任不明确",
+          "沟通协调成本增加：需要新增多人协作机制，可能影响工作效率",
+          "信息传递风险：新加入的负责人可能缺乏对项目历史的完整了解"
+        ],
+        "recommendation": "建议：1)明确划分三位新负责人的具体职责范围 2)安排完整的工作交接会议 3)更新相关沟通机制和报告流程 4)考虑设置主要负责人作为统一接口"
+      },
+      "final_decision": "CONDITIONAL",
+      "approval_required": false
+    }
+  ]
+}

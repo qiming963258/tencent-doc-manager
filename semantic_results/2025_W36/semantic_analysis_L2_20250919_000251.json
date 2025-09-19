@@ -1,0 +1,48 @@
+{
+  "metadata": {
+    "analysis_time": "2025-09-19 00:02:51",
+    "total_modifications": 1,
+    "layer1_passed": 0,
+    "layer2_analyzed": 1,
+    "processing_time": "43.9s"
+  },
+  "results": [
+    {
+      "modification_id": "M001",
+      "cell": "C6",
+      "column": "项目类型",
+      "old_value": "目标管理",
+      "new_value": "经理日常交办,周会决策待办",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 80.0,
+        "reason": "范围扩大"
+      },
+      "layer2_result": {
+        "risk_level": "MEDIUM",
+        "decision": "REVIEW",
+        "confidence": 75,
+        "key_risks": [
+          "项目类型从单一目标变为混合类型，可能导致目标优先级冲突",
+          "新增的'经理日常交办'和'周会决策待办'可能引入临时性任务，影响原计划执行",
+          "不同类型的任务可能导致团队成员分工和协作方式需要调整"
+        ],
+        "recommendation": "建议：1)明确不同类型任务的优先级规则 2)评估新增任务对现有资源的影响 3)必要时调整项目计划和分工"
+      },
+      "final_decision": "REVIEW",
+      "approval_required": true
+    }
+  ],
+  "summary": {
+    "approved": 0,
+    "conditional": 0,
+    "review_required": 1,
+    "rejected": 0,
+    "risk_distribution": {
+      "LOW": 0,
+      "MEDIUM": 0,
+      "HIGH": 1,
+      "CRITICAL": 0
+    }
+  }
+}

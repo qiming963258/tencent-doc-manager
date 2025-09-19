@@ -1,0 +1,43 @@
+{
+  "metadata": {
+    "analysis_time": "2025-09-19 15:45:30",
+    "total_modifications": 1,
+    "layer1_passed": 0,
+    "layer2_analyzed": 1,
+    "processing_time": "8.2s"
+  },
+  "results": [
+    {
+      "modification_id": "M001",
+      "cell": "H102",
+      "column": "具体计划内容",
+      "old_value": "1、分析现有国家区域线上与新媒体的定价差异比例\n2、根据分析合理缩小定价差异比例\n3、着重在英国、欧洲\n\n4、注重：成交率高的区间进行合理调整，覆盖部分赔付成本预算",
+      "new_value": "",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 90.0,
+        "reason": "删除内容"
+      },
+      "layer2_result": {
+        "risk_level": "MEDIUM",
+        "decision": "REVIEW",
+        "confidence": 75,
+        "reason": "删除了具体的计划内容，可能导致后续执行缺乏明确方向和依据，但无直接数据损失风险"
+      },
+      "final_decision": "REVIEW",
+      "approval_required": true
+    }
+  ],
+  "summary": {
+    "approved": 0,
+    "conditional": 0,
+    "review_required": 1,
+    "rejected": 0,
+    "risk_distribution": {
+      "LOW": 0,
+      "MEDIUM": 0,
+      "HIGH": 1,
+      "CRITICAL": 0
+    }
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "workflow_id": "WF-L2-20250919_203546",
+  "created_time": "2025-09-19 20:35:46",
+  "pending_approvals": [],
+  "auto_approved": [
+    {
+      "modification_id": "M001",
+      "cell": "J17",
+      "column": "负责人",
+      "old_value": "赖铁荔",
+      "new_value": "杨佳玲,曾利萍",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 75.0,
+        "reason": "责任人变更"
+      },
+      "layer2_result": {
+        "risk_level": "LOW",
+        "decision": "APPROVE",
+        "confidence": 90,
+        "reason": "负责人变更属于常规管理调整，且新增人员为两人，风险较低"
+      },
+      "final_decision": "APPROVE",
+      "approval_required": false
+    }
+  ]
+}

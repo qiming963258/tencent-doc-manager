@@ -1,0 +1,27 @@
+{
+  "workflow_id": "WF-L2-20250919_144622",
+  "created_time": "2025-09-19 14:46:22",
+  "pending_approvals": [
+    {
+      "modification_id": "M001",
+      "cell": "I5",
+      "column": "邓总指导登记（日更新）",
+      "old_value": "0730-",
+      "new_value": "朱瀚桔",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 80.0,
+        "reason": "关键人变更"
+      },
+      "layer2_result": {
+        "risk_level": "HIGH",
+        "decision": "REJECT",
+        "confidence": 90,
+        "reason": "将‘邓总指导登记（日更新）’列的数值从‘0730-’改为‘朱瀚桔’，涉及到关键人员变更且与原格式不符，可能存在数据错误或权限问题。"
+      },
+      "final_decision": "REJECT",
+      "approval_required": true
+    }
+  ],
+  "auto_approved": []
+}

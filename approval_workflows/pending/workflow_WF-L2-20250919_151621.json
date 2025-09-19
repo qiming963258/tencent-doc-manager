@@ -1,0 +1,27 @@
+{
+  "workflow_id": "WF-L2-20250919_151621",
+  "created_time": "2025-09-19 15:16:21",
+  "pending_approvals": [
+    {
+      "modification_id": "M001",
+      "cell": "I53",
+      "column": "邓总指导登记（日更新）",
+      "old_value": "3.26\n国外ip账号购买同步调研\n\n1.13\n1.手机卡是否为官方卡，套餐真实性问题\n2.补充手机卡类型应用范围及后续细化规划\n1.6\n调研开拓【渠道】进行账号注册，辅助现有矩阵账号进行私信导流",
+      "new_value": "朱瀚桔",
+      "layer1_result": {
+        "judgment": "UNSURE",
+        "confidence": 60.0,
+        "reason": "责任人变更"
+      },
+      "layer2_result": {
+        "risk_level": "HIGH",
+        "decision": "REJECT",
+        "confidence": 90,
+        "reason": "修改内容将原本详细的项目进展记录替换为个人姓名，可能导致重要项目信息丢失且不符合该列的数据格式要求"
+      },
+      "final_decision": "REJECT",
+      "approval_required": true
+    }
+  ],
+  "auto_approved": []
+}

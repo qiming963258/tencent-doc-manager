@@ -1,0 +1,27 @@
+{
+  "workflow_id": "WF-L2-20250919_154442",
+  "created_time": "2025-09-19 15:44:42",
+  "pending_approvals": [
+    {
+      "modification_id": "M001",
+      "cell": "J100",
+      "column": "负责人",
+      "old_value": "杨顺鑫",
+      "new_value": "",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 80.0,
+        "reason": "责任空缺"
+      },
+      "layer2_result": {
+        "risk_level": "MEDIUM",
+        "decision": "REVIEW",
+        "confidence": 75,
+        "reason": "负责人字段清空可能影响责任追踪，需人工确认是否为有意修改"
+      },
+      "final_decision": "REVIEW",
+      "approval_required": true
+    }
+  ],
+  "auto_approved": []
+}

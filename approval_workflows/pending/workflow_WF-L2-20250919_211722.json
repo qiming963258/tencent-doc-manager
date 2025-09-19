@@ -1,0 +1,27 @@
+{
+  "workflow_id": "WF-L2-20250919_211722",
+  "created_time": "2025-09-19 21:17:22",
+  "pending_approvals": [
+    {
+      "modification_id": "M001",
+      "cell": "C89",
+      "column": "项目类型",
+      "old_value": "目标管理",
+      "new_value": "总经理交办",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 75.0,
+        "reason": "权力集中"
+      },
+      "layer2_result": {
+        "risk_level": "MEDIUM",
+        "decision": "REVIEW",
+        "confidence": 75,
+        "reason": "修改将项目类型从通用类别改为特定高管相关类别，可能涉及项目优先级或资源分配的变化，需要人工确认变更合理性"
+      },
+      "final_decision": "REVIEW",
+      "approval_required": true
+    }
+  ],
+  "auto_approved": []
+}

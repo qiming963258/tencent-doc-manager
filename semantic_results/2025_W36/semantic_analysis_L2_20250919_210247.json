@@ -1,0 +1,43 @@
+{
+  "metadata": {
+    "analysis_time": "2025-09-19 21:02:47",
+    "total_modifications": 1,
+    "layer1_passed": 0,
+    "layer2_analyzed": 1,
+    "processing_time": "15.5s"
+  },
+  "results": [
+    {
+      "modification_id": "M001",
+      "cell": "H64",
+      "column": "具体计划内容",
+      "old_value": "1、需要优化打通组长的复盘与员工复盘；\n2、具体KR的有效应用链路；",
+      "new_value": "0714-\n1、采集规则的制定\n2、提炼与对策的工具与机制完善",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 90.0,
+        "reason": "内容替换"
+      },
+      "layer2_result": {
+        "risk_level": "MEDIUM",
+        "decision": "REVIEW",
+        "confidence": 75,
+        "reason": "修改内容从优化复盘和应用链路变更为采集规则和工具机制完善，涉及计划方向变更，需要人工审查确认是否符合项目整体规划"
+      },
+      "final_decision": "REVIEW",
+      "approval_required": true
+    }
+  ],
+  "summary": {
+    "approved": 0,
+    "conditional": 0,
+    "review_required": 1,
+    "rejected": 0,
+    "risk_distribution": {
+      "LOW": 0,
+      "MEDIUM": 0,
+      "HIGH": 1,
+      "CRITICAL": 0
+    }
+  }
+}

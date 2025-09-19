@@ -1,0 +1,27 @@
+{
+  "workflow_id": "WF-L2-20250919_203531",
+  "created_time": "2025-09-19 20:35:31",
+  "pending_approvals": [
+    {
+      "modification_id": "M001",
+      "cell": "C17",
+      "column": "项目类型",
+      "old_value": "目标管理",
+      "new_value": "目标复盘待解决,已执行待优化",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 80.0,
+        "reason": "范围扩大"
+      },
+      "layer2_result": {
+        "risk_level": "MEDIUM",
+        "decision": "REVIEW",
+        "confidence": 75,
+        "reason": "将单一项目类型改为复合状态描述，可能导致分类混乱或数据统计问题，需要人工审查修改意图和影响范围"
+      },
+      "final_decision": "REVIEW",
+      "approval_required": true
+    }
+  ],
+  "auto_approved": []
+}

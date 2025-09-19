@@ -1,0 +1,27 @@
+{
+  "workflow_id": "WF-L2-20250919_153142",
+  "created_time": "2025-09-19 15:31:42",
+  "pending_approvals": [],
+  "auto_approved": [
+    {
+      "modification_id": "M001",
+      "cell": "J78",
+      "column": "负责人",
+      "old_value": "王寒晓",
+      "new_value": "徐志杰",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 75.0,
+        "reason": "关键人变更"
+      },
+      "layer2_result": {
+        "risk_level": "LOW",
+        "decision": "APPROVE",
+        "confidence": 90,
+        "reason": "负责人变更属于正常人员调整，无实质性内容影响"
+      },
+      "final_decision": "APPROVE",
+      "approval_required": false
+    }
+  ]
+}

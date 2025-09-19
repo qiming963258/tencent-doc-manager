@@ -1,0 +1,43 @@
+{
+  "metadata": {
+    "analysis_time": "2025-09-19 15:22:33",
+    "total_modifications": 1,
+    "layer1_passed": 0,
+    "layer2_analyzed": 1,
+    "processing_time": "14.3s"
+  },
+  "results": [
+    {
+      "modification_id": "M001",
+      "cell": "H63",
+      "column": "具体计划内容",
+      "old_value": "视频评估与上门评估按照评估方式统计；",
+      "new_value": "0714-\n1、外部（熙浦）竞对调研结果与内容定位打通\n2、外部竞对爆款笔记内容定位在每周的内容定位迭代进行串联并联\n\n0630-\n1、根据竞对品牌熙浦的企业号矩阵，识别不容账号定位向下的内容定位，提",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 80.0,
+        "reason": "内容替换"
+      },
+      "layer2_result": {
+        "risk_level": "MEDIUM",
+        "decision": "REVIEW",
+        "confidence": 75,
+        "reason": "修改内容涉及外部竞对调研结果和内容定位调整，可能影响原有评估统计逻辑，需要业务部门确认调整的合理性。"
+      },
+      "final_decision": "REVIEW",
+      "approval_required": true
+    }
+  ],
+  "summary": {
+    "approved": 0,
+    "conditional": 0,
+    "review_required": 1,
+    "rejected": 0,
+    "risk_distribution": {
+      "LOW": 0,
+      "MEDIUM": 0,
+      "HIGH": 1,
+      "CRITICAL": 0
+    }
+  }
+}

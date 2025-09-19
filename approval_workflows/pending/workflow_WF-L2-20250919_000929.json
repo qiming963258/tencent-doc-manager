@@ -1,0 +1,32 @@
+{
+  "workflow_id": "WF-L2-20250919_000929",
+  "created_time": "2025-09-19 00:09:29",
+  "pending_approvals": [
+    {
+      "modification_id": "M001",
+      "cell": "K10",
+      "column": "协助人",
+      "old_value": "魏志广",
+      "new_value": "邓总",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 80.0,
+        "reason": "负责人变更"
+      },
+      "layer2_result": {
+        "risk_level": "MEDIUM",
+        "decision": "REVIEW",
+        "confidence": 75,
+        "key_risks": [
+          "团队协作可能受影响：从具体执行人变更为高层管理者，可能导致执行效率降低",
+          "责任划分模糊：'邓总'作为协助人可能导致权责不明确",
+          "沟通链条延长：高层管理者可能无法像原执行人那样及时响应项目需求"
+        ],
+        "recommendation": "建议明确以下事项后批准变更：1)邓总作为协助人的具体职责范围；2)日常执行工作的实际对接人；3)变更后的沟通汇报机制。同时建议保留魏志广作为执行层面的联系人。"
+      },
+      "final_decision": "REVIEW",
+      "approval_required": true
+    }
+  ],
+  "auto_approved": []
+}

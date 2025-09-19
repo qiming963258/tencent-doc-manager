@@ -1,0 +1,27 @@
+{
+  "workflow_id": "WF-L2-20250919_203424",
+  "created_time": "2025-09-19 20:34:24",
+  "pending_approvals": [
+    {
+      "modification_id": "M001",
+      "cell": "H15",
+      "column": "具体计划内容",
+      "old_value": "未知资源的判定标准录入标准",
+      "new_value": "",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 90.0,
+        "reason": "关键内容删除"
+      },
+      "layer2_result": {
+        "risk_level": "HIGH",
+        "decision": "REJECT",
+        "confidence": 90,
+        "reason": "删除具体计划内容可能导致项目执行时缺乏明确的资源判定标准，增加项目风险"
+      },
+      "final_decision": "REJECT",
+      "approval_required": true
+    }
+  ],
+  "auto_approved": []
+}

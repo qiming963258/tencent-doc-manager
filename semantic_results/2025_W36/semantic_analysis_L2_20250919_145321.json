@@ -1,0 +1,43 @@
+{
+  "metadata": {
+    "analysis_time": "2025-09-19 14:53:21",
+    "total_modifications": 1,
+    "layer1_passed": 0,
+    "layer2_analyzed": 1,
+    "processing_time": "13.5s"
+  },
+  "results": [
+    {
+      "modification_id": "M001",
+      "cell": "I16",
+      "column": "邓总指导登记（日更新）",
+      "old_value": "0813-\n短视频的爆款可调用小红书板块历史爆款笔记作为原创脚本进行调用，同步优化内容库执行表单进行脚本撰写的数量要求及登记跟踪\n\n0811-",
+      "new_value": "徐志杰",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 80.0,
+        "reason": "责任人变更"
+      },
+      "layer2_result": {
+        "risk_level": "HIGH",
+        "decision": "REJECT",
+        "confidence": 90,
+        "reason": "修改内容完全替换了原有详细的项目指导和执行方法，仅保留了一个人名，可能导致重要项目信息丢失。"
+      },
+      "final_decision": "REJECT",
+      "approval_required": true
+    }
+  ],
+  "summary": {
+    "approved": 0,
+    "conditional": 0,
+    "review_required": 0,
+    "rejected": 1,
+    "risk_distribution": {
+      "LOW": 0,
+      "MEDIUM": 0,
+      "HIGH": 0,
+      "CRITICAL": 1
+    }
+  }
+}

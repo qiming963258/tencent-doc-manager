@@ -1,0 +1,48 @@
+{
+  "metadata": {
+    "analysis_time": "2025-09-19 00:01:52",
+    "total_modifications": 1,
+    "layer1_passed": 0,
+    "layer2_analyzed": 1,
+    "processing_time": "6.2s"
+  },
+  "results": [
+    {
+      "modification_id": "M001",
+      "cell": "J5",
+      "column": "负责人",
+      "old_value": "赖铁荔",
+      "new_value": "徐志杰",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 75.0,
+        "reason": "负责人变更"
+      },
+      "layer2_result": {
+        "risk_level": "MEDIUM",
+        "decision": "CONDITIONAL",
+        "confidence": 75,
+        "key_risks": [
+          "负责人变更可能导致项目延续性问题",
+          "新负责人需要时间熟悉项目情况",
+          "团队沟通模式可能需要重新调整"
+        ],
+        "recommendation": "建议：1. 安排原负责人与新负责人进行充分交接；2. 明确新负责人的职责范围和工作计划；3. 向团队成员通报变更情况并收集反馈；4. 设置2周的过渡期观察效果。确认以上措施执行后再批准变更。"
+      },
+      "final_decision": "CONDITIONAL",
+      "approval_required": false
+    }
+  ],
+  "summary": {
+    "approved": 0,
+    "conditional": 1,
+    "review_required": 0,
+    "rejected": 0,
+    "risk_distribution": {
+      "LOW": 0,
+      "MEDIUM": 0,
+      "HIGH": 0,
+      "CRITICAL": 0
+    }
+  }
+}

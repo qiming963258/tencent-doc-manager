@@ -1,0 +1,27 @@
+{
+  "workflow_id": "WF-L2-20250919_211510",
+  "created_time": "2025-09-19 21:15:10",
+  "pending_approvals": [
+    {
+      "modification_id": "M001",
+      "cell": "J85",
+      "column": "负责人",
+      "old_value": "王寒晓",
+      "new_value": "蔡悦莹,朱瀚桔",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 75.0,
+        "reason": "负责人变更"
+      },
+      "layer2_result": {
+        "risk_level": "MEDIUM",
+        "decision": "REVIEW",
+        "confidence": 75,
+        "reason": "从单人负责变更为多人负责，需确认职责划分和工作交接是否明确"
+      },
+      "final_decision": "REVIEW",
+      "approval_required": true
+    }
+  ],
+  "auto_approved": []
+}

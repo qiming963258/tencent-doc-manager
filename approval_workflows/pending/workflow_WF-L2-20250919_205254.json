@@ -1,0 +1,22 @@
+{
+  "workflow_id": "WF-L2-20250919_205254",
+  "created_time": "2025-09-19 20:52:54",
+  "pending_approvals": [],
+  "auto_approved": [
+    {
+      "modification_id": "M001",
+      "cell": "K46",
+      "column": "协助人",
+      "old_value": "王寒晓",
+      "new_value": "徐志杰",
+      "layer1_result": {
+        "judgment": "SAFE",
+        "confidence": 90.0,
+        "reason": "人员替换"
+      },
+      "layer2_result": null,
+      "final_decision": "APPROVE",
+      "approval_required": false
+    }
+  ]
+}

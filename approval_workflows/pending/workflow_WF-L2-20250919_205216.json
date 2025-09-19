@@ -1,0 +1,27 @@
+{
+  "workflow_id": "WF-L2-20250919_205216",
+  "created_time": "2025-09-19 20:52:16",
+  "pending_approvals": [
+    {
+      "modification_id": "M001",
+      "cell": "J45",
+      "column": "负责人",
+      "old_value": "赖铁荔",
+      "new_value": "徐志杰,朱瀚桔,杨佳玲,曾利萍,魏经理",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 80.0,
+        "reason": "多人负责"
+      },
+      "layer2_result": {
+        "risk_level": "MEDIUM",
+        "decision": "REVIEW",
+        "confidence": 75,
+        "reason": "负责人从单人变更为多人名单，需要确认是否涉及职责分工变更或项目结构调整"
+      },
+      "final_decision": "REVIEW",
+      "approval_required": true
+    }
+  ],
+  "auto_approved": []
+}

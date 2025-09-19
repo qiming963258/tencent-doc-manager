@@ -1,0 +1,48 @@
+{
+  "metadata": {
+    "analysis_time": "2025-09-19 00:04:03",
+    "total_modifications": 1,
+    "layer1_passed": 0,
+    "layer2_analyzed": 1,
+    "processing_time": "7.1s"
+  },
+  "results": [
+    {
+      "modification_id": "M001",
+      "cell": "C7",
+      "column": "项目类型",
+      "old_value": "目标管理",
+      "new_value": "目标复盘待解决,已执行待优化",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 80.0,
+        "reason": "类型变更"
+      },
+      "layer2_result": {
+        "risk_level": "MEDIUM",
+        "decision": "CONDITIONAL",
+        "confidence": 75,
+        "key_risks": [
+          "项目类型定义模糊可能导致执行方向不清",
+          "双状态标记可能造成进度跟踪混乱",
+          "从单一状态变为多状态增加了管理复杂度"
+        ],
+        "recommendation": "建议：1) 如果使用复合状态必需明确定义每种状态对应的项目范围和工作要求；2) 建立对应的状态管理机制；3) 通知相关团队并确认理解一致性。修改前需要项目负责人批准。"
+      },
+      "final_decision": "CONDITIONAL",
+      "approval_required": false
+    }
+  ],
+  "summary": {
+    "approved": 0,
+    "conditional": 1,
+    "review_required": 0,
+    "rejected": 0,
+    "risk_distribution": {
+      "LOW": 0,
+      "MEDIUM": 0,
+      "HIGH": 0,
+      "CRITICAL": 0
+    }
+  }
+}

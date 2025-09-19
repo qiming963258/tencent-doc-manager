@@ -1,0 +1,27 @@
+{
+  "workflow_id": "WF-L2-20250919_210342",
+  "created_time": "2025-09-19 21:03:42",
+  "pending_approvals": [
+    {
+      "modification_id": "M001",
+      "cell": "K65",
+      "column": "协助人",
+      "old_value": "林玉佳,李穗云",
+      "new_value": "徐志杰",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 75.0,
+        "reason": "人员变更"
+      },
+      "layer2_result": {
+        "risk_level": "MEDIUM",
+        "decision": "REVIEW",
+        "confidence": 75,
+        "reason": "协助人变更涉及人员替换，需确认交接事宜和新协助人资质"
+      },
+      "final_decision": "REVIEW",
+      "approval_required": true
+    }
+  ],
+  "auto_approved": []
+}

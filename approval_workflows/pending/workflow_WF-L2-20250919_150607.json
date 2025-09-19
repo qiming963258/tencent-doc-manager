@@ -1,0 +1,27 @@
+{
+  "workflow_id": "WF-L2-20250919_150607",
+  "created_time": "2025-09-19 15:06:07",
+  "pending_approvals": [
+    {
+      "modification_id": "M001",
+      "cell": "C37",
+      "column": "项目类型",
+      "old_value": "目标管理",
+      "new_value": "目标复盘待解决",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 75.0,
+        "reason": "重大变更"
+      },
+      "layer2_result": {
+        "risk_level": "MEDIUM",
+        "decision": "REVIEW",
+        "confidence": 75,
+        "reason": "项目类型从'目标管理'改为'目标复盘待解决'可能意味着项目状态或性质的重大变化，需要人工审查确认变更合理性"
+      },
+      "final_decision": "REVIEW",
+      "approval_required": true
+    }
+  ],
+  "auto_approved": []
+}

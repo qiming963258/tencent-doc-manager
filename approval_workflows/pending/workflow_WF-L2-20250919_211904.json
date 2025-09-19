@@ -1,0 +1,27 @@
+{
+  "workflow_id": "WF-L2-20250919_211904",
+  "created_time": "2025-09-19 21:19:04",
+  "pending_approvals": [
+    {
+      "modification_id": "M001",
+      "cell": "H92",
+      "column": "具体计划内容",
+      "old_value": "木架的应用：\n参考同行价格进行定价与应用，换位思考不定高价，与小赖分工协作",
+      "new_value": "",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 90.0,
+        "reason": "删除核心内容"
+      },
+      "layer2_result": {
+        "risk_level": "MEDIUM",
+        "decision": "REVIEW",
+        "confidence": 75,
+        "reason": "删除了重要的定价策略和分工协作信息，虽然不直接影响数据完整性，但可能导致执行层面的混乱"
+      },
+      "final_decision": "REVIEW",
+      "approval_required": true
+    }
+  ],
+  "auto_approved": []
+}

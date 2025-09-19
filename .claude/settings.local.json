@@ -165,7 +165,8 @@
       "Bash(gitc \"测试业界标准Git解决方案\")",
       "Bash(git ci:*)",
       "Bash(/dev/null)",
-      "Bash(TZ:*)"
+      "Bash(TZ:*)",
+      "Bash(export GIT_EDITOR=true)"
     ],
     "deny": [],
     "ask": [],

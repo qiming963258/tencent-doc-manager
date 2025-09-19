@@ -1,0 +1,27 @@
+{
+  "workflow_id": "WF-L2-20250919_152758",
+  "created_time": "2025-09-19 15:27:58",
+  "pending_approvals": [
+    {
+      "modification_id": "M001",
+      "cell": "H72",
+      "column": "具体计划内容",
+      "old_value": "1、小红书系统跟进功能打通，晒单跟进条件；\n2、小红书建立违规抓取规则（考虑跟单更新后更新先配送问题；）",
+      "new_value": "3.26\n国外ip账号购买同步调研\n\n1.13\n1.手机卡是否为官方卡，套餐真实性问题\n2.补充手机卡类型应用范围及后续细化规划\n1.6\n调研开拓【渠道】进行账号注册，辅助现有矩阵账号进行私信导流",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 90.0,
+        "reason": "内容替换"
+      },
+      "layer2_result": {
+        "risk_level": "MEDIUM",
+        "decision": "REVIEW",
+        "confidence": 75,
+        "reason": "单元格内容完全被替换，新值包含多项调研计划但缺乏详细执行说明，可能影响原项目规划的连贯性。"
+      },
+      "final_decision": "REVIEW",
+      "approval_required": true
+    }
+  ],
+  "auto_approved": []
+}

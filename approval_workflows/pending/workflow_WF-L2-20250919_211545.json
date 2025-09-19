@@ -1,0 +1,27 @@
+{
+  "workflow_id": "WF-L2-20250919_211545",
+  "created_time": "2025-09-19 21:15:45",
+  "pending_approvals": [
+    {
+      "modification_id": "M001",
+      "cell": "I86",
+      "column": "邓总指导登记（日更新）",
+      "old_value": "",
+      "new_value": "徐志杰",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 80.0,
+        "reason": "责任人变更"
+      },
+      "layer2_result": {
+        "risk_level": "MEDIUM",
+        "decision": "REVIEW",
+        "confidence": 75,
+        "reason": "修改涉及领导指导登记信息，可能存在重要工作交接或责任变更，需要人工确认变更的合理性。"
+      },
+      "final_decision": "REVIEW",
+      "approval_required": true
+    }
+  ],
+  "auto_approved": []
+}

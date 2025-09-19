@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>热力图颜色映射测试</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; background: #f5f5f5; }
+        h2 { color: #333; }
+        .container { display: flex; gap: 30px; margin-bottom: 30px; }
+        .color-bar { width: 400px; }
+        .bar { height: 40px; display: flex; border: 2px solid #333; }
+        .segment { flex: 1; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold; text-shadow: 1px 1px 2px rgba(0,0,0,0.5); }
+        .labels { display: flex; justify-content: space-between; margin-top: 5px; font-size: 12px; }
+        .comparison { margin-top: 20px; }
+        .color-box { width: 80px; height: 80px; display: inline-block; margin: 10px; border: 2px solid #333; vertical-align: middle; }
+        .label { display: inline-block; width: 150px; vertical-align: middle; }
+    </style>
+</head>
+<body>
+    <h1>热力图颜色映射对比测试</h1>
+
+    <h2>新版颜色映射（已更新）</h2>
+    <div class="color-bar">
+        <div class="bar" id="newBar"></div>
+        <div class="labels">
+            <span>0.0</span>
+            <span>0.2</span>
+            <span>0.4</span>
+            <span>0.6</span>
+            <span>0.8</span>
+            <span>1.0</span>
+        </div>
+    </div>
+
+    <h2>高风险区域对比（值 > 0.8）</h2>
+    <div class="comparison">
+        <div>
+            <span class="label">旧版（0.85）：</span>
+            <span class="color-box" style="background: rgb(255, 217, 0);"></span>
+            <span>黄色 rgb(255, 217, 0)</span>
+        </div>
+        <div>
+            <span class="label">新版（0.85）：</span>
+            <span class="color-box" id="new85"></span>
+            <span id="new85text"></span>
+        </div>
+    </div>
+
+    <div class="comparison">
+        <div>
+            <span class="label">旧版（0.95）：</span>
+            <span class="color-box" style="background: rgb(255, 131, 0);"></span>
+            <span>橙色 rgb(255, 131, 0)</span>
+        </div>
+        <div>
+            <span class="label">新版（0.95）：</span>
+            <span class="color-box" id="new95"></span>
+            <span id="new95text"></span>
+        </div>
+    </div>
+
+    <script>
+        // 新的颜色映射函数
+        const getScientificHeatColor = (value) => {
+            const v = Math.max(0, Math.min(1, value));
+
+            if (v <= 0.2) {
+                const t = v / 0.2;
+                const r = Math.floor(8 + t * 42);
+                const g = Math.floor(48 + t * 102);
+                const b = Math.floor(107 + t * 98);
+                return `rgb(${r}, ${g}, ${b})`;
+            } else if (v <= 0.4) {
+                const t = (v - 0.2) / 0.2;
+                const r = Math.floor(50 + t * 0);
+                const g = Math.floor(150 + t * 55);
+                const b = Math.floor(205 - t * 55);
+                return `rgb(${r}, ${g}, ${b})`;
+            } else if (v <= 0.6) {
+                const t = (v - 0.4) / 0.2;
+                const r = Math.floor(50 + t * 70);
+                const g = Math.floor(205 - t * 25);
+                const b = Math.floor(150 - t * 100);
+                return `rgb(${r}, ${g}, ${b})`;
+            } else if (v <= 0.8) {
+                const t = (v - 0.6) / 0.2;
+                const r = Math.floor(120 + t * 135);
+                const g = Math.floor(180 + t * 75);
+                const b = Math.floor(50 - t * 50);
+                return `rgb(${r}, ${g}, ${b})`;
+            } else {
+                // 新版：橙红到深红
+                const t = (v - 0.8) / 0.2;
+                const r = Math.floor(255 - t * 102);
+                const g = Math.floor(85 - t * 58);
+                const b = Math.floor(0 + t * 27);
+                return `rgb(${r}, ${g}, ${b})`;
+            }
+        };
+
+        // 创建颜色条
+        const newBar = document.getElementById('newBar');
+        const segments = 100;
+        for (let i = 0; i < segments; i++) {
+            const value = i / segments;
+            const div = document.createElement('div');
+            div.style.flex = '1';
+            div.style.background = getScientificHeatColor(value);
+            newBar.appendChild(div);
+        }
+
+        // 显示特定值的颜色
+        const color85 = getScientificHeatColor(0.85);
+        const color95 = getScientificHeatColor(0.95);
+
+        document.getElementById('new85').style.background = color85;
+        document.getElementById('new85text').textContent = `深橙红 ${color85}`;
+
+        document.getElementById('new95').style.background = color95;
+        document.getElementById('new95text').textContent = `深红 ${color95}`;
+    </script>
+</body>
+</html>

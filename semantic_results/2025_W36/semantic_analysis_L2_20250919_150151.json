@@ -1,0 +1,43 @@
+{
+  "metadata": {
+    "analysis_time": "2025-09-19 15:01:51",
+    "total_modifications": 1,
+    "layer1_passed": 0,
+    "layer2_analyzed": 1,
+    "processing_time": "4.3s"
+  },
+  "results": [
+    {
+      "modification_id": "M001",
+      "cell": "H30",
+      "column": "具体计划内容",
+      "old_value": "网单录入标准条件设定",
+      "new_value": "0728-\n内容定位的更新加入更新时间维度\n\n0702-\n机制表单需要优化\n1、内容定位机制账号的类型要错开\n2、加上爆款内外部收集板块与机制进行串联\n3、细项加入权重指标辅助识别重点事项",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 80.0,
+        "reason": "内容截断"
+      },
+      "layer2_result": {
+        "risk_level": "MEDIUM",
+        "decision": "REVIEW",
+        "confidence": 75,
+        "reason": "修改内容涉及多个关键业务流程变更，包括机制表单优化、权重指标加入等，需要业务负责人确认影响范围"
+      },
+      "final_decision": "REVIEW",
+      "approval_required": true
+    }
+  ],
+  "summary": {
+    "approved": 0,
+    "conditional": 0,
+    "review_required": 1,
+    "rejected": 0,
+    "risk_distribution": {
+      "LOW": 0,
+      "MEDIUM": 0,
+      "HIGH": 1,
+      "CRITICAL": 0
+    }
+  }
+}

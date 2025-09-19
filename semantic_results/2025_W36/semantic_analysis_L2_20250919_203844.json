@@ -1,0 +1,43 @@
+{
+  "metadata": {
+    "analysis_time": "2025-09-19 20:38:44",
+    "total_modifications": 1,
+    "layer1_passed": 0,
+    "layer2_analyzed": 1,
+    "processing_time": "8.8s"
+  },
+  "results": [
+    {
+      "modification_id": "M001",
+      "cell": "H23",
+      "column": "具体计划内容",
+      "old_value": "1、小红书矩阵策略维度事项的梳理形成计划；\n2、集运系统、线上支付执行进度和需要持续优化的事项计划\n周一汇报",
+      "new_value": "0721-",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 90.0,
+        "reason": "删除内容"
+      },
+      "layer2_result": {
+        "risk_level": "HIGH",
+        "decision": "REJECT",
+        "confidence": 90,
+        "reason": "修改后的值'0721-'与原有详细计划内容相比缺乏具体信息，可能影响项目跟踪和管理，存在较高的信息丢失风险。"
+      },
+      "final_decision": "REJECT",
+      "approval_required": true
+    }
+  ],
+  "summary": {
+    "approved": 0,
+    "conditional": 0,
+    "review_required": 0,
+    "rejected": 1,
+    "risk_distribution": {
+      "LOW": 0,
+      "MEDIUM": 0,
+      "HIGH": 0,
+      "CRITICAL": 1
+    }
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "workflow_id": "WF-L2-20250919_000937",
+  "created_time": "2025-09-19 00:09:37",
+  "pending_approvals": [
+    {
+      "modification_id": "M001",
+      "cell": "C11",
+      "column": "项目类型",
+      "old_value": "目标管理",
+      "new_value": "目标复盘待解决,已执行待优化",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 80.0,
+        "reason": "类型变更"
+      },
+      "layer2_result": {
+        "risk_level": "MEDIUM",
+        "decision": "REVIEW",
+        "confidence": 75,
+        "key_risks": [
+          "项目类型定义模糊可能导致执行方向不明确",
+          "双重状态并存可能增加管理复杂度",
+          "概念变更可能影响现有项目方法论的应用"
+        ],
+        "recommendation": "建议：1)明确'目标复盘待解决'和'已执行待优化'的具体定义和区分标准；2)评估是否需要拆分项目类型字段；3)与项目团队确认变更后的管理流程适应性"
+      },
+      "final_decision": "REVIEW",
+      "approval_required": true
+    }
+  ],
+  "auto_approved": []
+}

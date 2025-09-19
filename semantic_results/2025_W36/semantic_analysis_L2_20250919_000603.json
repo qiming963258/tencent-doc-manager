@@ -1,0 +1,48 @@
+{
+  "metadata": {
+    "analysis_time": "2025-09-19 00:06:03",
+    "total_modifications": 1,
+    "layer1_passed": 0,
+    "layer2_analyzed": 1,
+    "processing_time": "44.4s"
+  },
+  "results": [
+    {
+      "modification_id": "M001",
+      "cell": "J8",
+      "column": "负责人",
+      "old_value": "赖铁荔",
+      "new_value": "曾利萍,杨佳玲,朱瀚桔",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 80.0,
+        "reason": "多人负责"
+      },
+      "layer2_result": {
+        "risk_level": "MEDIUM",
+        "decision": "REVIEW",
+        "confidence": 75,
+        "key_risks": [
+          "职责分散可能导致问责制不清晰",
+          "多人负责可能导致沟通成本增加",
+          "新负责人可能需要时间熟悉项目"
+        ],
+        "recommendation": "建议:1)明确三位新负责人的具体分工和领导关系 2)安排项目交接会议确保知识传递 3)更新相关项目文档反映此变更 4)监控初期协作情况"
+      },
+      "final_decision": "REVIEW",
+      "approval_required": true
+    }
+  ],
+  "summary": {
+    "approved": 0,
+    "conditional": 0,
+    "review_required": 1,
+    "rejected": 0,
+    "risk_distribution": {
+      "LOW": 0,
+      "MEDIUM": 0,
+      "HIGH": 1,
+      "CRITICAL": 0
+    }
+  }
+}

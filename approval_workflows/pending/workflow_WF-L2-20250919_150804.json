@@ -1,0 +1,27 @@
+{
+  "workflow_id": "WF-L2-20250919_150804",
+  "created_time": "2025-09-19 15:08:04",
+  "pending_approvals": [
+    {
+      "modification_id": "M001",
+      "cell": "I40",
+      "column": "邓总指导登记（日更新）",
+      "old_value": "0811-\n1、企业号板块的图与封面的吸睛创新需要进行结构化的改变与迭代，从内部历史点击率高的图片及外部竞对的采集拆解分析进行创新",
+      "new_value": "蔡悦莹",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 80.0,
+        "reason": "责任人变更"
+      },
+      "layer2_result": {
+        "risk_level": "HIGH",
+        "decision": "REJECT",
+        "confidence": 90,
+        "reason": "原值包含重要的项目指导内容和具体工作要求，新值仅为个人姓名，存在关键信息丢失风险"
+      },
+      "final_decision": "REJECT",
+      "approval_required": true
+    }
+  ],
+  "auto_approved": []
+}

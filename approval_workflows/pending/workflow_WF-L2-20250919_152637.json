@@ -1,0 +1,22 @@
+{
+  "workflow_id": "WF-L2-20250919_152637",
+  "created_time": "2025-09-19 15:26:37",
+  "pending_approvals": [],
+  "auto_approved": [
+    {
+      "modification_id": "M001",
+      "cell": "I70",
+      "column": "邓总指导登记（日更新）",
+      "old_value": "",
+      "new_value": "朱瀚桔",
+      "layer1_result": {
+        "judgment": "SAFE",
+        "confidence": 90.0,
+        "reason": "负责人变更"
+      },
+      "layer2_result": null,
+      "final_decision": "APPROVE",
+      "approval_required": false
+    }
+  ]
+}

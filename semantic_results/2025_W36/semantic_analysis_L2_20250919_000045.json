@@ -1,0 +1,48 @@
+{
+  "metadata": {
+    "analysis_time": "2025-09-19 00:00:45",
+    "total_modifications": 1,
+    "layer1_passed": 0,
+    "layer2_analyzed": 1,
+    "processing_time": "33.6s"
+  },
+  "results": [
+    {
+      "modification_id": "M001",
+      "cell": "C5",
+      "column": "项目类型",
+      "old_value": "目标管理",
+      "new_value": "经理日常交办",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 90.0,
+        "reason": "职责变更"
+      },
+      "layer2_result": {
+        "risk_level": "MEDIUM",
+        "decision": "REVIEW",
+        "confidence": 75,
+        "key_risks": [
+          "项目性质改变可能导致目标偏离",
+          "执行计划需要重新评估",
+          "团队协作模式可能需要调整"
+        ],
+        "recommendation": "建议召集项目相关方（包括项目经理和关键团队成员）进行深入讨论，评估这一变更对项目整体规划和执行的影响。在讨论中应明确：1) 新的项目类型定义是否准确反映了项目实际性质；2) 是否需要相应调整项目目标和关键交付物；3) 执行计划和资源分配是否需要变更。只有在充分评估并达成共识后才能批准此变更。"
+      },
+      "final_decision": "REVIEW",
+      "approval_required": true
+    }
+  ],
+  "summary": {
+    "approved": 0,
+    "conditional": 0,
+    "review_required": 1,
+    "rejected": 0,
+    "risk_distribution": {
+      "LOW": 0,
+      "MEDIUM": 0,
+      "HIGH": 1,
+      "CRITICAL": 0
+    }
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "workflow_id": "WF-L2-20250919_210823",
+  "created_time": "2025-09-19 21:08:23",
+  "pending_approvals": [
+    {
+      "modification_id": "M001",
+      "cell": "I73",
+      "column": "邓总指导登记（日更新）",
+      "old_value": "",
+      "new_value": "朱瀚桔",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 80.0,
+        "reason": "关键人变更"
+      },
+      "layer2_result": {
+        "risk_level": "MEDIUM",
+        "decision": "REVIEW",
+        "confidence": 75,
+        "reason": "修改了负责人字段，需要确认朱瀚桔是否有相应权限"
+      },
+      "final_decision": "REVIEW",
+      "approval_required": true
+    }
+  ],
+  "auto_approved": []
+}

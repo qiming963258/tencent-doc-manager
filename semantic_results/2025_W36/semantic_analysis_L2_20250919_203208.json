@@ -1,0 +1,43 @@
+{
+  "metadata": {
+    "analysis_time": "2025-09-19 20:32:08",
+    "total_modifications": 1,
+    "layer1_passed": 0,
+    "layer2_analyzed": 1,
+    "processing_time": "10.3s"
+  },
+  "results": [
+    {
+      "modification_id": "M001",
+      "cell": "I11",
+      "column": "邓总指导登记（日更新）",
+      "old_value": "0813-\n1、根据周度运营数据识别出来的一般及无效笔记，分析对应的内容定位进行优化；\n2、系统功能下周一上线前，前置识别需要优化的内容定位进行调整\n3、下周一重点汇报半月度内容定位优化迭代进度、内容",
+      "new_value": "蔡悦莹",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 80.0,
+        "reason": "责任人变更"
+      },
+      "layer2_result": {
+        "risk_level": "HIGH",
+        "decision": "REJECT",
+        "confidence": 90,
+        "reason": "原值包含重要的工作计划和指导内容，新值替换为个人姓名，导致重要信息丢失，影响工作执行和追踪"
+      },
+      "final_decision": "REJECT",
+      "approval_required": true
+    }
+  ],
+  "summary": {
+    "approved": 0,
+    "conditional": 0,
+    "review_required": 0,
+    "rejected": 1,
+    "risk_distribution": {
+      "LOW": 0,
+      "MEDIUM": 0,
+      "HIGH": 0,
+      "CRITICAL": 1
+    }
+  }
+}

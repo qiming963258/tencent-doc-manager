@@ -1,0 +1,118 @@
+{
+  "id": "20250919_144203",
+  "start_time": "2025-09-19T14:42:03.675459",
+  "end_time": "2025-09-19T14:44:19.689793",
+  "status": "error",
+  "results": {},
+  "logs": [
+    {
+      "timestamp": "14:42:03",
+      "level": "INFO",
+      "message": "📂 刷新模式：使用现有基线文件"
+    },
+    {
+      "timestamp": "14:42:03",
+      "level": "INFO",
+      "message": "✅ 找到基线文件: tencent_出国销售计划表_20250915_0145_baseline_W38.csv"
+    },
+    {
+      "timestamp": "14:42:03",
+      "level": "INFO",
+      "message": "📊 基线描述: 使用本周W38基准版"
+    },
+    {
+      "timestamp": "14:42:03",
+      "level": "INFO",
+      "message": "开始获取目标文档..."
+    },
+    {
+      "timestamp": "14:42:03",
+      "level": "INFO",
+      "message": "🔄 强制下载模式：跳过本地文件检查"
+    },
+    {
+      "timestamp": "14:42:03",
+      "level": "INFO",
+      "message": "开始下载目标文档并规范化存储..."
+    },
+    {
+      "timestamp": "14:42:03",
+      "level": "INFO",
+      "message": "🌐 开始下载目标文档..."
+    },
+    {
+      "timestamp": "14:42:48",
+      "level": "INFO",
+      "message": "📁 目标文档将存储为midweek版本"
+    },
+    {
+      "timestamp": "14:42:48",
+      "level": "INFO",
+      "message": "✅ 目标文档已存储到midweek文件夹: tencent_出国销售计划表_20250919_1442_midweek_W38.csv"
+    },
+    {
+      "timestamp": "14:42:48",
+      "level": "INFO",
+      "message": "✅ 目标文档下载并规范化存储成功: tencent_出国销售计划表_20250919_1442_midweek_W38.csv"
+    },
+    {
+      "timestamp": "14:42:48",
+      "level": "INFO",
+      "message": "开始对比分析..."
+    },
+    {
+      "timestamp": "14:42:48",
+      "level": "INFO",
+      "message": "✅ 对比分析完成，发现 18 处变更"
+    },
+    {
+      "timestamp": "14:42:48",
+      "level": "INFO",
+      "message": "开始列标准化..."
+    },
+    {
+      "timestamp": "14:43:01",
+      "level": "INFO",
+      "message": "✅ 列标准化V3完成，标准化了 3 个列"
+    },
+    {
+      "timestamp": "14:43:01",
+      "level": "INFO",
+      "message": "开始L2语义分析和L1L3规则打分..."
+    },
+    {
+      "timestamp": "14:43:01",
+      "level": "INFO",
+      "message": "✅ 语义分析完成，分析了 18 处变更"
+    },
+    {
+      "timestamp": "14:43:01",
+      "level": "INFO",
+      "message": "生成详细打分JSON..."
+    },
+    {
+      "timestamp": "14:43:32",
+      "level": "INFO",
+      "message": "✅ 详细打分生成完成: detailed_score_tmpvblnd84f_20250919_144332.json"
+    },
+    {
+      "timestamp": "14:43:32",
+      "level": "INFO",
+      "message": "下载目标文档的Excel格式..."
+    },
+    {
+      "timestamp": "14:44:19",
+      "level": "ERROR",
+      "message": "❌ 执行出错: a coroutine was expected, got {'success': True, 'file_path': 'csv_versions/2025_W38/midweek/tencent_111测试版本-出国销售计划表_20250919_1444_midweek_W38.xlsx', 'files': ['csv_versions/2025_W38/midweek/tencent_111测试版本-出国销售计划表_20250919_1444_midweek_W38.xlsx'], 'error': None, 'backup_methods_used': True, 'export_format': 'xlsx', 'file_count': 1}"
+    }
+  ],
+  "settings": {
+    "task_type": "full",
+    "auto_download": true,
+    "force_download": true,
+    "enable_ai_analysis": true,
+    "enable_excel_marking": true,
+    "enable_upload": true,
+    "use_existing_baseline": true
+  }
+}

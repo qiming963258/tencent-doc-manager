@@ -1,0 +1,27 @@
+{
+  "workflow_id": "WF-L2-20250919_205121",
+  "created_time": "2025-09-19 20:51:21",
+  "pending_approvals": [
+    {
+      "modification_id": "M001",
+      "cell": "K43",
+      "column": "协助人",
+      "old_value": "王寒晓",
+      "new_value": "邓总",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 80.0,
+        "reason": "责任人变更"
+      },
+      "layer2_result": {
+        "risk_level": "MEDIUM",
+        "decision": "REVIEW",
+        "confidence": 75,
+        "reason": "协助人从普通员工变更为高层管理人员（邓总），可能涉及权限或责任变动，需要确认变更原因"
+      },
+      "final_decision": "REVIEW",
+      "approval_required": true
+    }
+  ],
+  "auto_approved": []
+}
