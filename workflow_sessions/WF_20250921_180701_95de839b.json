@@ -1,0 +1,205 @@
+{
+  "session_id": "WF_20250921_180701_95de839b",
+  "created_at": "2025-09-21T18:07:01.179242",
+  "document_id": "DWEFNU25TemFnZXJN",
+  "document_name": "出国销售计划表",
+  "baseline_week": "W38",
+  "current_week": "W38",
+  "status": "completed",
+  "current_step": 11,
+  "chain": [
+    {
+      "step": "download_csv",
+      "step_number": 1,
+      "timestamp": "2025-09-21T18:07:01.179894",
+      "input_files": {
+        "url": "https://docs.qq.com/sheet/DWEFNU25TemFnZXJN"
+      },
+      "output_files": {
+        "csv": "/root/projects/tencent-doc-manager/csv_versions/2025_WW38/current/tencent_出国销售计划表_20250921_180701_current_WW38_WF_20250921_180701_95de839b.csv"
+      },
+      "metadata": {
+        "timestamp": "20250921_180701"
+      },
+      "checksum": {
+        "csv": "c5e537de"
+      }
+    },
+    {
+      "step": "compare_baseline",
+      "step_number": 2,
+      "timestamp": "2025-09-21T18:07:01.181897",
+      "input_files": {
+        "baseline": "/root/projects/tencent-doc-manager/csv_versions/2025_W38/baseline/tencent_出国销售计划表_20250915_0145_baseline_W38.csv",
+        "target": "/root/projects/tencent-doc-manager/csv_versions/2025_WW38/current/tencent_出国销售计划表_20250921_180701_current_WW38_WF_20250921_180701_95de839b.csv"
+      },
+      "output_files": {
+        "diff": "/root/projects/tencent-doc-manager/scoring_results/diff/diff_WF_20250921_180701_95de839b.json"
+      },
+      "metadata": {
+        "total_changes": 5
+      },
+      "checksum": {
+        "diff": "6c0fe2d8"
+      }
+    },
+    {
+      "step": "extract_differences",
+      "step_number": 3,
+      "timestamp": "2025-09-21T18:07:01.182706",
+      "input_files": {
+        "diff": "/root/projects/tencent-doc-manager/scoring_results/diff/diff_WF_20250921_180701_95de839b.json"
+      },
+      "output_files": {
+        "changes": "/root/projects/tencent-doc-manager/scoring_results/changes/changes_WF_20250921_180701_95de839b.json"
+      },
+      "metadata": {
+        "total_extracted": 5
+      },
+      "checksum": {
+        "changes": "19974287"
+      }
+    },
+    {
+      "step": "ai_standardize",
+      "step_number": 4,
+      "timestamp": "2025-09-21T18:07:01.185177",
+      "input_files": {
+        "changes": "/root/projects/tencent-doc-manager/scoring_results/changes/changes_WF_20250921_180701_95de839b.json"
+      },
+      "output_files": {
+        "standard": "/root/projects/tencent-doc-manager/scoring_results/standard/standard_WF_20250921_180701_95de839b.json"
+      },
+      "metadata": {
+        "risk_levels": {
+          "L1": 2,
+          "L2": 2,
+          "L3": 1
+        }
+      },
+      "checksum": {
+        "standard": "7381effb"
+      }
+    },
+    {
+      "step": "detailed_scoring",
+      "step_number": 5,
+      "timestamp": "2025-09-21T18:07:01.187872",
+      "input_files": {
+        "standard": "/root/projects/tencent-doc-manager/scoring_results/standard/standard_WF_20250921_180701_95de839b.json"
+      },
+      "output_files": {
+        "scores": "/root/projects/tencent-doc-manager/scoring_results/detailed/scores_WF_20250921_180701_95de839b.json"
+      },
+      "metadata": {
+        "avg_score": 47.0
+      },
+      "checksum": {
+        "scores": "9c633384"
+      }
+    },
+    {
+      "step": "comprehensive_scoring",
+      "step_number": 6,
+      "timestamp": "2025-09-21T18:07:01.188913",
+      "input_files": {
+        "scores": "/root/projects/tencent-doc-manager/scoring_results/detailed/scores_WF_20250921_180701_95de839b.json"
+      },
+      "output_files": {
+        "comprehensive": "/root/projects/tencent-doc-manager/scoring_results/comprehensive/comprehensive_WF_20250921_180701_95de839b.json"
+      },
+      "metadata": {
+        "overall_score": 47.0
+      },
+      "checksum": {
+        "comprehensive": "72c1d906"
+      }
+    },
+    {
+      "step": "ui_adaptation",
+      "step_number": 7,
+      "timestamp": "2025-09-21T18:07:01.189956",
+      "input_files": {
+        "comprehensive": "/root/projects/tencent-doc-manager/scoring_results/comprehensive/comprehensive_WF_20250921_180701_95de839b.json"
+      },
+      "output_files": {
+        "ui_data": "/root/projects/tencent-doc-manager/scoring_results/ui_data/ui_data_WF_20250921_180701_95de839b.json"
+      },
+      "metadata": {
+        "parameters_count": 5200
+      },
+      "checksum": {
+        "ui_data": "62664a95"
+      }
+    },
+    {
+      "step": "download_xlsx",
+      "step_number": 8,
+      "timestamp": "2025-09-21T18:07:01.360516",
+      "input_files": {
+        "ui_data": "/root/projects/tencent-doc-manager/scoring_results/ui_data/ui_data_WF_20250921_180701_95de839b.json"
+      },
+      "output_files": {
+        "xlsx": "/root/projects/tencent-doc-manager/excel_outputs/export_WF_20250921_180701_95de839b.xlsx"
+      },
+      "metadata": {
+        "rows": 31,
+        "cols": 19
+      },
+      "checksum": {
+        "xlsx": "4d279afd"
+      }
+    },
+    {
+      "step": "apply_coloring",
+      "step_number": 9,
+      "timestamp": "2025-09-21T18:07:01.390221",
+      "input_files": {
+        "xlsx": "/root/projects/tencent-doc-manager/excel_outputs/export_WF_20250921_180701_95de839b.xlsx",
+        "scores": "/root/projects/tencent-doc-manager/scoring_results/detailed/scores_WF_20250921_180701_95de839b.json"
+      },
+      "output_files": {
+        "colored": "/root/projects/tencent-doc-manager/excel_outputs/marked/colored_WF_20250921_180701_95de839b.xlsx"
+      },
+      "metadata": {
+        "cells_marked": 5
+      },
+      "checksum": {
+        "colored": "7e10788e"
+      }
+    },
+    {
+      "step": "upload_to_tencent",
+      "step_number": 10,
+      "timestamp": "2025-09-21T18:07:01.391380",
+      "input_files": {
+        "colored": "/root/projects/tencent-doc-manager/excel_outputs/marked/colored_WF_20250921_180701_95de839b.xlsx"
+      },
+      "output_files": {
+        "url": "https:/docs.qq.com/sheet/UPLOAD_WF_20250_WF_20250921_180701_95de839b"
+      },
+      "metadata": {
+        "simulated": true
+      },
+      "checksum": {}
+    },
+    {
+      "step": "update_ui_links",
+      "step_number": 11,
+      "timestamp": "2025-09-21T18:07:01.392307",
+      "input_files": {
+        "url": "https://docs.qq.com/sheet/UPLOAD_WF_20250"
+      },
+      "output_files": {
+        "ui_update": "success_WF_20250921_180701_95de839b"
+      },
+      "metadata": {
+        "updated_at": "2025-09-21T18:07:01.392233",
+        "doc_name": "出国销售计划表",
+        "upload_url": "https://docs.qq.com/sheet/UPLOAD_WF_20250",
+        "status": "active"
+      },
+      "checksum": {}
+    }
+  ]
+}

@@ -1,0 +1,35 @@
+{
+  "session_id": "WF_20250921_180555_33d9eec4",
+  "created_at": "2025-09-21T18:05:55.360939",
+  "document_id": "DWEFNU25TemFnZXJN",
+  "document_name": "副本-测试版本-出国销售计划表",
+  "baseline_week": "W38",
+  "current_week": "W38",
+  "status": "failed",
+  "current_step": 1,
+  "chain": [
+    {
+      "step": "download_csv",
+      "step_number": 1,
+      "timestamp": "2025-09-21T18:05:55.366902",
+      "input_files": {
+        "url": "https://docs.qq.com/sheet/DWEFNU25TemFnZXJN"
+      },
+      "output_files": {
+        "csv": "/root/projects/tencent-doc-manager/csv_versions/2025_WW38/current/tencent_副本-测试版本-出国销售计划表_20250921_180555_current_WW38_WF_20250921_180555_33d9eec4.csv"
+      },
+      "metadata": {
+        "timestamp": "20250921_180555"
+      },
+      "checksum": {
+        "csv": "c5e537de"
+      }
+    },
+    {
+      "error": "文档不匹配！基线:出国销售计划表 vs 目标:副本-测试版本-出国销售计划表\n这会导致虚假的变更检测（如2010处假变更）",
+      "timestamp": "2025-09-21T18:05:55.368363",
+      "step": "compare_baseline",
+      "traceback": "NoneType: None\n"
+    }
+  ]
+}

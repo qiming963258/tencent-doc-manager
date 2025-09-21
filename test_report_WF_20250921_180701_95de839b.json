@@ -1,0 +1,89 @@
+{
+  "start_time": "2025-09-21T18:07:01.179052",
+  "end_time": "2025-09-21T18:07:01.394182",
+  "session_id": "WF_20250921_180701_95de839b",
+  "steps": [
+    {
+      "step": 1,
+      "name": "download_csv",
+      "status": "success",
+      "file": "/root/projects/tencent-doc-manager/csv_versions/2025_WW38/current/tencent_出国销售计划表_20250921_180701_current_WW38_WF_20250921_180701_95de839b.csv"
+    },
+    {
+      "step": 2,
+      "name": "compare_baseline",
+      "status": "success",
+      "changes": 5
+    },
+    {
+      "step": 3,
+      "name": "extract_differences",
+      "status": "success",
+      "extracted": 5
+    },
+    {
+      "step": 4,
+      "name": "ai_standardize",
+      "status": "success",
+      "risk_levels": {
+        "L1": 2,
+        "L2": 2,
+        "L3": 1
+      }
+    },
+    {
+      "step": 5,
+      "name": "detailed_scoring",
+      "status": "success",
+      "avg_score": 47.0
+    },
+    {
+      "step": 6,
+      "name": "comprehensive_scoring",
+      "status": "success",
+      "overall_score": 47.0
+    },
+    {
+      "step": 7,
+      "name": "ui_adaptation",
+      "status": "success",
+      "parameters": 5200
+    },
+    {
+      "step": 8,
+      "name": "download_xlsx",
+      "status": "success",
+      "file_size": 7498
+    },
+    {
+      "step": 9,
+      "name": "apply_coloring",
+      "status": "success",
+      "cells_marked": 5
+    },
+    {
+      "step": 10,
+      "name": "upload_to_tencent",
+      "status": "simulated",
+      "url": "https://docs.qq.com/sheet/UPLOAD_WF_20250"
+    },
+    {
+      "step": 11,
+      "name": "update_ui_links",
+      "status": "success",
+      "updated": true
+    }
+  ],
+  "files_created": [
+    "/root/projects/tencent-doc-manager/csv_versions/2025_WW38/current/tencent_出国销售计划表_20250921_180701_current_WW38_WF_20250921_180701_95de839b.csv",
+    "/root/projects/tencent-doc-manager/scoring_results/diff/diff_WF_20250921_180701_95de839b.json",
+    "/root/projects/tencent-doc-manager/scoring_results/changes/changes_WF_20250921_180701_95de839b.json",
+    "/root/projects/tencent-doc-manager/scoring_results/standard/standard_WF_20250921_180701_95de839b.json",
+    "/root/projects/tencent-doc-manager/scoring_results/detailed/scores_WF_20250921_180701_95de839b.json",
+    "/root/projects/tencent-doc-manager/scoring_results/comprehensive/comprehensive_WF_20250921_180701_95de839b.json",
+    "/root/projects/tencent-doc-manager/scoring_results/ui_data/ui_data_WF_20250921_180701_95de839b.json",
+    "/root/projects/tencent-doc-manager/excel_outputs/export_WF_20250921_180701_95de839b.xlsx",
+    "/root/projects/tencent-doc-manager/excel_outputs/marked/colored_WF_20250921_180701_95de839b.xlsx"
+  ],
+  "errors": []
+}
