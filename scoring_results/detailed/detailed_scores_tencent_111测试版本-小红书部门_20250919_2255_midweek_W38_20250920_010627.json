@@ -1,0 +1,58 @@
+{
+  "metadata": {
+    "target_file": "tencent_111测试版本-小红书部门_20250919_2255_midweek_W38.xlsx",
+    "generated_at": "2025-09-20T01:06:27.636836",
+    "week": "W38"
+  },
+  "statistics": {
+    "total_cells": 1000,
+    "changed_cells": 20
+  },
+  "cell_scores": {
+    "A2": {
+      "old_value": "100",
+      "new_value": "150",
+      "change_type": "numeric_increase",
+      "risk_level": "HIGH",
+      "column_level": "L1",
+      "score": 30,
+      "color_code": "FF0000"
+    },
+    "B3": {
+      "old_value": "计划",
+      "new_value": "完成",
+      "change_type": "text_change",
+      "risk_level": "MEDIUM",
+      "column_level": "L2",
+      "score": 60,
+      "color_code": "FFA500"
+    },
+    "C4": {
+      "old_value": "2025-01-01",
+      "new_value": "2025-02-01",
+      "change_type": "date_change",
+      "risk_level": "LOW",
+      "column_level": "L3",
+      "score": 80,
+      "color_code": "00FF00"
+    },
+    "D5": {
+      "old_value": "",
+      "new_value": "新增内容",
+      "change_type": "addition",
+      "risk_level": "MEDIUM",
+      "column_level": "L2",
+      "score": 60,
+      "color_code": "FFA500"
+    },
+    "E6": {
+      "old_value": "删除内容",
+      "new_value": "",
+      "change_type": "deletion",
+      "risk_level": "HIGH",
+      "column_level": "L1",
+      "score": 30,
+      "color_code": "FF0000"
+    }
+  }
+}

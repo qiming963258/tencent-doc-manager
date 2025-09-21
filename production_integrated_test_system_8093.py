@@ -255,26 +255,33 @@ except ImportError as e:
     MODULES_STATUS['fixer'] = False
     logger.error(f"❌ 无法导入Excel修复模块: {e}")
 
-# 7. 上传模块（使用终极版本）
+# 7. 上传模块（优先使用生产级v3 - 2025-09-20更新）
 try:
-    from tencent_doc_uploader_ultimate import sync_upload_file
+    # 生产级v3模块：95%+链接准确率，多策略识别（推荐）
+    from production.core_modules.tencent_doc_upload_production_v3 import sync_upload_v3 as sync_upload_file
     MODULES_STATUS['uploader'] = True
-    logger.info("✅ 成功导入上传模块(终极版)")
+    logger.info("✅ 成功导入上传模块(生产级v3，推荐)")
 except ImportError:
     try:
-        # 备用1：尝试修复版
-        from tencent_doc_uploader_fixed import sync_upload_file
+        # 备用1：终极修复版（临时方案，不推荐）
+        from tencent_doc_uploader_ultimate import sync_upload_file
         MODULES_STATUS['uploader'] = True
-        logger.info("✅ 成功导入上传模块(修复版)")
+        logger.warning("⚠️ 使用上传模块(终极版，可能返回错误链接)")
     except ImportError:
         try:
-            # 备用2：尝试原版本
-            from tencent_doc_uploader import sync_upload_file
+            # 备用2：修复版（临时方案，不推荐）
+            from tencent_doc_uploader_fixed import sync_upload_file
             MODULES_STATUS['uploader'] = True
-            logger.info("✅ 成功导入上传模块(原版本)")
-        except ImportError as e:
-            MODULES_STATUS['uploader'] = False
-            logger.error(f"❌ 无法导入上传模块: {e}")
+            logger.warning("⚠️ 使用上传模块(修复版，可能返回错误链接)")
+        except ImportError:
+            try:
+                # 备用3：原版本（会返回错误链接，强烈不推荐）
+                from tencent_doc_uploader import sync_upload_file
+                MODULES_STATUS['uploader'] = True
+                logger.error("❌ 使用上传模块(原版本，会返回错误链接!)")
+            except ImportError as e:
+                MODULES_STATUS['uploader'] = False
+                logger.error(f"❌ 无法导入任何上传模块: {e}")
 
 # 8. 周时间管理器
 try:

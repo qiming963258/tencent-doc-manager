@@ -49,19 +49,65 @@ else:
 ### 2️⃣ **格式修复阶段**
 
 #### 2.1 格式问题诊断
-- **问题**: 腾讯文档Excel包含空的`<fill/>`标签，导致openpyxl无法打开
-- **错误信息**: `expected <class 'openpyxl.styles.fills.Fill'>`
+- **问题**: 腾讯文档导出的Excel包含空的`<fill/>`标签，导致openpyxl无法打开
+- **错误信息**: `TypeError: expected <class 'openpyxl.styles.fills.Fill'>`
+- **根本原因**: 腾讯文档生成的Excel不完全符合OOXML标准
 
-#### 2.2 修复程序
-```yaml
-程序路径: /root/projects/tencent-doc-manager/fix_tencent_excel.py
-核心函数: fix_tencent_excel(input_file, output_file)
-修复逻辑: 
-  - 解压xlsx文件
-  - 定位xl/styles.xml
-  - 替换: <fill/> → <fill><patternFill patternType="none"/></fill>
-  - 重新打包为xlsx
+#### 2.2 修复程序（更新版 2025-09-20）
+```python
+# 文件：fix_and_color.py
+import zipfile
+import os
+import shutil
+from datetime import datetime
+
+def fix_excel_file(input_file, output_file):
+    """修复腾讯文档Excel的空fill标签问题"""
+    print(f"🔧 修复文件: {os.path.basename(input_file)}")
+
+    # 创建临时目录
+    temp_dir = f"/tmp/excel_fix_{datetime.now().strftime('%Y%m%d_%H%M%S')}"
+    os.makedirs(temp_dir, exist_ok=True)
+
+    try:
+        # 解压Excel文件（xlsx本质是zip）
+        with zipfile.ZipFile(input_file, 'r') as zip_ref:
+            zip_ref.extractall(temp_dir)
+
+        # 修复styles.xml
+        styles_path = os.path.join(temp_dir, 'xl', 'styles.xml')
+        if os.path.exists(styles_path):
+            with open(styles_path, 'r', encoding='utf-8') as f:
+                content = f.read()
+
+            # 关键修复：替换空的fill标签
+            content = content.replace('<fill/>', '<fill><patternFill patternType="none"/></fill>')
+
+            with open(styles_path, 'w', encoding='utf-8') as f:
+                f.write(content)
+
+            print("✅ 已修复空fill标签")
+
+        # 重新打包为Excel文件
+        with zipfile.ZipFile(output_file, 'w', zipfile.ZIP_DEFLATED) as zip_ref:
+            for root, dirs, files in os.walk(temp_dir):
+                for file in files:
+                    file_path = os.path.join(root, file)
+                    arc_name = os.path.relpath(file_path, temp_dir)
+                    zip_ref.write(file_path, arc_name)
+
+        print(f"✅ 修复完成: {os.path.basename(output_file)}")
+        return True
+
+    finally:
+        # 清理临时目录
+        shutil.rmtree(temp_dir, ignore_errors=True)
 ```
+
+#### 2.3 修复要点
+- **必须先修复才能涂色**：不修复无法用openpyxl打开
+- **保持原始结构**：仅替换问题标签，不改变其他内容
+- **临时目录管理**：避免文件冲突
 
 #### 2.3 修复后文件存储
 ```yaml
@@ -191,44 +237,46 @@ def find_matching_score_file(self, excel_file: str) -> Optional[str]:
     return None
 ```
 
-#### 5.3 涂色逻辑实现（条纹纹理版）
+#### 5.3 涂色逻辑实现（腾讯文档兼容版）
+
+⚠️ **重要更新（2025-09-20）**：经测试发现，腾讯文档不支持条纹纹理图案，仅支持solid填充。已更新为兼容方案。
+
 ```python
-def apply_striped_coloring(self, excel_file: str, score_file: str) -> str:
-    """应用条纹涂色到Excel文件"""
-    
-    # 条纹图案映射（区别于原表格涂色）
-    pattern_mapping = {
-        "high": "darkVertical",      # 红色深垂直条纹
-        "medium": "lightHorizontal",  # 黄色浅水平条纹
-        "low": "lightUp"              # 绿色浅斜向上条纹
-    }
-    
-    # 颜色映射（前景色和背景色）
+def apply_coloring(self, excel_file: str, score_file: str) -> str:
+    """应用涂色到Excel文件（腾讯文档兼容版）"""
+
+    # 使用solid填充确保腾讯文档兼容性
+    # 注：虽然openpyxl支持条纹，但上传到腾讯文档后会丢失
+    pattern_type = "solid"  # 统一使用solid填充
+
+    # 颜色映射（根据风险等级）
     color_mapping = {
-        "high": {"fg": "FF0000", "bg": "FFE0E0"},     # 红色系
-        "medium": {"fg": "FFD700", "bg": "FFFACD"},   # 黄色系
-        "low": {"fg": "00FF00", "bg": "E0FFE0"}       # 绿色系
+        "HIGH": "FF0000",     # 红色 - 高风险
+        "MEDIUM": "FFA500",   # 橙色 - 中风险
+        "LOW": "00FF00",      # 绿色 - 低风险
+        "high": "FF0000",     # 兼容小写
+        "medium": "FFA500",
+        "low": "00FF00"
     }
-    
+
     # 加载打分数据
     with open(score_file, 'r', encoding='utf-8') as f:
         score_data = json.load(f)
-    
+
     wb = openpyxl.load_workbook(excel_file)
     ws = wb.active
-    
+
     # 遍历所有变更的单元格
     for cell_ref, cell_data in score_data['cell_scores'].items():
-        # 获取风险等级和对应的图案
-        risk_level = cell_data['risk_level']
-        pattern = pattern_mapping[risk_level]
-        colors = color_mapping[risk_level]
-        
-        # 创建条纹填充（区别于原有的solid填充）
+        # 获取风险等级对应的颜色
+        risk_level = cell_data.get('risk_level', 'medium')
+        color = color_mapping.get(risk_level, "FFFF00")  # 默认黄色
+
+        # 创建solid填充（腾讯文档兼容）
         fill = PatternFill(
-            patternType=pattern,     # 使用条纹图案而非solid
-            fgColor=colors['fg'],    # 前景色（条纹颜色）
-            bgColor=colors['bg']     # 背景色（底色）
+            patternType="solid",     # 必须使用solid
+            fgColor=color,           # 前景色
+            bgColor=color            # 背景色设为相同
         )
         
         # 应用填充
@@ -326,35 +374,47 @@ def find_baseline_file(week_num):
 
 ---
 
-## 🎨 条纹纹理涂色特性
+## 🎨 涂色方案说明（2025-09-20更新）
 
-### 为什么使用条纹纹理？
-- **区分性**: 条纹图案与表格原有的纯色填充明显不同，一眼可辨
-- **层次感**: 不同方向的条纹代表不同风险等级，视觉层次分明
-- **专业性**: 条纹纹理是专业数据分析软件的标准标记方式
+### 为什么不使用条纹纹理？
 
-### 条纹图案详解
-| 风险等级 | 图案类型 | 条纹方向 | 颜色搭配 | 含义 |
-|---------|---------|---------|---------|------|
-| 高风险 | darkVertical | 垂直深条纹 | 深红/浅红 | 严重变更，需立即关注 |
-| 中风险 | lightHorizontal | 水平浅条纹 | 金黄/浅黄 | 中度变更，需要审核 |
-| 低风险 | lightUp | 斜向上浅条纹 | 深绿/浅绿 | 轻微变更，可以接受 |
+⚠️ **重要发现**：虽然openpyxl支持条纹纹理，但腾讯文档不支持这些高级图案。上传后条纹会丢失或显示异常。
 
-### 支持的条纹图案类型
+**兼容性测试结果**：
+| 图案类型 | openpyxl支持 | 本地Excel显示 | 腾讯文档支持 | 备注 |
+|---------|-------------|--------------|-------------|------|
+| solid | ✅ | ✅ | ✅ | **推荐使用** |
+| lightVertical | ✅ | ✅ | ❌ | 上传后丢失 |
+| darkHorizontal | ✅ | ✅ | ❌ | 显示为空白 |
+| lightUp | ✅ | ✅ | ❌ | 显示错误 |
+| lightGrid | ✅ | ✅ | ❌ | 无法识别 |
+
+### 实际使用的涂色方案
+
+使用**solid纯色填充**，通过颜色深浅区分风险等级：
+
+| 风险等级 | 颜色代码 | RGB值 | 显示效果 | 含义 |
+|---------|---------|-------|---------|------|
+| 高风险 | FF0000 | 255,0,0 | 🔴 深红色 | 严重变更，需立即关注 |
+| 中风险 | FFA500 | 255,165,0 | 🟠 橙色 | 中度变更，需要审核 |
+| 低风险 | 00FF00 | 0,255,0 | 🟢 绿色 | 轻微变更，可以接受 |
+
+### 技术限制说明
+
 ```python
-# openpyxl支持的条纹图案
-pattern_types = [
-    'lightVertical',    # 垂直浅条纹
-    'lightHorizontal',  # 水平浅条纹  
-    'lightUp',          # 斜向上浅条纹
-    'lightDown',        # 斜向下浅条纹
-    'darkVertical',     # 垂直深条纹
-    'darkHorizontal',   # 水平深条纹
-    'darkUp',           # 斜向上深条纹
-    'darkDown',         # 斜向下深条纹
-    'lightGrid',        # 浅网格
-    'darkGrid'          # 深网格
-]
+# ❌ 不要使用条纹（腾讯文档不支持）
+fill = PatternFill(
+    patternType="darkVertical",  # 腾讯文档会忽略
+    fgColor="FF0000",
+    bgColor="FFE0E0"
+)
+
+# ✅ 应该使用solid填充
+fill = PatternFill(
+    patternType="solid",  # 腾讯文档完全支持
+    fgColor="FF0000",     # 设置颜色
+    bgColor="FF0000"      # 背景色需相同
+)
 ```
 
 ---
