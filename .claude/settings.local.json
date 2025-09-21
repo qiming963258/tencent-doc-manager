@@ -166,7 +166,9 @@
       "Bash(git ci:*)",
       "Bash(/dev/null)",
       "Bash(TZ:*)",
-      "Bash(export GIT_EDITOR=true)"
+      "Bash(export GIT_EDITOR=true)",
+      "Bash(git var:*)",
+      "Bash(gitc \"完成全流程唯一性传递机制和Git永久修复\")"
     ],
     "deny": [],
     "ask": [],

@@ -1,0 +1,24 @@
+{
+  "session_id": "WF_20250921_161850_9e5f72e5",
+  "created_at": "2025-09-21T16:18:50.209108",
+  "document_id": "DWFJzdWNwd0RGbU5R",
+  "document_name": "小红书部门",
+  "baseline_week": "W37",
+  "current_week": "W38",
+  "status": "failed",
+  "current_step": 0,
+  "chain": [
+    {
+      "error": "步骤顺序错误: 期望download_csv, 实际compare_baseline",
+      "timestamp": "2025-09-21T16:18:50.209369",
+      "step": "download_csv",
+      "traceback": "NoneType: None\n"
+    },
+    {
+      "error": "文档不匹配！基线:出国销售计划表 vs 目标:小红书部门\n这会导致虚假的变更检测（如2010处假变更）",
+      "timestamp": "2025-09-21T16:18:50.210194",
+      "step": "download_csv",
+      "traceback": "NoneType: None\n"
+    }
+  ]
+}

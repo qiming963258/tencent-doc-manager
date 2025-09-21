@@ -1,0 +1,83 @@
+{
+  "check_time": "2025-09-21T14:36:08.173943",
+  "summary": {
+    "total_modules": 5,
+    "using_config_center": 1,
+    "has_issues": 3,
+    "config_center_usage_rate": "20.0%"
+  },
+  "modules_to_fix": [
+    "production/core_modules/comprehensive_score_generator_v2.py",
+    "production/generate_comprehensive_score.py"
+  ],
+  "detailed_results": [
+    {
+      "path": "/root/projects/tencent-doc-manager/intelligent_excel_marker_solid.py",
+      "uses_config_center": false,
+      "has_own_columns": false,
+      "has_own_risk_levels": false,
+      "issues": []
+    },
+    {
+      "path": "/root/projects/tencent-doc-manager/production_integrated_test_system_8093.py",
+      "uses_config_center": false,
+      "has_own_columns": false,
+      "has_own_risk_levels": false,
+      "issues": []
+    },
+    {
+      "path": "/root/projects/tencent-doc-manager/production/core_modules/comprehensive_score_generator_v2.py",
+      "uses_config_center": false,
+      "has_own_columns": true,
+      "has_own_risk_levels": false,
+      "issues": [
+        {
+          "type": "wrong_column_name",
+          "wrong": "复盘时间",
+          "correct": "最新复盘时间",
+          "line": 30
+        }
+      ]
+    },
+    {
+      "path": "/root/projects/tencent-doc-manager/production/core_modules/comparison_to_scoring_adapter.py",
+      "uses_config_center": true,
+      "has_own_columns": false,
+      "has_own_risk_levels": false,
+      "issues": [
+        {
+          "type": "wrong_column_name",
+          "wrong": "复盘时间",
+          "correct": "最新复盘时间",
+          "line": 174
+        }
+      ]
+    },
+    {
+      "path": "/root/projects/tencent-doc-manager/production/generate_comprehensive_score.py",
+      "uses_config_center": false,
+      "has_own_columns": true,
+      "has_own_risk_levels": true,
+      "issues": [
+        {
+          "type": "wrong_column_name",
+          "wrong": "形成计划清单",
+          "correct": "完成链接",
+          "line": 22
+        },
+        {
+          "type": "wrong_column_name",
+          "wrong": "进度分析总结",
+          "correct": "经理分析复盘",
+          "line": 22
+        },
+        {
+          "type": "wrong_column_name",
+          "wrong": "复盘时间",
+          "correct": "最新复盘时间",
+          "line": 22
+        }
+      ]
+    }
+  ]
+}

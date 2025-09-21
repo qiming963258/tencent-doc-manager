@@ -1,0 +1,18 @@
+{
+  "session_id": "WF_20250921_161646_ea233930",
+  "created_at": "2025-09-21T16:16:46.377739",
+  "document_id": "DWFJzdWNwd0RGbU5R",
+  "document_name": "小红书部门",
+  "baseline_week": "W37",
+  "current_week": "W38",
+  "status": "failed",
+  "current_step": 0,
+  "chain": [
+    {
+      "error": "输入文件不存在: url=https://docs.qq.com/sheet/DWFJzdWNwd0RGbU5R",
+      "timestamp": "2025-09-21T16:16:46.378089",
+      "step": "download_csv",
+      "traceback": "NoneType: None\n"
+    }
+  ]
+}

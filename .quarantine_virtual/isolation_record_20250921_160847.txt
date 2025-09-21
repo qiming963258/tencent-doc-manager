@@ -1,0 +1,43 @@
+隔离时间: 2025-09-21 16:08:47.403233
+隔离文件数: 39
+
+文件列表:
+  production/servers/generate_coherent_test_data.py
+  generate_real_test_data.py
+  csv_versions/2025_W37/midweek/test_20250829_0054_v005.csv
+  test_results/test_summary_20250827_101609.json
+  real_test_results/test_report_20250828_102632.json
+  test_data/test_baseline.csv
+  test_DWEVjZndkR2xVSWJN_CSV格式_20250827_231718.csv
+  csv_versions/archive/test_20250829_0041_v003.csv
+  csv_versions/archive/test_data_20250829_1050_v001.csv
+  excel_uploads/20250910_134049_test_data.xlsx
+  csv_versions/2025_W37/midweek/test_data_20250829_1050_v002.csv
+  production/test_download.csv
+  csv_security_results/test_comparison_comparison.json
+  generate_comprehensive_test_data.py
+  test_files.json
+  test_score_solid.json
+  csv_versions/standard_outputs/test_standard_output_20250818_150724.json
+  csv_versions/archive/test_20250829_0042_v004.csv
+  scoring_results/detailed/detailed_scores_tencent_副本-测试版本-出国销售计划表-工作表1_20250911_1323_midweek_W37_20250911_132316.json
+  csv_versions/archive/test_20250829_0020_v002.csv
+  csv_versions/current/test_20250829_0054_v005.csv
+  test_data/test_current.csv
+  csv_versions/archive/test_20250829_0018_v001.csv
+  test_column_mapping.json
+  backup_20250908/core_modules/mock_end_to_end_test.py
+  test/production/mock_end_to_end_test.py
+  test_DWEVjZndkR2xVSWJN_CSV格式_20250827_231718_decoded_2025-08-28T02-11-04-712Z.csv
+  csv_versions/current/test_data_20250829_1050_v002.csv
+  production/temp/fallback_test_data.csv
+  scoring_results/detailed/detailed_scores_tencent_副本-副本-测试版本-出国销售计划表-工作表1_20250911_1002_midweek_W37_20250911_100216.json
+  scoring_results/detailed/detailed_scores_tencent_111测试版本-小红书部门_20250919_2255_midweek_W38_20250920_010627.json
+  csv_versions/comparison_cache/test_comparison_result.json
+  scoring_results/test_comprehensive_all_tables_20250911_161355.json
+  auto_downloads/test_data.csv
+  isolate_virtual_files.py
+  production/core_modules/test_123123.csv
+  csv_security_results/test_comparison_comprehensive.json
+  backup_20250908/core_modules/test_123123.csv
+  test_DWEVjZndkR2xVSWJN_CSV格式_20250827_231718_extracted.csv
