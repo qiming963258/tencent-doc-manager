@@ -171,7 +171,8 @@
       "Bash(gitc \"完成全流程唯一性传递机制和Git永久修复\")",
       "Bash(gitc \"更新Git部署文档：添加gitc永久解决方案和最新案例\")",
       "Bash(gitc \"完成第一次全链路连通性测试：验证11步流程成功\")",
-      "Bash(gitc \"修复Excel涂色兼容性问题：lightUp改为solid填充\")"
+      "Bash(gitc \"修复Excel涂色兼容性问题：lightUp改为solid填充\")",
+      "Bash(gitc \"更新Excel涂色规范文档：添加lightUp兼容性问题详细说明和测试报告\")"
     ],
     "deny": [],
     "ask": [],
