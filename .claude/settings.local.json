@@ -168,7 +168,8 @@
       "Bash(TZ:*)",
       "Bash(export GIT_EDITOR=true)",
       "Bash(git var:*)",
-      "Bash(gitc \"完成全流程唯一性传递机制和Git永久修复\")"
+      "Bash(gitc \"完成全流程唯一性传递机制和Git永久修复\")",
+      "Bash(gitc \"更新Git部署文档：添加gitc永久解决方案和最新案例\")"
     ],
     "deny": [],
     "ask": [],
