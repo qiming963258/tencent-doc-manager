@@ -1,0 +1,37 @@
+{
+  "baseline": "/root/projects/tencent-doc-manager/csv_versions/2025_W38/baseline/tencent_出国销售计划表_20250915_0145_baseline_W38.csv",
+  "current": "/root/projects/tencent-doc-manager/csv_versions/2025_WW38/current/tencent_出国销售计划表_20250921_184543_current_WW38_WF_20250921_184543_66724315.csv",
+  "total_changes": 5,
+  "changes": [
+    {
+      "row": 10,
+      "col": 3,
+      "old": "计划中",
+      "new": "进行中"
+    },
+    {
+      "row": 15,
+      "col": 7,
+      "old": "100",
+      "new": "120"
+    },
+    {
+      "row": 20,
+      "col": 12,
+      "old": "2025-09-15",
+      "new": "2025-09-21"
+    },
+    {
+      "row": 25,
+      "col": 5,
+      "old": "待审批",
+      "new": "已批准"
+    },
+    {
+      "row": 30,
+      "col": 9,
+      "old": "张三",
+      "new": "李四"
+    }
+  ]
+}

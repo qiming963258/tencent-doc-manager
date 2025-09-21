@@ -1,0 +1,41 @@
+{
+  "scored_at": "2025-09-21T18:38:56.796228",
+  "cell_scores": {
+    "10_3": {
+      "score": 30,
+      "level": "L2",
+      "weight": 0.3
+    },
+    "15_7": {
+      "score": 35,
+      "level": "L2",
+      "weight": 0.3
+    },
+    "20_12": {
+      "score": 75,
+      "level": "L1",
+      "weight": 0.5
+    },
+    "25_5": {
+      "score": 80,
+      "level": "L1",
+      "weight": 0.5
+    },
+    "30_9": {
+      "score": 15,
+      "level": "L3",
+      "weight": 0.2
+    }
+  },
+  "statistics": {
+    "total_cells": 5,
+    "avg_score": 47.0,
+    "max_score": 80,
+    "min_score": 15,
+    "risk_distribution": {
+      "high": 2,
+      "medium": 2,
+      "low": 1
+    }
+  }
+}

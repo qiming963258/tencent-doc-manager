@@ -1,0 +1,41 @@
+{
+  "extracted_at": "2025-09-21T18:38:56.792118",
+  "total": 5,
+  "by_type": {
+    "status_changes": 2,
+    "value_changes": 2,
+    "date_changes": 1
+  },
+  "details": [
+    {
+      "row": 10,
+      "col": 3,
+      "old": "计划中",
+      "new": "进行中"
+    },
+    {
+      "row": 15,
+      "col": 7,
+      "old": "100",
+      "new": "120"
+    },
+    {
+      "row": 20,
+      "col": 12,
+      "old": "2025-09-15",
+      "new": "2025-09-21"
+    },
+    {
+      "row": 25,
+      "col": 5,
+      "old": "待审批",
+      "new": "已批准"
+    },
+    {
+      "row": 30,
+      "col": 9,
+      "old": "张三",
+      "new": "李四"
+    }
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "evaluated_at": "2025-09-21T18:38:56.797535",
+  "overall_score": 47.0,
+  "risk_level": "MEDIUM",
+  "recommendation": "需要审核",
+  "heatmap_data": {
+    "rows": 1,
+    "cols": 19,
+    "matrix": [
+      [
+        0,
+        0,
+        30,
+        0,
+        80,
+        0,
+        35,
+        0,
+        15,
+        0,
+        0,
+        75,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    ]
+  },
+  "summary": {
+    "total_changes": 5,
+    "high_risk_changes": 2,
+    "approval_required": true
+  }
+}

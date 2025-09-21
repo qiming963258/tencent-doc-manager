@@ -664,13 +664,16 @@ class FullWorkflowConnectivityTest:
                 row, col = map(int, cell_key.split("_"))
                 cell = ws.cell(row=row, column=col)
 
-                # 根据分数选择颜色
+                # 根据分数选择颜色 - 使用solid填充而不是lightUp
                 if cell_info["score"] >= 70:
-                    fill = PatternFill(start_color="FFCCCC", fill_type="lightUp")
+                    # 高风险 - 红色背景
+                    fill = PatternFill(start_color="FFCCCC", end_color="FFCCCC", fill_type="solid")
                 elif cell_info["score"] >= 40:
-                    fill = PatternFill(start_color="FFFFCC", fill_type="lightUp")
+                    # 中风险 - 黄色背景
+                    fill = PatternFill(start_color="FFFFCC", end_color="FFFFCC", fill_type="solid")
                 else:
-                    fill = PatternFill(start_color="CCFFCC", fill_type="lightUp")
+                    # 低风险 - 绿色背景
+                    fill = PatternFill(start_color="CCFFCC", end_color="CCFFCC", fill_type="solid")
 
                 cell.fill = fill
 
