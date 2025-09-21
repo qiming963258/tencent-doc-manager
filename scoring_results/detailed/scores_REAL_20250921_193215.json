@@ -1,0 +1,55 @@
+{
+  "session_id": "REAL_20250921_193215",
+  "timestamp": "2025-09-21T19:32:15.549018",
+  "cell_scores": {
+    "10_3": {
+      "old_value": "计划中",
+      "new_value": "进行中",
+      "score": 85,
+      "risk_level": "HIGH",
+      "column": 2
+    },
+    "15_7": {
+      "old_value": "100",
+      "new_value": "150",
+      "score": 50,
+      "risk_level": "MEDIUM",
+      "column": 6
+    },
+    "20_12": {
+      "old_value": "2025-09-15",
+      "new_value": "2025-09-21",
+      "score": 85,
+      "risk_level": "HIGH",
+      "column": 11
+    },
+    "25_5": {
+      "old_value": "待审批",
+      "new_value": "已批准",
+      "score": 85,
+      "risk_level": "HIGH",
+      "column": 4
+    },
+    "30_9": {
+      "old_value": "张三",
+      "new_value": "李四",
+      "score": 50,
+      "risk_level": "MEDIUM",
+      "column": 8
+    },
+    "35_14": {
+      "old_value": "未完成",
+      "new_value": "已完成",
+      "score": 85,
+      "risk_level": "HIGH",
+      "column": 13
+    },
+    "40_2": {
+      "old_value": "A级",
+      "new_value": "S级",
+      "score": 50,
+      "risk_level": "MEDIUM",
+      "column": 1
+    }
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "timestamp": "20250921_201036",
+  "success": false,
+  "steps": {
+    "download": {
+      "success": false,
+      "file": null
+    }
+  },
+  "summary": "下载失败 - 无法继续测试"
+}

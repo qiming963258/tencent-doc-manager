@@ -1,0 +1,29 @@
+{
+  "timestamp": "20250921_201207",
+  "success": true,
+  "steps": {
+    "download": {
+      "success": true,
+      "file": "csv_versions/2025_W38/midweek/tencent_111测试版本-出国销售计划表-工作表1_20250921_2012_midweek_W38.csv"
+    },
+    "compare": {
+      "success": true,
+      "changes_count": 18
+    },
+    "scoring": {
+      "success": true,
+      "total_scored": 18,
+      "summary": {
+        "total_changes": 18,
+        "high_risk": 7,
+        "medium_risk": 6,
+        "low_risk": 5
+      }
+    },
+    "excel": {
+      "success": true,
+      "file": "/root/projects/tencent-doc-manager/excel_outputs/absolute_real/absolute_real_analysis_20250921_201207.xlsx"
+    }
+  },
+  "summary": "测试成功完成，发现18处真实变更"
+}
