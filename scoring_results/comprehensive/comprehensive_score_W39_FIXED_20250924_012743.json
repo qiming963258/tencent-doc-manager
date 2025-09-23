@@ -1,0 +1,182 @@
+{
+  "metadata": {
+    "version": "2.0",
+    "timestamp": "2025-09-24T01:27:43.455003",
+    "week": "W39",
+    "generator": "fixed_column_mapping",
+    "baseline_week": "W38",
+    "comparison_week": "W39",
+    "baseline_file": "tencent_出国销售计划表_20250915_0145_baseline_W39.csv",
+    "target_file": "tencent_出国销售计划表_20250923_1908_midweek_W39.csv"
+  },
+  "summary": {
+    "total_tables": 1,
+    "total_columns": 19,
+    "total_modifications": 18,
+    "overall_risk_score": 0.9,
+    "processing_status": "complete",
+    "data_source": "real_csv_comparison"
+  },
+  "table_names": [
+    "副本-测试版本-出国销售计划表"
+  ],
+  "column_names": [
+    "序号",
+    "项目类型",
+    "来源",
+    "任务发起时间",
+    "目标对齐",
+    "关键KR对齐",
+    "具体计划内容",
+    "邓总指导登记",
+    "负责人",
+    "协助人",
+    "监督人",
+    "重要程度",
+    "预计完成时间",
+    "完成进度",
+    "完成链接",
+    "经理分析复盘",
+    "最新复盘时间",
+    "对上汇报",
+    "应用情况"
+  ],
+  "heatmap_data": {
+    "matrix": [
+      [
+        0.3,
+        0.3,
+        0.3,
+        0.3,
+        0.3,
+        0.3,
+        0.3,
+        0.3,
+        0.3,
+        0.3,
+        0.05,
+        0.3,
+        0.3,
+        0.3,
+        0.3,
+        0.3,
+        0.05,
+        0.05,
+        0.05
+      ]
+    ],
+    "rows": 1,
+    "cols": 19,
+    "generation_method": "real_data_comparison"
+  },
+  "table_details": {
+    "副本-测试版本-出国销售计划表": {
+      "total_rows": 270,
+      "modified_rows": 18,
+      "added_rows": 0,
+      "deleted_rows": 0
+    }
+  },
+  "statistics": {
+    "total_cells": 5130,
+    "modified_cells": 18,
+    "modification_rate": 0.0035
+  },
+  "column_modifications_by_table": {
+    "副本-测试版本-出国销售计划表": {
+      "column_modifications": {
+        "序号": {
+          "modified_rows": [
+            4
+          ],
+          "modification_count": 1
+        },
+        "项目类型": {
+          "modified_rows": [
+            5
+          ],
+          "modification_count": 1
+        },
+        "来源": {
+          "modified_rows": [
+            6
+          ],
+          "modification_count": 1
+        },
+        "任务发起时间": {
+          "modified_rows": [
+            7
+          ],
+          "modification_count": 1
+        },
+        "目标对齐": {
+          "modified_rows": [
+            7
+          ],
+          "modification_count": 1
+        },
+        "关键KR对齐": {
+          "modified_rows": [
+            8
+          ],
+          "modification_count": 1
+        },
+        "具体计划内容": {
+          "modified_rows": [
+            9
+          ],
+          "modification_count": 1
+        },
+        "邓总指导登记": {
+          "modified_rows": [
+            10
+          ],
+          "modification_count": 1
+        },
+        "负责人": {
+          "modified_rows": [
+            11
+          ],
+          "modification_count": 1
+        },
+        "协助人": {
+          "modified_rows": [
+            12
+          ],
+          "modification_count": 1
+        },
+        "重要程度": {
+          "modified_rows": [
+            13
+          ],
+          "modification_count": 1
+        },
+        "预计完成时间": {
+          "modified_rows": [
+            14
+          ],
+          "modification_count": 1
+        },
+        "完成链接": {
+          "modified_rows": [
+            15
+          ],
+          "modification_count": 1
+        },
+        "完成进度": {
+          "modified_rows": [
+            16
+          ],
+          "modification_count": 1
+        },
+        "经理分析复盘": {
+          "modified_rows": [
+            17
+          ],
+          "modification_count": 1
+        }
+      },
+      "total_rows": 270
+    }
+  }
+}

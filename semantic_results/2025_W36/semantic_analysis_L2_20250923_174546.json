@@ -1,0 +1,43 @@
+{
+  "metadata": {
+    "analysis_time": "2025-09-23 17:45:46",
+    "total_modifications": 1,
+    "layer1_passed": 0,
+    "layer2_analyzed": 1,
+    "processing_time": "7.1s"
+  },
+  "results": [
+    {
+      "modification_id": "M001",
+      "cell": "H33",
+      "column": "具体计划内容",
+      "old_value": "企业1号的咨询转化目标调整\n企业1号的转化网单提成调整",
+      "new_value": "",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 90.0,
+        "reason": "删除目标"
+      },
+      "layer2_result": {
+        "risk_level": "MEDIUM",
+        "decision": "REVIEW",
+        "confidence": 75,
+        "reason": "删除了具体计划内容，可能导致信息缺失或目标不明确，需要人工确认是否故意删除还是误操作"
+      },
+      "final_decision": "REVIEW",
+      "approval_required": true
+    }
+  ],
+  "summary": {
+    "approved": 0,
+    "conditional": 0,
+    "review_required": 1,
+    "rejected": 0,
+    "risk_distribution": {
+      "LOW": 0,
+      "MEDIUM": 0,
+      "HIGH": 1,
+      "CRITICAL": 0
+    }
+  }
+}

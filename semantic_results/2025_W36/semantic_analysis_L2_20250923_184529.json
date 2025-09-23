@@ -1,0 +1,43 @@
+{
+  "metadata": {
+    "analysis_time": "2025-09-23 18:45:29",
+    "total_modifications": 1,
+    "layer1_passed": 0,
+    "layer2_analyzed": 1,
+    "processing_time": "6.2s"
+  },
+  "results": [
+    {
+      "modification_id": "M001",
+      "cell": "H5",
+      "column": "具体计划内容",
+      "old_value": "月度人力资源管理工作计划（仓库与回国）",
+      "new_value": "1、按照回国业务象限梳理整套流程从咨询到售中售后板块岗位对接；\n2、然后对系统进行优化，提升销售人员的效率流程问题；",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 80.0,
+        "reason": "新增具体流程"
+      },
+      "layer2_result": {
+        "risk_level": "MEDIUM",
+        "decision": "REVIEW",
+        "confidence": 75,
+        "reason": "修改后的内容增加了具体的工作任务和流程优化目标，虽然更具可操作性，但与原值相比范围有所扩大，可能影响其他部门的协同工作，需要人工审查确认是否与整体计划一致。"
+      },
+      "final_decision": "REVIEW",
+      "approval_required": true
+    }
+  ],
+  "summary": {
+    "approved": 0,
+    "conditional": 0,
+    "review_required": 1,
+    "rejected": 0,
+    "risk_distribution": {
+      "LOW": 0,
+      "MEDIUM": 0,
+      "HIGH": 1,
+      "CRITICAL": 0
+    }
+  }
+}

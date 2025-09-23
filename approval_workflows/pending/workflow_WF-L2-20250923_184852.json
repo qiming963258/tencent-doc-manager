@@ -1,0 +1,27 @@
+{
+  "workflow_id": "WF-L2-20250923_184852",
+  "created_time": "2025-09-23 18:48:52",
+  "pending_approvals": [
+    {
+      "modification_id": "M001",
+      "cell": "H14",
+      "column": "具体计划内容",
+      "old_value": "售中流程：\n1、收款销售录入问题（定金的录入；）\n2、清关资料索取销售自行进行；\n3、账单的制作例程繁琐，需要简化；\n4、清单制作5个工作日；\n5、派送安排系统化操作；",
+      "new_value": "按照出国的方式，分不同国家不同体积的咨询占比，以此做依据再调整利润率设定；",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 90.0,
+        "reason": "大幅修改"
+      },
+      "layer2_result": {
+        "risk_level": "HIGH",
+        "decision": "REVIEW",
+        "confidence": 90,
+        "reason": "修改内容与原售中流程完全无关，可能导致业务流程混乱或中断，需要人工审查确认修改意图"
+      },
+      "final_decision": "REVIEW",
+      "approval_required": true
+    }
+  ],
+  "auto_approved": []
+}

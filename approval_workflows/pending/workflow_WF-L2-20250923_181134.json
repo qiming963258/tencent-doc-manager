@@ -1,0 +1,27 @@
+{
+  "workflow_id": "WF-L2-20250923_181134",
+  "created_time": "2025-09-23 18:11:34",
+  "pending_approvals": [],
+  "auto_approved": [
+    {
+      "modification_id": "M001",
+      "cell": "K72",
+      "column": "协助人",
+      "old_value": "杨顺鑫",
+      "new_value": "",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 80.0,
+        "reason": "删除协助人"
+      },
+      "layer2_result": {
+        "risk_level": "LOW",
+        "decision": "APPROVE",
+        "confidence": 90,
+        "reason": "协助人字段清空属于常规信息更新，无直接影响业务流程或数据完整性"
+      },
+      "final_decision": "APPROVE",
+      "approval_required": false
+    }
+  ]
+}

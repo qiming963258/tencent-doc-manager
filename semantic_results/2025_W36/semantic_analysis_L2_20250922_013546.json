@@ -1,0 +1,43 @@
+{
+  "metadata": {
+    "analysis_time": "2025-09-22 01:35:46",
+    "total_modifications": 1,
+    "layer1_passed": 0,
+    "layer2_analyzed": 1,
+    "processing_time": "10.2s"
+  },
+  "results": [
+    {
+      "modification_id": "M001",
+      "cell": "J11",
+      "column": "负责人",
+      "old_value": "赖铁荔",
+      "new_value": "王寒晓,各责任人",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 80.0,
+        "reason": "多人负责"
+      },
+      "layer2_result": {
+        "risk_level": "MEDIUM",
+        "decision": "REVIEW",
+        "confidence": 75,
+        "reason": "负责人由单人改为多人，可能影响责任划分和沟通效率，需要人工确认变更合理性"
+      },
+      "final_decision": "REVIEW",
+      "approval_required": true
+    }
+  ],
+  "summary": {
+    "approved": 0,
+    "conditional": 0,
+    "review_required": 1,
+    "rejected": 0,
+    "risk_distribution": {
+      "LOW": 0,
+      "MEDIUM": 0,
+      "HIGH": 1,
+      "CRITICAL": 0
+    }
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "metadata": {
+    "analysis_time": "2025-09-23 18:55:21",
+    "total_modifications": 1,
+    "layer1_passed": 0,
+    "layer2_analyzed": 1,
+    "processing_time": "5.9s"
+  },
+  "results": [
+    {
+      "modification_id": "M001",
+      "cell": "H25",
+      "column": "具体计划内容",
+      "old_value": "目前国外仓储的费用，找代理沟通优惠，找邱雯协助与国外代理沟通仓库费用的计算折扣；",
+      "new_value": "",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 90.0,
+        "reason": "删除内容"
+      },
+      "layer2_result": {
+        "risk_level": "MEDIUM",
+        "decision": "REVIEW",
+        "confidence": 75,
+        "reason": "删除了重要的计划内容，可能影响后续仓储费用谈判的执行"
+      },
+      "final_decision": "REVIEW",
+      "approval_required": true
+    }
+  ],
+  "summary": {
+    "approved": 0,
+    "conditional": 0,
+    "review_required": 1,
+    "rejected": 0,
+    "risk_distribution": {
+      "LOW": 0,
+      "MEDIUM": 0,
+      "HIGH": 1,
+      "CRITICAL": 0
+    }
+  }
+}

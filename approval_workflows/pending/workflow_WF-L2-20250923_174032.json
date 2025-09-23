@@ -1,0 +1,27 @@
+{
+  "workflow_id": "WF-L2-20250923_174032",
+  "created_time": "2025-09-23 17:40:32",
+  "pending_approvals": [],
+  "auto_approved": [
+    {
+      "modification_id": "M001",
+      "cell": "I25",
+      "column": "邓总指导登记（日更新）",
+      "old_value": "\n\n晒单项目现阶段需要瀚桔介入些许给跨部门进行打板示范协助解决卡点问题\n\n",
+      "new_value": "",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 90.0,
+        "reason": "重要内容删除"
+      },
+      "layer2_result": {
+        "risk_level": "LOW",
+        "decision": "APPROVE",
+        "confidence": 90,
+        "reason": "原内容为具体工作指导，新值为空，可能只是临时清空或无需记录，风险较低"
+      },
+      "final_decision": "APPROVE",
+      "approval_required": false
+    }
+  ]
+}

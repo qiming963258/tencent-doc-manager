@@ -1,0 +1,27 @@
+{
+  "workflow_id": "WF-L2-20250923_175941",
+  "created_time": "2025-09-23 17:59:41",
+  "pending_approvals": [
+    {
+      "modification_id": "M001",
+      "cell": "J53",
+      "column": "负责人",
+      "old_value": "赖铁荔",
+      "new_value": "",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 80.0,
+        "reason": "关键角色"
+      },
+      "layer2_result": {
+        "risk_level": "MEDIUM",
+        "decision": "REVIEW",
+        "confidence": 75,
+        "reason": "负责人字段被清空可能影响责任归属，需要人工确认是否故意为之"
+      },
+      "final_decision": "REVIEW",
+      "approval_required": true
+    }
+  ],
+  "auto_approved": []
+}

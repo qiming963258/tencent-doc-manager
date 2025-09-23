@@ -1,0 +1,27 @@
+{
+  "workflow_id": "WF-L2-20250923_175355",
+  "created_time": "2025-09-23 17:53:55",
+  "pending_approvals": [
+    {
+      "modification_id": "M001",
+      "cell": "J44",
+      "column": "负责人",
+      "old_value": "赖铁荔",
+      "new_value": "",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 80.0,
+        "reason": "删除负责人"
+      },
+      "layer2_result": {
+        "risk_level": "MEDIUM",
+        "decision": "REVIEW",
+        "confidence": 75,
+        "reason": "移除负责人信息可能影响任务追踪，需要确认是否已转移职责或该任务已取消"
+      },
+      "final_decision": "REVIEW",
+      "approval_required": true
+    }
+  ],
+  "auto_approved": []
+}

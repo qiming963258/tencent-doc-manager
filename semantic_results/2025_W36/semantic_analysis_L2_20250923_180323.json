@@ -1,0 +1,43 @@
+{
+  "metadata": {
+    "analysis_time": "2025-09-23 18:03:23",
+    "total_modifications": 1,
+    "layer1_passed": 0,
+    "layer2_analyzed": 1,
+    "processing_time": "10.8s"
+  },
+  "results": [
+    {
+      "modification_id": "M001",
+      "cell": "H59",
+      "column": "具体计划内容",
+      "old_value": "标准更新机制需要建立与完善；设定负责人与调整条件；迭代与更新的机制",
+      "new_value": "",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 90.0,
+        "reason": "删除内容"
+      },
+      "layer2_result": {
+        "risk_level": "HIGH",
+        "decision": "REJECT",
+        "confidence": 90,
+        "reason": "清除了全部计划内容，可能导致标准更新机制缺失，影响项目规范性和可持续性"
+      },
+      "final_decision": "REJECT",
+      "approval_required": true
+    }
+  ],
+  "summary": {
+    "approved": 0,
+    "conditional": 0,
+    "review_required": 0,
+    "rejected": 1,
+    "risk_distribution": {
+      "LOW": 0,
+      "MEDIUM": 0,
+      "HIGH": 0,
+      "CRITICAL": 1
+    }
+  }
+}

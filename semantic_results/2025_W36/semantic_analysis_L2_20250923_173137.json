@@ -1,0 +1,43 @@
+{
+  "metadata": {
+    "analysis_time": "2025-09-23 17:31:37",
+    "total_modifications": 1,
+    "layer1_passed": 0,
+    "layer2_analyzed": 1,
+    "processing_time": "8.3s"
+  },
+  "results": [
+    {
+      "modification_id": "M001",
+      "cell": "H10",
+      "column": "具体计划内容",
+      "old_value": "目标策略流程复盘",
+      "new_value": "定价管理\n1、市场调查同行的价格与服务；\n2、结合市场价格与我司的成本做定价处理；\n3、第三阶段系统的价格库设定；\n",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 80.0,
+        "reason": "内容替换"
+      },
+      "layer2_result": {
+        "risk_level": "MEDIUM",
+        "decision": "REVIEW",
+        "confidence": 75,
+        "reason": "变更内容从整体策略转向具体定价管理，涉及多个新增步骤，可能影响其他部门工作流程，需要人工审查是否与原计划冲突"
+      },
+      "final_decision": "REVIEW",
+      "approval_required": true
+    }
+  ],
+  "summary": {
+    "approved": 0,
+    "conditional": 0,
+    "review_required": 1,
+    "rejected": 0,
+    "risk_distribution": {
+      "LOW": 0,
+      "MEDIUM": 0,
+      "HIGH": 1,
+      "CRITICAL": 0
+    }
+  }
+}

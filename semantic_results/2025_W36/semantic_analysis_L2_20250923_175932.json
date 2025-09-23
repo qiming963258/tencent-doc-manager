@@ -1,0 +1,43 @@
+{
+  "metadata": {
+    "analysis_time": "2025-09-23 17:59:32",
+    "total_modifications": 1,
+    "layer1_passed": 0,
+    "layer2_analyzed": 1,
+    "processing_time": "7.5s"
+  },
+  "results": [
+    {
+      "modification_id": "M001",
+      "cell": "I53",
+      "column": "邓总指导登记（日更新）",
+      "old_value": "3.26\n国外ip账号购买同步调研\n\n1.13\n1.手机卡是否为官方卡，套餐真实性问题\n2.补充手机卡类型应用范围及后续细化规划\n1.6\n调研开拓【渠道】进行账号注册，辅助现有矩阵账号进行私信导流",
+      "new_value": "",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 90.0,
+        "reason": "删除内容"
+      },
+      "layer2_result": {
+        "risk_level": "MEDIUM",
+        "decision": "REVIEW",
+        "confidence": 75,
+        "reason": "单元格内容被清空，可能涉及重要信息丢失。原内容包含调研任务和时间节点信息，需确认是否为故意删除。"
+      },
+      "final_decision": "REVIEW",
+      "approval_required": true
+    }
+  ],
+  "summary": {
+    "approved": 0,
+    "conditional": 0,
+    "review_required": 1,
+    "rejected": 0,
+    "risk_distribution": {
+      "LOW": 0,
+      "MEDIUM": 0,
+      "HIGH": 1,
+      "CRITICAL": 0
+    }
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "metadata": {
+    "analysis_time": "2025-09-23 17:55:09",
+    "total_modifications": 1,
+    "layer1_passed": 0,
+    "layer2_analyzed": 1,
+    "processing_time": "4.6s"
+  },
+  "results": [
+    {
+      "modification_id": "M001",
+      "cell": "I46",
+      "column": "邓总指导登记（日更新）",
+      "old_value": "0427\n博主现阶段重点以新员工执行落地，悦莹根据本月博主推进产生问题更新完善sop指导，五月落地博主工作流正常进行（已将指导转项目）",
+      "new_value": "",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 90.0,
+        "reason": "删除内容"
+      },
+      "layer2_result": {
+        "risk_level": "MEDIUM",
+        "decision": "REVIEW",
+        "confidence": 75,
+        "reason": "该单元格原本包含了重要的项目指导和进度信息，清空可能导致信息丢失或后续跟进困难，需要人工确认是否为有意操作"
+      },
+      "final_decision": "REVIEW",
+      "approval_required": true
+    }
+  ],
+  "summary": {
+    "approved": 0,
+    "conditional": 0,
+    "review_required": 1,
+    "rejected": 0,
+    "risk_distribution": {
+      "LOW": 0,
+      "MEDIUM": 0,
+      "HIGH": 1,
+      "CRITICAL": 0
+    }
+  }
+}

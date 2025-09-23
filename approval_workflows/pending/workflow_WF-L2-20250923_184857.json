@@ -1,0 +1,27 @@
+{
+  "workflow_id": "WF-L2-20250923_184857",
+  "created_time": "2025-09-23 18:48:57",
+  "pending_approvals": [
+    {
+      "modification_id": "M001",
+      "cell": "C15",
+      "column": "项目类型",
+      "old_value": "目标管理",
+      "new_value": "",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 80.0,
+        "reason": "关键信息缺失"
+      },
+      "layer2_result": {
+        "risk_level": "MEDIUM",
+        "decision": "REVIEW",
+        "confidence": 75,
+        "reason": "清空项目类型字段可能导致下游依赖系统缺失关键分类信息"
+      },
+      "final_decision": "REVIEW",
+      "approval_required": true
+    }
+  ],
+  "auto_approved": []
+}

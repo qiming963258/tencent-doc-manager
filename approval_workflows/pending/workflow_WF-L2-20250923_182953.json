@@ -1,0 +1,27 @@
+{
+  "workflow_id": "WF-L2-20250923_182953",
+  "created_time": "2025-09-23 18:29:53",
+  "pending_approvals": [],
+  "auto_approved": [
+    {
+      "modification_id": "M001",
+      "cell": "I8",
+      "column": "邓总指导登记（日更新）",
+      "old_value": "",
+      "new_value": "5月13日\n1、回国渠道开发设定每个国家区域的目标，按照结果为导向的开展渠道开发；\n2、找出国的开发到的有效渠道开发回国的业务，看是否成立，优化表单；",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 80.0,
+        "reason": "新增敏感内容"
+      },
+      "layer2_result": {
+        "risk_level": "LOW",
+        "decision": "APPROVE",
+        "confidence": 90,
+        "reason": "内容更新为常规工作计划和目标设定，不涉及敏感信息或重大变更"
+      },
+      "final_decision": "APPROVE",
+      "approval_required": false
+    }
+  ]
+}

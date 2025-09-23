@@ -1,0 +1,43 @@
+{
+  "metadata": {
+    "analysis_time": "2025-09-23 17:52:27",
+    "total_modifications": 1,
+    "layer1_passed": 0,
+    "layer2_analyzed": 1,
+    "processing_time": "5.1s"
+  },
+  "results": [
+    {
+      "modification_id": "M001",
+      "cell": "H42",
+      "column": "具体计划内容",
+      "old_value": "转意向台账建立",
+      "new_value": "",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 80.0,
+        "reason": "删除内容"
+      },
+      "layer2_result": {
+        "risk_level": "HIGH",
+        "decision": "REJECT",
+        "confidence": 90,
+        "reason": "删除'具体计划内容'列中的重要信息'转意向台账建立'可能导致计划跟踪缺失，影响项目进度管理。"
+      },
+      "final_decision": "REJECT",
+      "approval_required": true
+    }
+  ],
+  "summary": {
+    "approved": 0,
+    "conditional": 0,
+    "review_required": 0,
+    "rejected": 1,
+    "risk_distribution": {
+      "LOW": 0,
+      "MEDIUM": 0,
+      "HIGH": 0,
+      "CRITICAL": 1
+    }
+  }
+}

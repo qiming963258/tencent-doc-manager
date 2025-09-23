@@ -1,0 +1,125 @@
+{
+  "id": "20250923_184346",
+  "start_time": "2025-09-23T18:43:46.153473",
+  "end_time": "2025-09-23T18:57:23.848940",
+  "status": "completed",
+  "results": {
+    "baseline_file": "/root/projects/tencent-doc-manager/csv_versions/2025_W39/baseline/tencent_回国销售计划表_20250914_2309_baseline_W39.csv",
+    "target_file": "/root/projects/tencent-doc-manager/csv_versions/2025_W39/midweek/tencent_回国销售计划表_20250923_1844_midweek_W39.csv",
+    "score_file": "/root/projects/tencent-doc-manager/scoring_results/detailed/detailed_score_tmpno556tay_20250923_185608.json",
+    "marked_file": "/root/projects/tencent-doc-manager/excel_outputs/marked/tencent_副本-测试版本-回国销售计划表_20250923_1856_midweek_W39_marked_20250923_185654_W00.xlsx",
+    "upload_url": "https://docs.qq.com/sheet/DWE53dWVaSEdtdUxy",
+    "execution_time": "0:13:37.695467"
+  },
+  "logs": [
+    {
+      "timestamp": "18:44:33",
+      "level": "INFO",
+      "message": "✅ 目标文档已存储到midweek文件夹: tencent_回国销售计划表_20250923_1844_midweek_W39.csv"
+    },
+    {
+      "timestamp": "18:44:33",
+      "level": "INFO",
+      "message": "✅ 目标文档下载并规范化存储成功: tencent_回国销售计划表_20250923_1844_midweek_W39.csv"
+    },
+    {
+      "timestamp": "18:44:33",
+      "level": "INFO",
+      "message": "开始对比分析..."
+    },
+    {
+      "timestamp": "18:44:33",
+      "level": "INFO",
+      "message": "✅ 对比分析完成，发现 292 处变更"
+    },
+    {
+      "timestamp": "18:44:33",
+      "level": "INFO",
+      "message": "开始列标准化..."
+    },
+    {
+      "timestamp": "18:44:53",
+      "level": "INFO",
+      "message": "✅ 列标准化V3完成，标准化了 3 个列"
+    },
+    {
+      "timestamp": "18:44:53",
+      "level": "INFO",
+      "message": "开始L2语义分析和L1L3规则打分..."
+    },
+    {
+      "timestamp": "18:44:53",
+      "level": "INFO",
+      "message": "✅ 语义分析完成，分析了 292 处变更"
+    },
+    {
+      "timestamp": "18:44:53",
+      "level": "INFO",
+      "message": "生成详细打分JSON..."
+    },
+    {
+      "timestamp": "18:56:08",
+      "level": "INFO",
+      "message": "✅ 详细打分生成完成: detailed_score_tmpno556tay_20250923_185608.json"
+    },
+    {
+      "timestamp": "18:56:08",
+      "level": "INFO",
+      "message": "下载目标文档的Excel格式..."
+    },
+    {
+      "timestamp": "18:56:54",
+      "level": "INFO",
+      "message": "✅ Excel文档下载成功: tencent_副本-测试版本-回国销售计划表_20250923_1856_midweek_W39.xlsx"
+    },
+    {
+      "timestamp": "18:56:54",
+      "level": "INFO",
+      "message": "修复腾讯文档Excel格式问题..."
+    },
+    {
+      "timestamp": "18:56:54",
+      "level": "INFO",
+      "message": "✅ Excel格式修复完成"
+    },
+    {
+      "timestamp": "18:56:54",
+      "level": "INFO",
+      "message": "应用条纹涂色标记..."
+    },
+    {
+      "timestamp": "18:56:54",
+      "level": "INFO",
+      "message": "✅ 涂色标记完成: tencent_副本-测试版本-回国销售计划表_20250923_1856_midweek_W39_marked_20250923_185654_W00.xlsx"
+    },
+    {
+      "timestamp": "18:56:54",
+      "level": "INFO",
+      "message": "上传处理后的文档到腾讯文档..."
+    },
+    {
+      "timestamp": "18:57:23",
+      "level": "INFO",
+      "message": "✅ 文档上传成功!"
+    },
+    {
+      "timestamp": "18:57:23",
+      "level": "INFO",
+      "message": "📎 文档链接: https://docs.qq.com/sheet/DWE53dWVaSEdtdUxy"
+    },
+    {
+      "timestamp": "18:57:23",
+      "level": "SUCCESS",
+      "message": "🎉 所有步骤执行完成!"
+    }
+  ],
+  "settings": {
+    "task_type": "midweek",
+    "auto_download": true,
+    "force_download": true,
+    "enable_ai_analysis": true,
+    "enable_excel_marking": true,
+    "enable_upload": true,
+    "use_existing_baseline": true
+  }
+}

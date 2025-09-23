@@ -1,0 +1,43 @@
+{
+  "metadata": {
+    "analysis_time": "2025-09-23 18:14:08",
+    "total_modifications": 1,
+    "layer1_passed": 0,
+    "layer2_analyzed": 1,
+    "processing_time": "13.8s"
+  },
+  "results": [
+    {
+      "modification_id": "M001",
+      "cell": "H77",
+      "column": "具体计划内容",
+      "old_value": "设定小红书晒单后，文章下方评论有客户咨询时，资源转化的技巧与方式；后期如何与客户的利益打通，获取跟多资源与成交；\n（晒单后引入咨询客户成交返现标准（1-3CBM返300元，3-9CBM返500元，10",
+      "new_value": "",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 90.0,
+        "reason": "删除内容"
+      },
+      "layer2_result": {
+        "risk_level": "HIGH",
+        "decision": "REJECT",
+        "confidence": 90,
+        "reason": "删除原有具体计划内容可能导致关键操作流程和返现标准信息丢失，影响业务执行和客户沟通"
+      },
+      "final_decision": "REJECT",
+      "approval_required": true
+    }
+  ],
+  "summary": {
+    "approved": 0,
+    "conditional": 0,
+    "review_required": 0,
+    "rejected": 1,
+    "risk_distribution": {
+      "LOW": 0,
+      "MEDIUM": 0,
+      "HIGH": 0,
+      "CRITICAL": 1
+    }
+  }
+}

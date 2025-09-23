@@ -1,0 +1,27 @@
+{
+  "workflow_id": "WF-L2-20250923_173023",
+  "created_time": "2025-09-23 17:30:23",
+  "pending_approvals": [
+    {
+      "modification_id": "M001",
+      "cell": "H6",
+      "column": "具体计划内容",
+      "old_value": "目标策略流程复盘",
+      "new_value": "咨询转化\n1、小红书资源客服用语梳理\n2、资源判断标准建立（四要素）；\n3、行李资源转化标准界定条件界定清晰；",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 80.0,
+        "reason": "结构变化"
+      },
+      "layer2_result": {
+        "risk_level": "MEDIUM",
+        "decision": "REVIEW",
+        "confidence": 75,
+        "reason": "修改内容涉及多个具体操作步骤和标准界定，可能影响原有流程的执行，建议人工审查确认修改是否合理。"
+      },
+      "final_decision": "REVIEW",
+      "approval_required": true
+    }
+  ],
+  "auto_approved": []
+}

@@ -1,0 +1,27 @@
+{
+  "workflow_id": "WF-L2-20250923_174717",
+  "created_time": "2025-09-23 17:47:17",
+  "pending_approvals": [
+    {
+      "modification_id": "M001",
+      "cell": "K34",
+      "column": "协助人",
+      "old_value": "赖铁荔",
+      "new_value": "",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 75.0,
+        "reason": "删除信息"
+      },
+      "layer2_result": {
+        "risk_level": "MEDIUM",
+        "decision": "REVIEW",
+        "confidence": 75,
+        "reason": "协助人信息被清空可能影响任务分配追踪，需要确认是否为有意为之"
+      },
+      "final_decision": "REVIEW",
+      "approval_required": true
+    }
+  ],
+  "auto_approved": []
+}

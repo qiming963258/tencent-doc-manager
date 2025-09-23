@@ -1,0 +1,43 @@
+{
+  "metadata": {
+    "analysis_time": "2025-09-23 17:32:48",
+    "total_modifications": 1,
+    "layer1_passed": 0,
+    "layer2_analyzed": 1,
+    "processing_time": "8.7s"
+  },
+  "results": [
+    {
+      "modification_id": "M001",
+      "cell": "H13",
+      "column": "具体计划内容",
+      "old_value": "转化标准培训",
+      "new_value": "基础报价利润率\n1、回国搬家与行李区分，毛利润问题复盘月度复盘；\n2、当下问题：\nA、基恩的报价利润率\nB、保险购买利润率；\nC、体积增减利润率\n同行调查：\nA、线上三家（谷歌等部分的推广公司）\nB、",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 80.0,
+        "reason": "内容剧变"
+      },
+      "layer2_result": {
+        "risk_level": "HIGH",
+        "decision": "REJECT",
+        "confidence": 90,
+        "reason": "修改内容从培训计划完全转变为利润率相关数据，主题变更过大，可能导致文档一致性问题和业务目标偏离。"
+      },
+      "final_decision": "REJECT",
+      "approval_required": true
+    }
+  ],
+  "summary": {
+    "approved": 0,
+    "conditional": 0,
+    "review_required": 0,
+    "rejected": 1,
+    "risk_distribution": {
+      "LOW": 0,
+      "MEDIUM": 0,
+      "HIGH": 0,
+      "CRITICAL": 1
+    }
+  }
+}

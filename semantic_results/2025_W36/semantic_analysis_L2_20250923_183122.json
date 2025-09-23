@@ -1,0 +1,43 @@
+{
+  "metadata": {
+    "analysis_time": "2025-09-23 18:31:22",
+    "total_modifications": 1,
+    "layer1_passed": 0,
+    "layer2_analyzed": 1,
+    "processing_time": "7.9s"
+  },
+  "results": [
+    {
+      "modification_id": "M001",
+      "cell": "H12",
+      "column": "具体计划内容",
+      "old_value": "转化工作标准输出",
+      "new_value": "意向转无效原因梳理；\n意向客户调配（行李嘉雯分30个；搬家小来分40个；）",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 75.0,
+        "reason": "内容变更大"
+      },
+      "layer2_result": {
+        "risk_level": "MEDIUM",
+        "decision": "REVIEW",
+        "confidence": 75,
+        "reason": "修改内容涉及具体业务操作和人员分配，可能存在执行风险，需要业务负责人确认调整的合理性和可行性"
+      },
+      "final_decision": "REVIEW",
+      "approval_required": true
+    }
+  ],
+  "summary": {
+    "approved": 0,
+    "conditional": 0,
+    "review_required": 1,
+    "rejected": 0,
+    "risk_distribution": {
+      "LOW": 0,
+      "MEDIUM": 0,
+      "HIGH": 1,
+      "CRITICAL": 0
+    }
+  }
+}

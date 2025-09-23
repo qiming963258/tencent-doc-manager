@@ -579,7 +579,33 @@ def run_complete_workflow(baseline_url: str, target_url: str, cookie: str, advan
                 try:
                     baseline_files, baseline_desc = week_manager.find_baseline_files()
                     if baseline_files:
-                        baseline_file = baseline_files[0]  # 使用最新的基线文件
+                        # 从目标URL提取文档名称以匹配正确的基线
+                        doc_name = None
+                        if target_url:
+                            import json
+                            config_path = '/root/projects/tencent-doc-manager/config/download_config.json'
+                            if os.path.exists(config_path):
+                                with open(config_path, 'r', encoding='utf-8') as cf:
+                                    config = json.load(cf)
+                                doc_id = target_url.split('/')[-1].split('?')[0]
+                                for doc in config.get('document_links', []):
+                                    if doc.get('id') == doc_id:
+                                        full_name = doc['name']
+                                        doc_name = full_name.replace('副本-测试版本-', '').replace('测试版本-', '')
+                                        workflow_state.add_log(f"📝 处理文档: {doc_name}")
+                                        break
+
+                        # 根据文档名匹配基线文件
+                        matched_baseline = None
+                        if doc_name:
+                            for baseline in baseline_files:
+                                basename = os.path.basename(baseline)
+                                if doc_name in basename:
+                                    matched_baseline = baseline
+                                    workflow_state.add_log(f"✅ 匹配基线: {basename}")
+                                    break
+
+                        baseline_file = matched_baseline if matched_baseline else baseline_files[0]
                         workflow_state.baseline_file = baseline_file
                         workflow_state.add_log(f"✅ 找到基线文件: {os.path.basename(baseline_file)}")
                         workflow_state.add_log(f"📊 基线描述: {baseline_desc}")
@@ -600,7 +626,33 @@ def run_complete_workflow(baseline_url: str, target_url: str, cookie: str, advan
                 try:
                     baseline_files, baseline_desc = week_manager.find_baseline_files()
                     if baseline_files:
-                        baseline_file = baseline_files[0]  # 使用最新的基线文件
+                        # 从目标URL提取文档名称以匹配正确的基线
+                        doc_name = None
+                        if target_url:
+                            import json
+                            config_path = '/root/projects/tencent-doc-manager/config/download_config.json'
+                            if os.path.exists(config_path):
+                                with open(config_path, 'r', encoding='utf-8') as cf:
+                                    config = json.load(cf)
+                                doc_id = target_url.split('/')[-1].split('?')[0]
+                                for doc in config.get('document_links', []):
+                                    if doc.get('id') == doc_id:
+                                        full_name = doc['name']
+                                        doc_name = full_name.replace('副本-测试版本-', '').replace('测试版本-', '')
+                                        workflow_state.add_log(f"📝 处理文档: {doc_name}")
+                                        break
+
+                        # 根据文档名匹配基线文件
+                        matched_baseline = None
+                        if doc_name:
+                            for baseline in baseline_files:
+                                basename = os.path.basename(baseline)
+                                if doc_name in basename:
+                                    matched_baseline = baseline
+                                    workflow_state.add_log(f"✅ 匹配基线: {basename}")
+                                    break
+
+                        baseline_file = matched_baseline if matched_baseline else baseline_files[0]
                         workflow_state.baseline_file = baseline_file
                         workflow_state.add_log(f"✅ 使用本地基线文件: {os.path.basename(baseline_file)}")
                 except Exception as e:
@@ -875,20 +927,17 @@ def run_complete_workflow(baseline_url: str, target_url: str, cookie: str, advan
         
         # ========== 步骤10: 上传到腾讯文档 ==========
         if workflow_state.marked_file and MODULES_STATUS.get('uploader'):
-            workflow_state.update_progress("上传腾讯文档", 95)
+            workflow_state.update_progress("上传腾讯文档", 90)
             workflow_state.add_log("上传处理后的文档到腾讯文档...")
-            
-            # 根据高级设置决定上传方式
-            upload_option = advanced_settings.get('upload_option', 'new')
-            target_doc_url = advanced_settings.get('upload_target_url', '')
-            
+
+            # 修正：sync_upload_v3只需要3个参数(cookie_string, file_path, headless)
+            # 第1个参数必须是cookie_string，第2个是file_path
             upload_result = sync_upload_file(
-                workflow_state.marked_file,
-                upload_option=upload_option,
-                target_url=target_doc_url,
-                cookie_string=cookie
+                cookie,  # 第1个参数：cookie_string
+                workflow_state.marked_file,  # 第2个参数：file_path
+                True  # 第3个参数：headless模式
             )
-            
+
             if upload_result and upload_result.get('success'):
                 workflow_state.upload_url = upload_result.get('url')
                 workflow_state.add_log(f"✅ 文档上传成功!")
@@ -896,7 +945,50 @@ def run_complete_workflow(baseline_url: str, target_url: str, cookie: str, advan
                     workflow_state.add_log(f"📎 文档链接: {workflow_state.upload_url}")
             else:
                 workflow_state.add_log("⚠️ 文档上传失败", "WARNING")
-        
+
+        # ========== 步骤11: 生成综合打分 ==========
+        # 这是之前遗漏但在规范中存在的关键步骤
+        workflow_state.update_progress("生成综合打分", 95)
+        workflow_state.add_log("🔥 生成综合打分文件（符合规范16的Step 7）...")
+
+        try:
+            from production.core_modules.auto_comprehensive_generator import AutoComprehensiveGenerator
+
+            # 创建综合打分生成器
+            generator = AutoComprehensiveGenerator()
+
+            # 从最新的详细打分生成综合打分
+            comprehensive_file = generator.generate_from_latest_results()
+
+            workflow_state.add_log(f"✅ 综合打分已生成: {os.path.basename(comprehensive_file)}")
+            workflow_state.comprehensive_file = comprehensive_file
+
+            # 读取综合打分文件以获取关键信息
+            with open(comprehensive_file, 'r', encoding='utf-8') as f:
+                comprehensive_data = json.load(f)
+
+            # 输出关键统计信息
+            summary = comprehensive_data.get('summary', {})
+            workflow_state.add_log(f"📊 L1高风险修改: {summary.get('l1_modifications', 0)}处")
+            workflow_state.add_log(f"📊 L2中风险修改: {summary.get('l2_modifications', 0)}处")
+            workflow_state.add_log(f"📊 L3低风险修改: {summary.get('l3_modifications', 0)}处")
+            workflow_state.add_log(f"📊 总体风险评分: {summary.get('overall_risk_score', 0)}")
+
+            # 输出热力图颜色分布
+            heatmap_data = comprehensive_data.get('heatmap_data', {})
+            color_dist = heatmap_data.get('color_distribution', {})
+            workflow_state.add_log(f"🎨 热力图分布: 红色{color_dist.get('red_0.9', 0)}格, "
+                                  f"橙色{color_dist.get('orange_0.6', 0)}格, "
+                                  f"绿色{color_dist.get('green_0.3', 0)}格, "
+                                  f"蓝色{color_dist.get('blue_0.05', 0)}格")
+
+        except ImportError as e:
+            workflow_state.add_log(f"⚠️ 无法导入综合打分生成器: {e}", "WARNING")
+            workflow_state.add_log("💡 综合打分是可选步骤，继续执行...", "INFO")
+        except Exception as e:
+            workflow_state.add_log(f"⚠️ 综合打分生成失败: {e}", "WARNING")
+            workflow_state.add_log("💡 综合打分是补充步骤，不影响主流程", "INFO")
+
         # ========== 完成 ==========
         workflow_state.update_progress("处理完成", 100)
         workflow_state.status = "completed"
@@ -910,6 +1002,7 @@ def run_complete_workflow(baseline_url: str, target_url: str, cookie: str, advan
             "score_file": workflow_state.score_file,
             "marked_file": workflow_state.marked_file,
             "upload_url": workflow_state.upload_url,
+            "comprehensive_file": getattr(workflow_state, 'comprehensive_file', None),
             "execution_time": str(workflow_state.end_time - workflow_state.start_time) if workflow_state.end_time and workflow_state.start_time else None
         }
         

@@ -538,21 +538,37 @@ class ComparisonToScoringAdapter:
                 }
 
                 # 添加具体修改详情（最多显示前5个）
-                for mod in modifications[:5]:
-                    row_num = mod.get('row', 0)
+                # modifications是行号列表，不是字典
+                for row_num in modifications[:5]:
                     col_detail['modified_rows'].append(row_num)
 
-                    # 添加修改详细信息
-                    detail = {
-                        'row': row_num,
-                        'old_value': str(mod.get('old_value', '')),
-                        'new_value': str(mod.get('new_value', '')),
-                        'change_type': self._determine_change_type(
-                            mod.get('old_value'),
-                            mod.get('new_value')
-                        )
-                    }
-                    col_detail['modification_details'].append(detail)
+                    # 从table_data的modifications中查找详细信息
+                    detail_found = False
+                    for mod in table_data.get('modifications', []):
+                        if mod.get('row') == row_num and mod.get('column') == std_col:
+                            # 添加修改详细信息
+                            detail = {
+                                'row': row_num,
+                                'old_value': str(mod.get('old_value', '')),
+                                'new_value': str(mod.get('new_value', '')),
+                                'change_type': self._determine_change_type(
+                                    mod.get('old_value'),
+                                    mod.get('new_value')
+                                )
+                            }
+                            col_detail['modification_details'].append(detail)
+                            detail_found = True
+                            break
+
+                    # 如果没找到详细信息，添加基本信息
+                    if not detail_found:
+                        detail = {
+                            'row': row_num,
+                            'old_value': '',
+                            'new_value': '',
+                            'change_type': 'modified'
+                        }
+                        col_detail['modification_details'].append(detail)
 
                 # 如果修改超过5个，添加省略提示
                 if mod_count > 5:

@@ -92,7 +92,9 @@ class ComprehensiveScoreGeneratorV2:
             "hover_data": adapter._generate_hover_data(table_data_list),
             "statistics": adapter.generate_statistics(table_data_list),
             "visualization_params": self._get_visualization_params(),
-            "ui_config": self._get_ui_config()
+            "ui_config": self._get_ui_config(),
+            # 添加column_modifications供前端悬浮窗使用
+            "column_modifications_by_table": self._extract_column_modifications(table_data_list)
         }
 
         # 计算并更新参数总数（使用真实数据，不再人工填充）
@@ -201,6 +203,44 @@ class ComprehensiveScoreGeneratorV2:
             "max_zoom": 2.0,
             "animation_duration": 300
         }
+
+    def _extract_column_modifications(self, table_data_list: List[Dict]) -> Dict:
+        """
+        提取每个表格的列修改信息，供前端悬浮窗显示
+
+        返回格式:
+        {
+            "表名": {
+                "column_modifications": {
+                    "列名": {
+                        "modified_rows": [行号列表],
+                        "modification_count": 数量
+                    }
+                },
+                "total_rows": 总行数
+            }
+        }
+        """
+        result = {}
+
+        for table_data in table_data_list:
+            table_name = table_data.get('table_name', '未命名表格')
+            column_mods = table_data.get('column_modifications', {})
+
+            # 构建前端期望的格式
+            formatted_mods = {}
+            for col_name, row_list in column_mods.items():
+                formatted_mods[col_name] = {
+                    'modified_rows': row_list,
+                    'modification_count': len(row_list)
+                }
+
+            result[table_name] = {
+                'column_modifications': formatted_mods,
+                'total_rows': table_data.get('total_rows', 0)
+            }
+
+        return result
 
     def _count_params(self, data: Dict) -> int:
         """递归计算参数总数"""

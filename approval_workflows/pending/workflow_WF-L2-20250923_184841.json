@@ -1,0 +1,27 @@
+{
+  "workflow_id": "WF-L2-20250923_184841",
+  "created_time": "2025-09-23 18:48:41",
+  "pending_approvals": [
+    {
+      "modification_id": "M001",
+      "cell": "I13",
+      "column": "邓总指导登记（日更新）",
+      "old_value": "",
+      "new_value": "6月23日\n基础报价利润率\n保险购买利润率\n以上两项是眼下重要的事项，及时确认与调整，确保正常化；\n6月24日\n后期同行调查，再判现有买利润设定的合理性；",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 80.0,
+        "reason": "新增敏感内容"
+      },
+      "layer2_result": {
+        "risk_level": "MEDIUM",
+        "decision": "REVIEW",
+        "confidence": 75,
+        "reason": "修改内容涉及重要事项的时间安排和利润率调整，需要进一步确认信息的准确性和合理性。"
+      },
+      "final_decision": "REVIEW",
+      "approval_required": true
+    }
+  ],
+  "auto_approved": []
+}

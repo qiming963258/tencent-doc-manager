@@ -1,0 +1,43 @@
+{
+  "metadata": {
+    "analysis_time": "2025-09-23 18:45:40",
+    "total_modifications": 1,
+    "layer1_passed": 0,
+    "layer2_analyzed": 1,
+    "processing_time": "5.2s"
+  },
+  "results": [
+    {
+      "modification_id": "M001",
+      "cell": "H6",
+      "column": "具体计划内容",
+      "old_value": "回国部门资源管理规范（2024年6月）\n回国部门问责机制",
+      "new_value": "咨询转化\n1、小红书资源客服用语梳理\n2、资源判断标准建立（四要素）；\n3、行李资源转化标准界定条件界定清晰；",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 90.0,
+        "reason": "重大变更"
+      },
+      "layer2_result": {
+        "risk_level": "HIGH",
+        "decision": "REVIEW",
+        "confidence": 90,
+        "reason": "原值包含重要的管理规范和问责机制，新值完全改变了内容性质，转为营销转化相关内容，可能影响部门核心管理职能"
+      },
+      "final_decision": "REVIEW",
+      "approval_required": true
+    }
+  ],
+  "summary": {
+    "approved": 0,
+    "conditional": 0,
+    "review_required": 1,
+    "rejected": 0,
+    "risk_distribution": {
+      "LOW": 0,
+      "MEDIUM": 0,
+      "HIGH": 1,
+      "CRITICAL": 0
+    }
+  }
+}

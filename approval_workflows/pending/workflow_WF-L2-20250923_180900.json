@@ -1,0 +1,27 @@
+{
+  "workflow_id": "WF-L2-20250923_180900",
+  "created_time": "2025-09-23 18:09:00",
+  "pending_approvals": [
+    {
+      "modification_id": "M001",
+      "cell": "K68",
+      "column": "协助人",
+      "old_value": "邓俊,杨顺鑫",
+      "new_value": "",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 80.0,
+        "reason": "删除人员"
+      },
+      "layer2_result": {
+        "risk_level": "MEDIUM",
+        "decision": "REVIEW",
+        "confidence": 75,
+        "reason": "移除协助人可能导致责任不明确，需要人工确认是否确实不需要协助人"
+      },
+      "final_decision": "REVIEW",
+      "approval_required": true
+    }
+  ],
+  "auto_approved": []
+}

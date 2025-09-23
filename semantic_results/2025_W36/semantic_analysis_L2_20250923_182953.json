@@ -1,0 +1,43 @@
+{
+  "metadata": {
+    "analysis_time": "2025-09-23 18:29:53",
+    "total_modifications": 1,
+    "layer1_passed": 0,
+    "layer2_analyzed": 1,
+    "processing_time": "6.3s"
+  },
+  "results": [
+    {
+      "modification_id": "M001",
+      "cell": "I8",
+      "column": "邓总指导登记（日更新）",
+      "old_value": "",
+      "new_value": "5月13日\n1、回国渠道开发设定每个国家区域的目标，按照结果为导向的开展渠道开发；\n2、找出国的开发到的有效渠道开发回国的业务，看是否成立，优化表单；",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 80.0,
+        "reason": "新增敏感内容"
+      },
+      "layer2_result": {
+        "risk_level": "LOW",
+        "decision": "APPROVE",
+        "confidence": 90,
+        "reason": "内容更新为常规工作计划和目标设定，不涉及敏感信息或重大变更"
+      },
+      "final_decision": "APPROVE",
+      "approval_required": false
+    }
+  ],
+  "summary": {
+    "approved": 1,
+    "conditional": 0,
+    "review_required": 0,
+    "rejected": 0,
+    "risk_distribution": {
+      "LOW": 1,
+      "MEDIUM": 0,
+      "HIGH": 0,
+      "CRITICAL": 0
+    }
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "metadata": {
+    "analysis_time": "2025-09-23 17:52:35",
+    "total_modifications": 1,
+    "layer1_passed": 0,
+    "layer2_analyzed": 1,
+    "processing_time": "8.1s"
+  },
+  "results": [
+    {
+      "modification_id": "M001",
+      "cell": "I42",
+      "column": "邓总指导登记（日更新）",
+      "old_value": "\n0515-\n后续汇报前,需要项目/事项负责人综合考虑可能出现的情况,做好全面性的考虑与前置筹备,经理需要审核\"怎么做\"\\\"做得怎样样\"的预判及审核",
+      "new_value": "",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 90.0,
+        "reason": "删除指导内容"
+      },
+      "layer2_result": {
+        "risk_level": "MEDIUM",
+        "decision": "REVIEW",
+        "confidence": 75,
+        "reason": "删除邓总指导登记中的内容可能导致重要指导信息的丢失，需要人工核对是否确实不需要保留"
+      },
+      "final_decision": "REVIEW",
+      "approval_required": true
+    }
+  ],
+  "summary": {
+    "approved": 0,
+    "conditional": 0,
+    "review_required": 1,
+    "rejected": 0,
+    "risk_distribution": {
+      "LOW": 0,
+      "MEDIUM": 0,
+      "HIGH": 1,
+      "CRITICAL": 0
+    }
+  }
+}

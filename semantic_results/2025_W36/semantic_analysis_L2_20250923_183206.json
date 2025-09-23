@@ -1,0 +1,43 @@
+{
+  "metadata": {
+    "analysis_time": "2025-09-23 18:32:06",
+    "total_modifications": 1,
+    "layer1_passed": 0,
+    "layer2_analyzed": 1,
+    "processing_time": "11.7s"
+  },
+  "results": [
+    {
+      "modification_id": "M001",
+      "cell": "H14",
+      "column": "具体计划内容",
+      "old_value": "转化执行问责机制",
+      "new_value": "按照出国的方式，分不同国家不同体积的咨询占比，以此做依据再调整利润率设定；",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 80.0,
+        "reason": "重大变更"
+      },
+      "layer2_result": {
+        "risk_level": "MEDIUM",
+        "decision": "REVIEW",
+        "confidence": 75,
+        "reason": "新值内容涉及复杂的业务逻辑调整（不同国家、不同体积咨询占比和利润率设定），可能对项目执行产生较大影响，需要进一步审查其合理性和可行性。"
+      },
+      "final_decision": "REVIEW",
+      "approval_required": true
+    }
+  ],
+  "summary": {
+    "approved": 0,
+    "conditional": 0,
+    "review_required": 1,
+    "rejected": 0,
+    "risk_distribution": {
+      "LOW": 0,
+      "MEDIUM": 0,
+      "HIGH": 1,
+      "CRITICAL": 0
+    }
+  }
+}

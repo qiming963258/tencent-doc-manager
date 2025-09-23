@@ -1,0 +1,27 @@
+{
+  "workflow_id": "WF-L2-20250923_182947",
+  "created_time": "2025-09-23 18:29:47",
+  "pending_approvals": [
+    {
+      "modification_id": "M001",
+      "cell": "H8",
+      "column": "具体计划内容",
+      "old_value": "目标策略流程复盘",
+      "new_value": "渠道管理\n1、澳洲：墨尔本，悉尼华人渠道开发；（6月30日）\n2、美国：洛杉矶华人渠道开发；（6月25日）\n3、新加坡：华人渠道重新开发；（6月20日）",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 80.0,
+        "reason": "内容替换"
+      },
+      "layer2_result": {
+        "risk_level": "MEDIUM",
+        "decision": "REVIEW",
+        "confidence": 75,
+        "reason": "修改后的内容从抽象的战略描述转变为具体的执行计划，虽然内容更具体但可能涉及资源分配和优先级调整，需要相关干系人确认"
+      },
+      "final_decision": "REVIEW",
+      "approval_required": true
+    }
+  ],
+  "auto_approved": []
+}

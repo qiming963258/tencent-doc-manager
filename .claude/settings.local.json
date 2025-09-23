@@ -175,7 +175,11 @@
       "Bash(gitc \"更新Excel涂色规范文档：添加lightUp兼容性问题详细说明和测试报告\")",
       "Bash(gitc \"完成XLSX格式兼容性测试：CSV转Excel方案成功(1757个单元格涂色正确)\")",
       "Bash(gitc \"修正全链路测试：18个真实变更(非1757个错误)，对比同文档版本成功\")",
-      "Bash(gitc \"完成XLSX格式深度测试：确认CSV方案为唯一可行技术方案\")"
+      "Bash(gitc \"完成XLSX格式深度测试：确认CSV方案为唯一可行技术方案\")",
+      "Bash(do echo \"检查: $file\")",
+      "Bash(md5sum:*)",
+      "Bash(/root/projects/tencent-doc-manager/csv_versions/2025_W39/baseline/tencent_出国销售计划表_20250922_0134_baseline_W39.csv)",
+      "Bash(/root/projects/tencent-doc-manager/csv_versions/2025_W39/baseline/tencent_回国销售计划表_20250914_2309_baseline_W39.csv)"
     ],
     "deny": [],
     "ask": [],

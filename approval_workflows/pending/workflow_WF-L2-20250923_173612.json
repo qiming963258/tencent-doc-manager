@@ -1,0 +1,27 @@
+{
+  "workflow_id": "WF-L2-20250923_173612",
+  "created_time": "2025-09-23 17:36:12",
+  "pending_approvals": [],
+  "auto_approved": [
+    {
+      "modification_id": "M001",
+      "cell": "H19",
+      "column": "具体计划内容",
+      "old_value": "矩阵号交接前的卡点计划梳理",
+      "new_value": "",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 90.0,
+        "reason": "清空内容"
+      },
+      "layer2_result": {
+        "risk_level": "LOW",
+        "decision": "APPROVE",
+        "confidence": 90,
+        "reason": "单元格内容被清空，可能是信息不再需要或将被更新，若无其他关联影响，风险较低"
+      },
+      "final_decision": "APPROVE",
+      "approval_required": false
+    }
+  ]
+}

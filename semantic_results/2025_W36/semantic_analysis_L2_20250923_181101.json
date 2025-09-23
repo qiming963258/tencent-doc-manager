@@ -1,0 +1,43 @@
+{
+  "metadata": {
+    "analysis_time": "2025-09-23 18:11:01",
+    "total_modifications": 1,
+    "layer1_passed": 0,
+    "layer2_analyzed": 1,
+    "processing_time": "13.4s"
+  },
+  "results": [
+    {
+      "modification_id": "M001",
+      "cell": "H72",
+      "column": "具体计划内容",
+      "old_value": "1、小红书系统跟进功能打通，晒单跟进条件；\n2、小红书建立违规抓取规则（考虑跟单更新后更新先配送问题；）",
+      "new_value": "",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 90.0,
+        "reason": "删除内容"
+      },
+      "layer2_result": {
+        "risk_level": "HIGH",
+        "decision": "REVIEW",
+        "confidence": 90,
+        "reason": "原值包含具体的小红书系统功能实施计划和违规抓取规则，新值为空，可能导致计划内容丢失或执行延误。"
+      },
+      "final_decision": "REVIEW",
+      "approval_required": true
+    }
+  ],
+  "summary": {
+    "approved": 0,
+    "conditional": 0,
+    "review_required": 1,
+    "rejected": 0,
+    "risk_distribution": {
+      "LOW": 0,
+      "MEDIUM": 0,
+      "HIGH": 1,
+      "CRITICAL": 0
+    }
+  }
+}

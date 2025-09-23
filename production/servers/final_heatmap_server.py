@@ -96,9 +96,8 @@ CORS(app)
 USE_DEFAULT_COLUMN_ORDER = False  # 默认使用智能聚类（False=智能聚类，True=默认顺序）
 
 # 🔧 综合打分模式支持 (智能加载当前周数据)
-COMPREHENSIVE_MODE = False  # 默认使用CSV模式
 comprehensive_scoring_data = None  # 存储综合打分数据
-DATA_SOURCE = 'csv'  # 数据源: 默认'csv'
+# DATA_SOURCE已移除，只使用综合打分
 
 # 🔥 导入数据源管理器，实现自动加载和持久化
 try:
@@ -113,8 +112,7 @@ try:
         try:
             with open(initial_config['file_path'], 'r', encoding='utf-8') as f:
                 comprehensive_scoring_data = json.load(f)
-                COMPREHENSIVE_MODE = True
-                DATA_SOURCE = 'comprehensive'
+                                # DATA_SOURCE已移除，只使用综合打分
 
                 # 提取文件信息
                 import os
@@ -347,6 +345,12 @@ def download_file(filename):
     """提供上传文件的下载服务"""
     uploads_dir = '/root/projects/tencent-doc-manager/uploads'
     return send_from_directory(uploads_dir, filename)
+
+@app.route('/static/<filename>')
+def serve_static_file(filename):
+    """提供静态文件服务"""
+    static_dir = '/root/projects/tencent-doc-manager/production/servers'
+    return send_from_directory(static_dir, filename)
 
 import math
 
@@ -1311,146 +1315,60 @@ def get_scoring_enhanced_heatmap():
         return get_real_csv_data()
 
 
+def apply_column_clustering(matrix, column_names):
+    """应用简单的列聚类算法，将高热力值列聚集在一起"""
+    if not matrix or not matrix[0]:
+        return list(range(19)), column_names
+
+    cols = len(matrix[0])
+    # 计算每列的平均热力值
+    col_heat_scores = []
+    for col_idx in range(cols):
+        col_sum = sum(matrix[row_idx][col_idx] for row_idx in range(len(matrix)))
+        avg_heat = col_sum / len(matrix) if matrix else 0
+        col_heat_scores.append((col_idx, avg_heat))
+
+    # 按热力值排序（高热力值列放在前面形成热团）
+    col_heat_scores.sort(key=lambda x: -x[1])
+
+    # 生成新的列顺序
+    new_col_order = [item[0] for item in col_heat_scores]
+
+    # 重排列名
+    reordered_names = [column_names[idx] for idx in new_col_order]
+
+    return new_col_order, reordered_names
+
+
 @app.route('/api/real_csv_data')
 def get_real_csv_data():
-    """获取真实CSV对比热力图数据（30×19矩阵）"""
-
-    # 🔥 优先使用CSV对比模式（30×19矩阵）
+    """获取真实CSV数据的热力图"""
     try:
-        # 加载CSV对比热力图数据
-        csv_comparison_dir = '/root/projects/tencent-doc-manager/scoring_results/csv_comparison'
-        latest_file = os.path.join(csv_comparison_dir, 'latest_csv_heatmap.json')
+        # 导入必要的模块
+        import sys
+        sys.path.append('/root/projects/tencent-doc-manager')
+        from production.core_modules.real_doc_loader import RealDocumentLoader
+        from standard_columns_config import STANDARD_COLUMNS
 
-        if os.path.exists(latest_file):
-            print(f"📊 加载CSV对比数据: {latest_file}")
-            with open(latest_file, 'r', encoding='utf-8') as f:
-                csv_data = json.load(f)
+        # 加载真实文档配置
+        loader = RealDocumentLoader()
+        documents = loader.get_all_documents()
 
-            # 包装成前端期望的格式
-            response = {
-                "data": csv_data,
-                "success": True,
-                "mode": "csv_comparison"
-            }
-            return jsonify(response)
-    except Exception as e:
-        print(f"⚠️ 加载CSV对比数据失败: {e}")
+        # 获取热力图数据
+        heatmap_data = loader.generate_heatmap_data()
 
-    # 回退到综合打分模式（仅作为备份）
-    global comprehensive_scoring_data, COMPREHENSIVE_MODE, DATA_SOURCE
-    if COMPREHENSIVE_MODE and comprehensive_scoring_data:
-        print("📊 回退到综合打分数据")
-        return jsonify(comprehensive_scoring_data)
-
-    if not REAL_DATA_LOADER_AVAILABLE:
-        return get_heatmap_data()  # 回退到原始数据
-
-    try:
-        # 使用新的真实文档加载器，获取真实文档（动态数量）
-        doc_loader = RealDocumentLoader()
-        real_files = doc_loader.get_real_csv_files()
-        
-        # 如果没有找到文件，使用原加载器作为备份
-        if not real_files:
-            real_files = real_data_loader.get_real_csv_files()
-        
-        # 不再限制文档数量，支持动态行数
-        # real_files = real_files[:3]
-        
-        # 计算真实统计数据
-        statistics = real_data_loader.get_real_statistics(real_files)
-        
-        # 生成热力图数据
-        heatmap_data = real_data_loader.generate_heatmap_data(real_files)
-        
-        # 构建表格数据用于显示 - 使用真实的腾讯文档链接
-        # 真实的腾讯文档ID映射（已验证可访问）
-        base_name_to_doc_id = {
-            'realtest': 'DRFppYm15RGZ2WExN',  # 测试版本-回国销售计划表（已验证可访问）
-            'test': 'DWEFNU25TemFnZXJN',  # 副本-测试版本-出国销售计划表（新URL）
-            'test_data': 'DRHZrS1hOS3pwRGZB',  # 第三个文档（待验证）
-            'realtest_test_realtest': 'DRFppYm15RGZ2WExN',  # 复用回国销售计划表
-            '123123': 'DWEFNU25TemFnZXJN',  # 复用出国销售计划表
-            'test_123123': 'DRFppYm15RGZ2WExN',  # 复用回国销售计划表
-            'original_data': 'DWEFNU25TemFnZXJN'  # 复用出国销售计划表
-        }
-        
-        # 备用文档ID列表
-        backup_doc_ids = [
-            'DQVhYWlNaGVKc1Zj', 'DVGVzR0xvT2VUcUZN', 'DZmNqYnRsS3BwT2pF',
-            'DV0hZRmx3VGNlT0pE', 'DT0xvV2VVcUZOYWxs', 'DUlBwT3BwT2pFYnRs'
-        ]
-        
-        tables = []
-        for i, file_info in enumerate(real_files):
-            # 直接使用 real_doc_loader 提供的 URL
-            real_url = file_info.get('url')
-            
-            # 如果没有提供URL，尝试从base_name映射获取
-            if not real_url:
-                base_name = file_info.get('base_name', '').split('_20')[0].lower()
-                base_name = base_name.replace('previous_', '').replace('current_', '')
-                doc_id = base_name_to_doc_id.get(base_name)
-                
-                if not doc_id:
-                    doc_id = backup_doc_ids[i % len(backup_doc_ids)]
-                
-                real_url = f"https://docs.qq.com/sheet/{doc_id}"
-            
-            tables.append({
-                "id": i,
-                "name": file_info['name'],
-                "risk_level": file_info.get('risk_level', 'L3'),
-                "modifications": file_info.get('modifications', 0),
-                "url": real_url,
-                "current_position": i,
-                "is_reordered": False,
-                "row_level_data": {
-                    "baseline_file": file_info['previous_file'].split('/')[-1],
-                    "current_file": file_info['current_file'].split('/')[-1],
-                    "total_differences": file_info.get('modifications', 0),
-                    "total_columns": 19,
-                    "total_rows": 30
-                }
-            })
-        
-        # 应用列排序算法 - 基于热力值聚集热团
-        def apply_column_clustering(matrix, column_names):
-            """应用简单的列聚类算法，将高热力值列聚集在一起"""
-            if not matrix or not matrix[0]:
-                return list(range(19)), column_names
-            
-            cols = len(matrix[0])
-            # 计算每列的平均热力值
-            col_heat_scores = []
-            for col_idx in range(cols):
-                col_sum = sum(matrix[row_idx][col_idx] for row_idx in range(len(matrix)))
-                avg_heat = col_sum / len(matrix) if matrix else 0
-                col_heat_scores.append((col_idx, avg_heat))
-            
-            # 按热力值排序（高热力值列放在前面形成热团）
-            col_heat_scores.sort(key=lambda x: -x[1])
-            
-            # 生成新的列顺序
-            new_col_order = [item[0] for item in col_heat_scores]
-            
-            # 重排列名
-            reordered_names = [column_names[idx] for idx in new_col_order]
-            
-            return new_col_order, reordered_names
-        
         # 应用列聚类
         col_order, reordered_col_names = apply_column_clustering(
-            heatmap_data['matrix'], 
+            heatmap_data['matrix'],
             heatmap_data['column_names']
         )
-        
+
         # 重排矩阵的列
         reordered_matrix = []
         for row in heatmap_data['matrix']:
             new_row = [row[idx] for idx in col_order]
             reordered_matrix.append(new_row)
-        
+
         # 构建响应数据 - 添加success字段以匹配前端期望
         response_data = {
             "success": True,  # 前端需要此字段
@@ -1498,539 +1416,125 @@ def get_real_csv_data():
 
 @app.route('/api/data')
 def get_heatmap_data():
-    """获取热力图数据（严格综合打分模式）"""
+    """获取热力图数据 - 只使用真实综合打分"""
     try:
-        # 获取排序参数，决定是否应用聚类算法
         from flask import request
-        sorting_mode = request.args.get('sorting', 'default')  # 默认为'default'
-        apply_clustering = (sorting_mode == 'intelligent' or sorting_mode == 'smart')  # 只有智能排序才聚类
-
-        print(f"📊 排序模式: {sorting_mode}, 是否应用聚类: {apply_clustering}")
-
-        # 🔥 优先使用已加载的全局数据
-        global comprehensive_scoring_data
+        sorting_mode = request.args.get('sorting', 'default')
 
         # 导入标准列配置
         import sys
         sys.path.append('/root/projects/tencent-doc-manager')
         from standard_columns_config import STANDARD_COLUMNS
 
-        # 如果全局数据存在，使用它
-        if comprehensive_scoring_data:
-            print(f"✅ 使用已加载的综合打分数据")
-            data = comprehensive_scoring_data
-            files = ["已加载"]  # 跳过文件查找
-        else:
-            # 否则查找最新的综合打分文件
-            from comprehensive_score_validator import ComprehensiveScoreValidator
-            scoring_dir = '/root/projects/tencent-doc-manager/scoring_results/comprehensive'
-            import glob
-            pattern = os.path.join(scoring_dir, 'comprehensive_score_W*.json')
-            files = glob.glob(pattern)
+        # 查找最新的综合打分文件
+        scoring_dir = '/root/projects/tencent-doc-manager/scoring_results/comprehensive'
+        import glob
+        pattern = os.path.join(scoring_dir, 'comprehensive_score_W*.json')
+        files = glob.glob(pattern)
 
         if not files:
             return jsonify({
                 "success": False,
-                "error": "未找到任何综合打分文件",
-                "message": "请先生成符合规范的综合打分文件"
+                "error": "未找到综合打分文件",
+                "message": "请先通过8093生成真实数据的综合打分文件"
             }), 400
 
-        # 如果数据还未加载，获取最新文件
-        if not comprehensive_scoring_data:
-            latest_file = max(files, key=os.path.getmtime)
-            print(f"📊 加载综合打分文件: {latest_file}")
+        # 获取最新文件（基于修改时间）
+        latest_file = max(files, key=os.path.getmtime)
 
-            # 直接加载文件，跳过过时的5200参数验证
-            with open(latest_file, 'r', encoding='utf-8') as f:
-                data = json.load(f)
+        # 加载文件
+        with open(latest_file, 'r', encoding='utf-8') as f:
+            data = json.load(f)
 
-        # 验证基本结构，但不再要求5200参数
-        is_valid = True
-        errors = []
+        # 验证是否符合规范
+        required_fields = ['metadata', 'table_names', 'column_names', 'heatmap_data',
+                          'table_details', 'statistics', 'column_modifications_by_table']
 
-        # 基本结构检查
-        if 'metadata' not in data or 'heatmap_data' not in data:
-            is_valid = False
-            errors.append("缺少必要的数据结构")
-
-        if not is_valid:
-            print(f"❌ 文件格式错误: {errors}")
+        missing_fields = [field for field in required_fields if field not in data]
+        if missing_fields:
             return jsonify({
                 "success": False,
-                "error": "文件格式错误",
-                "validation_errors": errors
+                "error": f"综合打分文件不符合规范，缺少字段: {missing_fields}",
+                "message": "请确保文件符合《10-综合打分绝对规范》"
             }), 400
 
-        print(f"✅ 文件验证通过，使用综合打分模式")
+        # 验证不包含虚拟数据
+        table_names_str = str(data.get('table_names', []))
+        if '测试表格' in table_names_str or 'test' in table_names_str.lower():
+            return jsonify({
+                "success": False,
+                "error": "检测到虚拟测试数据",
+                "message": "只允许使用真实腾讯文档数据"
+            }), 400
 
-        # 强制使用标准列名，覆盖文件中的任何列名
-        data['column_names'] = STANDARD_COLUMNS.copy()
+        # 根据排序模式处理数据
+        if sorting_mode == 'intelligent':
+            # 应用智能聚类
+            try:
+                print(f"🔄 API: 应用智能聚类, sorting={sorting_mode}")
 
-        # 添加验证信息
-        data['validation_info'] = {
-            'validated': True,
-            'standard_columns_enforced': True,
-            'column_count': 19,
-            'validator_version': '2.0'
-        }
+                # 尝试导入纯Python聚类（高级聚类需要numpy）
+                from production.servers.pure_python_clustering import apply_pure_clustering
 
-        # 转换为前端期望的格式（包含tables数组）
-        tables = []
-        if 'table_details' in data:
-            for table in data['table_details']:
-                # 从column_details聚合数据
-                column_modifications = {}
-                all_modified_rows = set()
-                total_modifications = table.get('total_modifications', 0)
+                # 获取原始数据
+                heatmap_matrix = data.get('heatmap_data', {}).get('matrix', [])
+                table_names = data.get('table_names', [])
+                column_names = data.get('column_names', STANDARD_COLUMNS)
 
-                if 'column_details' in table:
-                    for col_detail in table['column_details']:
-                        col_name = col_detail.get('column_name', '')
-                        modified_rows = col_detail.get('modified_rows', [])
+                if heatmap_matrix and table_names and column_names:
+                    # 应用聚类
+                    reordered_heatmap, reordered_tables, reordered_columns, row_order, col_order = \
+                        apply_pure_clustering(heatmap_matrix, table_names, column_names)
 
-                        # 构建每列的修改信息
-                        column_modifications[col_name] = {
-                            'modified_rows': modified_rows,
-                            'modification_count': col_detail.get('modification_count', len(modified_rows)),
-                            'modification_details': col_detail.get('modification_details', [])
-                        }
+                    # 更新数据
+                    data['heatmap_data']['matrix'] = reordered_heatmap
+                    data['table_names'] = reordered_tables
+                    data['column_names'] = reordered_columns
 
-                        # 收集所有修改的行号
-                        all_modified_rows.update(modified_rows)
+                    # 重新排序column_modifications_by_table以匹配新的列顺序
+                    if 'column_modifications_by_table' in data:
+                        for table_name in data['column_modifications_by_table']:
+                            table_data = data['column_modifications_by_table'][table_name]
+                            if 'column_modifications' in table_data:
+                                # 创建新的排序后的字典
+                                old_mods = table_data['column_modifications']
+                                new_mods = {}
+                                for col_name in reordered_columns:
+                                    if col_name in old_mods:
+                                        new_mods[col_name] = old_mods[col_name]
+                                table_data['column_modifications'] = new_mods
 
-                # 构建前端期望的表格结构
-                table_item = {
-                    'name': table.get('table_name', ''),
-                    'url': table.get('excel_url', table.get('table_url', '')),  # 优先使用excel_url
-                    'risk_score': table.get('overall_risk_score', table.get('risk_score', 0.05)),
-                    'total_modifications': total_modifications,
-                    'row_level_data': {
-                        'total_rows': table.get('total_rows', 100),
-                        'modified_rows': sorted(list(all_modified_rows)),  # 所有修改过的行号
-                        'total_differences': total_modifications,
-                        'column_modifications': column_modifications
+                    data['clustering_applied'] = True
+                    data['clustering_info'] = {
+                        'row_order': row_order,
+                        'col_order': col_order,
+                        'algorithm': 'pure_python_clustering'
                     }
-                }
-                tables.append(table_item)
 
-        # 确保至少有一些表格数据
-        if not tables and 'table_names' in data:
-            for i, table_name in enumerate(data['table_names']):
-                tables.append({
-                    'name': table_name,
-                    'url': f'https://docs.qq.com/sheet/table_{i+1}',
-                    'risk_score': 0.05,
-                    'total_modifications': 0,
-                    'row_level_data': {
-                        'total_rows': 100,
-                        'modified_rows': [],
-                        'total_differences': 0,
-                        'column_modifications': {}
-                    }
-                })
-
-        # 生成UI适配数据（服务器端适配层）
-        # 适配为CSV模式期望的格式
-
-        # 1. 确保statistics字段包含前端需要的所有数据
-        if 'statistics' not in data:
-            data['statistics'] = {}
-
-        stats = data['statistics']
-
-        # 计算风险统计（如果不存在）
-        if 'high_risk_count' not in stats and 'heatmap_data' in data:
-            matrix = data['heatmap_data'].get('matrix', [])
-            high_count = sum(1 for row in matrix for v in row if v >= 0.7)
-            medium_count = sum(1 for row in matrix for v in row if 0.3 <= v < 0.7)
-            low_count = sum(1 for row in matrix for v in row if 0.05 < v < 0.3)
-            default_count = sum(1 for row in matrix for v in row if v <= 0.05)
-
-            stats['high_risk_count'] = high_count
-            stats['medium_risk_count'] = medium_count
-            stats['low_risk_count'] = low_count
-            stats['very_low_risk_count'] = 0  # 兼容字段
-            stats['default_count'] = default_count
-
-        # 确保有total_modifications
-        if 'table_details' in data:
-            total_modifications = sum(td.get('total_modifications', 0) for td in data['table_details'])
-        elif 'metadata' in data:
-            total_modifications = data['metadata'].get('total_params', 0)
+                    print(f"✅ API: 聚类成功应用")
+                    print(f"   原始列顺序前5个: {column_names[:5]}")
+                    print(f"   聚类后列顺序前5个: {reordered_columns[:5]}")
+            except Exception as e:
+                print(f"⚠️ API: 聚类失败，返回原始数据: {e}")
+                data['clustering_applied'] = False
+                data['clustering_error'] = str(e)
         else:
-            total_modifications = stats.get('table_modifications', [0])[0] if 'table_modifications' in stats else 0
+            print(f"📌 API: 使用默认排序, sorting={sorting_mode}")
+            data['clustering_applied'] = False
 
-        stats['total_changes_detected'] = total_modifications
-        stats['total_tables'] = len(data.get('table_names', []))
-        stats['ai_analysis_coverage'] = 100.0
-        stats['average_risk_score'] = 0.65
-        stats['last_update'] = datetime.datetime.now().isoformat()
-
-        # 🔥 应用行列聚类算法以实现热聚集效果
-        def apply_clustering_to_matrix(matrix_data, table_names, column_names):
-            """对综合打分的矩阵应用行列双向聚类"""
-            if not matrix_data or not matrix_data[0]:
-                return matrix_data, table_names, column_names, list(range(len(table_names))), list(range(len(column_names)))
-
-            # 行聚类：按表格的总体风险评分聚集
-            row_scores = []
-            for i, row in enumerate(matrix_data):
-                avg_heat = sum(row) / len(row) if row else 0
-                row_scores.append((i, avg_heat))
-            row_scores.sort(key=lambda x: -x[1])  # 高风险表格排在前面
-            new_row_order = [item[0] for item in row_scores]
-
-            # 列聚类：按列的平均热力值聚集
-            col_scores = []
-            for col_idx in range(len(matrix_data[0])):
-                col_sum = sum(matrix_data[row_idx][col_idx] for row_idx in range(len(matrix_data)))
-                avg_heat = col_sum / len(matrix_data) if matrix_data else 0
-                col_scores.append((col_idx, avg_heat))
-            col_scores.sort(key=lambda x: -x[1])  # 高热力列排在前面
-            new_col_order = [item[0] for item in col_scores]
-
-            # 重排矩阵
-            clustered_matrix = []
-            for row_idx in new_row_order:
-                new_row = [matrix_data[row_idx][col_idx] for col_idx in new_col_order]
-                clustered_matrix.append(new_row)
-
-            # 重排表格名和列名
-            clustered_tables = [table_names[i] for i in new_row_order] if len(table_names) == len(matrix_data) else table_names
-            clustered_columns = [column_names[i] for i in new_col_order] if len(column_names) == len(matrix_data[0]) else column_names
-
-            return clustered_matrix, clustered_tables, clustered_columns, new_row_order, new_col_order
-
-        # 根据排序模式决定是否应用聚类算法
-        if apply_clustering and 'heatmap_data' in data and 'matrix' in data['heatmap_data']:
-            # 保存原始数据用于比较
-            original_matrix = data['heatmap_data']['matrix'].copy()
-            original_tables = data.get('table_names', []).copy()
-            original_columns = data.get('column_names', STANDARD_COLUMNS.copy()).copy()
-
-            # 执行聚类
-            clustered_matrix, clustered_tables, clustered_columns, row_order, col_order = apply_clustering_to_matrix(
-                original_matrix,
-                original_tables,
-                original_columns
-            )
-
-            # 更新数据结构
-            data['heatmap_data']['matrix'] = clustered_matrix
-            data['heatmap_data']['clustered'] = True
-            data['heatmap_data']['original_matrix'] = original_matrix  # 保存原始矩阵供参考
-            data['table_names'] = clustered_tables
-            data['column_names'] = clustered_columns
-            data['sorted_column_names'] = clustered_columns  # 🔥 添加排序后的列名供前端使用
-            data['clustering_info'] = {
-                'row_reorder': row_order,
-                'col_reorder': col_order,
-                'algorithm': 'heat_based_clustering',
-                'sorting_mode': sorting_mode,
-                'timestamp': datetime.datetime.now().isoformat()
-            }
-
-            print(f"✅ 智能排序模式: 应用了热聚集算法，{len(row_order)}行×{len(col_order)}列重排")
-        else:
-            # 默认排序，恢复原始顺序
-            # 🔥 重要：当数据已经被某种方式排序后，需要恢复到原始列顺序
-            original_columns = STANDARD_COLUMNS.copy()
-            current_columns = data.get('column_names', STANDARD_COLUMNS.copy())
-
-            # 如果当前列顺序不是原始顺序，需要重新排序矩阵
-            if current_columns != original_columns and 'heatmap_data' in data and 'matrix' in data['heatmap_data']:
-                # 找到从当前顺序到原始顺序的映射
-                col_index_map = []
-                for orig_col in original_columns:
-                    try:
-                        idx = current_columns.index(orig_col)
-                        col_index_map.append(idx)
-                    except ValueError:
-                        # 如果列不存在，使用原位置
-                        col_index_map.append(original_columns.index(orig_col) if orig_col in original_columns else 0)
-
-                # 调试输出：显示列映射关系
-                print(f"🔍 列映射调试:")
-                print(f"   - 当前列前5个: {current_columns[:5]}")
-                print(f"   - 目标列前5个: {original_columns[:5]}")
-                print(f"   - 映射索引前5个: {col_index_map[:5]}")
-
-                # 显示矩阵重排前的数据
-                if data['heatmap_data']['matrix']:
-                    print(f"   - 重排前第一行前5个值: {data['heatmap_data']['matrix'][0][:5]}")
-
-                # 重新排序矩阵的列
-                original_matrix = []
-                for row in data['heatmap_data']['matrix']:
-                    new_row = []
-                    for idx in col_index_map:
-                        if idx < len(row):
-                            new_row.append(row[idx])
-                        else:
-                            new_row.append(0)  # 默认值
-                    original_matrix.append(new_row)
-
-                data['heatmap_data']['matrix'] = original_matrix
-
-                # 显示矩阵重排后的数据
-                if original_matrix:
-                    print(f"   - 重排后第一行前5个值: {original_matrix[0][:5]}")
-
-                data['column_names'] = original_columns
-                print(f"📋 默认排序模式: 已恢复原始列顺序，重排了{len(col_index_map)}列")
-            else:
-                print(f"📋 默认排序模式: 列顺序已经是原始顺序，无需重排")
-
-            data['heatmap_data']['clustered'] = False
-            data['sorted_column_names'] = original_columns  # 🔥 默认排序时使用原始列名
-            if 'clustering_info' in data:
-                del data['clustering_info']  # 移除聚类信息
-
-        # 包装成前端期望的格式（模拟CSV模式响应结构）
-        response_data = data.copy()
-        response_data['tables'] = tables  # 添加前端需要的tables数组
-        response_data['algorithm_settings'] = {
-            "color_mapping": "scientific_5_level",
-            "data_sorting": "risk_score_desc",
-            "gaussian_smoothing": True,
-            "update_frequency": 30,
-            "clustering_applied": data.get('clustering_info', {}).get('algorithm') == 'heat_based_clustering'
-        }
-        response_data['data_source'] = data.get('metadata', {}).get('data_source', 'comprehensive_scoring')
-        response_data['generation_time'] = datetime.datetime.now().isoformat()
-        response_data['matrix_size'] = {
-            "rows": len(data.get('table_names', [])),
-            "cols": 19,
-            "total_cells": len(data.get('table_names', [])) * 19
-        }
-        response_data['processing_info'] = {
-            "matrix_generation_algorithm": "comprehensive_score_adapter_v2",
-            "source_changes": total_modifications,
-            "statistical_confidence": 0.95,
-            "cache_buster": datetime.datetime.now().microsecond
-        }
-
-        # 处理hover_data：将column_details转换为column_modifications
-        if 'hover_data' in response_data and 'data' in response_data['hover_data']:
-            hover_items = response_data['hover_data']['data']
-            converted_hover_data = []
-
-            for item in hover_items:
-                if 'column_details' in item:
-                    # 从column_details提取column_modifications数组
-                    column_mods = []
-                    for col_detail in item['column_details']:
-                        mod_count = col_detail.get('modification_count', 0)
-                        column_mods.append(mod_count)
-
-                    # 创建新的hover_data项，符合前端期望的格式
-                    converted_item = {
-                        'table_index': item.get('table_index', 0),
-                        'column_modifications': column_mods  # 前端需要的格式
-                    }
-                    converted_hover_data.append(converted_item)
-                elif 'column_modifications' in item:
-                    # 已经是正确格式，直接保留
-                    converted_hover_data.append(item)
-
-            # 替换为转换后的hover_data
-            response_data['hover_data']['data'] = converted_hover_data
-
-        # 添加risk_distribution
-        response_data['risk_distribution'] = {
-            "L1": len([t for t in tables if t.get('risk_level') == 'L1']),
-            "L2": len([t for t in tables if t.get('risk_level') == 'L2']),
-            "L3": len([t for t in tables if t.get('risk_level') == 'L3'])
-        }
-
-        # 响应包装（与CSV模式一致）
-        response = {
+        # 构建响应
+        return jsonify({
             "success": True,
-            "data": response_data,
-            "metadata": {
-                "source_file": "comprehensive_score_adapted",
-                "last_modified": datetime.datetime.now().isoformat(),
-                "file_size": len(str(response_data)),
-                "cache_control": "no-cache, no-store, must-revalidate"
-            },
-            "timestamp": datetime.datetime.now().isoformat()
-        }
-        return jsonify(response)
-        
-        # 原有的CSV模式逻辑
-        # 使用我们新的30份数据生成函数（包含双维度聚类）
-        heatmap_matrix, reordered_table_names, new_row_order_info, reordered_column_names, new_col_order_info = generate_real_heatmap_matrix_from_intelligent_mapping()
-        
-        # 使用重排序后的列名称
-        column_names = reordered_column_names
-        
-        # 真实业务表格名称（已按行聚类重排序）
-        table_names = reordered_table_names
-        
-        print(f"📊 数据统计: {len(column_names)}列, {len(table_names)}行, 矩阵大小{len(heatmap_matrix)}x{len(heatmap_matrix[0])}")
-        
-        # 🔥 强制验证矩阵大小为30x19
-        if len(heatmap_matrix) != 30:
-            print(f"❌ 严重错误: 矩阵行数不正确! 期望30行，实际{len(heatmap_matrix)}行")
-        if len(heatmap_matrix[0]) != 19:
-            print(f"❌ 严重错误: 矩阵列数不正确! 期望19列，实际{len(heatmap_matrix[0])}列")
-        
-        print(f"🔥 API响应数据验证: 最终返回{len(heatmap_matrix)}x{len(heatmap_matrix[0]) if heatmap_matrix else 0}矩阵")
-        
-        # 计算真实的统计信息
-        total_changes = 0
-        for row in heatmap_matrix:
-            for cell in row:
-                if cell > 0.05:  # 大于基础值就算有变更
-                    total_changes += 1
-        
-        # 🔥 加载真实表格行级差异信息
-        def load_table_row_level_data():
-            """从CSV差异文件中提取每个表格的行级差异信息"""
-            tables_row_data = {}
-            base_path = '/root/projects/tencent-doc-manager/csv_versions/standard_outputs'
-            
-            for table_num in range(1, 31):
-                table_file = f"{base_path}/table_{table_num:03d}_diff.json"
-                
-                if os.path.exists(table_file):
-                    with open(table_file, 'r', encoding='utf-8') as f:
-                        table_data = json.load(f)
-                        
-                        # 提取行级信息
-                        comparison_summary = table_data.get('comparison_summary', {})
-                        differences = table_data.get('differences', [])
-                        
-                        # 统计每列的修改行号
-                        column_modifications = {}
-                        modified_rows = set()
-                        
-                        for diff in differences:
-                            row_num = diff.get('行号', 1)
-                            col_name = diff.get('列名', '')
-                            col_index = diff.get('列索引', 0)
-                            
-                            modified_rows.add(row_num)
-                            
-                            if col_name not in column_modifications:
-                                column_modifications[col_name] = {
-                                    'modified_rows': [],
-                                    'col_index': col_index
-                                }
-                            column_modifications[col_name]['modified_rows'].append(row_num)
-                        
-                        # 排序修改行号
-                        for col_data in column_modifications.values():
-                            col_data['modified_rows'].sort()
-                        
-                        tables_row_data[table_num] = {
-                            'total_rows': comparison_summary.get('rows_compared', 50),  # 真实总行数
-                            'total_columns': comparison_summary.get('columns_compared', 19),
-                            'total_differences': comparison_summary.get('total_differences', 0),
-                            'baseline_file': comparison_summary.get('baseline_file', ''),
-                            'current_file': comparison_summary.get('current_file', ''),
-                            'modified_rows': sorted(list(modified_rows)),  # 所有修改行号
-                            'column_modifications': column_modifications  # 按列分组的修改行号
-                        }
-                else:
-                    # 默认数据
-                    tables_row_data[table_num] = {
-                        'total_rows': 50,
-                        'total_columns': 19, 
-                        'total_differences': 0,
-                        'baseline_file': '',
-                        'current_file': '',
-                        'modified_rows': [],
-                        'column_modifications': {}
-                    }
-            
-            return tables_row_data
-        
-        # 加载行级差异数据
-        tables_row_data = load_table_row_level_data()
-        
-        # 生成表格信息 - 包含正确的原始索引和行级差异数据
-        tables = []
-        for i, name in enumerate(table_names):
-            # 获取当前位置i对应的原始索引
-            original_index = new_row_order_info[i] if i < len(new_row_order_info) else i
-            original_table_num = original_index + 1  # 转换为table编号(1-30)
-            
-            # 获取真实的行级数据
-            row_data = tables_row_data.get(original_table_num, {})
-            
-            if i < len(heatmap_matrix):
-                row_changes = sum(1 for cell in heatmap_matrix[i] if cell > 0.05)
-                max_heat = max(heatmap_matrix[i])
-                risk_level = 'L3' if max_heat < 0.3 else 'L2' if max_heat < 0.7 else 'L1'
-            else:
-                row_changes = 0
-                risk_level = 'L3'
-                
-            tables.append({
-                'id': original_index,  # 🔥 使用原始索引
-                'name': name,
-                'url': '',  # 不使用虚假URL，从document-links API获取真实URL
-                'modifications': row_changes,
-                'risk_level': risk_level,
-                'current_position': i,  # 🔥 添加当前位置信息
-                'is_reordered': original_index != i,  # 🔥 标记是否被重排序
-                # 🔥 新增真实行级差异数据
-                'row_level_data': row_data
-            })
-        
-        # 构建API响应
-        result_data = {
-            'success': True,
-            'timestamp': datetime.datetime.now().isoformat(),
-            'data': {
-                'heatmap_data': heatmap_matrix,
-                'generation_time': datetime.datetime.now().isoformat(),
-                'data_source': 'real_30_tables_driven_data',
-                'algorithm_settings': {
-                    'color_mapping': 'scientific_5_level',
-                    'gaussian_smoothing': False,  # 直接使用真实数据
-                    'real_test_integration': True,
-                    'dynamic_extraction': True
-                },
-                'matrix_size': {
-                    'rows': len(heatmap_matrix),
-                    'cols': len(heatmap_matrix[0]) if heatmap_matrix else 0
-                },
-                'processing_info': {
-                    'real_test_applied': True,
-                    'changes_applied': total_changes,
-                    'matrix_generation_algorithm': 'real_30_tables_v1.0',
-                    'cache_buster': int(datetime.datetime.now().timestamp() * 1000) % 1000000,
-                    'column_extraction': 'dynamic',
-                    'table_extraction': 'dynamic'
-                },
-                'statistics': {
-                    'total_changes_detected': total_changes,
-                    'data_freshness': 'REAL_TIME',
-                    'last_update': datetime.datetime.now().isoformat()
-                },
-                'column_names': column_names,
-                'reordered_column_names': reordered_column_names,
-                'column_reorder_info': new_col_order_info,
-                'tables': tables
-            }
-        }
-        
-        # 🔥 创建响应并添加强制无缓存头
-        response = make_response(jsonify(result_data))
-        response.headers['Cache-Control'] = 'no-cache, no-store, must-revalidate, max-age=0'
-        response.headers['Pragma'] = 'no-cache'
-        response.headers['Expires'] = '0'
-        return response
-        
+            "timestamp": datetime.datetime.now().isoformat(),
+            "file": os.path.basename(latest_file),
+            "data": data
+        })
+
     except Exception as e:
-        print(f"❌ 生成30份数据热力图失败: {e}")
-        response = make_response(jsonify({'success': False, 'error': str(e)}))
-        response.headers['Cache-Control'] = 'no-cache, no-store, must-revalidate, max-age=0'
-        response.headers['Pragma'] = 'no-cache'
-        response.headers['Expires'] = '0'
-        return response
+        return jsonify({
+            "success": False,
+            "error": str(e)
+        }), 500
 
 @app.route('/api/update', methods=['POST'])
 def update_heatmap_data():
@@ -2814,8 +2318,7 @@ def get_latest_comprehensive():
         # 存储到全局变量
         global comprehensive_scoring_data, COMPREHENSIVE_MODE, DATA_SOURCE
         comprehensive_scoring_data = data
-        COMPREHENSIVE_MODE = True
-        DATA_SOURCE = 'comprehensive'
+                # DATA_SOURCE已移除，只使用综合打分
 
         print(f"✅ 自动加载最新综合打分文件: {os.path.basename(latest_file)}")
         print(f"   - 表格数量: {len(data.get('table_names', []))}")
@@ -2881,8 +2384,7 @@ def load_comprehensive_data():
         # 在全局变量中存储数据以供后续使用
         global comprehensive_scoring_data, COMPREHENSIVE_MODE, DATA_SOURCE
         comprehensive_scoring_data = data
-        COMPREHENSIVE_MODE = True
-        DATA_SOURCE = 'comprehensive'
+                # DATA_SOURCE已移除，只使用综合打分
 
         # 返回数据
         return jsonify({
@@ -3171,9 +2673,28 @@ def start_download():
                     "message": f"🎉 全部处理完成！共处理 {len(enabled_links)} 个文档"
                 })
                 
-                # 生成热力图数据（这里可以调用热力图生成逻辑）
-                # ...
-                
+                # 生成热力图数据（重新加载最新的综合打分文件）
+                print("🔄 工作流完成，重新加载最新综合打分文件...", flush=True)
+
+                # 等待一秒确保文件写入完成
+                time.sleep(1)
+
+                # 重新加载最新的综合打分数据
+                if load_latest_comprehensive_data():
+                    workflow_status['logs'].append({
+                        "time": datetime.datetime.now().isoformat(),
+                        "level": "success",
+                        "message": "✅ 已重新加载最新的综合打分文件，热力图数据已更新"
+                    })
+                    print("✅ 综合打分文件已重新加载，热力图数据已更新", flush=True)
+                else:
+                    workflow_status['logs'].append({
+                        "time": datetime.datetime.now().isoformat(),
+                        "level": "warning",
+                        "message": "⚠️ 无法重新加载综合打分文件，继续使用之前的数据"
+                    })
+                    print("⚠️ 无法重新加载综合打分文件", flush=True)
+
                 with open(workflow_status_file, 'w') as f:
                     json.dump(workflow_status, f)
                     
@@ -4666,8 +4187,7 @@ def load_comprehensive_scoring():
         # 保存到全局变量和临时文件
         global comprehensive_scoring_data, COMPREHENSIVE_MODE, DATA_SOURCE
         comprehensive_scoring_data = scoring_data
-        COMPREHENSIVE_MODE = True
-        DATA_SOURCE = 'comprehensive'
+                # DATA_SOURCE已移除，只使用综合打分
     # 确保API也返回正确的模式
 
         # 🔥 更新数据源管理器状态，实现持久化
@@ -4759,41 +4279,6 @@ def list_comprehensive_files():
     except Exception as e:
         return jsonify({'success': False, 'error': f'获取文件列表失败: {str(e)}'})
 
-@app.route('/api/switch_data_source', methods=['POST'])
-def switch_data_source():
-    """切换数据源（CSV或综合打分）"""
-    try:
-        data = request.get_json()
-        source = data.get('source', 'csv')
-        
-        global DATA_SOURCE, COMPREHENSIVE_MODE
-        
-        if source == 'comprehensive':
-            if comprehensive_scoring_data:
-                DATA_SOURCE = 'comprehensive'
-                COMPREHENSIVE_MODE = True
-                return jsonify({
-                    "success": True,
-                    "message": "已切换到综合打分数据",
-                    "data_source": DATA_SOURCE
-                })
-            else:
-                return jsonify({
-                    "success": False,
-                    "error": "未加载综合打分数据，请先加载文件"
-                })
-        else:
-            DATA_SOURCE = 'csv'
-            COMPREHENSIVE_MODE = False
-            return jsonify({
-                "success": True,
-                "message": "已切换到CSV对比数据",
-                "data_source": DATA_SOURCE
-            })
-    
-    except Exception as e:
-        return jsonify({"success": False, "error": str(e)})
-
 @app.route('/api/get_column_order_status', methods=['GET'])
 def get_column_order_status():
     """获取当前列顺序状态"""
@@ -4809,11 +4294,11 @@ def get_column_order_status():
 
 @app.route('/api/get_data_source', methods=['GET'])
 def get_data_source():
-    """获取当前数据源状态"""
+    """获取当前数据源状态 - 只返回综合打分模式"""
     return jsonify({
         "success": True,
-        "data_source": DATA_SOURCE,
-        "comprehensive_mode": COMPREHENSIVE_MODE,
+        "data_source": "comprehensive",  # 固定为综合打分模式
+        "comprehensive_mode": True,  # 始终启用
         "has_comprehensive_data": comprehensive_scoring_data is not None
     })
 
@@ -4833,8 +4318,7 @@ def load_latest_comprehensive_data():
 
             global comprehensive_scoring_data, COMPREHENSIVE_MODE, DATA_SOURCE
             comprehensive_scoring_data = data
-            COMPREHENSIVE_MODE = True
-            DATA_SOURCE = 'comprehensive'
+                        # DATA_SOURCE已移除，只使用综合打分
 
             print(f"✅ 自动加载综合打分文件: {os.path.basename(latest_file)}")
             print(f"   - 表格数量: {len(data.get('table_names', []))}")
@@ -5064,7 +4548,7 @@ def get_comprehensive_heatmap_data():
             print("🔄 应用综合双向聚类算法...")
             try:
                 # 尝试导入高级聚类模块（需要numpy/scipy）
-                from comprehensive_clustering import apply_comprehensive_clustering
+                from production.servers.comprehensive_clustering import apply_comprehensive_clustering
 
                 # 应用聚类算法
                 reordered_heatmap, reordered_table_names, reordered_columns, row_order, col_order = \
@@ -5081,7 +4565,7 @@ def get_comprehensive_heatmap_data():
 
                 try:
                     # 使用纯Python聚类（不需要numpy/scipy）
-                    from pure_python_clustering import apply_pure_clustering
+                    from production.servers.pure_python_clustering import apply_pure_clustering
 
                     reordered_heatmap, reordered_table_names, reordered_columns, row_order, col_order = \
                         apply_pure_clustering(heatmap_data, sorted_table_names, standard_columns)
@@ -5626,9 +5110,9 @@ def index():
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>腾讯文档变更监控 - 热力图分析</title>
-    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
-    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@babel/standalone@7/babel.min.js"></script>
+    <script crossorigin src="/static/react.development.js"></script>
+    <script crossorigin src="/static/react-dom.development.js"></script>
+    <script src="/static/babel.min.js"></script>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         .heat-container {
@@ -6214,7 +5698,7 @@ def index():
           const logsEndRef = React.useRef(null);
           
           // 🎯 综合打分模式状态（从8090集成）
-          const [dataSource, setDataSource] = React.useState('csv');
+          const [dataSource, setDataSource] = React.useState('comprehensive');  // 固定为综合打分模式
           const [useDefaultColumnOrder, setUseDefaultColumnOrder] = React.useState(false);  // 列顺序模式状态
           const [comprehensiveFilePath, setComprehensiveFilePath] = React.useState('');
           const [comprehensiveLoadStatus, setComprehensiveLoadStatus] = React.useState('');
@@ -6330,7 +5814,7 @@ def index():
               const response = await fetch('/api/get_data_source');
               const result = await response.json();
               if (result.success) {
-                setDataSource(result.data_source || 'csv');
+                // 数据源固定为comprehensive，不再动态设置
               }
             } catch (error) {
               console.error('加载数据源状态失败:', error);
@@ -6594,8 +6078,7 @@ def index():
               const result = await response.json();
 
               if (result.success) {
-                // 切换到综合打分模式
-                setDataSource('comprehensive');
+                // 数据源已固定为comprehensive
                 setShowComprehensivePanel(false);
 
                 // 显示成功消息并提示手动刷新
@@ -6852,7 +6335,7 @@ def index():
               const result = await response.json();
               if (result.success) {
                 setComprehensiveLoadStatus(`✅ ${result.message}`);
-                setDataSource('comprehensive');
+                // 数据源已固定为comprehensive
                 // 不再自动刷新页面，让用户保持控制
                 // setTimeout(() => window.location.reload(), 1500);
               } else {
@@ -6863,28 +6346,7 @@ def index():
             }
           };
           
-          // 数据源切换处理
-          const handleDataSourceSwitch = async (source) => {
-            try {
-              const response = await fetch('/api/switch_data_source', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ source })
-              });
-              
-              const result = await response.json();
-              if (result.success) {
-                setDataSource(source);
-                setComprehensiveLoadStatus(`✅ ${result.message}`);
-                // 不再自动刷新页面
-                // setTimeout(() => window.location.reload(), 1000);
-              } else {
-                setComprehensiveLoadStatus(`❌ ${result.error}`);
-              }
-            } catch (error) {
-              setComprehensiveLoadStatus(`❌ 切换失败: ${error.message}`);
-            }
-          };
+          // 数据源切换已删除 - 只使用综合打分模式
           
           if (!isOpen) return null;
           
@@ -6933,61 +6395,8 @@ def index():
                 </div>
                 
                 <div style={{ padding: '24px 32px' }}>
-                  {/* 🎯 数据源切换（新增） */}
-                  <div style={{ 
-                    marginBottom: '32px',
-                    padding: '16px',
-                    background: '#f0f9ff',
-                    borderRadius: '8px',
-                    border: '1px solid #bae6fd'
-                  }}>
-                    <label className="text-sm font-medium text-slate-700 block mb-3">
-                      📊 数据源模式
-                    </label>
-                    <div style={{ display: 'flex', gap: '16px', marginBottom: '16px' }}>
-                      <button
-                        onClick={() => handleDataSourceSwitch('csv')}
-                        style={{
-                          padding: '8px 16px',
-                          background: dataSource === 'csv' ? '#3b82f6' : '#e5e7eb',
-                          color: dataSource === 'csv' ? 'white' : '#6b7280',
-                          border: 'none',
-                          borderRadius: '6px',
-                          fontSize: '14px',
-                          fontWeight: '500',
-                          cursor: 'pointer',
-                          transition: 'background-color 0.2s ease'
-                        }}
-                      >
-                        CSV对比模式
-                      </button>
-                      <button
-                        onClick={() => handleDataSourceSwitch(dataSource === 'comprehensive' ? 'csv' : 'comprehensive')}
-                        style={{
-                          padding: '8px 16px',
-                          background: dataSource === 'comprehensive' ? '#3b82f6' : '#e5e7eb',
-                          color: dataSource === 'comprehensive' ? 'white' : '#6b7280',
-                          border: 'none',
-                          borderRadius: '6px',
-                          fontSize: '14px',
-                          fontWeight: '500',
-                          cursor: 'pointer',
-                          transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
-                          transform: dataSource === 'comprehensive' ? 'scale(1.05)' : 'scale(1)',
-                          boxShadow: dataSource === 'comprehensive' ? '0 4px 12px rgba(59, 130, 246, 0.3)' : 'none',
-                          display: 'none'
-                        }}
-                      >
-                        {dataSource === 'comprehensive' ? '切换到CSV模式' : '综合打分模式'}
-                      </button>
-                    </div>
-                    <div className="text-xs text-slate-600">
-                      当前数据源：<span style={{ fontWeight: 'bold', color: '#3b82f6' }}>
-                        {dataSource === 'csv' ? 'CSV文件对比' : '综合打分数据'}
-                      </span>
-                    </div>
-                  </div>
-                  
+                  {/* 数据源模式UI已删除 - 只使用真实综合打分数据 */}
+
                   {/* 🎯 综合打分文件加载（隐藏） */}
                   {false && (
                     <div style={{ 
@@ -7023,7 +6432,7 @@ def index():
                                 .then(result => {
                                   if (result.success) {
                                     setComprehensiveLoadStatus(`✅ ${result.message}\n\n📌 请手动刷新页面(按F5)以查看更新后的数据`);
-                                    setDataSource('comprehensive');
+                                    // 数据源已固定为comprehensive
                                     setShowComprehensivePanel(false);  // 加载成功后自动关闭面板
                                     // 不再自动刷新，让用户手动控制
                                     console.log('✅ 综合打分文件已加载，请手动刷新页面查看');
@@ -8563,6 +7972,13 @@ def index():
                   console.log('🚨 检查第一个表格的row_level_data:', result.data.tables?.[0]?.row_level_data);
                   console.log('🚨 检查第一个表格的所有字段:', Object.keys(result.data.tables?.[0] || {}));
                   setApiData(result.data);
+
+                  // 提取column_modifications_by_table到detailedScores
+                  if (result.data.column_modifications_by_table) {
+                    console.log('✅ 发现column_modifications_by_table，设置到detailedScores');
+                    setDetailedScores(result.data.column_modifications_by_table);
+                  }
+
                   setError(null);
                 } else {
                   console.warn('⚠️ API返回无数据，使用备用接口...');

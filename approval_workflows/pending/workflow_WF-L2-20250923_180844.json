@@ -1,0 +1,27 @@
+{
+  "workflow_id": "WF-L2-20250923_180844",
+  "created_time": "2025-09-23 18:08:44",
+  "pending_approvals": [
+    {
+      "modification_id": "M001",
+      "cell": "H68",
+      "column": "具体计划内容",
+      "old_value": "视频评估调整：着装调整，购买平衡支架，评估KR策略更新迭代；",
+      "new_value": "",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 90.0,
+        "reason": "删除内容"
+      },
+      "layer2_result": {
+        "risk_level": "HIGH",
+        "decision": "REVIEW",
+        "confidence": 90,
+        "reason": "单元格内容被清空，可能导致关键信息丢失，影响项目计划执行"
+      },
+      "final_decision": "REVIEW",
+      "approval_required": true
+    }
+  ],
+  "auto_approved": []
+}

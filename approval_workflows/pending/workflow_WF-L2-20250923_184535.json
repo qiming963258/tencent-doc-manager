@@ -1,0 +1,22 @@
+{
+  "workflow_id": "WF-L2-20250923_184535",
+  "created_time": "2025-09-23 18:45:35",
+  "pending_approvals": [],
+  "auto_approved": [
+    {
+      "modification_id": "M001",
+      "cell": "C6",
+      "column": "项目类型",
+      "old_value": "",
+      "new_value": "目标管理",
+      "layer1_result": {
+        "judgment": "SAFE",
+        "confidence": 90.0,
+        "reason": "补充内容"
+      },
+      "layer2_result": null,
+      "final_decision": "APPROVE",
+      "approval_required": false
+    }
+  ]
+}

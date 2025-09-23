@@ -1,0 +1,43 @@
+{
+  "metadata": {
+    "analysis_time": "2025-09-23 18:30:48",
+    "total_modifications": 1,
+    "layer1_passed": 0,
+    "layer2_analyzed": 1,
+    "processing_time": "12.4s"
+  },
+  "results": [
+    {
+      "modification_id": "M001",
+      "cell": "H11",
+      "column": "具体计划内容",
+      "old_value": "清单计划的罗列整改",
+      "new_value": "技能管理\n1、日常工作的开展KR的建立与应用；\n2、客户识别，体积技能，评估技能，",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 80.0,
+        "reason": "内容替换"
+      },
+      "layer2_result": {
+        "risk_level": "MEDIUM",
+        "decision": "REVIEW",
+        "confidence": 80,
+        "reason": "修改内容从清单整改变为技能管理，涉及工作方法和客户识别等关键业务变化，需确认是否符合项目目标"
+      },
+      "final_decision": "REVIEW",
+      "approval_required": true
+    }
+  ],
+  "summary": {
+    "approved": 0,
+    "conditional": 0,
+    "review_required": 1,
+    "rejected": 0,
+    "risk_distribution": {
+      "LOW": 0,
+      "MEDIUM": 0,
+      "HIGH": 1,
+      "CRITICAL": 0
+    }
+  }
+}
