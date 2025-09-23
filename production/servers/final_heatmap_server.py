@@ -8123,16 +8123,30 @@ def index():
               const tablesData = apiData.tables || apiTableNames.map((name, idx) => {
                   // 从table_risk_info中获取对应表格的统计信息
                   const riskInfo = tableRiskInfo[idx] || {};
+                  // 获取该表的修改数据
+                  const tableModData = apiData.column_modifications_by_table?.[name] || {};
+
+                  // 计算总修改数
+                  let totalModifications = 0;
+                  const columnMods = tableModData.column_modifications || {};
+                  Object.values(columnMods).forEach(colMod => {
+                      totalModifications += colMod.modification_count || 0;
+                  });
+
                   return {
                       id: idx,
                       name: name,
-                      row_level_data: { 
-                          total_rows: 0, 
-                          total_differences: riskInfo.modifications || 0  // 使用真实修改数
+                      row_level_data: {
+                          total_rows: tableModData.total_rows || 270,
+                          total_differences: totalModifications,
+                          column_modifications: columnMods,
+                          modified_rows: Object.values(columnMods).flatMap(cm => cm.modified_rows || [])
                       },
                       risk_level: riskInfo.risk_level || 'L3',
                       risk_score: riskInfo.risk_score || 0,
-                      max_intensity: riskInfo.max_intensity || 0
+                      max_intensity: riskInfo.max_intensity || 0,
+                      totalRows: tableModData.total_rows || 270,
+                      totalModifications: totalModifications
                   };
               });
               
@@ -8227,19 +8241,40 @@ def index():
                 '形成计划清单', '复盘时间', '对上汇报', '应用情况', '进度分析总结'
               ];
               
-              const apiTables = apiData.tables.map((table, index) => ({
-                id: index,
-                name: table.name || `腾讯文档表格_${index + 1}`,
-                columns: standardColumns,
-                avgRisk: 0.3,
-                maxCellRisk: 0.5,
-                criticalModifications: Math.floor(Math.random() * 5),
-                columnRiskLevels: standardColumns.reduce((acc, col) => {
-                  acc[col] = 'L2';
-                  return acc;
-                }, {}),
-                url: ''  // 不使用默认URL
-              }));
+              const apiTables = apiData.tables.map((table, index) => {
+                const tableName = table.name || `腾讯文档表格_${index + 1}`;
+                const tableModData = apiData.column_modifications_by_table?.[tableName] || {};
+
+                // 计算总修改数
+                let totalModifications = 0;
+                const columnMods = tableModData.column_modifications || {};
+                Object.values(columnMods).forEach(colMod => {
+                  totalModifications += colMod.modification_count || 0;
+                });
+
+                return {
+                  id: index,
+                  name: tableName,
+                  columns: standardColumns,
+                  avgRisk: 0.3,
+                  maxCellRisk: 0.5,
+                  criticalModifications: Math.floor(Math.random() * 5),
+                  columnRiskLevels: standardColumns.reduce((acc, col) => {
+                    acc[col] = 'L2';
+                    return acc;
+                  }, {}),
+                  url: '',  // 不使用默认URL
+                  // 添加row_level_data以供generateTableModificationPatterns使用
+                  row_level_data: {
+                    total_rows: tableModData.total_rows || 270,
+                    total_differences: totalModifications,
+                    column_modifications: columnMods,
+                    modified_rows: Object.values(columnMods).flatMap(cm => cm.modified_rows || [])
+                  },
+                  totalRows: tableModData.total_rows || 270,
+                  totalModifications: totalModifications
+                };
+              });
               
               // 生成基本矩阵
               const matrix = apiTables.map(() => 
