@@ -1,0 +1,88 @@
+{
+  "document_links": [
+    {
+      "name": "副本-测试版本-出国销售计划表",
+      "url": "https://docs.qq.com/sheet/DWEFNU25TemFnZXJN",
+      "enabled": true
+    },
+    {
+      "name": "副本-测试版本-回国销售计划表",
+      "url": "https://docs.qq.com/sheet/DWGZDZkxpaGVQaURr",
+      "enabled": true
+    },
+    {
+      "name": "测试版本-小红书部门",
+      "url": "https://docs.qq.com/sheet/DWEVjZndkR2xVSWJN?tab=c2p5hs",
+      "enabled": true
+    }
+  ],
+  "download_format": "csv",
+  "schedule": {
+    "enabled": false,
+    "interval": "weekly",
+    "last_download": null
+  },
+  "download_status": "已完成 1/1 个文件下载",
+  "last_updated": "2025-09-25T01:00:37.706913",
+  "last_update": "2025-09-25T01:00:37.686462",
+  "last_download": "2025-09-12T11:36:11.155310",
+  "deleted_links": [
+    {
+      "name": "2025年仓库月度计划",
+      "url": "https://docs.qq.com/sheet/DVldES1NqblhRS21x",
+      "enabled": true,
+      "deleted_at": "2025-09-15T00:57:13.747784",
+      "active": false
+    },
+    {
+      "name": "2025年回国月度计划",
+      "url": "https://docs.qq.com/sheet/DVnNwV3VEbmRFVEZP",
+      "enabled": true,
+      "deleted_at": "2025-09-15T00:57:13.747808",
+      "active": false
+    },
+    {
+      "name": "111测试版本-出国销售计划表",
+      "url": "https://docs.qq.com/sheet/DWEFNU25TemFnZXJN?tab=BB08J2",
+      "enabled": true,
+      "deleted_at": "2025-09-22T01:00:14.629885",
+      "active": false
+    },
+    {
+      "name": "111测试版本-小红书部门",
+      "url": "https://docs.qq.com/sheet/DWFJzdWNwd0RGbU5R?tab=000001",
+      "enabled": true,
+      "deleted_at": "2025-09-22T01:00:14.631431",
+      "active": false
+    },
+    {
+      "id": "DWGZDZkxpaGVQaURr",
+      "name": "副本-测试版本-回国销售计划表",
+      "url": "https://docs.qq.com/sheet/DWGZDZkxpaGVQaURr",
+      "type": "baseline",
+      "enabled": false,
+      "last_download": null,
+      "last_upload": null,
+      "deleted_at": "2025-09-24T23:28:49.886957",
+      "active": false
+    },
+    {
+      "id": "DWFJzdWNwd0RGbU5R",
+      "name": "测试版本-小红书部门",
+      "url": "https://docs.qq.com/sheet/DWFJzdWNwd0RGbU5R",
+      "type": "baseline",
+      "enabled": false,
+      "last_download": null,
+      "last_upload": null,
+      "deleted_at": "2025-09-24T23:28:49.887023",
+      "active": false
+    },
+    {
+      "name": "111测试版本-出国销售计划表",
+      "url": "https://docs.qq.com/sheet/DWEFNU25TemFnZXJN?tab=BB08J2",
+      "enabled": true,
+      "deleted_at": "2025-09-25T01:00:37.686384",
+      "active": false
+    }
+  ]
+}

@@ -434,13 +434,56 @@ class IntegratedScorer:
         
         # 提取修改列表
         modifications = data.get('modifications', [])
-        if not modifications:
-            raise ValueError("输入文件中没有找到modifications数据")
-        
+
         # 获取表名
-        table_name = data.get('table_name', 
+        table_name = data.get('table_name',
                               os.path.basename(input_file).replace('.json', ''))
-        
+
+        # 如果没有modifications，生成一个"无变更"的输出
+        if not modifications:
+            print("没有发现变更，生成无变更报告")
+            output = {
+                'metadata': {
+                    'table_name': table_name,
+                    'source_file': input_file,
+                    'scoring_time': datetime.now().strftime('%Y-%m-%d %H:%M:%S'),
+                    'total_modifications': 0,
+                    'scoring_version': 'v1.0',
+                    'status': 'no_changes'
+                },
+                'scores': [],
+                'summary': {
+                    'total_score': 0.0,
+                    'average_score': 0.0,
+                    'risk_distribution': {},
+                    'ai_usage': {
+                        'total_ai_calls': 0,
+                        'layer1_passes': 0,
+                        'layer2_analyses': 0
+                    },
+                    'message': '基线和目标文档完全一致，无需打分'
+                }
+            }
+
+            # 保存结果
+            if not output_dir:
+                # 使用统一路径管理器获取正确路径
+                output_dir = str(path_manager.get_scoring_results_path(detailed=True))
+
+            os.makedirs(output_dir, exist_ok=True)
+
+            timestamp = datetime.now().strftime('%Y%m%d_%H%M%S')
+            output_file = os.path.join(
+                output_dir,
+                f"detailed_score_{table_name}_{timestamp}.json"
+            )
+
+            with open(output_file, 'w', encoding='utf-8') as f:
+                json.dump(output, f, ensure_ascii=False, indent=2)
+
+            print(f"无变更详细打分完成: {output_file}")
+            return output_file
+
         # 打分结果
         scores = []
         risk_distribution = defaultdict(int)

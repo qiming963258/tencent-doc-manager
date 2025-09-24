@@ -3,15 +3,25 @@
 """
 统一CSV对比接口 - 所有系统的唯一入口
 只使用简化版格式作为标准输出
+包含星级格式标准化功能
 """
 
 from pathlib import Path
 from typing import Dict, Any, Optional
 import json
 from datetime import datetime
+import sys
+import os
 
 # 导入简化版对比器（唯一标准）
 from simplified_csv_comparator import SimplifiedCSVComparator
+
+# 导入星级格式标准化器
+sys.path.append(os.path.join(os.path.dirname(__file__), 'production/core_modules'))
+try:
+    from star_format_normalizer import StarFormatNormalizer
+except ImportError:
+    StarFormatNormalizer = None
 
 
 class UnifiedCSVComparator:
@@ -49,12 +59,32 @@ class UnifiedCSVComparator:
         """
         # 使用简化版对比器
         result = self.comparator.compare(baseline_path, target_path, output_dir)
-        
+
+        # 如果有星级格式标准化器，过滤格式差异
+        if StarFormatNormalizer and 'modifications' in result:
+            all_modifications = result['modifications']
+            real_changes, format_only_changes = StarFormatNormalizer.filter_format_changes(all_modifications)
+
+            # 更新结果，只保留真实变更
+            result['modifications'] = real_changes
+            result['format_only_changes'] = format_only_changes  # 记录格式变更供参考
+
+            # 更新统计信息
+            if 'statistics' in result:
+                result['statistics']['total_modifications'] = len(real_changes)
+                result['statistics']['format_only_changes'] = len(format_only_changes)
+                result['statistics']['original_total'] = len(all_modifications)
+
+                # 重新计算相似度
+                if len(all_modifications) > 0:
+                    result['statistics']['similarity'] = 1 - (len(real_changes) / len(all_modifications))
+
         # 添加格式版本标识
         result['format_version'] = self.format_version
         result['comparison_engine'] = 'SimplifiedCSVComparator'
         result['timestamp'] = datetime.now().isoformat()
-        
+        result['star_normalization'] = StarFormatNormalizer is not None
+
         return result
     
     def compare_with_metadata(self,

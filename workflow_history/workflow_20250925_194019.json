@@ -1,0 +1,112 @@
+{
+  "id": "20250925_194019",
+  "start_time": "2025-09-25T19:40:19.097600",
+  "end_time": "2025-09-25T19:41:44.407810",
+  "status": "error",
+  "results": {},
+  "logs": [
+    {
+      "timestamp": "19:40:19",
+      "level": "INFO",
+      "message": "开始下载基线文档并规范化存储..."
+    },
+    {
+      "timestamp": "19:40:19",
+      "level": "INFO",
+      "message": "📁 基线文件将存储到第39周"
+    },
+    {
+      "timestamp": "19:40:19",
+      "level": "INFO",
+      "message": "🌐 初始化浏览器下载器..."
+    },
+    {
+      "timestamp": "19:40:19",
+      "level": "INFO",
+      "message": "🔗 正在打开腾讯文档: https://docs.qq.com/sheet/DWGZDZkxpaGVQaURr"
+    },
+    {
+      "timestamp": "19:40:19",
+      "level": "INFO",
+      "message": "🍪 设置Cookie认证..."
+    },
+    {
+      "timestamp": "19:40:19",
+      "level": "INFO",
+      "message": "⏳ 开始下载，请耐心等待（通常需要30-60秒）..."
+    },
+    {
+      "timestamp": "19:41:01",
+      "level": "INFO",
+      "message": "✅ 下载请求已完成"
+    },
+    {
+      "timestamp": "19:41:01",
+      "level": "INFO",
+      "message": "✅ 基线文档下载并规范化存储成功: tencent_回国销售计划表_20250925_1940_baseline_W39.csv"
+    },
+    {
+      "timestamp": "19:41:01",
+      "level": "INFO",
+      "message": "开始获取目标文档..."
+    },
+    {
+      "timestamp": "19:41:01",
+      "level": "INFO",
+      "message": "🔄 强制下载模式：跳过本地文件检查"
+    },
+    {
+      "timestamp": "19:41:01",
+      "level": "INFO",
+      "message": "开始下载目标文档并规范化存储..."
+    },
+    {
+      "timestamp": "19:41:01",
+      "level": "INFO",
+      "message": "🌐 开始下载目标文档..."
+    },
+    {
+      "timestamp": "19:41:44",
+      "level": "INFO",
+      "message": "📁 目标文档将存储为midweek版本"
+    },
+    {
+      "timestamp": "19:41:44",
+      "level": "INFO",
+      "message": "✅ 目标文档已存储到midweek文件夹: tencent_回国销售计划表_20250925_1941_midweek_W39.csv"
+    },
+    {
+      "timestamp": "19:41:44",
+      "level": "INFO",
+      "message": "✅ 目标文档下载并规范化存储成功: tencent_回国销售计划表_20250925_1941_midweek_W39.csv"
+    },
+    {
+      "timestamp": "19:41:44",
+      "level": "INFO",
+      "message": "验证文档匹配性..."
+    },
+    {
+      "timestamp": "19:41:44",
+      "level": "INFO",
+      "message": "✅ 文档匹配验证通过: 回国销售计划表"
+    },
+    {
+      "timestamp": "19:41:44",
+      "level": "INFO",
+      "message": "开始对比分析..."
+    },
+    {
+      "timestamp": "19:41:44",
+      "level": "INFO",
+      "message": "✅ 对比分析完成，发现 0 处变更"
+    },
+    {
+      "timestamp": "19:41:44",
+      "level": "ERROR",
+      "message": "❌ 执行出错: local variable 'json' referenced before assignment"
+    }
+  ],
+  "settings": {
+    "enable_ai_analysis": true
+  }
+}

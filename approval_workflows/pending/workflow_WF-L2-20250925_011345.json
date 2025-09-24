@@ -1,0 +1,27 @@
+{
+  "workflow_id": "WF-L2-20250925_011345",
+  "created_time": "2025-09-25 01:13:45",
+  "pending_approvals": [
+    {
+      "modification_id": "M001",
+      "cell": "K13",
+      "column": "协助人",
+      "old_value": "各责任人",
+      "new_value": "邓总",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 80.0,
+        "reason": "权责变更"
+      },
+      "layer2_result": {
+        "risk_level": "MEDIUM",
+        "decision": "REVIEW",
+        "confidence": 75,
+        "reason": "将协助人从'各责任人'改为特定人员'邓总'，可能导致责任过度集中或信息传递不畅，需要人工审查是否合理"
+      },
+      "final_decision": "REVIEW",
+      "approval_required": true
+    }
+  ],
+  "auto_approved": []
+}

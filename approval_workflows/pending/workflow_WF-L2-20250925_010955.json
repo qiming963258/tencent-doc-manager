@@ -1,0 +1,27 @@
+{
+  "workflow_id": "WF-L2-20250925_010955",
+  "created_time": "2025-09-25 01:09:55",
+  "pending_approvals": [
+    {
+      "modification_id": "M001",
+      "cell": "J8",
+      "column": "负责人",
+      "old_value": "赖铁荔",
+      "new_value": "曾利萍,杨佳玲,朱瀚桔",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 75.0,
+        "reason": "多人接管"
+      },
+      "layer2_result": {
+        "risk_level": "MEDIUM",
+        "decision": "REVIEW",
+        "confidence": 75,
+        "reason": "负责人从单人变更为多人，可能影响责任分配和工作效率，需要人工确认多人负责的必要性和分工安排。"
+      },
+      "final_decision": "REVIEW",
+      "approval_required": true
+    }
+  ],
+  "auto_approved": []
+}

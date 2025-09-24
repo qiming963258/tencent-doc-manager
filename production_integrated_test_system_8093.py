@@ -46,6 +46,32 @@ sys.path.append('/root/projects/tencent-doc-manager/production/core_modules')
 
 app = Flask(__name__)
 
+# ==================== 精确匹配函数 ====================
+import re
+
+def extract_doc_name_from_filename(filename):
+    """从文件名中精确提取文档名称
+
+    Args:
+        filename: 文件名，如 tencent_出国销售计划表_20250915_0145_baseline_W39.csv
+
+    Returns:
+        文档名称，如 出国销售计划表
+    """
+    basename = os.path.basename(filename)
+
+    # 匹配格式：tencent_{文档名}_{时间戳}_{版本}_W{周}.{扩展名}
+    match = re.search(r'^tencent_(.+?)_\d{8}_\d{4}_(baseline|midweek)_W\d+\.\w+$', basename)
+    if match:
+        return match.group(1)
+
+    # 备用匹配（如果格式不完全标准）
+    match = re.search(r'^tencent_(.+?)_\d{8}_\d{4}', basename)
+    if match:
+        return match.group(1)
+
+    return None
+
 # ==================== 项目正式路径配置 ====================
 BASE_DIR = Path('/root/projects/tencent-doc-manager')
 DOWNLOAD_DIR = BASE_DIR / 'downloads'
@@ -551,15 +577,25 @@ def download_and_store_target(target_url: str, cookie: str, week_manager=None, w
         return None
 
 # ==================== 核心工作流函数 ====================
-def run_complete_workflow(baseline_url: str, target_url: str, cookie: str, advanced_settings: dict = None):
+def run_complete_workflow(baseline_url: str, target_url: str, cookie: str, advanced_settings: dict = None, skip_reset: bool = False):
     """
     执行完整的工作流程（增强版）
+
+    Args:
+        baseline_url: 基线文档URL
+        target_url: 目标文档URL
+        cookie: 腾讯文档cookie
+        advanced_settings: 高级设置
+        skip_reset: 是否跳过状态重置（批量处理时使用）
     """
     try:
-        workflow_state.reset()
-        workflow_state.status = "running"
-        workflow_state.start_time = datetime.now()
-        workflow_state.execution_id = datetime.now().strftime("%Y%m%d_%H%M%S")
+        # 批量处理时不重置状态
+        if not skip_reset:
+            workflow_state.reset()
+            workflow_state.status = "running"
+            workflow_state.start_time = datetime.now()
+            workflow_state.execution_id = datetime.now().strftime("%Y%m%d_%H%M%S")
+
         workflow_state.advanced_settings = advanced_settings or {}
         
         # ========== 步骤1: 获取基线文件 ==========
@@ -583,16 +619,18 @@ def run_complete_workflow(baseline_url: str, target_url: str, cookie: str, advan
                         doc_name = None
                         if target_url:
                             import json
-                            config_path = '/root/projects/tencent-doc-manager/config/download_config.json'
+                            # 修复：统一使用real_documents.json作为配置源
+                            config_path = '/root/projects/tencent-doc-manager/production/config/real_documents.json'
                             if os.path.exists(config_path):
                                 with open(config_path, 'r', encoding='utf-8') as cf:
                                     config = json.load(cf)
                                 doc_id = target_url.split('/')[-1].split('?')[0]
-                                for doc in config.get('document_links', []):
-                                    if doc.get('id') == doc_id:
+                                for doc in config.get('documents', []):
+                                    if doc.get('doc_id') == doc_id or doc.get('url').split('/')[-1].split('?')[0] == doc_id:
                                         full_name = doc['name']
+                                        # 提取简化名称
                                         doc_name = full_name.replace('副本-测试版本-', '').replace('测试版本-', '')
-                                        workflow_state.add_log(f"📝 处理文档: {doc_name}")
+                                        workflow_state.add_log(f"📝 处理文档: {doc_name} (来源: real_documents.json)")
                                         break
 
                         # 根据文档名匹配基线文件
@@ -600,15 +638,23 @@ def run_complete_workflow(baseline_url: str, target_url: str, cookie: str, advan
                         if doc_name:
                             for baseline in baseline_files:
                                 basename = os.path.basename(baseline)
-                                if doc_name in basename:
+                                # 使用精确匹配
+                                baseline_doc_name = extract_doc_name_from_filename(baseline)
+                                if baseline_doc_name and baseline_doc_name == doc_name:
                                     matched_baseline = baseline
                                     workflow_state.add_log(f"✅ 匹配基线: {basename}")
                                     break
 
-                        baseline_file = matched_baseline if matched_baseline else baseline_files[0]
-                        workflow_state.baseline_file = baseline_file
-                        workflow_state.add_log(f"✅ 找到基线文件: {os.path.basename(baseline_file)}")
-                        workflow_state.add_log(f"📊 基线描述: {baseline_desc}")
+                        if matched_baseline:
+                            baseline_file = matched_baseline
+                            workflow_state.baseline_file = baseline_file
+                            workflow_state.add_log(f"✅ 找到匹配的基线文件: {os.path.basename(baseline_file)}")
+                            workflow_state.add_log(f"📊 基线描述: {baseline_desc}")
+                        else:
+                            workflow_state.add_log(f"❌ 未找到匹配的基线文件！", "ERROR")
+                            workflow_state.add_log(f"📊 目标文档名: {doc_name}", "ERROR")
+                            workflow_state.add_log(f"📊 可用基线: {', '.join([os.path.basename(f) for f in baseline_files])}", "ERROR")
+                            raise Exception(f"未找到与'{doc_name}'匹配的基线文件，请先下载对应的基线")
                     else:
                         workflow_state.add_log("❌ 未找到基线文件，请先下载基线", "ERROR")
                         raise Exception("未找到基线文件，请先下载基线")
@@ -630,16 +676,18 @@ def run_complete_workflow(baseline_url: str, target_url: str, cookie: str, advan
                         doc_name = None
                         if target_url:
                             import json
-                            config_path = '/root/projects/tencent-doc-manager/config/download_config.json'
+                            # 修复：统一使用real_documents.json作为配置源
+                            config_path = '/root/projects/tencent-doc-manager/production/config/real_documents.json'
                             if os.path.exists(config_path):
                                 with open(config_path, 'r', encoding='utf-8') as cf:
                                     config = json.load(cf)
                                 doc_id = target_url.split('/')[-1].split('?')[0]
-                                for doc in config.get('document_links', []):
-                                    if doc.get('id') == doc_id:
+                                for doc in config.get('documents', []):
+                                    if doc.get('doc_id') == doc_id or doc.get('url').split('/')[-1].split('?')[0] == doc_id:
                                         full_name = doc['name']
+                                        # 提取简化名称
                                         doc_name = full_name.replace('副本-测试版本-', '').replace('测试版本-', '')
-                                        workflow_state.add_log(f"📝 处理文档: {doc_name}")
+                                        workflow_state.add_log(f"📝 处理文档: {doc_name} (来源: real_documents.json)")
                                         break
 
                         # 根据文档名匹配基线文件
@@ -647,14 +695,24 @@ def run_complete_workflow(baseline_url: str, target_url: str, cookie: str, advan
                         if doc_name:
                             for baseline in baseline_files:
                                 basename = os.path.basename(baseline)
-                                if doc_name in basename:
+                                # 使用精确匹配
+                                baseline_doc_name = extract_doc_name_from_filename(baseline)
+                                if baseline_doc_name and baseline_doc_name == doc_name:
                                     matched_baseline = baseline
                                     workflow_state.add_log(f"✅ 匹配基线: {basename}")
                                     break
 
-                        baseline_file = matched_baseline if matched_baseline else baseline_files[0]
-                        workflow_state.baseline_file = baseline_file
-                        workflow_state.add_log(f"✅ 使用本地基线文件: {os.path.basename(baseline_file)}")
+                        # 修复：移除危险的回退逻辑
+                        if matched_baseline:
+                            baseline_file = matched_baseline
+                            workflow_state.baseline_file = baseline_file
+                            workflow_state.add_log(f"✅ 使用本地基线文件: {os.path.basename(baseline_file)}")
+                        else:
+                            # 没有匹配的基线时，设置标志表示需要创建新基线
+                            workflow_state.add_log(f"⚠️ 未找到匹配的基线文件，将创建新基线", "WARNING")
+                            workflow_state.add_log(f"📊 目标文档名: {doc_name}")
+                            workflow_state.is_new_baseline = True  # 设置标志：这是新基线
+                            baseline_file = None  # 保持为None，后续会下载并创建
                 except Exception as e:
                     workflow_state.add_log(f"⚠️ 本地文件查找失败: {str(e)}", "WARNING")
             elif force_download:
@@ -727,29 +785,112 @@ def run_complete_workflow(baseline_url: str, target_url: str, cookie: str, advan
                 workflow_state.target_file = str(DOWNLOAD_DIR / "test_target.csv")
                 workflow_state.add_log("⚠️ 下载模块未加载，使用测试文件", "WARNING")
         
+        # ========== 步骤2.5: 文档匹配预验证 ==========
+        workflow_state.add_log("验证文档匹配性...")
+
+        # 从文件名提取文档名称进行匹配验证
+        if workflow_state.baseline_file and workflow_state.target_file:
+            baseline_doc_name = extract_doc_name_from_filename(workflow_state.baseline_file)
+            target_doc_name = extract_doc_name_from_filename(workflow_state.target_file)
+
+            if baseline_doc_name and target_doc_name:
+                if baseline_doc_name != target_doc_name:
+                    workflow_state.add_log(f"⚠️ 警告：基线文档和目标文档可能不匹配！", "WARNING")
+                    workflow_state.add_log(f"📊 基线文档: {baseline_doc_name}", "WARNING")
+                    workflow_state.add_log(f"📊 目标文档: {target_doc_name}", "WARNING")
+
+                    # 如果文档不匹配且变更数量过大，应该报错
+                    # 这将在对比后验证
+                else:
+                    workflow_state.add_log(f"✅ 文档匹配验证通过: {baseline_doc_name}")
+            else:
+                workflow_state.add_log("⚠️ 无法从文件名提取文档名进行验证", "WARNING")
+
         # ========== 步骤3: CSV对比分析 ==========
         workflow_state.update_progress("执行CSV对比分析", 30)
-        workflow_state.add_log("开始对比分析...")
-        
-        comparison_result = None
-        if MODULES_STATUS.get('comparator'):
-            # 使用统一CSV对比器（根据规范要求）
-            unified_comparator = UnifiedCSVComparator()
-            
-            # 直接对比CSV文件
-            comparison_result = unified_comparator.compare(
-                workflow_state.baseline_file,
-                workflow_state.target_file
-            )
-            
-            # 保存对比结果
+
+        # 检查是否是新基线情况
+        if hasattr(workflow_state, 'is_new_baseline') and workflow_state.is_new_baseline:
+            workflow_state.add_log("🆕 这是新基线，将目标文档保存为基线...")
+
+            # 将目标文件复制为基线
+            import shutil
+            if workflow_state.target_file:
+                # 使用WeekTimeManager动态获取当前周的基线目录路径
+                if MODULES_STATUS.get('week_manager') and week_manager:
+                    current_year, current_week = week_manager.get_week_info()[0:2]
+                    week_dir = week_manager.get_week_directory(current_year, current_week)
+                    baseline_dir = week_dir / "baseline"
+                else:
+                    # 降级方案：如果week_manager不可用，使用默认路径
+                    current_year = datetime.datetime.now().year
+                    current_week = datetime.datetime.now().isocalendar()[1]
+                    baseline_dir = Path(f'/root/projects/tencent-doc-manager/csv_versions/{current_year}_W{current_week:02d}/baseline')
+
+                baseline_dir.mkdir(parents=True, exist_ok=True)
+
+                # 从目标文件名生成基线文件名
+                target_name = Path(workflow_state.target_file).name
+                baseline_name = target_name.replace('_midweek_', '_baseline_')
+                baseline_path = baseline_dir / baseline_name
+
+                # 复制文件
+                shutil.copy2(workflow_state.target_file, baseline_path)
+                workflow_state.baseline_file = str(baseline_path)
+                workflow_state.add_log(f"✅ 基线文件已创建: {baseline_name}")
+
+            # 生成空的对比结果（所有修改为0）
+            comparison_result = {
+                "statistics": {
+                    "total_modifications": 0,
+                    "added_rows": 0,
+                    "deleted_rows": 0,
+                    "modified_rows": 0
+                },
+                "modifications": [],
+                "added": [],
+                "deleted": [],
+                "message": "新基线创建，无修改内容"
+            }
+            workflow_state.add_log("✅ 对比分析完成，发现 0 处变更（新基线）")
+
+        else:
+            workflow_state.add_log("开始对比分析...")
+            comparison_result = None
+            if MODULES_STATUS.get('comparator'):
+                # 使用统一CSV对比器（根据规范要求）
+                unified_comparator = UnifiedCSVComparator()
+
+                # 直接对比CSV文件
+                comparison_result = unified_comparator.compare(
+                    workflow_state.baseline_file,
+                    workflow_state.target_file
+                )
+
+                # 获取变更数量
+                num_changes = comparison_result.get('statistics', {}).get('total_modifications', 0)
+                workflow_state.add_log(f"✅ 对比分析完成，发现 {num_changes} 处变更")
+
+        # 保存对比结果（新基线和已有基线都需要保存）
+        if comparison_result:
+            import json  # 确保json模块已导入
             comparison_file = COMPARISON_RESULTS_DIR / f"comparison_{workflow_state.execution_id}.json"
             with open(comparison_file, 'w', encoding='utf-8') as f:
                 json.dump(comparison_result, f, ensure_ascii=False, indent=2)
-            
-            # 获取变更数量
+
+            # 变更数量异常检测（技术规范v1.6）
             num_changes = comparison_result.get('statistics', {}).get('total_modifications', 0)
-            workflow_state.add_log(f"✅ 对比分析完成，发现 {num_changes} 处变更")
+            if num_changes > 500:
+                workflow_state.add_log(f"⚠️ 警告：变更数量异常过大({num_changes})！", "WARNING")
+                workflow_state.add_log("⚠️ 这通常表示对比了不同的文档，请验证文档匹配性", "WARNING")
+
+                # 再次检查文档名称
+                if workflow_state.baseline_file and workflow_state.target_file:
+                    baseline_doc_name = extract_doc_name_from_filename(workflow_state.baseline_file)
+                    target_doc_name = extract_doc_name_from_filename(workflow_state.target_file)
+                    if baseline_doc_name != target_doc_name:
+                        workflow_state.add_log(f"❌ 错误：基线({baseline_doc_name})与目标({target_doc_name})文档不匹配！", "ERROR")
+                        raise Exception(f"文档不匹配：基线是'{baseline_doc_name}'，目标是'{target_doc_name}'，请使用相同文档的不同版本进行对比")
         else:
             workflow_state.add_log("⚠️ 比较模块未加载，跳过", "WARNING")
         
@@ -850,8 +991,43 @@ def run_complete_workflow(baseline_url: str, target_url: str, cookie: str, advan
         # ========== 步骤6: 生成详细打分JSON ==========
         workflow_state.update_progress("生成详细打分", 60)
         workflow_state.add_log("生成详细打分JSON...")
-        
-        if MODULES_STATUS.get('marker') and comparison_result:
+
+        # 检查是否是新基线情况
+        if hasattr(workflow_state, 'is_new_baseline') and workflow_state.is_new_baseline:
+            # 为新基线生成空的打分结果
+            import tempfile
+            score_file_name = f"detailed_score_newbaseline_{workflow_state.execution_id}.json"
+            score_file_path = str(SCORING_RESULTS_DIR / 'detailed' / score_file_name)
+
+            # 创建空的打分结果
+            empty_score = {
+                "metadata": {
+                    "table_name": f"newbaseline_{workflow_state.execution_id}",
+                    "source_file": str(workflow_state.target_file),
+                    "scoring_time": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
+                    "total_modifications": 0,
+                    "scoring_version": "v1.0",
+                    "is_new_baseline": True
+                },
+                "scores": [],
+                "statistics": {
+                    "total_cells": 0,
+                    "modified_cells": 0,
+                    "L1_count": 0,
+                    "L2_count": 0,
+                    "L3_count": 0
+                }
+            }
+
+            # 保存打分结果
+            Path(score_file_path).parent.mkdir(parents=True, exist_ok=True)
+            with open(score_file_path, 'w', encoding='utf-8') as f:
+                json.dump(empty_score, f, ensure_ascii=False, indent=2)
+
+            workflow_state.score_file = score_file_path
+            workflow_state.add_log(f"✅ 详细打分生成完成（新基线，0修改）: {score_file_name}")
+
+        elif MODULES_STATUS.get('marker') and comparison_result:
             try:
                 # 使用统一的IntegratedScorer（必须使用AI，L2强制要求）
                 scorer = IntegratedScorer(use_ai=True, cache_enabled=False)
@@ -947,55 +1123,62 @@ def run_complete_workflow(baseline_url: str, target_url: str, cookie: str, advan
                 workflow_state.add_log("⚠️ 文档上传失败", "WARNING")
 
         # ========== 步骤11: 生成综合打分 ==========
-        # 这是之前遗漏但在规范中存在的关键步骤
-        workflow_state.update_progress("生成综合打分", 95)
-        workflow_state.add_log("🔥 生成综合打分文件（符合规范16的Step 7）...")
+        # 批量处理时跳过单文档的综合打分（由批量处理函数统一生成）
+        if not skip_reset:
+            workflow_state.update_progress("生成综合打分", 95)
+            workflow_state.add_log("🔥 生成综合打分文件（符合规范16的Step 7）...")
 
-        try:
-            from production.core_modules.auto_comprehensive_generator import AutoComprehensiveGenerator
+            try:
+                from production.core_modules.auto_comprehensive_generator import AutoComprehensiveGenerator
 
-            # 创建综合打分生成器
-            generator = AutoComprehensiveGenerator()
+                # 创建综合打分生成器
+                generator = AutoComprehensiveGenerator()
 
-            # 从最新的详细打分生成综合打分，传递上传的URL
-            comprehensive_file = generator.generate_from_latest_results(
-                excel_url=workflow_state.upload_url
-            )
+                # 从最新的详细打分生成综合打分，传递上传的URL
+                comprehensive_file = generator.generate_from_latest_results(
+                    excel_url=workflow_state.upload_url
+                )
 
-            workflow_state.add_log(f"✅ 综合打分已生成: {os.path.basename(comprehensive_file)}")
-            workflow_state.comprehensive_file = comprehensive_file
+                workflow_state.add_log(f"✅ 综合打分已生成: {os.path.basename(comprehensive_file)}")
+                workflow_state.comprehensive_file = comprehensive_file
 
-            # 读取综合打分文件以获取关键信息
-            with open(comprehensive_file, 'r', encoding='utf-8') as f:
-                comprehensive_data = json.load(f)
+                # 读取综合打分文件以获取关键信息
+                with open(comprehensive_file, 'r', encoding='utf-8') as f:
+                    comprehensive_data = json.load(f)
 
-            # 输出关键统计信息
-            summary = comprehensive_data.get('summary', {})
-            workflow_state.add_log(f"📊 L1高风险修改: {summary.get('l1_modifications', 0)}处")
-            workflow_state.add_log(f"📊 L2中风险修改: {summary.get('l2_modifications', 0)}处")
-            workflow_state.add_log(f"📊 L3低风险修改: {summary.get('l3_modifications', 0)}处")
-            workflow_state.add_log(f"📊 总体风险评分: {summary.get('overall_risk_score', 0)}")
+                # 输出关键统计信息
+                summary = comprehensive_data.get('summary', {})
+                workflow_state.add_log(f"📊 L1高风险修改: {summary.get('l1_modifications', 0)}处")
+                workflow_state.add_log(f"📊 L2中风险修改: {summary.get('l2_modifications', 0)}处")
+                workflow_state.add_log(f"📊 L3低风险修改: {summary.get('l3_modifications', 0)}处")
+                workflow_state.add_log(f"📊 总体风险评分: {summary.get('overall_risk_score', 0)}")
 
-            # 输出热力图颜色分布
-            heatmap_data = comprehensive_data.get('heatmap_data', {})
-            color_dist = heatmap_data.get('color_distribution', {})
-            workflow_state.add_log(f"🎨 热力图分布: 红色{color_dist.get('red_0.9', 0)}格, "
-                                  f"橙色{color_dist.get('orange_0.6', 0)}格, "
-                                  f"绿色{color_dist.get('green_0.3', 0)}格, "
-                                  f"蓝色{color_dist.get('blue_0.05', 0)}格")
+                # 输出热力图颜色分布
+                heatmap_data = comprehensive_data.get('heatmap_data', {})
+                color_dist = heatmap_data.get('color_distribution', {})
+                workflow_state.add_log(f"🎨 热力图分布: 红色{color_dist.get('red_0.9', 0)}格, "
+                                      f"橙色{color_dist.get('orange_0.6', 0)}格, "
+                                      f"绿色{color_dist.get('green_0.3', 0)}格, "
+                                      f"蓝色{color_dist.get('blue_0.05', 0)}格")
 
-        except ImportError as e:
-            workflow_state.add_log(f"⚠️ 无法导入综合打分生成器: {e}", "WARNING")
-            workflow_state.add_log("💡 综合打分是可选步骤，继续执行...", "INFO")
-        except Exception as e:
-            workflow_state.add_log(f"⚠️ 综合打分生成失败: {e}", "WARNING")
-            workflow_state.add_log("💡 综合打分是补充步骤，不影响主流程", "INFO")
+            except ImportError as e:
+                workflow_state.add_log(f"⚠️ 无法导入综合打分生成器: {e}", "WARNING")
+                workflow_state.add_log("💡 综合打分是可选步骤，继续执行...", "INFO")
+            except Exception as e:
+                workflow_state.add_log(f"⚠️ 综合打分生成失败: {e}", "WARNING")
+                workflow_state.add_log("💡 综合打分是补充步骤，不影响主流程", "INFO")
+        else:
+            workflow_state.add_log("📋 批量处理模式：跳过单文档综合打分，将在最后统一生成")
 
         # ========== 完成 ==========
-        workflow_state.update_progress("处理完成", 100)
-        workflow_state.status = "completed"
-        workflow_state.end_time = datetime.now()
-        workflow_state.add_log("🎉 所有步骤执行完成!", "SUCCESS")
+        # 批量处理时不设置完成状态（由批量处理函数管理）
+        if not skip_reset:
+            workflow_state.update_progress("处理完成", 100)
+            workflow_state.status = "completed"
+            workflow_state.end_time = datetime.now()
+            workflow_state.add_log("🎉 所有步骤执行完成!", "SUCCESS")
+        else:
+            workflow_state.add_log(f"✅ 文档处理完成", "SUCCESS")
         
         # 保存结果
         workflow_state.results = {
@@ -1017,6 +1200,133 @@ def run_complete_workflow(baseline_url: str, target_url: str, cookie: str, advan
         workflow_state.add_log(f"❌ 执行出错: {str(e)}", "ERROR")
         workflow_state.save_to_history()
         logger.error(f"工作流执行失败: {e}", exc_info=True)
+
+def run_batch_workflow(document_pairs: list, cookie: str, advanced_settings: dict = None):
+    """
+    批量处理多个文档对，生成多文档综合打分
+
+    Args:
+        document_pairs: 文档对列表，格式:
+            [
+                {"name": "出国销售计划表", "baseline_url": "...", "target_url": "..."},
+                {"name": "回国销售计划表", "baseline_url": "...", "target_url": "..."},
+                {"name": "小红书部门", "baseline_url": "...", "target_url": "..."}
+            ]
+        cookie: Cookie字符串
+        advanced_settings: 高级设置
+    """
+    try:
+        workflow_state.reset()
+        workflow_state.status = "running"
+        workflow_state.start_time = datetime.now()
+        workflow_state.execution_id = datetime.now().strftime("%Y%m%d_%H%M%S_batch")
+        workflow_state.advanced_settings = advanced_settings or {}
+
+        total_pairs = len(document_pairs)
+        workflow_state.add_log(f"🚀 开始批量处理 {total_pairs} 个文档对", "INFO")
+
+        # 存储所有文档的处理结果
+        all_results = []
+        all_score_files = []
+        excel_urls = {}
+
+        # 处理每个文档对
+        for idx, doc_pair in enumerate(document_pairs, 1):
+            doc_name = doc_pair.get('name', f'文档{idx}')
+            baseline_url = doc_pair.get('baseline_url')
+            target_url = doc_pair.get('target_url')
+
+            workflow_state.update_progress(
+                f"处理文档 {idx}/{total_pairs}: {doc_name}",
+                int(idx * 80 / total_pairs)  # 前80%用于处理各文档
+            )
+
+            workflow_state.add_log(f"📄 开始处理: {doc_name}", "INFO")
+
+            try:
+                # 调用单文档处理流程（但不生成综合打分）
+                # 暂存当前状态
+                current_logs = workflow_state.logs[:]
+                current_progress = workflow_state.progress
+
+                # 执行单文档工作流（第一个文档已经重置过状态了，后续文档跳过重置）
+                run_complete_workflow(baseline_url, target_url, cookie, advanced_settings, skip_reset=True)
+
+                # 收集结果
+                if workflow_state.score_file:
+                    all_score_files.append(workflow_state.score_file)
+                    workflow_state.add_log(f"✅ {doc_name} 详细打分已生成: {workflow_state.score_file}", "SUCCESS")
+
+                if workflow_state.upload_url:
+                    excel_urls[doc_name] = workflow_state.upload_url
+                    workflow_state.add_log(f"📊 {doc_name} Excel已上传: {workflow_state.upload_url}", "SUCCESS")
+
+                all_results.append({
+                    'name': doc_name,
+                    'score_file': workflow_state.score_file,
+                    'marked_file': workflow_state.marked_file,
+                    'upload_url': workflow_state.upload_url
+                })
+
+            except Exception as e:
+                workflow_state.add_log(f"⚠️ 处理 {doc_name} 失败: {str(e)}", "ERROR")
+                continue
+
+        # ========== 批量综合打分生成 ==========
+        workflow_state.update_progress("生成多文档综合打分", 90)
+        workflow_state.add_log("📊 开始生成多文档综合打分...", "INFO")
+
+        try:
+            # 导入批量综合打分生成器
+            from production.core_modules.auto_comprehensive_generator import AutoComprehensiveGenerator
+
+            generator = AutoComprehensiveGenerator()
+
+            # 使用新的批量处理方法
+            comprehensive_file = generator.generate_from_all_detailed_results(excel_urls)
+
+            workflow_state.comprehensive_file = comprehensive_file
+            workflow_state.add_log(f"✅ 多文档综合打分已生成: {comprehensive_file}", "SUCCESS")
+            workflow_state.add_log(f"   包含 {len(all_results)} 个表格的聚合数据", "INFO")
+
+            # 添加到结果
+            workflow_state.results['batch_comprehensive_file'] = comprehensive_file
+            workflow_state.results['processed_documents'] = all_results
+
+        except ImportError as e:
+            workflow_state.add_log(f"⚠️ 无法导入批量综合打分生成器: {e}", "WARNING")
+        except Exception as e:
+            workflow_state.add_log(f"⚠️ 批量综合打分生成失败: {e}", "WARNING")
+
+        # ========== 完成 ==========
+        workflow_state.update_progress("批量处理完成", 100)
+        workflow_state.status = "completed"
+        workflow_state.end_time = datetime.now()
+        workflow_state.add_log(f"🎉 批量处理完成! 成功处理 {len(all_results)} 个文档", "SUCCESS")
+
+        # 保存批量处理结果
+        workflow_state.results = {
+            "batch_mode": True,
+            "total_documents": total_pairs,
+            "successful_documents": len(all_results),
+            "documents": all_results,
+            "comprehensive_file": getattr(workflow_state, 'comprehensive_file', None),
+            "excel_urls": excel_urls,
+            "execution_time": str(workflow_state.end_time - workflow_state.start_time) if workflow_state.end_time and workflow_state.start_time else None
+        }
+
+        # 保存历史记录
+        workflow_state.save_to_history()
+
+        return workflow_state.execution_id
+
+    except Exception as e:
+        workflow_state.status = "error"
+        workflow_state.end_time = datetime.now()
+        workflow_state.add_log(f"❌ 批量处理失败: {str(e)}", "ERROR")
+        workflow_state.save_to_history()
+        logger.error(f"批量工作流执行失败: {e}", exc_info=True)
+        return None
 
 # ==================== Flask路由 ====================
 @app.route('/')
@@ -1137,6 +1447,70 @@ def start_workflow():
     thread.start()
     
     return jsonify({"message": "工作流已启动", "execution_id": workflow_state.execution_id})
+
+@app.route('/api/start-batch', methods=['POST'])
+def start_batch_workflow():
+    """启动批量工作流处理多个文档"""
+    if workflow_state.status == "running":
+        return jsonify({"error": "工作流正在运行中"}), 400
+
+    data = request.json
+    cookie = data.get('cookie')
+    advanced_settings = data.get('advanced_settings', {})
+
+    # 从配置文件读取文档配置
+    import sys
+    sys.path.insert(0, '/root/projects/tencent-doc-manager')
+
+    # 直接读取配置文件
+    import json
+    config_file = Path("/root/projects/tencent-doc-manager/production/config/real_documents.json")
+    if config_file.exists():
+        with open(config_file, 'r', encoding='utf-8') as f:
+            REAL_DOCUMENTS = json.load(f)
+    else:
+        REAL_DOCUMENTS = {'documents': []}
+
+    # 构建文档对列表
+    document_pairs = []
+    for doc in REAL_DOCUMENTS['documents']:
+        # 每个文档使用相同的URL作为baseline和target（刷新模式）
+        doc_pair = {
+            'name': doc['name'],
+            'baseline_url': doc['url'],  # 可以改为None使用缓存的baseline
+            'target_url': doc['url']
+        }
+        document_pairs.append(doc_pair)
+
+    if not document_pairs:
+        return jsonify({"error": "没有配置文档"}), 400
+
+    if not cookie:
+        # 尝试从配置文件读取cookie
+        try:
+            cookie_file = Path("/root/projects/tencent-doc-manager/config/cookies.json")
+            if cookie_file.exists():
+                with open(cookie_file, 'r', encoding='utf-8') as f:
+                    cookie_config = json.load(f)
+                    cookie = cookie_config.get('current_cookies', '') or cookie_config.get('cookie_string', '')
+        except Exception:
+            pass
+
+        if not cookie:
+            return jsonify({"error": "缺少Cookie参数"}), 400
+
+    # 在后台线程中运行批量工作流
+    thread = threading.Thread(
+        target=run_batch_workflow,
+        args=(document_pairs, cookie, advanced_settings)
+    )
+    thread.daemon = True
+    thread.start()
+
+    return jsonify({
+        "message": f"批量工作流已启动，将处理 {len(document_pairs)} 个文档",
+        "documents": [doc['name'] for doc in document_pairs]
+    })
 
 @app.route('/api/files/<path:category>')
 def list_files(category):

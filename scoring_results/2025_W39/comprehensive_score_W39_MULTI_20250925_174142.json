@@ -1,0 +1,136 @@
+{
+  "metadata": {
+    "version": "2.0",
+    "timestamp": "2025-09-25T17:41:42.291116",
+    "week": "W39",
+    "generator": "multi_document_generator",
+    "source_type": "multi_document_scoring"
+  },
+  "summary": {
+    "total_tables": 3,
+    "total_columns": 19,
+    "total_modifications": 150,
+    "l1_modifications": 92,
+    "l2_modifications": 38,
+    "l3_modifications": 20,
+    "overall_risk_score": 0.65
+  },
+  "table_names": [
+    "副本-测试版本-出国销售计划表",
+    "副本-测试版本-回国销售计划表",
+    "测试版本-小红书部门"
+  ],
+  "column_names": [
+    "序号",
+    "项目类型",
+    "来源",
+    "任务发起时间",
+    "目标对齐",
+    "关键KR对齐",
+    "具体计划内容",
+    "邓总指导登记",
+    "负责人",
+    "协助人",
+    "监督人",
+    "重要程度",
+    "预计完成时间",
+    "完成进度",
+    "完成链接",
+    "经理分析复盘",
+    "最新复盘时间",
+    "对上汇报",
+    "应用情况"
+  ],
+  "heatmap_data": {
+    "matrix": [
+      [
+        0.05,
+        0.05,
+        0.6,
+        0.6,
+        0.6,
+        0.05,
+        0.05,
+        0.05,
+        0.05,
+        0.05,
+        0.05,
+        0.05,
+        0.05,
+        0.3,
+        0.3,
+        0.05,
+        0.05,
+        0.05,
+        0.05
+      ],
+      [
+        0.05,
+        0.05,
+        0.6,
+        0.6,
+        0.6,
+        0.05,
+        0.05,
+        0.05,
+        0.05,
+        0.05,
+        0.05,
+        0.05,
+        0.05,
+        0.3,
+        0.3,
+        0.05,
+        0.05,
+        0.05,
+        0.05
+      ],
+      [
+        0.05,
+        0.05,
+        0.6,
+        0.6,
+        0.6,
+        0.05,
+        0.05,
+        0.05,
+        0.05,
+        0.05,
+        0.05,
+        0.9,
+        0.05,
+        0.3,
+        0.3,
+        0.05,
+        0.05,
+        0.05,
+        0.05
+      ]
+    ],
+    "rows": 3,
+    "cols": 19,
+    "generation_method": "multi_document_simulation"
+  },
+  "table_details": {
+    "副本-测试版本-出国销售计划表": {
+      "total_rows": 270,
+      "modified_rows": 35,
+      "excel_url": "https://docs.qq.com/sheet/DWEFNU25TemFnZXJN"
+    },
+    "副本-测试版本-回国销售计划表": {
+      "total_rows": 180,
+      "modified_rows": 23,
+      "excel_url": "https://docs.qq.com/sheet/DWGZDZkxpaGVQaURr"
+    },
+    "测试版本-小红书部门": {
+      "total_rows": 270,
+      "modified_rows": 92,
+      "excel_url": "https://docs.qq.com/sheet/DWFJzdWNwd0RGbU5R"
+    }
+  },
+  "excel_urls": {
+    "副本-测试版本-出国销售计划表": "https://docs.qq.com/sheet/DWEFNU25TemFnZXJN",
+    "副本-测试版本-回国销售计划表": "https://docs.qq.com/sheet/DWGZDZkxpaGVQaURr",
+    "测试版本-小红书部门": "https://docs.qq.com/sheet/DWFJzdWNwd0RGbU5R"
+  }
+}

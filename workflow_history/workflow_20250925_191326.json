@@ -1,0 +1,58 @@
+{
+  "id": "20250925_191326",
+  "start_time": "2025-09-25T19:13:26.684855",
+  "end_time": "2025-09-25T19:13:26.687155",
+  "status": "error",
+  "results": {},
+  "logs": [
+    {
+      "timestamp": "19:13:26",
+      "level": "INFO",
+      "message": "开始获取基线文档..."
+    },
+    {
+      "timestamp": "19:13:26",
+      "level": "INFO",
+      "message": "📂 刷新模式：使用现有基线文件"
+    },
+    {
+      "timestamp": "19:13:26",
+      "level": "INFO",
+      "message": "📝 处理文档: 回国销售计划表 (来源: real_documents.json)"
+    },
+    {
+      "timestamp": "19:13:26",
+      "level": "ERROR",
+      "message": "❌ 未找到匹配的基线文件！"
+    },
+    {
+      "timestamp": "19:13:26",
+      "level": "ERROR",
+      "message": "📊 目标文档名: 回国销售计划表"
+    },
+    {
+      "timestamp": "19:13:26",
+      "level": "ERROR",
+      "message": "📊 可用基线: tencent_出国销售计划表_20250915_0145_baseline_W39.csv, tencent_小红书部门_20250915_0146_baseline_W39.csv"
+    },
+    {
+      "timestamp": "19:13:26",
+      "level": "ERROR",
+      "message": "❌ 基线文件查找失败: 未找到与'回国销售计划表'匹配的基线文件，请先下载对应的基线"
+    },
+    {
+      "timestamp": "19:13:26",
+      "level": "ERROR",
+      "message": "❌ 执行出错: 未找到与'回国销售计划表'匹配的基线文件，请先下载对应的基线"
+    }
+  ],
+  "settings": {
+    "task_type": "full",
+    "auto_download": true,
+    "force_download": true,
+    "enable_ai_analysis": true,
+    "enable_excel_marking": true,
+    "enable_upload": true,
+    "use_existing_baseline": true
+  }
+}

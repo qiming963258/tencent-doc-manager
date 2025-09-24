@@ -1,0 +1,27 @@
+{
+  "workflow_id": "WF-L2-20250925_012228",
+  "created_time": "2025-09-25 01:22:28",
+  "pending_approvals": [
+    {
+      "modification_id": "M001",
+      "cell": "C25",
+      "column": "项目类型",
+      "old_value": "目标管理",
+      "new_value": "目标复盘待解决,已执行待优化",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 80.0,
+        "reason": "重大变更"
+      },
+      "layer2_result": {
+        "risk_level": "MEDIUM",
+        "decision": "REVIEW",
+        "confidence": 75,
+        "reason": "修改后的值增加了复杂性，可能影响项目分类和后续统计，但未直接违反规则"
+      },
+      "final_decision": "REVIEW",
+      "approval_required": true
+    }
+  ],
+  "auto_approved": []
+}

@@ -1,0 +1,43 @@
+{
+  "metadata": {
+    "analysis_time": "2025-09-25 01:18:16",
+    "total_modifications": 1,
+    "layer1_passed": 0,
+    "layer2_analyzed": 1,
+    "processing_time": "11.8s"
+  },
+  "results": [
+    {
+      "modification_id": "M001",
+      "cell": "C19",
+      "column": "项目类型",
+      "old_value": "目标管理",
+      "new_value": "周会决策待办",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 80.0,
+        "reason": "类型变更"
+      },
+      "layer2_result": {
+        "risk_level": "MEDIUM",
+        "decision": "REVIEW",
+        "confidence": 75,
+        "reason": "项目类型从'目标管理'修改为'周会决策待办'可能影响项目分类和相关流程，需人工审查修改的合理性。"
+      },
+      "final_decision": "REVIEW",
+      "approval_required": true
+    }
+  ],
+  "summary": {
+    "approved": 0,
+    "conditional": 0,
+    "review_required": 1,
+    "rejected": 0,
+    "risk_distribution": {
+      "LOW": 0,
+      "MEDIUM": 0,
+      "HIGH": 1,
+      "CRITICAL": 0
+    }
+  }
+}

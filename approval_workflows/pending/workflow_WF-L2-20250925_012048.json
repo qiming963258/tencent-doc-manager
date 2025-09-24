@@ -1,0 +1,27 @@
+{
+  "workflow_id": "WF-L2-20250925_012048",
+  "created_time": "2025-09-25 01:20:48",
+  "pending_approvals": [
+    {
+      "modification_id": "M001",
+      "cell": "C23",
+      "column": "项目类型",
+      "old_value": "目标管理",
+      "new_value": "总经理交办",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 80.0,
+        "reason": "权责变更"
+      },
+      "layer2_result": {
+        "risk_level": "MEDIUM",
+        "decision": "REVIEW",
+        "confidence": 75,
+        "reason": "修改后的值'总经理交办'可能涉及更高层级的责任和优先级，需要确认变更的必要性和授权情况"
+      },
+      "final_decision": "REVIEW",
+      "approval_required": true
+    }
+  ],
+  "auto_approved": []
+}

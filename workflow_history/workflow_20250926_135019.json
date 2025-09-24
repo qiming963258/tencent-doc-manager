@@ -1,0 +1,126 @@
+{
+  "id": "20250926_135019",
+  "start_time": "2025-09-26T13:50:19.843231",
+  "end_time": "2025-09-26T13:52:36.359551",
+  "status": "completed",
+  "results": {
+    "baseline_file": "/root/projects/tencent-doc-manager/csv_versions/2025_W39/baseline/tencent_小红书部门_20250915_0146_baseline_W39.csv",
+    "target_file": "/root/projects/tencent-doc-manager/csv_versions/2025_W39/midweek/tencent_小红书部门_20250926_1351_midweek_W39.csv",
+    "score_file": "/root/projects/tencent-doc-manager/scoring_results/detailed/detailed_score_tmpeg1rab6x_20250926_135119.json",
+    "marked_file": "/root/projects/tencent-doc-manager/excel_outputs/marked/tencent_测试版本-小红书部门_20250926_1352_midweek_W39_marked_20250926_135206_W00.xlsx",
+    "upload_url": "https://docs.qq.com/sheet/DWHFKVmdZSHpPemV4",
+    "comprehensive_file": "/root/projects/tencent-doc-manager/scoring_results/2025_W39/comprehensive_score_W39_AUTO_20250926_135236.json",
+    "execution_time": "0:02:16.516320"
+  },
+  "logs": [
+    {
+      "timestamp": "13:51:19",
+      "level": "INFO",
+      "message": "✅ 语义分析完成，分析了 0 处变更"
+    },
+    {
+      "timestamp": "13:51:19",
+      "level": "INFO",
+      "message": "生成详细打分JSON..."
+    },
+    {
+      "timestamp": "13:51:19",
+      "level": "INFO",
+      "message": "✅ 详细打分生成完成: detailed_score_tmpeg1rab6x_20250926_135119.json"
+    },
+    {
+      "timestamp": "13:51:19",
+      "level": "INFO",
+      "message": "下载目标文档的Excel格式..."
+    },
+    {
+      "timestamp": "13:52:06",
+      "level": "INFO",
+      "message": "✅ Excel文档下载成功: tencent_测试版本-小红书部门_20250926_1352_midweek_W39.xlsx"
+    },
+    {
+      "timestamp": "13:52:06",
+      "level": "INFO",
+      "message": "修复腾讯文档Excel格式问题..."
+    },
+    {
+      "timestamp": "13:52:06",
+      "level": "INFO",
+      "message": "✅ Excel格式修复完成"
+    },
+    {
+      "timestamp": "13:52:06",
+      "level": "INFO",
+      "message": "应用条纹涂色标记..."
+    },
+    {
+      "timestamp": "13:52:06",
+      "level": "INFO",
+      "message": "✅ 涂色标记完成: tencent_测试版本-小红书部门_20250926_1352_midweek_W39_marked_20250926_135206_W00.xlsx"
+    },
+    {
+      "timestamp": "13:52:06",
+      "level": "INFO",
+      "message": "上传处理后的文档到腾讯文档..."
+    },
+    {
+      "timestamp": "13:52:36",
+      "level": "INFO",
+      "message": "✅ 文档上传成功!"
+    },
+    {
+      "timestamp": "13:52:36",
+      "level": "INFO",
+      "message": "📎 文档链接: https://docs.qq.com/sheet/DWHFKVmdZSHpPemV4"
+    },
+    {
+      "timestamp": "13:52:36",
+      "level": "INFO",
+      "message": "🔥 生成综合打分文件（符合规范16的Step 7）..."
+    },
+    {
+      "timestamp": "13:52:36",
+      "level": "INFO",
+      "message": "✅ 综合打分已生成: comprehensive_score_W39_AUTO_20250926_135236.json"
+    },
+    {
+      "timestamp": "13:52:36",
+      "level": "INFO",
+      "message": "📊 L1高风险修改: 0处"
+    },
+    {
+      "timestamp": "13:52:36",
+      "level": "INFO",
+      "message": "📊 L2中风险修改: 0处"
+    },
+    {
+      "timestamp": "13:52:36",
+      "level": "INFO",
+      "message": "📊 L3低风险修改: 0处"
+    },
+    {
+      "timestamp": "13:52:36",
+      "level": "INFO",
+      "message": "📊 总体风险评分: 0"
+    },
+    {
+      "timestamp": "13:52:36",
+      "level": "INFO",
+      "message": "🎨 热力图分布: 红色0格, 橙色0格, 绿色0格, 蓝色19格"
+    },
+    {
+      "timestamp": "13:52:36",
+      "level": "SUCCESS",
+      "message": "🎉 所有步骤执行完成!"
+    }
+  ],
+  "settings": {
+    "task_type": "full",
+    "auto_download": true,
+    "force_download": true,
+    "enable_ai_analysis": true,
+    "enable_excel_marking": true,
+    "enable_upload": true,
+    "use_existing_baseline": true
+  }
+}

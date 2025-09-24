@@ -1,0 +1,22 @@
+{
+  "metadata": {
+    "table_name": "tmp6fv00kll",
+    "source_file": "/tmp/tmp6fv00kll.json",
+    "scoring_time": "2025-09-26 14:28:33",
+    "total_modifications": 0,
+    "scoring_version": "v1.0",
+    "status": "no_changes"
+  },
+  "scores": [],
+  "summary": {
+    "total_score": 0.0,
+    "average_score": 0.0,
+    "risk_distribution": {},
+    "ai_usage": {
+      "total_ai_calls": 0,
+      "layer1_passes": 0,
+      "layer2_analyses": 0
+    },
+    "message": "基线和目标文档完全一致，无需打分"
+  }
+}

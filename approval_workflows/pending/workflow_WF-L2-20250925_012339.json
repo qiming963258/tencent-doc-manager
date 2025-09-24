@@ -1,0 +1,27 @@
+{
+  "workflow_id": "WF-L2-20250925_012339",
+  "created_time": "2025-09-25 01:23:39",
+  "pending_approvals": [],
+  "auto_approved": [
+    {
+      "modification_id": "M001",
+      "cell": "J26",
+      "column": "负责人",
+      "old_value": "赖铁荔",
+      "new_value": "徐志杰",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 80.0,
+        "reason": "关键人变更"
+      },
+      "layer2_result": {
+        "risk_level": "LOW",
+        "decision": "APPROVE",
+        "confidence": 95,
+        "reason": "只是负责人变更，不影响数据完整性和业务流程"
+      },
+      "final_decision": "APPROVE",
+      "approval_required": false
+    }
+  ]
+}

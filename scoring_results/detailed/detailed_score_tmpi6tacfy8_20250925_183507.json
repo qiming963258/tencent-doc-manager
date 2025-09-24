@@ -1,0 +1,2507 @@
+{
+  "metadata": {
+    "table_name": "tmpi6tacfy8",
+    "source_file": "/tmp/tmpi6tacfy8.json",
+    "scoring_time": "2025-09-25 18:35:07",
+    "total_modifications": 92,
+    "scoring_version": "v1.0"
+  },
+  "scores": [
+    {
+      "modification_id": "M001",
+      "cell": "L4",
+      "column_name": "重要程度",
+      "column_level": "L1",
+      "old_value": "★★★★★",
+      "new_value": "5",
+      "scoring_details": {
+        "base_score": 0.8,
+        "change_factor": 1.0,
+        "importance_weight": 1.4,
+        "ai_adjustment": 1.0,
+        "confidence_weight": 1.0,
+        "final_score": 1.0
+      },
+      "ai_analysis": {
+        "ai_used": false,
+        "reason": "L1_column_rule_based"
+      },
+      "risk_assessment": {
+        "risk_level": "EXTREME_HIGH",
+        "risk_color": "red",
+        "risk_icon": "🔴",
+        "action_required": "immediate_review",
+        "priority": 1
+      }
+    },
+    {
+      "modification_id": "M002",
+      "cell": "L5",
+      "column_name": "重要程度",
+      "column_level": "L1",
+      "old_value": "★★★★☆",
+      "new_value": "4",
+      "scoring_details": {
+        "base_score": 0.8,
+        "change_factor": 1.0,
+        "importance_weight": 1.4,
+        "ai_adjustment": 1.0,
+        "confidence_weight": 1.0,
+        "final_score": 1.0
+      },
+      "ai_analysis": {
+        "ai_used": false,
+        "reason": "L1_column_rule_based"
+      },
+      "risk_assessment": {
+        "risk_level": "EXTREME_HIGH",
+        "risk_color": "red",
+        "risk_icon": "🔴",
+        "action_required": "immediate_review",
+        "priority": 1
+      }
+    },
+    {
+      "modification_id": "M003",
+      "cell": "L6",
+      "column_name": "重要程度",
+      "column_level": "L1",
+      "old_value": "★★★★☆",
+      "new_value": "4",
+      "scoring_details": {
+        "base_score": 0.8,
+        "change_factor": 1.0,
+        "importance_weight": 1.4,
+        "ai_adjustment": 1.0,
+        "confidence_weight": 1.0,
+        "final_score": 1.0
+      },
+      "ai_analysis": {
+        "ai_used": false,
+        "reason": "L1_column_rule_based"
+      },
+      "risk_assessment": {
+        "risk_level": "EXTREME_HIGH",
+        "risk_color": "red",
+        "risk_icon": "🔴",
+        "action_required": "immediate_review",
+        "priority": 1
+      }
+    },
+    {
+      "modification_id": "M004",
+      "cell": "L7",
+      "column_name": "重要程度",
+      "column_level": "L1",
+      "old_value": "★★★★★",
+      "new_value": "5",
+      "scoring_details": {
+        "base_score": 0.8,
+        "change_factor": 1.0,
+        "importance_weight": 1.4,
+        "ai_adjustment": 1.0,
+        "confidence_weight": 1.0,
+        "final_score": 1.0
+      },
+      "ai_analysis": {
+        "ai_used": false,
+        "reason": "L1_column_rule_based"
+      },
+      "risk_assessment": {
+        "risk_level": "EXTREME_HIGH",
+        "risk_color": "red",
+        "risk_icon": "🔴",
+        "action_required": "immediate_review",
+        "priority": 1
+      }
+    },
+    {
+      "modification_id": "M005",
+      "cell": "L8",
+      "column_name": "重要程度",
+      "column_level": "L1",
+      "old_value": "★★★★★",
+      "new_value": "5",
+      "scoring_details": {
+        "base_score": 0.8,
+        "change_factor": 1.0,
+        "importance_weight": 1.4,
+        "ai_adjustment": 1.0,
+        "confidence_weight": 1.0,
+        "final_score": 1.0
+      },
+      "ai_analysis": {
+        "ai_used": false,
+        "reason": "L1_column_rule_based"
+      },
+      "risk_assessment": {
+        "risk_level": "EXTREME_HIGH",
+        "risk_color": "red",
+        "risk_icon": "🔴",
+        "action_required": "immediate_review",
+        "priority": 1
+      }
+    },
+    {
+      "modification_id": "M006",
+      "cell": "L9",
+      "column_name": "重要程度",
+      "column_level": "L1",
+      "old_value": "★★★★★",
+      "new_value": "5",
+      "scoring_details": {
+        "base_score": 0.8,
+        "change_factor": 1.0,
+        "importance_weight": 1.4,
+        "ai_adjustment": 1.0,
+        "confidence_weight": 1.0,
+        "final_score": 1.0
+      },
+      "ai_analysis": {
+        "ai_used": false,
+        "reason": "L1_column_rule_based"
+      },
+      "risk_assessment": {
+        "risk_level": "EXTREME_HIGH",
+        "risk_color": "red",
+        "risk_icon": "🔴",
+        "action_required": "immediate_review",
+        "priority": 1
+      }
+    },
+    {
+      "modification_id": "M007",
+      "cell": "L10",
+      "column_name": "重要程度",
+      "column_level": "L1",
+      "old_value": "★★★★☆",
+      "new_value": "4",
+      "scoring_details": {
+        "base_score": 0.8,
+        "change_factor": 1.0,
+        "importance_weight": 1.4,
+        "ai_adjustment": 1.0,
+        "confidence_weight": 1.0,
+        "final_score": 1.0
+      },
+      "ai_analysis": {
+        "ai_used": false,
+        "reason": "L1_column_rule_based"
+      },
+      "risk_assessment": {
+        "risk_level": "EXTREME_HIGH",
+        "risk_color": "red",
+        "risk_icon": "🔴",
+        "action_required": "immediate_review",
+        "priority": 1
+      }
+    },
+    {
+      "modification_id": "M008",
+      "cell": "L11",
+      "column_name": "重要程度",
+      "column_level": "L1",
+      "old_value": "★★★☆☆",
+      "new_value": "3",
+      "scoring_details": {
+        "base_score": 0.8,
+        "change_factor": 1.0,
+        "importance_weight": 1.4,
+        "ai_adjustment": 1.0,
+        "confidence_weight": 1.0,
+        "final_score": 1.0
+      },
+      "ai_analysis": {
+        "ai_used": false,
+        "reason": "L1_column_rule_based"
+      },
+      "risk_assessment": {
+        "risk_level": "EXTREME_HIGH",
+        "risk_color": "red",
+        "risk_icon": "🔴",
+        "action_required": "immediate_review",
+        "priority": 1
+      }
+    },
+    {
+      "modification_id": "M009",
+      "cell": "L12",
+      "column_name": "重要程度",
+      "column_level": "L1",
+      "old_value": "★★★☆☆",
+      "new_value": "3",
+      "scoring_details": {
+        "base_score": 0.8,
+        "change_factor": 1.0,
+        "importance_weight": 1.4,
+        "ai_adjustment": 1.0,
+        "confidence_weight": 1.0,
+        "final_score": 1.0
+      },
+      "ai_analysis": {
+        "ai_used": false,
+        "reason": "L1_column_rule_based"
+      },
+      "risk_assessment": {
+        "risk_level": "EXTREME_HIGH",
+        "risk_color": "red",
+        "risk_icon": "🔴",
+        "action_required": "immediate_review",
+        "priority": 1
+      }
+    },
+    {
+      "modification_id": "M010",
+      "cell": "L13",
+      "column_name": "重要程度",
+      "column_level": "L1",
+      "old_value": "★★★★★",
+      "new_value": "5",
+      "scoring_details": {
+        "base_score": 0.8,
+        "change_factor": 1.0,
+        "importance_weight": 1.4,
+        "ai_adjustment": 1.0,
+        "confidence_weight": 1.0,
+        "final_score": 1.0
+      },
+      "ai_analysis": {
+        "ai_used": false,
+        "reason": "L1_column_rule_based"
+      },
+      "risk_assessment": {
+        "risk_level": "EXTREME_HIGH",
+        "risk_color": "red",
+        "risk_icon": "🔴",
+        "action_required": "immediate_review",
+        "priority": 1
+      }
+    },
+    {
+      "modification_id": "M011",
+      "cell": "L14",
+      "column_name": "重要程度",
+      "column_level": "L1",
+      "old_value": "★★★★★",
+      "new_value": "5",
+      "scoring_details": {
+        "base_score": 0.8,
+        "change_factor": 1.0,
+        "importance_weight": 1.4,
+        "ai_adjustment": 1.0,
+        "confidence_weight": 1.0,
+        "final_score": 1.0
+      },
+      "ai_analysis": {
+        "ai_used": false,
+        "reason": "L1_column_rule_based"
+      },
+      "risk_assessment": {
+        "risk_level": "EXTREME_HIGH",
+        "risk_color": "red",
+        "risk_icon": "🔴",
+        "action_required": "immediate_review",
+        "priority": 1
+      }
+    },
+    {
+      "modification_id": "M012",
+      "cell": "L15",
+      "column_name": "重要程度",
+      "column_level": "L1",
+      "old_value": "★★★★★",
+      "new_value": "5",
+      "scoring_details": {
+        "base_score": 0.8,
+        "change_factor": 1.0,
+        "importance_weight": 1.4,
+        "ai_adjustment": 1.0,
+        "confidence_weight": 1.0,
+        "final_score": 1.0
+      },
+      "ai_analysis": {
+        "ai_used": false,
+        "reason": "L1_column_rule_based"
+      },
+      "risk_assessment": {
+        "risk_level": "EXTREME_HIGH",
+        "risk_color": "red",
+        "risk_icon": "🔴",
+        "action_required": "immediate_review",
+        "priority": 1
+      }
+    },
+    {
+      "modification_id": "M013",
+      "cell": "L16",
+      "column_name": "重要程度",
+      "column_level": "L1",
+      "old_value": "★★★★☆",
+      "new_value": "4",
+      "scoring_details": {
+        "base_score": 0.8,
+        "change_factor": 1.0,
+        "importance_weight": 1.4,
+        "ai_adjustment": 1.0,
+        "confidence_weight": 1.0,
+        "final_score": 1.0
+      },
+      "ai_analysis": {
+        "ai_used": false,
+        "reason": "L1_column_rule_based"
+      },
+      "risk_assessment": {
+        "risk_level": "EXTREME_HIGH",
+        "risk_color": "red",
+        "risk_icon": "🔴",
+        "action_required": "immediate_review",
+        "priority": 1
+      }
+    },
+    {
+      "modification_id": "M014",
+      "cell": "L17",
+      "column_name": "重要程度",
+      "column_level": "L1",
+      "old_value": "★★★★☆",
+      "new_value": "4",
+      "scoring_details": {
+        "base_score": 0.8,
+        "change_factor": 1.0,
+        "importance_weight": 1.4,
+        "ai_adjustment": 1.0,
+        "confidence_weight": 1.0,
+        "final_score": 1.0
+      },
+      "ai_analysis": {
+        "ai_used": false,
+        "reason": "L1_column_rule_based"
+      },
+      "risk_assessment": {
+        "risk_level": "EXTREME_HIGH",
+        "risk_color": "red",
+        "risk_icon": "🔴",
+        "action_required": "immediate_review",
+        "priority": 1
+      }
+    },
+    {
+      "modification_id": "M015",
+      "cell": "L18",
+      "column_name": "重要程度",
+      "column_level": "L1",
+      "old_value": "★★★★★",
+      "new_value": "5",
+      "scoring_details": {
+        "base_score": 0.8,
+        "change_factor": 1.0,
+        "importance_weight": 1.4,
+        "ai_adjustment": 1.0,
+        "confidence_weight": 1.0,
+        "final_score": 1.0
+      },
+      "ai_analysis": {
+        "ai_used": false,
+        "reason": "L1_column_rule_based"
+      },
+      "risk_assessment": {
+        "risk_level": "EXTREME_HIGH",
+        "risk_color": "red",
+        "risk_icon": "🔴",
+        "action_required": "immediate_review",
+        "priority": 1
+      }
+    },
+    {
+      "modification_id": "M016",
+      "cell": "L19",
+      "column_name": "重要程度",
+      "column_level": "L1",
+      "old_value": "★★★★☆",
+      "new_value": "4",
+      "scoring_details": {
+        "base_score": 0.8,
+        "change_factor": 1.0,
+        "importance_weight": 1.4,
+        "ai_adjustment": 1.0,
+        "confidence_weight": 1.0,
+        "final_score": 1.0
+      },
+      "ai_analysis": {
+        "ai_used": false,
+        "reason": "L1_column_rule_based"
+      },
+      "risk_assessment": {
+        "risk_level": "EXTREME_HIGH",
+        "risk_color": "red",
+        "risk_icon": "🔴",
+        "action_required": "immediate_review",
+        "priority": 1
+      }
+    },
+    {
+      "modification_id": "M017",
+      "cell": "L20",
+      "column_name": "重要程度",
+      "column_level": "L1",
+      "old_value": "★★★★☆",
+      "new_value": "4",
+      "scoring_details": {
+        "base_score": 0.8,
+        "change_factor": 1.0,
+        "importance_weight": 1.4,
+        "ai_adjustment": 1.0,
+        "confidence_weight": 1.0,
+        "final_score": 1.0
+      },
+      "ai_analysis": {
+        "ai_used": false,
+        "reason": "L1_column_rule_based"
+      },
+      "risk_assessment": {
+        "risk_level": "EXTREME_HIGH",
+        "risk_color": "red",
+        "risk_icon": "🔴",
+        "action_required": "immediate_review",
+        "priority": 1
+      }
+    },
+    {
+      "modification_id": "M018",
+      "cell": "L21",
+      "column_name": "重要程度",
+      "column_level": "L1",
+      "old_value": "★★★★★",
+      "new_value": "5",
+      "scoring_details": {
+        "base_score": 0.8,
+        "change_factor": 1.0,
+        "importance_weight": 1.4,
+        "ai_adjustment": 1.0,
+        "confidence_weight": 1.0,
+        "final_score": 1.0
+      },
+      "ai_analysis": {
+        "ai_used": false,
+        "reason": "L1_column_rule_based"
+      },
+      "risk_assessment": {
+        "risk_level": "EXTREME_HIGH",
+        "risk_color": "red",
+        "risk_icon": "🔴",
+        "action_required": "immediate_review",
+        "priority": 1
+      }
+    },
+    {
+      "modification_id": "M019",
+      "cell": "L22",
+      "column_name": "重要程度",
+      "column_level": "L1",
+      "old_value": "★★★★★",
+      "new_value": "5",
+      "scoring_details": {
+        "base_score": 0.8,
+        "change_factor": 1.0,
+        "importance_weight": 1.4,
+        "ai_adjustment": 1.0,
+        "confidence_weight": 1.0,
+        "final_score": 1.0
+      },
+      "ai_analysis": {
+        "ai_used": false,
+        "reason": "L1_column_rule_based"
+      },
+      "risk_assessment": {
+        "risk_level": "EXTREME_HIGH",
+        "risk_color": "red",
+        "risk_icon": "🔴",
+        "action_required": "immediate_review",
+        "priority": 1
+      }
+    },
+    {
+      "modification_id": "M020",
+      "cell": "L23",
+      "column_name": "重要程度",
+      "column_level": "L1",
+      "old_value": "★★★★☆",
+      "new_value": "4",
+      "scoring_details": {
+        "base_score": 0.8,
+        "change_factor": 1.0,
+        "importance_weight": 1.4,
+        "ai_adjustment": 1.0,
+        "confidence_weight": 1.0,
+        "final_score": 1.0
+      },
+      "ai_analysis": {
+        "ai_used": false,
+        "reason": "L1_column_rule_based"
+      },
+      "risk_assessment": {
+        "risk_level": "EXTREME_HIGH",
+        "risk_color": "red",
+        "risk_icon": "🔴",
+        "action_required": "immediate_review",
+        "priority": 1
+      }
+    },
+    {
+      "modification_id": "M021",
+      "cell": "L24",
+      "column_name": "重要程度",
+      "column_level": "L1",
+      "old_value": "★★★★★",
+      "new_value": "5",
+      "scoring_details": {
+        "base_score": 0.8,
+        "change_factor": 1.0,
+        "importance_weight": 1.4,
+        "ai_adjustment": 1.0,
+        "confidence_weight": 1.0,
+        "final_score": 1.0
+      },
+      "ai_analysis": {
+        "ai_used": false,
+        "reason": "L1_column_rule_based"
+      },
+      "risk_assessment": {
+        "risk_level": "EXTREME_HIGH",
+        "risk_color": "red",
+        "risk_icon": "🔴",
+        "action_required": "immediate_review",
+        "priority": 1
+      }
+    },
+    {
+      "modification_id": "M022",
+      "cell": "L25",
+      "column_name": "重要程度",
+      "column_level": "L1",
+      "old_value": "★★★★★",
+      "new_value": "5",
+      "scoring_details": {
+        "base_score": 0.8,
+        "change_factor": 1.0,
+        "importance_weight": 1.4,
+        "ai_adjustment": 1.0,
+        "confidence_weight": 1.0,
+        "final_score": 1.0
+      },
+      "ai_analysis": {
+        "ai_used": false,
+        "reason": "L1_column_rule_based"
+      },
+      "risk_assessment": {
+        "risk_level": "EXTREME_HIGH",
+        "risk_color": "red",
+        "risk_icon": "🔴",
+        "action_required": "immediate_review",
+        "priority": 1
+      }
+    },
+    {
+      "modification_id": "M023",
+      "cell": "L26",
+      "column_name": "重要程度",
+      "column_level": "L1",
+      "old_value": "★★★★★",
+      "new_value": "5",
+      "scoring_details": {
+        "base_score": 0.8,
+        "change_factor": 1.0,
+        "importance_weight": 1.4,
+        "ai_adjustment": 1.0,
+        "confidence_weight": 1.0,
+        "final_score": 1.0
+      },
+      "ai_analysis": {
+        "ai_used": false,
+        "reason": "L1_column_rule_based"
+      },
+      "risk_assessment": {
+        "risk_level": "EXTREME_HIGH",
+        "risk_color": "red",
+        "risk_icon": "🔴",
+        "action_required": "immediate_review",
+        "priority": 1
+      }
+    },
+    {
+      "modification_id": "M024",
+      "cell": "L27",
+      "column_name": "重要程度",
+      "column_level": "L1",
+      "old_value": "★★★★★",
+      "new_value": "5",
+      "scoring_details": {
+        "base_score": 0.8,
+        "change_factor": 1.0,
+        "importance_weight": 1.4,
+        "ai_adjustment": 1.0,
+        "confidence_weight": 1.0,
+        "final_score": 1.0
+      },
+      "ai_analysis": {
+        "ai_used": false,
+        "reason": "L1_column_rule_based"
+      },
+      "risk_assessment": {
+        "risk_level": "EXTREME_HIGH",
+        "risk_color": "red",
+        "risk_icon": "🔴",
+        "action_required": "immediate_review",
+        "priority": 1
+      }
+    },
+    {
+      "modification_id": "M025",
+      "cell": "L28",
+      "column_name": "重要程度",
+      "column_level": "L1",
+      "old_value": "★★★★☆",
+      "new_value": "4",
+      "scoring_details": {
+        "base_score": 0.8,
+        "change_factor": 1.0,
+        "importance_weight": 1.4,
+        "ai_adjustment": 1.0,
+        "confidence_weight": 1.0,
+        "final_score": 1.0
+      },
+      "ai_analysis": {
+        "ai_used": false,
+        "reason": "L1_column_rule_based"
+      },
+      "risk_assessment": {
+        "risk_level": "EXTREME_HIGH",
+        "risk_color": "red",
+        "risk_icon": "🔴",
+        "action_required": "immediate_review",
+        "priority": 1
+      }
+    },
+    {
+      "modification_id": "M026",
+      "cell": "L29",
+      "column_name": "重要程度",
+      "column_level": "L1",
+      "old_value": "★★★★☆",
+      "new_value": "4",
+      "scoring_details": {
+        "base_score": 0.8,
+        "change_factor": 1.0,
+        "importance_weight": 1.4,
+        "ai_adjustment": 1.0,
+        "confidence_weight": 1.0,
+        "final_score": 1.0
+      },
+      "ai_analysis": {
+        "ai_used": false,
+        "reason": "L1_column_rule_based"
+      },
+      "risk_assessment": {
+        "risk_level": "EXTREME_HIGH",
+        "risk_color": "red",
+        "risk_icon": "🔴",
+        "action_required": "immediate_review",
+        "priority": 1
+      }
+    },
+    {
+      "modification_id": "M027",
+      "cell": "L30",
+      "column_name": "重要程度",
+      "column_level": "L1",
+      "old_value": "★★★★★",
+      "new_value": "5",
+      "scoring_details": {
+        "base_score": 0.8,
+        "change_factor": 1.0,
+        "importance_weight": 1.4,
+        "ai_adjustment": 1.0,
+        "confidence_weight": 1.0,
+        "final_score": 1.0
+      },
+      "ai_analysis": {
+        "ai_used": false,
+        "reason": "L1_column_rule_based"
+      },
+      "risk_assessment": {
+        "risk_level": "EXTREME_HIGH",
+        "risk_color": "red",
+        "risk_icon": "🔴",
+        "action_required": "immediate_review",
+        "priority": 1
+      }
+    },
+    {
+      "modification_id": "M028",
+      "cell": "L31",
+      "column_name": "重要程度",
+      "column_level": "L1",
+      "old_value": "★★★★☆",
+      "new_value": "4",
+      "scoring_details": {
+        "base_score": 0.8,
+        "change_factor": 1.0,
+        "importance_weight": 1.4,
+        "ai_adjustment": 1.0,
+        "confidence_weight": 1.0,
+        "final_score": 1.0
+      },
+      "ai_analysis": {
+        "ai_used": false,
+        "reason": "L1_column_rule_based"
+      },
+      "risk_assessment": {
+        "risk_level": "EXTREME_HIGH",
+        "risk_color": "red",
+        "risk_icon": "🔴",
+        "action_required": "immediate_review",
+        "priority": 1
+      }
+    },
+    {
+      "modification_id": "M029",
+      "cell": "L32",
+      "column_name": "重要程度",
+      "column_level": "L1",
+      "old_value": "★★★★☆",
+      "new_value": "4",
+      "scoring_details": {
+        "base_score": 0.8,
+        "change_factor": 1.0,
+        "importance_weight": 1.4,
+        "ai_adjustment": 1.0,
+        "confidence_weight": 1.0,
+        "final_score": 1.0
+      },
+      "ai_analysis": {
+        "ai_used": false,
+        "reason": "L1_column_rule_based"
+      },
+      "risk_assessment": {
+        "risk_level": "EXTREME_HIGH",
+        "risk_color": "red",
+        "risk_icon": "🔴",
+        "action_required": "immediate_review",
+        "priority": 1
+      }
+    },
+    {
+      "modification_id": "M030",
+      "cell": "L33",
+      "column_name": "重要程度",
+      "column_level": "L1",
+      "old_value": "★★★★★",
+      "new_value": "5",
+      "scoring_details": {
+        "base_score": 0.8,
+        "change_factor": 1.0,
+        "importance_weight": 1.4,
+        "ai_adjustment": 1.0,
+        "confidence_weight": 1.0,
+        "final_score": 1.0
+      },
+      "ai_analysis": {
+        "ai_used": false,
+        "reason": "L1_column_rule_based"
+      },
+      "risk_assessment": {
+        "risk_level": "EXTREME_HIGH",
+        "risk_color": "red",
+        "risk_icon": "🔴",
+        "action_required": "immediate_review",
+        "priority": 1
+      }
+    },
+    {
+      "modification_id": "M031",
+      "cell": "L34",
+      "column_name": "重要程度",
+      "column_level": "L1",
+      "old_value": "★★★☆☆",
+      "new_value": "3",
+      "scoring_details": {
+        "base_score": 0.8,
+        "change_factor": 1.0,
+        "importance_weight": 1.4,
+        "ai_adjustment": 1.0,
+        "confidence_weight": 1.0,
+        "final_score": 1.0
+      },
+      "ai_analysis": {
+        "ai_used": false,
+        "reason": "L1_column_rule_based"
+      },
+      "risk_assessment": {
+        "risk_level": "EXTREME_HIGH",
+        "risk_color": "red",
+        "risk_icon": "🔴",
+        "action_required": "immediate_review",
+        "priority": 1
+      }
+    },
+    {
+      "modification_id": "M032",
+      "cell": "L35",
+      "column_name": "重要程度",
+      "column_level": "L1",
+      "old_value": "★★★★☆",
+      "new_value": "4",
+      "scoring_details": {
+        "base_score": 0.8,
+        "change_factor": 1.0,
+        "importance_weight": 1.4,
+        "ai_adjustment": 1.0,
+        "confidence_weight": 1.0,
+        "final_score": 1.0
+      },
+      "ai_analysis": {
+        "ai_used": false,
+        "reason": "L1_column_rule_based"
+      },
+      "risk_assessment": {
+        "risk_level": "EXTREME_HIGH",
+        "risk_color": "red",
+        "risk_icon": "🔴",
+        "action_required": "immediate_review",
+        "priority": 1
+      }
+    },
+    {
+      "modification_id": "M033",
+      "cell": "L36",
+      "column_name": "重要程度",
+      "column_level": "L1",
+      "old_value": "★★★☆☆",
+      "new_value": "3",
+      "scoring_details": {
+        "base_score": 0.8,
+        "change_factor": 1.0,
+        "importance_weight": 1.4,
+        "ai_adjustment": 1.0,
+        "confidence_weight": 1.0,
+        "final_score": 1.0
+      },
+      "ai_analysis": {
+        "ai_used": false,
+        "reason": "L1_column_rule_based"
+      },
+      "risk_assessment": {
+        "risk_level": "EXTREME_HIGH",
+        "risk_color": "red",
+        "risk_icon": "🔴",
+        "action_required": "immediate_review",
+        "priority": 1
+      }
+    },
+    {
+      "modification_id": "M034",
+      "cell": "L37",
+      "column_name": "重要程度",
+      "column_level": "L1",
+      "old_value": "★★★★☆",
+      "new_value": "4",
+      "scoring_details": {
+        "base_score": 0.8,
+        "change_factor": 1.0,
+        "importance_weight": 1.4,
+        "ai_adjustment": 1.0,
+        "confidence_weight": 1.0,
+        "final_score": 1.0
+      },
+      "ai_analysis": {
+        "ai_used": false,
+        "reason": "L1_column_rule_based"
+      },
+      "risk_assessment": {
+        "risk_level": "EXTREME_HIGH",
+        "risk_color": "red",
+        "risk_icon": "🔴",
+        "action_required": "immediate_review",
+        "priority": 1
+      }
+    },
+    {
+      "modification_id": "M035",
+      "cell": "L38",
+      "column_name": "重要程度",
+      "column_level": "L1",
+      "old_value": "★★★★★",
+      "new_value": "5",
+      "scoring_details": {
+        "base_score": 0.8,
+        "change_factor": 1.0,
+        "importance_weight": 1.4,
+        "ai_adjustment": 1.0,
+        "confidence_weight": 1.0,
+        "final_score": 1.0
+      },
+      "ai_analysis": {
+        "ai_used": false,
+        "reason": "L1_column_rule_based"
+      },
+      "risk_assessment": {
+        "risk_level": "EXTREME_HIGH",
+        "risk_color": "red",
+        "risk_icon": "🔴",
+        "action_required": "immediate_review",
+        "priority": 1
+      }
+    },
+    {
+      "modification_id": "M036",
+      "cell": "L39",
+      "column_name": "重要程度",
+      "column_level": "L1",
+      "old_value": "★★★★★",
+      "new_value": "5",
+      "scoring_details": {
+        "base_score": 0.8,
+        "change_factor": 1.0,
+        "importance_weight": 1.4,
+        "ai_adjustment": 1.0,
+        "confidence_weight": 1.0,
+        "final_score": 1.0
+      },
+      "ai_analysis": {
+        "ai_used": false,
+        "reason": "L1_column_rule_based"
+      },
+      "risk_assessment": {
+        "risk_level": "EXTREME_HIGH",
+        "risk_color": "red",
+        "risk_icon": "🔴",
+        "action_required": "immediate_review",
+        "priority": 1
+      }
+    },
+    {
+      "modification_id": "M037",
+      "cell": "L40",
+      "column_name": "重要程度",
+      "column_level": "L1",
+      "old_value": "★★★★★",
+      "new_value": "5",
+      "scoring_details": {
+        "base_score": 0.8,
+        "change_factor": 1.0,
+        "importance_weight": 1.4,
+        "ai_adjustment": 1.0,
+        "confidence_weight": 1.0,
+        "final_score": 1.0
+      },
+      "ai_analysis": {
+        "ai_used": false,
+        "reason": "L1_column_rule_based"
+      },
+      "risk_assessment": {
+        "risk_level": "EXTREME_HIGH",
+        "risk_color": "red",
+        "risk_icon": "🔴",
+        "action_required": "immediate_review",
+        "priority": 1
+      }
+    },
+    {
+      "modification_id": "M038",
+      "cell": "L41",
+      "column_name": "重要程度",
+      "column_level": "L1",
+      "old_value": "★★★★★",
+      "new_value": "5",
+      "scoring_details": {
+        "base_score": 0.8,
+        "change_factor": 1.0,
+        "importance_weight": 1.4,
+        "ai_adjustment": 1.0,
+        "confidence_weight": 1.0,
+        "final_score": 1.0
+      },
+      "ai_analysis": {
+        "ai_used": false,
+        "reason": "L1_column_rule_based"
+      },
+      "risk_assessment": {
+        "risk_level": "EXTREME_HIGH",
+        "risk_color": "red",
+        "risk_icon": "🔴",
+        "action_required": "immediate_review",
+        "priority": 1
+      }
+    },
+    {
+      "modification_id": "M039",
+      "cell": "L42",
+      "column_name": "重要程度",
+      "column_level": "L1",
+      "old_value": "★★★★★",
+      "new_value": "5",
+      "scoring_details": {
+        "base_score": 0.8,
+        "change_factor": 1.0,
+        "importance_weight": 1.4,
+        "ai_adjustment": 1.0,
+        "confidence_weight": 1.0,
+        "final_score": 1.0
+      },
+      "ai_analysis": {
+        "ai_used": false,
+        "reason": "L1_column_rule_based"
+      },
+      "risk_assessment": {
+        "risk_level": "EXTREME_HIGH",
+        "risk_color": "red",
+        "risk_icon": "🔴",
+        "action_required": "immediate_review",
+        "priority": 1
+      }
+    },
+    {
+      "modification_id": "M040",
+      "cell": "L43",
+      "column_name": "重要程度",
+      "column_level": "L1",
+      "old_value": "★★★★★",
+      "new_value": "5",
+      "scoring_details": {
+        "base_score": 0.8,
+        "change_factor": 1.0,
+        "importance_weight": 1.4,
+        "ai_adjustment": 1.0,
+        "confidence_weight": 1.0,
+        "final_score": 1.0
+      },
+      "ai_analysis": {
+        "ai_used": false,
+        "reason": "L1_column_rule_based"
+      },
+      "risk_assessment": {
+        "risk_level": "EXTREME_HIGH",
+        "risk_color": "red",
+        "risk_icon": "🔴",
+        "action_required": "immediate_review",
+        "priority": 1
+      }
+    },
+    {
+      "modification_id": "M041",
+      "cell": "L44",
+      "column_name": "重要程度",
+      "column_level": "L1",
+      "old_value": "★★★★☆",
+      "new_value": "4",
+      "scoring_details": {
+        "base_score": 0.8,
+        "change_factor": 1.0,
+        "importance_weight": 1.4,
+        "ai_adjustment": 1.0,
+        "confidence_weight": 1.0,
+        "final_score": 1.0
+      },
+      "ai_analysis": {
+        "ai_used": false,
+        "reason": "L1_column_rule_based"
+      },
+      "risk_assessment": {
+        "risk_level": "EXTREME_HIGH",
+        "risk_color": "red",
+        "risk_icon": "🔴",
+        "action_required": "immediate_review",
+        "priority": 1
+      }
+    },
+    {
+      "modification_id": "M042",
+      "cell": "L45",
+      "column_name": "重要程度",
+      "column_level": "L1",
+      "old_value": "★★★★☆",
+      "new_value": "4",
+      "scoring_details": {
+        "base_score": 0.8,
+        "change_factor": 1.0,
+        "importance_weight": 1.4,
+        "ai_adjustment": 1.0,
+        "confidence_weight": 1.0,
+        "final_score": 1.0
+      },
+      "ai_analysis": {
+        "ai_used": false,
+        "reason": "L1_column_rule_based"
+      },
+      "risk_assessment": {
+        "risk_level": "EXTREME_HIGH",
+        "risk_color": "red",
+        "risk_icon": "🔴",
+        "action_required": "immediate_review",
+        "priority": 1
+      }
+    },
+    {
+      "modification_id": "M043",
+      "cell": "L46",
+      "column_name": "重要程度",
+      "column_level": "L1",
+      "old_value": "★★★★☆",
+      "new_value": "4",
+      "scoring_details": {
+        "base_score": 0.8,
+        "change_factor": 1.0,
+        "importance_weight": 1.4,
+        "ai_adjustment": 1.0,
+        "confidence_weight": 1.0,
+        "final_score": 1.0
+      },
+      "ai_analysis": {
+        "ai_used": false,
+        "reason": "L1_column_rule_based"
+      },
+      "risk_assessment": {
+        "risk_level": "EXTREME_HIGH",
+        "risk_color": "red",
+        "risk_icon": "🔴",
+        "action_required": "immediate_review",
+        "priority": 1
+      }
+    },
+    {
+      "modification_id": "M044",
+      "cell": "L47",
+      "column_name": "重要程度",
+      "column_level": "L1",
+      "old_value": "★★★★☆",
+      "new_value": "4",
+      "scoring_details": {
+        "base_score": 0.8,
+        "change_factor": 1.0,
+        "importance_weight": 1.4,
+        "ai_adjustment": 1.0,
+        "confidence_weight": 1.0,
+        "final_score": 1.0
+      },
+      "ai_analysis": {
+        "ai_used": false,
+        "reason": "L1_column_rule_based"
+      },
+      "risk_assessment": {
+        "risk_level": "EXTREME_HIGH",
+        "risk_color": "red",
+        "risk_icon": "🔴",
+        "action_required": "immediate_review",
+        "priority": 1
+      }
+    },
+    {
+      "modification_id": "M045",
+      "cell": "L48",
+      "column_name": "重要程度",
+      "column_level": "L1",
+      "old_value": "★★★★☆",
+      "new_value": "4",
+      "scoring_details": {
+        "base_score": 0.8,
+        "change_factor": 1.0,
+        "importance_weight": 1.4,
+        "ai_adjustment": 1.0,
+        "confidence_weight": 1.0,
+        "final_score": 1.0
+      },
+      "ai_analysis": {
+        "ai_used": false,
+        "reason": "L1_column_rule_based"
+      },
+      "risk_assessment": {
+        "risk_level": "EXTREME_HIGH",
+        "risk_color": "red",
+        "risk_icon": "🔴",
+        "action_required": "immediate_review",
+        "priority": 1
+      }
+    },
+    {
+      "modification_id": "M046",
+      "cell": "L49",
+      "column_name": "重要程度",
+      "column_level": "L1",
+      "old_value": "★★★★☆",
+      "new_value": "4",
+      "scoring_details": {
+        "base_score": 0.8,
+        "change_factor": 1.0,
+        "importance_weight": 1.4,
+        "ai_adjustment": 1.0,
+        "confidence_weight": 1.0,
+        "final_score": 1.0
+      },
+      "ai_analysis": {
+        "ai_used": false,
+        "reason": "L1_column_rule_based"
+      },
+      "risk_assessment": {
+        "risk_level": "EXTREME_HIGH",
+        "risk_color": "red",
+        "risk_icon": "🔴",
+        "action_required": "immediate_review",
+        "priority": 1
+      }
+    },
+    {
+      "modification_id": "M047",
+      "cell": "L50",
+      "column_name": "重要程度",
+      "column_level": "L1",
+      "old_value": "★★★★☆",
+      "new_value": "4",
+      "scoring_details": {
+        "base_score": 0.8,
+        "change_factor": 1.0,
+        "importance_weight": 1.4,
+        "ai_adjustment": 1.0,
+        "confidence_weight": 1.0,
+        "final_score": 1.0
+      },
+      "ai_analysis": {
+        "ai_used": false,
+        "reason": "L1_column_rule_based"
+      },
+      "risk_assessment": {
+        "risk_level": "EXTREME_HIGH",
+        "risk_color": "red",
+        "risk_icon": "🔴",
+        "action_required": "immediate_review",
+        "priority": 1
+      }
+    },
+    {
+      "modification_id": "M048",
+      "cell": "L51",
+      "column_name": "重要程度",
+      "column_level": "L1",
+      "old_value": "★★★★☆",
+      "new_value": "4",
+      "scoring_details": {
+        "base_score": 0.8,
+        "change_factor": 1.0,
+        "importance_weight": 1.4,
+        "ai_adjustment": 1.0,
+        "confidence_weight": 1.0,
+        "final_score": 1.0
+      },
+      "ai_analysis": {
+        "ai_used": false,
+        "reason": "L1_column_rule_based"
+      },
+      "risk_assessment": {
+        "risk_level": "EXTREME_HIGH",
+        "risk_color": "red",
+        "risk_icon": "🔴",
+        "action_required": "immediate_review",
+        "priority": 1
+      }
+    },
+    {
+      "modification_id": "M049",
+      "cell": "L52",
+      "column_name": "重要程度",
+      "column_level": "L1",
+      "old_value": "★★★★★",
+      "new_value": "5",
+      "scoring_details": {
+        "base_score": 0.8,
+        "change_factor": 1.0,
+        "importance_weight": 1.4,
+        "ai_adjustment": 1.0,
+        "confidence_weight": 1.0,
+        "final_score": 1.0
+      },
+      "ai_analysis": {
+        "ai_used": false,
+        "reason": "L1_column_rule_based"
+      },
+      "risk_assessment": {
+        "risk_level": "EXTREME_HIGH",
+        "risk_color": "red",
+        "risk_icon": "🔴",
+        "action_required": "immediate_review",
+        "priority": 1
+      }
+    },
+    {
+      "modification_id": "M050",
+      "cell": "L53",
+      "column_name": "重要程度",
+      "column_level": "L1",
+      "old_value": "★★★★☆",
+      "new_value": "4",
+      "scoring_details": {
+        "base_score": 0.8,
+        "change_factor": 1.0,
+        "importance_weight": 1.4,
+        "ai_adjustment": 1.0,
+        "confidence_weight": 1.0,
+        "final_score": 1.0
+      },
+      "ai_analysis": {
+        "ai_used": false,
+        "reason": "L1_column_rule_based"
+      },
+      "risk_assessment": {
+        "risk_level": "EXTREME_HIGH",
+        "risk_color": "red",
+        "risk_icon": "🔴",
+        "action_required": "immediate_review",
+        "priority": 1
+      }
+    },
+    {
+      "modification_id": "M051",
+      "cell": "L54",
+      "column_name": "重要程度",
+      "column_level": "L1",
+      "old_value": "★★★★★",
+      "new_value": "5",
+      "scoring_details": {
+        "base_score": 0.8,
+        "change_factor": 1.0,
+        "importance_weight": 1.4,
+        "ai_adjustment": 1.0,
+        "confidence_weight": 1.0,
+        "final_score": 1.0
+      },
+      "ai_analysis": {
+        "ai_used": false,
+        "reason": "L1_column_rule_based"
+      },
+      "risk_assessment": {
+        "risk_level": "EXTREME_HIGH",
+        "risk_color": "red",
+        "risk_icon": "🔴",
+        "action_required": "immediate_review",
+        "priority": 1
+      }
+    },
+    {
+      "modification_id": "M052",
+      "cell": "L55",
+      "column_name": "重要程度",
+      "column_level": "L1",
+      "old_value": "★★★★☆",
+      "new_value": "4",
+      "scoring_details": {
+        "base_score": 0.8,
+        "change_factor": 1.0,
+        "importance_weight": 1.4,
+        "ai_adjustment": 1.0,
+        "confidence_weight": 1.0,
+        "final_score": 1.0
+      },
+      "ai_analysis": {
+        "ai_used": false,
+        "reason": "L1_column_rule_based"
+      },
+      "risk_assessment": {
+        "risk_level": "EXTREME_HIGH",
+        "risk_color": "red",
+        "risk_icon": "🔴",
+        "action_required": "immediate_review",
+        "priority": 1
+      }
+    },
+    {
+      "modification_id": "M053",
+      "cell": "L56",
+      "column_name": "重要程度",
+      "column_level": "L1",
+      "old_value": "★★★★☆",
+      "new_value": "4",
+      "scoring_details": {
+        "base_score": 0.8,
+        "change_factor": 1.0,
+        "importance_weight": 1.4,
+        "ai_adjustment": 1.0,
+        "confidence_weight": 1.0,
+        "final_score": 1.0
+      },
+      "ai_analysis": {
+        "ai_used": false,
+        "reason": "L1_column_rule_based"
+      },
+      "risk_assessment": {
+        "risk_level": "EXTREME_HIGH",
+        "risk_color": "red",
+        "risk_icon": "🔴",
+        "action_required": "immediate_review",
+        "priority": 1
+      }
+    },
+    {
+      "modification_id": "M054",
+      "cell": "L57",
+      "column_name": "重要程度",
+      "column_level": "L1",
+      "old_value": "★★★☆☆",
+      "new_value": "3",
+      "scoring_details": {
+        "base_score": 0.8,
+        "change_factor": 1.0,
+        "importance_weight": 1.4,
+        "ai_adjustment": 1.0,
+        "confidence_weight": 1.0,
+        "final_score": 1.0
+      },
+      "ai_analysis": {
+        "ai_used": false,
+        "reason": "L1_column_rule_based"
+      },
+      "risk_assessment": {
+        "risk_level": "EXTREME_HIGH",
+        "risk_color": "red",
+        "risk_icon": "🔴",
+        "action_required": "immediate_review",
+        "priority": 1
+      }
+    },
+    {
+      "modification_id": "M055",
+      "cell": "L58",
+      "column_name": "重要程度",
+      "column_level": "L1",
+      "old_value": "★★★★★",
+      "new_value": "5",
+      "scoring_details": {
+        "base_score": 0.8,
+        "change_factor": 1.0,
+        "importance_weight": 1.4,
+        "ai_adjustment": 1.0,
+        "confidence_weight": 1.0,
+        "final_score": 1.0
+      },
+      "ai_analysis": {
+        "ai_used": false,
+        "reason": "L1_column_rule_based"
+      },
+      "risk_assessment": {
+        "risk_level": "EXTREME_HIGH",
+        "risk_color": "red",
+        "risk_icon": "🔴",
+        "action_required": "immediate_review",
+        "priority": 1
+      }
+    },
+    {
+      "modification_id": "M056",
+      "cell": "L59",
+      "column_name": "重要程度",
+      "column_level": "L1",
+      "old_value": "★★★★☆",
+      "new_value": "4",
+      "scoring_details": {
+        "base_score": 0.8,
+        "change_factor": 1.0,
+        "importance_weight": 1.4,
+        "ai_adjustment": 1.0,
+        "confidence_weight": 1.0,
+        "final_score": 1.0
+      },
+      "ai_analysis": {
+        "ai_used": false,
+        "reason": "L1_column_rule_based"
+      },
+      "risk_assessment": {
+        "risk_level": "EXTREME_HIGH",
+        "risk_color": "red",
+        "risk_icon": "🔴",
+        "action_required": "immediate_review",
+        "priority": 1
+      }
+    },
+    {
+      "modification_id": "M057",
+      "cell": "L60",
+      "column_name": "重要程度",
+      "column_level": "L1",
+      "old_value": "★★★★★",
+      "new_value": "5",
+      "scoring_details": {
+        "base_score": 0.8,
+        "change_factor": 1.0,
+        "importance_weight": 1.4,
+        "ai_adjustment": 1.0,
+        "confidence_weight": 1.0,
+        "final_score": 1.0
+      },
+      "ai_analysis": {
+        "ai_used": false,
+        "reason": "L1_column_rule_based"
+      },
+      "risk_assessment": {
+        "risk_level": "EXTREME_HIGH",
+        "risk_color": "red",
+        "risk_icon": "🔴",
+        "action_required": "immediate_review",
+        "priority": 1
+      }
+    },
+    {
+      "modification_id": "M058",
+      "cell": "L61",
+      "column_name": "重要程度",
+      "column_level": "L1",
+      "old_value": "★★★★☆",
+      "new_value": "4",
+      "scoring_details": {
+        "base_score": 0.8,
+        "change_factor": 1.0,
+        "importance_weight": 1.4,
+        "ai_adjustment": 1.0,
+        "confidence_weight": 1.0,
+        "final_score": 1.0
+      },
+      "ai_analysis": {
+        "ai_used": false,
+        "reason": "L1_column_rule_based"
+      },
+      "risk_assessment": {
+        "risk_level": "EXTREME_HIGH",
+        "risk_color": "red",
+        "risk_icon": "🔴",
+        "action_required": "immediate_review",
+        "priority": 1
+      }
+    },
+    {
+      "modification_id": "M059",
+      "cell": "L62",
+      "column_name": "重要程度",
+      "column_level": "L1",
+      "old_value": "★★★★☆",
+      "new_value": "4",
+      "scoring_details": {
+        "base_score": 0.8,
+        "change_factor": 1.0,
+        "importance_weight": 1.4,
+        "ai_adjustment": 1.0,
+        "confidence_weight": 1.0,
+        "final_score": 1.0
+      },
+      "ai_analysis": {
+        "ai_used": false,
+        "reason": "L1_column_rule_based"
+      },
+      "risk_assessment": {
+        "risk_level": "EXTREME_HIGH",
+        "risk_color": "red",
+        "risk_icon": "🔴",
+        "action_required": "immediate_review",
+        "priority": 1
+      }
+    },
+    {
+      "modification_id": "M060",
+      "cell": "L63",
+      "column_name": "重要程度",
+      "column_level": "L1",
+      "old_value": "★★★★☆",
+      "new_value": "4",
+      "scoring_details": {
+        "base_score": 0.8,
+        "change_factor": 1.0,
+        "importance_weight": 1.4,
+        "ai_adjustment": 1.0,
+        "confidence_weight": 1.0,
+        "final_score": 1.0
+      },
+      "ai_analysis": {
+        "ai_used": false,
+        "reason": "L1_column_rule_based"
+      },
+      "risk_assessment": {
+        "risk_level": "EXTREME_HIGH",
+        "risk_color": "red",
+        "risk_icon": "🔴",
+        "action_required": "immediate_review",
+        "priority": 1
+      }
+    },
+    {
+      "modification_id": "M061",
+      "cell": "L64",
+      "column_name": "重要程度",
+      "column_level": "L1",
+      "old_value": "★★★★☆",
+      "new_value": "4",
+      "scoring_details": {
+        "base_score": 0.8,
+        "change_factor": 1.0,
+        "importance_weight": 1.4,
+        "ai_adjustment": 1.0,
+        "confidence_weight": 1.0,
+        "final_score": 1.0
+      },
+      "ai_analysis": {
+        "ai_used": false,
+        "reason": "L1_column_rule_based"
+      },
+      "risk_assessment": {
+        "risk_level": "EXTREME_HIGH",
+        "risk_color": "red",
+        "risk_icon": "🔴",
+        "action_required": "immediate_review",
+        "priority": 1
+      }
+    },
+    {
+      "modification_id": "M062",
+      "cell": "L65",
+      "column_name": "重要程度",
+      "column_level": "L1",
+      "old_value": "★★★★☆",
+      "new_value": "4",
+      "scoring_details": {
+        "base_score": 0.8,
+        "change_factor": 1.0,
+        "importance_weight": 1.4,
+        "ai_adjustment": 1.0,
+        "confidence_weight": 1.0,
+        "final_score": 1.0
+      },
+      "ai_analysis": {
+        "ai_used": false,
+        "reason": "L1_column_rule_based"
+      },
+      "risk_assessment": {
+        "risk_level": "EXTREME_HIGH",
+        "risk_color": "red",
+        "risk_icon": "🔴",
+        "action_required": "immediate_review",
+        "priority": 1
+      }
+    },
+    {
+      "modification_id": "M063",
+      "cell": "L66",
+      "column_name": "重要程度",
+      "column_level": "L1",
+      "old_value": "★★★★★",
+      "new_value": "5",
+      "scoring_details": {
+        "base_score": 0.8,
+        "change_factor": 1.0,
+        "importance_weight": 1.4,
+        "ai_adjustment": 1.0,
+        "confidence_weight": 1.0,
+        "final_score": 1.0
+      },
+      "ai_analysis": {
+        "ai_used": false,
+        "reason": "L1_column_rule_based"
+      },
+      "risk_assessment": {
+        "risk_level": "EXTREME_HIGH",
+        "risk_color": "red",
+        "risk_icon": "🔴",
+        "action_required": "immediate_review",
+        "priority": 1
+      }
+    },
+    {
+      "modification_id": "M064",
+      "cell": "L67",
+      "column_name": "重要程度",
+      "column_level": "L1",
+      "old_value": "★★★★☆",
+      "new_value": "4",
+      "scoring_details": {
+        "base_score": 0.8,
+        "change_factor": 1.0,
+        "importance_weight": 1.4,
+        "ai_adjustment": 1.0,
+        "confidence_weight": 1.0,
+        "final_score": 1.0
+      },
+      "ai_analysis": {
+        "ai_used": false,
+        "reason": "L1_column_rule_based"
+      },
+      "risk_assessment": {
+        "risk_level": "EXTREME_HIGH",
+        "risk_color": "red",
+        "risk_icon": "🔴",
+        "action_required": "immediate_review",
+        "priority": 1
+      }
+    },
+    {
+      "modification_id": "M065",
+      "cell": "L68",
+      "column_name": "重要程度",
+      "column_level": "L1",
+      "old_value": "★★★★☆",
+      "new_value": "4",
+      "scoring_details": {
+        "base_score": 0.8,
+        "change_factor": 1.0,
+        "importance_weight": 1.4,
+        "ai_adjustment": 1.0,
+        "confidence_weight": 1.0,
+        "final_score": 1.0
+      },
+      "ai_analysis": {
+        "ai_used": false,
+        "reason": "L1_column_rule_based"
+      },
+      "risk_assessment": {
+        "risk_level": "EXTREME_HIGH",
+        "risk_color": "red",
+        "risk_icon": "🔴",
+        "action_required": "immediate_review",
+        "priority": 1
+      }
+    },
+    {
+      "modification_id": "M066",
+      "cell": "L69",
+      "column_name": "重要程度",
+      "column_level": "L1",
+      "old_value": "★★★★☆",
+      "new_value": "4",
+      "scoring_details": {
+        "base_score": 0.8,
+        "change_factor": 1.0,
+        "importance_weight": 1.4,
+        "ai_adjustment": 1.0,
+        "confidence_weight": 1.0,
+        "final_score": 1.0
+      },
+      "ai_analysis": {
+        "ai_used": false,
+        "reason": "L1_column_rule_based"
+      },
+      "risk_assessment": {
+        "risk_level": "EXTREME_HIGH",
+        "risk_color": "red",
+        "risk_icon": "🔴",
+        "action_required": "immediate_review",
+        "priority": 1
+      }
+    },
+    {
+      "modification_id": "M067",
+      "cell": "L70",
+      "column_name": "重要程度",
+      "column_level": "L1",
+      "old_value": "★★★★★",
+      "new_value": "5",
+      "scoring_details": {
+        "base_score": 0.8,
+        "change_factor": 1.0,
+        "importance_weight": 1.4,
+        "ai_adjustment": 1.0,
+        "confidence_weight": 1.0,
+        "final_score": 1.0
+      },
+      "ai_analysis": {
+        "ai_used": false,
+        "reason": "L1_column_rule_based"
+      },
+      "risk_assessment": {
+        "risk_level": "EXTREME_HIGH",
+        "risk_color": "red",
+        "risk_icon": "🔴",
+        "action_required": "immediate_review",
+        "priority": 1
+      }
+    },
+    {
+      "modification_id": "M068",
+      "cell": "L71",
+      "column_name": "重要程度",
+      "column_level": "L1",
+      "old_value": "★★★★☆",
+      "new_value": "4",
+      "scoring_details": {
+        "base_score": 0.8,
+        "change_factor": 1.0,
+        "importance_weight": 1.4,
+        "ai_adjustment": 1.0,
+        "confidence_weight": 1.0,
+        "final_score": 1.0
+      },
+      "ai_analysis": {
+        "ai_used": false,
+        "reason": "L1_column_rule_based"
+      },
+      "risk_assessment": {
+        "risk_level": "EXTREME_HIGH",
+        "risk_color": "red",
+        "risk_icon": "🔴",
+        "action_required": "immediate_review",
+        "priority": 1
+      }
+    },
+    {
+      "modification_id": "M069",
+      "cell": "L72",
+      "column_name": "重要程度",
+      "column_level": "L1",
+      "old_value": "★★★★★",
+      "new_value": "5",
+      "scoring_details": {
+        "base_score": 0.8,
+        "change_factor": 1.0,
+        "importance_weight": 1.4,
+        "ai_adjustment": 1.0,
+        "confidence_weight": 1.0,
+        "final_score": 1.0
+      },
+      "ai_analysis": {
+        "ai_used": false,
+        "reason": "L1_column_rule_based"
+      },
+      "risk_assessment": {
+        "risk_level": "EXTREME_HIGH",
+        "risk_color": "red",
+        "risk_icon": "🔴",
+        "action_required": "immediate_review",
+        "priority": 1
+      }
+    },
+    {
+      "modification_id": "M070",
+      "cell": "L73",
+      "column_name": "重要程度",
+      "column_level": "L1",
+      "old_value": "★★★★★",
+      "new_value": "5",
+      "scoring_details": {
+        "base_score": 0.8,
+        "change_factor": 1.0,
+        "importance_weight": 1.4,
+        "ai_adjustment": 1.0,
+        "confidence_weight": 1.0,
+        "final_score": 1.0
+      },
+      "ai_analysis": {
+        "ai_used": false,
+        "reason": "L1_column_rule_based"
+      },
+      "risk_assessment": {
+        "risk_level": "EXTREME_HIGH",
+        "risk_color": "red",
+        "risk_icon": "🔴",
+        "action_required": "immediate_review",
+        "priority": 1
+      }
+    },
+    {
+      "modification_id": "M071",
+      "cell": "L74",
+      "column_name": "重要程度",
+      "column_level": "L1",
+      "old_value": "★★★★★",
+      "new_value": "5",
+      "scoring_details": {
+        "base_score": 0.8,
+        "change_factor": 1.0,
+        "importance_weight": 1.4,
+        "ai_adjustment": 1.0,
+        "confidence_weight": 1.0,
+        "final_score": 1.0
+      },
+      "ai_analysis": {
+        "ai_used": false,
+        "reason": "L1_column_rule_based"
+      },
+      "risk_assessment": {
+        "risk_level": "EXTREME_HIGH",
+        "risk_color": "red",
+        "risk_icon": "🔴",
+        "action_required": "immediate_review",
+        "priority": 1
+      }
+    },
+    {
+      "modification_id": "M072",
+      "cell": "L75",
+      "column_name": "重要程度",
+      "column_level": "L1",
+      "old_value": "★★★★☆",
+      "new_value": "4",
+      "scoring_details": {
+        "base_score": 0.8,
+        "change_factor": 1.0,
+        "importance_weight": 1.4,
+        "ai_adjustment": 1.0,
+        "confidence_weight": 1.0,
+        "final_score": 1.0
+      },
+      "ai_analysis": {
+        "ai_used": false,
+        "reason": "L1_column_rule_based"
+      },
+      "risk_assessment": {
+        "risk_level": "EXTREME_HIGH",
+        "risk_color": "red",
+        "risk_icon": "🔴",
+        "action_required": "immediate_review",
+        "priority": 1
+      }
+    },
+    {
+      "modification_id": "M073",
+      "cell": "L76",
+      "column_name": "重要程度",
+      "column_level": "L1",
+      "old_value": "★★★★☆",
+      "new_value": "4",
+      "scoring_details": {
+        "base_score": 0.8,
+        "change_factor": 1.0,
+        "importance_weight": 1.4,
+        "ai_adjustment": 1.0,
+        "confidence_weight": 1.0,
+        "final_score": 1.0
+      },
+      "ai_analysis": {
+        "ai_used": false,
+        "reason": "L1_column_rule_based"
+      },
+      "risk_assessment": {
+        "risk_level": "EXTREME_HIGH",
+        "risk_color": "red",
+        "risk_icon": "🔴",
+        "action_required": "immediate_review",
+        "priority": 1
+      }
+    },
+    {
+      "modification_id": "M074",
+      "cell": "L77",
+      "column_name": "重要程度",
+      "column_level": "L1",
+      "old_value": "★★★★☆",
+      "new_value": "4",
+      "scoring_details": {
+        "base_score": 0.8,
+        "change_factor": 1.0,
+        "importance_weight": 1.4,
+        "ai_adjustment": 1.0,
+        "confidence_weight": 1.0,
+        "final_score": 1.0
+      },
+      "ai_analysis": {
+        "ai_used": false,
+        "reason": "L1_column_rule_based"
+      },
+      "risk_assessment": {
+        "risk_level": "EXTREME_HIGH",
+        "risk_color": "red",
+        "risk_icon": "🔴",
+        "action_required": "immediate_review",
+        "priority": 1
+      }
+    },
+    {
+      "modification_id": "M075",
+      "cell": "L78",
+      "column_name": "重要程度",
+      "column_level": "L1",
+      "old_value": "★★★★★",
+      "new_value": "5",
+      "scoring_details": {
+        "base_score": 0.8,
+        "change_factor": 1.0,
+        "importance_weight": 1.4,
+        "ai_adjustment": 1.0,
+        "confidence_weight": 1.0,
+        "final_score": 1.0
+      },
+      "ai_analysis": {
+        "ai_used": false,
+        "reason": "L1_column_rule_based"
+      },
+      "risk_assessment": {
+        "risk_level": "EXTREME_HIGH",
+        "risk_color": "red",
+        "risk_icon": "🔴",
+        "action_required": "immediate_review",
+        "priority": 1
+      }
+    },
+    {
+      "modification_id": "M076",
+      "cell": "L79",
+      "column_name": "重要程度",
+      "column_level": "L1",
+      "old_value": "★★★★★",
+      "new_value": "5",
+      "scoring_details": {
+        "base_score": 0.8,
+        "change_factor": 1.0,
+        "importance_weight": 1.4,
+        "ai_adjustment": 1.0,
+        "confidence_weight": 1.0,
+        "final_score": 1.0
+      },
+      "ai_analysis": {
+        "ai_used": false,
+        "reason": "L1_column_rule_based"
+      },
+      "risk_assessment": {
+        "risk_level": "EXTREME_HIGH",
+        "risk_color": "red",
+        "risk_icon": "🔴",
+        "action_required": "immediate_review",
+        "priority": 1
+      }
+    },
+    {
+      "modification_id": "M077",
+      "cell": "L80",
+      "column_name": "重要程度",
+      "column_level": "L1",
+      "old_value": "★★★★★",
+      "new_value": "5",
+      "scoring_details": {
+        "base_score": 0.8,
+        "change_factor": 1.0,
+        "importance_weight": 1.4,
+        "ai_adjustment": 1.0,
+        "confidence_weight": 1.0,
+        "final_score": 1.0
+      },
+      "ai_analysis": {
+        "ai_used": false,
+        "reason": "L1_column_rule_based"
+      },
+      "risk_assessment": {
+        "risk_level": "EXTREME_HIGH",
+        "risk_color": "red",
+        "risk_icon": "🔴",
+        "action_required": "immediate_review",
+        "priority": 1
+      }
+    },
+    {
+      "modification_id": "M078",
+      "cell": "L81",
+      "column_name": "重要程度",
+      "column_level": "L1",
+      "old_value": "★★★☆☆",
+      "new_value": "3",
+      "scoring_details": {
+        "base_score": 0.8,
+        "change_factor": 1.0,
+        "importance_weight": 1.4,
+        "ai_adjustment": 1.0,
+        "confidence_weight": 1.0,
+        "final_score": 1.0
+      },
+      "ai_analysis": {
+        "ai_used": false,
+        "reason": "L1_column_rule_based"
+      },
+      "risk_assessment": {
+        "risk_level": "EXTREME_HIGH",
+        "risk_color": "red",
+        "risk_icon": "🔴",
+        "action_required": "immediate_review",
+        "priority": 1
+      }
+    },
+    {
+      "modification_id": "M079",
+      "cell": "L82",
+      "column_name": "重要程度",
+      "column_level": "L1",
+      "old_value": "★★★★☆",
+      "new_value": "4",
+      "scoring_details": {
+        "base_score": 0.8,
+        "change_factor": 1.0,
+        "importance_weight": 1.4,
+        "ai_adjustment": 1.0,
+        "confidence_weight": 1.0,
+        "final_score": 1.0
+      },
+      "ai_analysis": {
+        "ai_used": false,
+        "reason": "L1_column_rule_based"
+      },
+      "risk_assessment": {
+        "risk_level": "EXTREME_HIGH",
+        "risk_color": "red",
+        "risk_icon": "🔴",
+        "action_required": "immediate_review",
+        "priority": 1
+      }
+    },
+    {
+      "modification_id": "M080",
+      "cell": "L83",
+      "column_name": "重要程度",
+      "column_level": "L1",
+      "old_value": "★★★★☆",
+      "new_value": "4",
+      "scoring_details": {
+        "base_score": 0.8,
+        "change_factor": 1.0,
+        "importance_weight": 1.4,
+        "ai_adjustment": 1.0,
+        "confidence_weight": 1.0,
+        "final_score": 1.0
+      },
+      "ai_analysis": {
+        "ai_used": false,
+        "reason": "L1_column_rule_based"
+      },
+      "risk_assessment": {
+        "risk_level": "EXTREME_HIGH",
+        "risk_color": "red",
+        "risk_icon": "🔴",
+        "action_required": "immediate_review",
+        "priority": 1
+      }
+    },
+    {
+      "modification_id": "M081",
+      "cell": "L84",
+      "column_name": "重要程度",
+      "column_level": "L1",
+      "old_value": "★★★★☆",
+      "new_value": "4",
+      "scoring_details": {
+        "base_score": 0.8,
+        "change_factor": 1.0,
+        "importance_weight": 1.4,
+        "ai_adjustment": 1.0,
+        "confidence_weight": 1.0,
+        "final_score": 1.0
+      },
+      "ai_analysis": {
+        "ai_used": false,
+        "reason": "L1_column_rule_based"
+      },
+      "risk_assessment": {
+        "risk_level": "EXTREME_HIGH",
+        "risk_color": "red",
+        "risk_icon": "🔴",
+        "action_required": "immediate_review",
+        "priority": 1
+      }
+    },
+    {
+      "modification_id": "M082",
+      "cell": "L85",
+      "column_name": "重要程度",
+      "column_level": "L1",
+      "old_value": "★★★★☆",
+      "new_value": "4",
+      "scoring_details": {
+        "base_score": 0.8,
+        "change_factor": 1.0,
+        "importance_weight": 1.4,
+        "ai_adjustment": 1.0,
+        "confidence_weight": 1.0,
+        "final_score": 1.0
+      },
+      "ai_analysis": {
+        "ai_used": false,
+        "reason": "L1_column_rule_based"
+      },
+      "risk_assessment": {
+        "risk_level": "EXTREME_HIGH",
+        "risk_color": "red",
+        "risk_icon": "🔴",
+        "action_required": "immediate_review",
+        "priority": 1
+      }
+    },
+    {
+      "modification_id": "M083",
+      "cell": "L86",
+      "column_name": "重要程度",
+      "column_level": "L1",
+      "old_value": "★★★★★",
+      "new_value": "5",
+      "scoring_details": {
+        "base_score": 0.8,
+        "change_factor": 1.0,
+        "importance_weight": 1.4,
+        "ai_adjustment": 1.0,
+        "confidence_weight": 1.0,
+        "final_score": 1.0
+      },
+      "ai_analysis": {
+        "ai_used": false,
+        "reason": "L1_column_rule_based"
+      },
+      "risk_assessment": {
+        "risk_level": "EXTREME_HIGH",
+        "risk_color": "red",
+        "risk_icon": "🔴",
+        "action_required": "immediate_review",
+        "priority": 1
+      }
+    },
+    {
+      "modification_id": "M084",
+      "cell": "L87",
+      "column_name": "重要程度",
+      "column_level": "L1",
+      "old_value": "★★★★☆",
+      "new_value": "4",
+      "scoring_details": {
+        "base_score": 0.8,
+        "change_factor": 1.0,
+        "importance_weight": 1.4,
+        "ai_adjustment": 1.0,
+        "confidence_weight": 1.0,
+        "final_score": 1.0
+      },
+      "ai_analysis": {
+        "ai_used": false,
+        "reason": "L1_column_rule_based"
+      },
+      "risk_assessment": {
+        "risk_level": "EXTREME_HIGH",
+        "risk_color": "red",
+        "risk_icon": "🔴",
+        "action_required": "immediate_review",
+        "priority": 1
+      }
+    },
+    {
+      "modification_id": "M085",
+      "cell": "L88",
+      "column_name": "重要程度",
+      "column_level": "L1",
+      "old_value": "★★★★★",
+      "new_value": "5",
+      "scoring_details": {
+        "base_score": 0.8,
+        "change_factor": 1.0,
+        "importance_weight": 1.4,
+        "ai_adjustment": 1.0,
+        "confidence_weight": 1.0,
+        "final_score": 1.0
+      },
+      "ai_analysis": {
+        "ai_used": false,
+        "reason": "L1_column_rule_based"
+      },
+      "risk_assessment": {
+        "risk_level": "EXTREME_HIGH",
+        "risk_color": "red",
+        "risk_icon": "🔴",
+        "action_required": "immediate_review",
+        "priority": 1
+      }
+    },
+    {
+      "modification_id": "M086",
+      "cell": "L89",
+      "column_name": "重要程度",
+      "column_level": "L1",
+      "old_value": "★★★★★",
+      "new_value": "5",
+      "scoring_details": {
+        "base_score": 0.8,
+        "change_factor": 1.0,
+        "importance_weight": 1.4,
+        "ai_adjustment": 1.0,
+        "confidence_weight": 1.0,
+        "final_score": 1.0
+      },
+      "ai_analysis": {
+        "ai_used": false,
+        "reason": "L1_column_rule_based"
+      },
+      "risk_assessment": {
+        "risk_level": "EXTREME_HIGH",
+        "risk_color": "red",
+        "risk_icon": "🔴",
+        "action_required": "immediate_review",
+        "priority": 1
+      }
+    },
+    {
+      "modification_id": "M087",
+      "cell": "L90",
+      "column_name": "重要程度",
+      "column_level": "L1",
+      "old_value": "★★★☆☆",
+      "new_value": "3",
+      "scoring_details": {
+        "base_score": 0.8,
+        "change_factor": 1.0,
+        "importance_weight": 1.4,
+        "ai_adjustment": 1.0,
+        "confidence_weight": 1.0,
+        "final_score": 1.0
+      },
+      "ai_analysis": {
+        "ai_used": false,
+        "reason": "L1_column_rule_based"
+      },
+      "risk_assessment": {
+        "risk_level": "EXTREME_HIGH",
+        "risk_color": "red",
+        "risk_icon": "🔴",
+        "action_required": "immediate_review",
+        "priority": 1
+      }
+    },
+    {
+      "modification_id": "M088",
+      "cell": "L91",
+      "column_name": "重要程度",
+      "column_level": "L1",
+      "old_value": "★★★☆☆",
+      "new_value": "3",
+      "scoring_details": {
+        "base_score": 0.8,
+        "change_factor": 1.0,
+        "importance_weight": 1.4,
+        "ai_adjustment": 1.0,
+        "confidence_weight": 1.0,
+        "final_score": 1.0
+      },
+      "ai_analysis": {
+        "ai_used": false,
+        "reason": "L1_column_rule_based"
+      },
+      "risk_assessment": {
+        "risk_level": "EXTREME_HIGH",
+        "risk_color": "red",
+        "risk_icon": "🔴",
+        "action_required": "immediate_review",
+        "priority": 1
+      }
+    },
+    {
+      "modification_id": "M089",
+      "cell": "L92",
+      "column_name": "重要程度",
+      "column_level": "L1",
+      "old_value": "★★★★☆",
+      "new_value": "4",
+      "scoring_details": {
+        "base_score": 0.8,
+        "change_factor": 1.0,
+        "importance_weight": 1.4,
+        "ai_adjustment": 1.0,
+        "confidence_weight": 1.0,
+        "final_score": 1.0
+      },
+      "ai_analysis": {
+        "ai_used": false,
+        "reason": "L1_column_rule_based"
+      },
+      "risk_assessment": {
+        "risk_level": "EXTREME_HIGH",
+        "risk_color": "red",
+        "risk_icon": "🔴",
+        "action_required": "immediate_review",
+        "priority": 1
+      }
+    },
+    {
+      "modification_id": "M090",
+      "cell": "L93",
+      "column_name": "重要程度",
+      "column_level": "L1",
+      "old_value": "★★★☆☆",
+      "new_value": "3",
+      "scoring_details": {
+        "base_score": 0.8,
+        "change_factor": 1.0,
+        "importance_weight": 1.4,
+        "ai_adjustment": 1.0,
+        "confidence_weight": 1.0,
+        "final_score": 1.0
+      },
+      "ai_analysis": {
+        "ai_used": false,
+        "reason": "L1_column_rule_based"
+      },
+      "risk_assessment": {
+        "risk_level": "EXTREME_HIGH",
+        "risk_color": "red",
+        "risk_icon": "🔴",
+        "action_required": "immediate_review",
+        "priority": 1
+      }
+    },
+    {
+      "modification_id": "M091",
+      "cell": "L94",
+      "column_name": "重要程度",
+      "column_level": "L1",
+      "old_value": "★★★★☆",
+      "new_value": "4",
+      "scoring_details": {
+        "base_score": 0.8,
+        "change_factor": 1.0,
+        "importance_weight": 1.4,
+        "ai_adjustment": 1.0,
+        "confidence_weight": 1.0,
+        "final_score": 1.0
+      },
+      "ai_analysis": {
+        "ai_used": false,
+        "reason": "L1_column_rule_based"
+      },
+      "risk_assessment": {
+        "risk_level": "EXTREME_HIGH",
+        "risk_color": "red",
+        "risk_icon": "🔴",
+        "action_required": "immediate_review",
+        "priority": 1
+      }
+    },
+    {
+      "modification_id": "M092",
+      "cell": "L95",
+      "column_name": "重要程度",
+      "column_level": "L1",
+      "old_value": "★★★★☆",
+      "new_value": "4",
+      "scoring_details": {
+        "base_score": 0.8,
+        "change_factor": 1.0,
+        "importance_weight": 1.4,
+        "ai_adjustment": 1.0,
+        "confidence_weight": 1.0,
+        "final_score": 1.0
+      },
+      "ai_analysis": {
+        "ai_used": false,
+        "reason": "L1_column_rule_based"
+      },
+      "risk_assessment": {
+        "risk_level": "EXTREME_HIGH",
+        "risk_color": "red",
+        "risk_icon": "🔴",
+        "action_required": "immediate_review",
+        "priority": 1
+      }
+    }
+  ],
+  "summary": {
+    "total_score": 92.0,
+    "average_score": 1.0,
+    "risk_distribution": {
+      "EXTREME_HIGH": 92
+    },
+    "ai_usage": {
+      "total_ai_calls": 0,
+      "layer1_passes": 0,
+      "layer2_analyses": 0
+    }
+  }
+}

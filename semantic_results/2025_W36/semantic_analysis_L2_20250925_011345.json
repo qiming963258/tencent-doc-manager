@@ -1,0 +1,43 @@
+{
+  "metadata": {
+    "analysis_time": "2025-09-25 01:13:45",
+    "total_modifications": 1,
+    "layer1_passed": 0,
+    "layer2_analyzed": 1,
+    "processing_time": "12.4s"
+  },
+  "results": [
+    {
+      "modification_id": "M001",
+      "cell": "K13",
+      "column": "协助人",
+      "old_value": "各责任人",
+      "new_value": "邓总",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 80.0,
+        "reason": "权责变更"
+      },
+      "layer2_result": {
+        "risk_level": "MEDIUM",
+        "decision": "REVIEW",
+        "confidence": 75,
+        "reason": "将协助人从'各责任人'改为特定人员'邓总'，可能导致责任过度集中或信息传递不畅，需要人工审查是否合理"
+      },
+      "final_decision": "REVIEW",
+      "approval_required": true
+    }
+  ],
+  "summary": {
+    "approved": 0,
+    "conditional": 0,
+    "review_required": 1,
+    "rejected": 0,
+    "risk_distribution": {
+      "LOW": 0,
+      "MEDIUM": 0,
+      "HIGH": 1,
+      "CRITICAL": 0
+    }
+  }
+}

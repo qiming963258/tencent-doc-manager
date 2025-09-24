@@ -1,0 +1,43 @@
+{
+  "metadata": {
+    "analysis_time": "2025-09-25 01:16:04",
+    "total_modifications": 1,
+    "layer1_passed": 0,
+    "layer2_analyzed": 1,
+    "processing_time": "19.3s"
+  },
+  "results": [
+    {
+      "modification_id": "M001",
+      "cell": "H16",
+      "column": "具体计划内容",
+      "old_value": "系统资源录入限定功能",
+      "new_value": "",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 90.0,
+        "reason": "关键功能删除"
+      },
+      "layer2_result": {
+        "risk_level": "MEDIUM",
+        "decision": "REVIEW",
+        "confidence": 75,
+        "reason": "原值被清空，可能导致重要功能计划丢失，需要人工确认是否为有意删除"
+      },
+      "final_decision": "REVIEW",
+      "approval_required": true
+    }
+  ],
+  "summary": {
+    "approved": 0,
+    "conditional": 0,
+    "review_required": 1,
+    "rejected": 0,
+    "risk_distribution": {
+      "LOW": 0,
+      "MEDIUM": 0,
+      "HIGH": 1,
+      "CRITICAL": 0
+    }
+  }
+}

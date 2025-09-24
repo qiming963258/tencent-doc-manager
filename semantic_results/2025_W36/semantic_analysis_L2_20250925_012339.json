@@ -1,0 +1,43 @@
+{
+  "metadata": {
+    "analysis_time": "2025-09-25 01:23:39",
+    "total_modifications": 1,
+    "layer1_passed": 0,
+    "layer2_analyzed": 1,
+    "processing_time": "6.3s"
+  },
+  "results": [
+    {
+      "modification_id": "M001",
+      "cell": "J26",
+      "column": "负责人",
+      "old_value": "赖铁荔",
+      "new_value": "徐志杰",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 80.0,
+        "reason": "关键人变更"
+      },
+      "layer2_result": {
+        "risk_level": "LOW",
+        "decision": "APPROVE",
+        "confidence": 95,
+        "reason": "只是负责人变更，不影响数据完整性和业务流程"
+      },
+      "final_decision": "APPROVE",
+      "approval_required": false
+    }
+  ],
+  "summary": {
+    "approved": 1,
+    "conditional": 0,
+    "review_required": 0,
+    "rejected": 0,
+    "risk_distribution": {
+      "LOW": 1,
+      "MEDIUM": 0,
+      "HIGH": 0,
+      "CRITICAL": 0
+    }
+  }
+}

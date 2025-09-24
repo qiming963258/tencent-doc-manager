@@ -1,0 +1,27 @@
+{
+  "workflow_id": "WF-L2-20250925_011213",
+  "created_time": "2025-09-25 01:12:13",
+  "pending_approvals": [
+    {
+      "modification_id": "M001",
+      "cell": "K11",
+      "column": "协助人",
+      "old_value": "魏志广",
+      "new_value": "邓总",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 80.0,
+        "reason": "责任变更"
+      },
+      "layer2_result": {
+        "risk_level": "MEDIUM",
+        "decision": "REVIEW",
+        "confidence": 75,
+        "reason": "协助人由普通员工变更为高层管理者，可能影响任务分配和权责关系，需要确认变更是经过批准的"
+      },
+      "final_decision": "REVIEW",
+      "approval_required": true
+    }
+  ],
+  "auto_approved": []
+}

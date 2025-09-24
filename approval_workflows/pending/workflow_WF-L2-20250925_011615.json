@@ -1,0 +1,27 @@
+{
+  "workflow_id": "WF-L2-20250925_011615",
+  "created_time": "2025-09-25 01:16:15",
+  "pending_approvals": [
+    {
+      "modification_id": "M001",
+      "cell": "I16",
+      "column": "邓总指导登记（日更新）",
+      "old_value": "0813-\n短视频的爆款可调用小红书板块历史爆款笔记作为原创脚本进行调用，同步优化内容库执行表单进行脚本撰写的数量要求及登记跟踪\n\n0811-",
+      "new_value": "徐志杰",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 80.0,
+        "reason": "责任人变更"
+      },
+      "layer2_result": {
+        "risk_level": "HIGH",
+        "decision": "REJECT",
+        "confidence": 90,
+        "reason": "原值包含重要业务指导和执行细节，新值仅为个人名称，可能导致关键信息丢失"
+      },
+      "final_decision": "REJECT",
+      "approval_required": true
+    }
+  ],
+  "auto_approved": []
+}

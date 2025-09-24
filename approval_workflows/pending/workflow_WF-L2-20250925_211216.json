@@ -1,0 +1,27 @@
+{
+  "workflow_id": "WF-L2-20250925_211216",
+  "created_time": "2025-09-25 21:12:16",
+  "pending_approvals": [
+    {
+      "modification_id": "M001",
+      "cell": "J11",
+      "column": "负责人",
+      "old_value": "赖铁荔",
+      "new_value": "王寒晓,各责任人",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 75.0,
+        "reason": "责任人变更"
+      },
+      "layer2_result": {
+        "risk_level": "MEDIUM",
+        "decision": "REVIEW",
+        "confidence": 75,
+        "reason": "负责人从单一个人变更为多人，可能影响责任归属和工作分配，需要人工确认变更合理性"
+      },
+      "final_decision": "REVIEW",
+      "approval_required": true
+    }
+  ],
+  "auto_approved": []
+}

@@ -1,0 +1,118 @@
+{
+  "id": "20250926_102457",
+  "start_time": "2025-09-26T10:24:57.332166",
+  "end_time": "2025-09-26T10:25:45.787323",
+  "status": "error",
+  "results": {},
+  "logs": [
+    {
+      "timestamp": "10:24:57",
+      "level": "INFO",
+      "message": "✅ 找到匹配的基线文件: tencent_小红书部门_20250915_0146_baseline_W39.csv"
+    },
+    {
+      "timestamp": "10:24:57",
+      "level": "INFO",
+      "message": "📊 基线描述: 使用本周W39基准版"
+    },
+    {
+      "timestamp": "10:24:57",
+      "level": "INFO",
+      "message": "开始获取目标文档..."
+    },
+    {
+      "timestamp": "10:24:57",
+      "level": "INFO",
+      "message": "🔄 强制下载模式：跳过本地文件检查"
+    },
+    {
+      "timestamp": "10:24:57",
+      "level": "INFO",
+      "message": "开始下载目标文档并规范化存储..."
+    },
+    {
+      "timestamp": "10:24:57",
+      "level": "INFO",
+      "message": "🌐 开始下载目标文档..."
+    },
+    {
+      "timestamp": "10:25:41",
+      "level": "INFO",
+      "message": "📁 目标文档将存储为midweek版本"
+    },
+    {
+      "timestamp": "10:25:41",
+      "level": "INFO",
+      "message": "✅ 目标文档已存储到midweek文件夹: tencent_小红书部门_20250926_1025_midweek_W39.csv"
+    },
+    {
+      "timestamp": "10:25:41",
+      "level": "INFO",
+      "message": "✅ 目标文档下载并规范化存储成功: tencent_小红书部门_20250926_1025_midweek_W39.csv"
+    },
+    {
+      "timestamp": "10:25:41",
+      "level": "INFO",
+      "message": "验证文档匹配性..."
+    },
+    {
+      "timestamp": "10:25:41",
+      "level": "INFO",
+      "message": "✅ 文档匹配验证通过: 小红书部门"
+    },
+    {
+      "timestamp": "10:25:41",
+      "level": "INFO",
+      "message": "开始对比分析..."
+    },
+    {
+      "timestamp": "10:25:41",
+      "level": "INFO",
+      "message": "✅ 对比分析完成，发现 0 处变更"
+    },
+    {
+      "timestamp": "10:25:41",
+      "level": "INFO",
+      "message": "开始列标准化..."
+    },
+    {
+      "timestamp": "10:25:45",
+      "level": "INFO",
+      "message": "✅ 列标准化V3完成，标准化了 3 个列"
+    },
+    {
+      "timestamp": "10:25:45",
+      "level": "INFO",
+      "message": "开始L2语义分析和L1L3规则打分..."
+    },
+    {
+      "timestamp": "10:25:45",
+      "level": "INFO",
+      "message": "✅ 语义分析完成，分析了 0 处变更"
+    },
+    {
+      "timestamp": "10:25:45",
+      "level": "INFO",
+      "message": "生成详细打分JSON..."
+    },
+    {
+      "timestamp": "10:25:45",
+      "level": "ERROR",
+      "message": "❌ 打分生成失败: 输入文件中没有找到modifications数据"
+    },
+    {
+      "timestamp": "10:25:45",
+      "level": "ERROR",
+      "message": "❌ 执行出错: 输入文件中没有找到modifications数据"
+    }
+  ],
+  "settings": {
+    "task_type": "full",
+    "auto_download": true,
+    "force_download": true,
+    "enable_ai_analysis": true,
+    "enable_excel_marking": true,
+    "enable_upload": true,
+    "use_existing_baseline": true
+  }
+}

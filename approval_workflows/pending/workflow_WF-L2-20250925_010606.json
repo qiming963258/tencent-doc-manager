@@ -1,0 +1,27 @@
+{
+  "workflow_id": "WF-L2-20250925_010606",
+  "created_time": "2025-09-25 01:06:06",
+  "pending_approvals": [
+    {
+      "modification_id": "M001",
+      "cell": "I4",
+      "column": "邓总指导登记（日更新）",
+      "old_value": "0323-\n爆款的提醒站内站外都建立通知，站内在海龙系统的消息通知，站外通过员工qq邮箱进行通知\n\n0314-",
+      "new_value": "朱瀚桔",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 80.0,
+        "reason": "责任人变更"
+      },
+      "layer2_result": {
+        "risk_level": "HIGH",
+        "decision": "REJECT",
+        "confidence": 90,
+        "reason": "原值包含具体的操作指导和日期标记，而新值仅替换为人名，可能导致重要操作信息丢失"
+      },
+      "final_decision": "REJECT",
+      "approval_required": true
+    }
+  ],
+  "auto_approved": []
+}

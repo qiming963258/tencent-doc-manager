@@ -1,0 +1,24 @@
+{
+  "baseline_url_mapping": {
+    "tencent_出国销售计划表_20250915_0145_baseline_W39.csv": {
+      "url": "https://docs.qq.com/sheet/DWEFNU25TemFnZXJN",
+      "doc_id": "DWEFNU25TemFnZXJN",
+      "doc_name": "副本-测试版本-出国销售计划表",
+      "download_time": "2025-09-15 01:45:00"
+    },
+    "tencent_回国销售计划表_20250914_2309_baseline_W39.csv": {
+      "url": "https://docs.qq.com/sheet/DWGZDZkxpaGVQaURr",
+      "doc_id": "DWGZDZkxpaGVQaURr",
+      "doc_name": "副本-测试版本-回国销售计划表",
+      "download_time": "2025-09-14 23:09:00"
+    },
+    "tencent_小红书部门_20250915_0146_baseline_W39.csv": {
+      "url": "https://docs.qq.com/sheet/DWEVjZndkR2xVSWJN",
+      "doc_id": "DWEVjZndkR2xVSWJN",
+      "doc_name": "测试版本-小红书部门",
+      "download_time": "2025-09-15 01:46:00",
+      "simplified_name": "小红书部门",
+      "note": "工作流下载时简化了文档名，去掉了'测试版本-'前缀"
+    }
+  }
+}

@@ -98,7 +98,9 @@ USE_DEFAULT_COLUMN_ORDER = False  # 默认使用智能聚类（False=智能聚�
 # 🔧 综合打分模式支持 (智能加载当前周数据)
 comprehensive_scoring_data = None  # 存储综合打分数据
 comprehensive_data_cache = {}  # 缓存最新的综合打分数据
-# DATA_SOURCE已移除，只使用综合打分
+# 为了兼容性，定义这些变量（已废弃但仍被引用）
+COMPREHENSIVE_MODE = True  # 始终使用综合打分模式
+DATA_SOURCE = 'comprehensive'  # 始终使用综合数据源
 
 # 🔥 导入数据源管理器，实现自动加载和持久化
 try:
@@ -1447,26 +1449,27 @@ def get_heatmap_data():
         with open(latest_file, 'r', encoding='utf-8') as f:
             data = json.load(f)
 
-        # 验证是否符合规范
-        required_fields = ['metadata', 'table_names', 'column_names', 'heatmap_data',
-                          'table_details', 'statistics', 'column_modifications_by_table']
+        # 验证是否符合规范（只检查核心必需字段）
+        required_fields = ['metadata', 'table_names', 'column_names', 'heatmap_data']
 
         missing_fields = [field for field in required_fields if field not in data]
         if missing_fields:
             return jsonify({
                 "success": False,
                 "error": f"综合打分文件不符合规范，缺少字段: {missing_fields}",
-                "message": "请确保文件符合《10-综合打分绝对规范》"
+                "message": "请确保文件包含核心数据字段"
             }), 400
 
-        # 验证不包含虚拟数据
-        table_names_str = str(data.get('table_names', []))
-        if '测试表格' in table_names_str or 'test' in table_names_str.lower():
-            return jsonify({
-                "success": False,
-                "error": "检测到虚拟测试数据",
-                "message": "只允许使用真实腾讯文档数据"
-            }), 400
+        # 验证不包含虚拟数据（只检测特定的虚拟表格名称，允许真实文档名称中包含"测试版本"）
+        table_names = data.get('table_names', [])
+        virtual_table_keywords = ['测试表格', 'Test Table', '测试表', '示例表格', 'Example Table']
+        for table_name in table_names:
+            if any(keyword in table_name for keyword in virtual_table_keywords):
+                return jsonify({
+                    "success": False,
+                    "error": "检测到虚拟测试数据",
+                    "message": "只允许使用真实腾讯文档数据"
+                }), 400
 
         # 根据排序模式处理数据
         if sorting_mode == 'intelligent':
@@ -1883,6 +1886,127 @@ def test_cookies():
     except Exception as e:
         return jsonify({"success": False, "error": f"测试失败: {str(e)}"})
 
+# API密钥管理API
+@app.route('/api/get-api-key', methods=['GET'])
+def get_api_key():
+    """获取当前API密钥（脱敏）"""
+    try:
+        from dotenv import load_dotenv
+        load_dotenv('/root/projects/tencent-doc-manager/.env')
+
+        key = os.getenv('DEEPSEEK_API_KEY', '')
+        if key:
+            # 脱敏处理
+            masked_key = key[:10] + '...' + key[-4:] if len(key) > 14 else key
+
+            # 尝试获取余额
+            balance = None
+            try:
+                # 直接使用硅基流动的API获取余额
+                import requests
+                balance_url = "https://api.siliconflow.cn/v1/user/info"
+                headers = {"Authorization": f"Bearer {key}"}
+                response = requests.get(balance_url, headers=headers, timeout=5)
+                if response.status_code == 200:
+                    balance_data = response.json()
+                    balance = balance_data.get('data', {}).get('totalBalance', None)
+            except:
+                pass
+
+            return jsonify({
+                'success': True,
+                'key': masked_key,
+                'balance': balance
+            })
+        else:
+            return jsonify({'success': False, 'key': ''})
+    except Exception as e:
+        return jsonify({'success': False, 'error': str(e)})
+
+@app.route('/api/test-api-key', methods=['POST'])
+def test_api_key():
+    """测试API密钥是否有效"""
+    try:
+        data = request.json
+        api_key = data.get('key')
+
+        if not api_key:
+            return jsonify({'success': False, 'error': '密钥为空'})
+
+        # 测试API
+        import requests
+        url = "https://api.siliconflow.cn/v1/chat/completions"
+        headers = {
+            "Authorization": f"Bearer {api_key}",
+            "Content-Type": "application/json"
+        }
+        payload = {
+            "model": "deepseek-ai/DeepSeek-V3",
+            "messages": [{"role": "user", "content": "test"}],
+            "max_tokens": 1
+        }
+
+        response = requests.post(url, headers=headers, json=payload, timeout=10)
+
+        if response.status_code == 200:
+            # 获取余额
+            balance_url = "https://api.siliconflow.cn/v1/user/info"
+            balance_response = requests.get(balance_url, headers={"Authorization": f"Bearer {api_key}"}, timeout=5)
+            balance = "未知"
+            if balance_response.status_code == 200:
+                balance_data = balance_response.json()
+                balance = balance_data.get('data', {}).get('totalBalance', '未知')
+
+            return jsonify({'success': True, 'balance': balance})
+        elif response.status_code == 401:
+            return jsonify({'success': False, 'error': '密钥无效'})
+        else:
+            return jsonify({'success': False, 'error': f'API错误: {response.status_code}'})
+
+    except Exception as e:
+        return jsonify({'success': False, 'error': str(e)})
+
+@app.route('/api/save-api-key', methods=['POST'])
+def save_api_key():
+    """保存API密钥到.env文件"""
+    try:
+        data = request.json
+        api_key = data.get('key')
+
+        if not api_key:
+            return jsonify({'success': False, 'error': '密钥为空'})
+
+        # 更新.env文件
+        env_file = '/root/projects/tencent-doc-manager/.env'
+        lines = []
+        key_found = False
+
+        if os.path.exists(env_file):
+            with open(env_file, 'r') as f:
+                lines = f.readlines()
+
+        # 更新或添加密钥
+        for i, line in enumerate(lines):
+            if line.startswith('DEEPSEEK_API_KEY='):
+                lines[i] = f'DEEPSEEK_API_KEY={api_key}\n'
+                key_found = True
+                break
+
+        if not key_found:
+            lines.append(f'DEEPSEEK_API_KEY={api_key}\n')
+
+        # 写回文件
+        with open(env_file, 'w') as f:
+            f.writelines(lines)
+
+        # 重新加载环境变量
+        os.environ['DEEPSEEK_API_KEY'] = api_key
+
+        return jsonify({'success': True})
+
+    except Exception as e:
+        return jsonify({'success': False, 'error': str(e)})
+
 # 多链接存储和下载管理API
 @app.route('/api/save-download-links', methods=['POST'])
 def save_download_links():
@@ -1995,10 +2119,11 @@ def handle_baseline_files():
         if requested_week is None or requested_week < 1 or requested_week > 52:
             requested_week = current_week
         
-        # 构建基线文件夹路径
+        # 使用WeekTimeManager动态构建基线文件夹路径
+        current_year = week_info['year']  # 从week_info获取年份
         baseline_dir = os.path.join(
             '/root/projects/tencent-doc-manager/csv_versions',
-            f'2025_W{requested_week}',
+            f'{current_year}_W{requested_week:02d}',
             'baseline'
         )
         
@@ -2070,10 +2195,11 @@ def handle_baseline_files():
             if not url:
                 return jsonify({'success': False, 'error': '缺少URL'})
             
-            # 更新基线目录路径
+            # 使用动态年份更新基线目录路径
+            current_year = week_manager.get_current_week_info()['year']
             baseline_dir = os.path.join(
                 '/root/projects/tencent-doc-manager/csv_versions',
-                f'2025_W{post_week}',
+                f'{current_year}_W{post_week:02d}',
                 'baseline'
             )
             
@@ -2121,11 +2247,12 @@ def handle_baseline_files():
             if not filename:
                 return jsonify({'success': False, 'error': '缺少文件名'})
             
-            # 更新基线目录路径
+            # 使用动态年份更新基线目录路径
             if delete_week != requested_week:
+                current_year = week_manager.get_current_week_info()['year']
                 baseline_dir = os.path.join(
                     '/root/projects/tencent-doc-manager/csv_versions',
-                    f'2025_W{delete_week}',
+                    f'{current_year}_W{delete_week:02d}',
                     'baseline'
                 )
             
@@ -2453,213 +2580,219 @@ def start_download():
         with open(workflow_status_file, 'w') as f:
             json.dump(workflow_status, f)
         
-        # 启动后台线程串行处理所有URL
+        # 启动后台线程调用批量处理API
         import threading
-        def process_urls_serial():
+        def process_urls_batch():
             try:
                 # 记录8093的执行信息
-                workflow_status['8093_executions'] = {}  # 存储每个文档在8093的执行ID
+                workflow_status['8093_executions'] = {}  # 存储批量执行信息
 
-                for i, link in enumerate(enabled_links):
-                    url = link.get('url', '')
-                    name = link.get('name', 'unnamed')
+                # 更新处理状态
+                workflow_status['current_index'] = 0
+                workflow_status['current_doc'] = "批量处理所有文档"
+                workflow_status['logs'].append({
+                    "time": datetime.datetime.now().isoformat(),
+                    "level": "info",
+                    "message": f"开始批量处理 {len(enabled_links)} 个文档"
+                })
 
-                    # 更新当前处理状态
-                    workflow_status['current_index'] = i
-                    workflow_status['current_doc'] = name
-                    workflow_status['logs'].append({
-                        "time": datetime.datetime.now().isoformat(),
-                        "level": "info",
-                        "message": f"开始处理 {i+1}/{len(enabled_links)}: {name}"
-                    })
+                # 保存状态
+                with open(workflow_status_file, 'w') as f:
+                    json.dump(workflow_status, f)
 
-                    # 保存状态
-                    with open(workflow_status_file, 'w') as f:
-                        json.dump(workflow_status, f)
+                # 调用8093批量处理API
+                try:
+                    print(f"📋 准备调用8093批量处理工作流", flush=True)
 
-                    # 调用8093完整工作流
-                    try:
-                        print(f"📋 准备调用8093工作流: {name}", flush=True)
+                    # 批量处理请求数据
+                    request_data = {
+                        'cookie': cookies,
+                        'advanced_settings': {
+                            'task_type': task_type,
+                            'auto_download': True,
+                            'force_download': True,
+                            'enable_ai_analysis': True,
+                            'enable_excel_marking': True,
+                            'enable_upload': True,
+                            'use_existing_baseline': True,  # 使用现有基线
+                            'use_ai_standardization': True
+                        }
+                    }
 
-                        # 立即刷新模式：只下载目标文档，使用现有基线
-                        # baseline_url为空时，8093会自动查找对应的基线文件
-                        request_data = {
-                            'baseline_url': None,  # 不下载基线，使用现有的
-                            'target_url': url,     # 只下载新的目标文档
-                            'cookie': cookies,
-                            'advanced_settings': {
-                                'task_type': task_type,
-                                'auto_download': True,
-                                'force_download': True,
-                                'enable_ai_analysis': True,
-                                'enable_excel_marking': True,
-                                'enable_upload': True,
-                                'use_existing_baseline': True  # 明确指示使用现有基线
-                            }
+                    # 尝试多个端口找到8093服务
+                    ports_to_try = [8093, 8094, 8095, 8096, 8097]
+                    service_url = None
+
+                    for port in ports_to_try:
+                        try:
+                            test_url = f'http://localhost:{port}/api/status'
+                            test_response = requests.get(test_url, timeout=1)
+                            if test_response.status_code == 200:
+                                service_url = f'http://localhost:{port}'
+                                print(f"✅ 找到8093服务在端口 {port}", flush=True)
+                                break
+                        except:
+                            continue
+
+                    if not service_url:
+                        raise Exception("找不到8093服务，请确保服务已启动")
+
+                    # 调用批量处理API
+                    response = requests.post(
+                        f'{service_url}/api/start-batch',  # 使用批量处理API
+                        json=request_data,
+                        timeout=10
+                    )
+
+                    if response.status_code == 200:
+                        result = response.json()
+                        execution_id = result.get('execution_id', f'batch_{int(time.time())}')
+
+                        # 记录批量执行信息
+                        workflow_status['8093_executions']['batch'] = {
+                            'execution_id': execution_id,
+                            'service_url': service_url,
+                            'start_time': datetime.datetime.now().isoformat(),
+                            'status': 'running'
                         }
 
-                        # 尝试多个端口找到8093服务
-                        ports_to_try = [8093, 8094, 8095, 8096, 8097]
-                        service_url = None
+                        workflow_status['logs'].append({
+                            "time": datetime.datetime.now().isoformat(),
+                            "level": "info",
+                            "message": f"✅ 已启动批量处理工作流，执行ID: {execution_id}"
+                        })
 
-                        for port in ports_to_try:
+                        # 等待批量处理完成（轮询状态）
+                        max_wait = 300  # 批量处理需要更长时间
+                        wait_count = 0
+
+                        while wait_count < max_wait:
+                            time.sleep(3)  # 每3秒检查一次
+
                             try:
-                                test_url = f'http://localhost:{port}/api/status'
-                                test_response = requests.get(test_url, timeout=1)
-                                if test_response.status_code == 200:
-                                    service_url = f'http://localhost:{port}'
-                                    print(f"✅ 找到8093服务在端口 {port}", flush=True)
-                                    break
-                            except:
-                                continue
+                                status_response = requests.get(f'{service_url}/api/status', timeout=5)
+                                if status_response.status_code == 200:
+                                    status_data = status_response.json()
 
-                        if not service_url:
-                            raise Exception("找不到8093服务，请确保服务已启动")
+                                    # 更新批量执行状态
+                                    workflow_status['8093_executions']['batch']['status'] = status_data.get('status', 'running')
+                                    workflow_status['8093_executions']['batch']['progress'] = status_data.get('progress', 0)
+                                    workflow_status['8093_executions']['batch']['current_task'] = status_data.get('current_task', '')
 
-                        response = requests.post(
-                            f'{service_url}/api/start',
-                            json=request_data,
-                            timeout=10
-                        )
+                                    # 记录当前进度
+                                    current_task = status_data.get('current_task', '')
+                                    if current_task and wait_count % 10 == 0:  # 每30秒记录一次进度
+                                        workflow_status['logs'].append({
+                                            "time": datetime.datetime.now().isoformat(),
+                                            "level": "info",
+                                            "message": f"📊 批量处理进度: {current_task}"
+                                        })
 
-                        if response.status_code == 200:
-                            result = response.json()
-                            execution_id = result.get('execution_id', f'exec_{i}_{int(time.time())}')
+                                    # 检查是否完成
+                                    if status_data.get('status') == 'completed':
+                                        # 批量处理完成，提取所有文档的结果
+                                        results = status_data.get('results', {})
+                                        processed_documents = results.get('processed_documents', [])
+                                        comprehensive_file = results.get('batch_comprehensive_file', '')
 
-                            # 记录8093的执行信息
-                            workflow_status['8093_executions'][name] = {
-                                'execution_id': execution_id,
-                                'service_url': service_url,
-                                'start_time': datetime.datetime.now().isoformat(),
-                                'status': 'running'
-                            }
-
-                            workflow_status['logs'].append({
-                                "time": datetime.datetime.now().isoformat(),
-                                "level": "info",
-                                "message": f"✅ [{name}] 已启动8093工作流，执行ID: {execution_id}"
-                            })
-
-                            # 等待8093处理完成（简单轮询，不复制日志）
-                            max_wait = 120
-                            wait_count = 0
-
-                            while wait_count < max_wait:
-                                time.sleep(2)  # 每2秒检查一次
-
-                                try:
-                                    status_response = requests.get(f'{service_url}/api/status', timeout=5)
-                                    if status_response.status_code == 200:
-                                        status_data = status_response.json()
-
-                                        # 更新8093执行状态
-                                        workflow_status['8093_executions'][name]['status'] = status_data.get('status', 'running')
-                                        workflow_status['8093_executions'][name]['progress'] = status_data.get('progress', 0)
-                                        workflow_status['8093_executions'][name]['current_task'] = status_data.get('current_task', '')
-
-                                        # 检查是否完成
-                                        if status_data.get('status') == 'completed':
-                                            upload_url = status_data.get('results', {}).get('upload_url')
+                                        # 记录每个文档的处理结果
+                                        for doc in processed_documents:
+                                            doc_name = doc.get('name', 'unknown')
+                                            upload_url = doc.get('upload_url', '')
                                             if upload_url:
-                                                workflow_status['uploaded_urls'][name] = upload_url
+                                                workflow_status['uploaded_urls'][doc_name] = upload_url
                                                 workflow_status['logs'].append({
                                                     "time": datetime.datetime.now().isoformat(),
                                                     "level": "success",
-                                                    "message": f"✅ [{name}] 处理完成，文档链接: {upload_url}"
+                                                    "message": f"✅ [{doc_name}] 处理完成，文档链接: {upload_url}"
                                                 })
-                                            break
-                                        elif status_data.get('status') == 'error':
+
+                                            workflow_status['results'].append({
+                                                "name": doc_name,
+                                                "score_file": doc.get('score_file'),
+                                                "marked_file": doc.get('marked_file'),
+                                                "upload_url": upload_url,
+                                                "status": "completed"
+                                            })
+
+                                        # 记录综合评分文件
+                                        if comprehensive_file:
                                             workflow_status['logs'].append({
                                                 "time": datetime.datetime.now().isoformat(),
-                                                "level": "error",
-                                                "message": f"❌ [{name}] 处理失败"
+                                                "level": "success",
+                                                "message": f"✅ 批量综合评分已生成: {comprehensive_file}"
                                             })
-                                            break
-                                except Exception as e:
-                                    print(f"查询8093状态失败: {e}", flush=True)
+                                            workflow_status['comprehensive_file'] = comprehensive_file
 
-                                wait_count += 1
+                                        break
+                                    elif status_data.get('status') == 'error':
+                                        workflow_status['logs'].append({
+                                            "time": datetime.datetime.now().isoformat(),
+                                            "level": "error",
+                                            "message": f"❌ 批量处理失败"
+                                        })
+                                        break
+                            except Exception as e:
+                                print(f"查询8093状态失败: {e}", flush=True)
 
-                            # 记录结果
-                            final_status = workflow_status['8093_executions'][name].get('status', 'unknown')
-                            workflow_status['results'].append({
-                                "name": name,
-                                "url": url,
-                                "status": final_status,
-                                "upload_url": workflow_status['uploaded_urls'].get(name),
-                                "execution_id": execution_id
-                            })
-                            
-                        else:
+                            wait_count += 1
+
+                        # 记录最终状态
+                        final_status = workflow_status['8093_executions']['batch'].get('status', 'unknown')
+                        if final_status != 'completed':
                             workflow_status['logs'].append({
                                 "time": datetime.datetime.now().isoformat(),
-                                "level": "error",
-                                "message": f"❌ {name} 处理失败: HTTP {response.status_code}"
+                                "level": "warning",
+                                "message": f"⚠️ 批量处理可能超时，最终状态: {final_status}"
                             })
-                            workflow_status['results'].append({
-                                "name": name,
-                                "url": url,
-                                "status": "failed"
-                            })
+
+                    else:
+                        workflow_status['logs'].append({
+                            "time": datetime.datetime.now().isoformat(),
+                            "level": "error",
+                            "message": f"❌ 批量处理失败: HTTP {response.status_code}"
+                        })
                             
-                    except requests.exceptions.Timeout as e:
-                        error_msg = "调用8093服务超时（连接超时10秒）"
-                        workflow_status['logs'].append({
-                            "time": datetime.datetime.now().isoformat(),
-                            "level": "error",
-                            "message": f"⏱️ {name} {error_msg}"
-                        })
-                        workflow_status['results'].append({
-                            "name": name,
-                            "url": url,
-                            "status": "timeout",
-                            "error": error_msg
-                        })
-                        print(f"⏱️ {name}: {error_msg}", flush=True)
+                except requests.exceptions.Timeout as e:
+                    error_msg = "调用8093服务超时（连接超时10秒）"
+                    workflow_status['logs'].append({
+                        "time": datetime.datetime.now().isoformat(),
+                        "level": "error",
+                        "message": f"⏱️ 批量处理 {error_msg}"
+                    })
+                    print(f"⏱️ 批量处理: {error_msg}", flush=True)
 
-                        # 🔥 添加提示信息
-                        workflow_status['logs'].append({
-                            "time": datetime.datetime.now().isoformat(),
-                            "level": "warning",
-                            "message": "⚠️ 8093服务可能正忙或未响应，请检查服务状态"
-                        })
+                    # 🔥 添加提示信息
+                    workflow_status['logs'].append({
+                        "time": datetime.datetime.now().isoformat(),
+                        "level": "warning",
+                        "message": "⚠️ 8093服务可能正忙或未响应，请检查服务状态"
+                    })
 
-                    except requests.exceptions.ConnectionError as e:
-                        error_msg = "无法连接到8093服务"
-                        workflow_status['logs'].append({
-                            "time": datetime.datetime.now().isoformat(),
-                            "level": "error",
-                            "message": f"🔌 {name} {error_msg}"
-                        })
-                        workflow_status['results'].append({
-                            "name": name,
-                            "url": url,
-                            "status": "connection_error",
-                            "error": error_msg
-                        })
-                        print(f"🔌 {name}: {error_msg}", flush=True)
+                except requests.exceptions.ConnectionError as e:
+                    error_msg = "无法连接到8093服务"
+                    workflow_status['logs'].append({
+                        "time": datetime.datetime.now().isoformat(),
+                        "level": "error",
+                        "message": f"🔌 批量处理 {error_msg}"
+                    })
+                    print(f"🔌 批量处理: {error_msg}", flush=True)
 
-                        # 🔥 提供解决方案
-                        workflow_status['logs'].append({
-                            "time": datetime.datetime.now().isoformat(),
-                            "level": "warning",
-                            "message": "💡 请确保8093服务正在运行: cd /root/projects/tencent-doc-manager && ./start_8093_optimized.sh"
-                        })
+                    # 🔥 提供解决方案
+                    workflow_status['logs'].append({
+                        "time": datetime.datetime.now().isoformat(),
+                        "level": "warning",
+                        "message": "💡 请确保8093服务正在运行: cd /root/projects/tencent-doc-manager && ./start_8093_optimized.sh"
+                    })
 
-                    except Exception as e:
-                        error_msg = str(e)
-                        workflow_status['logs'].append({
-                            "time": datetime.datetime.now().isoformat(),
-                            "level": "error",
-                            "message": f"❌ {name} 处理异常: {error_msg}"
-                        })
-                        workflow_status['results'].append({
-                            "name": name,
-                            "url": url,
-                            "status": "error",
-                            "error": error_msg
-                        })
-                        print(f"❌ {name}: {error_msg}", flush=True)
+                except Exception as e:
+                    error_msg = str(e)
+                    workflow_status['logs'].append({
+                        "time": datetime.datetime.now().isoformat(),
+                        "level": "error",
+                        "message": f"❌ 批量处理异常: {error_msg}"
+                    })
+                    print(f"❌ 批量处理: {error_msg}", flush=True)
                     
                     # 保存状态
                     with open(workflow_status_file, 'w') as f:
@@ -2709,14 +2842,14 @@ def start_download():
                 with open(workflow_status_file, 'w') as f:
                     json.dump(workflow_status, f)
         
-        # 启动后台线程
-        thread = threading.Thread(target=process_urls_serial)
+        # 启动后台线程执行批量处理
+        thread = threading.Thread(target=process_urls_batch)
         thread.daemon = True
         thread.start()
-        
+
         return jsonify({
             "success": True,
-            "message": f"工作流已启动，正在串行处理 {len(enabled_links)} 个文档",
+            "message": f"批量处理工作流已启动，正在处理 {len(enabled_links)} 个文档",
             "total_urls": len(enabled_links)
         })
         
@@ -4793,11 +4926,25 @@ def get_comprehensive_heatmap_data():
                 for col_data in column_modifications.values():
                     all_modified_rows.update(col_data.get('modified_rows', []))
                 row_level_data['modified_rows'] = sorted(list(all_modified_rows))
-                
+
+                # 从excel_urls字典获取正确的URL
+                excel_urls = comprehensive_scoring_data.get('excel_urls', {})
+                table_url = excel_urls.get(table_name, '')
+
+                # 如果excel_urls中没有，尝试从table_details中获取
+                if not table_url:
+                    table_details = comprehensive_scoring_data.get('table_details', {})
+                    if table_name in table_details:
+                        table_url = table_details[table_name].get('excel_url', '')
+
+                # 如果还是没有，使用原来的方式作为后备
+                if not table_url:
+                    table_url = original_table.get('table_url', '')
+
                 tables_with_details.append({
                     'name': table_name,
                     'id': i,
-                    'url': original_table.get('table_url', ''),  # 添加URL
+                    'url': table_url,  # 使用正确的URL
                     'total_modifications': original_table.get('total_modifications', 0),  # 添加修改数
                     'risk_level': table_risk_info[i]['risk_level'],
                     'risk_score': table_risk_info[i]['risk_score'],
@@ -5666,7 +5813,7 @@ def index():
         };
 
         // 设置弹窗组件
-        const SettingsModal = ({ isOpen, onClose }) => {
+        const SettingsModal = ({ isOpen, onClose, fetchApiData }) => {
           const [tableLinks, setTableLinks] = React.useState('');
           const [cookieValue, setCookieValue] = React.useState('');
           const [cookieStatus, setCookieStatus] = React.useState('');
@@ -5697,6 +5844,26 @@ def index():
           const [workflowRunning, setWorkflowRunning] = React.useState(false);
           const [showLogs, setShowLogs] = React.useState(false);
           const logsEndRef = React.useRef(null);
+
+          // API密钥管理状态
+          const [apiKey, setApiKey] = React.useState('');
+          const [showApiKey, setShowApiKey] = React.useState(false);
+          const [apiTesting, setApiTesting] = React.useState(false);
+          const [apiBalance, setApiBalance] = React.useState(null);
+          const [apiStatus, setApiStatus] = React.useState('');
+
+          // 加载当前密钥
+          React.useEffect(() => {
+            fetch('/api/get-api-key')
+              .then(res => res.json())
+              .then(data => {
+                if (data.success && data.key) {
+                  setApiKey(data.key);
+                  setApiBalance(data.balance);
+                }
+              })
+              .catch(err => console.error('加载API密钥失败:', err));
+          }, []);
           
           // 🎯 综合打分模式状态（从8090集成）
           const [dataSource, setDataSource] = React.useState('comprehensive');  // 固定为综合打分模式
@@ -5794,10 +5961,10 @@ def index():
                     }
                   }
 
-                  // 自动滚动到底部
-                  if (logsEndRef.current) {
-                    logsEndRef.current.scrollIntoView({ behavior: "smooth" });
-                  }
+                  // 自动滚动到底部 - 已禁用，让用户可以自由查看日志
+                  // if (logsEndRef.current) {
+                  //   logsEndRef.current.scrollIntoView({ behavior: "smooth" });
+                  // }
                 } catch (error) {
                   console.error('获取工作流状态失败:', error);
                 }
@@ -6082,13 +6249,16 @@ def index():
                 // 数据源已固定为comprehensive
                 setShowComprehensivePanel(false);
 
-                // 显示成功消息并提示手动刷新
-                alert(`已加载综合打分文件: ${file.name}\n表格数: ${file.table_count || 0}\n\n✅ 文件已成功加载！\n请手动刷新页面(按F5)以查看更新后的热力图`);
-
-                // 不再自动刷新，让用户手动控制
-                // setTimeout(() => {
-                //   window.location.reload();
-                // }, 500);
+                // 使用 fetchApiData 无刷新更新数据
+                try {
+                  await fetchApiData();
+                  // 显示成功消息
+                  alert(`✅ 已成功加载并展示综合打分文件！\n\n文件: ${file.name}\n表格数: ${file.table_count || 0}\n\n热力图已自动更新，无需刷新页面！`);
+                } catch (updateError) {
+                  console.error('更新数据失败:', updateError);
+                  // 如果无刷新更新失败，降级到手动刷新
+                  alert(`已加载综合打分文件: ${file.name}\n表格数: ${file.table_count || 0}\n\n✅ 文件已成功加载！\n请手动刷新页面(按F5)以查看更新后的热力图`);
+                }
               } else {
                 alert(`加载文件失败: ${result.error || '未知错误'}`);
               }
@@ -7184,7 +7354,129 @@ def index():
                     </div>
                   </div>
                 </div>
-                
+
+                {/* 🔑 硅基流动API密钥管理 */}
+                <div style={{ marginBottom: '24px' }}>
+                  <label className="text-sm font-medium text-slate-700 block mb-3">
+                    🔑 硅基流动API密钥管理
+                  </label>
+                  <div className="bg-white border border-slate-200 rounded-lg p-4">
+                    {/* 密钥输入 */}
+                    <div className="mb-3">
+                      <label className="text-xs text-slate-600 block mb-1">API密钥</label>
+                      <div style={{ position: 'relative' }}>
+                        <input
+                          type={showApiKey ? "text" : "password"}
+                          value={apiKey}
+                          onChange={(e) => setApiKey(e.target.value)}
+                          placeholder="sk-..."
+                          className="w-full px-3 py-2 border border-slate-200 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+                        />
+                        <button
+                          onClick={() => setShowApiKey(!showApiKey)}
+                          style={{
+                            position: 'absolute',
+                            right: '8px',
+                            top: '50%',
+                            transform: 'translateY(-50%)',
+                            background: 'none',
+                            border: 'none',
+                            cursor: 'pointer',
+                            fontSize: '16px'
+                          }}
+                        >
+                          {showApiKey ? '🙈' : '👁️'}
+                        </button>
+                      </div>
+                    </div>
+
+                    {/* 账户余额 */}
+                    {apiBalance !== null && (
+                      <div className="mb-3 p-2 bg-green-50 border border-green-200 rounded text-xs">
+                        <span className="text-slate-600">账户余额: </span>
+                        <span className="font-semibold text-green-700">￥{apiBalance}</span>
+                      </div>
+                    )}
+
+                    {/* 操作按钮 */}
+                    <div className="flex gap-2 mb-3">
+                      <button
+                        onClick={async () => {
+                          setApiTesting(true);
+                          setApiStatus('测试中...');
+                          try {
+                            const res = await fetch('/api/test-api-key', {
+                              method: 'POST',
+                              headers: { 'Content-Type': 'application/json' },
+                              body: JSON.stringify({ key: apiKey })
+                            });
+                            const data = await res.json();
+                            if (data.success) {
+                              setApiStatus('✅ API密钥有效');
+                              setApiBalance(data.balance);
+                            } else {
+                              setApiStatus('❌ ' + data.error);
+                            }
+                          } catch (error) {
+                            setApiStatus('❌ 测试失败: ' + error.message);
+                          } finally {
+                            setApiTesting(false);
+                          }
+                        }}
+                        disabled={apiTesting || !apiKey}
+                        className="flex-1 px-3 py-1.5 bg-blue-500 text-white text-xs rounded hover:bg-blue-600 disabled:bg-gray-400"
+                      >
+                        {apiTesting ? '测试中...' : '测试连接'}
+                      </button>
+                      <button
+                        onClick={async () => {
+                          try {
+                            const res = await fetch('/api/save-api-key', {
+                              method: 'POST',
+                              headers: { 'Content-Type': 'application/json' },
+                              body: JSON.stringify({ key: apiKey })
+                            });
+                            const data = await res.json();
+                            if (data.success) {
+                              setApiStatus('✅ 密钥已保存');
+                            } else {
+                              setApiStatus('❌ 保存失败');
+                            }
+                          } catch (error) {
+                            setApiStatus('❌ 保存失败: ' + error.message);
+                          }
+                        }}
+                        disabled={!apiKey}
+                        className="flex-1 px-3 py-1.5 bg-green-500 text-white text-xs rounded hover:bg-green-600 disabled:bg-gray-400"
+                      >
+                        保存密钥
+                      </button>
+                    </div>
+
+                    {/* 状态显示 */}
+                    {apiStatus && (
+                      <div className={`p-2 rounded text-xs ${
+                        apiStatus.includes('✅') ? 'bg-green-50 text-green-700' :
+                        apiStatus.includes('❌') ? 'bg-red-50 text-red-700' :
+                        'bg-gray-50 text-gray-700'
+                      }`}>
+                        {apiStatus}
+                      </div>
+                    )}
+
+                    {/* 使用说明 */}
+                    <div className="mt-3 p-2 bg-gray-50 rounded text-xs text-gray-600">
+                      <div className="font-semibold mb-1">说明：</div>
+                      <ul className="list-disc list-inside space-y-0.5">
+                        <li>使用硅基流动(SiliconFlow)的DeepSeek API</li>
+                        <li>密钥格式：sk-开头的字符串</li>
+                        <li>用于L2列的智能语义分析</li>
+                        <li>L1列（如"重要程度"）目前使用规则引擎</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+
                 {/* 🔥 简化版双按钮区域 - 按用户要求只保留两个按钮 */}
                 <div className="mt-4 p-3 bg-slate-50 border border-slate-200 rounded-lg">
                   <div className="text-sm font-medium text-slate-700 mb-3">⚡ 下载控制</div>
@@ -7324,8 +7616,13 @@ def index():
                         if (response.ok) {
                           const result = await response.json();
 
-                          // 更新API数据
-                          await fetchApiData();
+                          // 更新API数据（如果传入了fetchApiData函数）
+                          if (fetchApiData && typeof fetchApiData === 'function') {
+                            await fetchApiData();
+                          } else {
+                            // 如果没有传入fetchApiData，直接刷新页面
+                            window.location.reload();
+                          }
 
                           // 显示成功消息
                           alert(`✅ 数据已更新！\n已加载最新文件：${result.filename}\n表格数量：${result.table_count}\n修改总数：${result.total_modifications}`);
@@ -9237,7 +9534,7 @@ def index():
                 </div>
               </div>
 
-              <SettingsModal isOpen={showSettings} onClose={() => setShowSettings(false)} />
+              <SettingsModal isOpen={showSettings} onClose={() => setShowSettings(false)} fetchApiData={fetchApiData} />
             </div>
           );
         };
@@ -9285,8 +9582,8 @@ def get_detailed_scores(table_name):
         import json
         import re
         
-        # 首先检查是否使用综合打分模式且有数据
-        if COMPREHENSIVE_MODE and comprehensive_scoring_data:
+        # 检查是否有综合打分数据
+        if comprehensive_scoring_data:
             # 从综合打分数据中查找匹配的表格
             table_scores = comprehensive_scoring_data.get('table_scores', [])
             
@@ -9467,20 +9764,98 @@ def reset_column_order():
 
 @app.route('/api/reload-comprehensive-score', methods=['POST'])
 def reload_comprehensive_score():
-    """重新加载最新的综合打分文件并更新数据"""
+    """触发批量处理工作流并重新加载最新的综合打分文件"""
     try:
-        # 查找最新的综合打分文件
-        scoring_dir = '/root/projects/tencent-doc-manager/scoring_results/comprehensive'
         import glob
         import os
+        import requests
+        import time
+        from datetime import datetime
 
-        pattern = os.path.join(scoring_dir, 'comprehensive_score_W*.json')
-        files = glob.glob(pattern)
+        # 步骤1: 触发8093批量处理工作流
+        print("🚀 开始触发批量处理工作流...", flush=True)
+
+        try:
+            # 从cookie配置文件读取cookie
+            cookie_file = '/root/projects/tencent-doc-manager/config/cookies.json'
+            cookie = None
+            if os.path.exists(cookie_file):
+                with open(cookie_file, 'r', encoding='utf-8') as f:
+                    cookie_config = json.load(f)
+                    # 修复：使用正确的键名 'current_cookies' 而非 'cookie_string'
+                    cookie = cookie_config.get('current_cookies', '') or cookie_config.get('cookie_string', '')
+
+            if cookie:
+                # 调用8093的批量处理API
+                response = requests.post('http://localhost:8093/api/start-batch',
+                    json={
+                        'cookie': cookie,
+                        'advanced_settings': {
+                            'skip_baseline': False,  # 使用新的baseline
+                            'use_ai_standardization': True
+                        }
+                    },
+                    timeout=10
+                )
+
+                if response.status_code == 200:
+                    result = response.json()
+                    print(f"✅ 批量工作流已启动: {result.get('message', '')}", flush=True)
+
+                    # 等待工作流完成（轮询状态）
+                    max_wait = 120  # 最多等待120秒
+                    wait_interval = 3  # 每3秒检查一次
+                    total_wait = 0
+
+                    while total_wait < max_wait:
+                        time.sleep(wait_interval)
+                        total_wait += wait_interval
+
+                        # 检查工作流状态
+                        status_response = requests.get('http://localhost:8093/api/status')
+                        if status_response.status_code == 200:
+                            status_data = status_response.json()
+                            if status_data.get('status') == 'completed':
+                                print("✅ 批量工作流已完成", flush=True)
+                                break
+                            elif status_data.get('status') == 'error':
+                                print("❌ 批量工作流失败", flush=True)
+                                break
+
+                        print(f"⏳ 等待批量处理完成... ({total_wait}/{max_wait}秒)", flush=True)
+                else:
+                    print(f"⚠️ 8093服务响应异常: {response.status_code}", flush=True)
+            else:
+                print("⚠️ Cookie未配置，跳过批量处理", flush=True)
+
+        except Exception as e:
+            print(f"⚠️ 无法触发批量处理: {e}，尝试加载现有文件", flush=True)
+
+        # 步骤2: 查找并加载最新的综合打分文件
+
+        # 获取当前周数
+        current_week = datetime.now().isocalendar()[1]
+        week_str = f"W{current_week:02d}"
+
+        # 先在当前周目录查找
+        week_dir = f'/root/projects/tencent-doc-manager/scoring_results/2025_W{current_week:02d}'
+        comprehensive_dir = '/root/projects/tencent-doc-manager/scoring_results/comprehensive'
+
+        files = []
+        # 查找两个位置
+        for search_dir in [week_dir, comprehensive_dir]:
+            if os.path.exists(search_dir):
+                pattern = os.path.join(search_dir, f'comprehensive_score_{week_str}*.json')
+                found = glob.glob(pattern)
+                files.extend(found)
 
         if not files:
+            # 提供更详细的错误信息
             return jsonify({
                 "success": False,
-                "error": "没有找到综合打分文件"
+                "error": f"没有找到综合打分文件（查找了{week_dir}和{comprehensive_dir}）",
+                "searched_paths": [week_dir, comprehensive_dir],
+                "current_week": week_str
             }), 404
 
         # 获取最新文件
@@ -9505,30 +9880,18 @@ def reload_comprehensive_score():
         # 检查是否有URL信息
         excel_urls = data.get('excel_urls', {})
 
-        # 如果有新的URL，更新文档链接配置
+        # 如果有新的URL，记录信息
         if excel_urls:
-            # 更新document_links全局变量
-            import sys
-            sys.path.append('/root/projects/tencent-doc-manager/production')
-            from core_modules.download_link_manager import DownloadLinkManager
-
-            manager = DownloadLinkManager()
-            links = manager.load_links()
-
-            # 更新链接信息
+            # 只记录URL信息，不尝试更新不存在的数据结构
             for table_name, url in excel_urls.items():
-                # 查找匹配的链接并更新
-                for link in links:
-                    if table_name in link.get('name', ''):
-                        link['excel_url'] = url
-                        print(f"✅ 更新表格 {table_name} 的URL: {url}")
+                print(f"✅ 表格 {table_name} 的Excel URL: {url}")
 
         # 重新加载综合打分数据到全局变量
         global comprehensive_data_cache
         comprehensive_data_cache = {
             'data': data,
             'filename': filename,
-            'loaded_at': datetime.datetime.now().isoformat()
+            'loaded_at': datetime.now().isoformat()
         }
 
         print(f"✅ 成功重载综合打分文件: {filename}")

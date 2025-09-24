@@ -1,0 +1,139 @@
+{
+  "id": "20250925_194144",
+  "start_time": "2025-09-25T19:41:44.408738",
+  "end_time": "2025-09-25T19:43:10.319399",
+  "status": "completed",
+  "results": {
+    "batch_mode": true,
+    "total_documents": 3,
+    "successful_documents": 3,
+    "documents": [
+      {
+        "name": "副本-测试版本-出国销售计划表",
+        "score_file": null,
+        "marked_file": null,
+        "upload_url": null
+      },
+      {
+        "name": "副本-测试版本-回国销售计划表",
+        "score_file": null,
+        "marked_file": null,
+        "upload_url": null
+      },
+      {
+        "name": "测试版本-小红书部门",
+        "score_file": null,
+        "marked_file": null,
+        "upload_url": null
+      }
+    ],
+    "comprehensive_file": "/root/projects/tencent-doc-manager/scoring_results/2025_W39/comprehensive_score_W39_AUTO_20250925_194310.json",
+    "excel_urls": {},
+    "execution_time": "0:01:25.910661"
+  },
+  "logs": [
+    {
+      "timestamp": "19:41:44",
+      "level": "INFO",
+      "message": "🍪 设置Cookie认证..."
+    },
+    {
+      "timestamp": "19:41:44",
+      "level": "INFO",
+      "message": "⏳ 开始下载，请耐心等待（通常需要30-60秒）..."
+    },
+    {
+      "timestamp": "19:42:27",
+      "level": "INFO",
+      "message": "✅ 下载请求已完成"
+    },
+    {
+      "timestamp": "19:42:27",
+      "level": "INFO",
+      "message": "✅ 基线文档下载并规范化存储成功: tencent_小红书部门_20250925_1941_baseline_W39.csv"
+    },
+    {
+      "timestamp": "19:42:27",
+      "level": "INFO",
+      "message": "开始获取目标文档..."
+    },
+    {
+      "timestamp": "19:42:27",
+      "level": "INFO",
+      "message": "🔄 强制下载模式：跳过本地文件检查"
+    },
+    {
+      "timestamp": "19:42:27",
+      "level": "INFO",
+      "message": "开始下载目标文档并规范化存储..."
+    },
+    {
+      "timestamp": "19:42:27",
+      "level": "INFO",
+      "message": "🌐 开始下载目标文档..."
+    },
+    {
+      "timestamp": "19:43:10",
+      "level": "INFO",
+      "message": "📁 目标文档将存储为midweek版本"
+    },
+    {
+      "timestamp": "19:43:10",
+      "level": "INFO",
+      "message": "✅ 目标文档已存储到midweek文件夹: tencent_小红书部门_20250925_1943_midweek_W39.csv"
+    },
+    {
+      "timestamp": "19:43:10",
+      "level": "INFO",
+      "message": "✅ 目标文档下载并规范化存储成功: tencent_小红书部门_20250925_1943_midweek_W39.csv"
+    },
+    {
+      "timestamp": "19:43:10",
+      "level": "INFO",
+      "message": "验证文档匹配性..."
+    },
+    {
+      "timestamp": "19:43:10",
+      "level": "INFO",
+      "message": "✅ 文档匹配验证通过: 小红书部门"
+    },
+    {
+      "timestamp": "19:43:10",
+      "level": "INFO",
+      "message": "开始对比分析..."
+    },
+    {
+      "timestamp": "19:43:10",
+      "level": "INFO",
+      "message": "✅ 对比分析完成，发现 0 处变更"
+    },
+    {
+      "timestamp": "19:43:10",
+      "level": "ERROR",
+      "message": "❌ 执行出错: local variable 'json' referenced before assignment"
+    },
+    {
+      "timestamp": "19:43:10",
+      "level": "INFO",
+      "message": "📊 开始生成多文档综合打分..."
+    },
+    {
+      "timestamp": "19:43:10",
+      "level": "SUCCESS",
+      "message": "✅ 多文档综合打分已生成: /root/projects/tencent-doc-manager/scoring_results/2025_W39/comprehensive_score_W39_AUTO_20250925_194310.json"
+    },
+    {
+      "timestamp": "19:43:10",
+      "level": "INFO",
+      "message": "   包含 3 个表格的聚合数据"
+    },
+    {
+      "timestamp": "19:43:10",
+      "level": "SUCCESS",
+      "message": "🎉 批量处理完成! 成功处理 3 个文档"
+    }
+  ],
+  "settings": {
+    "enable_ai_analysis": true
+  }
+}
