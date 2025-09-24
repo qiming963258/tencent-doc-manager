@@ -179,7 +179,9 @@
       "Bash(do echo \"检查: $file\")",
       "Bash(md5sum:*)",
       "Bash(/root/projects/tencent-doc-manager/csv_versions/2025_W39/baseline/tencent_出国销售计划表_20250922_0134_baseline_W39.csv)",
-      "Bash(/root/projects/tencent-doc-manager/csv_versions/2025_W39/baseline/tencent_回国销售计划表_20250914_2309_baseline_W39.csv)"
+      "Bash(/root/projects/tencent-doc-manager/csv_versions/2025_W39/baseline/tencent_回国销售计划表_20250914_2309_baseline_W39.csv)",
+      "Read(//usr/local/bin/**)",
+      "Bash(gitc \"完善8089 UI数据更新功能和修复综合打分URL传递\n\n主要改进：\n1. 修改监控设置按钮为''立即显示最新数据''\n2. 实现无刷新数据更新机制\n3. 修复综合打分文件缺少excel_urls字段\n4. 添加数据重载API端点\n\n技术细节：\n- AutoComprehensiveGenerator支持excel_url参数\n- 8093工作流传递上传URL到生成器\n- 新增/api/reload-comprehensive-score端点\n- React状态管理实现动态更新无需刷新\n\n验证结果：\n- 综合打分文件包含正确的URL信息\n- UI可通过按钮触发数据更新\n- 表格链接指向最新上传文件而非基线\")"
     ],
     "deny": [],
     "ask": [],

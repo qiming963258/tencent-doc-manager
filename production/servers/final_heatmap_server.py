@@ -97,6 +97,7 @@ USE_DEFAULT_COLUMN_ORDER = False  # 默认使用智能聚类（False=智能聚�
 
 # 🔧 综合打分模式支持 (智能加载当前周数据)
 comprehensive_scoring_data = None  # 存储综合打分数据
+comprehensive_data_cache = {}  # 缓存最新的综合打分数据
 # DATA_SOURCE已移除，只使用综合打分
 
 # 🔥 导入数据源管理器，实现自动加载和持久化
@@ -7312,13 +7313,39 @@ def index():
                     取消
                   </button>
                   <button
-                    onClick={() => {
-                      alert('设置已保存');
-                      onClose();
+                    onClick={async () => {
+                      setLoading(true);
+                      try {
+                        // 重新加载最新的综合打分数据
+                        const response = await fetch('/api/reload-comprehensive-score', {
+                          method: 'POST'
+                        });
+
+                        if (response.ok) {
+                          const result = await response.json();
+
+                          // 更新API数据
+                          await fetchApiData();
+
+                          // 显示成功消息
+                          alert(`✅ 数据已更新！\n已加载最新文件：${result.filename}\n表格数量：${result.table_count}\n修改总数：${result.total_modifications}`);
+
+                          // 关闭设置窗口
+                          onClose();
+                        } else {
+                          alert('❌ 数据更新失败，请检查是否有新的综合打分文件');
+                        }
+                      } catch (error) {
+                        console.error('更新数据失败:', error);
+                        alert('❌ 更新失败：' + error.message);
+                      } finally {
+                        setLoading(false);
+                      }
                     }}
-                    className="px-4 py-2 text-sm bg-slate-800 text-white rounded hover:bg-slate-900 transition-colors"
+                    className="px-4 py-2 text-sm bg-blue-600 text-white rounded hover:bg-blue-700 transition-colors"
+                    disabled={loading}
                   >
-                    保存设置
+                    {loading ? '正在更新...' : '立即显示最新数据'}
                   </button>
                 </div>
               </div>
@@ -9437,6 +9464,93 @@ def reset_column_order():
             "success": False,
             "error": str(e)
         })
+
+@app.route('/api/reload-comprehensive-score', methods=['POST'])
+def reload_comprehensive_score():
+    """重新加载最新的综合打分文件并更新数据"""
+    try:
+        # 查找最新的综合打分文件
+        scoring_dir = '/root/projects/tencent-doc-manager/scoring_results/comprehensive'
+        import glob
+        import os
+
+        pattern = os.path.join(scoring_dir, 'comprehensive_score_W*.json')
+        files = glob.glob(pattern)
+
+        if not files:
+            return jsonify({
+                "success": False,
+                "error": "没有找到综合打分文件"
+            }), 404
+
+        # 获取最新文件
+        latest_file = max(files, key=os.path.getmtime)
+        filename = os.path.basename(latest_file)
+
+        # 读取文件
+        with open(latest_file, 'r', encoding='utf-8') as f:
+            data = json.load(f)
+
+        # 统计信息
+        table_count = len(data.get('table_names', []))
+        total_modifications = 0
+
+        # 计算总修改数
+        if 'column_modifications_by_table' in data:
+            for table_name, table_data in data['column_modifications_by_table'].items():
+                col_mods = table_data.get('column_modifications', {})
+                for col_info in col_mods.values():
+                    total_modifications += col_info.get('modification_count', 0)
+
+        # 检查是否有URL信息
+        excel_urls = data.get('excel_urls', {})
+
+        # 如果有新的URL，更新文档链接配置
+        if excel_urls:
+            # 更新document_links全局变量
+            import sys
+            sys.path.append('/root/projects/tencent-doc-manager/production')
+            from core_modules.download_link_manager import DownloadLinkManager
+
+            manager = DownloadLinkManager()
+            links = manager.load_links()
+
+            # 更新链接信息
+            for table_name, url in excel_urls.items():
+                # 查找匹配的链接并更新
+                for link in links:
+                    if table_name in link.get('name', ''):
+                        link['excel_url'] = url
+                        print(f"✅ 更新表格 {table_name} 的URL: {url}")
+
+        # 重新加载综合打分数据到全局变量
+        global comprehensive_data_cache
+        comprehensive_data_cache = {
+            'data': data,
+            'filename': filename,
+            'loaded_at': datetime.datetime.now().isoformat()
+        }
+
+        print(f"✅ 成功重载综合打分文件: {filename}")
+        print(f"   表格数量: {table_count}")
+        print(f"   总修改数: {total_modifications}")
+        print(f"   包含URL: {'是' if excel_urls else '否'}")
+
+        return jsonify({
+            "success": True,
+            "filename": filename,
+            "table_count": table_count,
+            "total_modifications": total_modifications,
+            "has_urls": bool(excel_urls),
+            "urls": excel_urls
+        })
+
+    except Exception as e:
+        print(f"❌ 重载综合打分失败: {e}")
+        return jsonify({
+            "success": False,
+            "error": str(e)
+        }), 500
 
 if __name__ == '__main__':
     print("🎉 启动完整原版热力图UI服务器...")

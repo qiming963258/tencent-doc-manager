@@ -957,8 +957,10 @@ def run_complete_workflow(baseline_url: str, target_url: str, cookie: str, advan
             # 创建综合打分生成器
             generator = AutoComprehensiveGenerator()
 
-            # 从最新的详细打分生成综合打分
-            comprehensive_file = generator.generate_from_latest_results()
+            # 从最新的详细打分生成综合打分，传递上传的URL
+            comprehensive_file = generator.generate_from_latest_results(
+                excel_url=workflow_state.upload_url
+            )
 
             workflow_state.add_log(f"✅ 综合打分已生成: {os.path.basename(comprehensive_file)}")
             workflow_state.comprehensive_file = comprehensive_file

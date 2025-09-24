@@ -34,8 +34,12 @@ class AutoComprehensiveGenerator:
         self.L2_COLUMNS = ["项目类型", "具体计划内容", "邓总指导登记", "协助人", "监督人", "对上汇报"]
         self.L3_COLUMNS = ["序号", "完成进度", "完成链接", "经理分析复盘", "最新复盘时间", "应用情况"]
 
-    def generate_from_latest_results(self) -> str:
-        """从最新的详细打分结果生成综合打分"""
+    def generate_from_latest_results(self, excel_url=None) -> str:
+        """从最新的详细打分结果生成综合打分
+
+        Args:
+            excel_url: 上传后的腾讯文档URL
+        """
 
         # 1. 查找最新的详细打分文件
         detailed_files = sorted(self.detailed_dir.glob('detailed_score_*.json'),
@@ -63,7 +67,7 @@ class AutoComprehensiveGenerator:
         # 6. 生成综合打分数据结构
         comprehensive_data = self._build_comprehensive_structure(
             table_name, heatmap_matrix, column_modifications,
-            detailed_data, risk_stats
+            detailed_data, risk_stats, excel_url
         )
 
         # 7. 保存文件
@@ -184,12 +188,17 @@ class AutoComprehensiveGenerator:
         }
 
     def _build_comprehensive_structure(self, table_name, heatmap_matrix,
-                                      column_modifications, detailed_data, risk_stats):
-        """构建综合打分数据结构"""
+                                      column_modifications, detailed_data, risk_stats, excel_url=None):
+        """构建综合打分数据结构
+
+        Args:
+            excel_url: 上传后的腾讯文档URL
+        """
 
         total_mods = risk_stats['total']
 
-        return {
+        # 构建基础结构
+        result = {
             "metadata": {
                 "version": "2.0",
                 "timestamp": datetime.now().isoformat(),
@@ -245,6 +254,17 @@ class AutoComprehensiveGenerator:
                 }
             }
         }
+
+        # 添加excel_urls字段（如果有URL）
+        if excel_url:
+            result["excel_urls"] = {
+                table_name: excel_url
+            }
+            # 同时在table_details中添加
+            result["table_details"][table_name]["excel_url"] = excel_url
+            logger.info(f"✅ 已添加Excel URL到综合打分: {excel_url}")
+
+        return result
 
     def _calculate_overall_risk(self, risk_stats):
         """计算整体风险分数"""
