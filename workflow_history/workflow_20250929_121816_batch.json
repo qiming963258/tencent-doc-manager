@@ -1,0 +1,141 @@
+{
+  "id": "20250929_121816_batch",
+  "start_time": "2025-09-29T12:18:16.365843",
+  "end_time": "2025-09-29T12:24:16.591810",
+  "status": "completed",
+  "results": {
+    "batch_mode": true,
+    "total_documents": 2,
+    "successful_documents": 2,
+    "documents": [
+      {
+        "name": "副本-测试版本-出国销售计划表",
+        "score_file": "/root/projects/tencent-doc-manager/scoring_results/detailed/detailed_score_tmpbrtv13d__20250929_121956.json",
+        "marked_file": "/root/projects/tencent-doc-manager/excel_outputs/marked/tencent_111测试版本-出国销售计划表_20250929_1220_midweek_W40_marked_20250929_122052_W00.xlsx",
+        "upload_url": "https://docs.qq.com/sheet/DWEZ4ZnRvZFJiUUtm"
+      },
+      {
+        "name": "测试版本-小红书部门",
+        "score_file": "/root/projects/tencent-doc-manager/scoring_results/detailed/detailed_score_tmpq0bay58o_20250929_122249.json",
+        "marked_file": "/root/projects/tencent-doc-manager/excel_outputs/marked/tencent_测试版本-小红书部门_20250929_1223_midweek_W40_marked_20250929_122346_W00.xlsx",
+        "upload_url": "https://docs.qq.com/sheet/DWHBaVG50TGptY1Bw"
+      }
+    ],
+    "comprehensive_file": "/root/projects/tencent-doc-manager/scoring_results/2025_W40/comprehensive_score_W40_AUTO_20250929_122416.json",
+    "excel_urls": {
+      "副本-测试版本-出国销售计划表": "https://docs.qq.com/sheet/DWEZ4ZnRvZFJiUUtm",
+      "测试版本-小红书部门": "https://docs.qq.com/sheet/DWHBaVG50TGptY1Bw"
+    },
+    "execution_time": "0:06:00.225967"
+  },
+  "logs": [
+    {
+      "timestamp": "12:22:30",
+      "level": "INFO",
+      "message": "生成详细打分JSON..."
+    },
+    {
+      "timestamp": "12:22:49",
+      "level": "INFO",
+      "message": "✅ 详细打分生成完成: detailed_score_tmpq0bay58o_20250929_122249.json"
+    },
+    {
+      "timestamp": "12:22:49",
+      "level": "INFO",
+      "message": "下载目标文档的Excel格式..."
+    },
+    {
+      "timestamp": "12:23:46",
+      "level": "INFO",
+      "message": "✅ Excel文档下载成功: tencent_测试版本-小红书部门_20250929_1223_midweek_W40.xlsx"
+    },
+    {
+      "timestamp": "12:23:46",
+      "level": "INFO",
+      "message": "修复腾讯文档Excel格式问题..."
+    },
+    {
+      "timestamp": "12:23:46",
+      "level": "INFO",
+      "message": "✅ Excel格式修复完成"
+    },
+    {
+      "timestamp": "12:23:46",
+      "level": "INFO",
+      "message": "应用条纹涂色标记..."
+    },
+    {
+      "timestamp": "12:23:46",
+      "level": "INFO",
+      "message": "✅ 涂色标记完成: tencent_测试版本-小红书部门_20250929_1223_midweek_W40_marked_20250929_122346_W00.xlsx"
+    },
+    {
+      "timestamp": "12:23:46",
+      "level": "INFO",
+      "message": "上传处理后的文档到腾讯文档..."
+    },
+    {
+      "timestamp": "12:24:16",
+      "level": "INFO",
+      "message": "✅ 文档上传成功!"
+    },
+    {
+      "timestamp": "12:24:16",
+      "level": "INFO",
+      "message": "📎 文档链接: https://docs.qq.com/sheet/DWHBaVG50TGptY1Bw"
+    },
+    {
+      "timestamp": "12:24:16",
+      "level": "INFO",
+      "message": "📋 批量处理模式：跳过单文档综合打分，将在最后统一生成"
+    },
+    {
+      "timestamp": "12:24:16",
+      "level": "SUCCESS",
+      "message": "✅ 文档处理完成"
+    },
+    {
+      "timestamp": "12:24:16",
+      "level": "SUCCESS",
+      "message": "✅ 测试版本-小红书部门 详细打分已生成: /root/projects/tencent-doc-manager/scoring_results/detailed/detailed_score_tmpq0bay58o_20250929_122249.json"
+    },
+    {
+      "timestamp": "12:24:16",
+      "level": "SUCCESS",
+      "message": "📊 测试版本-小红书部门 Excel已上传: https://docs.qq.com/sheet/DWHBaVG50TGptY1Bw"
+    },
+    {
+      "timestamp": "12:24:16",
+      "level": "INFO",
+      "message": "📊 开始生成多文档综合打分..."
+    },
+    {
+      "timestamp": "12:24:16",
+      "level": "INFO",
+      "message": "   使用配置的文档数 2 进行批量处理"
+    },
+    {
+      "timestamp": "12:24:16",
+      "level": "SUCCESS",
+      "message": "✅ 多文档综合打分已生成: /root/projects/tencent-doc-manager/scoring_results/2025_W40/comprehensive_score_W40_AUTO_20250929_122416.json"
+    },
+    {
+      "timestamp": "12:24:16",
+      "level": "INFO",
+      "message": "   包含 2 个表格的聚合数据"
+    },
+    {
+      "timestamp": "12:24:16",
+      "level": "SUCCESS",
+      "message": "🎉 批量处理完成! 成功处理 2 个文档"
+    }
+  ],
+  "settings": {
+    "task_type": "full",
+    "auto_download": true,
+    "enable_ai_analysis": true,
+    "enable_excel_marking": true,
+    "enable_upload": true,
+    "use_ai_standardization": true
+  }
+}

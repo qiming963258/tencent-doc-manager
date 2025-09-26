@@ -1,0 +1,43 @@
+{
+  "metadata": {
+    "analysis_time": "2025-09-29 00:41:36",
+    "total_modifications": 1,
+    "layer1_passed": 0,
+    "layer2_analyzed": 1,
+    "processing_time": "26.2s"
+  },
+  "results": [
+    {
+      "modification_id": "M001",
+      "cell": "I10",
+      "column": "邓总指导登记（日更新）",
+      "old_value": "123123",
+      "new_value": "0",
+      "layer1_result": {
+        "judgment": "UNSURE",
+        "confidence": 60.0,
+        "reason": "数值清零"
+      },
+      "layer2_result": {
+        "risk_level": "HIGH",
+        "decision": "REVIEW",
+        "confidence": 90,
+        "reason": "将邓总指导登记（日更新）从有效数值123123修改为0，可能表示重要数据的清零操作，存在潜在信息丢失风险，需要人工核查"
+      },
+      "final_decision": "REVIEW",
+      "approval_required": true
+    }
+  ],
+  "summary": {
+    "approved": 0,
+    "conditional": 0,
+    "review_required": 1,
+    "rejected": 0,
+    "risk_distribution": {
+      "LOW": 0,
+      "MEDIUM": 0,
+      "HIGH": 1,
+      "CRITICAL": 0
+    }
+  }
+}

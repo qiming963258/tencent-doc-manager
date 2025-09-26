@@ -1,0 +1,713 @@
+{
+  "metadata": {
+    "table_name": "tmpewdh0_p5",
+    "source_file": "/tmp/tmpewdh0_p5.json",
+    "scoring_time": "2025-09-29 01:19:49",
+    "total_modifications": 22,
+    "scoring_version": "v1.0"
+  },
+  "scores": [
+    {
+      "modification_id": "M001",
+      "cell": "B4",
+      "column_name": "计划输出思路\n",
+      "column_level": "L3",
+      "old_value": "0",
+      "new_value": "",
+      "scoring_details": {
+        "base_score": 0.2,
+        "change_factor": 1.3,
+        "importance_weight": 1.0,
+        "ai_adjustment": 1.0,
+        "confidence_weight": 1.0,
+        "final_score": 0.26
+      },
+      "ai_analysis": {
+        "ai_used": false,
+        "reason": "L3_column_rule_based"
+      },
+      "risk_assessment": {
+        "risk_level": "LOW",
+        "risk_color": "green",
+        "risk_icon": "🟢",
+        "action_required": "log_only",
+        "priority": 4
+      }
+    },
+    {
+      "modification_id": "M002",
+      "cell": "C4",
+      "column_name": "项目类型",
+      "column_level": "L2",
+      "old_value": "目标管理",
+      "new_value": "体系建设",
+      "scoring_details": {
+        "base_score": 0.5,
+        "change_factor": 1.0,
+        "importance_weight": 1.0,
+        "ai_adjustment": 1.2,
+        "confidence_weight": 0.9,
+        "final_score": 0.6
+      },
+      "ai_analysis": {
+        "ai_used": true,
+        "ai_decision": "REVIEW",
+        "ai_confidence": 75,
+        "layer1_result": {
+          "judgment": "RISKY",
+          "confidence": 75.0,
+          "reason": "范围扩大"
+        },
+        "layer2_result": {
+          "risk_level": "MEDIUM",
+          "decision": "REVIEW",
+          "confidence": 75,
+          "reason": "项目类型从'目标管理'改为'体系建设'可能涉及项目范围和方向的重大变化，需要人工审查确认"
+        }
+      },
+      "risk_assessment": {
+        "risk_level": "HIGH",
+        "risk_color": "orange",
+        "risk_icon": "🟠",
+        "action_required": "manual_review",
+        "priority": 2
+      }
+    },
+    {
+      "modification_id": "M003",
+      "cell": "C5",
+      "column_name": "项目类型",
+      "column_level": "L2",
+      "old_value": "项目管理",
+      "new_value": "目标管理",
+      "scoring_details": {
+        "base_score": 0.5,
+        "change_factor": 1.0,
+        "importance_weight": 1.0,
+        "ai_adjustment": 0.6,
+        "confidence_weight": 1.0,
+        "final_score": 0.6
+      },
+      "ai_analysis": {
+        "ai_used": true,
+        "ai_decision": "APPROVE",
+        "ai_confidence": 90,
+        "layer1_result": {
+          "judgment": "RISKY",
+          "confidence": 80.0,
+          "reason": "概念变更"
+        },
+        "layer2_result": {
+          "risk_level": "LOW",
+          "decision": "APPROVE",
+          "confidence": 90,
+          "reason": "修改仅涉及项目类型的描述变化，不涉及实质性内容变更或关键数据修改"
+        }
+      },
+      "risk_assessment": {
+        "risk_level": "HIGH",
+        "risk_color": "orange",
+        "risk_icon": "🟠",
+        "action_required": "manual_review",
+        "priority": 2
+      }
+    },
+    {
+      "modification_id": "M004",
+      "cell": "I5",
+      "column_name": "邓总指导登记（日更新）",
+      "column_level": "L2",
+      "old_value": "0730-",
+      "new_value": "0730-123123",
+      "scoring_details": {
+        "base_score": 0.5,
+        "change_factor": 1.1,
+        "importance_weight": 1.15,
+        "ai_adjustment": 0.6,
+        "confidence_weight": 1.0,
+        "final_score": 0.6
+      },
+      "ai_analysis": {
+        "ai_used": true,
+        "ai_decision": "APPROVE",
+        "ai_confidence": 90,
+        "layer1_result": {
+          "judgment": "RISKY",
+          "confidence": 70.0,
+          "reason": "编号变更"
+        },
+        "layer2_result": {
+          "risk_level": "LOW",
+          "decision": "APPROVE",
+          "confidence": 90,
+          "reason": "修改内容为增加电话分机号码，属于常规信息更新，无敏感数据变动。"
+        }
+      },
+      "risk_assessment": {
+        "risk_level": "HIGH",
+        "risk_color": "orange",
+        "risk_icon": "🟠",
+        "action_required": "manual_review",
+        "priority": 2
+      }
+    },
+    {
+      "modification_id": "M005",
+      "cell": "E6",
+      "column_name": "任务发起时间",
+      "column_level": "L1",
+      "old_value": "2025/3/12",
+      "new_value": "2025/3/13",
+      "scoring_details": {
+        "base_score": 0.8,
+        "change_factor": 1.0,
+        "importance_weight": 1.3,
+        "ai_adjustment": 1.0,
+        "confidence_weight": 1.0,
+        "final_score": 1.0
+      },
+      "ai_analysis": {
+        "ai_used": false,
+        "reason": "L1_column_rule_based"
+      },
+      "risk_assessment": {
+        "risk_level": "EXTREME_HIGH",
+        "risk_color": "red",
+        "risk_icon": "🔴",
+        "action_required": "immediate_review",
+        "priority": 1
+      }
+    },
+    {
+      "modification_id": "M006",
+      "cell": "E7",
+      "column_name": "任务发起时间",
+      "column_level": "L1",
+      "old_value": "2025/9/27",
+      "new_value": "2025/3/13",
+      "scoring_details": {
+        "base_score": 0.8,
+        "change_factor": 1.0,
+        "importance_weight": 1.3,
+        "ai_adjustment": 1.0,
+        "confidence_weight": 1.0,
+        "final_score": 1.0
+      },
+      "ai_analysis": {
+        "ai_used": false,
+        "reason": "L1_column_rule_based"
+      },
+      "risk_assessment": {
+        "risk_level": "EXTREME_HIGH",
+        "risk_color": "red",
+        "risk_icon": "🔴",
+        "action_required": "immediate_review",
+        "priority": 1
+      }
+    },
+    {
+      "modification_id": "M007",
+      "cell": "F7",
+      "column_name": "目标对齐",
+      "column_level": "L1",
+      "old_value": "部门综合管理",
+      "new_value": "成本利润管理",
+      "scoring_details": {
+        "base_score": 0.8,
+        "change_factor": 1.0,
+        "importance_weight": 1.0,
+        "ai_adjustment": 1.0,
+        "confidence_weight": 1.0,
+        "final_score": 0.8
+      },
+      "ai_analysis": {
+        "ai_used": false,
+        "reason": "L1_column_rule_based"
+      },
+      "risk_assessment": {
+        "risk_level": "EXTREME_HIGH",
+        "risk_color": "red",
+        "risk_icon": "🔴",
+        "action_required": "immediate_review",
+        "priority": 1
+      }
+    },
+    {
+      "modification_id": "M008",
+      "cell": "G8",
+      "column_name": "关键KR对齐",
+      "column_level": "L1",
+      "old_value": "0",
+      "new_value": "---",
+      "scoring_details": {
+        "base_score": 0.8,
+        "change_factor": 1.0,
+        "importance_weight": 1.0,
+        "ai_adjustment": 1.0,
+        "confidence_weight": 1.0,
+        "final_score": 0.8
+      },
+      "ai_analysis": {
+        "ai_used": false,
+        "reason": "L1_column_rule_based"
+      },
+      "risk_assessment": {
+        "risk_level": "EXTREME_HIGH",
+        "risk_color": "red",
+        "risk_icon": "🔴",
+        "action_required": "immediate_review",
+        "priority": 1
+      }
+    },
+    {
+      "modification_id": "M009",
+      "cell": "H9",
+      "column_name": "具体计划内容",
+      "column_level": "L2",
+      "old_value": "0",
+      "new_value": "清单计划的罗列整改",
+      "scoring_details": {
+        "base_score": 0.5,
+        "change_factor": 1.0,
+        "importance_weight": 1.0,
+        "ai_adjustment": 0.6,
+        "confidence_weight": 1.0,
+        "final_score": 0.6
+      },
+      "ai_analysis": {
+        "ai_used": true,
+        "ai_decision": "APPROVE",
+        "ai_confidence": 90,
+        "layer1_result": {
+          "judgment": "RISKY",
+          "confidence": 75.0,
+          "reason": "内容变更"
+        },
+        "layer2_result": {
+          "risk_level": "LOW",
+          "decision": "APPROVE",
+          "confidence": 90,
+          "reason": "从数值0改为文字描述，属于内容补充完善，不涉及敏感数据或关键业务逻辑变更"
+        }
+      },
+      "risk_assessment": {
+        "risk_level": "HIGH",
+        "risk_color": "orange",
+        "risk_icon": "🟠",
+        "action_required": "manual_review",
+        "priority": 2
+      }
+    },
+    {
+      "modification_id": "M010",
+      "cell": "I10",
+      "column_name": "邓总指导登记（日更新）",
+      "column_level": "L2",
+      "old_value": "0",
+      "new_value": "",
+      "scoring_details": {
+        "base_score": 0.5,
+        "change_factor": 1.3,
+        "importance_weight": 1.15,
+        "ai_adjustment": 0.6,
+        "confidence_weight": 1.0,
+        "final_score": 0.6
+      },
+      "ai_analysis": {
+        "ai_used": true,
+        "ai_decision": "APPROVE",
+        "ai_confidence": 90.0,
+        "layer1_result": {
+          "judgment": "SAFE",
+          "confidence": 90.0,
+          "reason": "格式调整"
+        },
+        "layer2_result": null
+      },
+      "risk_assessment": {
+        "risk_level": "HIGH",
+        "risk_color": "orange",
+        "risk_icon": "🟠",
+        "action_required": "manual_review",
+        "priority": 2
+      }
+    },
+    {
+      "modification_id": "M011",
+      "cell": "I11",
+      "column_name": "邓总指导登记（日更新）",
+      "column_level": "L2",
+      "old_value": "0813-\n1、根据周度运营数据识别出来的一般及无效笔记，分析对应的内容定位进行优化；\n2、系统功能下周一上线前，前置识别需要优化的内容定位进行调整\n3、下周一重点汇报半月度内容定位优化迭代进度、内容定位调用结果及内容结构的调整@新媒体运营－蔡悦莹\n\n0806-\n1、新产品价格向维度的内容定位需要合并同类项\n2、权重需要重新梳理与优化\n3、合规流程与常规产品过于雷同，需要在竞对双清如何调整与我们是怎么做的两个维度找到折中的平衡点进行优化\n以上事项今天结项后QQ给邓总留言确认\n\n0723-\n内容定位的更新迭代（内部复盘爆款及竞对追踪爆款）要关注打通扣子智能体的更新迭代机制\n\n0702-\n内容定位的时效维度不作为重点，现阶段可暂时忽略\n\n0623-\n1、内容定位的优化需要在现有的宏观维度框架，细化中观与微观的组合打法\n2、部分组合元素可融合在图片（第二、第三张）进行传递\n3、根据内容定位的三大kr（kr1-内部历史爆款的有效拆解与复制裂变；kr2-跨部门应知应会针对性知识点的补充及融合；kr3-外部竞对爆款笔记的有效拆解与复制裂变）形成机制进行优化与迭代，并形成计划清单进行汇报@新媒体运营－蔡悦莹\n\n0603\n1.根据五月账号内容数据，采集更新账号有效【爆款数据】进行内容复制\n2.【有效爆款】同步更新账号发布更新\n3.2号3号内容同步1号有效复盘执行操作\n3.企业号之间发布排期做好发布【时间，定位，定位】差异安排\n4.新兴国家内容同步做好发布执行规划\n\n0521\n1.顾问号内容定位可按当下模板走，对于案例与引流的内容定位执行优化同步【圈子国外ip】内容定位拆解，同步更新\n2.【圈子与国外ip】在案例的内容定位上，宏观维度是【案例笔记类型与拆解公式】，再进行维度拆解与方向展开\n3.引流内容先可再根据账号情况进行丰富调整\n\n0519-\n企业号(1.2.3号)作为公司在小红书平台的官网,由于客户普遍存在选择困难症,所以官号需要增加更多的干货内容,注重案例的有效描述与内容呈现.需要转成项目进行管理;\n\n0506-\n5-9月海运旺季内容方向新增以下两类：\n1.陪读家长人群成交：国外7月开学在5月初较多【陪读家长成交】\n2.年初定制家具后当下为家具交货期，5月资源成交会有所上升",
+      "new_value": "---0813-\n1、根据周度运营数据识别出来的一般及无效笔记，分析对应的内容定位进行优化；\n2、系统功能下周一上线前，前置识别需要优化的内容定位进行调整\n3、下周一重点汇报半月度内容定位优化迭代进度、内容定位调用结果及内容结构的调整@新媒体运营－蔡悦莹\n\n0806-\n1、新产品价格向维度的内容定位需要合并同类项\n2、权重需要重新梳理与优化\n3、合规流程与常规产品过于雷同，需要在竞对双清如何调整与我们是怎么做的两个维度找到折中的平衡点进行优化\n以上事项今天结项后QQ给邓总留言确认\n\n0723-\n内容定位的更新迭代（内部复盘爆款及竞对追踪爆款）要关注打通扣子智能体的更新迭代机制\n\n0702-\n内容定位的时效维度不作为重点，现阶段可暂时忽略\n\n0623-\n1、内容定位的优化需要在现有的宏观维度框架，细化中观与微观的组合打法\n2、部分组合元素可融合在图片（第二、第三张）进行传递\n3、根据内容定位的三大kr（kr1-内部历史爆款的有效拆解与复制裂变；kr2-跨部门应知应会针对性知识点的补充及融合；kr3-外部竞对爆款笔记的有效拆解与复制裂变）形成机制进行优化与迭代，并形成计划清单进行汇报@新媒体运营－蔡悦莹\n\n0603\n1.根据五月账号内容数据，采集更新账号有效【爆款数据】进行内容复制\n2.【有效爆款】同步更新账号发布更新\n3.2号3号内容同步1号有效复盘执行操作\n3.企业号之间发布排期做好发布【时间，定位，定位】差异安排\n4.新兴国家内容同步做好发布执行规划\n\n0521\n1.顾问号内容定位可按当下模板走，对于案例与引流的内容定位执行优化同步【圈子国外ip】内容定位拆解，同步更新\n2.【圈子与国外ip】在案例的内容定位上，宏观维度是【案例笔记类型与拆解公式】，再进行维度拆解与方向展开\n3.引流内容先可再根据账号情况进行丰富调整\n\n0519-\n企业号(1.2.3号)作为公司在小红书平台的官网,由于客户普遍存在选择困难症,所以官号需要增加更多的干货内容,注重案例的有效描述与内容呈现.需要转成项目进行管理;\n\n0506-\n5-9月海运旺季内容方向新增以下两类：\n1.陪读家长人群成交：国外7月开学在5月初较多【陪读家长成交】\n2.年初定制家具后当下为家具交货期，5月资源成交会有所上升",
+      "scoring_details": {
+        "base_score": 0.5,
+        "change_factor": 0.5,
+        "importance_weight": 1.15,
+        "ai_adjustment": 0.6,
+        "confidence_weight": 1.0,
+        "final_score": 0.6
+      },
+      "ai_analysis": {
+        "ai_used": true,
+        "ai_decision": "APPROVE",
+        "ai_confidence": 90.0,
+        "layer1_result": {
+          "judgment": "SAFE",
+          "confidence": 90.0,
+          "reason": "格式微调"
+        },
+        "layer2_result": null
+      },
+      "risk_assessment": {
+        "risk_level": "HIGH",
+        "risk_color": "orange",
+        "risk_icon": "🟠",
+        "action_required": "manual_review",
+        "priority": 2
+      }
+    },
+    {
+      "modification_id": "M012",
+      "cell": "J11",
+      "column_name": "负责人",
+      "column_level": "L2",
+      "old_value": "各责任人,魏志广",
+      "new_value": "赖铁荔",
+      "scoring_details": {
+        "base_score": 0.5,
+        "change_factor": 1.0,
+        "importance_weight": 1.2,
+        "ai_adjustment": 1.2,
+        "confidence_weight": 0.9,
+        "final_score": 0.648
+      },
+      "ai_analysis": {
+        "ai_used": true,
+        "ai_decision": "REVIEW",
+        "ai_confidence": 75,
+        "layer1_result": {
+          "judgment": "RISKY",
+          "confidence": 75.0,
+          "reason": "负责人变更"
+        },
+        "layer2_result": {
+          "risk_level": "MEDIUM",
+          "decision": "REVIEW",
+          "confidence": 75,
+          "reason": "修改负责人可能影响责任归属，需要确认变动是否经过授权"
+        }
+      },
+      "risk_assessment": {
+        "risk_level": "HIGH",
+        "risk_color": "orange",
+        "risk_icon": "🟠",
+        "action_required": "manual_review",
+        "priority": 2
+      }
+    },
+    {
+      "modification_id": "M013",
+      "cell": "J12",
+      "column_name": "负责人",
+      "column_level": "L2",
+      "old_value": "赖铁荔",
+      "new_value": "赖铁荔,各责任人",
+      "scoring_details": {
+        "base_score": 0.5,
+        "change_factor": 1.0,
+        "importance_weight": 1.2,
+        "ai_adjustment": 1.2,
+        "confidence_weight": 0.9,
+        "final_score": 0.648
+      },
+      "ai_analysis": {
+        "ai_used": true,
+        "ai_decision": "REVIEW",
+        "ai_confidence": 75,
+        "layer1_result": {
+          "judgment": "RISKY",
+          "confidence": 80.0,
+          "reason": "职责模糊"
+        },
+        "layer2_result": {
+          "risk_level": "MEDIUM",
+          "decision": "REVIEW",
+          "confidence": 75,
+          "reason": "负责人字段从单一责任人变更为多人，可能影响责任归属清晰度，需要人工确认各责任人的具体分工"
+        }
+      },
+      "risk_assessment": {
+        "risk_level": "HIGH",
+        "risk_color": "orange",
+        "risk_icon": "🟠",
+        "action_required": "manual_review",
+        "priority": 2
+      }
+    },
+    {
+      "modification_id": "M014",
+      "cell": "K12",
+      "column_name": "协助人",
+      "column_level": "L2",
+      "old_value": "各责任人",
+      "new_value": "杨顺鑫",
+      "scoring_details": {
+        "base_score": 0.5,
+        "change_factor": 1.0,
+        "importance_weight": 1.0,
+        "ai_adjustment": 0.6,
+        "confidence_weight": 1.0,
+        "final_score": 0.6
+      },
+      "ai_analysis": {
+        "ai_used": true,
+        "ai_decision": "APPROVE",
+        "ai_confidence": 90.0,
+        "layer1_result": {
+          "judgment": "SAFE",
+          "confidence": 90.0,
+          "reason": "责任人明确"
+        },
+        "layer2_result": null
+      },
+      "risk_assessment": {
+        "risk_level": "HIGH",
+        "risk_color": "orange",
+        "risk_icon": "🟠",
+        "action_required": "manual_review",
+        "priority": 2
+      }
+    },
+    {
+      "modification_id": "M015",
+      "cell": "L13",
+      "column_name": "重要程度",
+      "column_level": "L1",
+      "old_value": "1",
+      "new_value": "0",
+      "scoring_details": {
+        "base_score": 0.8,
+        "change_factor": 1.0,
+        "importance_weight": 1.4,
+        "ai_adjustment": 1.0,
+        "confidence_weight": 1.0,
+        "final_score": 1.0
+      },
+      "ai_analysis": {
+        "ai_used": false,
+        "reason": "L1_column_rule_based"
+      },
+      "risk_assessment": {
+        "risk_level": "EXTREME_HIGH",
+        "risk_color": "red",
+        "risk_icon": "🔴",
+        "action_required": "immediate_review",
+        "priority": 1
+      }
+    },
+    {
+      "modification_id": "M016",
+      "cell": "M14",
+      "column_name": "预计完成时间",
+      "column_level": "L1",
+      "old_value": "2025/9/27",
+      "new_value": "2025/9/28",
+      "scoring_details": {
+        "base_score": 0.8,
+        "change_factor": 1.0,
+        "importance_weight": 1.2,
+        "ai_adjustment": 1.0,
+        "confidence_weight": 1.0,
+        "final_score": 0.96
+      },
+      "ai_analysis": {
+        "ai_used": false,
+        "reason": "L1_column_rule_based"
+      },
+      "risk_assessment": {
+        "risk_level": "EXTREME_HIGH",
+        "risk_color": "red",
+        "risk_icon": "🔴",
+        "action_required": "immediate_review",
+        "priority": 1
+      }
+    },
+    {
+      "modification_id": "M017",
+      "cell": "N15",
+      "column_name": "完成链接",
+      "column_level": "L3",
+      "old_value": "0",
+      "new_value": "问题问诊与帮扶素材案例库",
+      "scoring_details": {
+        "base_score": 0.2,
+        "change_factor": 1.1,
+        "importance_weight": 1.0,
+        "ai_adjustment": 1.0,
+        "confidence_weight": 1.0,
+        "final_score": 0.22000000000000003
+      },
+      "ai_analysis": {
+        "ai_used": false,
+        "reason": "L3_column_rule_based"
+      },
+      "risk_assessment": {
+        "risk_level": "LOW",
+        "risk_color": "green",
+        "risk_icon": "🟢",
+        "action_required": "log_only",
+        "priority": 4
+      }
+    },
+    {
+      "modification_id": "M018",
+      "cell": "O16",
+      "column_name": "总完成进度",
+      "column_level": "L3",
+      "old_value": "0%",
+      "new_value": "100%",
+      "scoring_details": {
+        "base_score": 0.2,
+        "change_factor": 1.0,
+        "importance_weight": 1.0,
+        "ai_adjustment": 1.0,
+        "confidence_weight": 1.0,
+        "final_score": 0.2
+      },
+      "ai_analysis": {
+        "ai_used": false,
+        "reason": "L3_column_rule_based"
+      },
+      "risk_assessment": {
+        "risk_level": "LOW",
+        "risk_color": "green",
+        "risk_icon": "🟢",
+        "action_required": "log_only",
+        "priority": 4
+      }
+    },
+    {
+      "modification_id": "M019",
+      "cell": "P17",
+      "column_name": "经理分析复盘",
+      "column_level": "L3",
+      "old_value": "2025/5/1",
+      "new_value": "2025/5/26",
+      "scoring_details": {
+        "base_score": 0.2,
+        "change_factor": 1.0,
+        "importance_weight": 1.0,
+        "ai_adjustment": 1.0,
+        "confidence_weight": 1.0,
+        "final_score": 0.2
+      },
+      "ai_analysis": {
+        "ai_used": false,
+        "reason": "L3_column_rule_based"
+      },
+      "risk_assessment": {
+        "risk_level": "LOW",
+        "risk_color": "green",
+        "risk_icon": "🟢",
+        "action_required": "log_only",
+        "priority": 4
+      }
+    },
+    {
+      "modification_id": "M020",
+      "cell": "Q18",
+      "column_name": "",
+      "column_level": "L3",
+      "old_value": "无需",
+      "new_value": "已汇报已结项",
+      "scoring_details": {
+        "base_score": 0.2,
+        "change_factor": 1.0,
+        "importance_weight": 1.0,
+        "ai_adjustment": 1.0,
+        "confidence_weight": 1.0,
+        "final_score": 0.2
+      },
+      "ai_analysis": {
+        "ai_used": false,
+        "reason": "L3_column_rule_based"
+      },
+      "risk_assessment": {
+        "risk_level": "LOW",
+        "risk_color": "green",
+        "risk_icon": "🟢",
+        "action_required": "log_only",
+        "priority": 4
+      }
+    },
+    {
+      "modification_id": "M021",
+      "cell": "R19",
+      "column_name": "",
+      "column_level": "L3",
+      "old_value": "已应用未落地的项目,已纳入日常管理",
+      "new_value": "已纳入目标管理维度",
+      "scoring_details": {
+        "base_score": 0.2,
+        "change_factor": 0.8,
+        "importance_weight": 1.0,
+        "ai_adjustment": 1.0,
+        "confidence_weight": 1.0,
+        "final_score": 0.16000000000000003
+      },
+      "ai_analysis": {
+        "ai_used": false,
+        "reason": "L3_column_rule_based"
+      },
+      "risk_assessment": {
+        "risk_level": "EXTREME_LOW",
+        "risk_color": "blue",
+        "risk_icon": "🔵",
+        "action_required": "none",
+        "priority": 5
+      }
+    },
+    {
+      "modification_id": "M022",
+      "cell": "S20",
+      "column_name": "",
+      "column_level": "L3",
+      "old_value": "0",
+      "new_value": "",
+      "scoring_details": {
+        "base_score": 0.2,
+        "change_factor": 1.3,
+        "importance_weight": 1.0,
+        "ai_adjustment": 1.0,
+        "confidence_weight": 1.0,
+        "final_score": 0.26
+      },
+      "ai_analysis": {
+        "ai_used": false,
+        "reason": "L3_column_rule_based"
+      },
+      "risk_assessment": {
+        "risk_level": "LOW",
+        "risk_color": "green",
+        "risk_icon": "🟢",
+        "action_required": "log_only",
+        "priority": 4
+      }
+    }
+  ],
+  "summary": {
+    "total_score": 12.556,
+    "average_score": 0.571,
+    "risk_distribution": {
+      "LOW": 6,
+      "HIGH": 9,
+      "EXTREME_HIGH": 6,
+      "EXTREME_LOW": 1
+    },
+    "ai_usage": {
+      "total_ai_calls": 9,
+      "layer1_passes": 3,
+      "layer2_analyses": 6
+    }
+  }
+}

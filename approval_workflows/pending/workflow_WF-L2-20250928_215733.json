@@ -1,0 +1,22 @@
+{
+  "workflow_id": "WF-L2-20250928_215733",
+  "created_time": "2025-09-28 21:57:33",
+  "pending_approvals": [],
+  "auto_approved": [
+    {
+      "modification_id": "M001",
+      "cell": "K12",
+      "column": "协助人",
+      "old_value": "赖铁荔",
+      "new_value": "各责任人",
+      "layer1_result": {
+        "judgment": "SAFE",
+        "confidence": 90.0,
+        "reason": "职责明确"
+      },
+      "layer2_result": null,
+      "final_decision": "APPROVE",
+      "approval_required": false
+    }
+  ]
+}

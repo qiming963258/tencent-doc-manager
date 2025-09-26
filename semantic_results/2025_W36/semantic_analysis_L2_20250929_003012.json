@@ -1,0 +1,43 @@
+{
+  "metadata": {
+    "analysis_time": "2025-09-29 00:30:12",
+    "total_modifications": 1,
+    "layer1_passed": 0,
+    "layer2_analyzed": 1,
+    "processing_time": "21.6s"
+  },
+  "results": [
+    {
+      "modification_id": "M001",
+      "cell": "C5",
+      "column": "项目类型",
+      "old_value": "体系建设",
+      "new_value": "项目管理",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 75.0,
+        "reason": "项目性质变更"
+      },
+      "layer2_result": {
+        "risk_level": "MEDIUM",
+        "decision": "REVIEW",
+        "confidence": 75,
+        "reason": "项目类型变更可能影响资源分配和项目范围，需要人工审查确认"
+      },
+      "final_decision": "REVIEW",
+      "approval_required": true
+    }
+  ],
+  "summary": {
+    "approved": 0,
+    "conditional": 0,
+    "review_required": 1,
+    "rejected": 0,
+    "risk_distribution": {
+      "LOW": 0,
+      "MEDIUM": 0,
+      "HIGH": 1,
+      "CRITICAL": 0
+    }
+  }
+}

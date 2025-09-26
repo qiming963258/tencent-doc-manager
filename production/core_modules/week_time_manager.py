@@ -102,20 +102,22 @@ class WeekTimeManager:
         
         return re.match(new_pattern, filename) is not None or re.match(old_pattern, filename) is not None
     
-    def generate_filename(self, file_time: datetime.datetime, 
-                         version_type: str, week_number: int, 
-                         doc_name: str = "未命名文档", 
-                         file_extension: str = "csv") -> str:
+    def generate_filename(self, file_time: datetime.datetime,
+                         version_type: str, week_number: int,
+                         doc_name: str = "未命名文档",
+                         file_extension: str = "csv",
+                         doc_id: str = None) -> str:
         """
-        生成标准文件名 - 支持动态扩展名
-        
+        生成标准文件名 - 支持doc_id唯一标识
+
         Args:
             file_time: 文件时间
             version_type: baseline/midweek/weekend
             week_number: 周数
             doc_name: 文档名称
             file_extension: 文件扩展名 (csv/xlsx/xls等)，默认csv
-            
+            doc_id: 腾讯文档ID（从URL提取的唯一标识符）
+
         Returns:
             str: 标准格式的文件名
         """
@@ -123,55 +125,78 @@ class WeekTimeManager:
         import re
         doc_name = re.sub(r'\.(csv|xlsx|xls)$', '', doc_name, flags=re.IGNORECASE)
         doc_name = re.sub(r'[<>:"/\\|?*]', '', doc_name)  # 移除非法字符
-        
+
         # 清理扩展名（移除点号如果有的话）
         file_extension = file_extension.lstrip('.')
-        
+
         timestamp = file_time.strftime("%Y%m%d_%H%M")
-        # 新格式：tencent_{文件名}_{YYYYMMDD_HHMM}_{版本类型}_W{周数}.{扩展名}
-        return f"tencent_{doc_name}_{timestamp}_{version_type}_W{week_number:02d}.{file_extension}"
+
+        # doc_id是必须的，不再兼容旧格式
+        if not doc_id:
+            raise ValueError("doc_id is required for generating filename")
+
+        # 清理doc_id中可能的特殊字符
+        doc_id = re.sub(r'[<>:"/\\|?*]', '', doc_id)
+
+        # 唯一格式：tencent_{文件名}_{doc_id}_{YYYYMMDD_HHMM}_{版本类型}_W{周数}.{扩展名}
+        return f"tencent_{doc_name}_{doc_id}_{timestamp}_{version_type}_W{week_number:02d}.{file_extension}"
     
-    def find_baseline_files(self) -> Tuple[List[str], str]:
+    def find_baseline_files(self, max_weeks_back: int = 4) -> Tuple[List[str], str]:
         """
-        严格查找基准版文件 - 找不到就报错
-        
+        查找基准版文件 - 支持向前查找历史周
+
+        Args:
+            max_weeks_back: 最多向前查找多少周（默认4周）
+
         Returns:
             tuple: (基准版文件列表, 策略说明)
-            
+
         Raises:
-            FileNotFoundError: 基准版文件不存在时
+            FileNotFoundError: 在指定范围内找不到基准版文件时
         """
         strategy, description, target_week = self.get_baseline_strategy()
         current_year = datetime.datetime.now().year
-        
-        week_dir = self.get_week_directory(current_year, target_week)
-        baseline_dir = week_dir / "baseline"
-        
+        current_week = self.get_current_week_info()['week_number']
+
+        # 从目标周开始向前查找
+        weeks_to_check = []
+        for i in range(max_weeks_back):
+            check_week = target_week - i
+            if check_week > 0:  # 确保周数有效
+                weeks_to_check.append(check_week)
+
         # 查找基准版文件（支持多种扩展名）
-        patterns = [
-            f"*_baseline_W{target_week:02d}.csv",
-            f"*_baseline_W{target_week:02d}.xlsx",
-            f"*_baseline_W{target_week:02d}.xls"
-        ]
-        baseline_files = []
-        for pattern in patterns:
-            baseline_files.extend(glob.glob(str(baseline_dir / pattern)))
-        
-        if not baseline_files:
-            if strategy == "current_week":
-                raise FileNotFoundError(
-                    f"❌ 本周基准版不存在: {baseline_dir}\n"
-                    f"预期文件格式: {pattern}\n"
-                    f"请检查周二12:00定时下载任务是否正常执行"
-                )
-            else:  # previous_week
-                raise FileNotFoundError(
-                    f"❌ 上周基准版不存在: {baseline_dir}\n"
-                    f"预期文件格式: {pattern}\n"
-                    f"请检查历史数据完整性或手动补充基准版"
-                )
-        
-        return baseline_files, description
+        for week_num in weeks_to_check:
+            week_dir = self.get_week_directory(current_year, week_num)
+            baseline_dir = week_dir / "baseline"
+
+            if not baseline_dir.exists():
+                continue
+
+            patterns = [
+                f"*_baseline_W{week_num:02d}.csv"
+            ]
+
+            baseline_files = []
+            for pattern in patterns:
+                baseline_files.extend(glob.glob(str(baseline_dir / pattern)))
+
+            if baseline_files:
+                # 找到基线文件
+                if week_num == current_week:
+                    desc = f"使用本周(W{week_num:02d})基准版"
+                elif week_num == current_week - 1:
+                    desc = f"使用上周(W{week_num:02d})基准版"
+                else:
+                    desc = f"使用历史周(W{week_num:02d})基准版"
+                return baseline_files, desc
+
+        # 如果都没找到，抛出错误
+        raise FileNotFoundError(
+            f"❌ 在过去{max_weeks_back}周内未找到基准版文件\n"
+            f"检查的周数: {', '.join([f'W{w:02d}' for w in weeks_to_check])}\n"
+            f"请检查历史数据完整性或手动下载基准版"
+        )
     
     def find_latest_files(self, version_type: str = "current") -> List[str]:
         """
@@ -234,8 +259,8 @@ class WeekTimeManager:
         week_dir = self.get_week_directory(week_info[0], target_week)
         search_folder = week_dir / version_type
         
-        # 查找文件（支持多种扩展名）
-        extensions = ['csv', 'xlsx', 'xls']
+        # 查找文件（只支持CSV格式，避免XLSX损坏问题）
+        extensions = ['csv']
         files = []
         
         for ext in extensions:

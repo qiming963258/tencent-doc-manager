@@ -49,8 +49,26 @@ app = Flask(__name__)
 # ==================== 精确匹配函数 ====================
 import re
 
+def extract_doc_id_from_filename(filename):
+    """从新格式文件名中提取doc_id
+
+    Args:
+        filename: 文件名，如 tencent_出国销售计划表_DWEFNU25TemFnZXJN_20250915_0145_baseline_W39.csv
+
+    Returns:
+        doc_id，如 DWEFNU25TemFnZXJN
+    """
+    basename = os.path.basename(filename)
+
+    # 新格式：tencent_{文档名}_{doc_id}_{时间戳}_{版本}_W{周}.{扩展名}
+    # doc_id通常是字母数字组合
+    match = re.search(r'^tencent_[^_]+_([A-Za-z0-9]+)_\d{8}_\d{4}_(baseline|midweek|weekend)_W\d+\.\w+$', basename)
+    if match:
+        return match.group(1)
+    return None
+
 def extract_doc_name_from_filename(filename):
-    """从文件名中精确提取文档名称
+    """从文件名中精确提取文档名称（保留以兼容旧代码）
 
     Args:
         filename: 文件名，如 tencent_出国销售计划表_20250915_0145_baseline_W39.csv
@@ -395,6 +413,23 @@ def download_and_store_baseline(baseline_url: str, cookie: str, week_manager=Non
         
         # 从配置文件获取文档名称
         doc_name = "基线文档"
+        doc_id = None  # 初始化doc_id变量
+
+        # 首先从URL提取doc_id（参考目标文档函数的正确实现）
+        try:
+            from urllib.parse import urlparse
+            parsed = urlparse(baseline_url)
+            path_parts = parsed.path.split('/')
+            if len(path_parts) > 2:
+                # 腾讯文档URL格式: https://docs.qq.com/sheet/XXXX
+                doc_id = path_parts[-1]
+                # 处理带参数的情况（如 ?tab=xxx）
+                if '?' in doc_id:
+                    doc_id = doc_id.split('?')[0]
+                logger.info(f"从URL提取的doc_id: {doc_id}")
+        except Exception as e:
+            logger.warning(f"无法从URL提取doc_id: {e}")
+
         try:
             # 加载文档配置
             import json
@@ -412,30 +447,31 @@ def download_and_store_baseline(baseline_url: str, cookie: str, week_manager=Non
                     logger.info(f"使用配置文件中的文档名: {doc_name}")
                     break
             else:
-                # 如果没有找到，fallback到从URL提取
-                parsed_url = urlparse(baseline_url)
-                if 'sheet' in parsed_url.path:
-                    # 腾讯文档链接格式
-                    path_parts = parsed_url.path.split('/')
-                    if len(path_parts) > 2:
-                        doc_id = path_parts[-1]
-                        # 从下载的文件名中提取文档名
-                        original_name = os.path.basename(downloaded_file)
-                        # 移除时间戳和扩展名
-                        doc_name_match = re.search(r'^(.+?)_\d{8}_\d{4}', original_name)
-                        if doc_name_match:
-                            doc_name = doc_name_match.group(1)
-                        else:
-                            # 使用文件名的前部分
-                            doc_name = original_name.split('_')[0] if '_' in original_name else original_name.split('.')[0]
+                # 如果没有找到，使用从下载文件名提取的名称
+                original_name = os.path.basename(downloaded_file)
+                # 移除时间戳和扩展名
+                doc_name_match = re.search(r'^(.+?)_\d{8}_\d{4}', original_name)
+                if doc_name_match:
+                    doc_name = doc_name_match.group(1)
+                else:
+                    # 使用文件名的前部分
+                    doc_name = original_name.split('_')[0] if '_' in original_name else original_name.split('.')[0]
                 logger.warning(f"未在配置中找到文档，使用fallback名称: {doc_name}")
         except Exception as e:
             logger.warning(f"无法从配置解析文档名: {e}")
-        
-        # 生成符合规范的文件名
-        # 格式: tencent_{doc_name}_{YYYYMMDD_HHMM}_baseline_W{week}.csv
+
+        # doc_id是必须的，如果没有则报错
+        if not doc_id:
+            logger.error("无法从URL提取doc_id，这是必需的")
+            return None
+
+        # 清理doc_id中可能的特殊字符
+        clean_doc_id = re.sub(r'[<>:"/\\|?*]', '', doc_id)
+
+        # 生成唯一规范文件名
+        # 格式: tencent_{doc_name}_{doc_id}_{YYYYMMDD_HHMM}_baseline_W{week}.csv
         timestamp = now.strftime("%Y%m%d_%H%M")
-        normalized_name = f"tencent_{doc_name}_{timestamp}_baseline_W{target_week:02d}.csv"
+        normalized_name = f"tencent_{doc_name}_{clean_doc_id}_{timestamp}_baseline_W{target_week:02d}.csv"
         
         # 清理文件名（移除可能的特殊字符）
         normalized_name = re.sub(r'[<>:"|?*]', '_', normalized_name)
@@ -496,18 +532,35 @@ def download_and_store_target(target_url: str, cookie: str, week_manager=None, w
             logger.error(f"下载的文件不存在: {downloaded_file}")
             return None
 
-        # 从配置文件获取文档名
+        # 从配置文件获取文档名，并提取doc_id
         doc_name = 'target_doc'
+        doc_id = None
+
+        # 从URL提取doc_id
+        try:
+            from urllib.parse import urlparse
+            parsed = urlparse(target_url)
+            path_parts = parsed.path.split('/')
+            if len(path_parts) > 2:
+                # 腾讯文档URL格式: https://docs.qq.com/sheet/XXXX
+                doc_id = path_parts[-1]
+                # 处理带参数的情况（如 ?tab=xxx）
+                if '?' in doc_id:
+                    doc_id = doc_id.split('?')[0]
+                logger.info(f"从URL提取的doc_id: {doc_id}")
+        except Exception as e:
+            logger.warning(f"无法从URL提取doc_id: {e}")
+
         try:
             # 加载文档配置
             import json
-            config_file = '/root/projects/tencent-doc-manager/production/config/real_documents.json'
+            config_file = '/root/projects/tencent-doc-manager/config/download_config.json'
             with open(config_file, 'r', encoding='utf-8') as f:
                 config = json.load(f)
 
-            # 根据URL查找文档名
-            for doc in config.get('documents', []):
-                if doc['url'] in target_url:
+            # 根据URL查找文档名（使用download_config.json以保持一致性）
+            for doc in config.get('document_links', []):
+                if doc['url'] in target_url or target_url in doc['url']:
                     # 使用简化的文档名（去掉前缀）
                     full_name = doc['name']
                     # 去掉"副本-测试版本-"前缀
@@ -516,8 +569,6 @@ def download_and_store_target(target_url: str, cookie: str, week_manager=None, w
                     break
             else:
                 # 如果没有找到，fallback到从URL提取
-                from urllib.parse import urlparse
-                path_parts = urlparse(target_url).path.split('/')
                 if len(path_parts) > 1:
                     doc_name = path_parts[-1] or path_parts[-2]
                 logger.warning(f"未在配置中找到文档，使用URL提取的名称: {doc_name}")
@@ -548,14 +599,22 @@ def download_and_store_target(target_url: str, cookie: str, week_manager=None, w
         target_dir = week_dirs / version_type
         target_dir.mkdir(parents=True, exist_ok=True)
 
-        # 生成规范化文件名
+        # doc_id是必须的，如果没有则报错
+        if not doc_id:
+            logger.error("无法从URL提取doc_id，这是必需的")
+            if workflow_state:
+                workflow_state.add_log("❌ 无法从URL提取doc_id", "ERROR")
+            return None
+
+        # 生成规范化文件名（包含doc_id）
         file_extension = os.path.splitext(downloaded_file)[1].lstrip('.') or 'csv'
         target_filename = week_manager.generate_filename(
             doc_name=doc_name,
             file_time=now,
             version_type=version_type,
             week_number=current_week,
-            file_extension=file_extension
+            file_extension=file_extension,
+            doc_id=doc_id  # 传递doc_id参数
         )
 
         # 目标路径
@@ -602,9 +661,24 @@ def run_complete_workflow(baseline_url: str, target_url: str, cookie: str, advan
         workflow_state.update_progress("获取基线文档", 10)
         workflow_state.add_log("开始获取基线文档...")
 
-        # 检查是否强制下载新文件
-        force_download = advanced_settings.get('force_download', True)  # 默认改为True，始终下载
-        use_existing_baseline = advanced_settings.get('use_existing_baseline', False)  # 是否使用现有基线
+        # 智能判断是否应该下载基线
+        weekday = datetime.now().weekday()  # 0=周一, 1=周二
+        hour = datetime.now().hour
+
+        # 只有周二12点后到周三12点前才应该创建新基线
+        should_download_baseline = (weekday == 1 and hour >= 12) or (weekday == 2 and hour < 12)
+
+        # 如果用户没有明确指定，使用智能默认值
+        if 'force_download' not in advanced_settings:
+            force_download = should_download_baseline
+            workflow_state.add_log(f"📊 基线策略: {'创建新基线' if force_download else '使用已有基线'} (自动判断)", "INFO")
+            workflow_state.add_log(f"📅 当前时间: 周{weekday+1} {hour:02d}:00", "INFO")
+        else:
+            force_download = advanced_settings.get('force_download', False)
+            workflow_state.add_log(f"📊 基线策略: {'创建新基线' if force_download else '使用已有基线'} (手动指定)", "INFO")
+
+        # 基线使用策略与下载相反
+        use_existing_baseline = not force_download
 
         baseline_file = None
 
@@ -615,34 +689,23 @@ def run_complete_workflow(baseline_url: str, target_url: str, cookie: str, advan
                 try:
                     baseline_files, baseline_desc = week_manager.find_baseline_files()
                     if baseline_files:
-                        # 从目标URL提取文档名称以匹配正确的基线
-                        doc_name = None
+                        # 从目标URL提取doc_id以匹配正确的基线
+                        target_doc_id = None
                         if target_url:
-                            import json
-                            # 修复：统一使用real_documents.json作为配置源
-                            config_path = '/root/projects/tencent-doc-manager/production/config/real_documents.json'
-                            if os.path.exists(config_path):
-                                with open(config_path, 'r', encoding='utf-8') as cf:
-                                    config = json.load(cf)
-                                doc_id = target_url.split('/')[-1].split('?')[0]
-                                for doc in config.get('documents', []):
-                                    if doc.get('doc_id') == doc_id or doc.get('url').split('/')[-1].split('?')[0] == doc_id:
-                                        full_name = doc['name']
-                                        # 提取简化名称
-                                        doc_name = full_name.replace('副本-测试版本-', '').replace('测试版本-', '')
-                                        workflow_state.add_log(f"📝 处理文档: {doc_name} (来源: real_documents.json)")
-                                        break
+                            # 从URL提取doc_id
+                            target_doc_id = target_url.split('/')[-1].split('?')[0]
+                            workflow_state.add_log(f"📝 目标文档ID: {target_doc_id}")
 
-                        # 根据文档名匹配基线文件
+                        # 根据doc_id匹配基线文件
                         matched_baseline = None
-                        if doc_name:
+                        if target_doc_id:
                             for baseline in baseline_files:
                                 basename = os.path.basename(baseline)
-                                # 使用精确匹配
-                                baseline_doc_name = extract_doc_name_from_filename(baseline)
-                                if baseline_doc_name and baseline_doc_name == doc_name:
+                                # 使用doc_id匹配
+                                baseline_doc_id = extract_doc_id_from_filename(baseline)
+                                if baseline_doc_id and baseline_doc_id == target_doc_id:
                                     matched_baseline = baseline
-                                    workflow_state.add_log(f"✅ 匹配基线: {basename}")
+                                    workflow_state.add_log(f"✅ 匹配基线: {basename} (doc_id: {baseline_doc_id})")
                                     break
 
                         if matched_baseline:
@@ -652,9 +715,19 @@ def run_complete_workflow(baseline_url: str, target_url: str, cookie: str, advan
                             workflow_state.add_log(f"📊 基线描述: {baseline_desc}")
                         else:
                             workflow_state.add_log(f"❌ 未找到匹配的基线文件！", "ERROR")
-                            workflow_state.add_log(f"📊 目标文档名: {doc_name}", "ERROR")
+                            workflow_state.add_log(f"📊 目标doc_id: {target_doc_id}", "ERROR")
                             workflow_state.add_log(f"📊 可用基线: {', '.join([os.path.basename(f) for f in baseline_files])}", "ERROR")
-                            raise Exception(f"未找到与'{doc_name}'匹配的基线文件，请先下载对应的基线")
+
+                            # 显示可用基线的doc_id
+                            available_doc_ids = []
+                            for f in baseline_files:
+                                doc_id = extract_doc_id_from_filename(f)
+                                if doc_id:
+                                    available_doc_ids.append(f"{os.path.basename(f)} (doc_id: {doc_id})")
+                            if available_doc_ids:
+                                workflow_state.add_log(f"📊 可用基线doc_ids: {', '.join(available_doc_ids)}", "ERROR")
+
+                            raise Exception(f"未找到与doc_id '{target_doc_id}'匹配的基线文件，请先下载对应的基线")
                     else:
                         workflow_state.add_log("❌ 未找到基线文件，请先下载基线", "ERROR")
                         raise Exception("未找到基线文件，请先下载基线")
@@ -672,47 +745,41 @@ def run_complete_workflow(baseline_url: str, target_url: str, cookie: str, advan
                 try:
                     baseline_files, baseline_desc = week_manager.find_baseline_files()
                     if baseline_files:
-                        # 从目标URL提取文档名称以匹配正确的基线
-                        doc_name = None
+                        # 从目标URL提取doc_id以匹配正确的基线
+                        target_doc_id = None
                         if target_url:
-                            import json
-                            # 修复：统一使用real_documents.json作为配置源
-                            config_path = '/root/projects/tencent-doc-manager/production/config/real_documents.json'
-                            if os.path.exists(config_path):
-                                with open(config_path, 'r', encoding='utf-8') as cf:
-                                    config = json.load(cf)
-                                doc_id = target_url.split('/')[-1].split('?')[0]
-                                for doc in config.get('documents', []):
-                                    if doc.get('doc_id') == doc_id or doc.get('url').split('/')[-1].split('?')[0] == doc_id:
-                                        full_name = doc['name']
-                                        # 提取简化名称
-                                        doc_name = full_name.replace('副本-测试版本-', '').replace('测试版本-', '')
-                                        workflow_state.add_log(f"📝 处理文档: {doc_name} (来源: real_documents.json)")
-                                        break
+                            # 从URL提取doc_id
+                            target_doc_id = target_url.split('/')[-1].split('?')[0]
+                            workflow_state.add_log(f"📝 目标文档ID: {target_doc_id}")
 
-                        # 根据文档名匹配基线文件
+                        # 根据doc_id匹配基线文件
                         matched_baseline = None
-                        if doc_name:
+                        if target_doc_id:
                             for baseline in baseline_files:
                                 basename = os.path.basename(baseline)
-                                # 使用精确匹配
-                                baseline_doc_name = extract_doc_name_from_filename(baseline)
-                                if baseline_doc_name and baseline_doc_name == doc_name:
+                                # 使用doc_id匹配
+                                baseline_doc_id = extract_doc_id_from_filename(baseline)
+                                if baseline_doc_id and baseline_doc_id == target_doc_id:
                                     matched_baseline = baseline
-                                    workflow_state.add_log(f"✅ 匹配基线: {basename}")
+                                    workflow_state.add_log(f"✅ 匹配基线: {basename} (doc_id: {baseline_doc_id})")
                                     break
 
-                        # 修复：移除危险的回退逻辑
+                        # 简化逻辑：找到就用，没找到直接报错
                         if matched_baseline:
                             baseline_file = matched_baseline
                             workflow_state.baseline_file = baseline_file
                             workflow_state.add_log(f"✅ 使用本地基线文件: {os.path.basename(baseline_file)}")
                         else:
-                            # 没有匹配的基线时，设置标志表示需要创建新基线
-                            workflow_state.add_log(f"⚠️ 未找到匹配的基线文件，将创建新基线", "WARNING")
-                            workflow_state.add_log(f"📊 目标文档名: {doc_name}")
-                            workflow_state.is_new_baseline = True  # 设置标志：这是新基线
-                            baseline_file = None  # 保持为None，后续会下载并创建
+                            # 没有匹配的基线，直接抛出异常
+                            error_msg = f"❌ 未找到匹配的基线文件 (doc_id: {target_doc_id})"
+                            workflow_state.add_log(error_msg, "ERROR")
+
+                            # 列出可用的基线文件帮助调试
+                            available_files = [os.path.basename(f) for f in baseline_files]
+                            if available_files:
+                                workflow_state.add_log(f"可用基线文件: {', '.join(available_files)}", "INFO")
+
+                            raise Exception(error_msg)
                 except Exception as e:
                     workflow_state.add_log(f"⚠️ 本地文件查找失败: {str(e)}", "WARNING")
             elif force_download:
@@ -744,20 +811,25 @@ def run_complete_workflow(baseline_url: str, target_url: str, cookie: str, advan
         # ========== 步骤2: 获取目标文件 ==========
         workflow_state.update_progress("获取目标文档", 20)
         workflow_state.add_log("开始获取目标文档...")
-        
-        # 如果不强制下载，优先尝试使用本地文件（但现在force_download默认为True）
+
+        # 在刷新模式下，总是下载新的目标文件
         target_file = None
-        if not force_download and MODULES_STATUS.get('week_manager') and week_manager:
-            try:
-                target_files = week_manager.find_target_files()
-                if target_files:
-                    target_file = target_files[0]  # 使用最新的目标文件
-                    workflow_state.target_file = target_file
-                    workflow_state.add_log(f"✅ 使用本地目标文件: {os.path.basename(target_file)}")
-            except Exception as e:
-                workflow_state.add_log(f"⚠️ 本地文件查找失败: {str(e)}", "WARNING")
-        elif force_download:
-            workflow_state.add_log("🔄 强制下载模式：跳过本地文件检查")
+        should_download_target = True  # 默认总是下载新文件
+
+        # 仅在明确设置不下载时才使用本地文件
+        if advanced_settings and advanced_settings.get('use_cached_target', False):
+            should_download_target = False
+            if MODULES_STATUS.get('week_manager') and week_manager:
+                try:
+                    target_files = week_manager.find_target_files()
+                    if target_files:
+                        target_file = target_files[0]  # 使用最新的目标文件
+                        workflow_state.target_file = target_file
+                        workflow_state.add_log(f"📁 使用缓存目标文件: {os.path.basename(target_file)}")
+                except Exception as e:
+                    workflow_state.add_log(f"⚠️ 本地文件查找失败: {str(e)}", "WARNING")
+        else:
+            workflow_state.add_log("🔄 刷新模式：将下载最新目标文档")
         
         # 如果本地没有目标文件，则下载并规范化存储
         if not target_file:
@@ -1216,10 +1288,8 @@ def run_batch_workflow(document_pairs: list, cookie: str, advanced_settings: dic
         advanced_settings: 高级设置
     """
     try:
-        workflow_state.reset()
-        workflow_state.status = "running"
-        workflow_state.start_time = datetime.now()
-        workflow_state.execution_id = datetime.now().strftime("%Y%m%d_%H%M%S_batch")
+        # 注意：状态已经在start_batch_workflow中设置，这里不重复设置
+        # 只更新必要的字段
         workflow_state.advanced_settings = advanced_settings or {}
 
         total_pairs = len(document_pairs)
@@ -1269,8 +1339,11 @@ def run_batch_workflow(document_pairs: list, cookie: str, advanced_settings: dic
                 })
 
             except Exception as e:
-                workflow_state.add_log(f"⚠️ 处理 {doc_name} 失败: {str(e)}", "ERROR")
-                continue
+                workflow_state.add_log(f"❌ 处理 {doc_name} 失败: {str(e)}", "ERROR")
+                workflow_state.status = "error"
+                workflow_state.end_time = datetime.now()
+                # 按照用户要求：唯一方案不通直接抛出异常报错
+                raise Exception(f"文档处理失败 - {doc_name}: {str(e)}")
 
         # ========== 批量综合打分生成 ==========
         workflow_state.update_progress("生成多文档综合打分", 90)
@@ -1282,8 +1355,13 @@ def run_batch_workflow(document_pairs: list, cookie: str, advanced_settings: dic
 
             generator = AutoComprehensiveGenerator()
 
-            # 使用新的批量处理方法
-            comprehensive_file = generator.generate_from_all_detailed_results(excel_urls)
+            # 使用新的批量处理方法，传入期望的文档数量
+            expected_doc_count = len(document_pairs)  # 使用配置的文档数
+            comprehensive_file = generator.generate_from_all_detailed_results(
+                excel_urls,
+                expected_count=expected_doc_count
+            )
+            workflow_state.add_log(f"   使用配置的文档数 {expected_doc_count} 进行批量处理", "INFO")
 
             workflow_state.comprehensive_file = comprehensive_file
             workflow_state.add_log(f"✅ 多文档综合打分已生成: {comprehensive_file}", "SUCCESS")
@@ -1299,10 +1377,18 @@ def run_batch_workflow(document_pairs: list, cookie: str, advanced_settings: dic
             workflow_state.add_log(f"⚠️ 批量综合打分生成失败: {e}", "WARNING")
 
         # ========== 完成 ==========
-        workflow_state.update_progress("批量处理完成", 100)
-        workflow_state.status = "completed"
-        workflow_state.end_time = datetime.now()
-        workflow_state.add_log(f"🎉 批量处理完成! 成功处理 {len(all_results)} 个文档", "SUCCESS")
+        # 检查是否所有文档都成功处理
+        if len(all_results) == total_pairs:
+            workflow_state.update_progress("批量处理完成", 100)
+            workflow_state.status = "completed"
+            workflow_state.end_time = datetime.now()
+            workflow_state.add_log(f"🎉 批量处理完成! 成功处理 {len(all_results)} 个文档", "SUCCESS")
+        else:
+            # 部分失败的情况（实际上不会到达这里，因为失败会抛出异常）
+            workflow_state.status = "error"
+            workflow_state.end_time = datetime.now()
+            workflow_state.add_log(f"❌ 批量处理未完成: 仅成功 {len(all_results)}/{total_pairs} 个文档", "ERROR")
+            raise Exception(f"批量处理失败: 仅成功处理 {len(all_results)}/{total_pairs} 个文档")
 
         # 保存批量处理结果
         workflow_state.results = {
@@ -1331,7 +1417,58 @@ def run_batch_workflow(document_pairs: list, cookie: str, advanced_settings: dic
 # ==================== Flask路由 ====================
 @app.route('/')
 def index():
-    return render_template_string(HTML_TEMPLATE)
+    # 终极缓存破坏方案：使用唯一类名和JavaScript强制更新
+    from flask import make_response
+    import time
+    import random
+
+    # 生成唯一的版本标识
+    version = f"{int(time.time())}_{random.randint(1000, 9999)}"
+
+    # 动态替换HTML中的类名和样式
+    versioned_html = HTML_TEMPLATE
+
+    # 添加JavaScript强制刷新样式
+    js_injection = f'''
+    <script>
+        // 强制更新样式 - 版本 {version}
+        document.addEventListener('DOMContentLoaded', function() {{
+            // 直接通过JavaScript设置样式，绕过所有缓存
+            const logContainers = document.querySelectorAll('.log-container');
+            logContainers.forEach(container => {{
+                container.style.height = '800px';
+                container.style.maxHeight = '800px';
+                container.style.overflowY = 'auto';
+                container.style.overflowX = 'hidden';
+            }});
+
+            // 添加版本信息到控制台
+            console.log('📋 监控界面CSS已更新 - 版本:', '{version}');
+            console.log('📏 日志容器高度: 800px');
+
+            // 清除localStorage缓存
+            if (localStorage.getItem('css_version') !== '{version}') {{
+                localStorage.setItem('css_version', '{version}');
+                console.log('🔄 缓存已清除');
+            }}
+        }});
+    </script>
+    '''
+
+    # 在</head>标签前插入JavaScript
+    versioned_html = versioned_html.replace('</head>', js_injection + '\n    </head>')
+
+    response = make_response(render_template_string(versioned_html))
+
+    # 最激进的缓存控制
+    response.headers['Cache-Control'] = 'no-cache, no-store, must-revalidate, private, max-age=0'
+    response.headers['Pragma'] = 'no-cache'
+    response.headers['Expires'] = '-1'
+    response.headers['X-CSS-Version'] = version
+    response.headers['ETag'] = f'"{version}"'
+    response.headers['Last-Modified'] = time.strftime('%a, %d %b %Y %H:%M:%S GMT')
+
+    return response
 
 @app.route('/api/modules')
 def get_modules():
@@ -1340,13 +1477,81 @@ def get_modules():
 
 @app.route('/api/status')
 def get_status():
-    """获取当前工作流状态"""
+    """获取当前工作流状态 - 增强版自动重置机制"""
+    # 多重检查机制，确保不会返回虚假成功
+
+    # 如果状态是running，直接返回，不做任何检测
+    if workflow_state.status == "running":
+        return jsonify({
+            "status": workflow_state.status,
+            "progress": workflow_state.progress,
+            "current_task": workflow_state.current_task,
+            "logs": workflow_state.logs,
+            "results": workflow_state.results,
+            "is_running": True
+        })
+
+    # 1. 检查是否有陈旧的完成/错误状态
+    if workflow_state.status in ["completed", "error"]:
+        # 检查多个虚假成功的特征
+        is_fake = False
+
+        # 特征1: 所有时间戳相同（增加长度检查）
+        if workflow_state.logs and len(workflow_state.logs) > 3:
+            timestamps = []
+            for log in workflow_state.logs:
+                if isinstance(log, dict) and 'timestamp' in log:
+                    timestamps.append(log['timestamp'])
+
+            if timestamps and len(set(timestamps)) == 1 and len(timestamps) > 5:
+                print(f"⚠️ 检测到虚假日志特征1：所有时间戳相同 ({timestamps[0]})")
+                is_fake = True
+
+        # 特征2: 完成状态但没有结果
+        if workflow_state.status == "completed" and not workflow_state.results:
+            print(f"⚠️ 检测到虚假日志特征2：完成状态但无结果")
+            is_fake = True
+
+        # 特征3: 完成时间与开始时间相同或非常接近（小于1秒）
+        if workflow_state.start_time and workflow_state.end_time:
+            time_diff = (workflow_state.end_time - workflow_state.start_time).total_seconds()
+            if time_diff < 1:
+                print(f"⚠️ 检测到虚假日志特征3：执行时间过短 ({time_diff}秒)")
+                is_fake = True
+
+        # 特征4: 日志数量异常少（正常应该有多条处理日志）
+        if workflow_state.status == "completed" and len(workflow_state.logs) < 5:
+            print(f"⚠️ 检测到虚假日志特征4：日志过少 ({len(workflow_state.logs)}条)")
+            is_fake = True
+
+        # 如果检测到虚假成功，自动重置
+        if is_fake:
+            print("🔄 自动重置虚假工作流状态")
+            workflow_state.reset()
+
     return jsonify({
         "status": workflow_state.status,
         "progress": workflow_state.progress,
         "current_task": workflow_state.current_task,
-        "logs": workflow_state.logs[-50:],  # 最后50条日志
+        "logs": workflow_state.logs,  # 返回所有日志（不再截断）
         "results": workflow_state.results
+    })
+
+@app.route('/api/reset-status', methods=['POST'])
+def reset_status():
+    """手动重置工作流状态"""
+    # 检查是否有正在运行的工作流
+    if workflow_state.status == "running":
+        return jsonify({"error": "不能重置正在运行的工作流"}), 400
+
+    # 执行重置
+    workflow_state.reset()
+    print("✅ 手动重置工作流状态成功")
+
+    return jsonify({
+        "message": "工作流状态已重置",
+        "status": workflow_state.status,
+        "logs": workflow_state.logs
     })
 
 @app.route('/api/save-cookie', methods=['POST'])
@@ -1454,6 +1659,18 @@ def start_batch_workflow():
     if workflow_state.status == "running":
         return jsonify({"error": "工作流正在运行中"}), 400
 
+    # 重置工作流状态，清除任何旧的日志和结果
+    workflow_state.reset()
+    print("✅ 已重置工作流状态，清除旧的日志和结果")
+
+    # 立即设置为运行状态，防止前端获取到空闲状态
+    workflow_state.status = "running"
+    workflow_state.start_time = datetime.now()
+    workflow_state.execution_id = datetime.now().strftime("%Y%m%d_%H%M%S_batch")
+    workflow_state.add_log("🚀 正在启动批量处理工作流...", "INFO")
+    workflow_state.current_task = "初始化批量处理"
+    workflow_state.progress = 1  # 设置最小进度，表示已开始
+
     data = request.json
     cookie = data.get('cookie')
     advanced_settings = data.get('advanced_settings', {})
@@ -1462,14 +1679,30 @@ def start_batch_workflow():
     import sys
     sys.path.insert(0, '/root/projects/tencent-doc-manager')
 
-    # 直接读取配置文件
+    # 直接读取配置文件 - 使用与8089相同的配置源
     import json
-    config_file = Path("/root/projects/tencent-doc-manager/production/config/real_documents.json")
+    # 优先使用download_config.json，确保与8089 UI一致
+    config_file = Path("/root/projects/tencent-doc-manager/config/download_config.json")
+    REAL_DOCUMENTS = {'documents': []}
+
     if config_file.exists():
         with open(config_file, 'r', encoding='utf-8') as f:
-            REAL_DOCUMENTS = json.load(f)
+            download_config = json.load(f)
+            # 转换download_config格式到REAL_DOCUMENTS格式
+            documents = []
+            for link in download_config.get('document_links', []):
+                if link.get('enabled', False):  # 只处理启用的链接
+                    documents.append({
+                        'name': link['name'],
+                        'url': link['url'],
+                        'doc_id': link['url'].split('/')[-1] if '/' in link['url'] else link['url'],
+                        'csv_pattern': f"tencent_{link['name']}_*.csv",
+                        'description': f"来自UI配置: {link['name']}"
+                    })
+            REAL_DOCUMENTS = {'documents': documents}
+            print(f"✅ 从download_config.json加载 {len(documents)} 个启用的文档")
     else:
-        REAL_DOCUMENTS = {'documents': []}
+        print("⚠️ 未找到download_config.json，使用空配置")
 
     # 构建文档对列表
     document_pairs = []
@@ -1817,8 +2050,14 @@ HTML_TEMPLATE = '''
         }
         
         .log-container {
-            height: 400px;
+            height: 800px !important;  /* 终极高度设置 - 800px */
+            max-height: 800px !important;
+            min-height: 800px !important;  /* 添加最小高度确保 */
             overflow-y: auto;
+            overflow-x: hidden;
+            /* 添加更多样式确保生效 */
+            display: block !important;
+            position: relative !important;
             background: #f8f8f8;
             border-radius: 10px;
             padding: 15px;
@@ -2447,16 +2686,26 @@ HTML_TEMPLATE = '''
                     // 更新当前任务
                     document.getElementById('currentTask').textContent = data.current_task || '';
                     
-                    // 更新日志
+                    // 更新日志（改为累积显示所有日志）
                     if (data.logs && data.logs.length > 0) {
                         const container = document.getElementById('logContainer');
-                        container.innerHTML = '';
-                        data.logs.forEach(log => {
+                        const currentLogCount = container.children.length;
+
+                        // 如果日志数量减少了（新的工作流开始），清空容器
+                        if (data.logs.length < currentLogCount) {
+                            container.innerHTML = '';
+                        }
+
+                        // 只添加新的日志条目
+                        for (let i = currentLogCount; i < data.logs.length; i++) {
+                            const log = data.logs[i];
                             const div = document.createElement('div');
                             div.className = 'log-entry log-' + log.level;
                             div.innerHTML = `<span style="color: #666;">[${log.time}]</span> ${log.message}`;
                             container.appendChild(div);
-                        });
+                        }
+
+                        // 自动滚动到底部
                         container.scrollTop = container.scrollHeight;
                     }
                     

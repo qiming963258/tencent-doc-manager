@@ -1,0 +1,15 @@
+{
+  "modified_columns": {},
+  "modifications": [],
+  "statistics": {
+    "total_modifications": 0,
+    "similarity": 1.0,
+    "format_only_changes": 0,
+    "original_total": 0
+  },
+  "format_only_changes": [],
+  "format_version": "simplified_v1.0",
+  "comparison_engine": "SimplifiedCSVComparator",
+  "timestamp": "2025-09-27T03:03:46.959580",
+  "star_normalization": true
+}

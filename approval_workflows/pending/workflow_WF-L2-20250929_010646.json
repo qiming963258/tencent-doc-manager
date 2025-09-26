@@ -1,0 +1,27 @@
+{
+  "workflow_id": "WF-L2-20250929_010646",
+  "created_time": "2025-09-29 01:06:46",
+  "pending_approvals": [],
+  "auto_approved": [
+    {
+      "modification_id": "M001",
+      "cell": "I5",
+      "column": "邓总指导登记（日更新）",
+      "old_value": "0730-",
+      "new_value": "0730-123123",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 75.0,
+        "reason": "编号变更"
+      },
+      "layer2_result": {
+        "risk_level": "LOW",
+        "decision": "APPROVE",
+        "confidence": 90,
+        "reason": "修改内容仅为增加联系方式数字部分，不涉及敏感信息变更"
+      },
+      "final_decision": "APPROVE",
+      "approval_required": false
+    }
+  ]
+}

@@ -393,16 +393,54 @@ class AutoComprehensiveGenerator:
 
         return output_path
 
-    def generate_from_all_detailed_results(self, excel_urls=None) -> str:
+    def clean_old_detailed_files(self, keep_hours=2):
+        """
+        清理旧的详细打分文件，防止累积
+        Args:
+            keep_hours: 保留多少小时内的文件（默认2小时）
+        """
+        from datetime import datetime
+        import shutil
+
+        try:
+            archive_dir = self.detailed_dir / f".archive_{datetime.now().strftime('%Y%m%d')}"
+            archive_dir.mkdir(exist_ok=True)
+
+            current_time = datetime.now()
+            cleaned_count = 0
+
+            # 只清理tmp开头的详细打分文件
+            for file in self.detailed_dir.glob('detailed_score_tmp*.json'):
+                file_time = datetime.fromtimestamp(file.stat().st_mtime)
+                age_hours = (current_time - file_time).total_seconds() / 3600
+
+                if age_hours > keep_hours:
+                    # 移动到归档目录而不是删除
+                    archive_path = archive_dir / file.name
+                    shutil.move(str(file), str(archive_path))
+                    cleaned_count += 1
+                    logger.debug(f"归档旧文件: {file.name} (生成于 {age_hours:.1f} 小时前)")
+
+            if cleaned_count > 0:
+                logger.info(f"🧹 已归档 {cleaned_count} 个超过 {keep_hours} 小时的历史文件")
+
+        except Exception as e:
+            logger.warning(f"清理历史文件时出错: {e}")
+
+    def generate_from_all_detailed_results(self, excel_urls=None, expected_count=None) -> str:
         """
         批量处理：从所有详细打分结果生成综合打分
         支持多文档聚合，生成N×19矩阵热力图
 
         Args:
             excel_urls: 字典，格式 {表格名: URL}
+            expected_count: 期望的文档数量（如果提供，只处理最新的N个文件）
         """
         import re
         from datetime import datetime
+
+        # 0. 首先清理超过2小时的历史文件
+        self.clean_old_detailed_files(keep_hours=2)
 
         # 1. 查找当前时间段内的所有详细打分文件
         detailed_files = sorted(self.detailed_dir.glob('detailed_score_*.json'),
@@ -411,18 +449,51 @@ class AutoComprehensiveGenerator:
         if not detailed_files:
             raise FileNotFoundError("没有找到详细打分文件")
 
-        # 2. 过滤出最近1小时内的文件（属于同一批次）
+        # 2. 智能选择批次文件 - 增强版过滤机制
         current_time = datetime.now()
-        batch_files = []
+
+        # 第一步：过滤掉过旧的文件（超过30分钟的一律排除）
+        recent_files = []
         for file in detailed_files:
             file_time = datetime.fromtimestamp(file.stat().st_mtime)
             time_diff = (current_time - file_time).total_seconds()
-            if time_diff <= 3600:  # 1小时内的文件
-                batch_files.append(file)
+            if time_diff <= 1800:  # 30分钟内
+                recent_files.append(file)
+            else:
+                logger.debug(f"排除旧文件: {file.name} (生成于 {int(time_diff/60)} 分钟前)")
 
-        if not batch_files:
-            # 如果没有1小时内的文件，使用最新的3个文件
-            batch_files = detailed_files[:3]
+        # 第二步：根据expected_count选择文件
+        if expected_count and expected_count > 0:
+            # 只处理最新的N个文件，N为配置的文档数量
+            # 但必须从recent_files中选择，避免选到历史文件
+            batch_files = recent_files[:expected_count] if recent_files else []
+
+            # 验证文件数量是否匹配
+            if len(batch_files) < expected_count:
+                logger.warning(f"⚠️ 期望 {expected_count} 个文件，但只找到 {len(batch_files)} 个30分钟内的文件")
+            else:
+                logger.info(f"✅ 根据配置文档数 {expected_count}，选择最新的 {len(batch_files)} 个文件")
+
+            # 记录选中的文件时间
+            for f in batch_files:
+                file_time = datetime.fromtimestamp(f.stat().st_mtime)
+                age_minutes = int((current_time - file_time).total_seconds() / 60)
+                logger.info(f"  选中: {f.name} (生成于 {age_minutes} 分钟前)")
+        else:
+            # 备用方案：使用5分钟时间窗口（更严格）
+            batch_files = []
+            for file in recent_files:
+                file_time = datetime.fromtimestamp(file.stat().st_mtime)
+                time_diff = (current_time - file_time).total_seconds()
+                if time_diff <= 300:  # 5分钟内的文件
+                    batch_files.append(file)
+
+            if not batch_files and recent_files:
+                # 如果没有5分钟内的文件，使用最新的2个文件（但必须在30分钟内）
+                batch_files = recent_files[:2]
+                logger.warning(f"未找到5分钟内的文件，使用30分钟内最新的 {len(batch_files)} 个文件")
+            elif not batch_files:
+                logger.error("❌ 没有找到任何30分钟内的详细打分文件")
 
         logger.info(f"批量处理 {len(batch_files)} 个详细打分文件")
 

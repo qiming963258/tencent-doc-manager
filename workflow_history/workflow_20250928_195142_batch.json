@@ -1,0 +1,117 @@
+{
+  "id": "20250928_195142_batch",
+  "start_time": "2025-09-28T19:51:42.924194",
+  "end_time": "2025-09-28T19:51:42.991748",
+  "status": "error",
+  "results": {},
+  "logs": [
+    {
+      "timestamp": "19:51:42",
+      "level": "WARNING",
+      "message": "📊 目标文档: 测试版本-小红书部门"
+    },
+    {
+      "timestamp": "19:51:42",
+      "level": "INFO",
+      "message": "开始对比分析..."
+    },
+    {
+      "timestamp": "19:51:42",
+      "level": "ERROR",
+      "message": "❌ 执行出错: expected <class 'openpyxl.styles.fills.Fill'>"
+    },
+    {
+      "timestamp": "19:51:42",
+      "level": "INFO",
+      "message": "📄 开始处理: 测试版本-小红书部门"
+    },
+    {
+      "timestamp": "19:51:42",
+      "level": "INFO",
+      "message": "开始获取基线文档..."
+    },
+    {
+      "timestamp": "19:51:42",
+      "level": "INFO",
+      "message": "📊 基线策略: 使用已有基线 (自动判断)"
+    },
+    {
+      "timestamp": "19:51:42",
+      "level": "INFO",
+      "message": "📅 当前时间: 周7 19:00"
+    },
+    {
+      "timestamp": "19:51:42",
+      "level": "INFO",
+      "message": "📂 刷新模式：使用现有基线文件"
+    },
+    {
+      "timestamp": "19:51:42",
+      "level": "INFO",
+      "message": "📝 目标文档ID: DWEVjZndkR2xVSWJN"
+    },
+    {
+      "timestamp": "19:51:42",
+      "level": "INFO",
+      "message": "✅ 匹配基线: tencent_小红书部门_DWEVjZndkR2xVSWJN_20250926_2014_baseline_W39.csv (doc_id: DWEVjZndkR2xVSWJN)"
+    },
+    {
+      "timestamp": "19:51:42",
+      "level": "INFO",
+      "message": "✅ 找到匹配的基线文件: tencent_小红书部门_DWEVjZndkR2xVSWJN_20250926_2014_baseline_W39.csv"
+    },
+    {
+      "timestamp": "19:51:42",
+      "level": "INFO",
+      "message": "📊 基线描述: 使用本周(W39)基准版"
+    },
+    {
+      "timestamp": "19:51:42",
+      "level": "INFO",
+      "message": "开始获取目标文档..."
+    },
+    {
+      "timestamp": "19:51:42",
+      "level": "INFO",
+      "message": "✅ 使用本地目标文件: tencent_测试版本-小红书部门_20250928_1906_midweek_W39.xlsx"
+    },
+    {
+      "timestamp": "19:51:42",
+      "level": "INFO",
+      "message": "验证文档匹配性..."
+    },
+    {
+      "timestamp": "19:51:42",
+      "level": "WARNING",
+      "message": "⚠️ 警告：基线文档和目标文档可能不匹配！"
+    },
+    {
+      "timestamp": "19:51:42",
+      "level": "WARNING",
+      "message": "📊 基线文档: 小红书部门_DWEVjZndkR2xVSWJN"
+    },
+    {
+      "timestamp": "19:51:42",
+      "level": "WARNING",
+      "message": "📊 目标文档: 测试版本-小红书部门"
+    },
+    {
+      "timestamp": "19:51:42",
+      "level": "INFO",
+      "message": "开始对比分析..."
+    },
+    {
+      "timestamp": "19:51:42",
+      "level": "ERROR",
+      "message": "❌ 执行出错: expected <class 'openpyxl.styles.fills.Fill'>"
+    }
+  ],
+  "settings": {
+    "task_type": "full",
+    "auto_download": true,
+    "enable_ai_analysis": true,
+    "enable_excel_marking": true,
+    "enable_upload": true,
+    "use_ai_standardization": true
+  }
+}

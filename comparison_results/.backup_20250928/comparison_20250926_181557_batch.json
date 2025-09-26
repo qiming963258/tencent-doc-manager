@@ -1,0 +1,570 @@
+{
+  "modified_columns": {
+    "L": "重要程度"
+  },
+  "modifications": [],
+  "statistics": {
+    "total_modifications": 0,
+    "similarity": 1.0,
+    "format_only_changes": 92,
+    "original_total": 92
+  },
+  "format_only_changes": [
+    {
+      "cell": "L4",
+      "column_name": "重要程度",
+      "old": "★★★★★",
+      "new": "5"
+    },
+    {
+      "cell": "L5",
+      "column_name": "重要程度",
+      "old": "★★★★☆",
+      "new": "4"
+    },
+    {
+      "cell": "L6",
+      "column_name": "重要程度",
+      "old": "★★★★☆",
+      "new": "4"
+    },
+    {
+      "cell": "L7",
+      "column_name": "重要程度",
+      "old": "★★★★★",
+      "new": "5"
+    },
+    {
+      "cell": "L8",
+      "column_name": "重要程度",
+      "old": "★★★★★",
+      "new": "5"
+    },
+    {
+      "cell": "L9",
+      "column_name": "重要程度",
+      "old": "★★★★★",
+      "new": "5"
+    },
+    {
+      "cell": "L10",
+      "column_name": "重要程度",
+      "old": "★★★★☆",
+      "new": "4"
+    },
+    {
+      "cell": "L11",
+      "column_name": "重要程度",
+      "old": "★★★☆☆",
+      "new": "3"
+    },
+    {
+      "cell": "L12",
+      "column_name": "重要程度",
+      "old": "★★★☆☆",
+      "new": "3"
+    },
+    {
+      "cell": "L13",
+      "column_name": "重要程度",
+      "old": "★★★★★",
+      "new": "5"
+    },
+    {
+      "cell": "L14",
+      "column_name": "重要程度",
+      "old": "★★★★★",
+      "new": "5"
+    },
+    {
+      "cell": "L15",
+      "column_name": "重要程度",
+      "old": "★★★★★",
+      "new": "5"
+    },
+    {
+      "cell": "L16",
+      "column_name": "重要程度",
+      "old": "★★★★☆",
+      "new": "4"
+    },
+    {
+      "cell": "L17",
+      "column_name": "重要程度",
+      "old": "★★★★☆",
+      "new": "4"
+    },
+    {
+      "cell": "L18",
+      "column_name": "重要程度",
+      "old": "★★★★★",
+      "new": "5"
+    },
+    {
+      "cell": "L19",
+      "column_name": "重要程度",
+      "old": "★★★★☆",
+      "new": "4"
+    },
+    {
+      "cell": "L20",
+      "column_name": "重要程度",
+      "old": "★★★★☆",
+      "new": "4"
+    },
+    {
+      "cell": "L21",
+      "column_name": "重要程度",
+      "old": "★★★★★",
+      "new": "5"
+    },
+    {
+      "cell": "L22",
+      "column_name": "重要程度",
+      "old": "★★★★★",
+      "new": "5"
+    },
+    {
+      "cell": "L23",
+      "column_name": "重要程度",
+      "old": "★★★★☆",
+      "new": "4"
+    },
+    {
+      "cell": "L24",
+      "column_name": "重要程度",
+      "old": "★★★★★",
+      "new": "5"
+    },
+    {
+      "cell": "L25",
+      "column_name": "重要程度",
+      "old": "★★★★★",
+      "new": "5"
+    },
+    {
+      "cell": "L26",
+      "column_name": "重要程度",
+      "old": "★★★★★",
+      "new": "5"
+    },
+    {
+      "cell": "L27",
+      "column_name": "重要程度",
+      "old": "★★★★★",
+      "new": "5"
+    },
+    {
+      "cell": "L28",
+      "column_name": "重要程度",
+      "old": "★★★★☆",
+      "new": "4"
+    },
+    {
+      "cell": "L29",
+      "column_name": "重要程度",
+      "old": "★★★★☆",
+      "new": "4"
+    },
+    {
+      "cell": "L30",
+      "column_name": "重要程度",
+      "old": "★★★★★",
+      "new": "5"
+    },
+    {
+      "cell": "L31",
+      "column_name": "重要程度",
+      "old": "★★★★☆",
+      "new": "4"
+    },
+    {
+      "cell": "L32",
+      "column_name": "重要程度",
+      "old": "★★★★☆",
+      "new": "4"
+    },
+    {
+      "cell": "L33",
+      "column_name": "重要程度",
+      "old": "★★★★★",
+      "new": "5"
+    },
+    {
+      "cell": "L34",
+      "column_name": "重要程度",
+      "old": "★★★☆☆",
+      "new": "3"
+    },
+    {
+      "cell": "L35",
+      "column_name": "重要程度",
+      "old": "★★★★☆",
+      "new": "4"
+    },
+    {
+      "cell": "L36",
+      "column_name": "重要程度",
+      "old": "★★★☆☆",
+      "new": "3"
+    },
+    {
+      "cell": "L37",
+      "column_name": "重要程度",
+      "old": "★★★★☆",
+      "new": "4"
+    },
+    {
+      "cell": "L38",
+      "column_name": "重要程度",
+      "old": "★★★★★",
+      "new": "5"
+    },
+    {
+      "cell": "L39",
+      "column_name": "重要程度",
+      "old": "★★★★★",
+      "new": "5"
+    },
+    {
+      "cell": "L40",
+      "column_name": "重要程度",
+      "old": "★★★★★",
+      "new": "5"
+    },
+    {
+      "cell": "L41",
+      "column_name": "重要程度",
+      "old": "★★★★★",
+      "new": "5"
+    },
+    {
+      "cell": "L42",
+      "column_name": "重要程度",
+      "old": "★★★★★",
+      "new": "5"
+    },
+    {
+      "cell": "L43",
+      "column_name": "重要程度",
+      "old": "★★★★★",
+      "new": "5"
+    },
+    {
+      "cell": "L44",
+      "column_name": "重要程度",
+      "old": "★★★★☆",
+      "new": "4"
+    },
+    {
+      "cell": "L45",
+      "column_name": "重要程度",
+      "old": "★★★★☆",
+      "new": "4"
+    },
+    {
+      "cell": "L46",
+      "column_name": "重要程度",
+      "old": "★★★★☆",
+      "new": "4"
+    },
+    {
+      "cell": "L47",
+      "column_name": "重要程度",
+      "old": "★★★★☆",
+      "new": "4"
+    },
+    {
+      "cell": "L48",
+      "column_name": "重要程度",
+      "old": "★★★★☆",
+      "new": "4"
+    },
+    {
+      "cell": "L49",
+      "column_name": "重要程度",
+      "old": "★★★★☆",
+      "new": "4"
+    },
+    {
+      "cell": "L50",
+      "column_name": "重要程度",
+      "old": "★★★★☆",
+      "new": "4"
+    },
+    {
+      "cell": "L51",
+      "column_name": "重要程度",
+      "old": "★★★★☆",
+      "new": "4"
+    },
+    {
+      "cell": "L52",
+      "column_name": "重要程度",
+      "old": "★★★★★",
+      "new": "5"
+    },
+    {
+      "cell": "L53",
+      "column_name": "重要程度",
+      "old": "★★★★☆",
+      "new": "4"
+    },
+    {
+      "cell": "L54",
+      "column_name": "重要程度",
+      "old": "★★★★★",
+      "new": "5"
+    },
+    {
+      "cell": "L55",
+      "column_name": "重要程度",
+      "old": "★★★★☆",
+      "new": "4"
+    },
+    {
+      "cell": "L56",
+      "column_name": "重要程度",
+      "old": "★★★★☆",
+      "new": "4"
+    },
+    {
+      "cell": "L57",
+      "column_name": "重要程度",
+      "old": "★★★☆☆",
+      "new": "3"
+    },
+    {
+      "cell": "L58",
+      "column_name": "重要程度",
+      "old": "★★★★★",
+      "new": "5"
+    },
+    {
+      "cell": "L59",
+      "column_name": "重要程度",
+      "old": "★★★★☆",
+      "new": "4"
+    },
+    {
+      "cell": "L60",
+      "column_name": "重要程度",
+      "old": "★★★★★",
+      "new": "5"
+    },
+    {
+      "cell": "L61",
+      "column_name": "重要程度",
+      "old": "★★★★☆",
+      "new": "4"
+    },
+    {
+      "cell": "L62",
+      "column_name": "重要程度",
+      "old": "★★★★☆",
+      "new": "4"
+    },
+    {
+      "cell": "L63",
+      "column_name": "重要程度",
+      "old": "★★★★☆",
+      "new": "4"
+    },
+    {
+      "cell": "L64",
+      "column_name": "重要程度",
+      "old": "★★★★☆",
+      "new": "4"
+    },
+    {
+      "cell": "L65",
+      "column_name": "重要程度",
+      "old": "★★★★☆",
+      "new": "4"
+    },
+    {
+      "cell": "L66",
+      "column_name": "重要程度",
+      "old": "★★★★★",
+      "new": "5"
+    },
+    {
+      "cell": "L67",
+      "column_name": "重要程度",
+      "old": "★★★★☆",
+      "new": "4"
+    },
+    {
+      "cell": "L68",
+      "column_name": "重要程度",
+      "old": "★★★★☆",
+      "new": "4"
+    },
+    {
+      "cell": "L69",
+      "column_name": "重要程度",
+      "old": "★★★★☆",
+      "new": "4"
+    },
+    {
+      "cell": "L70",
+      "column_name": "重要程度",
+      "old": "★★★★★",
+      "new": "5"
+    },
+    {
+      "cell": "L71",
+      "column_name": "重要程度",
+      "old": "★★★★☆",
+      "new": "4"
+    },
+    {
+      "cell": "L72",
+      "column_name": "重要程度",
+      "old": "★★★★★",
+      "new": "5"
+    },
+    {
+      "cell": "L73",
+      "column_name": "重要程度",
+      "old": "★★★★★",
+      "new": "5"
+    },
+    {
+      "cell": "L74",
+      "column_name": "重要程度",
+      "old": "★★★★★",
+      "new": "5"
+    },
+    {
+      "cell": "L75",
+      "column_name": "重要程度",
+      "old": "★★★★☆",
+      "new": "4"
+    },
+    {
+      "cell": "L76",
+      "column_name": "重要程度",
+      "old": "★★★★☆",
+      "new": "4"
+    },
+    {
+      "cell": "L77",
+      "column_name": "重要程度",
+      "old": "★★★★☆",
+      "new": "4"
+    },
+    {
+      "cell": "L78",
+      "column_name": "重要程度",
+      "old": "★★★★★",
+      "new": "5"
+    },
+    {
+      "cell": "L79",
+      "column_name": "重要程度",
+      "old": "★★★★★",
+      "new": "5"
+    },
+    {
+      "cell": "L80",
+      "column_name": "重要程度",
+      "old": "★★★★★",
+      "new": "5"
+    },
+    {
+      "cell": "L81",
+      "column_name": "重要程度",
+      "old": "★★★☆☆",
+      "new": "3"
+    },
+    {
+      "cell": "L82",
+      "column_name": "重要程度",
+      "old": "★★★★☆",
+      "new": "4"
+    },
+    {
+      "cell": "L83",
+      "column_name": "重要程度",
+      "old": "★★★★☆",
+      "new": "4"
+    },
+    {
+      "cell": "L84",
+      "column_name": "重要程度",
+      "old": "★★★★☆",
+      "new": "4"
+    },
+    {
+      "cell": "L85",
+      "column_name": "重要程度",
+      "old": "★★★★☆",
+      "new": "4"
+    },
+    {
+      "cell": "L86",
+      "column_name": "重要程度",
+      "old": "★★★★★",
+      "new": "5"
+    },
+    {
+      "cell": "L87",
+      "column_name": "重要程度",
+      "old": "★★★★☆",
+      "new": "4"
+    },
+    {
+      "cell": "L88",
+      "column_name": "重要程度",
+      "old": "★★★★★",
+      "new": "5"
+    },
+    {
+      "cell": "L89",
+      "column_name": "重要程度",
+      "old": "★★★★★",
+      "new": "5"
+    },
+    {
+      "cell": "L90",
+      "column_name": "重要程度",
+      "old": "★★★☆☆",
+      "new": "3"
+    },
+    {
+      "cell": "L91",
+      "column_name": "重要程度",
+      "old": "★★★☆☆",
+      "new": "3"
+    },
+    {
+      "cell": "L92",
+      "column_name": "重要程度",
+      "old": "★★★★☆",
+      "new": "4"
+    },
+    {
+      "cell": "L93",
+      "column_name": "重要程度",
+      "old": "★★★☆☆",
+      "new": "3"
+    },
+    {
+      "cell": "L94",
+      "column_name": "重要程度",
+      "old": "★★★★☆",
+      "new": "4"
+    },
+    {
+      "cell": "L95",
+      "column_name": "重要程度",
+      "old": "★★★★☆",
+      "new": "4"
+    }
+  ],
+  "format_version": "simplified_v1.0",
+  "comparison_engine": "SimplifiedCSVComparator",
+  "timestamp": "2025-09-26T18:21:30.684964",
+  "star_normalization": true
+}

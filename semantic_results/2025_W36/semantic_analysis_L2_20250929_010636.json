@@ -1,0 +1,43 @@
+{
+  "metadata": {
+    "analysis_time": "2025-09-29 01:06:36",
+    "total_modifications": 1,
+    "layer1_passed": 0,
+    "layer2_analyzed": 1,
+    "processing_time": "11.3s"
+  },
+  "results": [
+    {
+      "modification_id": "M001",
+      "cell": "C5",
+      "column": "项目类型",
+      "old_value": "项目管理",
+      "new_value": "目标管理",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 80.0,
+        "reason": "类型变更"
+      },
+      "layer2_result": {
+        "risk_level": "MEDIUM",
+        "decision": "REVIEW",
+        "confidence": 75,
+        "reason": "项目类型从'项目管理'改为'目标管理'可能影响项目分类和后续处理流程，需要人工审查确认修改意图和影响范围"
+      },
+      "final_decision": "REVIEW",
+      "approval_required": true
+    }
+  ],
+  "summary": {
+    "approved": 0,
+    "conditional": 0,
+    "review_required": 1,
+    "rejected": 0,
+    "risk_distribution": {
+      "LOW": 0,
+      "MEDIUM": 0,
+      "HIGH": 1,
+      "CRITICAL": 0
+    }
+  }
+}

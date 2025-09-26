@@ -1,0 +1,138 @@
+{
+  "id": "20250928_171304_batch",
+  "start_time": "2025-09-28T17:13:04.818023",
+  "end_time": "2025-09-28T17:14:43.771214",
+  "status": "completed",
+  "results": {
+    "batch_mode": true,
+    "total_documents": 2,
+    "successful_documents": 2,
+    "documents": [
+      {
+        "name": "副本-测试版本-出国销售计划表",
+        "score_file": null,
+        "marked_file": null,
+        "upload_url": null
+      },
+      {
+        "name": "测试版本-小红书部门",
+        "score_file": "/root/projects/tencent-doc-manager/scoring_results/detailed/detailed_score_tmpktx9_oar_20250928_171349.json",
+        "marked_file": "/root/projects/tencent-doc-manager/excel_outputs/marked/tencent_测试版本-小红书部门_20250928_1714_midweek_W39_marked_20250928_171437_W00.xlsx",
+        "upload_url": null
+      }
+    ],
+    "comprehensive_file": "/root/projects/tencent-doc-manager/scoring_results/2025_W39/comprehensive_score_W39_AUTO_20250928_171443.json",
+    "excel_urls": {},
+    "execution_time": "0:01:38.953191"
+  },
+  "logs": [
+    {
+      "timestamp": "17:13:17",
+      "level": "INFO",
+      "message": "开始L2语义分析和L1L3规则打分..."
+    },
+    {
+      "timestamp": "17:13:17",
+      "level": "INFO",
+      "message": "✅ 语义分析完成，分析了 19 处变更"
+    },
+    {
+      "timestamp": "17:13:17",
+      "level": "INFO",
+      "message": "生成详细打分JSON..."
+    },
+    {
+      "timestamp": "17:13:49",
+      "level": "INFO",
+      "message": "✅ 详细打分生成完成: detailed_score_tmpktx9_oar_20250928_171349.json"
+    },
+    {
+      "timestamp": "17:13:49",
+      "level": "INFO",
+      "message": "下载目标文档的Excel格式..."
+    },
+    {
+      "timestamp": "17:14:36",
+      "level": "INFO",
+      "message": "✅ Excel文档下载成功: tencent_测试版本-小红书部门_20250928_1714_midweek_W39.xlsx"
+    },
+    {
+      "timestamp": "17:14:36",
+      "level": "INFO",
+      "message": "修复腾讯文档Excel格式问题..."
+    },
+    {
+      "timestamp": "17:14:36",
+      "level": "INFO",
+      "message": "✅ Excel格式修复完成"
+    },
+    {
+      "timestamp": "17:14:36",
+      "level": "INFO",
+      "message": "应用条纹涂色标记..."
+    },
+    {
+      "timestamp": "17:14:37",
+      "level": "INFO",
+      "message": "✅ 涂色标记完成: tencent_测试版本-小红书部门_20250928_1714_midweek_W39_marked_20250928_171437_W00.xlsx"
+    },
+    {
+      "timestamp": "17:14:37",
+      "level": "INFO",
+      "message": "上传处理后的文档到腾讯文档..."
+    },
+    {
+      "timestamp": "17:14:43",
+      "level": "WARNING",
+      "message": "⚠️ 文档上传失败"
+    },
+    {
+      "timestamp": "17:14:43",
+      "level": "INFO",
+      "message": "📋 批量处理模式：跳过单文档综合打分，将在最后统一生成"
+    },
+    {
+      "timestamp": "17:14:43",
+      "level": "SUCCESS",
+      "message": "✅ 文档处理完成"
+    },
+    {
+      "timestamp": "17:14:43",
+      "level": "SUCCESS",
+      "message": "✅ 测试版本-小红书部门 详细打分已生成: /root/projects/tencent-doc-manager/scoring_results/detailed/detailed_score_tmpktx9_oar_20250928_171349.json"
+    },
+    {
+      "timestamp": "17:14:43",
+      "level": "INFO",
+      "message": "📊 开始生成多文档综合打分..."
+    },
+    {
+      "timestamp": "17:14:43",
+      "level": "INFO",
+      "message": "   使用配置的文档数 2 进行批量处理"
+    },
+    {
+      "timestamp": "17:14:43",
+      "level": "SUCCESS",
+      "message": "✅ 多文档综合打分已生成: /root/projects/tencent-doc-manager/scoring_results/2025_W39/comprehensive_score_W39_AUTO_20250928_171443.json"
+    },
+    {
+      "timestamp": "17:14:43",
+      "level": "INFO",
+      "message": "   包含 2 个表格的聚合数据"
+    },
+    {
+      "timestamp": "17:14:43",
+      "level": "SUCCESS",
+      "message": "🎉 批量处理完成! 成功处理 2 个文档"
+    }
+  ],
+  "settings": {
+    "task_type": "full",
+    "auto_download": true,
+    "enable_ai_analysis": true,
+    "enable_excel_marking": true,
+    "enable_upload": true,
+    "use_ai_standardization": true
+  }
+}

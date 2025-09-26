@@ -1,0 +1,43 @@
+{
+  "metadata": {
+    "analysis_time": "2025-09-29 12:42:41",
+    "total_modifications": 1,
+    "layer1_passed": 0,
+    "layer2_analyzed": 1,
+    "processing_time": "10.0s"
+  },
+  "results": [
+    {
+      "modification_id": "M001",
+      "cell": "C5",
+      "column": "项目类型",
+      "old_value": "体系建设",
+      "new_value": "项目管理",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 80.0,
+        "reason": "类型变更"
+      },
+      "layer2_result": {
+        "risk_level": "LOW",
+        "decision": "APPROVE",
+        "confidence": 90,
+        "reason": "项目类型的修改属于常见变更，且'体系建设'和'项目管理'都是标准项目分类，不会对整体项目造成重大影响。"
+      },
+      "final_decision": "APPROVE",
+      "approval_required": false
+    }
+  ],
+  "summary": {
+    "approved": 1,
+    "conditional": 0,
+    "review_required": 0,
+    "rejected": 0,
+    "risk_distribution": {
+      "LOW": 1,
+      "MEDIUM": 0,
+      "HIGH": 0,
+      "CRITICAL": 0
+    }
+  }
+}

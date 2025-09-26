@@ -1,0 +1,63 @@
+{
+  "id": "20250927_194031",
+  "start_time": "2025-09-27T19:40:31.310837",
+  "end_time": "2025-09-27T19:41:15.221340",
+  "status": "error",
+  "results": {},
+  "logs": [
+    {
+      "timestamp": "19:40:31",
+      "level": "INFO",
+      "message": "开始获取基线文档..."
+    },
+    {
+      "timestamp": "19:40:31",
+      "level": "INFO",
+      "message": "🔄 强制下载模式：跳过本地文件检查"
+    },
+    {
+      "timestamp": "19:40:31",
+      "level": "INFO",
+      "message": "开始下载基线文档并规范化存储..."
+    },
+    {
+      "timestamp": "19:40:31",
+      "level": "INFO",
+      "message": "📁 基线文件将存储到第39周"
+    },
+    {
+      "timestamp": "19:40:31",
+      "level": "INFO",
+      "message": "🌐 初始化浏览器下载器..."
+    },
+    {
+      "timestamp": "19:40:31",
+      "level": "INFO",
+      "message": "🔗 正在打开腾讯文档: https://docs.qq.com/sheet/DWEFNU25TemFnZXJN"
+    },
+    {
+      "timestamp": "19:40:31",
+      "level": "INFO",
+      "message": "🍪 设置Cookie认证..."
+    },
+    {
+      "timestamp": "19:40:31",
+      "level": "INFO",
+      "message": "⏳ 开始下载，请耐心等待（通常需要30-60秒）..."
+    },
+    {
+      "timestamp": "19:41:15",
+      "level": "INFO",
+      "message": "✅ 下载请求已完成"
+    },
+    {
+      "timestamp": "19:41:15",
+      "level": "ERROR",
+      "message": "❌ 执行出错: 基线文档下载或存储失败"
+    }
+  ],
+  "settings": {
+    "force_download": true,
+    "verbose_logging": true
+  }
+}

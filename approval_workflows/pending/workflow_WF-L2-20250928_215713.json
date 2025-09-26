@@ -1,0 +1,27 @@
+{
+  "workflow_id": "WF-L2-20250928_215713",
+  "created_time": "2025-09-28 21:57:13",
+  "pending_approvals": [
+    {
+      "modification_id": "M001",
+      "cell": "I10",
+      "column": "邓总指导登记（日更新）",
+      "old_value": "123123",
+      "new_value": "0",
+      "layer1_result": {
+        "judgment": "UNSURE",
+        "confidence": 60.0,
+        "reason": "数值清零"
+      },
+      "layer2_result": {
+        "risk_level": "MEDIUM",
+        "decision": "REVIEW",
+        "confidence": 75,
+        "reason": "将邓总指导登记的值从较大数值修改为0，可能存在数据误操作或特殊业务情况，需要人工确认修改意图"
+      },
+      "final_decision": "REVIEW",
+      "approval_required": true
+    }
+  ],
+  "auto_approved": []
+}

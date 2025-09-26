@@ -1,0 +1,131 @@
+{
+  "id": "20250928_211205_batch",
+  "start_time": "2025-09-28T21:12:05.232458",
+  "end_time": "2025-09-28T21:12:05.347612",
+  "status": "completed",
+  "results": {
+    "batch_mode": true,
+    "total_documents": 2,
+    "successful_documents": 2,
+    "documents": [
+      {
+        "name": "副本-测试版本-出国销售计划表",
+        "score_file": null,
+        "marked_file": null,
+        "upload_url": null
+      },
+      {
+        "name": "测试版本-小红书部门",
+        "score_file": null,
+        "marked_file": null,
+        "upload_url": null
+      }
+    ],
+    "comprehensive_file": "/root/projects/tencent-doc-manager/scoring_results/2025_W39/comprehensive_score_W39_AUTO_20250928_211205.json",
+    "excel_urls": {},
+    "execution_time": "0:00:00.115154"
+  },
+  "logs": [
+    {
+      "timestamp": "21:12:05",
+      "level": "INFO",
+      "message": "📊 基线策略: 使用已有基线 (自动判断)"
+    },
+    {
+      "timestamp": "21:12:05",
+      "level": "INFO",
+      "message": "📅 当前时间: 周7 21:00"
+    },
+    {
+      "timestamp": "21:12:05",
+      "level": "INFO",
+      "message": "📂 刷新模式：使用现有基线文件"
+    },
+    {
+      "timestamp": "21:12:05",
+      "level": "INFO",
+      "message": "📝 目标文档ID: DWEVjZndkR2xVSWJN"
+    },
+    {
+      "timestamp": "21:12:05",
+      "level": "INFO",
+      "message": "✅ 匹配基线: tencent_小红书部门_DWEVjZndkR2xVSWJN_20250926_2014_baseline_W39.csv (doc_id: DWEVjZndkR2xVSWJN)"
+    },
+    {
+      "timestamp": "21:12:05",
+      "level": "INFO",
+      "message": "✅ 找到匹配的基线文件: tencent_小红书部门_DWEVjZndkR2xVSWJN_20250926_2014_baseline_W39.csv"
+    },
+    {
+      "timestamp": "21:12:05",
+      "level": "INFO",
+      "message": "📊 基线描述: 使用本周(W39)基准版"
+    },
+    {
+      "timestamp": "21:12:05",
+      "level": "INFO",
+      "message": "开始获取目标文档..."
+    },
+    {
+      "timestamp": "21:12:05",
+      "level": "INFO",
+      "message": "✅ 使用本地目标文件: tencent_测试版本-小红书部门_20250928_1906_midweek_W39.xlsx"
+    },
+    {
+      "timestamp": "21:12:05",
+      "level": "INFO",
+      "message": "验证文档匹配性..."
+    },
+    {
+      "timestamp": "21:12:05",
+      "level": "WARNING",
+      "message": "⚠️ 警告：基线文档和目标文档可能不匹配！"
+    },
+    {
+      "timestamp": "21:12:05",
+      "level": "WARNING",
+      "message": "📊 基线文档: 小红书部门_DWEVjZndkR2xVSWJN"
+    },
+    {
+      "timestamp": "21:12:05",
+      "level": "WARNING",
+      "message": "📊 目标文档: 测试版本-小红书部门"
+    },
+    {
+      "timestamp": "21:12:05",
+      "level": "INFO",
+      "message": "开始对比分析..."
+    },
+    {
+      "timestamp": "21:12:05",
+      "level": "ERROR",
+      "message": "❌ 执行出错: expected <class 'openpyxl.styles.fills.Fill'>"
+    },
+    {
+      "timestamp": "21:12:05",
+      "level": "INFO",
+      "message": "📊 开始生成多文档综合打分..."
+    },
+    {
+      "timestamp": "21:12:05",
+      "level": "INFO",
+      "message": "   使用配置的文档数 2 进行批量处理"
+    },
+    {
+      "timestamp": "21:12:05",
+      "level": "SUCCESS",
+      "message": "✅ 多文档综合打分已生成: /root/projects/tencent-doc-manager/scoring_results/2025_W39/comprehensive_score_W39_AUTO_20250928_211205.json"
+    },
+    {
+      "timestamp": "21:12:05",
+      "level": "INFO",
+      "message": "   包含 2 个表格的聚合数据"
+    },
+    {
+      "timestamp": "21:12:05",
+      "level": "SUCCESS",
+      "message": "🎉 批量处理完成! 成功处理 2 个文档"
+    }
+  ],
+  "settings": {}
+}

@@ -10,6 +10,7 @@ import json
 from pathlib import Path
 from datetime import datetime
 from typing import Dict, List, Any, Set
+import openpyxl
 
 class SimplifiedCSVComparator:
     """简化的CSV对比器 - 只输出核心信息"""
@@ -29,6 +30,36 @@ class SimplifiedCSVComparator:
     def get_cell_address(self, row: int, col: int) -> str:
         """获取单元格地址（如A1, B2, C3等）"""
         return f"{self.get_column_letter(col)}{row + 1}"
+
+    def _read_file(self, file_path: str) -> List[List[str]]:
+        """读取CSV或XLSX文件，返回二维数组"""
+        file_path = Path(file_path)
+
+        # 根据文件扩展名判断格式
+        if file_path.suffix.lower() == '.xlsx':
+            # 读取XLSX文件
+            try:
+                workbook = openpyxl.load_workbook(file_path, data_only=True)
+                sheet = workbook.active
+                data = []
+                for row in sheet.iter_rows(values_only=True):
+                    # 将None转换为空字符串，确保与CSV格式一致
+                    row_data = [str(cell) if cell is not None else '' for cell in row]
+                    data.append(row_data)
+                workbook.close()
+                return data
+            except Exception as e:
+                print(f"读取XLSX文件失败 {file_path}: {str(e)}")
+                raise
+        else:
+            # 读取CSV文件
+            try:
+                with open(file_path, 'r', encoding='utf-8') as f:
+                    return list(csv.reader(f))
+            except UnicodeDecodeError:
+                # 尝试其他编码
+                with open(file_path, 'r', encoding='gbk') as f:
+                    return list(csv.reader(f))
     
     def compare(self, baseline_path: str, target_path: str, 
                 output_dir: str = None) -> Dict[str, Any]:
@@ -56,12 +87,9 @@ class SimplifiedCSVComparator:
                 }
             }
         """
-        # 读取CSV文件
-        with open(baseline_path, 'r', encoding='utf-8') as f:
-            baseline_data = list(csv.reader(f))
-        
-        with open(target_path, 'r', encoding='utf-8') as f:
-            target_data = list(csv.reader(f))
+        # 读取文件（支持CSV和XLSX）
+        baseline_data = self._read_file(baseline_path)
+        target_data = self._read_file(target_path)
         
         # 腾讯文档CSV格式：
         # 第0行：标题行（如"2025年项目计划与安排表"）

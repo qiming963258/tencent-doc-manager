@@ -1,0 +1,116 @@
+{
+  "metadata": {
+    "version": "2.0",
+    "timestamp": "2025-09-28T23:11:40.577620",
+    "week": "W39",
+    "generator": "auto_comprehensive_generator_batch",
+    "source_type": "multi_document_scoring",
+    "baseline_week": "W39",
+    "comparison_week": "W39"
+  },
+  "summary": {
+    "total_tables": 2,
+    "total_columns": 19,
+    "total_modifications": 37,
+    "l1_modifications": 13,
+    "l2_modifications": 9,
+    "l3_modifications": 15,
+    "overall_risk_score": 0.58,
+    "processing_status": "complete",
+    "data_source": "batch_auto_generated"
+  },
+  "table_names": [
+    "小红书部门_DWEVjZndkR2xVSWJN",
+    "文档_tmpioz24xuq"
+  ],
+  "column_names": [
+    "序号",
+    "项目类型",
+    "来源",
+    "任务发起时间",
+    "目标对齐",
+    "关键KR对齐",
+    "具体计划内容",
+    "邓总指导登记",
+    "负责人",
+    "协助人",
+    "监督人",
+    "重要程度",
+    "预计完成时间",
+    "完成进度",
+    "完成链接",
+    "经理分析复盘",
+    "最新复盘时间",
+    "对上汇报",
+    "应用情况"
+  ],
+  "heatmap_data": {
+    "matrix": [
+      [
+        0.05,
+        0.05,
+        0.9,
+        0.9,
+        0.9,
+        0.9,
+        0.6,
+        0.3,
+        0.6,
+        0.6,
+        0.6,
+        0.9,
+        0.9,
+        0.9,
+        0.05,
+        0.05,
+        0.05,
+        0.05,
+        0.05
+      ],
+      [
+        0.3,
+        0.6,
+        0.9,
+        0.9,
+        0.9,
+        0.9,
+        0.6,
+        0.6,
+        0.6,
+        0.6,
+        0.05,
+        0.9,
+        0.9,
+        0.3,
+        0.3,
+        0.3,
+        0.05,
+        0.05,
+        0.05
+      ]
+    ],
+    "rows": 2,
+    "cols": 19,
+    "generation_method": "batch_risk_based_auto",
+    "color_distribution": {
+      "red_0.9": 13,
+      "orange_0.6": 9,
+      "green_0.3": 5,
+      "blue_0.05": 11
+    }
+  },
+  "table_details": {
+    "小红书部门_DWEVjZndkR2xVSWJN": {
+      "total_rows": 270,
+      "modified_rows": 19,
+      "added_rows": 0,
+      "deleted_rows": 0
+    },
+    "文档_tmpioz24xuq": {
+      "total_rows": 270,
+      "modified_rows": 18,
+      "added_rows": 0,
+      "deleted_rows": 0
+    }
+  }
+}

@@ -2210,17 +2210,36 @@ def handle_baseline_files():
             from production.core_modules.tencent_export_automation import TencentDocAutoExporter
             exporter = TencentDocAutoExporter()
 
+            # 提取doc_id用于规范文件名
+            doc_id = url.split('/')[-1].split('?')[0]
+
+            # 检查是否已存在基线文件
+            existing_baselines = [f for f in os.listdir(baseline_dir)
+                                if f.endswith('.csv') and doc_id in f and 'baseline' in f]
+            if existing_baselines:
+                return jsonify({
+                    'success': False,
+                    'error': f'基线文件已存在: {existing_baselines[0]}',
+                    'existing_file': existing_baselines[0]
+                })
+
             # 下载文件
             result = exporter.export_document(url, cookie_string, 'csv')
             success = result.get('success', False)
-            
+
             if success:
-                # 移动文件到基线文件夹
+                # 生成规范文件名
                 source_path = result.get('file_path')
                 if source_path and os.path.exists(source_path):
-                    filename = os.path.basename(source_path)
+                    # 从下载文件名中提取文档名
+                    original_name = os.path.basename(source_path)
+                    doc_name = original_name.replace('.csv', '').replace('.xlsx', '')
+
+                    # 生成规范的基线文件名
+                    timestamp = datetime.datetime.now().strftime('%Y%m%d_%H%M')
+                    filename = f"tencent_{doc_name}_{doc_id}_{timestamp}_baseline_W{post_week:02d}.csv"
                     target_path = os.path.join(baseline_dir, filename)
-                    
+
                     import shutil
                     shutil.move(source_path, target_path)
                     
@@ -2610,11 +2629,10 @@ def start_download():
                         'advanced_settings': {
                             'task_type': task_type,
                             'auto_download': True,
-                            'force_download': True,
+                            # 不再强制下载，让8093根据时间智能判断
                             'enable_ai_analysis': True,
                             'enable_excel_marking': True,
                             'enable_upload': True,
-                            'use_existing_baseline': True,  # 使用现有基线
                             'use_ai_standardization': True
                         }
                     }
@@ -3329,11 +3347,11 @@ def excel_export():
                 bottom=Side(style='medium')
             )
         
-        # 风险等级颜色配置
+        # 风险等级颜色配置（符合规范文档和腾讯文档兼容性）
         risk_colors = {
-            "L1": {"fill": "DC2626", "font": "FFFFFF"},  # 红色
-            "L2": {"fill": "F59E0B", "font": "FFFFFF"},  # 橙色
-            "L3": {"fill": "10B981", "font": "FFFFFF"}   # 绿色
+            "L1": {"fill": "FFCCCC", "font": "CC0000"},  # 浅红色（规范指定）
+            "L2": {"fill": "FFFFCC", "font": "FF8800"},  # 浅黄色（规范指定）
+            "L3": {"fill": "CCFFCC", "font": "008800"}   # 浅绿色（规范指定）
         }
         
         # 填充数据
@@ -3363,7 +3381,8 @@ def excel_export():
                 
                 # 风险等级列特殊标记
                 if col == 6:  # 风险等级列
-                    cell.fill = PatternFill(start_color=color_config["fill"], end_color=color_config["fill"], fill_type="lightUp")
+                    # ⚠️ 重要：必须使用solid填充，腾讯文档不支持lightUp
+                    cell.fill = PatternFill(start_color=color_config["fill"], end_color=color_config["fill"], fill_type="solid")
                     cell.font = Font(color=color_config["font"], bold=True)
                     
                     # 添加批注
@@ -7568,9 +7587,9 @@ def index():
                           隐藏
                         </button>
                       </div>
-                      <div 
+                      <div
                         className="bg-slate-900 text-green-400 p-3 rounded-md text-xs font-mono overflow-y-auto"
-                        style={{ maxHeight: '300px', minHeight: '150px' }}
+                        style={{ maxHeight: '1200px', minHeight: '300px' }}
                       >
                         {workflowLogs.length === 0 ? (
                           <div className="text-slate-500">等待日志...</div>
@@ -8329,7 +8348,18 @@ def index():
 
           // 加载API数据 - 仅在组件挂载时执行一次
           React.useEffect(() => {
-            fetchApiData();
+            console.log('🚨🚨🚨 页面加载 - 开始获取API数据');
+            console.log('🔍 fetchApiData函数是否存在?', typeof fetchApiData);
+
+            // 添加短暂延迟确保组件完全挂载
+            const loadData = async () => {
+              await new Promise(resolve => setTimeout(resolve, 100));
+              console.log('🔄 延迟100ms后开始获取数据...');
+              await fetchApiData();
+              console.log('✅ fetchApiData调用完成');
+            };
+
+            loadData();
 
             // 禁用自动刷新功能 - 根据用户要求
             // const scheduleWeeklyRefresh = () => {

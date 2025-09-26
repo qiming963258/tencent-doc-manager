@@ -1,0 +1,69 @@
+{
+  "id": "20250929_031740",
+  "start_time": "2025-09-29T03:17:40.088453",
+  "end_time": "2025-09-29T03:17:40.104175",
+  "status": "error",
+  "results": {},
+  "logs": [
+    {
+      "timestamp": "03:17:40",
+      "level": "INFO",
+      "message": "开始获取基线文档..."
+    },
+    {
+      "timestamp": "03:17:40",
+      "level": "INFO",
+      "message": "📊 基线策略: 使用已有基线 (自动判断)"
+    },
+    {
+      "timestamp": "03:17:40",
+      "level": "INFO",
+      "message": "📅 当前时间: 周1 03:00"
+    },
+    {
+      "timestamp": "03:17:40",
+      "level": "INFO",
+      "message": "📂 刷新模式：使用现有基线文件"
+    },
+    {
+      "timestamp": "03:17:40",
+      "level": "INFO",
+      "message": "📝 目标文档ID: DWGZDZkxpaGVQaURr"
+    },
+    {
+      "timestamp": "03:17:40",
+      "level": "ERROR",
+      "message": "❌ 未找到匹配的基线文件！"
+    },
+    {
+      "timestamp": "03:17:40",
+      "level": "ERROR",
+      "message": "📊 目标doc_id: DWGZDZkxpaGVQaURr"
+    },
+    {
+      "timestamp": "03:17:40",
+      "level": "ERROR",
+      "message": "📊 可用基线: tencent_出国销售计划表_DWEFNU25TemFnZXJN_20250926_2011_baseline_W39.csv, tencent_小红书部门_DWEVjZndkR2xVSWJN_20250926_2014_baseline_W39.csv, tencent_出国销售计划表_DWEFNU25TemFnZXJN_20250929_0103_baseline_W39.csv, tencent_出国销售计划表_DWEFNU25TemFnZXJN_20250929_0116_baseline_W39.csv, tencent_出国销售计划表_DWEFNU25TemFnZXJN_20250929_0154_baseline_W39.csv"
+    },
+    {
+      "timestamp": "03:17:40",
+      "level": "ERROR",
+      "message": "📊 可用基线doc_ids: tencent_出国销售计划表_DWEFNU25TemFnZXJN_20250926_2011_baseline_W39.csv (doc_id: DWEFNU25TemFnZXJN), tencent_小红书部门_DWEVjZndkR2xVSWJN_20250926_2014_baseline_W39.csv (doc_id: DWEVjZndkR2xVSWJN), tencent_出国销售计划表_DWEFNU25TemFnZXJN_20250929_0103_baseline_W39.csv (doc_id: DWEFNU25TemFnZXJN), tencent_出国销售计划表_DWEFNU25TemFnZXJN_20250929_0116_baseline_W39.csv (doc_id: DWEFNU25TemFnZXJN), tencent_出国销售计划表_DWEFNU25TemFnZXJN_20250929_0154_baseline_W39.csv (doc_id: DWEFNU25TemFnZXJN)"
+    },
+    {
+      "timestamp": "03:17:40",
+      "level": "ERROR",
+      "message": "❌ 基线文件查找失败: 未找到与doc_id 'DWGZDZkxpaGVQaURr'匹配的基线文件，请先下载对应的基线"
+    },
+    {
+      "timestamp": "03:17:40",
+      "level": "ERROR",
+      "message": "❌ 执行出错: 未找到与doc_id 'DWGZDZkxpaGVQaURr'匹配的基线文件，请先下载对应的基线"
+    }
+  ],
+  "settings": {
+    "use_cached_baseline": false,
+    "use_cached_target": false,
+    "auto_upload": true
+  }
+}

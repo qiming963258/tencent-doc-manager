@@ -1,0 +1,27 @@
+{
+  "workflow_id": "WF-L2-20250928_190518",
+  "created_time": "2025-09-28 19:05:18",
+  "pending_approvals": [
+    {
+      "modification_id": "M001",
+      "cell": "K13",
+      "column": "监督人",
+      "old_value": "邓总",
+      "new_value": "林蔼茹",
+      "layer1_result": {
+        "judgment": "RISKY",
+        "confidence": 80.0,
+        "reason": "关键人变更"
+      },
+      "layer2_result": {
+        "risk_level": "MEDIUM",
+        "decision": "REVIEW",
+        "confidence": 75,
+        "reason": "监督人变更可能影响项目管理权限，需人工确认交接信息"
+      },
+      "final_decision": "REVIEW",
+      "approval_required": true
+    }
+  ],
+  "auto_approved": []
+}

@@ -1,0 +1,131 @@
+{
+  "id": "20250927_214153_batch",
+  "start_time": "2025-09-27T21:41:53.823690",
+  "end_time": "2025-09-27T21:43:27.985889",
+  "status": "completed",
+  "results": {
+    "batch_mode": true,
+    "total_documents": 2,
+    "successful_documents": 2,
+    "documents": [
+      {
+        "name": "副本-测试版本-出国销售计划表",
+        "score_file": null,
+        "marked_file": null,
+        "upload_url": null
+      },
+      {
+        "name": "测试版本-小红书部门",
+        "score_file": null,
+        "marked_file": null,
+        "upload_url": null
+      }
+    ],
+    "comprehensive_file": "/root/projects/tencent-doc-manager/scoring_results/2025_W39/comprehensive_score_W39_AUTO_20250927_214327.json",
+    "excel_urls": {},
+    "execution_time": "0:01:34.162199"
+  },
+  "logs": [
+    {
+      "timestamp": "21:41:53",
+      "level": "INFO",
+      "message": "🍪 设置Cookie认证..."
+    },
+    {
+      "timestamp": "21:41:53",
+      "level": "INFO",
+      "message": "⏳ 开始下载，请耐心等待（通常需要30-60秒）..."
+    },
+    {
+      "timestamp": "21:42:40",
+      "level": "INFO",
+      "message": "✅ 下载请求已完成"
+    },
+    {
+      "timestamp": "21:42:40",
+      "level": "ERROR",
+      "message": "❌ 执行出错: 基线文档下载或存储失败"
+    },
+    {
+      "timestamp": "21:42:40",
+      "level": "INFO",
+      "message": "📄 开始处理: 测试版本-小红书部门"
+    },
+    {
+      "timestamp": "21:42:40",
+      "level": "INFO",
+      "message": "开始获取基线文档..."
+    },
+    {
+      "timestamp": "21:42:40",
+      "level": "INFO",
+      "message": "🔄 强制下载模式：跳过本地文件检查"
+    },
+    {
+      "timestamp": "21:42:40",
+      "level": "INFO",
+      "message": "开始下载基线文档并规范化存储..."
+    },
+    {
+      "timestamp": "21:42:40",
+      "level": "INFO",
+      "message": "📁 基线文件将存储到第39周"
+    },
+    {
+      "timestamp": "21:42:40",
+      "level": "INFO",
+      "message": "🌐 初始化浏览器下载器..."
+    },
+    {
+      "timestamp": "21:42:40",
+      "level": "INFO",
+      "message": "🔗 正在打开腾讯文档: https://docs.qq.com/sheet/DWEVjZndkR2xVSWJN?tab=c2p5hs"
+    },
+    {
+      "timestamp": "21:42:40",
+      "level": "INFO",
+      "message": "🍪 设置Cookie认证..."
+    },
+    {
+      "timestamp": "21:42:40",
+      "level": "INFO",
+      "message": "⏳ 开始下载，请耐心等待（通常需要30-60秒）..."
+    },
+    {
+      "timestamp": "21:43:27",
+      "level": "INFO",
+      "message": "✅ 下载请求已完成"
+    },
+    {
+      "timestamp": "21:43:27",
+      "level": "ERROR",
+      "message": "❌ 执行出错: 基线文档下载或存储失败"
+    },
+    {
+      "timestamp": "21:43:27",
+      "level": "INFO",
+      "message": "📊 开始生成多文档综合打分..."
+    },
+    {
+      "timestamp": "21:43:27",
+      "level": "INFO",
+      "message": "   使用配置的文档数 2 进行批量处理"
+    },
+    {
+      "timestamp": "21:43:27",
+      "level": "SUCCESS",
+      "message": "✅ 多文档综合打分已生成: /root/projects/tencent-doc-manager/scoring_results/2025_W39/comprehensive_score_W39_AUTO_20250927_214327.json"
+    },
+    {
+      "timestamp": "21:43:27",
+      "level": "INFO",
+      "message": "   包含 2 个表格的聚合数据"
+    },
+    {
+      "timestamp": "21:43:27",
+      "level": "SUCCESS",
+      "message": "🎉 批量处理完成! 成功处理 2 个文档"
+    }
+  ],
+  "settings": {}
+}

@@ -1,0 +1,22 @@
+{
+  "workflow_id": "WF-L2-20250929_011923",
+  "created_time": "2025-09-29 01:19:23",
+  "pending_approvals": [],
+  "auto_approved": [
+    {
+      "modification_id": "M001",
+      "cell": "I10",
+      "column": "邓总指导登记（日更新）",
+      "old_value": "0",
+      "new_value": "",
+      "layer1_result": {
+        "judgment": "SAFE",
+        "confidence": 90.0,
+        "reason": "格式调整"
+      },
+      "layer2_result": null,
+      "final_decision": "APPROVE",
+      "approval_required": false
+    }
+  ]
+}

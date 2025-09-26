@@ -1,7 +1,7 @@
 {
   "metadata": {
     "version": "2.0",
-    "timestamp": "2025-09-26T15:08:00.305179",
+    "timestamp": "2025-09-28T23:14:32.767654",
     "week": "W39",
     "generator": "auto_comprehensive_generator_batch",
     "source_type": "multi_document_scoring",
@@ -9,23 +9,19 @@
     "comparison_week": "W39"
   },
   "summary": {
-    "total_tables": 6,
+    "total_tables": 2,
     "total_columns": 19,
-    "total_modifications": 36,
-    "l1_modifications": 12,
-    "l2_modifications": 10,
-    "l3_modifications": 14,
+    "total_modifications": 37,
+    "l1_modifications": 13,
+    "l2_modifications": 9,
+    "l3_modifications": 15,
     "overall_risk_score": 0.58,
     "processing_status": "complete",
     "data_source": "batch_auto_generated"
   },
   "table_names": [
-    "小红书部门",
-    "文档_tmpda4nxi33",
-    "文档_tmpgr4e7j5g",
-    "文档_tmp6fv00kll",
-    "文档_tmpbqfjvr5s",
-    "文档_tmp7uvz6lwr"
+    "文档_tmpohvb7jmt",
+    "文档_tmpioz24xuq"
   ],
   "column_names": [
     "序号",
@@ -53,102 +49,18 @@
       [
         0.05,
         0.05,
-        0.05,
-        0.05,
-        0.05,
-        0.05,
-        0.05,
-        0.05,
-        0.05,
-        0.05,
-        0.05,
-        0.05,
-        0.05,
-        0.05,
-        0.05,
-        0.05,
-        0.05,
-        0.05,
-        0.05
-      ],
-      [
-        0.05,
-        0.05,
-        0.05,
-        0.05,
-        0.05,
-        0.05,
-        0.05,
-        0.05,
-        0.05,
-        0.05,
-        0.05,
-        0.05,
-        0.05,
-        0.05,
-        0.05,
-        0.05,
-        0.05,
-        0.05,
-        0.05
-      ],
-      [
+        0.9,
+        0.9,
+        0.9,
+        0.9,
+        0.6,
         0.3,
         0.6,
-        0.9,
-        0.9,
-        0.9,
-        0.9,
         0.6,
         0.6,
-        0.6,
-        0.6,
-        0.05,
         0.9,
         0.9,
-        0.3,
-        0.3,
-        0.3,
-        0.05,
-        0.05,
-        0.05
-      ],
-      [
-        0.05,
-        0.05,
-        0.05,
-        0.05,
-        0.05,
-        0.05,
-        0.05,
-        0.05,
-        0.05,
-        0.05,
-        0.05,
-        0.05,
-        0.05,
-        0.05,
-        0.05,
-        0.05,
-        0.05,
-        0.05,
-        0.05
-      ],
-      [
-        0.05,
-        0.05,
-        0.05,
-        0.05,
-        0.05,
-        0.05,
-        0.05,
-        0.05,
-        0.05,
-        0.05,
-        0.05,
-        0.05,
-        0.05,
-        0.05,
+        0.9,
         0.05,
         0.05,
         0.05,
@@ -177,57 +89,28 @@
         0.05
       ]
     ],
-    "rows": 6,
+    "rows": 2,
     "cols": 19,
     "generation_method": "batch_risk_based_auto",
     "color_distribution": {
-      "red_0.9": 12,
-      "orange_0.6": 10,
-      "green_0.3": 8,
-      "blue_0.05": 84
+      "red_0.9": 13,
+      "orange_0.6": 9,
+      "green_0.3": 5,
+      "blue_0.05": 11
     }
   },
   "table_details": {
-    "小红书部门": {
+    "文档_tmpohvb7jmt": {
       "total_rows": 270,
-      "modified_rows": 0,
+      "modified_rows": 19,
       "added_rows": 0,
       "deleted_rows": 0
     },
-    "文档_tmpda4nxi33": {
-      "total_rows": 270,
-      "modified_rows": 0,
-      "added_rows": 0,
-      "deleted_rows": 0
-    },
-    "文档_tmpgr4e7j5g": {
-      "total_rows": 270,
-      "modified_rows": 18,
-      "added_rows": 0,
-      "deleted_rows": 0
-    },
-    "文档_tmp6fv00kll": {
-      "total_rows": 270,
-      "modified_rows": 0,
-      "added_rows": 0,
-      "deleted_rows": 0
-    },
-    "文档_tmpbqfjvr5s": {
-      "total_rows": 270,
-      "modified_rows": 0,
-      "added_rows": 0,
-      "deleted_rows": 0
-    },
-    "文档_tmp7uvz6lwr": {
+    "文档_tmpioz24xuq": {
       "total_rows": 270,
       "modified_rows": 18,
       "added_rows": 0,
       "deleted_rows": 0
     }
-  },
-  "excel_urls": {
-    "副本-测试版本-出国销售计划表": "https://docs.qq.com/sheet/DWE5teXJTemVXZmxE",
-    "副本-测试版本-回国销售计划表": "https://docs.qq.com/sheet/DWEVySWRiZVhHdWN3",
-    "测试版本-小红书部门": "https://docs.qq.com/sheet/DWG1DTEFhSW9tTVJm"
   }
 }

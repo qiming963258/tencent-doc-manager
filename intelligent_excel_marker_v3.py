@@ -41,21 +41,21 @@ class IntelligentExcelMarkerV3:
         self.output_dir = Path("/root/projects/tencent-doc-manager/excel_outputs/marked")
         self.output_dir.mkdir(parents=True, exist_ok=True)
 
-        # 风险级别对应的颜色（纯色填充，兼容腾讯文档）
+        # 风险级别对应的颜色（纯色填充，符合规范文档及腾讯文档兼容）
         self.risk_colors = {
             'HIGH': {
-                'bg_color': 'FFCCCC',    # 浅红色背景
+                'bg_color': 'FFCCCC',    # 浅红色背景（规范指定）
                 'font_color': 'CC0000',   # 深红色字体
                 'border': True
             },
             'MEDIUM': {
-                'bg_color': 'FFE5CC',    # 浅橙色背景
+                'bg_color': 'FFFFCC',    # 浅黄色背景（规范指定）
                 'font_color': 'FF6600',   # 橙色字体
                 'border': True
             },
             'LOW': {
-                'bg_color': 'FFFFCC',    # 浅黄色背景
-                'font_color': 'CC9900',   # 深黄色字体
+                'bg_color': 'CCFFCC',    # 浅绿色背景（规范指定）
+                'font_color': '008800',   # 绿色字体
                 'border': False
             }
         }
@@ -120,11 +120,11 @@ class IntelligentExcelMarkerV3:
         """
         colors = self.risk_colors[risk_level]
 
-        # 应用背景色
+        # 应用背景色（使用新语法，腾讯文档兼容）
         cell.fill = PatternFill(
-            patternType='solid',
-            fgColor=colors['bg_color'],
-            bgColor=colors['bg_color']
+            start_color=colors['bg_color'],
+            end_color=colors['bg_color'],
+            fill_type='solid'  # 必须使用solid，腾讯文档唯一支持
         )
 
         # 应用字体颜色
@@ -222,6 +222,16 @@ class IntelligentExcelMarkerV3:
 
         for cell_ref, cell_data in cell_scores.items():
             try:
+                # 转换单元格引用格式（从 "行_列" 到 "列字母行号"）
+                if '_' in cell_ref:
+                    # 格式: "10_3" -> row=10, col=3 -> "C10"
+                    parts = cell_ref.split('_')
+                    row = int(parts[0])
+                    col = int(parts[1])
+                    # 转换列号到字母
+                    from openpyxl.utils import get_column_letter
+                    cell_ref = get_column_letter(col) + str(row)
+
                 # 获取单元格
                 cell = ws[cell_ref]
 

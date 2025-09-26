@@ -1,0 +1,121 @@
+{
+  "id": "20250929_140047_batch",
+  "start_time": "2025-09-29T14:00:47.760593",
+  "end_time": null,
+  "status": "running",
+  "results": {
+    "baseline_file": "/root/projects/tencent-doc-manager/csv_versions/2025_W39/baseline/tencent_出国销售计划表_DWEFNU25TemFnZXJN_20250926_2011_baseline_W39.csv",
+    "target_file": "/root/projects/tencent-doc-manager/csv_versions/2025_W40/midweek/tencent_出国销售计划表_DWEFNU25TemFnZXJN_20250929_1401_midweek_W40.csv",
+    "score_file": "/root/projects/tencent-doc-manager/scoring_results/detailed/detailed_score_tmp9xgcbcnq_20250929_140234.json",
+    "marked_file": "/root/projects/tencent-doc-manager/excel_outputs/marked/tencent_111测试版本-出国销售计划表_20250929_1403_midweek_W40_marked_20250929_140330_W00.xlsx",
+    "upload_url": "https://docs.qq.com/sheet/DWGRya0tsUnhVTWZU",
+    "comprehensive_file": "/root/projects/tencent-doc-manager/scoring_results/2025_W40/comprehensive_score_W40_AUTO_20250929_124726.json",
+    "execution_time": null
+  },
+  "logs": [
+    {
+      "timestamp": "14:01:48",
+      "level": "INFO",
+      "message": "✅ 文档匹配验证通过: 出国销售计划表_DWEFNU25TemFnZXJN"
+    },
+    {
+      "timestamp": "14:01:48",
+      "level": "INFO",
+      "message": "开始对比分析..."
+    },
+    {
+      "timestamp": "14:01:48",
+      "level": "INFO",
+      "message": "✅ 对比分析完成，发现 18 处变更"
+    },
+    {
+      "timestamp": "14:01:48",
+      "level": "INFO",
+      "message": "开始列标准化..."
+    },
+    {
+      "timestamp": "14:01:59",
+      "level": "INFO",
+      "message": "✅ 列标准化V3完成，标准化了 3 个列"
+    },
+    {
+      "timestamp": "14:01:59",
+      "level": "INFO",
+      "message": "开始L2语义分析和L1L3规则打分..."
+    },
+    {
+      "timestamp": "14:01:59",
+      "level": "INFO",
+      "message": "✅ 语义分析完成，分析了 18 处变更"
+    },
+    {
+      "timestamp": "14:01:59",
+      "level": "INFO",
+      "message": "生成详细打分JSON..."
+    },
+    {
+      "timestamp": "14:02:34",
+      "level": "INFO",
+      "message": "✅ 详细打分生成完成: detailed_score_tmp9xgcbcnq_20250929_140234.json"
+    },
+    {
+      "timestamp": "14:02:34",
+      "level": "INFO",
+      "message": "下载目标文档的Excel格式..."
+    },
+    {
+      "timestamp": "14:03:30",
+      "level": "INFO",
+      "message": "✅ Excel文档下载成功: tencent_111测试版本-出国销售计划表_20250929_1403_midweek_W40.xlsx"
+    },
+    {
+      "timestamp": "14:03:30",
+      "level": "INFO",
+      "message": "修复腾讯文档Excel格式问题..."
+    },
+    {
+      "timestamp": "14:03:30",
+      "level": "INFO",
+      "message": "✅ Excel格式修复完成"
+    },
+    {
+      "timestamp": "14:03:30",
+      "level": "INFO",
+      "message": "应用条纹涂色标记..."
+    },
+    {
+      "timestamp": "14:03:30",
+      "level": "INFO",
+      "message": "✅ 涂色标记完成: tencent_111测试版本-出国销售计划表_20250929_1403_midweek_W40_marked_20250929_140330_W00.xlsx"
+    },
+    {
+      "timestamp": "14:03:30",
+      "level": "INFO",
+      "message": "上传处理后的文档到腾讯文档..."
+    },
+    {
+      "timestamp": "14:04:00",
+      "level": "INFO",
+      "message": "✅ 文档上传成功!"
+    },
+    {
+      "timestamp": "14:04:00",
+      "level": "INFO",
+      "message": "📎 文档链接: https://docs.qq.com/sheet/DWGRya0tsUnhVTWZU"
+    },
+    {
+      "timestamp": "14:04:00",
+      "level": "INFO",
+      "message": "📋 批量处理模式：跳过单文档综合打分，将在最后统一生成"
+    },
+    {
+      "timestamp": "14:04:00",
+      "level": "SUCCESS",
+      "message": "✅ 文档处理完成"
+    }
+  ],
+  "settings": {
+    "skip_baseline": false,
+    "use_ai_standardization": true
+  }
+}

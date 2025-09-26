@@ -330,7 +330,8 @@ class TencentDocAutoExporter:
             
             # 访问页面 - 根据URL类型调整策略
             print("📋 开始加载页面...")
-            load_timeout = 45000 if url_analysis["url_type"] == "desktop_general" else 30000
+            # 增加超时时间以避免Target crashed错误
+            load_timeout = 90000 if url_analysis["url_type"] == "desktop_general" else 60000
             await self.page.goto(doc_url, wait_until='domcontentloaded', timeout=load_timeout)
             print("✅ DOM加载完成")
             
@@ -353,7 +354,8 @@ class TencentDocAutoExporter:
             await self.page.wait_for_timeout(5000)
             
             # 网络状态检测 - 根据URL类型调整超时
-            network_timeout = 15000 if url_analysis["url_type"] == "desktop_general" else 10000
+            # 增加网络超时时间以避免页面加载问题
+            network_timeout = 30000 if url_analysis["url_type"] == "desktop_general" else 20000
             try:
                 await self.page.wait_for_load_state('networkidle', timeout=network_timeout)
                 print("🌐 网络请求完成")
@@ -371,7 +373,8 @@ class TencentDocAutoExporter:
             
             # 等待下载完成
             print("📥 等待下载完成...")
-            await self._wait_for_download(timeout=30)
+            # 增加下载超时时间以适应大文件
+            await self._wait_for_download(timeout=60)
             
             if self.downloaded_files:
                 print(f"🎉 成功下载文件: {self.downloaded_files}")

@@ -1,0 +1,143 @@
+{
+  "modified_columns": {
+    "B": "计划输出思路\n8/28",
+    "C": "项目类型",
+    "D": "来源",
+    "E": "任务发起时间",
+    "F": "目标对齐",
+    "G": "关键KR对齐",
+    "H": "具体计划内容",
+    "I": "邓总指导登记（日更新）",
+    "J": "负责人",
+    "K": "协助人",
+    "L": "重要程度",
+    "M": "预计完成时间",
+    "N": "完成链接",
+    "O": "总完成进度",
+    "P": "经理分析复盘",
+    "Q": "",
+    "R": "",
+    "S": ""
+  },
+  "modifications": [
+    {
+      "cell": "B4",
+      "column_name": "计划输出思路\n8/28",
+      "old": "123",
+      "new": "0"
+    },
+    {
+      "cell": "C5",
+      "column_name": "项目类型",
+      "old": "体系建设",
+      "new": "项目管理"
+    },
+    {
+      "cell": "D6",
+      "column_name": "来源",
+      "old": "总助检查整改",
+      "new": "总经理交办"
+    },
+    {
+      "cell": "E7",
+      "column_name": "任务发起时间",
+      "old": "2025/3/21",
+      "new": "2025/9/27"
+    },
+    {
+      "cell": "F7",
+      "column_name": "目标对齐",
+      "old": "风险及异常订单管理",
+      "new": "部门综合管理"
+    },
+    {
+      "cell": "G8",
+      "column_name": "关键KR对齐",
+      "old": "123123",
+      "new": "0"
+    },
+    {
+      "cell": "H9",
+      "column_name": "具体计划内容",
+      "old": "123123",
+      "new": "0"
+    },
+    {
+      "cell": "I10",
+      "column_name": "邓总指导登记（日更新）",
+      "old": "123123",
+      "new": "0"
+    },
+    {
+      "cell": "J11",
+      "column_name": "负责人",
+      "old": "王寒晓,各责任人",
+      "new": "各责任人,魏志广"
+    },
+    {
+      "cell": "K12",
+      "column_name": "协助人",
+      "old": "赖铁荔",
+      "new": "各责任人"
+    },
+    {
+      "cell": "L13",
+      "column_name": "重要程度",
+      "old": "4",
+      "new": "1"
+    },
+    {
+      "cell": "M14",
+      "column_name": "预计完成时间",
+      "old": "2025/9/25",
+      "new": "2025/9/27"
+    },
+    {
+      "cell": "N15",
+      "column_name": "完成链接",
+      "old": "123123123",
+      "new": "0"
+    },
+    {
+      "cell": "O16",
+      "column_name": "总完成进度",
+      "old": "12%",
+      "new": "0%"
+    },
+    {
+      "cell": "P17",
+      "column_name": "经理分析复盘",
+      "old": "2025/5/28",
+      "new": "2025/5/1"
+    },
+    {
+      "cell": "Q18",
+      "column_name": "",
+      "old": "尚未汇报",
+      "new": "无需"
+    },
+    {
+      "cell": "R19",
+      "column_name": "",
+      "old": "已应用未落地的项目",
+      "new": "已应用未落地的项目,已纳入日常管理"
+    },
+    {
+      "cell": "S20",
+      "column_name": "",
+      "old": "123123",
+      "new": "0"
+    }
+  ],
+  "statistics": {
+    "total_modifications": 18,
+    "similarity": 0.0,
+    "format_only_changes": 0,
+    "original_total": 18
+  },
+  "format_only_changes": [],
+  "format_version": "simplified_v1.0",
+  "comparison_engine": "SimplifiedCSVComparator",
+  "timestamp": "2025-09-29T03:19:57.912711",
+  "star_normalization": true
+}
